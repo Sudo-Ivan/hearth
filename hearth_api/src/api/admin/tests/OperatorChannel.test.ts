@@ -158,7 +158,7 @@ describe('operator channel', () => {
 		expect((response.body as {code: string}).code).toBe(APIErrorCodes.UNKNOWN_USER);
 	});
 
-	it('records rexctl and the host user in audit metadata', async () => {
+	it('records hearthctl and the host user in audit metadata', async () => {
 		const target = await createTestAccount(harness);
 		const before = await auditLogIds();
 		const response = await socketRequest(socketPath, 'GET', `/admin/users/${target.userId}`, {
@@ -168,7 +168,7 @@ describe('operator channel', () => {
 		const logs = await newAuditLogs(before);
 		expect(logs).toHaveLength(1);
 		expect(logs[0]!.adminUserId.toString()).toBe('0');
-		expect(Object.fromEntries(logs[0]!.metadata)).toMatchObject({via: 'rexctl', host_user: 'alex'});
+		expect(Object.fromEntries(logs[0]!.metadata)).toMatchObject({via: 'hearthctl', host_user: 'alex'});
 	});
 
 	it('records the key in audit metadata for admin API keys', async () => {
@@ -241,13 +241,13 @@ describe('operator channel', () => {
 			action: 'create_sign_in_link',
 			admin: '0',
 			target: admin.userId,
-			metadata: {via: 'rexctl', host_user: 'alex'},
+			metadata: {via: 'hearthctl', host_user: 'alex'},
 		});
 		expect(logs).toContainEqual({
 			action: 'use_sign_in_link',
 			admin: admin.userId,
 			target: admin.userId,
-			metadata: {via: 'rexctl'},
+			metadata: {via: 'hearthctl'},
 		});
 	});
 
@@ -346,7 +346,7 @@ describe('operator channel', () => {
 	});
 
 	it('gives the edge and the stack files no route to the socket', async () => {
-		const roots = [path.join(REPO_ROOT, 'deploy'), path.join(REPO_ROOT, 'hearth_rexctl/internal/stack/files')];
+		const roots = [path.join(REPO_ROOT, 'deploy'), path.join(REPO_ROOT, 'hearthctl/internal/stack/files')];
 		const offenders: Array<string> = [];
 		for (const root of roots) {
 			for (const file of await filesUnder(root)) {

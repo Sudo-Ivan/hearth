@@ -1,0 +1,78 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# CrowdSec overlay: runs the security engine on this network and turns the
+# edge into a bouncer through the caddy-crowdsec-bouncer module.
+
+services:
+  edge:
+    image: ${FLUXER_EDGE_CROWDSEC_IMAGE:-localhost/hearth-edge-crowdsec:v0.14.1}
+    build:
+      context: ./crowdsec/edge
+      dockerfile: Containerfile
+    environment:
+      FLUXER_EDGE_GLOBAL_OPTIONS: |
+        order crowdsec first
+        order appsec after crowdsec
+        crowdsec {
+          api_url http://crowdsec:8080
+          api_key ${CROWDSEC_BOUNCER_KEY}
+          ticker_interval ${CROWDSEC_TICKER_INTERVAL:-15s}
+          metrics_interval 15m
+          appsec_url http://crowdsec:7422
+          appsec_fail_open
+        }
+      FLUXER_EDGE_ACCESS_LOG: |
+        log {
+          output file /var/log/caddy/access.log {
+            roll_size 50mb
+            roll_keep 3
+          }
+          format json
+        }
+    volumes:
+      - ./crowdsec/crowdsec.caddy:/etc/caddy/conf.d/crowdsec.caddy:ro
+      - edge-logs:/var/log/caddy
+    depends_on:
+      crowdsec: {condition: service_started}
+
+  crowdsec:
+    restart: ${FLUXER_RESTART_POLICY:-unless-stopped}
+    networks: [hearth]
+    logging:
+      driver: json-file
+      options:
+        max-size: ${FLUXER_LOG_MAX_SIZE:-10m}
+        max-file: "${FLUXER_LOG_MAX_FILE:-3}"
+    image: ${FLUXER_CROWDSEC_IMAGE:-docker.io/crowdsecurity/crowdsec:v1.8.1}
+    deploy:
+      resources:
+        limits:
+          memory: ${FLUXER_CROWDSEC_MEMORY_LIMIT:-512mb}
+    environment:
+      COLLECTIONS: ${FLUXER_CROWDSEC_COLLECTIONS:-crowdsecurity/caddy crowdsecurity/linux crowdsecurity/base-http-scenarios crowdsecurity/http-cve crowdsecurity/appsec-virtual-patching crowdsecurity/appsec-crs crowdsecurity/whitelist-good-actors}
+      PARSERS: ${FLUXER_CROWDSEC_PARSERS:-crowdsecurity/geoip-enrich}
+      BOUNCER_KEY_edge: ${CROWDSEC_BOUNCER_KEY:?set CROWDSEC_BOUNCER_KEY in .env}
+      ENROLL_KEY: ${CROWDSEC_ENROLL_KEY:-}
+      ENROLL_INSTANCE_NAME: ${CROWDSEC_ENROLL_INSTANCE_NAME:-hearth-edge}
+      ENROLL_TAGS: ${CROWDSEC_ENROLL_TAGS:-hearth}
+      DISABLE_LOCAL_API: "false"
+      DISABLE_CONSOLE_MANAGEMENT: "${CROWDSEC_DISABLE_CONSOLE_MANAGEMENT:-true}"
+      CUSTOM_HOSTNAME: ${CROWDSEC_HOSTNAME:-hearth-edge}
+      LOCAL_API_URL: http://127.0.0.1:8080
+      TZ: ${TZ:-UTC}
+    volumes:
+      - crowdsec-config:/etc/crowdsec
+      - crowdsec-data:/var/lib/crowdsec/data
+      - edge-logs:/var/log/caddy:ro
+      - ./crowdsec/acquis.yaml:/etc/crowdsec/acquis.yaml:ro
+    healthcheck:
+      test: ["CMD-SHELL", "cscli lapi status"]
+      interval: ${FLUXER_HEALTHCHECK_INTERVAL:-10s}
+      timeout: ${FLUXER_HEALTHCHECK_TIMEOUT:-5s}
+      retries: ${FLUXER_HEALTHCHECK_RETRIES:-10}
+      start_period: ${FLUXER_HEALTHCHECK_START_PERIOD:-60s}
+      start_interval: ${FLUXER_HEALTHCHECK_START_INTERVAL:-1s}
+
+volumes:
+  edge-logs:
+  crowdsec-config:
+  crowdsec-data:

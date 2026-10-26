@@ -14,7 +14,7 @@ When someone forgets their password, they use their recovery kit. The app shows 
 
 ## Email addresses
 
-People create an account with an email address, a username and a password. The instance sends email to verify addresses and reset forgotten passwords. rexctl asks for your email server during setup, and `rexctl email set` changes it later. Until email is set up, nobody can reset a forgotten password by email, and you can [create a reset link](#lost-passwords) for them.
+People create an account with an email address, a username and a password. The instance sends email to verify addresses and reset forgotten passwords. hearthctl asks for your email server during setup, and `hearthctl email set` changes it later. Until email is set up, nobody can reset a forgotten password by email, and you can [create a reset link](#lost-passwords) for them.
 
 ## Single sign-on
 
@@ -29,12 +29,12 @@ With "Automatically provision users on first SSO login" on, the first sign-in fr
 On a username instance, or an email instance that doesn't send email, you can create a reset link for someone who has lost their password. The "Create Password Reset Link" button on the account's page in the admin panel does the same.
 
 ```sh
-rexctl users reset-link alex
+hearthctl users reset-link alex
 ```
 
 The link works once and expires after an hour, and anyone who has it can set a new password for the account. Send it to the person over a channel you trust. Creating the link deletes their recovery kit, and they can make a new one in their account settings.
 
-If you lose access to your own admin account on such an instance, `rexctl users reset-link` works on the machine without signing in. On an email instance that sends email, reset your password from the sign-in page.
+If you lose access to your own admin account on such an instance, `hearthctl users reset-link` works on the machine without signing in. On an email instance that sends email, reset your password from the sign-in page.
 
 ## More settings
 

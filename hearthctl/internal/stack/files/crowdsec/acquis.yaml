@@ -1,0 +1,10 @@
+filenames:
+  - /var/log/caddy/*.log
+labels:
+  type: caddy
+---
+source: appsec
+appsec_config: crowdsecurity/virtual-patching
+listen_addr: 0.0.0.0:7422
+labels:
+  type: appsec

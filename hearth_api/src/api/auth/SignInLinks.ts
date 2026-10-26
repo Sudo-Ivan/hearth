@@ -95,7 +95,7 @@ export async function redeemSignInLink(
 		targetId: BigInt(user.id),
 		action: 'use_sign_in_link',
 		auditLogReason: null,
-		metadata: new Map([['via', 'rexctl']]),
+		metadata: new Map([['via', 'hearthctl']]),
 	});
 	emitLogin(user, true, {newIp: true, method: 'other'});
 	return {user_id: user.id.toString(), token};

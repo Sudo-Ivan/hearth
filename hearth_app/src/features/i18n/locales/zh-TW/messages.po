@@ -18757,10 +18757,10 @@ msgstr "如果忘記密碼，復原套件是唯一能重新登入帳號的方式
 msgid "If you forget your password, this kit is the only way back into your account. Store it somewhere safe, like a password manager or a printed copy."
 msgstr "如果忘記密碼，這個還原套件是您重新登入帳戶的唯一方法。請將它存放在安全的地方，例如密碼管理器或列印副本。"
 
-#. Help on the setup token screen, followed by a terminal command. rexctl is a name that must not be translated.
+#. Help on the setup token screen, followed by a terminal command. hearthctl is a name that must not be translated.
 #: src/features/app/components/setup/SetupTokenStep.tsx
-msgid "If you installed Hearth with rexctl, it printed the token when it finished. Run this on your server to show it again."
-msgstr "如果你是使用 rexctl 安裝 Hearth，它會在完成時顯示 token。在你的伺服器上執行此指令以再次顯示它。"
+msgid "If you installed Hearth with hearthctl, it printed the token when it finished. Run this on your server to show it again."
+msgstr "如果你是使用 hearthctl 安裝 Hearth，它會在完成時顯示 token。在你的伺服器上執行此指令以再次顯示它。"
 
 #. What the app shows when no symbol is set, in the setup wizard.
 #: src/features/app/components/setup/SetupBrandingAssetField.tsx
@@ -18797,10 +18797,10 @@ msgstr "留空時，分頁會使用您的應用程式圖示，如果應用程式
 msgid "If you leave it empty, those places show the Hearth icon."
 msgstr "留空時，這些位置會顯示 Hearth 圖示。"
 
-#. Help on the setup token screen for someone who installed Hearth without rexctl. FLUXER_SETUP_TOKEN and rexctl must not be translated.
+#. Help on the setup token screen for someone who installed Hearth without hearthctl. FLUXER_SETUP_TOKEN and hearthctl must not be translated.
 #: src/features/app/components/setup/SetupTokenStep.tsx
-msgid "If you run Hearth without rexctl, set FLUXER_SETUP_TOKEN to a value of at least 32 characters that you choose, restart Hearth, and enter that value here."
-msgstr "如果你在沒有 rexctl 的情況下執行 Hearth，請將 FLUXER_SETUP_TOKEN 設定為至少 32 個字元的值，然後重新啟動 Hearth，並在此處輸入該值。"
+msgid "If you run Hearth without hearthctl, set FLUXER_SETUP_TOKEN to a value of at least 32 characters that you choose, restart Hearth, and enter that value here."
+msgstr "如果你在沒有 hearthctl 的情況下執行 Hearth，請將 FLUXER_SETUP_TOKEN 設定為至少 32 個字元的值，然後重新啟動 Hearth，並在此處輸入該值。"
 
 #: src/features/user/components/modals/HearthTagChangeModal.tsx
 msgid "If you save this username, your tag will reroll randomly when your {PREMIUM_PRODUCT_NAME} expires on <0>{premiumExpiresAtLabel}</0>, unless it renews."

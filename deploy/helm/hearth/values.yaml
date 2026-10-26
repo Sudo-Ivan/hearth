@@ -31,7 +31,7 @@ clusterChecks: true
 
 image:
   # The registry and owner the Hearth images come from.
-  registry: ghcr.io/hearthapp
+  registry: ghcr.io/sudo-ivan
   # The tag for every Hearth image. v1 moves with each release.
   tag: v1
   # Always pulls the moving tag whenever a pod starts, including a pod that

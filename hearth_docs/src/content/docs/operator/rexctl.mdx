@@ -1,10 +1,10 @@
 ---
 # SPDX-License-Identifier: AGPL-3.0-or-later
-title: rexctl commands
-description: Every rexctl command and flag, made from rexctl's own help.
+title: hearthctl commands
+description: Every hearthctl command and flag, made from hearthctl's own help.
 ---
 
-This page is made from the help that rexctl prints, and `rexctl <command> --help` shows the same text in the terminal.
+This page is made from the help that hearthctl prints, and `hearthctl <command> --help` shows the same text in the terminal.
 
 ## Flags for every command
 
@@ -24,96 +24,96 @@ This page is made from the help that rexctl prints, and `rexctl <command> --help
 
   Answer yes to every question and never prompt.
 
-## rexctl admins
+## hearthctl admins
 
 Choose who can manage your instance.
 
-### rexctl admins add
+### hearthctl admins add
 
 Make an account an admin.
 
 ```sh
-rexctl admins add <user>
+hearthctl admins add <user>
 ```
 
-### rexctl admins remove
+### hearthctl admins remove
 
 Remove admin access from an account.
 
 ```sh
-rexctl admins remove <user>
+hearthctl admins remove <user>
 ```
 
-### rexctl admins sign-in-link
+### hearthctl admins sign-in-link
 
 Print a link that signs an admin in once.
 
 ```sh
-rexctl admins sign-in-link <user>
+hearthctl admins sign-in-link <user>
 ```
 
-## rexctl backup
+## hearthctl backup
 
 Back up your instance. Hearth pauses while uploads are copied.
 
 ```sh
-rexctl backup
+hearthctl backup
 ```
 
-### rexctl backup keep
+### hearthctl backup keep
 
-Show or change how many backups rexctl keeps. After each backup, rexctl deletes the oldest ones beyond this number, except the backup that rexctl rollback needs. Pass all to keep every backup.
+Show or change how many backups hearthctl keeps. After each backup, hearthctl deletes the oldest ones beyond this number, except the backup that hearthctl rollback needs. Pass all to keep every backup.
 
 ```sh
-rexctl backup keep [count|all] [flags]
+hearthctl backup keep [count|all] [flags]
 ```
 
 - `--json`
 
   Print JSON.
 
-### rexctl backup list
+### hearthctl backup list
 
 List your backups.
 
 ```sh
-rexctl backup list [flags]
+hearthctl backup list [flags]
 ```
 
 - `--json`
 
   Print JSON.
 
-### rexctl backup location
+### hearthctl backup location
 
-Show the folder rexctl saves backups in, or pass a full path to save new backups there. Backups that are already saved stay where they are.
+Show the folder hearthctl saves backups in, or pass a full path to save new backups there. Backups that are already saved stay where they are.
 
 ```sh
-rexctl backup location [folder] [flags]
+hearthctl backup location [folder] [flags]
 ```
 
 - `--json`
 
   Print JSON.
 
-### rexctl backup verify
+### hearthctl backup verify
 
 Check that a backup is complete and readable.
 
 ```sh
-rexctl backup verify <file>
+hearthctl backup verify <file>
 ```
 
-## rexctl branding
+## hearthctl branding
 
 Change your instance's name, colour and images.
 
-### rexctl branding set
+### hearthctl branding set
 
 Change the name, colour, logo or icon.
 
 ```sh
-rexctl branding set [flags]
+hearthctl branding set [flags]
 ```
 
 - `--colour string`
@@ -132,16 +132,16 @@ rexctl branding set [flags]
 
   Your instance's name.
 
-## rexctl config
+## hearthctl config
 
 Read and change Hearth's settings.
 
-### rexctl config get
+### hearthctl config get
 
 Show one setting.
 
 ```sh
-rexctl config get <key> [flags]
+hearthctl config get <key> [flags]
 ```
 
 - `--json`
@@ -150,82 +150,82 @@ rexctl config get <key> [flags]
 
 - `--reveal`
 
-  Print a secret rexctl keeps.
+  Print a secret hearthctl keeps.
 
-### rexctl config list
+### hearthctl config list
 
 List every setting with its value and help.
 
 ```sh
-rexctl config list [flags]
+hearthctl config list [flags]
 ```
 
 - `--all`
 
-  Also list every raw setting and the secrets rexctl generated.
+  Also list every raw setting and the secrets hearthctl generated.
 
 - `--json`
 
   Print JSON.
 
-### rexctl config set
+### hearthctl config set
 
 Change one or more settings.
 
 ```sh
-rexctl config set <key> <value> | <key>=<value>...
+hearthctl config set <key> <value> | <key>=<value>...
 ```
 
-### rexctl config unset
+### hearthctl config unset
 
 Go back to the default for one or more settings.
 
 ```sh
-rexctl config unset <key>...
+hearthctl config unset <key>...
 ```
 
-## rexctl doctor
+## hearthctl doctor
 
 Check your instance and this machine for problems.
 
 ```sh
-rexctl doctor [flags]
+hearthctl doctor [flags]
 ```
 
 - `--fix`
 
-  Fix the problems rexctl can fix safely.
+  Fix the problems hearthctl can fix safely.
 
 - `--json`
 
   Print JSON.
 
-## rexctl eject
+## hearthctl eject
 
-Writes every setting into the instance folder for docker compose and stops rexctl from changing the instance. Hearth keeps running. Run rexctl takeover to hand it back.
+Writes every setting into the instance folder for docker compose and stops hearthctl from changing the instance. Hearth keeps running. Run hearthctl takeover to hand it back.
 
 ```sh
-rexctl eject
+hearthctl eject
 ```
 
-## rexctl email
+## hearthctl email
 
 Set up how your instance sends email.
 
-### rexctl email off
+### hearthctl email off
 
 Stop sending email.
 
 ```sh
-rexctl email off
+hearthctl email off
 ```
 
-### rexctl email set
+### hearthctl email set
 
 Set the SMTP server.
 
 ```sh
-rexctl email set [flags]
+hearthctl email set [flags]
 ```
 
 - `--from string`
@@ -252,20 +252,20 @@ rexctl email set [flags]
 
   The username for the SMTP server.
 
-### rexctl email test
+### hearthctl email test
 
 Send a test email.
 
 ```sh
-rexctl email test [address]
+hearthctl email test [address]
 ```
 
-## rexctl install
+## hearthctl install
 
 Install Hearth on this machine, or take over an existing install.
 
 ```sh
-rexctl install [flags]
+hearthctl install [flags]
 ```
 
 - `--admin-email string`
@@ -408,16 +408,16 @@ rexctl install [flags]
 
   Public IP address for voice and video (found automatically).
 
-## rexctl invites
+## hearthctl invites
 
 Manage invite links for new accounts.
 
-### rexctl invites create
+### hearthctl invites create
 
 Create an invite link.
 
 ```sh
-rexctl invites create [flags]
+hearthctl invites create [flags]
 ```
 
 - `--expires string`
@@ -432,35 +432,35 @@ rexctl invites create [flags]
 
   How many people can use the link, or 0 for no limit. The default is `1`.
 
-### rexctl invites list
+### hearthctl invites list
 
 List invite links.
 
 ```sh
-rexctl invites list [flags]
+hearthctl invites list [flags]
 ```
 
 - `--json`
 
   Print JSON.
 
-### rexctl invites revoke
+### hearthctl invites revoke
 
 Stop an invite link from working.
 
 ```sh
-rexctl invites revoke <id>
+hearthctl invites revoke <id>
 ```
 
-## rexctl logs
+## hearthctl logs
 
 Show logs from your instance.
 
 The services are web, api, worker, gateway, voice, media, edge, admin, push, database, search, storage, cache, queue and internal.
-Without a service, rexctl shows every service.
+Without a service, hearthctl shows every service.
 
 ```sh
-rexctl logs [service] [flags]
+hearthctl logs [service] [flags]
 ```
 
 - `-f`, `--follow`
@@ -471,84 +471,84 @@ rexctl logs [service] [flags]
 
   Show lines newer than this, like 10m or 2h.
 
-## rexctl proxy
+## hearthctl proxy
 
 Use your own reverse proxy in front of Hearth.
 
-### rexctl proxy off
+### hearthctl proxy off
 
 Serve HTTPS directly with a certificate from Let's Encrypt.
 
 ```sh
-rexctl proxy off
+hearthctl proxy off
 ```
 
-### rexctl proxy on
+### hearthctl proxy on
 
 Serve plain HTTP for your own proxy.
 
 ```sh
-rexctl proxy on [flags]
+hearthctl proxy on [flags]
 ```
 
 - `--bind string`
 
   Address your proxy connects to, kept when left out (127.0.0.1:8080 the first time).
 
-## rexctl registration
+## hearthctl registration
 
 Choose who can create an account.
 
-### rexctl registration approve
+### hearthctl registration approve
 
 Approve a person waiting for approval.
 
 ```sh
-rexctl registration approve <id>
+hearthctl registration approve <id>
 ```
 
-### rexctl registration deny
+### hearthctl registration deny
 
 Turn down a person waiting for approval.
 
 ```sh
-rexctl registration deny <id>
+hearthctl registration deny <id>
 ```
 
-### rexctl registration pending
+### hearthctl registration pending
 
 List people waiting for approval.
 
 ```sh
-rexctl registration pending [flags]
+hearthctl registration pending [flags]
 ```
 
 - `--json`
 
   Print JSON.
 
-### rexctl registration set
+### hearthctl registration set
 
 Set who can create an account.
 
 ```sh
-rexctl registration set <open|approval|invite|closed>
+hearthctl registration set <open|approval|invite|closed>
 ```
 
-## rexctl restart
+## hearthctl restart
 
 Restart your instance.
 
 ```sh
-rexctl restart
+hearthctl restart
 ```
 
-## rexctl restore
+## hearthctl restore
 
 Restore your instance from a backup. This works on a new machine too. Copy the backup file there and run this command.
 
 ```sh
-rexctl restore <file> [flags]
+hearthctl restore <file> [flags]
 ```
 
 - `--confirm string`
@@ -559,12 +559,12 @@ rexctl restore <file> [flags]
 
   Move the instance to another engine while restoring (docker).
 
-## rexctl rollback
+## hearthctl rollback
 
 Go back to the release you ran before the last upgrade.
 
 ```sh
-rexctl rollback [flags]
+hearthctl rollback [flags]
 ```
 
 - `--confirm string`
@@ -579,28 +579,28 @@ rexctl rollback [flags]
 
   Also restore the database from the backup taken before the upgrade.
 
-## rexctl search
+## hearthctl search
 
 Manage search on your instance.
 
-### rexctl search reindex
+### hearthctl search reindex
 
-Rebuild every search index from your data, with the messages in every channel and DM. Search shows partial results until it finishes. If a rebuild is already running, rexctl follows that one, and stopping rexctl doesn't stop the rebuild.
+Rebuild every search index from your data, with the messages in every channel and DM. Search shows partial results until it finishes. If a rebuild is already running, hearthctl follows that one, and stopping hearthctl doesn't stop the rebuild.
 
 ```sh
-rexctl search reindex [flags]
+hearthctl search reindex [flags]
 ```
 
 - `--no-wait`
 
   Start the rebuild and return without waiting for it.
 
-## rexctl setup
+## hearthctl setup
 
 Create the admin account and finish setup in the terminal.
 
 ```sh
-rexctl setup [flags]
+hearthctl setup [flags]
 ```
 
 - `--admin-email string`
@@ -655,60 +655,60 @@ rexctl setup [flags]
 
   The username for the SMTP server.
 
-### rexctl setup token
+### hearthctl setup token
 
 Show the setup token for the browser.
 
 ```sh
-rexctl setup token
+hearthctl setup token
 ```
 
-## rexctl start
+## hearthctl start
 
 Start your instance.
 
 ```sh
-rexctl start
+hearthctl start
 ```
 
-## rexctl status
+## hearthctl status
 
 Show whether your instance is running.
 
 ```sh
-rexctl status [flags]
+hearthctl status [flags]
 ```
 
 - `--json`
 
   Print JSON.
 
-## rexctl stop
+## hearthctl stop
 
 Stop your instance.
 
 ```sh
-rexctl stop
+hearthctl stop
 ```
 
-## rexctl takeover
+## hearthctl takeover
 
-Hands an instance made by the old installer, by hand with docker compose, or released with rexctl eject over to rexctl. Hearth keeps running as it is.
+Hands an instance made by the old installer, by hand with docker compose, or released with hearthctl eject over to hearthctl. Hearth keeps running as it is.
 
 ```sh
-rexctl takeover [flags]
+hearthctl takeover [flags]
 ```
 
 - `--dry-run`
 
   Show what would change without changing anything.
 
-## rexctl uninstall
+## hearthctl uninstall
 
 Remove Hearth from this machine.
 
 ```sh
-rexctl uninstall [flags]
+hearthctl uninstall [flags]
 ```
 
 - `--confirm string`
@@ -719,12 +719,12 @@ rexctl uninstall [flags]
 
   Keep your data and backups.
 
-## rexctl upgrade
+## hearthctl upgrade
 
-Upgrade rexctl and Hearth to the latest release.
+Upgrade hearthctl and Hearth to the latest release.
 
 ```sh
-rexctl upgrade [flags]
+hearthctl upgrade [flags]
 ```
 
 - `--check`
@@ -751,16 +751,16 @@ rexctl upgrade [flags]
 
   Upgrade to this version, not the latest.
 
-## rexctl users
+## hearthctl users
 
 Manage accounts on your instance.
 
-### rexctl users ban
+### hearthctl users ban
 
 Ban an account.
 
 ```sh
-rexctl users ban <user> [flags]
+hearthctl users ban <user> [flags]
 ```
 
 - `--delete-messages`
@@ -771,12 +771,12 @@ rexctl users ban <user> [flags]
 
   Why you're banning them, one of spam, scam, harassment, hate, threats, raids, automation, ban-evasion, impersonation, malware, doxxing, intimate-images, explicit-content, adult-content, violence, self-harm, illegal, deception, exploits or report-abuse.
 
-### rexctl users create
+### hearthctl users create
 
 Create an account and print a link to set its password.
 
 ```sh
-rexctl users create <username> [flags]
+hearthctl users create <username> [flags]
 ```
 
 - `--admin`
@@ -787,32 +787,32 @@ rexctl users create <username> [flags]
 
   Email address for the account.
 
-### rexctl users delete
+### hearthctl users delete
 
 Delete an account and its data.
 
 ```sh
-rexctl users delete <user> [flags]
+hearthctl users delete <user> [flags]
 ```
 
 - `--confirm string`
 
   Your instance's domain, to confirm without a prompt.
 
-### rexctl users disable-mfa
+### hearthctl users disable-mfa
 
 Turn off two-factor authentication for an account.
 
 ```sh
-rexctl users disable-mfa <user>
+hearthctl users disable-mfa <user>
 ```
 
-### rexctl users list
+### hearthctl users list
 
 List accounts.
 
 ```sh
-rexctl users list [flags]
+hearthctl users list [flags]
 ```
 
 - `--admins`
@@ -827,48 +827,48 @@ rexctl users list [flags]
 
   Only show accounts that match this text.
 
-### rexctl users reset-link
+### hearthctl users reset-link
 
 Print a link to set a new password.
 
 ```sh
-rexctl users reset-link <user>
+hearthctl users reset-link <user>
 ```
 
-### rexctl users show
+### hearthctl users show
 
 Show one account.
 
 ```sh
-rexctl users show <user> [flags]
+hearthctl users show <user> [flags]
 ```
 
 - `--json`
 
   Print JSON.
 
-### rexctl users sign-out
+### hearthctl users sign-out
 
 Sign an account out everywhere.
 
 ```sh
-rexctl users sign-out <user>
+hearthctl users sign-out <user>
 ```
 
-### rexctl users unban
+### hearthctl users unban
 
 Lift a ban.
 
 ```sh
-rexctl users unban <user>
+hearthctl users unban <user>
 ```
 
-## rexctl version
+## hearthctl version
 
-Show the rexctl and Hearth versions.
+Show the hearthctl and Hearth versions.
 
 ```sh
-rexctl version [flags]
+hearthctl version [flags]
 ```
 
 - `--json`

@@ -13,13 +13,13 @@ use std::fs;
 use std::path::{Path, PathBuf};
 
 const SCHEMA_VERSION: u8 = 1;
-const DEFAULT_REGISTRY: &str = "ghcr.io/hearthapp";
+const DEFAULT_REGISTRY: &str = "ghcr.io/sudo-ivan";
 const DEFAULT_MOVING_TAGS: &str = "v1,latest";
 const DEFAULT_FROM_TAG: &str = "v1";
 const DEFAULT_OUT_DIR: &str = "release-out";
 const RELEASE_COMPONENT: &str = "hearth-release";
 const COMPOSE_IMAGE_PREFIX: &str =
-    "${FLUXER_REGISTRY:-ghcr.io/${FLUXER_REGISTRY_OWNER:-hearthapp}}";
+    "${FLUXER_REGISTRY:-ghcr.io/${FLUXER_REGISTRY_OWNER:-sudo-ivan}}";
 const OCI_INDEX_MEDIA_TYPE: &str = "application/vnd.oci.image.index.v1+json";
 const DOCKER_MANIFEST_LIST_MEDIA_TYPE: &str =
     "application/vnd.docker.distribution.manifest.list.v2+json";
@@ -856,7 +856,7 @@ mod tests {
     #[test]
     fn components_cover_every_self_hosting_service() {
         let compose =
-            include_str!("../../../hearth_rexctl/internal/stack/files/docker-compose.yml");
+            include_str!("../../../hearthctl/internal/stack/files/docker-compose.yml");
         let expected: BTreeSet<(&str, &str)> = COMPONENTS
             .iter()
             .flat_map(|component| {
@@ -1024,7 +1024,7 @@ mod tests {
     fn promote_command_targets_the_digest() {
         let digest = format!("sha256:{}", "0".repeat(64));
         let spec = promote_command(
-            "ghcr.io/hearthapp/hearth-api",
+            "ghcr.io/sudo-ivan/hearth-api",
             &digest,
             &["v1".to_string(), "latest".to_string()],
         );
@@ -1036,10 +1036,10 @@ mod tests {
                 "imagetools",
                 "create",
                 "-t",
-                "ghcr.io/hearthapp/hearth-api:v1",
+                "ghcr.io/sudo-ivan/hearth-api:v1",
                 "-t",
-                "ghcr.io/hearthapp/hearth-api:latest",
-                &format!("ghcr.io/hearthapp/hearth-api@{digest}"),
+                "ghcr.io/sudo-ivan/hearth-api:latest",
+                &format!("ghcr.io/sudo-ivan/hearth-api@{digest}"),
             ]
         );
     }

@@ -3,7 +3,7 @@
 
 set -eu
 
-resolver=${REXCTL_RELEASE_URL:-https://hearth.dev/rexctl/release.json}
+resolver=${HEARTHCTL_RELEASE_URL:-https://hearth.dev/hearthctl/release.json}
 
 if [ -t 2 ] && [ -z "${NO_COLOR:-}" ] && [ "${TERM:-}" != dumb ]; then
 	glyph_ok='✓'
@@ -54,7 +54,7 @@ add() {
 }
 
 has_instance() {
-	[ -f "$1/.rexctl/state.json" ] || [ -f "$1/.env" ]
+	[ -f "$1/.hearthctl/state.json" ] || [ -f "$1/.env" ]
 }
 
 map_legacy_flags() {
@@ -178,7 +178,7 @@ trap 'rm -rf "$tmp"' EXIT
 trap 'exit 130' INT HUP TERM
 
 if ! fetch "$resolver?format=sh&os=$os&arch=$arch" "$tmp/release"; then
-	fail "Couldn't find the latest rexctl release." "Check that this machine can reach hearth.dev, then run this again."
+	fail "Couldn't find the latest hearthctl release." "Check that this machine can reach hearth.dev, then run this again."
 fi
 
 version=''
@@ -200,27 +200,27 @@ case $url in
 	*) fail "The release information from hearth.dev doesn't look right." "Run this again in a few minutes." ;;
 esac
 
-if ! fetch "$url" "$tmp/rexctl.tar.gz"; then
-	fail "Couldn't download rexctl $version." "Check that this machine can reach github.com, then run this again."
+if ! fetch "$url" "$tmp/hearthctl.tar.gz"; then
+	fail "Couldn't download hearthctl $version." "Check that this machine can reach github.com, then run this again."
 fi
-if [ "$(sha256_of "$tmp/rexctl.tar.gz")" != "$sum" ]; then
-	fail "The rexctl download doesn't match its checksum." "Run this again. If it keeps happening, something between you and GitHub is changing the file."
+if [ "$(sha256_of "$tmp/hearthctl.tar.gz")" != "$sum" ]; then
+	fail "The hearthctl download doesn't match its checksum." "Run this again. If it keeps happening, something between you and GitHub is changing the file."
 fi
 mkdir "$tmp/out"
-tar -xzf "$tmp/rexctl.tar.gz" -C "$tmp/out"
-if [ ! -f "$tmp/out/rexctl" ]; then
-	fail "The rexctl download doesn't contain rexctl." "Run this again in a few minutes."
+tar -xzf "$tmp/hearthctl.tar.gz" -C "$tmp/out"
+if [ ! -f "$tmp/out/hearthctl" ]; then
+	fail "The hearthctl download doesn't contain hearthctl." "Run this again in a few minutes."
 fi
 
-chmod 755 "$tmp/out/rexctl"
+chmod 755 "$tmp/out/hearthctl"
 eval "set -- $args"
 if [ "$trial" -eq 1 ]; then
 	trap - EXIT
 	status=0
 	if [ ! -t 0 ] && (: </dev/tty) 2>/dev/null; then
-		"$tmp/out/rexctl" "$@" </dev/tty || status=$?
+		"$tmp/out/hearthctl" "$@" </dev/tty || status=$?
 	else
-		"$tmp/out/rexctl" "$@" || status=$?
+		"$tmp/out/hearthctl" "$@" || status=$?
 	fi
 	rm -rf "$tmp"
 	exit "$status"
@@ -232,9 +232,9 @@ else
 	bin_dir=$HOME/.local/bin
 fi
 mkdir -p "$bin_dir"
-mv -f "$tmp/out/rexctl" "$bin_dir/rexctl.new"
-mv -f "$bin_dir/rexctl.new" "$bin_dir/rexctl"
-printf '%s Installed rexctl %s\n' "$glyph_ok" "$version" >&2
+mv -f "$tmp/out/hearthctl" "$bin_dir/hearthctl.new"
+mv -f "$bin_dir/hearthctl.new" "$bin_dir/hearthctl"
+printf '%s Installed hearthctl %s\n' "$glyph_ok" "$version" >&2
 
 case ":$PATH:" in
 	*":$bin_dir:"*) ;;
@@ -249,10 +249,10 @@ case ":$PATH:" in
 				path_dir=$bin_dir
 				;;
 		esac
-		printf '%s rexctl is in %s, which isn'"'"'t on your PATH yet.\n' "$glyph_warn" "$shown" >&2
-		printf '  Run it as %s/rexctl for now. To run rexctl by name in this terminal, run:\n' "$shown" >&2
+		printf '%s hearthctl is in %s, which isn'"'"'t on your PATH yet.\n' "$glyph_warn" "$shown" >&2
+		printf '  Run it as %s/hearthctl for now. To run hearthctl by name in this terminal, run:\n' "$shown" >&2
 		printf '  export PATH="%s:%s"\n' "$path_dir" "\$PATH" >&2
-		printf '  On most Linux distributions, rexctl works by name in a new terminal.\n' >&2
+		printf '  On most Linux distributions, hearthctl works by name in a new terminal.\n' >&2
 		;;
 esac
 
@@ -260,6 +260,6 @@ rm -rf "$tmp"
 trap - EXIT INT HUP TERM
 
 if [ ! -t 0 ] && (: </dev/tty) 2>/dev/null; then
-	exec "$bin_dir/rexctl" "$@" </dev/tty
+	exec "$bin_dir/hearthctl" "$@" </dev/tty
 fi
-exec "$bin_dir/rexctl" "$@"
+exec "$bin_dir/hearthctl" "$@"

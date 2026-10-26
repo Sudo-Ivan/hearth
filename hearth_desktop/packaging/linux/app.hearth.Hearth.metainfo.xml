@@ -52,7 +52,7 @@
     <url type="donation">https://hearth.app/donate</url>
     <url type="contact">https://hearth.app/company-information#contact</url>
     <url type="translate">https://weblate.hearth.tools/</url>
-    <url type="vcs-browser">https://github.com/hearthapp/hearth.git</url>
+    <url type="vcs-browser">https://github.com/sudo-ivan/hearth.git</url>
     <update_contact>fen@unix.dog</update_contact>
     <provides>
         <binary>app.hearth.Hearth</binary>
@@ -73,7 +73,7 @@
     </supports>
     <releases>
         <release version="2026.920.144558" date="2026-09-20">
-            <url type="details">https://github.com/hearthapp/hearth/compare/5d85e88532a6b2bc8fa95cd951c9f82d63841de1..c157ab5752084ba424b80b66f7b3b6ca4abba1e3</url>
+            <url type="details">https://github.com/sudo-ivan/hearth/compare/5d85e88532a6b2bc8fa95cd951c9f82d63841de1..c157ab5752084ba424b80b66f7b3b6ca4abba1e3</url>
             <description>
                 <p>
                     Release following the synchronization of stable with canary

@@ -9,21 +9,21 @@ By default, Hearth uses ports 80 and 443 and gets its own certificate from Let's
 ## Serve plain HTTP for your proxy
 
 ```sh
-rexctl proxy on
+hearthctl proxy on
 ```
 
-Hearth then listens on `127.0.0.1:8080`. Pass `--bind` to [`rexctl proxy on`](/operator/rexctl/#rexctl-proxy) to use another address or port.
+Hearth then listens on `127.0.0.1:8080`. Pass `--bind` to [`hearthctl proxy on`](/operator/hearthctl/#hearthctl-proxy) to use another address or port.
 
 ```sh
-rexctl proxy on --bind 127.0.0.1:8081
+hearthctl proxy on --bind 127.0.0.1:8081
 ```
 
-On a new machine, pass `--behind-proxy` to [`rexctl install`](/operator/rexctl/#rexctl-install) to start in this mode.
+On a new machine, pass `--behind-proxy` to [`hearthctl install`](/operator/hearthctl/#hearthctl-install) to start in this mode.
 
 ## Go back to HTTPS
 
 ```sh
-rexctl proxy off
+hearthctl proxy off
 ```
 
 Hearth goes back to serving HTTPS with its own certificate, and ports 80 and 443 need to be open to the machine again.
@@ -33,13 +33,13 @@ Hearth goes back to serving HTTPS with its own certificate, and ports 80 and 443
 Bind an address the proxy machine can connect to, and only let the proxy connect to that port.
 
 ```sh
-rexctl proxy on --bind 10.0.0.5:8080
+hearthctl proxy on --bind 10.0.0.5:8080
 ```
 
 By default, Hearth trusts `X-Forwarded-For` only from private addresses. If the proxy connects from a public address, set `edge.trusted_proxies` to that address, which replaces the default.
 
 ```sh
-rexctl config set edge.trusted_proxies 203.0.113.10
+hearthctl config set edge.trusted_proxies 203.0.113.10
 ```
 
 Until you do, everyone who uses your instance shows up with your proxy's address, and they share its rate limits and bans.

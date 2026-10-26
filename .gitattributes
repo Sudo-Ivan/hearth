@@ -15,5 +15,5 @@ deploy/**/Caddyfile text eol=lf
 deploy/helm/hearth/files/Caddyfile linguist-generated
 hearth_docs/src/installer/install.sh text eol=lf
 hearth_docs/src/installer/install.ps1 text eol=lf
-hearth_rexctl/internal/stack/files/** text eol=lf
-hearth_docs/src/content/docs/operator/rexctl.mdx text eol=lf linguist-generated
+hearthctl/internal/stack/files/** text eol=lf
+hearth_docs/src/content/docs/operator/hearthctl.mdx text eol=lf linguist-generated

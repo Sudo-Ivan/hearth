@@ -390,7 +390,7 @@ export const UserWriteAdminAuditCases: ReadonlyArray<AdminAuditCoverageCase> = [
 					action: 'create_sign_in_link',
 					targetType: 'user',
 					targetId: target.userId,
-					metadata: {via: 'rexctl'},
+					metadata: {via: 'hearthctl'},
 				},
 			};
 		},

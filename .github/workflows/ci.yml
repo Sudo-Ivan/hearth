@@ -1,0 +1,94 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+name: ci
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  hearthctl:
+    name: hearthctl build and test
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions: {}
+    steps:
+      - uses: step-security/harden-runner@e14015d583714f6e62063499dc959a02595150a1 # v2.21.1
+        with:
+          egress-policy: audit
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version-file: hearthctl/go.mod
+          cache-dependency-path: hearthctl/go.sum
+      - working-directory: hearthctl
+        run: |
+          go vet ./...
+          go build ./...
+          go test ./...
+
+  compose:
+    name: compose bundle renders
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions: {}
+    steps:
+      - uses: step-security/harden-runner@e14015d583714f6e62063499dc959a02595150a1 # v2.21.1
+        with:
+          egress-policy: audit
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Validate compose files
+        run: |
+          set -e
+          dir=$(mktemp -d)
+          cp hearthctl/internal/stack/files/*.yml hearthctl/internal/stack/files/Caddyfile "$dir/"
+          cp -r hearthctl/internal/stack/files/crowdsec "$dir/"
+          mkdir -p "$dir/certs" "$dir/caddy.d"
+          deploy/self-hosting/gen-env.sh "$dir" ci.local http://localhost:8080
+          cd "$dir"
+          docker compose --env-file .env -f docker-compose.yml -f docker-compose.proxy.yml -f docker-compose.crowdsec.yml config -q
+          docker compose --env-file .env -f docker-compose.yml -f docker-compose.proxy.yml -f docker-compose.crowdsec.yml -f tunnel.compose.yml config -q || true
+          echo "compose bundle valid"
+
+  caddyfile:
+    name: Caddyfile validates
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions: {}
+    steps:
+      - uses: step-security/harden-runner@e14015d583714f6e62063499dc959a02595150a1 # v2.21.1
+        with:
+          egress-policy: audit
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - run: |
+          docker run --rm \
+            -v "$PWD/hearthctl/internal/stack/files/Caddyfile:/etc/caddy/Caddyfile:ro" \
+            -e FLUXER_EDGE_SITE_ADDRESS=:8080 \
+            -e FLUXER_EDGE_GLOBAL_OPTIONS="" \
+            -e FLUXER_EDGE_TLS_DIRECTIVE="" \
+            -e FLUXER_EDGE_ACCESS_LOG="" \
+            -e FLUXER_EDGE_TRUSTED_PROXIES=private_ranges \
+            docker.io/library/caddy:2.11-alpine \
+            caddy validate --adapter caddyfile --config /etc/caddy/Caddyfile
+
+  zizmor:
+    name: workflow audit
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions: {}
+    steps:
+      - uses: step-security/harden-runner@e14015d583714f6e62063499dc959a02595150a1 # v2.21.1
+        with:
+          egress-policy: audit
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.13"
+      - run: pipx run zizmor==1.31.1 --format plain .github/workflows

@@ -54,9 +54,9 @@ param(
 		return [string]$value
 	}
 
-	$Resolver = 'https://hearth.dev/rexctl/release.json'
-	if ($env:REXCTL_RELEASE_URL) {
-		$Resolver = $env:REXCTL_RELEASE_URL
+	$Resolver = 'https://hearth.dev/hearthctl/release.json'
+	if ($env:HEARTHCTL_RELEASE_URL) {
+		$Resolver = $env:HEARTHCTL_RELEASE_URL
 	}
 
 	$OldEncoding = $null
@@ -83,15 +83,15 @@ param(
 			[Console]::Error.WriteLine("  $Fix")
 		}
 		$global:LASTEXITCODE = $Code
-		throw 'rexctl-bootstrap-stop'
+		throw 'hearthctl-bootstrap-stop'
 	}
 
 	function Test-Instance([string]$Path) {
 		if (-not $Path) { return $false }
-		return (Test-Path -LiteralPath (Join-Path $Path '.rexctl/state.json') -PathType Leaf) -or (Test-Path -LiteralPath (Join-Path $Path '.env') -PathType Leaf)
+		return (Test-Path -LiteralPath (Join-Path $Path '.hearthctl/state.json') -PathType Leaf) -or (Test-Path -LiteralPath (Join-Path $Path '.env') -PathType Leaf)
 	}
 
-	function Get-RexctlArguments {
+	function Get-HearthctlArguments {
 		$out = New-Object System.Collections.Generic.List[string]
 		if ($Rest.Count -gt 0 -and -not $Rest[0].StartsWith('-')) {
 			$out.AddRange([string[]]$Rest)
@@ -146,27 +146,27 @@ param(
 		return , $out.ToArray()
 	}
 
-	function Install-Rexctl([string]$New, [string]$Exe) {
+	function Install-Hearthctl([string]$New, [string]$Exe) {
 		$old = "$Exe.old"
 		Remove-Item -LiteralPath $old -Force -ErrorAction SilentlyContinue
 		if (Test-Path -LiteralPath $Exe -PathType Leaf) {
 			try {
 				Move-Item -LiteralPath $Exe -Destination $old -Force
 			} catch {
-				Stop-Bootstrap "Couldn't replace rexctl, which is open in another window." 'Close rexctl in your other windows, then run this again.'
+				Stop-Bootstrap "Couldn't replace hearthctl, which is open in another window." 'Close hearthctl in your other windows, then run this again.'
 			}
 		}
 		try {
 			Move-Item -LiteralPath $New -Destination $Exe -Force
 		} catch {
-			Stop-Bootstrap "Couldn't replace rexctl, which is open in another window." 'Close rexctl in your other windows, then run this again.'
+			Stop-Bootstrap "Couldn't replace hearthctl, which is open in another window." 'Close hearthctl in your other windows, then run this again.'
 		}
 		Remove-Item -LiteralPath $old -Force -ErrorAction SilentlyContinue
 	}
 
 	try {
-		$RexctlArguments = Get-RexctlArguments
-		$Trial = (Test-Switch 'DryRun') -or (Test-Switch 'Check') -or ($RexctlArguments -contains '--dry-run') -or ($RexctlArguments -contains '--check')
+		$HearthctlArguments = Get-HearthctlArguments
+		$Trial = (Test-Switch 'DryRun') -or (Test-Switch 'Check') -or ($HearthctlArguments -contains '--dry-run') -or ($HearthctlArguments -contains '--check')
 
 		if ($env:OS -ne 'Windows_NT') {
 			Stop-Bootstrap 'This script runs on Windows.' 'On Linux and macOS, run install.sh instead.'
@@ -189,7 +189,7 @@ param(
 		try {
 			$Release = Invoke-RestMethod -Uri $Resolver -UseBasicParsing
 		} catch {
-			Stop-Bootstrap "Couldn't find the latest rexctl release." 'Check that this machine can reach hearth.dev, then run this again.'
+			Stop-Bootstrap "Couldn't find the latest hearthctl release." 'Check that this machine can reach hearth.dev, then run this again.'
 		}
 		$Asset = $null
 		$Version = ''
@@ -204,31 +204,31 @@ param(
 			Stop-Bootstrap "The release information from hearth.dev doesn't look right." 'Run this again in a few minutes.'
 		}
 
-		$Scratch = Join-Path ([System.IO.Path]::GetTempPath()) ('rexctl-' + [guid]::NewGuid().ToString('N'))
+		$Scratch = Join-Path ([System.IO.Path]::GetTempPath()) ('hearthctl-' + [guid]::NewGuid().ToString('N'))
 		New-Item -ItemType Directory -Path $Scratch | Out-Null
 		try {
-			$Zip = Join-Path $Scratch 'rexctl.zip'
+			$Zip = Join-Path $Scratch 'hearthctl.zip'
 			try {
 				Invoke-WebRequest -Uri $Asset.url -OutFile $Zip -UseBasicParsing
 			} catch {
-				Stop-Bootstrap "Couldn't download rexctl $Version." 'Check that this machine can reach github.com, then run this again.'
+				Stop-Bootstrap "Couldn't download hearthctl $Version." 'Check that this machine can reach github.com, then run this again.'
 			}
 			if ((Get-FileHash -LiteralPath $Zip -Algorithm SHA256).Hash.ToLowerInvariant() -ne $Asset.sha256) {
-				Stop-Bootstrap "The rexctl download doesn't match its checksum." 'Run this again. If it keeps happening, something between you and GitHub is changing the file.'
+				Stop-Bootstrap "The hearthctl download doesn't match its checksum." 'Run this again. If it keeps happening, something between you and GitHub is changing the file.'
 			}
 			$Out = Join-Path $Scratch 'out'
 			Expand-Archive -LiteralPath $Zip -DestinationPath $Out
-			$New = Join-Path $Out 'rexctl.exe'
+			$New = Join-Path $Out 'hearthctl.exe'
 			if (-not (Test-Path -LiteralPath $New -PathType Leaf)) {
-				Stop-Bootstrap "The rexctl download doesn't contain rexctl." 'Run this again in a few minutes.'
+				Stop-Bootstrap "The hearthctl download doesn't contain hearthctl." 'Run this again in a few minutes.'
 			}
 			if ($Trial) {
-				& $New @RexctlArguments
+				& $New @HearthctlArguments
 			} else {
-				$BinDir = Join-Path $env:LOCALAPPDATA 'Programs\rexctl'
+				$BinDir = Join-Path $env:LOCALAPPDATA 'Programs\hearthctl'
 				New-Item -ItemType Directory -Path $BinDir -Force | Out-Null
-				$Exe = Join-Path $BinDir 'rexctl.exe'
-				Install-Rexctl $New $Exe
+				$Exe = Join-Path $BinDir 'hearthctl.exe'
+				Install-Hearthctl $New $Exe
 			}
 		} finally {
 			Remove-Item -LiteralPath $Scratch -Recurse -Force -ErrorAction SilentlyContinue
@@ -236,7 +236,7 @@ param(
 		if ($Trial) {
 			return
 		}
-		[Console]::Error.WriteLine("$GlyphOk Installed rexctl $Version")
+		[Console]::Error.WriteLine("$GlyphOk Installed hearthctl $Version")
 
 		$UserPath = [Environment]::GetEnvironmentVariable('Path', 'User')
 		if (-not $UserPath) {
@@ -249,9 +249,9 @@ param(
 			$env:Path = "$env:Path;$BinDir"
 		}
 
-		& $Exe @RexctlArguments
+		& $Exe @HearthctlArguments
 	} catch {
-		if ([string]$_.Exception.Message -ne 'rexctl-bootstrap-stop') {
+		if ([string]$_.Exception.Message -ne 'hearthctl-bootstrap-stop') {
 			[Console]::Error.WriteLine("$GlyphFail The installer stopped: $($_.Exception.Message)")
 			[Console]::Error.WriteLine('  Run this again in a few minutes.')
 			$global:LASTEXITCODE = 1

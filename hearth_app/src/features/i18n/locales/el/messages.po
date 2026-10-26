@@ -18757,10 +18757,10 @@ msgstr "Αν ξεχάσεις τον κωδικό σου, ένα κιτ ανάκ
 msgid "If you forget your password, this kit is the only way back into your account. Store it somewhere safe, like a password manager or a printed copy."
 msgstr "Αν ξεχάσεις τον κωδικό σου, αυτό το κιτ είναι ο μόνος τρόπος να ξαναμπείς στον λογαριασμό σου. Φύλαξέ το κάπου ασφαλώς, όπως σε έναν διαχειριστή κωδικών πρόσβασης ή σε μια εκτυπωμένη κόπια."
 
-#. Help on the setup token screen, followed by a terminal command. rexctl is a name that must not be translated.
+#. Help on the setup token screen, followed by a terminal command. hearthctl is a name that must not be translated.
 #: src/features/app/components/setup/SetupTokenStep.tsx
-msgid "If you installed Hearth with rexctl, it printed the token when it finished. Run this on your server to show it again."
-msgstr "Αν εγκαταστήσατε το Hearth με το rexctl, εκτύπωσε το token όταν ολοκληρώθηκε. Εκτελέστε αυτό στον διακομιστή σας για να το εμφανίσετε ξανά."
+msgid "If you installed Hearth with hearthctl, it printed the token when it finished. Run this on your server to show it again."
+msgstr "Αν εγκαταστήσατε το Hearth με το hearthctl, εκτύπωσε το token όταν ολοκληρώθηκε. Εκτελέστε αυτό στον διακομιστή σας για να το εμφανίσετε ξανά."
 
 #. What the app shows when no symbol is set, in the setup wizard.
 #: src/features/app/components/setup/SetupBrandingAssetField.tsx
@@ -18797,10 +18797,10 @@ msgstr "Αν το αφήσετε κενό, η καρτέλα χρησιμοπο�
 msgid "If you leave it empty, those places show the Hearth icon."
 msgstr "Αν το αφήσετε κενό, σε αυτά τα σημεία εμφανίζεται το εικονίδιο του Hearth."
 
-#. Help on the setup token screen for someone who installed Hearth without rexctl. FLUXER_SETUP_TOKEN and rexctl must not be translated.
+#. Help on the setup token screen for someone who installed Hearth without hearthctl. FLUXER_SETUP_TOKEN and hearthctl must not be translated.
 #: src/features/app/components/setup/SetupTokenStep.tsx
-msgid "If you run Hearth without rexctl, set FLUXER_SETUP_TOKEN to a value of at least 32 characters that you choose, restart Hearth, and enter that value here."
-msgstr "Αν τρέχετε το Hearth χωρίς rexctl, ορίστε το FLUXER_SETUP_TOKEN σε μια τιμή τουλάχιστον 32 χαρακτήρων που θα επιλέξετε, επανεκκινήστε το Hearth και εισάγετε αυτήν την τιμή εδώ."
+msgid "If you run Hearth without hearthctl, set FLUXER_SETUP_TOKEN to a value of at least 32 characters that you choose, restart Hearth, and enter that value here."
+msgstr "Αν τρέχετε το Hearth χωρίς hearthctl, ορίστε το FLUXER_SETUP_TOKEN σε μια τιμή τουλάχιστον 32 χαρακτήρων που θα επιλέξετε, επανεκκινήστε το Hearth και εισάγετε αυτήν την τιμή εδώ."
 
 #: src/features/user/components/modals/HearthTagChangeModal.tsx
 msgid "If you save this username, your tag will reroll randomly when your {PREMIUM_PRODUCT_NAME} expires on <0>{premiumExpiresAtLabel}</0>, unless it renews."

@@ -4,7 +4,7 @@ title: Kubernetes
 description: Run a Hearth instance on a Kubernetes cluster with the Helm chart.
 ---
 
-The Helm chart in `deploy/helm/hearth` runs the same Hearth services that rexctl runs on one machine. You install and upgrade it with Helm, because rexctl doesn't manage a Kubernetes install.
+The Helm chart in `deploy/helm/hearth` runs the same Hearth services that hearthctl runs on one machine. You install and upgrade it with Helm, because hearthctl doesn't manage a Kubernetes install.
 
 ## What you need
 
@@ -30,7 +30,7 @@ The install stops with a message when the cluster is missing something it needs.
 Get the chart and write a values file with your domain.
 
 ```sh
-git clone --depth 1 https://github.com/hearthapp/hearth.git
+git clone --depth 1 https://github.com/sudo-ivan/hearth.git
 printf 'domain: chat.example.com\n' > hearth-values.yaml
 ```
 

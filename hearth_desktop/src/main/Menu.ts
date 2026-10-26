@@ -220,7 +220,7 @@ function buildTemplate(): Array<MenuItemConstructorOptions> {
 			{
 				label: t('desktop.appMenu.github'),
 				click: async () => {
-					await openExternalDeduped('https://github.com/hearthapp/hearth');
+					await openExternalDeduped('https://github.com/sudo-ivan/hearth');
 				},
 			},
 			{type: 'separator'},

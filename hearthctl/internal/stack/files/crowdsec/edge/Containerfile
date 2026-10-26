@@ -1,0 +1,9 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Caddy edge image with the CrowdSec bouncer module.
+ARG CADDY_VERSION=2.11
+FROM docker.io/library/caddy:${CADDY_VERSION}-builder-alpine AS builder
+RUN xcaddy build \
+	--with github.com/hslatman/caddy-crowdsec-bouncer/http@v0.14.1 \
+	--with github.com/hslatman/caddy-crowdsec-bouncer/appsec@v0.14.1
+FROM docker.io/library/caddy:${CADDY_VERSION}-alpine
+COPY --from=builder /usr/bin/caddy /usr/bin/caddy

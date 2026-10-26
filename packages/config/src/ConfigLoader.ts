@@ -305,7 +305,7 @@ function missingSetting(envName: string): Error {
 	const version = process.env.BUILD_VERSION?.trim();
 	const image = version ? `image ${version}` : 'this image';
 	return new Error(
-		`${envName} is required. If .env or the Helm values set it, the stack files or the Helm chart in use are older than ${image} and don't pass it on. Run rexctl upgrade, or upgrade the Helm chart to the same release as the image.`,
+		`${envName} is required. If .env or the Helm values set it, the stack files or the Helm chart in use are older than ${image} and don't pass it on. Run hearthctl upgrade, or upgrade the Helm chart to the same release as the image.`,
 	);
 }
 
@@ -452,7 +452,7 @@ function assertIdentifier(value: string, envName: string): void {
 }
 
 const VAPID_REMEDY =
-	'Run rexctl doctor --fix to make a new pair. Browsers that have notifications on subscribe again on their next visit.';
+	'Run hearthctl doctor --fix to make a new pair. Browsers that have notifications on subscribe again on their next visit.';
 
 function vapidMismatch(): Error {
 	return new Error(`FLUXER_VAPID_PRIVATE_KEY does not match FLUXER_VAPID_PUBLIC_KEY. ${VAPID_REMEDY}`);

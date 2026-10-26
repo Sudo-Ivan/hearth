@@ -6,7 +6,7 @@ import subprocess
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 CHART_INIT = REPO_ROOT / 'deploy/helm/hearth/files/seaweedfs-init.sh'
-COMPOSE = REPO_ROOT / 'hearth_rexctl/internal/stack/files/docker-compose.yml'
+COMPOSE = REPO_ROOT / 'hearthctl/internal/stack/files/docker-compose.yml'
 STARTUP = "trap 'exit 0' TERM INT\n"
 KEEP_ALIVE = '''        touch /tmp/hearth-buckets-ready
         while :; do

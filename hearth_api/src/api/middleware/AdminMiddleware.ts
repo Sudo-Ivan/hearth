@@ -85,7 +85,7 @@ function getRequestAdminACLs(ctx: Context<HonoEnv>, adminUser: User, tokenType: 
 function getAdminAuditAttribution(ctx: Context<HonoEnv>, tokenType: AdminAuthTokenType): AdminAuditAttribution | null {
 	if (tokenType === 'operator') {
 		const hostUser = readOperatorHostUser(ctx.req.raw);
-		return hostUser === null ? {via: 'rexctl'} : {via: 'rexctl', host_user: hostUser};
+		return hostUser === null ? {via: 'hearthctl'} : {via: 'hearthctl', host_user: hostUser};
 	}
 	if (tokenType === 'admin_api_key') {
 		const keyId = ctx.get('adminApiKeyId');

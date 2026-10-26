@@ -211,9 +211,9 @@
 			"!hearth_api/pkgs/email/src/email_i18n/weblate",
 			"!hearth_api/src/api/content_i18n/weblate",
 			"!packages/errors/src/i18n/weblate",
-			"!hearth_rexctl/internal/adminapi/configschema.json",
-			"!hearth_rexctl/internal/stack/imageset.json",
-			"!hearth_rexctl/internal/stack/files/profiles.json"
+			"!hearthctl/internal/adminapi/configschema.json",
+			"!hearthctl/internal/stack/imageset.json",
+			"!hearthctl/internal/stack/files/profiles.json"
 		],
 		"ignoreUnknown": true
 	}

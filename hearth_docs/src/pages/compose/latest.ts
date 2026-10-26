@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 import type {APIRoute} from 'astro';
-import {resolveRexctlRelease} from '@/installer/RexctlRelease';
+import {resolveHearthctlRelease} from '@/installer/HearthctlRelease';
 
 export const prerender = false;
 
@@ -13,9 +13,9 @@ function errorReply(status: number, error: string): Response {
 }
 
 export const GET: APIRoute = async () => {
-	let release: Awaited<ReturnType<typeof resolveRexctlRelease>>;
+	let release: Awaited<ReturnType<typeof resolveHearthctlRelease>>;
 	try {
-		release = await resolveRexctlRelease(null);
+		release = await resolveHearthctlRelease(null);
 	} catch {
 		return errorReply(503, 'release list unavailable');
 	}

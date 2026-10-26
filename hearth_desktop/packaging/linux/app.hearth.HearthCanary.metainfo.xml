@@ -50,7 +50,7 @@
     <url type="bugtracker">https://feedback.hearth.com</url>
     <url type="homepage">https://canary.hearth.app</url>
     <url type="donation">https://hearth.app/donate</url>
-    <url type="vcs-browser">https://github.com/hearthapp/hearth.git</url>
+    <url type="vcs-browser">https://github.com/sudo-ivan/hearth.git</url>
     <update_contact>fen@unix.dog</update_contact>
     <provides>
         <binary>app.hearth.HearthCanary</binary>

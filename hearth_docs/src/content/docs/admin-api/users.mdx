@@ -634,14 +634,14 @@ The rate limit is 100 requests per minute, on the `admin:user:modify` bucket.
 
 <RouteHeader method="POST" path="/v1/admin/users/{user_id}/sign-in-link" auditReason />
 
-Returns a [sign-in link](#sign-in-link-object) for an account that has `*`. Only [rexctl](/operator/rexctl/) on the server can call it. The link signs the admin in without a password, a second factor or an email.
+Returns a [sign-in link](#sign-in-link-object) for an account that has `*`. Only [hearthctl](/operator/hearthctl/) on the server can call it. The link signs the admin in without a password, a second factor or an email.
 
 ### Response
 
 | Status | Body | Condition |
 | --- | --- | --- |
 | 200 | [sign-in link](#sign-in-link-object) object | The link was created |
-| 403 | [error response](/admin-api/#error-response) | `ACCESS_DENIED` outside rexctl, `MISSING_ACL` when the account lacks `*` |
+| 403 | [error response](/admin-api/#error-response) | `ACCESS_DENIED` outside hearthctl, `MISSING_ACL` when the account lacks `*` |
 
 The rate limit is 100 requests per minute, on the `admin:user:modify` bucket.
 

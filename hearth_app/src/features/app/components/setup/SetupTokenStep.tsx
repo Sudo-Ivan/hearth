@@ -19,7 +19,7 @@ import {createContext, type ReactNode, type RefObject, useContext, useMemo, useS
 
 const MAX_SETUP_TOKEN_LENGTH = 256;
 const MIN_LOCKOUT_MINUTES = 1;
-const SETUP_TOKEN_COMMAND = 'rexctl setup token';
+const SETUP_TOKEN_COMMAND = 'hearthctl setup token';
 
 const SETUP_TOKEN_TITLE_DESCRIPTOR = msg({
 	message: 'Enter your setup token',
@@ -31,15 +31,15 @@ const SETUP_TOKEN_BODY_DESCRIPTOR = msg({
 });
 const SETUP_TOKEN_HELP_DESCRIPTOR = msg({
 	message:
-		'If you installed Hearth with rexctl, it printed the token when it finished. Run this on your server to show it again.',
+		'If you installed Hearth with hearthctl, it printed the token when it finished. Run this on your server to show it again.',
 	comment:
-		'Help on the setup token screen, followed by a terminal command. rexctl is a name that must not be translated.',
+		'Help on the setup token screen, followed by a terminal command. hearthctl is a name that must not be translated.',
 });
 const SETUP_TOKEN_LOST_DESCRIPTOR = msg({
 	message:
-		'If you run Hearth without rexctl, set FLUXER_SETUP_TOKEN to a value of at least 32 characters that you choose, restart Hearth, and enter that value here.',
+		'If you run Hearth without hearthctl, set FLUXER_SETUP_TOKEN to a value of at least 32 characters that you choose, restart Hearth, and enter that value here.',
 	comment:
-		'Help on the setup token screen for someone who installed Hearth without rexctl. FLUXER_SETUP_TOKEN and rexctl must not be translated.',
+		'Help on the setup token screen for someone who installed Hearth without hearthctl. FLUXER_SETUP_TOKEN and hearthctl must not be translated.',
 });
 const SETUP_TOKEN_LABEL_DESCRIPTOR = msg({
 	message: 'Setup token',

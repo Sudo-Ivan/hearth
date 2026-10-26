@@ -1,12 +1,12 @@
 ---
 # SPDX-License-Identifier: AGPL-3.0-or-later
 title: Run Hearth with Docker Compose
-description: Run Hearth from plain compose files on a platform that can't run rexctl.
+description: Run Hearth from plain compose files on a platform that can't run hearthctl.
 sidebar:
   label: Docker Compose
 ---
 
-Use this page if your platform runs compose stacks for you, such as Portainer, TrueNAS or Unraid, and you can't run rexctl on the machine. When you can run rexctl, [install with rexctl](/operator/) instead, because it does all of this for you.
+Use this page if your platform runs compose stacks for you, such as Portainer, TrueNAS or Unraid, and you can't run hearthctl on the machine. When you can run hearthctl, [install with hearthctl](/operator/) instead, because it does all of this for you.
 
 ## Get the files
 
@@ -18,7 +18,7 @@ tar -xzf hearth-compose.tar.gz
 cp .env.example .env
 ```
 
-The bundle has `docker-compose.yml` with every Hearth image pinned to the release, the `Caddyfile`, a few optional compose files and `.env.example`. The bundle for each version is also on its release on [GitHub](https://github.com/hearthapp/hearth/releases).
+The bundle has `docker-compose.yml` with every Hearth image pinned to the release, the `Caddyfile`, a few optional compose files and `.env.example`. The bundle for each version is also on its release on [GitHub](https://github.com/sudo-ivan/hearth/releases).
 
 ## Fill in .env
 
@@ -43,7 +43,7 @@ Keep a copy of `.env` somewhere safe. The database, search, storage, voice and p
 
 ## Start it
 
-Open TCP ports 80, 443 and 7881 and UDP ports 443 and 7882, the same as for a [rexctl install](/operator/). Then start Hearth.
+Open TCP ports 80, 443 and 7881 and UDP ports 443 and 7882, the same as for a [hearthctl install](/operator/). Then start Hearth.
 
 ```sh
 docker compose up -d
@@ -62,8 +62,8 @@ When every service is healthy, open your domain in a browser and enter the `FLUX
 
 Download the new bundle into the same folder and unpack it, which replaces every file except `.env`. If the new `.env.example` has a key your `.env` doesn't have yet, add it, then run `docker compose up -d`.
 
-Back up the Docker volumes yourself before you upgrade, because `rexctl backup` isn't available without rexctl.
+Back up the Docker volumes yourself before you upgrade, because `hearthctl backup` isn't available without hearthctl.
 
-## Switch to rexctl later
+## Switch to hearthctl later
 
-If you can run rexctl on the machine later, `rexctl takeover --dir <folder>` hands this instance to rexctl with its data and secrets as they are.
+If you can run hearthctl on the machine later, `hearthctl takeover --dir <folder>` hands this instance to hearthctl with its data and secrets as they are.

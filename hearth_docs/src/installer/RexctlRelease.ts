@@ -2,9 +2,9 @@
 
 import {OUTBOUND_USER_AGENT} from '@/server/HTTPConstants';
 
-const RELEASES_API = 'https://api.github.com/repos/hearthapp/hearth/releases';
+const RELEASES_API = 'https://api.github.com/repos/sudo-ivan/hearth/releases';
 const TAG_PREFIX = 'hearth-release@';
-const METADATA_ASSET = 'rexctl-release.json';
+const METADATA_ASSET = 'hearthctl-release.json';
 const CHECKSUMS_ASSET = 'checksums.txt';
 const COMPOSE_ASSET_PREFIX = 'hearth-compose-';
 const CACHE_MS = 5 * 60 * 1000;
@@ -18,7 +18,7 @@ const DEFAULT_MIN_PODMAN = '5.4.0';
 const DEFAULT_MIN_DOCKER = '24.0.0';
 const DEFAULT_STATE_SCHEMA = 1;
 
-export const REXCTL_TARGETS = [
+export const HEARTHCTL_TARGETS = [
 	{os: 'linux', arch: 'amd64'},
 	{os: 'linux', arch: 'arm64'},
 	{os: 'darwin', arch: 'amd64'},
@@ -27,21 +27,21 @@ export const REXCTL_TARGETS = [
 	{os: 'windows', arch: 'arm64'},
 ] as const;
 
-export interface RexctlAsset {
+export interface HearthctlAsset {
 	readonly os: string;
 	readonly arch: string;
 	readonly url: string;
 	readonly sha256: string;
 }
 
-export interface RexctlRelease {
+export interface HearthctlRelease {
 	readonly version: string;
 	readonly min_from: string;
 	readonly schema_changed: boolean;
 	readonly min_podman: string;
 	readonly min_docker: string;
 	readonly state_schema: number;
-	readonly assets: ReadonlyArray<RexctlAsset>;
+	readonly assets: ReadonlyArray<HearthctlAsset>;
 	readonly compose_url: string;
 }
 
@@ -59,10 +59,10 @@ interface GitHubRelease {
 }
 
 interface CacheEntry {
-	value: RexctlRelease | null;
+	value: HearthctlRelease | null;
 	fetchedAt: number;
 	failedAt: number;
-	pending: Promise<RexctlRelease | null> | null;
+	pending: Promise<HearthctlRelease | null> | null;
 }
 
 const cache = new Map<string, CacheEntry>();
@@ -79,7 +79,7 @@ export function compareCalVer(a: string, b: string): number {
 
 function archiveName(version: string, os: string, arch: string): string {
 	const extension = os === 'windows' ? 'zip' : 'tar.gz';
-	return `rexctl_${version}_${os}_${arch}.${extension}`;
+	return `hearthctl_${version}_${os}_${arch}.${extension}`;
 }
 
 async function getJSON<T>(url: string): Promise<T | null> {
@@ -133,14 +133,14 @@ function versionOf(release: GitHubRelease): string | null {
 
 function hasEveryArchive(release: GitHubRelease, version: string): boolean {
 	const names = new Set(release.assets.map((asset) => asset.name));
-	return REXCTL_TARGETS.every((t) => names.has(archiveName(version, t.os, t.arch)));
+	return HEARTHCTL_TARGETS.every((t) => names.has(archiveName(version, t.os, t.arch)));
 }
 
-async function toRexctlRelease(release: GitHubRelease, version: string): Promise<RexctlRelease | null> {
+async function toHearthctlRelease(release: GitHubRelease, version: string): Promise<HearthctlRelease | null> {
 	const byName = new Map(release.assets.map((asset) => [asset.name, asset]));
 	let checksums: Map<string, string> | null = null;
-	const assets: Array<RexctlAsset> = [];
-	for (const target of REXCTL_TARGETS) {
+	const assets: Array<HearthctlAsset> = [];
+	for (const target of HEARTHCTL_TARGETS) {
 		const asset = byName.get(archiveName(version, target.os, target.arch));
 		if (!asset) {
 			return null;
@@ -209,7 +209,7 @@ async function toRexctlRelease(release: GitHubRelease, version: string): Promise
 	};
 }
 
-async function resolveLatest(): Promise<RexctlRelease | null> {
+async function resolveLatest(): Promise<HearthctlRelease | null> {
 	const candidates: Array<{release: GitHubRelease; version: string}> = [];
 	for (let page = 1; page <= PAGES && candidates.length === 0; page++) {
 		const releases = await getJSON<ReadonlyArray<GitHubRelease>>(`${RELEASES_API}?per_page=100&page=${page}`);
@@ -225,7 +225,7 @@ async function resolveLatest(): Promise<RexctlRelease | null> {
 	}
 	candidates.sort((a, b) => compareCalVer(b.version, a.version));
 	for (const {release, version} of candidates) {
-		const resolved = await toRexctlRelease(release, version);
+		const resolved = await toHearthctlRelease(release, version);
 		if (resolved) {
 			return resolved;
 		}
@@ -233,15 +233,15 @@ async function resolveLatest(): Promise<RexctlRelease | null> {
 	return null;
 }
 
-async function resolveVersion(version: string): Promise<RexctlRelease | null> {
+async function resolveVersion(version: string): Promise<HearthctlRelease | null> {
 	const release = await getJSON<GitHubRelease>(`${RELEASES_API}/tags/${encodeURIComponent(TAG_PREFIX + version)}`);
 	if (!release || release.draft) {
 		return null;
 	}
-	return toRexctlRelease(release, version);
+	return toHearthctlRelease(release, version);
 }
 
-export async function resolveRexctlRelease(version: string | null): Promise<RexctlRelease | null> {
+export async function resolveHearthctlRelease(version: string | null): Promise<HearthctlRelease | null> {
 	const key = version ?? 'latest';
 	const now = Date.now();
 	let entry = cache.get(key);

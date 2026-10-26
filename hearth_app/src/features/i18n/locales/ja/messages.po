@@ -18757,10 +18757,10 @@ msgstr "パスワードを忘れた場合、リカバリーキットがアカウ
 msgid "If you forget your password, this kit is the only way back into your account. Store it somewhere safe, like a password manager or a printed copy."
 msgstr "パスワードを忘れた場合、このキットがアカウントに戻る唯一の方法です。パスワードマネージャーや印刷物など、安全な場所に保管してください。"
 
-#. Help on the setup token screen, followed by a terminal command. rexctl is a name that must not be translated.
+#. Help on the setup token screen, followed by a terminal command. hearthctl is a name that must not be translated.
 #: src/features/app/components/setup/SetupTokenStep.tsx
-msgid "If you installed Hearth with rexctl, it printed the token when it finished. Run this on your server to show it again."
-msgstr "Hearth を rexctl でインストールした場合、完了時にトークンが表示されます。サーバーでこれを再度表示するには、以下を実行してください。"
+msgid "If you installed Hearth with hearthctl, it printed the token when it finished. Run this on your server to show it again."
+msgstr "Hearth を hearthctl でインストールした場合、完了時にトークンが表示されます。サーバーでこれを再度表示するには、以下を実行してください。"
 
 #. What the app shows when no symbol is set, in the setup wizard.
 #: src/features/app/components/setup/SetupBrandingAssetField.tsx
@@ -18797,10 +18797,10 @@ msgstr "空欄の場合、タブにはアプリアイコンが表示され、そ
 msgid "If you leave it empty, those places show the Hearth icon."
 msgstr "空欄の場合、これらの場所にはHearthのアイコンが表示されます。"
 
-#. Help on the setup token screen for someone who installed Hearth without rexctl. FLUXER_SETUP_TOKEN and rexctl must not be translated.
+#. Help on the setup token screen for someone who installed Hearth without hearthctl. FLUXER_SETUP_TOKEN and hearthctl must not be translated.
 #: src/features/app/components/setup/SetupTokenStep.tsx
-msgid "If you run Hearth without rexctl, set FLUXER_SETUP_TOKEN to a value of at least 32 characters that you choose, restart Hearth, and enter that value here."
-msgstr "rexctlを使わずにHearthを起動する場合は、FLUXER_SETUP_TOKENに任意の32文字以上の値を設定し、Hearthを再起動してからその値を入力してください。"
+msgid "If you run Hearth without hearthctl, set FLUXER_SETUP_TOKEN to a value of at least 32 characters that you choose, restart Hearth, and enter that value here."
+msgstr "hearthctlを使わずにHearthを起動する場合は、FLUXER_SETUP_TOKENに任意の32文字以上の値を設定し、Hearthを再起動してからその値を入力してください。"
 
 #: src/features/user/components/modals/HearthTagChangeModal.tsx
 msgid "If you save this username, your tag will reroll randomly when your {PREMIUM_PRODUCT_NAME} expires on <0>{premiumExpiresAtLabel}</0>, unless it renews."

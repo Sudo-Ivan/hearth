@@ -1,0 +1,27 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# systemd user unit for the Hearth compose stack on Podman.
+#
+# Install:
+#   systemctl --user enable --now podman.socket
+#   loginctl enable-linger "$USER"
+#   install -Dm644 hearth.service ~/.config/systemd/user/hearth.service
+#   systemctl --user enable --now hearth.service
+#
+# WorkingDirectory must point at the folder written by deploy.sh.
+
+[Unit]
+Description=Hearth stack
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+WorkingDirectory=%h/hearth
+Environment=DOCKER_HOST=unix:///run/user/%U/podman/podman.sock
+ExecStart=/usr/bin/docker compose --env-file .env -f docker-compose.yml -f docker-compose.proxy.yml -f docker-compose.crowdsec.yml up -d --remove-orphans
+ExecStop=/usr/bin/docker compose --env-file .env -f docker-compose.yml -f docker-compose.proxy.yml -f docker-compose.crowdsec.yml down
+TimeoutStartSec=600
+
+[Install]
+WantedBy=default.target

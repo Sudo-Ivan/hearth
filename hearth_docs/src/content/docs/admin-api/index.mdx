@@ -159,7 +159,7 @@ Read entries store IDs, filters and counts, never query text, email addresses, I
 | Field | Type | Description |
 | --- | --- | --- |
 | log_id | snowflake | The ID of the audit entry |
-| admin_user_id | snowflake | The ID of the acting account, or `0` for an action run with rexctl |
+| admin_user_id | snowflake | The ID of the acting account, or `0` for an action run with hearthctl |
 | admin_user | ?[Admin user summary](#admin-user-summary-object) object | The acting account, or null when it no longer exists |
 | target_type | string | The [audit target type](#audit-target-types) (1-256 characters) |
 | target_id | string | The target ID as a decimal string, or `0` when the target has no snowflake |
@@ -175,7 +175,7 @@ Read entries store IDs, filters and counts, never query text, email addresses, I
 | metadata | map[string, string] | The extra values the route recorded |
 | created_at | ISO8601 timestamp | When the entry was recorded |
 
-When an Admin API key made the request, `metadata.via` is `api_key:` followed by the key ID. When rexctl made it, `metadata.via` is `rexctl`, and `metadata.host_user` is set when rexctl knows who ran it.
+When an Admin API key made the request, `metadata.via` is `api_key:` followed by the key ID. When hearthctl made it, `metadata.via` is `hearthctl`, and `metadata.host_user` is set when hearthctl knows who ran it.
 
 ### Example
 

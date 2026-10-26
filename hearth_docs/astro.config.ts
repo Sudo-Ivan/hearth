@@ -168,7 +168,7 @@ export default defineConfig({
 						'operator/sign-in',
 						'operator/kubernetes',
 						'operator/docker-compose',
-						'operator/rexctl',
+						'operator/hearthctl',
 					],
 				},
 				{
@@ -322,7 +322,7 @@ export default defineConfig({
 			],
 			social: [
 				{
-					href: 'https://github.com/hearthapp/hearth',
+					href: 'https://github.com/sudo-ivan/hearth',
 					icon: 'github',
 					label: 'GitHub',
 				},

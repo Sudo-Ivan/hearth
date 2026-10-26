@@ -8,7 +8,7 @@ import {NAMED_FLUXER_ENV_NAMES} from '@hearth/config/src/config_loader/Environme
 import {parse} from 'yaml';
 
 const REPO_ROOT = fileURLToPath(new URL('../../../', import.meta.url));
-const SELF_HOSTING = path.join(REPO_ROOT, 'hearth_rexctl/internal/stack/files');
+const SELF_HOSTING = path.join(REPO_ROOT, 'hearthctl/internal/stack/files');
 const CHART = path.join(REPO_ROOT, 'deploy/helm/hearth');
 
 const HOSTED_ONLY_OPERATOR_PASS = 'the Operator Pass is sold only by the hosted service';
@@ -113,7 +113,7 @@ function checkHelmChart(): void {
 	const composeCaddyfile = readFileSync(path.join(SELF_HOSTING, 'Caddyfile'));
 	const chartCaddyfile = readFileSync(path.join(CHART, 'files/Caddyfile'));
 	if (!chartCaddyfile.equals(composeCaddyfile)) {
-		problems.push('deploy/helm/hearth/files/Caddyfile differs from hearth_rexctl/internal/stack/files/Caddyfile');
+		problems.push('deploy/helm/hearth/files/Caddyfile differs from hearthctl/internal/stack/files/Caddyfile');
 	}
 }
 

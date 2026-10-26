@@ -6,7 +6,7 @@ import pg from 'pg';
 
 const MAX_DIAGNOSTIC_FIELD_LENGTH = 128;
 const INVALID_PASSWORD_CODE = '28P01';
-const PASSWORD_MISMATCH_DOCS = 'https://docs.hearth.app/operator/rexctl/#rexctl-doctor';
+const PASSWORD_MISMATCH_DOCS = 'https://docs.hearth.app/operator/hearthctl/#hearthctl-doctor';
 const SYNCHRONOUS_COMMIT_LEVELS = new Set(['on', 'off', 'local', 'remote_write', 'remote_apply']);
 
 interface PostgresConnectionDiagnostic {
@@ -101,7 +101,7 @@ function connectionDiagnostic(
 function explainConnectError(error: unknown): unknown {
 	if (!(error instanceof Error) || !('code' in error) || error.code !== INVALID_PASSWORD_CODE) return error;
 	return new Error(
-		`${error.message}. The password the API was given differs from the one stored in the existing Postgres data. Postgres sets that password only when its data volume is first created, so changing POSTGRES_PASSWORD later does not change it. Put the old password back, or run rexctl doctor --fix to set the new one inside the database: ${PASSWORD_MISMATCH_DOCS}`,
+		`${error.message}. The password the API was given differs from the one stored in the existing Postgres data. Postgres sets that password only when its data volume is first created, so changing POSTGRES_PASSWORD later does not change it. Put the old password back, or run hearthctl doctor --fix to set the new one inside the database: ${PASSWORD_MISMATCH_DOCS}`,
 		{cause: error},
 	);
 }

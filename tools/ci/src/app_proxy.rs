@@ -203,7 +203,7 @@ fn bake_command(targets: &[&str]) -> Result<CommandSpec> {
 }
 
 fn default_app_proxy_cache_ref() -> String {
-    let owner = ghcr_owner().unwrap_or_else(|_| "hearthapp".to_string());
+    let owner = ghcr_owner().unwrap_or_else(|_| "sudo-ivan".to_string());
     format!("type=registry,ref=ghcr.io/{owner}/hearth-app-proxy:buildcache-amd64")
 }
 

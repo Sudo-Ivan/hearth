@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 import type {APIRoute} from 'astro';
-import {isCalVer, REXCTL_TARGETS, resolveRexctlRelease} from '@/installer/RexctlRelease';
+import {isCalVer, HEARTHCTL_TARGETS, resolveHearthctlRelease} from '@/installer/HearthctlRelease';
 
 export const prerender = false;
 
@@ -34,12 +34,12 @@ export const GET: APIRoute = async ({url}) => {
 	if (format !== null && format !== 'sh') {
 		return jsonReply(400, {error: 'format must be sh'});
 	}
-	if (format === 'sh' && !REXCTL_TARGETS.some((t) => t.os === os && t.arch === arch)) {
+	if (format === 'sh' && !HEARTHCTL_TARGETS.some((t) => t.os === os && t.arch === arch)) {
 		return jsonReply(400, {error: 'os and arch must name a supported target'});
 	}
-	let release: Awaited<ReturnType<typeof resolveRexctlRelease>>;
+	let release: Awaited<ReturnType<typeof resolveHearthctlRelease>>;
 	try {
-		release = await resolveRexctlRelease(version);
+		release = await resolveHearthctlRelease(version);
 	} catch {
 		return jsonReply(503, {error: 'release list unavailable'});
 	}

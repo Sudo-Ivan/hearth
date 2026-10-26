@@ -217,7 +217,7 @@ describe('ConfigLoader', () => {
 			FLUXER_VAPID_PRIVATE_KEY: privateKey,
 		});
 		await expect(loadConfig()).rejects.toThrow(
-			/^FLUXER_VAPID_PUBLIC_KEY must be the base64url 65-byte uncompressed P-256 point\. Run rexctl doctor --fix/u,
+			/^FLUXER_VAPID_PUBLIC_KEY must be the base64url 65-byte uncompressed P-256 point\. Run hearthctl doctor --fix/u,
 		);
 	});
 
@@ -228,7 +228,7 @@ describe('ConfigLoader', () => {
 			FLUXER_VAPID_PRIVATE_KEY: Buffer.alloc(31, 9).toString('base64url'),
 		});
 		await expect(loadConfig()).rejects.toThrow(
-			/^FLUXER_VAPID_PRIVATE_KEY must be the base64url 32-byte P-256 scalar\. Run rexctl doctor --fix/u,
+			/^FLUXER_VAPID_PRIVATE_KEY must be the base64url 32-byte P-256 scalar\. Run hearthctl doctor --fix/u,
 		);
 	});
 
