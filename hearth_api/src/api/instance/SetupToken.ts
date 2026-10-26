@@ -45,7 +45,7 @@ export async function ensureSetupToken(
 		return;
 	}
 	const logSetupUrl = (token: string) => {
-		const url = `${Config.endpoints.webApp.replace(/\/+$/, '')}/setup?token=${token}`;
+		const url = `${Config.endpoints.webApp.replace(/\/+$/, '')}/?setup_token=${token}`;
 		Logger.warn(
 			{setup_url: url},
 			'Setup URL generated. This instance has not recorded an admin account yet. The link is valid for one hour; afterwards it expires and a new one must be generated (restart the api, or set FLUXER_SETUP_TOKEN)',
