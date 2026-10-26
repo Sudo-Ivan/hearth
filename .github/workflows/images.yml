@@ -5,7 +5,10 @@ on:
   push:
     branches: [master]
     paths:
-      - hearth_*/Dockerfile
+      - hearth_*/**
+      - packages/**
+      - tools/**
+      - pnpm-*
       - .github/workflows/images.yml
   workflow_dispatch:
 

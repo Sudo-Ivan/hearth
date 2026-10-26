@@ -119,8 +119,14 @@ async function saveIdentity({
 }: IdentityStepActions & {mode: AccountIdentityMode; style: TagStyle; i18n: I18n}): Promise<void> {
 	try {
 		const saved = await setSetupAccountIdentity(mode, style, setupToken.trim() || undefined);
-		await RuntimeConfig.refreshDiscovery();
-		RuntimeConfig.applyAccountIdentity(saved.mode, saved.tag_style);
+		await RuntimeConfig.refreshDiscovery().catch((refreshError) => {
+			logger.warn('Could not refresh discovery after saving the sign-in method', refreshError);
+		});
+		try {
+			RuntimeConfig.applyAccountIdentity(saved.mode, saved.tag_style);
+		} catch (applyError) {
+			logger.warn('Could not apply the sign-in method to runtime config', applyError);
+		}
 		onAdvance();
 	} catch (error) {
 		if (setupTokenViolation(error)) {

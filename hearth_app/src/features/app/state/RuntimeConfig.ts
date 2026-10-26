@@ -671,6 +671,7 @@ class RuntimeConfig {
 	}
 
 	async refreshDiscovery(signal?: AbortSignal): Promise<void> {
+		if (this.activeRuntime === null) return;
 		const current = this.requireActiveSnapshot();
 		const resolution = await InstanceSnapshotStore.refresh({input: current.apiEndpoint, signal: signal ?? null});
 		if (runtimeInstanceKey(resolution.snapshot) !== runtimeInstanceKey(this.requireActiveSnapshot())) {
