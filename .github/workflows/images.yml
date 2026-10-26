@@ -35,8 +35,6 @@ jobs:
           - {image: hearth-unfurl, dockerfile: hearth_unfurl/Dockerfile}
           - {image: hearth-admin, dockerfile: hearth_admin/Dockerfile}
           - {image: hearth-docs, dockerfile: hearth_docs/Dockerfile}
-    env:
-      IMAGE: ghcr.io/${{ github.repository_owner }}/${{ matrix.image }}
     steps:
       - uses: step-security/harden-runner@e14015d583714f6e62063499dc959a02595150a1 # v2.21.1
         with:
@@ -50,6 +48,10 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Resolve image name
+        run: |
+          owner=$(echo '${{ github.repository_owner }}' | tr '[:upper:]' '[:lower:]')
+          echo "IMAGE=ghcr.io/$owner/${{ matrix.image }}" >> "$GITHUB_ENV"
       - name: Build and push
         id: push
         run: |
