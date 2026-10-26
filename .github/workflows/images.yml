@@ -1,0 +1,73 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+name: images
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - hearth_*/Dockerfile
+      - .github/workflows/images.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  build:
+    name: ${{ matrix.image }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 240
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {image: hearth-api, dockerfile: hearth_api/Dockerfile}
+          - {image: hearth-gateway, dockerfile: hearth_gateway/Dockerfile}
+          - {image: hearth-media-proxy, dockerfile: hearth_media_proxy/Dockerfile}
+          - {image: hearth-push, dockerfile: hearth_push/Dockerfile}
+          - {image: hearth-static, dockerfile: hearth_static/Dockerfile}
+          - {image: hearth-app-proxy-self-hosted, dockerfile: hearth_app_proxy/Dockerfile}
+          - {image: hearth-snowflakes, dockerfile: hearth_snowflakes/Dockerfile}
+          - {image: hearth-users, dockerfile: hearth_users/Dockerfile}
+          - {image: hearth-gifs, dockerfile: hearth_gifs/Dockerfile}
+          - {image: hearth-messages, dockerfile: hearth_messages/Dockerfile}
+          - {image: hearth-unfurl, dockerfile: hearth_unfurl/Dockerfile}
+          - {image: hearth-admin, dockerfile: hearth_admin/Dockerfile}
+          - {image: hearth-docs, dockerfile: hearth_docs/Dockerfile}
+    env:
+      IMAGE: ghcr.io/${{ github.repository_owner }}/${{ matrix.image }}
+    steps:
+      - uses: step-security/harden-runner@e14015d583714f6e62063499dc959a02595150a1 # v2.21.1
+        with:
+          egress-policy: audit
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069 # v4.4.1
+      - uses: docker/login-action@81c6f93d4bc991e510b342a00b419b3bb4efc5c6 # v4.7.0
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build and push
+        id: push
+        run: |
+          docker buildx build \
+            --file "${{ matrix.dockerfile }}" \
+            --tag "$IMAGE:v1" \
+            --tag "$IMAGE:latest" \
+            --build-arg BUILD_VERSION="${{ github.sha }}" \
+            --build-arg SOURCE_SHA="${{ github.sha }}" \
+            --build-arg SOURCE_DATE="$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
+            --provenance=mode=min \
+            --sbom=true \
+            --metadata-file /tmp/meta.json \
+            --push .
+          echo "digest=$(jq -r '.["containerimage.digest"]' /tmp/meta.json)" >> "$GITHUB_OUTPUT"
+      - name: Attest
+        uses: actions/attest-build-provenance@977bb373ede98d70efdf65b84cb5f73e068dcc2a # v3.0.0
+        with:
+          subject-name: ${{ env.IMAGE }}
+          subject-digest: ${{ steps.push.outputs.digest }}
+          push-to-registry: true
