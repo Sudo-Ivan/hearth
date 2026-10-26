@@ -50,7 +50,7 @@ import {afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, vi} fr
 
 const BUNDLE_ID = 'com.hearth';
 const APP_APPLE_ID = 1234567890;
-const MONTHLY = 'com.hearth.plutonium.monthly';
+const MONTHLY = 'com.hearth.ember.monthly';
 const GIFT_MONTH = 'com.hearth.gift.1month';
 
 type FakeEnvironment = 'production' | 'sandbox';

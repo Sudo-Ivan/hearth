@@ -380,9 +380,9 @@
 		"deadline_label": "Geschil intrekken vóór",
 		"deadline_value": "{warningDate, date, long}",
 		"footer_reason": "Je hebt deze e-mail ontvangen vanwege een betalingsgeschil over je {product_name}-account.",
-		"ground": "{product, select, plutonium {Artikel 4.4 van de gebruiksvoorwaarden} other {Artikel 9 van de voorwaarden van de Operator Pass}}",
+		"ground": "{product, select, ember {Artikel 4.4 van de gebruiksvoorwaarden} other {Artikel 9 van de voorwaarden van de Operator Pass}}",
 		"ground_label": "Grondslag",
-		"intro": "Je hebt je {product, select, plutonium {Plutonium-betaling} other {betaling voor de Operator Pass}} betwist bij je bank of kaartuitgever. Iemand van ons team heeft het geschil getoetst aan onze voorwaarden en ongerechtvaardigd bevonden.",
+		"intro": "Je hebt je {product, select, ember {Ember-betaling} other {betaling voor de Operator Pass}} betwist bij je bank of kaartuitgever. Iemand van ons team heeft het geschil getoetst aan onze voorwaarden en ongerechtvaardigd bevonden.",
 		"next_body": "Als je deze betaling zelf hebt gedaan, kun je je bank of kaartuitgever vragen het geschil in te trekken. Als het geschil wordt ingetrokken of wordt afgesloten zonder dat je het geld terugkrijgt, gebeurt er niets met je account. Zolang het geschil loopt, kun je niets kopen op {product_name}.{privacy_email, select, null {} other { Je kunt altijd een kopie van je gegevens opvragen door te mailen naar <mail>{privacy_email}</mail>.}}",
 		"next_title": "Wat er nu gebeurt",
 		"order_date_label": "Besteldatum",
@@ -390,7 +390,7 @@
 		"order_number_label": "Bestelnummer",
 		"signoff": "Het team van {product_name}",
 		"subject": "Over je betalingsgeschil bij {product_name}",
-		"why_body": "Jij of iemand met jouw toestemming heeft de betaling gedaan, we hebben het juiste bedrag in rekening gebracht, {product, select, plutonium {Plutonium is geleverd zoals beschreven} other {de Operator Pass is geleverd zoals beschreven}}, we hadden de betaling niet terugbetaald, en je bedenktijd was al voorbij toen je de betaling betwistte.",
+		"why_body": "Jij of iemand met jouw toestemming heeft de betaling gedaan, we hebben het juiste bedrag in rekening gebracht, {product, select, ember {Ember is geleverd zoals beschreven} other {de Operator Pass is geleverd zoals beschreven}}, we hadden de betaling niet terugbetaald, en je bedenktijd was al voorbij toen je de betaling betwistte.",
 		"why_title": "Waarom we het ongerechtvaardigd vonden"
 	},
 	"reauth_code": {

@@ -559,7 +559,7 @@ const previews: Record<string, Preview> = {
 			'payment_dispute_warning',
 			USER,
 			{
-				product: 'plutonium',
+				product: 'ember',
 				invoiceNumber: 'B1Q2W3E4-0001',
 				orderDate: DATE,
 				amountMinor: price.earlyBird,

@@ -37,7 +37,7 @@ const FILE_SIZE_TOO_LARGE_DESCRIPTOR = msg({
 });
 const FILE_SIZE_LIMIT_EXCEEDED_DESCRIPTOR = msg({
 	message: 'File size limit exceeded',
-	comment: 'Title of the file-too-large alert variant that offers a Plutonium upsell.',
+	comment: 'Title of the file-too-large alert variant that offers a Ember upsell.',
 });
 const INSTANCE_ADMIN_LIMIT_DESCRIPTOR = msg({
 	message: 'This limit is configured by your instance administrator.',
@@ -81,7 +81,7 @@ export const FileSizeTooLargeModal = observer(({oversizedFileCount}: FileSizeToo
 	const hasKnownOversizedFileCount = oversizedFileCount != null;
 	const hasMultipleOversizedFiles = (oversizedFileCount ?? 0) > 1;
 	const instanceNote = RuntimeConfig.appPublic.branding.upload_limit_message;
-	const handleGetPlutoniumClick = useCallback(() => {
+	const handleGetEmberClick = useCallback(() => {
 		window.setTimeout(() => {
 			PremiumModalCommands.open();
 		}, 0);
@@ -118,7 +118,7 @@ export const FileSizeTooLargeModal = observer(({oversizedFileCount}: FileSizeToo
 			)}
 			primaryText={i18n._(GET_PREMIUM_DESCRIPTOR, {premiumProductName: getPremiumProductName()})}
 			primaryVariant="primary"
-			onPrimary={handleGetPlutoniumClick}
+			onPrimary={handleGetEmberClick}
 			secondaryText={i18n._(CANCEL_DESCRIPTOR)}
 			data-flx="messaging.file-size-too-large-modal.confirm-modal--2"
 		/>

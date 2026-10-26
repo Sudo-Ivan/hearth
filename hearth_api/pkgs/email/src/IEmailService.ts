@@ -108,7 +108,7 @@ interface OperatorPassWallNameReplacedEmail {
 }
 
 export interface PaymentDisputeWarningEmail {
-	product: 'operator_pass' | 'plutonium';
+	product: 'operator_pass' | 'ember';
 	invoiceNumber: string | null;
 	orderDate: Date;
 	amountMinor: number;
@@ -119,7 +119,7 @@ export interface PaymentDisputeWarningEmail {
 
 interface PaymentDisputeReviewAlertEmail {
 	disputeId: string;
-	product: 'operator_pass' | 'plutonium';
+	product: 'operator_pass' | 'ember';
 	invoiceNumber: string | null;
 	purchaserId: string;
 	reason: string;

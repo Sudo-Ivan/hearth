@@ -168,8 +168,8 @@ function daysUntil(date: Date): number {
 
 const CODE_MINUTES = 10;
 
-function getPaymentDisputeTermsUrl(product: 'operator_pass' | 'plutonium', marketingBaseUrl: string): string {
-	return product === 'plutonium' ? `${marketingBaseUrl}/terms` : getOperatorPassTermsUrl(marketingBaseUrl);
+function getPaymentDisputeTermsUrl(product: 'operator_pass' | 'ember', marketingBaseUrl: string): string {
+	return product === 'ember' ? `${marketingBaseUrl}/terms` : getOperatorPassTermsUrl(marketingBaseUrl);
 }
 
 export function getPaymentDisputeWarningVariables(
@@ -744,7 +744,7 @@ export class EmailService implements IEmailService {
 			);
 		},
 		payment_dispute_review_alert: async (email, params) => {
-			const product = params.product === 'operator_pass' ? 'Operator Pass' : 'Plutonium';
+			const product = params.product === 'operator_pass' ? 'Operator Pass' : 'Ember';
 			const lines = [
 				`A ${product} payment dispute opened and needs a review.`,
 				'',

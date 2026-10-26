@@ -32,7 +32,7 @@ describe('Stripe Webhook Edge Cases', () => {
 		Config.instance.visionariesGuildVisionaryRoleId = visionaryRole.id;
 	});
 	describe('Lifetime + subscription conflicts', () => {
-		test('cannot redeem plutonium gift when already have visionary', async () => {
+		test('cannot redeem ember gift when already have visionary', async () => {
 			const account = await createTestAccount(harness);
 			await createBuilder(harness, account.token)
 				.post(`/test/users/${account.userId}/premium`)
@@ -42,7 +42,7 @@ describe('Stripe Webhook Edge Cases', () => {
 				})
 				.execute();
 			await createBuilder(harness, account.token)
-				.post(`/test/gifts/PLUTONIUMGIFT`)
+				.post(`/test/gifts/EMBERGIFT`)
 				.body({
 					duration_type: 'months',
 					duration_quantity: 1,
@@ -50,8 +50,8 @@ describe('Stripe Webhook Edge Cases', () => {
 				})
 				.execute();
 			await createBuilder(harness, account.token)
-				.post('/gifts/PLUTONIUMGIFT/redeem')
-				.expect(400, APIErrorCodes.CANNOT_REDEEM_PLUTONIUM_WITH_VISIONARY)
+				.post('/gifts/EMBERGIFT/redeem')
+				.expect(400, APIErrorCodes.CANNOT_REDEEM_EMBER_WITH_VISIONARY)
 				.execute();
 		});
 	});

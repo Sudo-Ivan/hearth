@@ -120,7 +120,7 @@ function giftErrorModal(title: string, message: string): void {
 
 function handleRedeemFailure(i18n: I18n, code: string, target: InstanceHTTPTarget, error: HttpError): void {
 	switch (errorCode(error)) {
-		case APIErrorCodes.CANNOT_REDEEM_PLUTONIUM_WITH_VISIONARY:
+		case APIErrorCodes.CANNOT_REDEEM_EMBER_WITH_VISIONARY:
 			ModalCommands.push(
 				modal(() => (
 					<GiftSendToFriendModal

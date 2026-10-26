@@ -483,7 +483,7 @@
 	"permissions.user_owns_guilds": "ผู้ใช้รายนี้เป็นเจ้าของคอมมูนิตี้",
 	"premium_and_plans.animated_avatars_require_premium": "รูปโปรไฟล์แบบเคลื่อนไหวต้องใช้ Premium",
 	"premium_and_plans.banners_require_premium": "แบนเนอร์ต้องใช้ Premium",
-	"premium_and_plans.cannot_redeem_plutonium_with_visionary": "คุณมี {premium_tier_name} ตลอดชีพอยู่แล้ว",
+	"premium_and_plans.cannot_redeem_ember_with_visionary": "คุณมี {premium_tier_name} ตลอดชีพอยู่แล้ว",
 	"premium_and_plans.custom_emojis_outside_source_require_premium": "ไม่สามารถใช้อิโมจิแบบกำหนดเองนอกคอมมูนิตี้ต้นทางได้หากไม่มี Premium",
 	"premium_and_plans.custom_stickers_in_dms_require_premium": "ไม่สามารถใช้สติกเกอร์แบบกำหนดเองในข้อความส่วนตัวได้หากไม่มี Premium",
 	"premium_and_plans.custom_stickers_outside_source_require_premium": "ไม่สามารถใช้สติกเกอร์แบบกำหนดเองนอกคอมมูนิตี้ต้นทางได้หากไม่มี Premium",

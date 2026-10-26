@@ -370,10 +370,10 @@ export type ThemeVariableName =
 	| "--panel-control-border"
 	| "--panel-control-divider"
 	| "--panel-control-highlight"
-	| "--plutonium"
-	| "--plutonium-hover"
-	| "--plutonium-icon"
-	| "--plutonium-text"
+	| "--ember"
+	| "--ember-hover"
+	| "--ember-icon"
+	| "--ember-text"
 	| "--radius-2xl"
 	| "--radius-full"
 	| "--radius-lg"
@@ -844,10 +844,10 @@ export const THEME_VARIABLES: ReadonlyArray<ThemeVariableDefinition> = [
 	{name: "--panel-control-border", kind: "color", groupId: "borders", groupLabel: "Borders & focus", source: "color-system"},
 	{name: "--panel-control-divider", kind: "color", groupId: "other", groupLabel: "Other", source: "color-system"},
 	{name: "--panel-control-highlight", kind: "color", groupId: "other", groupLabel: "Other", source: "color-system"},
-	{name: "--plutonium", kind: "color", groupId: "brand", groupLabel: "Brand & accents", source: "color-system"},
-	{name: "--plutonium-hover", kind: "color", groupId: "brand", groupLabel: "Brand & accents", source: "color-system"},
-	{name: "--plutonium-icon", kind: "color", groupId: "brand", groupLabel: "Brand & accents", source: "color-system"},
-	{name: "--plutonium-text", kind: "color", groupId: "brand", groupLabel: "Brand & accents", source: "color-system"},
+	{name: "--ember", kind: "color", groupId: "brand", groupLabel: "Brand & accents", source: "color-system"},
+	{name: "--ember-hover", kind: "color", groupId: "brand", groupLabel: "Brand & accents", source: "color-system"},
+	{name: "--ember-icon", kind: "color", groupId: "brand", groupLabel: "Brand & accents", source: "color-system"},
+	{name: "--ember-text", kind: "color", groupId: "brand", groupLabel: "Brand & accents", source: "color-system"},
 	{name: "--radius-2xl", kind: "dimension", groupId: "borders", groupLabel: "Borders & focus", source: "globals"},
 	{name: "--radius-full", kind: "dimension", groupId: "borders", groupLabel: "Borders & focus", source: "globals"},
 	{name: "--radius-lg", kind: "dimension", groupId: "borders", groupLabel: "Borders & focus", source: "globals"},
@@ -1319,10 +1319,10 @@ export const THEME_VARIABLE_NAMES: ReadonlyArray<string> = [
 	"--panel-control-border",
 	"--panel-control-divider",
 	"--panel-control-highlight",
-	"--plutonium",
-	"--plutonium-hover",
-	"--plutonium-icon",
-	"--plutonium-text",
+	"--ember",
+	"--ember-hover",
+	"--ember-icon",
+	"--ember-text",
 	"--radius-2xl",
 	"--radius-full",
 	"--radius-lg",
@@ -1794,10 +1794,10 @@ export const THEME_DARK_DEFAULT_VARIABLE_VALUES: Readonly<Record<string, string>
 	"--panel-control-border": "hsla(258, calc(30% * var(--saturation-factor)), 65%, 0.45)",
 	"--panel-control-divider": "hsla(258, calc(30% * var(--saturation-factor)), 55%, 0.35)",
 	"--panel-control-highlight": "hsla(0, 0%, 100%, 0.04)",
-	"--plutonium": "hsl(242, calc(70% * var(--saturation-factor)), 55%)",
-	"--plutonium-hover": "hsl(242, calc(60% * var(--saturation-factor)), 49%)",
-	"--plutonium-icon": "hsl(38, calc(92% * var(--saturation-factor)), 50%)",
-	"--plutonium-text": "hsl(0, 0%, 98%)",
+	"--ember": "hsl(242, calc(70% * var(--saturation-factor)), 55%)",
+	"--ember-hover": "hsl(242, calc(60% * var(--saturation-factor)), 49%)",
+	"--ember-icon": "hsl(38, calc(92% * var(--saturation-factor)), 50%)",
+	"--ember-text": "hsl(0, 0%, 98%)",
 	"--radius-2xl": "1rem",
 	"--radius-full": "624.9375rem",
 	"--radius-lg": "0.5rem",
@@ -2269,10 +2269,10 @@ export const THEME_LIGHT_DEFAULT_VARIABLE_VALUES: Readonly<Record<string, string
 	"--panel-control-border": "hsla(220, calc(25% * var(--saturation-factor)), 45%, 0.25)",
 	"--panel-control-divider": "hsla(220, calc(30% * var(--saturation-factor)), 35%, 0.2)",
 	"--panel-control-highlight": "hsla(0, 0%, 100%, 0.65)",
-	"--plutonium": "hsl(242, calc(70% * var(--saturation-factor)), 55%)",
-	"--plutonium-hover": "hsl(242, calc(60% * var(--saturation-factor)), 49%)",
-	"--plutonium-icon": "hsl(38, calc(92% * var(--saturation-factor)), 45%)",
-	"--plutonium-text": "hsl(0, 0%, 98%)",
+	"--ember": "hsl(242, calc(70% * var(--saturation-factor)), 55%)",
+	"--ember-hover": "hsl(242, calc(60% * var(--saturation-factor)), 49%)",
+	"--ember-icon": "hsl(38, calc(92% * var(--saturation-factor)), 45%)",
+	"--ember-text": "hsl(0, 0%, 98%)",
 	"--radius-2xl": "1rem",
 	"--radius-full": "624.9375rem",
 	"--radius-lg": "0.5rem",

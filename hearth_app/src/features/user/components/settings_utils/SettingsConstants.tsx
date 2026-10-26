@@ -193,7 +193,7 @@ const ALL_TABS_DESCRIPTORS: Array<SettingsTabDescriptor> = [
 		icon: DevicesIcon,
 	},
 	{
-		type: 'plutonium',
+		type: 'ember',
 		category: 'billing',
 		label: getPremiumProductFullName,
 		icon: AtomIcon,

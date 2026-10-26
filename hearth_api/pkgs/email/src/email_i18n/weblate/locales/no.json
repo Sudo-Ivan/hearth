@@ -380,9 +380,9 @@
 		"deadline_label": "Trekk tilbake tvisten før",
 		"deadline_value": "{warningDate, date, long}",
 		"footer_reason": "Du mottok denne e-posten på grunn av en betalingstvist knyttet til {product_name}-kontoen din.",
-		"ground": "{product, select, plutonium {Paragraf 4.4 i vilkårene for bruk} other {Paragraf 9 i vilkårene for Operator Pass}}",
+		"ground": "{product, select, ember {Paragraf 4.4 i vilkårene for bruk} other {Paragraf 9 i vilkårene for Operator Pass}}",
 		"ground_label": "Grunnlag",
-		"intro": "Du bestred {product, select, plutonium {betalingen din for Plutonium} other {betalingen din for Operator Pass}} hos banken eller kortselskapet ditt. En person fra teamet vårt vurderte tvisten opp mot vilkårene våre og fant den uberettiget.",
+		"intro": "Du bestred {product, select, ember {betalingen din for Ember} other {betalingen din for Operator Pass}} hos banken eller kortselskapet ditt. En person fra teamet vårt vurderte tvisten opp mot vilkårene våre og fant den uberettiget.",
 		"next_body": "Hvis du foretok denne betalingen, kan du be banken eller kortselskapet ditt om å trekke tilbake tvisten. Hvis tvisten trekkes tilbake eller avsluttes uten at du får pengene tilbake, skjer det ingenting med kontoen din. Til tvisten er avsluttet, kan du ikke kjøpe noe på {product_name}.{privacy_email, select, null {} other { Du kan når som helst be om en kopi av dataene dine ved å skrive til <mail>{privacy_email}</mail>.}}",
 		"next_title": "Hva som skjer nå",
 		"order_date_label": "Ordredato",
@@ -390,7 +390,7 @@
 		"order_number_label": "Ordrenummer",
 		"signoff": "{product_name}-teamet",
 		"subject": "Om betalingstvisten din hos {product_name}",
-		"why_body": "Du eller noen du har gitt tillatelse til, foretok betalingen, vi belastet riktig beløp, {product, select, plutonium {Plutonium ble levert som beskrevet} other {Operator Pass ble levert som beskrevet}}, vi hadde ikke refundert betalingen, og angrefristen var ute da du bestred den.",
+		"why_body": "Du eller noen du har gitt tillatelse til, foretok betalingen, vi belastet riktig beløp, {product, select, ember {Ember ble levert som beskrevet} other {Operator Pass ble levert som beskrevet}}, vi hadde ikke refundert betalingen, og angrefristen var ute da du bestred den.",
 		"why_title": "Hvorfor vi fant den uberettiget"
 	},
 	"reauth_code": {

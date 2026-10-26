@@ -483,7 +483,7 @@
 	"permissions.user_owns_guilds": "此用户拥有社区。",
 	"premium_and_plans.animated_avatars_require_premium": "动态头像需要高级会员。",
 	"premium_and_plans.banners_require_premium": "横幅需要高级会员。",
-	"premium_and_plans.cannot_redeem_plutonium_with_visionary": "你已拥有终身 {premium_tier_name}。",
+	"premium_and_plans.cannot_redeem_ember_with_visionary": "你已拥有终身 {premium_tier_name}。",
 	"premium_and_plans.custom_emojis_outside_source_require_premium": "没有高级会员，无法在来源社区之外使用自定义表情。",
 	"premium_and_plans.custom_stickers_in_dms_require_premium": "没有高级会员，无法在私信中使用自定义贴纸。",
 	"premium_and_plans.custom_stickers_outside_source_require_premium": "没有高级会员，无法在来源社区之外使用自定义贴纸。",

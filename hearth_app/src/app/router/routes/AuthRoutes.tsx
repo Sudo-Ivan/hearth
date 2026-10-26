@@ -298,7 +298,7 @@ const checkoutRoute = createRoute({
 			return new Redirect(Routes.ME);
 		}
 		rememberPurchaseIntent(plan);
-		return new Redirect(Routes.PLUTONIUM);
+		return new Redirect(Routes.EMBER);
 	},
 });
 const reportRoute = createAuthPageRoute({

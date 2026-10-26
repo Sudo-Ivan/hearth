@@ -5,7 +5,7 @@ import {offerAuthenticatorCalmly} from '@app/features/auth/components/modals/Aut
 import Accounts from '@app/features/auth/state/Accounts';
 import * as OperatorPassCommands from '@app/features/premium/commands/OperatorPassCommands';
 import * as OperatorPassModalCommands from '@app/features/premium/commands/OperatorPassModalCommands';
-import * as PlutoniumPageCommands from '@app/features/premium/commands/PlutoniumPageCommands';
+import * as EmberPageCommands from '@app/features/premium/commands/EmberPageCommands';
 import * as PremiumCommands from '@app/features/premium/commands/PremiumCommands';
 import {isOperatorPassAvailable} from '@app/features/premium/utils/OperatorPassUtils';
 import {
@@ -79,7 +79,7 @@ const ActivePremiumCheckoutReturnWatcher = observer(function ActivePremiumChecko
 			reopenOperatorPassCheckout();
 			return;
 		}
-		PlutoniumPageCommands.openPlutoniumPage();
+		EmberPageCommands.openEmberPage();
 		void offerAuthenticatorCalmly();
 	}, [isPremium, operatorPassCount, currentUserId, showPremiumFeatures]);
 	return null;

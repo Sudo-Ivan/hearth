@@ -241,7 +241,7 @@ describe('operator billing catalog', () => {
 				.execute();
 			const session = stripeHandlers.spies.createdCheckoutSessions[0];
 			expect(session?.line_items?.[0]?.price).toBe('price_envgiftmonthusd');
-			expect(session?.custom_text?.terms_of_service_acceptance?.message).toContain('Hearth Plutonium');
+			expect(session?.custom_text?.terms_of_service_acceptance?.message).toContain('Hearth Ember');
 			expect(session?.consent_collection?.terms_of_service).toBe('required');
 			expect(sessionField(session, 'automatic_tax')).toEqual({enabled: 'true'});
 			expect(sessionField(session, 'tax_id_collection')).toEqual({enabled: 'true'});
@@ -505,7 +505,7 @@ describe('operator billing catalog', () => {
 			const message =
 				stripeHandlers.spies.createdCheckoutSessions[0]?.custom_text?.terms_of_service_acceptance?.message;
 			expect(message).toContain('Premium');
-			expect(message).not.toContain('Plutonium');
+			expect(message).not.toContain('Ember');
 		});
 
 		test('blocks checkout for an account with the purchases limit but lets it redeem a gift', async () => {

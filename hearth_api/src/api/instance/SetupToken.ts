@@ -14,6 +14,7 @@ import {ms} from 'itty-time';
 
 const SETUP_TOKEN_FAILURE_MAX_ATTEMPTS = 10;
 const SETUP_TOKEN_FAILURE_WINDOW_MS = ms('30 minutes');
+const SETUP_TOKEN_TTL_MS = ms('1 hour');
 
 export function isSetupTokenEnforced(config: APIConfig): boolean {
 	return config.instance.selfHosted && (config.nodeEnv === 'production' || config.instance.setup.token !== null);
@@ -43,17 +44,33 @@ export async function ensureSetupToken(
 		Logger.info('Setup token read from FLUXER_SETUP_TOKEN');
 		return;
 	}
-	const token = await repository.createSetupTokenIfAbsent();
-	if (token === null) {
+	const logSetupUrl = (token: string) => {
+		const url = `${Config.endpoints.webApp.replace(/\/+$/, '')}/setup?token=${token}`;
+		Logger.warn(
+			{setup_url: url},
+			'Setup URL generated. This instance has not recorded an admin account yet. The link is valid for one hour; afterwards it expires and a new one must be generated (restart the api, or set FLUXER_SETUP_TOKEN)',
+		);
+	};
+	let token = await repository.createSetupTokenIfAbsent();
+	if (token !== null) {
+		logSetupUrl(token);
+		return;
+	}
+	const created = await repository.getSetupTokenCreatedAt();
+	if (created !== null && Date.now() - created <= SETUP_TOKEN_TTL_MS) {
 		Logger.info(
-			'A setup token from an earlier start is still unused. Set FLUXER_SETUP_TOKEN to replace it if it is lost',
+			'A setup URL from an earlier start is still unused and within its one hour lifetime. Set FLUXER_SETUP_TOKEN to replace it, or wait for it to expire and restart',
 		);
 		return;
 	}
-	Logger.warn(
-		{setup_token: token},
-		'Setup token generated. This instance has not recorded an admin account yet. The registration that presents this token becomes an admin. It is shown once',
-	);
+	Logger.warn('The stored setup token has expired. Generating a replacement');
+	await repository.clearSetupToken();
+	token = await repository.createSetupTokenIfAbsent();
+	if (token === null) {
+		Logger.error('Failed to rotate the expired setup token');
+		return;
+	}
+	logSetupUrl(token);
 }
 
 export async function clearUsedSetupToken(repository: InstanceConfigRepository): Promise<void> {

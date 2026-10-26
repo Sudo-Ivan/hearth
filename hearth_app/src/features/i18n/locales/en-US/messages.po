@@ -927,7 +927,7 @@ msgid "{altText} — light theme preview"
 msgstr "{altText} — light theme preview"
 
 #. Amount of an invoice in the billing history, followed by its three-letter currency code so the receipt always names the currency, for example "9,99 kr (SEK)". {amount} is a price already formatted by code and {currency} is an ISO currency code such as SEK or USD. Keep both placeholders as they are and use the brackets your language normally uses.
-#: src/features/app/components/dialogs/components/plutonium/InvoiceList.tsx
+#: src/features/app/components/dialogs/components/ember/InvoiceList.tsx
 msgid "{amount} ({currency})"
 msgstr "{amount} ({currency})"
 
@@ -1778,8 +1778,8 @@ msgstr "{minutes, plural, one {Too many wrong setup tokens were tried from your 
 msgid "{minutes, plural, one {Your invite link expires in # minute.} other {Your invite link expires in # minutes.}}"
 msgstr "{minutes, plural, one {Your invite link expires in # minute.} other {Your invite link expires in # minutes.}}"
 
-#. Compact monthly price on the Plutonium page hero. Preserve the monthlyPrice placeholder exactly. The price is shown bold and any text around it in a lighter style, so keep the period words outside the placeholder.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Compact monthly price on the Ember page hero. Preserve the monthlyPrice placeholder exactly. The price is shown bold and any text around it in a lighter style, so keep the period words outside the placeholder.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "{monthlyPrice}/mo"
 msgstr "{monthlyPrice}/mo"
 
@@ -1860,8 +1860,8 @@ msgstr "{premiumProductName} costs less now. Switch from {currentPrice} to {newP
 msgid "{premiumProductName} costs less now. Switch from {currentPrice} to {newPrice} a year starting {effectiveDate}, and nothing is charged today."
 msgstr "{premiumProductName} costs less now. Switch from {currentPrice} to {newPrice} a year starting {effectiveDate}, and nothing is charged today."
 
-#. Accessible label of the Plutonium page region. premiumProductName is the paid tier name.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Accessible label of the Ember page region. premiumProductName is the paid tier name.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "{premiumProductName} page"
 msgstr "{premiumProductName} page"
 
@@ -2392,8 +2392,8 @@ msgstr "{username} started a thread: {threadName}"
 msgid "{width} by {height} pixels"
 msgstr "{width} by {height} pixels"
 
-#. Compact yearly price on the Plutonium page hero. Preserve the yearlyPrice placeholder exactly. The price is shown bold and any text around it in a lighter style, so keep the period words outside the placeholder.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Compact yearly price on the Ember page hero. Preserve the yearlyPrice placeholder exactly. The price is shown bold and any text around it in a lighter style, so keep the period words outside the placeholder.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "{yearlyPrice}/yr"
 msgstr "{yearlyPrice}/yr"
 
@@ -2555,7 +2555,7 @@ msgstr "1 week"
 #. Duration label component for an elapsed call. Shown when the call lasted about one year.
 #. Gift purchase dialog option for a one-year gift.
 #: src/features/channel/components/CallMessage.tsx
-#: src/features/premium/components/modals/GiftPlutoniumModal.tsx
+#: src/features/premium/components/modals/GiftEmberModal.tsx
 msgid "1 year"
 msgstr "1 year"
 
@@ -2822,8 +2822,8 @@ msgstr "a hostname, e.g. {exampleDomain}"
 msgid "A landscape image, at least 1920 by 1080 pixels."
 msgstr "A landscape image, at least 1920 by 1080 pixels."
 
-#. Plutonium subscription card line offering a move to a lower price. {listPriceEffectiveDate} is a date already formatted and localized by code; never write a date into the translation.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionCard.tsx
+#. Ember subscription card line offering a move to a lower price. {listPriceEffectiveDate} is a date already formatted and localized by code; never write a date into the translation.
+#: src/features/app/components/dialogs/components/ember/SubscriptionCard.tsx
 msgid "A lower price is available. Switching takes effect on <0>{listPriceEffectiveDate}</0> and changes nothing else."
 msgstr "A lower price is available. Switching takes effect on <0>{listPriceEffectiveDate}</0> and changes nothing else."
 
@@ -2842,8 +2842,8 @@ msgstr "A new desktop version is available. Download the installer, then run it 
 msgid "a poll"
 msgstr "a poll"
 
-#. Plutonium page perk card title about profile customization.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page perk card title about profile customization.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "A profile that stands out"
 msgstr "A profile that stands out"
 
@@ -2861,8 +2861,8 @@ msgstr "A reusable component for empty states, errors, and status messages."
 msgid "a rich embed or link preview (not an uploaded file)"
 msgstr "a rich embed or link preview (not an uploaded file)"
 
-#. Plutonium page comparison row label for per-community profiles.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison row label for per-community profiles.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "A separate profile for each community"
 msgstr "A separate profile for each community"
 
@@ -3146,7 +3146,7 @@ msgstr "Action with both icons."
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
 #. Subscription status badge meaning the paid subscription is active.
 #. Tab in the thread browser that lists active threads.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionStatusBadge.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionStatusBadge.tsx
 #: src/features/channel/components/channel_header_components/developer_tools/DeveloperToolsShared.ts
 #: src/features/threads/utils/ThreadMessageDescriptors.ts
 #: src/features/user/components/settings_utils/search_index/DevicesIndex.ts
@@ -4086,19 +4086,19 @@ msgstr "Alignment controls are only available on wider screens"
 msgid "All"
 msgstr "All"
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionDescription.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionDescription.tsx
 msgid "All <0/> for <1>{effectiveMonthlyPrice}/month</1>."
 msgstr "All <0/> for <1>{effectiveMonthlyPrice}/month</1>."
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionDescription.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionDescription.tsx
 msgid "All <0/> for <1>{effectiveYearlyPrice}/year</1>."
 msgstr "All <0/> for <1>{effectiveYearlyPrice}/year</1>."
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionDescription.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionDescription.tsx
 msgid "All <0/> included with your subscription."
 msgstr "All <0/> included with your subscription."
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionDescription.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionDescription.tsx
 msgid "All <0/>, forever. No billing, no renewals."
 msgstr "All <0/>, forever. No billing, no renewals."
 
@@ -4471,7 +4471,7 @@ msgid "Already redeemed"
 msgstr "Already redeemed"
 
 #. Title of the error modal shown when a subscription is already scheduled to cancel.
-#: src/features/app/components/dialogs/components/plutonium/utils/PremiumActionErrorModal.tsx
+#: src/features/app/components/dialogs/components/ember/utils/PremiumActionErrorModal.tsx
 msgid "Already set to cancel"
 msgstr "Already set to cancel"
 
@@ -4589,7 +4589,7 @@ msgid "Amber"
 msgstr "Amber"
 
 #. Column header for invoice amount.
-#: src/features/app/components/dialogs/components/plutonium/InvoiceList.tsx
+#: src/features/app/components/dialogs/components/ember/InvoiceList.tsx
 msgid "Amount"
 msgstr "Amount"
 
@@ -4647,8 +4647,8 @@ msgstr "Animate on interaction"
 msgid "Animated {avifFormatLabel} not supported"
 msgstr "Animated {avifFormatLabel} not supported"
 
-#. Plutonium page comparison row label for animated avatars and banners.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison row label for animated avatars and banners.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Animated avatar and profile banner"
 msgstr "Animated avatar and profile banner"
 
@@ -4841,7 +4841,7 @@ msgid "Announcements"
 msgstr "Announcements"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Annual"
 msgstr "Annual"
 
@@ -5794,7 +5794,7 @@ msgstr "AV1"
 msgid "AV1 (requires opt-in)"
 msgstr "AV1 (requires opt-in)"
 
-#. Screen reader text for a check mark in the Plutonium page comparison table.
+#. Screen reader text for a check mark in the Ember page comparison table.
 #: src/features/i18n/utils/CommonMessageDescriptors.ts
 msgid "Available"
 msgstr "Available"
@@ -5858,7 +5858,7 @@ msgstr "Average ping:"
 msgid "Away"
 msgstr "Away"
 
-#. Accessible label of the back button on the Plutonium page in the mobile layout.
+#. Accessible label of the back button on the Ember page in the mobile layout.
 #: src/features/auth/flow/IpAuthorizationScreen.tsx
 #: src/features/connection/components/modals/AddConnectionModal.tsx
 #: src/features/guild/components/modals/add_guild_modal/GuildCreateForm.tsx
@@ -6170,7 +6170,7 @@ msgid "Belgium"
 msgstr "Belgium"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Benefits"
 msgstr "Benefits"
 
@@ -6183,18 +6183,18 @@ msgstr "Best with the desktop app"
 msgid "Between 1 and 32 characters"
 msgstr "Between 1 and 32 characters"
 
-#. Plutonium subscription card text for an App Store or Google Play subscription. {storeName} is the store brand name, App Store or Google Play, and must not be translated.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionDescription.tsx
+#. Ember subscription card text for an App Store or Google Play subscription. {storeName} is the store brand name, App Store or Google Play, and must not be translated.
+#: src/features/app/components/dialogs/components/ember/SubscriptionDescription.tsx
 msgid "Billed through {storeName}."
 msgstr "Billed through {storeName}."
 
-#. Plutonium subscription card text for an App Store or Google Play subscription that will not renew. {storeName} is the store brand name, App Store or Google Play, and must not be translated. {endDate} is a date already formatted and localized by code; never write a date into the translation.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionDescription.tsx
+#. Ember subscription card text for an App Store or Google Play subscription that will not renew. {storeName} is the store brand name, App Store or Google Play, and must not be translated. {endDate} is a date already formatted and localized by code; never write a date into the translation.
+#: src/features/app/components/dialogs/components/ember/SubscriptionDescription.tsx
 msgid "Billed through {storeName}. Ends on <0>{endDate}</0>."
 msgstr "Billed through {storeName}. Ends on <0>{endDate}</0>."
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 #: src/features/user/components/settings_utils/SettingsConstants.tsx
 msgid "Billing"
 msgstr "Billing"
@@ -6206,8 +6206,8 @@ msgstr "Billing cycle"
 
 #. Accordion title in the premium billing panel.
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/app/components/dialogs/components/plutonium/PurchaseHistorySection.tsx
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/app/components/dialogs/components/ember/PurchaseHistorySection.tsx
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Billing history"
 msgstr "Billing history"
 
@@ -6571,8 +6571,8 @@ msgstr "Breaks the community guidelines"
 msgid "Brightness"
 msgstr "Brightness"
 
-#. Plutonium page perk card body about global emojis and stickers.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page perk card body about global emojis and stickers.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Bring custom emojis and stickers from any of your communities into every chat and community you're in."
 msgstr "Bring custom emojis and stickers from any of your communities into every chat and community you're in."
 
@@ -7118,7 +7118,7 @@ msgid "Cancel pass"
 msgstr "Cancel pass"
 
 #. Billing button that cancels a scheduled move to a lower subscription price.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionActions.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionActions.tsx
 msgid "Cancel price change"
 msgstr "Cancel price change"
 
@@ -7133,24 +7133,24 @@ msgid "Cancel request"
 msgstr "Cancel request"
 
 #. Billing button that cancels a scheduled billing-cycle change.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionActions.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionActions.tsx
 msgid "Cancel scheduled switch"
 msgstr "Cancel scheduled switch"
 
 #. Billing button that starts subscription cancellation.
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionActions.tsx
-#: src/features/premium/components/plutonium_page/PlutoniumPage.tsx
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/app/components/dialogs/components/ember/SubscriptionActions.tsx
+#: src/features/premium/components/ember_page/EmberPage.tsx
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Cancel subscription"
 msgstr "Cancel subscription"
 
-#: src/features/premium/components/plutonium_page/PlutoniumPage.tsx
+#: src/features/premium/components/ember_page/EmberPage.tsx
 msgid "Cancel subscription?"
 msgstr "Cancel subscription?"
 
-#. Plutonium subscription card hint shown to a subscriber who could move to a lower price but has another billing change already scheduled.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionCard.tsx
+#. Ember subscription card hint shown to a subscriber who could move to a lower price but has another billing change already scheduled.
+#: src/features/app/components/dialogs/components/ember/SubscriptionCard.tsx
 msgid "Cancel the scheduled change to move to the current price instead."
 msgstr "Cancel the scheduled change to move to the current price instead."
 
@@ -7165,7 +7165,7 @@ msgid "Cancel upload"
 msgstr "Cancel upload"
 
 #. Billing button that cancels a scheduled yearly upgrade.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionActions.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionActions.tsx
 msgid "Cancel yearly upgrade"
 msgstr "Cancel yearly upgrade"
 
@@ -7175,7 +7175,7 @@ msgid "Cancel your friend request to {displayName}?"
 msgstr "Cancel your friend request to {displayName}?"
 
 #. Subscription status badge meaning cancellation is scheduled for the renewal date.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionStatusBadge.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionStatusBadge.tsx
 msgid "Canceling"
 msgstr "Canceling"
 
@@ -7184,7 +7184,7 @@ msgstr "Canceling"
 msgid "Cancellation"
 msgstr "Cancellation"
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionDescription.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionDescription.tsx
 msgid "Cancels on <0>{cancelDate}</0>. <1/> remain active until then."
 msgstr "Cancels on <0>{cancelDate}</0>. <1/> remain active until then."
 
@@ -7444,7 +7444,7 @@ msgid "Change password form"
 msgstr "Change password form"
 
 #. Subscription status badge meaning a future billing plan change is scheduled.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionStatusBadge.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionStatusBadge.tsx
 msgid "Change scheduled"
 msgstr "Change scheduled"
 
@@ -7956,8 +7956,8 @@ msgstr "Channels I moderate"
 msgid "Character limit exceeded by {remaining}"
 msgstr "Character limit exceeded by {remaining}"
 
-#. Plutonium page comparison row label for the message length limit.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison row label for the message length limit.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Characters in a single message"
 msgstr "Characters in a single message"
 
@@ -8096,7 +8096,7 @@ msgid "Checking the sign-in request…"
 msgstr "Checking the sign-in request…"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Checkout"
 msgstr "Checkout"
 
@@ -8106,17 +8106,17 @@ msgid "Checkout canceled. You weren't charged."
 msgstr "Checkout canceled. You weren't charged."
 
 #. Modal body for the generic "checkout blocked" state on a self-hosted instance.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Checkout is blocked for this account."
 msgstr "Checkout is blocked for this account."
 
 #. Modal body for the generic "checkout blocked" state. Provides the support email.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Checkout is blocked for this account. Contact {supportEmail} if you need help."
 msgstr "Checkout is blocked for this account. Contact {supportEmail} if you need help."
 
 #. Modal title for the generic "checkout blocked" state when no more specific reason is known.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Checkout unavailable"
 msgstr "Checkout unavailable"
 
@@ -8200,7 +8200,7 @@ msgid "Choose a speed for spoken text."
 msgstr "Choose a speed for spoken text."
 
 #. Settings search entry description. One-line summary of what the settings search entry controls.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Choose a subscription plan or gift option"
 msgstr "Choose a subscription plan or gift option"
 
@@ -8294,8 +8294,8 @@ msgstr "Choose how starred GIF favorites are stored"
 msgid "Choose how times are displayed throughout the app"
 msgstr "Choose how times are displayed throughout the app"
 
-#. Plutonium subscription payment method picker description, generic fallback when no country-specific copy applies.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#. Ember subscription payment method picker description, generic fallback when no country-specific copy applies.
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Choose how you'd like to pay for this subscription."
 msgstr "Choose how you'd like to pay for this subscription."
 
@@ -8304,7 +8304,7 @@ msgid "Choose one of the methods below to prove domain ownership. You only need 
 msgstr "Choose one of the methods below to prove domain ownership. You only need to complete one."
 
 #. Modal title for the payment method picker (local card vs alternative method).
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Choose payment method"
 msgstr "Choose payment method"
 
@@ -8478,13 +8478,13 @@ msgstr "Claim your account by adding an email and password. We will send a verif
 msgid "Claim your account by choosing a username and password. You sign in with them, so pick ones you will remember."
 msgstr "Claim your account by choosing a username and password. You sign in with them, so pick ones you will remember."
 
-#. Plutonium page note under disabled buttons for unclaimed accounts. premiumProductName is the paid tier name.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page note under disabled buttons for unclaimed accounts. premiumProductName is the paid tier name.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Claim your account to buy {premiumProductName}."
 msgstr "Claim your account to buy {premiumProductName}."
 
 #. Note in the gift purchase dialog for unclaimed accounts.
-#: src/features/premium/components/modals/GiftPlutoniumModal.tsx
+#: src/features/premium/components/modals/GiftEmberModal.tsx
 msgid "Claim your account to buy gifts."
 msgstr "Claim your account to buy gifts."
 
@@ -9130,8 +9130,8 @@ msgstr "Communities listed in Explore need at least email verification. You can'
 msgid "Communities with over 250 people are forced onto the \"mentions only\" setting. Your original setting is preserved and will be restored if the community drops below 250 members."
 msgstr "Communities with over 250 people are forced onto the \"mentions only\" setting. Your original setting is preserved and will be restored if the community drops below 250 members."
 
-#. Plutonium page comparison row label for the community limit.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison row label for the community limit.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Communities you can join"
 msgstr "Communities you can join"
 
@@ -9379,19 +9379,19 @@ msgstr "Compact buttons with just an icon, perfect for toolbars and action bars.
 msgid "Compact mode"
 msgstr "Compact mode"
 
-#. Heading of the comparison table on the Plutonium page. premiumProductName is the paid tier name.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Heading of the comparison table on the Ember page. premiumProductName is the paid tier name.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Compare Free and {premiumProductName}"
 msgstr "Compare Free and {premiumProductName}"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Comparison"
 msgstr "Comparison"
 
 #. Modal title for the mobile checkout confirmation when opening the payment provider in a browser.
 #. Title of the confirmation shown on mobile before opening the payment page for the Operator Pass.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 #: src/features/premium/components/modals/OperatorPassCheckoutModal.tsx
 msgid "Complete payment"
 msgstr "Complete payment"
@@ -9613,8 +9613,8 @@ msgstr "Confirm your email before editing your profile. You can still preview it
 msgid "Confirm your email before sending friend requests."
 msgstr "Confirm your email before sending friend requests."
 
-#. Title of the error modal shown when an unverified account tries to purchase Plutonium.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#. Title of the error modal shown when an unverified account tries to purchase Ember.
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Confirm your email first"
 msgstr "Confirm your email first"
 
@@ -9643,13 +9643,13 @@ msgstr "Confirm your email to add friends."
 msgid "Confirm your email to add reactions."
 msgstr "Confirm your email to add reactions."
 
-#. Plutonium page note under disabled buttons for unverified accounts. premiumProductName is the paid tier name.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page note under disabled buttons for unverified accounts. premiumProductName is the paid tier name.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Confirm your email to buy {premiumProductName}."
 msgstr "Confirm your email to buy {premiumProductName}."
 
 #. Note in the gift purchase dialog for accounts without a verified email.
-#: src/features/premium/components/modals/GiftPlutoniumModal.tsx
+#: src/features/premium/components/modals/GiftEmberModal.tsx
 msgid "Confirm your email to buy gifts."
 msgstr "Confirm your email to buy gifts."
 
@@ -10052,7 +10052,7 @@ msgid "Continue to {paymentProviderName}"
 msgstr "Continue to {paymentProviderName}"
 
 #. Button in the gift time confirmation that proceeds to subscription checkout.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Continue to checkout"
 msgstr "Continue to checkout"
 
@@ -10651,13 +10651,13 @@ msgstr "Couldn't cancel friend request"
 msgid "Couldn't cancel the friend request. Try again."
 msgstr "Couldn't cancel the friend request. Try again."
 
-#. Title of the generic fallback error modal shown when canceling a scheduled Plutonium billing cycle change fails.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Title of the generic fallback error modal shown when canceling a scheduled Ember billing cycle change fails.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Couldn't cancel your pending billing change"
 msgstr "Couldn't cancel your pending billing change"
 
-#. Title of the generic fallback error modal shown when cancelling a Plutonium subscription fails.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Title of the generic fallback error modal shown when cancelling a Ember subscription fails.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Couldn't cancel your subscription"
 msgstr "Couldn't cancel your subscription"
 
@@ -10666,13 +10666,13 @@ msgstr "Couldn't cancel your subscription"
 msgid "Couldn't cancel. Try again or contact support."
 msgstr "Couldn't cancel. Try again or contact support."
 
-#. Title of the generic fallback error modal shown when changing the Plutonium billing cycle fails.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Title of the generic fallback error modal shown when changing the Ember billing cycle fails.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Couldn't change your billing cycle"
 msgstr "Couldn't change your billing cycle"
 
-#. Title of the generic fallback error modal shown when moving a Plutonium subscription down to the current price fails.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Title of the generic fallback error modal shown when moving a Ember subscription down to the current price fails.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Couldn't change your price"
 msgstr "Couldn't change your price"
 
@@ -10823,8 +10823,8 @@ msgstr "Couldn't download the desktop update"
 msgid "Couldn't duplicate this channel"
 msgstr "Couldn't duplicate this channel"
 
-#. Title of the generic fallback error modal shown when ending the Plutonium grace period fails.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Title of the generic fallback error modal shown when ending the Ember grace period fails.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Couldn't end your grace period"
 msgstr "Couldn't end your grace period"
 
@@ -10975,8 +10975,8 @@ msgstr "Couldn't publish this message"
 msgid "Couldn't reach a Hearth instance at {domain}. Check the address and that the instance is online."
 msgstr "Couldn't reach a Hearth instance at {domain}. Check the address and that the instance is online."
 
-#. Title of the generic fallback error modal shown when reactivating a Plutonium subscription fails.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Title of the generic fallback error modal shown when reactivating a Ember subscription fails.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Couldn't reactivate your subscription"
 msgstr "Couldn't reactivate your subscription"
 
@@ -10991,7 +10991,7 @@ msgid "Couldn't redeem this gift. Try again."
 msgstr "Couldn't redeem this gift. Try again."
 
 #. Title of the generic fallback error modal shown when a self-serve refund fails.
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "Couldn't refund this purchase"
 msgstr "Couldn't refund this purchase"
 
@@ -11001,7 +11001,7 @@ msgid "Couldn't regenerate secret"
 msgstr "Couldn't regenerate secret"
 
 #. Title of the generic fallback error modal shown when rejoining the Visionary community fails.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCommunityActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCommunityActions.tsx
 msgid "Couldn't rejoin the Visionary community"
 msgstr "Couldn't rejoin the Visionary community"
 
@@ -11130,7 +11130,7 @@ msgid "Couldn't start {blueskyProviderName} authorization"
 msgstr "Couldn't start {blueskyProviderName} authorization"
 
 #. Title of the generic fallback error modal shown when creating a checkout session fails unexpectedly.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Couldn't start checkout"
 msgstr "Couldn't start checkout"
 
@@ -11681,7 +11681,7 @@ msgid "Ctrl"
 msgstr "Ctrl"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Currency"
 msgstr "Currency"
 
@@ -11907,8 +11907,8 @@ msgstr "Custom status: "
 msgid "Custom tags"
 msgstr "Custom tags"
 
-#. Plutonium page comparison row label for custom themes.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison row label for custom themes.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Custom themes for the app"
 msgstr "Custom themes for the app"
 
@@ -11951,8 +11951,8 @@ msgstr "Custom…"
 
 #. Billing button that opens the external customer portal.
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionActions.tsx
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/app/components/dialogs/components/ember/SubscriptionActions.tsx
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Customer portal"
 msgstr "Customer portal"
 
@@ -12122,7 +12122,7 @@ msgstr "Data export"
 
 #. Column header for invoice payment or creation date.
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/app/components/dialogs/components/plutonium/InvoiceList.tsx
+#: src/features/app/components/dialogs/components/ember/InvoiceList.tsx
 #: src/features/user/components/settings_utils/section_registry/AppearanceSections.ts
 msgid "Date"
 msgstr "Date"
@@ -13753,7 +13753,7 @@ msgstr "Don't show again"
 msgid "Don't show message previews in the DM list"
 msgstr "Don't show message previews in the DM list"
 
-#: src/features/ui/plutonium_upsell/PlutoniumUpsell.tsx
+#: src/features/ui/ember_upsell/EmberUpsell.tsx
 msgid "Don't show this again"
 msgstr "Don't show this again"
 
@@ -13771,8 +13771,8 @@ msgstr "Don't suggest {deviceName} again"
 msgid "Donate"
 msgstr "Donate"
 
-#. Link text in the Plutonium page donation hint. Opens the donation page on the website.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Link text in the Ember page donation hint. Opens the donation page on the website.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Donate instead"
 msgstr "Donate instead"
 
@@ -13923,7 +13923,7 @@ msgid "Download video"
 msgstr "Download video"
 
 #. Billing invoice status for an invoice not finalized yet.
-#: src/features/app/components/dialogs/components/plutonium/InvoiceList.tsx
+#: src/features/app/components/dialogs/components/ember/InvoiceList.tsx
 msgid "Draft"
 msgstr "Draft"
 
@@ -14111,8 +14111,8 @@ msgstr "Each published message allows 3 quick edits, then 1 every 20 minutes. Tr
 msgid "Each username belongs to one person. If a name is taken, people pick another one."
 msgstr "Each username belongs to one person. If a name is taken, people pick another one."
 
-#. Plutonium page comparison row label for early access.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison row label for early access.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Early access to new features"
 msgstr "Early access to new features"
 
@@ -14436,11 +14436,11 @@ msgstr "Editing message"
 msgid "Education"
 msgstr "Education"
 
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "Eligible for a refund until {windowEndsOn}."
 msgstr "Eligible for a refund until {windowEndsOn}."
 
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "Eligible for a refund until {windowEndsOn}. This will also cancel your subscription immediately."
 msgstr "Eligible for a refund until {windowEndsOn}. This will also cancel your subscription immediately."
 
@@ -14983,15 +14983,15 @@ msgid "End date"
 msgstr "End date"
 
 #. Billing button that ends premium grace period immediately.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionActions.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionActions.tsx
 msgid "End grace now"
 msgstr "End grace now"
 
-#: src/features/premium/components/plutonium_page/PlutoniumPage.tsx
+#: src/features/premium/components/ember_page/EmberPage.tsx
 msgid "End grace period"
 msgstr "End grace period"
 
-#: src/features/premium/components/plutonium_page/PlutoniumPage.tsx
+#: src/features/premium/components/ember_page/EmberPage.tsx
 msgid "End grace period now?"
 msgstr "End grace period now?"
 
@@ -15476,10 +15476,10 @@ msgstr "Every community that follows this channel gets a copy. If you edit or de
 msgid "Everyone"
 msgstr "Everyone"
 
-#. Bullet point in the P2P call dialog. Plutonium is the name of the paid subscription and must not be translated. 4K and fps are video terms.
+#. Bullet point in the P2P call dialog. Ember is the name of the paid subscription and must not be translated. 4K and fps are video terms.
 #: src/features/voice/utils/VoiceMessageDescriptors.ts
-msgid "Everyone in the call gets Plutonium stream quality for free: up to 4K source resolution and 60 fps."
-msgstr "Everyone in the call gets Plutonium stream quality for free: up to 4K source resolution and 60 fps."
+msgid "Everyone in the call gets Ember stream quality for free: up to 4K source resolution and 60 fps."
+msgstr "Everyone in the call gets Ember stream quality for free: up to 4K source resolution and 60 fps."
 
 #. Description of the single community option in the setup wizard.
 #: src/features/app/components/setup/SetupPolicySteps.tsx
@@ -15618,7 +15618,7 @@ msgstr "Expire after"
 
 #. Error message in the invite list item.
 #. Subscription status badge meaning premium access has fully expired.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionStatusBadge.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionStatusBadge.tsx
 #: src/features/invite/components/InviteListItem.tsx
 msgid "Expired"
 msgstr "Expired"
@@ -15648,7 +15648,7 @@ msgstr "Expired on {date}"
 msgid "Expired on {earliest}"
 msgstr "Expired on {earliest}"
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionDescription.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionDescription.tsx
 msgid "Expired on <0>{expiredDate}</0>. <1/> are no longer active. You can resubscribe at any time."
 msgstr "Expired on <0>{expiredDate}</0>. <1/> are no longer active. You can resubscribe at any time."
 
@@ -16225,8 +16225,8 @@ msgstr "Favorited"
 msgid "Favorites"
 msgstr "Favorites"
 
-#. Column header for perk names in the Plutonium page comparison table.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Column header for perk names in the Ember page comparison table.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Feature"
 msgstr "Feature"
 
@@ -16238,7 +16238,7 @@ msgstr "Feature temporarily disabled"
 #. Developer options group for feature behavior overrides.
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
 #: src/features/devtools/components/DeveloperOptionsToggleGroups.ts
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Features"
 msgstr "Features"
 
@@ -16277,7 +16277,7 @@ msgstr "File options"
 msgid "File ordering"
 msgstr "File ordering"
 
-#. Title of the file-too-large alert variant that offers a Plutonium upsell.
+#. Title of the file-too-large alert variant that offers a Ember upsell.
 #: src/features/messaging/components/alerts/FileSizeTooLargeModal.tsx
 msgid "File size limit exceeded"
 msgstr "File size limit exceeded"
@@ -16648,8 +16648,8 @@ msgstr "Fonts"
 msgid "Food & drink"
 msgstr "Food & drink"
 
-#. Screen reader label for the asterisk that jumps to the custom tag footnote on the Plutonium page.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Screen reader label for the asterisk that jumps to the custom tag footnote on the Ember page.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Footnote about custom tags"
 msgstr "Footnote about custom tags"
 
@@ -16912,8 +16912,8 @@ msgstr "Frame rates above 30 FPS require {premiumProductName}"
 msgid "France"
 msgstr "France"
 
-#. Column header for the free tier in the Plutonium page comparison table.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Column header for the free tier in the Ember page comparison table.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Free"
 msgstr "Free"
 
@@ -16928,12 +16928,12 @@ msgid "Free user (with purchase history)"
 msgstr "Free user (with purchase history)"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Free versus premium"
 msgstr "Free versus premium"
 
 #. Settings search entry label. Names the settings search entry in the settings UI. Preserve {premiumProductName}; it is inserted by code.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Free vs {premiumProductName}"
 msgstr "Free vs {premiumProductName}"
 
@@ -17328,7 +17328,7 @@ msgstr "German"
 msgid "Germany"
 msgstr "Germany"
 
-#. Generic upsell CTA button to start the Plutonium purchase flow. Preserve {premiumProductName}.
+#. Generic upsell CTA button to start the Ember purchase flow. Preserve {premiumProductName}.
 #: src/features/i18n/utils/CommonMessageDescriptors.ts
 msgid "Get {premiumProductName}"
 msgstr "Get {premiumProductName}"
@@ -17343,18 +17343,18 @@ msgstr "Get {premiumProductName} to customize your tag"
 msgid "Get {premiumProductName} to customize your tag or keep it when changing your username"
 msgstr "Get {premiumProductName} to customize your tag or keep it when changing your username"
 
-#. Plutonium page perk card body about profile perks, shown on instances where people sign in with a username and have no tag.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page perk card body about profile perks, shown on instances where people sign in with a username and have no tag.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Get an animated avatar and banner, a subscriber badge and a separate profile for each community."
 msgstr "Get an animated avatar and banner, a subscriber badge and a separate profile for each community."
 
-#. Plutonium page perk card body about profile perks. footnote is a clickable asterisk that points to a footnote about tags. Keep it directly after the word for username.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page perk card body about profile perks. footnote is a clickable asterisk that points to a footnote about tags. Keep it directly after the word for username.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Get an animated avatar and banner, a subscriber badge, the four-digit tag you want after your username{footnote}, and a separate profile for each community."
 msgstr "Get an animated avatar and banner, a subscriber badge, the four-digit tag you want after your username{footnote}, and a separate profile for each community."
 
-#. Secondary Plutonium page button that starts a monthly subscription checkout.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Secondary Ember page button that starts a monthly subscription checkout.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Get monthly"
 msgstr "Get monthly"
 
@@ -17388,8 +17388,8 @@ msgstr "Get the desktop app for system-wide push-to-talk and a few other goodies
 msgid "Get the new {productName} app"
 msgstr "Get the new {productName} app"
 
-#. Primary Plutonium page button that starts a yearly subscription checkout.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Primary Ember page button that starts a yearly subscription checkout.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Get yearly"
 msgstr "Get yearly"
 
@@ -17447,21 +17447,21 @@ msgstr "GIFs could not load"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
 #. Subscription status badge meaning premium access came from a gift.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionStatusBadge.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionStatusBadge.tsx
 #: src/features/expressions/components/modals/GiftAcceptModal.tsx
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Gift"
 msgstr "Gift"
 
-#. Plutonium page button that opens the gift purchase dialog. premiumProductName is the paid tier name.
+#. Ember page button that opens the gift purchase dialog. premiumProductName is the paid tier name.
 #. Premium gift purchase section title. premiumProductName is the short paid product name.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 #: src/features/premium/utils/PremiumMessageDescriptors.ts
 msgid "Gift {premiumProductName}"
 msgstr "Gift {premiumProductName}"
 
-#. Body of the closing call to action on the Plutonium page for members. premiumProductName is the paid tier name.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Body of the closing call to action on the Ember page for members. premiumProductName is the paid tier name.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Gift {premiumProductName} to a friend for a month or a whole year. Gifts never renew."
 msgstr "Gift {premiumProductName} to a friend for a month or a whole year. Gifts never renew."
 
@@ -17524,7 +17524,7 @@ msgid "Gift inventory nagbar"
 msgstr "Gift inventory nagbar"
 
 #. Accessible label of the gift length options in the gift purchase dialog.
-#: src/features/premium/components/modals/GiftPlutoniumModal.tsx
+#: src/features/premium/components/modals/GiftEmberModal.tsx
 msgid "Gift length"
 msgstr "Gift length"
 
@@ -17556,7 +17556,7 @@ msgid "Gift redeemed!"
 msgstr "Gift redeemed!"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Gift subscription"
 msgstr "Gift subscription"
 
@@ -17599,7 +17599,7 @@ msgstr "Gift: expiring soon"
 msgid "Gift: grace period (still have access)"
 msgstr "Gift: grace period (still have access)"
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionDescription.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionDescription.tsx
 msgid "Gifted <0/> until <1>{giftEndDate}</1>. Does not renew automatically. Redeem more gift codes to extend."
 msgstr "Gifted <0/> until <1>{giftEndDate}</1>. Does not renew automatically. Redeem more gift codes to extend."
 
@@ -17609,12 +17609,12 @@ msgid "Gifts"
 msgstr "Gifts"
 
 #. Toast when someone arrives from a gift link but gift purchases are not available for this account.
-#: src/features/premium/components/plutonium_page/PlutoniumPage.tsx
+#: src/features/premium/components/ember_page/EmberPage.tsx
 msgid "Gifts aren't available for your account right now."
 msgstr "Gifts aren't available for your account right now."
 
 #. Message in the gift purchase dialog when gifts cannot be bought.
-#: src/features/premium/components/modals/GiftPlutoniumModal.tsx
+#: src/features/premium/components/modals/GiftEmberModal.tsx
 msgid "Gifts aren't available right now."
 msgstr "Gifts aren't available right now."
 
@@ -17798,7 +17798,7 @@ msgid "Got it!"
 msgstr "Got it!"
 
 #. Subscription status badge meaning access remains briefly after subscription end.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionStatusBadge.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionStatusBadge.tsx
 msgid "Grace period"
 msgstr "Grace period"
 
@@ -18040,8 +18040,8 @@ msgstr "Has ever purchased"
 msgid "Has ever purchased override"
 msgstr "Has ever purchased override"
 
-#. Plutonium page hero text on an instance where the paid tier cannot be bought, only redeemed. premiumProductName is the paid tier name.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page hero text on an instance where the paid tier cannot be bought, only redeemed. premiumProductName is the paid tier name.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Have a gift code? Redeem it to unlock {premiumProductName}."
 msgstr "Have a gift code? Redeem it to unlock {premiumProductName}."
 
@@ -19865,8 +19865,8 @@ msgstr "Invites to {communityName} are currently disabled because {productName} 
 
 #. Fallback label when billing invoice status is unknown.
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/app/components/dialogs/components/plutonium/InvoiceList.tsx
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/app/components/dialogs/components/ember/InvoiceList.tsx
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Invoice"
 msgstr "Invoice"
 
@@ -20224,8 +20224,8 @@ msgstr "Jump to the oldest unread message"
 msgid "Just join (keep other connections)"
 msgstr "Just join (keep other connections)"
 
-#. Hint under the Plutonium page hero buttons. productName is the app name. donateLink is a link whose text is "Donate instead".
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Hint under the Ember page hero buttons. productName is the app name. donateLink is a link whose text is "Donate instead".
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Just want to support {productName}'s open source development? {donateLink}."
 msgstr "Just want to support {productName}'s open source development? {donateLink}."
 
@@ -20270,7 +20270,7 @@ msgstr "Keep attachments when clearing an edit"
 msgid "Keep everything"
 msgstr "Keep everything"
 
-#: src/features/premium/components/plutonium_page/PlutoniumPage.tsx
+#: src/features/premium/components/ember_page/EmberPage.tsx
 msgid "Keep grace period"
 msgstr "Keep grace period"
 
@@ -20299,7 +20299,7 @@ msgstr "Keep purchase"
 msgid "Keep running"
 msgstr "Keep running"
 
-#: src/features/premium/components/plutonium_page/PlutoniumPage.tsx
+#: src/features/premium/components/ember_page/EmberPage.tsx
 msgid "Keep subscription"
 msgstr "Keep subscription"
 
@@ -20323,8 +20323,8 @@ msgstr "Keep transmitting briefly after release."
 msgid "Keep window dimensions and placement between reloads"
 msgstr "Keep window dimensions and placement between reloads"
 
-#. Heading of the closing call to action on the Plutonium page for members on gifted time who can subscribe.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Heading of the closing call to action on the Ember page for members on gifted time who can subscribe.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Keep your perks going"
 msgstr "Keep your perks going"
 
@@ -20448,8 +20448,8 @@ msgstr "Languages"
 msgid "Large"
 msgstr "Large"
 
-#. Plutonium page comparison row label for the upload size limit.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison row label for the upload size limit.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Largest file you can upload"
 msgstr "Largest file you can upload"
 
@@ -20544,8 +20544,8 @@ msgstr "Learn about screen share previews"
 msgid "Learn more"
 msgstr "Learn more"
 
-#. Link text in the Plutonium page tag footnote. Opens the Visionary help article.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Link text in the Ember page tag footnote. Opens the Visionary help article.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Learn more about Visionary"
 msgstr "Learn more about Visionary"
 
@@ -20654,7 +20654,7 @@ msgstr "Left mouse button"
 msgid "Left tooltip"
 msgstr "Left tooltip"
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionDescription.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionDescription.tsx
 msgid "Legacy rate"
 msgstr "Legacy rate"
 
@@ -21409,7 +21409,7 @@ msgid "Manage nicknames"
 msgstr "Manage nicknames"
 
 #. Billing button that opens Stripe customer portal for payment-method management only.
-#: src/features/app/components/dialogs/components/plutonium/PurchaseHistorySection.tsx
+#: src/features/app/components/dialogs/components/ember/PurchaseHistorySection.tsx
 msgid "Manage payment methods"
 msgstr "Manage payment methods"
 
@@ -21434,8 +21434,8 @@ msgid "Manage roles"
 msgstr "Manage roles"
 
 #. Billing action that opens subscription management or the customer billing portal.
-#. Plutonium page hero button that scrolls to the subscription management panel.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page hero button that scrolls to the subscription management panel.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 #: src/features/premium/utils/PremiumMessageDescriptors.ts
 msgid "Manage subscription"
 msgstr "Manage subscription"
@@ -21455,7 +21455,7 @@ msgid "Manage your purchased {PREMIUM_PRODUCT_NAME} gift codes. Share the gift U
 msgstr "Manage your purchased {PREMIUM_PRODUCT_NAME} gift codes. Share the gift URL with someone special or redeem it for yourself!"
 
 #. Settings search entry description. One-line summary of what the settings search entry controls.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Manage your subscription"
 msgstr "Manage your subscription"
 
@@ -21803,8 +21803,8 @@ msgstr "Media in channels that are not marked 18+. Channels marked 18+ always sh
 msgid "Media in group chats and in direct messages from people who aren't your friends."
 msgstr "Media in group chats and in direct messages from people who aren't your friends."
 
-#. Plutonium page comparison row label for the saved media limit.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison row label for the saved media limit.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Media items you can save for later"
 msgstr "Media items you can save for later"
 
@@ -22423,8 +22423,8 @@ msgstr "Messages published in these announcement channels are copied here."
 msgid "Messages published in these announcement channels are copied into your channels."
 msgstr "Messages published in these announcement channels are copied into your channels."
 
-#. Plutonium page comparison row label for the bookmark limit.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison row label for the bookmark limit.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Messages you can bookmark"
 msgstr "Messages you can bookmark"
 
@@ -22711,15 +22711,15 @@ msgid "Month"
 msgstr "Month"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Monthly"
 msgstr "Monthly"
 
-#: src/features/app/components/dialogs/components/plutonium/ScheduledSubscriptionChangeDescription.tsx
+#: src/features/app/components/dialogs/components/ember/ScheduledSubscriptionChangeDescription.tsx
 msgid "Monthly billing starts on <0>{pendingChangeDate}</0>."
 msgstr "Monthly billing starts on <0>{pendingChangeDate}</0>."
 
-#: src/features/app/components/dialogs/components/plutonium/ScheduledSubscriptionChangeDescription.tsx
+#: src/features/app/components/dialogs/components/ember/ScheduledSubscriptionChangeDescription.tsx
 msgid "Monthly billing starts on <0>{pendingChangeDate}</0>. First monthly charge: {pendingInitialPriceLabel}. Future monthly renewals: {pendingRecurringPriceLabel}/month."
 msgstr "Monthly billing starts on <0>{pendingChangeDate}</0>. First monthly charge: {pendingInitialPriceLabel}. Future monthly renewals: {pendingRecurringPriceLabel}/month."
 
@@ -22729,7 +22729,7 @@ msgid "Monthly donation (optional)"
 msgstr "Monthly donation (optional)"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Monthly gift"
 msgstr "Monthly gift"
 
@@ -23651,13 +23651,13 @@ msgstr "New post"
 msgid "New post in #{forumName}"
 msgstr "New post in #{forumName}"
 
-#. Plutonium subscription card line shown when a move to a lower price is scheduled but the new amount is unknown. {pendingChangeDate} is a date already formatted and localized by code; never write a date into the translation.
-#: src/features/app/components/dialogs/components/plutonium/ScheduledSubscriptionChangeDescription.tsx
+#. Ember subscription card line shown when a move to a lower price is scheduled but the new amount is unknown. {pendingChangeDate} is a date already formatted and localized by code; never write a date into the translation.
+#: src/features/app/components/dialogs/components/ember/ScheduledSubscriptionChangeDescription.tsx
 msgid "New price scheduled for <0>{pendingChangeDate}</0>."
 msgstr "New price scheduled for <0>{pendingChangeDate}</0>."
 
-#. Plutonium subscription card line shown when a move to a lower price is scheduled. {pendingChangeDate} is a date and {pendingTargetPriceLabel} is a currency amount, both already formatted and localized by code; never write a date or an amount into the translation.
-#: src/features/app/components/dialogs/components/plutonium/ScheduledSubscriptionChangeDescription.tsx
+#. Ember subscription card line shown when a move to a lower price is scheduled. {pendingChangeDate} is a date and {pendingTargetPriceLabel} is a currency amount, both already formatted and localized by code; never write a date or an amount into the translation.
+#: src/features/app/components/dialogs/components/ember/ScheduledSubscriptionChangeDescription.tsx
 msgid "New price scheduled for <0>{pendingChangeDate}</0>. Renewals will be {pendingTargetPriceLabel} from then on."
 msgstr "New price scheduled for <0>{pendingChangeDate}</0>. Renewals will be {pendingTargetPriceLabel} from then on."
 
@@ -23779,7 +23779,7 @@ msgid "No active overrides"
 msgstr "No active overrides"
 
 #. Title of the error modal shown when an action needs an active subscription but none exists.
-#: src/features/app/components/dialogs/components/plutonium/utils/PremiumActionErrorModal.tsx
+#: src/features/app/components/dialogs/components/ember/utils/PremiumActionErrorModal.tsx
 msgid "No active subscription"
 msgstr "No active subscription"
 
@@ -24046,7 +24046,7 @@ msgid "No invites created"
 msgstr "No invites created"
 
 #. Quiet empty state when no invoices exist yet.
-#: src/features/app/components/dialogs/components/plutonium/InvoiceList.tsx
+#: src/features/app/components/dialogs/components/ember/InvoiceList.tsx
 msgid "No invoices yet."
 msgstr "No invoices yet."
 
@@ -24501,8 +24501,8 @@ msgstr "Not allowed"
 msgid "Not assigned"
 msgstr "Not assigned"
 
-#. Screen reader text for a cross in the Plutonium page comparison table.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Screen reader text for a cross in the Ember page comparison table.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Not available"
 msgstr "Not available"
 
@@ -24533,10 +24533,10 @@ msgstr "Not listed."
 #. Secondary button that closes the one-time recovery kit prompt.
 #. Secondary button that closes the passkey update modal after an attempt failed.
 #. Setup wizard option that leaves the push relay off.
-#. Short label in the Plutonium self serve refund section. Keep the tone plain and specific.
+#. Short label in the Ember self serve refund section. Keep the tone plain and specific.
 #. Short label in the authentication new device monitoring. Keep the tone plain and specific.
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionCard.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionCard.tsx
 #: src/features/app/components/layout/app_layout/nagbars/VoiceSessionRestoreNagbar.tsx
 #: src/features/app/components/setup/SetupWizardSteps.tsx
 #: src/features/auth/components/modals/AuthenticatorOfferModal.tsx
@@ -24638,7 +24638,7 @@ msgid "Nothing to preview yet."
 msgstr "Nothing to preview yet."
 
 #. Title of the error modal shown when there is no refundable purchase on the account.
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "Nothing to refund"
 msgstr "Nothing to refund"
 
@@ -24889,7 +24889,7 @@ msgid "on {instanceLabel}"
 msgstr "on {instanceLabel}"
 
 #. Billing confirmation body for moving an active subscription down to the current price. {listPriceEffectiveDate} is a date, and {listPriceCurrentLabel} and {listPriceNewLabel} are currency amounts, all already formatted and localized by code; never write a date or an amount into the translation.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionCard.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionCard.tsx
 msgid "On <0>{listPriceEffectiveDate}</0> your subscription moves from {listPriceCurrentLabel} to {listPriceNewLabel}. Nothing is charged today, and the rest of your subscription stays exactly as it is."
 msgstr "On <0>{listPriceEffectiveDate}</0> your subscription moves from {listPriceCurrentLabel} to {listPriceNewLabel}. Nothing is charged today, and the rest of your subscription stays exactly as it is."
 
@@ -25114,8 +25114,8 @@ msgstr "Only the members and roles you pick, plus admins, can view this channel.
 msgid "Only the selected ones"
 msgstr "Only the selected ones"
 
-#. Body of the error modal shown when a non-Visionary user tries to rejoin a gated Plutonium community.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCommunityActions.tsx
+#. Body of the error modal shown when a non-Visionary user tries to rejoin a gated Ember community.
+#: src/features/app/components/dialogs/components/ember/hooks/useCommunityActions.tsx
 msgid "Only Visionary members can join this community. Your access may have changed since this screen was opened."
 msgstr "Only Visionary members can join this community. Your access may have changed since this screen was opened."
 
@@ -25137,7 +25137,7 @@ msgstr "Opacity"
 #. Billing invoice status for an invoice awaiting payment.
 #. Button label that opens the source settings section for an advanced setting.
 #. Short button that opens a billing invoice or receipt.
-#: src/features/app/components/dialogs/components/plutonium/InvoiceList.tsx
+#: src/features/app/components/dialogs/components/ember/InvoiceList.tsx
 #: src/features/platform/utils/DesktopLocaleBridge.ts
 #: src/features/user/components/modals/tabs/advanced_settings_tab/AdvancedSettingRow.tsx
 msgid "Open"
@@ -25193,8 +25193,8 @@ msgstr "Open {landmarkName}"
 msgid "Open {name}"
 msgstr "Open {name}"
 
-#. Button on the settings card that opens the Plutonium page. premiumProductFullName is the full paid tier name.
-#: src/features/premium/components/plutonium_page/PlutoniumPageLinkCard.tsx
+#. Button on the settings card that opens the Ember page. premiumProductFullName is the full paid tier name.
+#: src/features/premium/components/ember_page/EmberPageLinkCard.tsx
 msgid "Open {premiumProductFullName}"
 msgstr "Open {premiumProductFullName}"
 
@@ -25484,7 +25484,7 @@ msgid "Open in Themes"
 msgstr "Open in Themes"
 
 #. Accessible label for opening a specific billing invoice.
-#: src/features/app/components/dialogs/components/plutonium/InvoiceList.tsx
+#: src/features/app/components/dialogs/components/ember/InvoiceList.tsx
 msgid "Open invoice {invoiceLabel}"
 msgstr "Open invoice {invoiceLabel}"
 
@@ -25806,11 +25806,11 @@ msgstr "Options for {displayName}"
 msgid "Options for {themeName}"
 msgstr "Options for {themeName}"
 
-#. Compact conjunction between the monthly and yearly price on the Plutonium page hero. On narrow screens it starts the second line, right before the yearly price.
+#. Compact conjunction between the monthly and yearly price on the Ember page hero. On narrow screens it starts the second line, right before the yearly price.
 #. Small separator between alternative shortcut keycaps in the keyboard mode intro modal.
 #: src/features/connection/components/modals/AddConnectionModal.tsx
 #: src/features/input/components/modals/KeyboardModeIntroModal.tsx
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "or"
 msgstr "or"
 
@@ -25978,7 +25978,7 @@ msgid "Output volume"
 msgstr "Output volume"
 
 #. Title of the error modal shown when a self-serve refund is no longer within the eligible window.
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "Outside the refund window"
 msgstr "Outside the refund window"
 
@@ -26075,7 +26075,7 @@ msgid "Page up"
 msgstr "Page up"
 
 #. Billing invoice status for a completed invoice.
-#: src/features/app/components/dialogs/components/plutonium/InvoiceList.tsx
+#: src/features/app/components/dialogs/components/ember/InvoiceList.tsx
 msgid "Paid"
 msgstr "Paid"
 
@@ -26377,17 +26377,17 @@ msgid "Paused. The person who followed this channel can no longer see it. Follow
 msgstr "Paused. The person who followed this channel can no longer see it. Follow it again to resume."
 
 #. Description at the top of the gift purchase dialog.
-#: src/features/premium/components/modals/GiftPlutoniumModal.tsx
+#: src/features/premium/components/modals/GiftEmberModal.tsx
 msgid "Pay once and get a gift link to share. Gifts never renew."
 msgstr "Pay once and get a gift link to share. Gifts never renew."
 
-#. Plutonium subscription payment method picker description for Brazil. Explains Pix recurring vs falling back to a card.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#. Ember subscription payment method picker description for Brazil. Explains Pix recurring vs falling back to a card.
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Pay with {pixPaymentMethod} Automático to authorize recurring charges directly from your Brazilian bank. Or choose \"Use card\" to enter a credit card on {paymentProviderName}'s next screen."
 msgstr "Pay with {pixPaymentMethod} Automático to authorize recurring charges directly from your Brazilian bank. Or choose \"Use card\" to enter a credit card on {paymentProviderName}'s next screen."
 
-#. Plutonium subscription payment method picker description for India. Explains UPI e-mandate vs falling back to a card.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#. Ember subscription payment method picker description for India. Explains UPI e-mandate vs falling back to a card.
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Pay with {upiPaymentMethod} to set up an RBI-compliant e-mandate from your Indian bank. Or choose \"Use card\" to enter a credit card on {paymentProviderName}'s next screen."
 msgstr "Pay with {upiPaymentMethod} to set up an RBI-compliant e-mandate from your Indian bank. Or choose \"Use card\" to enter a credit card on {paymentProviderName}'s next screen."
 
@@ -26405,12 +26405,12 @@ msgid "Payment successful"
 msgstr "Payment successful"
 
 #. Body of the error modal shown when the payment provider is not configured or reachable.
-#: src/features/app/components/dialogs/components/plutonium/utils/PremiumActionErrorModal.tsx
+#: src/features/app/components/dialogs/components/ember/utils/PremiumActionErrorModal.tsx
 msgid "Payments are temporarily unavailable. Please try again in a moment."
 msgstr "Payments are temporarily unavailable. Please try again in a moment."
 
 #. Title of the error modal shown when the payment provider is not configured or reachable.
-#: src/features/app/components/dialogs/components/plutonium/utils/PremiumActionErrorModal.tsx
+#: src/features/app/components/dialogs/components/ember/utils/PremiumActionErrorModal.tsx
 msgid "Payments are unavailable"
 msgstr "Payments are unavailable"
 
@@ -26570,12 +26570,12 @@ msgid "Performance"
 msgstr "Performance"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Perks"
 msgstr "Perks"
 
 #. Subscription status badge meaning premium is paid but perks are temporarily disabled.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionStatusBadge.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionStatusBadge.tsx
 msgid "Perks paused"
 msgstr "Perks paused"
 
@@ -26697,8 +26697,8 @@ msgstr "Photo"
 msgid "Pick a friend to pass it on to. They can accept or decline, and you can take it back until it moves."
 msgstr "Pick a friend to pass it on to. They can accept or decline, and you can take it back until it moves."
 
-#. Body of the closing call to action on the Plutonium page for people without the paid tier.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Body of the closing call to action on the Ember page for people without the paid tier.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Pick a plan and your perks switch on the moment checkout finishes."
 msgstr "Pick a plan and your perks switch on the moment checkout finishes."
 
@@ -26737,8 +26737,8 @@ msgstr "Pick at least one tag for this post."
 msgid "Pick one or more dictionaries. Words from any selected dictionary are accepted, which is useful for multilingual chats."
 msgstr "Pick one or more dictionaries. Words from any selected dictionary are accepted, which is useful for multilingual chats."
 
-#. Plutonium page comparison row label for the custom username tag perk.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison row label for the custom username tag perk.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Pick the 4-digit number after your username"
 msgstr "Pick the 4-digit number after your username"
 
@@ -26904,12 +26904,12 @@ msgid "Plain"
 msgstr "Plain"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Plan"
 msgstr "Plan"
 
-#. Text on the card in settings that links to the Plutonium page.
-#: src/features/premium/components/plutonium_page/PlutoniumPageLinkCard.tsx
+#. Text on the card in settings that links to the Ember page.
+#: src/features/premium/components/ember_page/EmberPageLinkCard.tsx
 msgid "Plans, perks, gifts and your subscription are all on one page."
 msgstr "Plans, perks, gifts and your subscription are all on one page."
 
@@ -27169,7 +27169,7 @@ msgid "Prefers reduced motion"
 msgstr "Prefers reduced motion"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Premium"
 msgstr "Premium"
 
@@ -27409,12 +27409,12 @@ msgid "Price"
 msgstr "Price"
 
 #. Settings search entry label. Also used as a search synonym in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Pricing"
 msgstr "Pricing"
 
 #. Error modal body shown when the user clicks a plan before price IDs have loaded.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Pricing is still loading."
 msgstr "Pricing is still loading."
 
@@ -27708,18 +27708,18 @@ msgid "Publishing limit reached"
 msgstr "Publishing limit reached"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Purchase"
 msgstr "Purchase"
 
 #. Settings search entry description. One-line summary of what the settings search entry controls. Preserve {premiumProductName}; it is inserted by code.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Purchase {premiumProductName} gifts for someone else"
 msgstr "Purchase {premiumProductName} gifts for someone else"
 
 #. Settings search entry label. Also used as a search synonym in the settings search bar.
-#: src/features/app/components/dialogs/components/plutonium/PurchaseHistorySection.tsx
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/app/components/dialogs/components/ember/PurchaseHistorySection.tsx
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Purchase history"
 msgstr "Purchase history"
 
@@ -27735,12 +27735,12 @@ msgid "Purchased gifts"
 msgstr "Purchased gifts"
 
 #. Modal body shown on a self-hosted instance when purchases are disabled for the account.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Purchases are disabled for this account."
 msgstr "Purchases are disabled for this account."
 
 #. Modal body shown when purchases are disabled. Provides the support email for appeals.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Purchases are disabled for this account. Contact {supportEmail} if this looks wrong."
 msgstr "Purchases are disabled for this account. Contact {supportEmail} if this looks wrong."
 
@@ -27765,7 +27765,7 @@ msgid "Purchases are paused while a payment dispute on your account is open. The
 msgstr "Purchases are paused while a payment dispute on your account is open. They come back on their own when the dispute closes."
 
 #. Toast when someone arrives from a subscribe link but purchases are not available for this account.
-#: src/features/premium/components/plutonium_page/PlutoniumPage.tsx
+#: src/features/premium/components/ember_page/EmberPage.tsx
 msgid "Purchases aren't available for your account right now."
 msgstr "Purchases aren't available for your account right now."
 
@@ -27775,7 +27775,7 @@ msgid "Purchases paused"
 msgstr "Purchases paused"
 
 #. Modal title shown when purchases are disabled on this account (server-side enforcement).
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Purchases unavailable"
 msgstr "Purchases unavailable"
 
@@ -28077,13 +28077,13 @@ msgstr "Reactions"
 
 #. Billing button that cancels a scheduled subscription cancellation.
 #. Button label on the premium-expired nagbar. Opens billing so the user can reactivate their subscription.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionActions.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionActions.tsx
 #: src/features/app/components/layout/app_layout/nagbars/PremiumStatusNagbar.tsx
 msgid "Reactivate"
 msgstr "Reactivate"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Reactivate subscription"
 msgstr "Reactivate subscription"
 
@@ -28137,8 +28137,8 @@ msgstr "Read the push relay privacy notice"
 msgid "Reading speed"
 msgstr "Reading speed"
 
-#. Heading of the closing call to action on the Plutonium page for people without the paid tier.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Heading of the closing call to action on the Ember page for people without the paid tier.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Ready to upgrade?"
 msgstr "Ready to upgrade?"
 
@@ -28168,8 +28168,8 @@ msgstr "Reason: {0}"
 
 #. Column header for opening a billing receipt or invoice.
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/app/components/dialogs/components/plutonium/InvoiceList.tsx
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/app/components/dialogs/components/ember/InvoiceList.tsx
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Receipt"
 msgstr "Receipt"
 
@@ -28319,8 +28319,8 @@ msgstr "Redeem"
 msgid "Redeem a gift"
 msgstr "Redeem a gift"
 
-#. Plutonium page link that opens the gift code redemption settings.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page link that opens the gift code redemption settings.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Redeem a gift code"
 msgstr "Redeem a gift code"
 
@@ -28336,7 +28336,7 @@ msgid "Redeem for yourself"
 msgstr "Redeem for yourself"
 
 #. Billing button for entering a premium gift code.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionActions.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionActions.tsx
 msgid "Redeem gift code"
 msgstr "Redeem gift code"
 
@@ -28421,23 +28421,23 @@ msgid "Refresh push subscription"
 msgstr "Refresh push subscription"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Refund"
 msgstr "Refund"
 
 #. Toast success shown after a self-serve refund is issued. Keep plain.
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "Refund issued. May take a few business days to appear."
 msgstr "Refund issued. May take a few business days to appear."
 
-#. Short label in the Plutonium self serve refund section. Keep the tone plain and specific.
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#. Short label in the Ember self serve refund section. Keep the tone plain and specific.
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "Refund purchase"
 msgstr "Refund purchase"
 
-#. Question prompt in the Plutonium self serve refund section. Keep the tone plain and specific.
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#. Question prompt in the Ember self serve refund section. Keep the tone plain and specific.
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "Refund your most recent purchase?"
 msgstr "Refund your most recent purchase?"
 
@@ -29083,7 +29083,7 @@ msgstr "Renamed the community from {oldName} to {newName}"
 msgid "Render all your messages as an unknown message type."
 msgstr "Render all your messages as an unknown message type."
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionCard.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionCard.tsx
 msgid "Renews on <0>{renewalDate}.</0>"
 msgstr "Renews on <0>{renewalDate}.</0>"
 
@@ -29772,7 +29772,7 @@ msgstr "Restore window"
 #. Billing button for restarting a subscription during the grace period.
 #. Billing button for starting a new subscription after premium ended.
 #. Billing button for starting a new subscription after premium expired.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionActions.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionActions.tsx
 msgid "Resubscribe"
 msgstr "Resubscribe"
 
@@ -29863,7 +29863,7 @@ msgid "Review needed"
 msgstr "Review needed"
 
 #. Settings search entry description. One-line summary of what the settings search entry controls.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Review past purchases and refund options"
 msgstr "Review past purchases and refund options"
 
@@ -30215,7 +30215,7 @@ msgstr "Saturation"
 msgid "Save"
 msgstr "Save"
 
-#. Short caption next to a yearly price, in the gift purchase dialog and under the yearly Plutonium price, saying how much the yearly plan saves over paying monthly. Shown as written, never uppercased, so use normal sentence case. percent is a whole number such as 17.
+#. Short caption next to a yearly price, in the gift purchase dialog and under the yearly Ember price, saying how much the yearly plan saves over paying monthly. Shown as written, never uppercased, so use normal sentence case. percent is a whole number such as 17.
 #: src/features/i18n/utils/CommonMessageDescriptors.ts
 msgid "Save {percent}%"
 msgstr "Save {percent}%"
@@ -31350,8 +31350,8 @@ msgstr "Send DSA report"
 msgid "Send file messages in order"
 msgstr "Send file messages in order"
 
-#. Plutonium page perk card title about upload size. size is a formatted size such as 500 MB.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page perk card title about upload size. size is a formatted size such as 500 MB.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Send files up to {size}"
 msgstr "Send files up to {size}"
 
@@ -32006,8 +32006,8 @@ msgstr "Share action."
 msgid "Share and back up"
 msgstr "Share and back up"
 
-#. Plutonium page perk card body about upload size. freeSize is a formatted size such as 25 MB.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page perk card body about upload size. freeSize is a formatted size such as 25 MB.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Share full-length videos and big files without shrinking them first. Free accounts can send up to {freeSize}."
 msgstr "Share full-length videos and big files without shrinking them first. Free accounts can send up to {freeSize}."
 
@@ -32026,8 +32026,8 @@ msgstr "Share screen"
 msgid "Share stream audio"
 msgstr "Share stream audio"
 
-#. Heading of the closing call to action on the Plutonium page for members.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Heading of the closing call to action on the Ember page for members.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Share the perks"
 msgstr "Share the perks"
 
@@ -32059,8 +32059,8 @@ msgstr "Share your screen"
 msgid "Share your screen in high definition (1080p), quad HD (1440p), or native source resolution, at up to 60 FPS."
 msgstr "Share your screen in high definition (1080p), quad HD (1440p), or native source resolution, at up to 60 FPS."
 
-#. Plutonium page perk card body about stream quality.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page perk card body about stream quality.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Share your screen or camera in up to 4K at 60 frames per second. Free accounts stream in up to 720p at 30."
 msgstr "Share your screen or camera in up to 4K at 60 frames per second. Free accounts stream in up to 720p at 30."
 
@@ -32098,7 +32098,7 @@ msgstr "Shared window audio"
 msgid "Sharp text at 720p, up to 30 FPS"
 msgstr "Sharp text at 720p, up to 30 FPS"
 
-#. Description for the high-tier Screen share streaming preset (Plutonium). Resolution and frame rate are technical tokens.
+#. Description for the high-tier Screen share streaming preset (Ember). Resolution and frame rate are technical tokens.
 #: src/features/voice/components/StreamSettingsMenuContent.tsx
 msgid "Sharp text at up to 4K, up to 15 FPS"
 msgstr "Sharp text at up to 4K, up to 15 FPS"
@@ -33290,7 +33290,7 @@ msgstr "Smileys"
 msgid "Smooth 30 FPS at up to 720p"
 msgstr "Smooth 30 FPS at up to 720p"
 
-#. Description for the high-tier Gaming streaming preset (Plutonium). Resolution and frame rate are technical tokens.
+#. Description for the high-tier Gaming streaming preset (Ember). Resolution and frame rate are technical tokens.
 #: src/features/voice/components/StreamSettingsMenuContent.tsx
 msgid "Smooth 60 FPS at up to 1440p"
 msgstr "Smooth 60 FPS at up to 1440p"
@@ -33339,8 +33339,8 @@ msgstr "Some files you're trying to upload exceed the maximum size limit of {max
 msgid "Some users can't be added"
 msgstr "Some users can't be added"
 
-#. Plutonium page hero subtitle for gifted members. date is a formatted calendar date.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page hero subtitle for gifted members. date is a formatted calendar date.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Someone gifted you {premiumProductName}. Your perks stay active until {date}."
 msgstr "Someone gifted you {premiumProductName}. Your perks stay active until {date}."
 
@@ -33362,23 +33362,23 @@ msgstr "Something went wrong and the app crashed. Try reloading or resetting the
 msgid "Something went wrong loading members. Try again later."
 msgstr "Something went wrong loading members. Try again later."
 
-#. Body of the generic fallback error modal shown when canceling a scheduled Plutonium billing cycle change fails.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Body of the generic fallback error modal shown when canceling a scheduled Ember billing cycle change fails.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Something went wrong while canceling your pending billing change. Please try again in a moment."
 msgstr "Something went wrong while canceling your pending billing change. Please try again in a moment."
 
-#. Body of the generic fallback error modal shown when cancelling a Plutonium subscription fails.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Body of the generic fallback error modal shown when cancelling a Ember subscription fails.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Something went wrong while canceling your subscription. Please try again in a moment."
 msgstr "Something went wrong while canceling your subscription. Please try again in a moment."
 
-#. Body of the generic fallback error modal shown when changing the Plutonium billing cycle fails.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Body of the generic fallback error modal shown when changing the Ember billing cycle fails.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Something went wrong while changing your billing cycle. Please try again in a moment."
 msgstr "Something went wrong while changing your billing cycle. Please try again in a moment."
 
-#. Body of the generic fallback error modal shown when moving a Plutonium subscription down to the current price fails.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Body of the generic fallback error modal shown when moving a Ember subscription down to the current price fails.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Something went wrong while changing your price. Please try again in a moment."
 msgstr "Something went wrong while changing your price. Please try again in a moment."
 
@@ -33386,13 +33386,13 @@ msgstr "Something went wrong while changing your price. Please try again in a mo
 msgid "Something went wrong while connecting your account. You can close this tab and try again."
 msgstr "Something went wrong while connecting your account. You can close this tab and try again."
 
-#. Body of the generic fallback error modal shown when ending the Plutonium grace period fails.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Body of the generic fallback error modal shown when ending the Ember grace period fails.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Something went wrong while ending your grace period. Please try again in a moment."
 msgstr "Something went wrong while ending your grace period. Please try again in a moment."
 
 #. Body of the generic fallback error modal shown when a self-serve refund fails.
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "Something went wrong while issuing your refund. Contact support if this keeps happening."
 msgstr "Something went wrong while issuing your refund. Contact support if this keeps happening."
 
@@ -33416,13 +33416,13 @@ msgstr "Something went wrong while preparing this sticker. Try another file or t
 msgid "Something went wrong while publishing. Try again in a moment."
 msgstr "Something went wrong while publishing. Try again in a moment."
 
-#. Body of the generic fallback error modal shown when reactivating a Plutonium subscription fails.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Body of the generic fallback error modal shown when reactivating a Ember subscription fails.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Something went wrong while reactivating your subscription. Please try again in a moment."
 msgstr "Something went wrong while reactivating your subscription. Please try again in a moment."
 
-#. Body of the generic fallback error modal shown when rejoining a gated Plutonium community fails.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCommunityActions.tsx
+#. Body of the generic fallback error modal shown when rejoining a gated Ember community fails.
+#: src/features/app/components/dialogs/components/ember/hooks/useCommunityActions.tsx
 msgid "Something went wrong while rejoining. Please try again in a moment."
 msgstr "Something went wrong while rejoining. Please try again in a moment."
 
@@ -33438,7 +33438,7 @@ msgid "Something went wrong while sending your verification email. Please try ag
 msgstr "Something went wrong while sending your verification email. Please try again in a moment."
 
 #. Body of the generic fallback error modal shown when creating a checkout session fails unexpectedly.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Something went wrong while starting checkout. Please try again in a moment."
 msgstr "Something went wrong while starting checkout. Please try again in a moment."
 
@@ -34025,7 +34025,7 @@ msgstr "Static Neko"
 
 #. Column header for billing invoice status.
 #. Tray menu submenu title for the user presence status picker.
-#: src/features/app/components/dialogs/components/plutonium/InvoiceList.tsx
+#: src/features/app/components/dialogs/components/ember/InvoiceList.tsx
 #: src/features/platform/utils/DesktopLocaleBridge.ts
 msgid "Status"
 msgstr "Status"
@@ -34418,8 +34418,8 @@ msgstr "Stream ended"
 msgid "Stream hidden"
 msgstr "Stream hidden"
 
-#. Plutonium page perk card title about stream quality.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page perk card title about stream quality.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Stream in 4K at 60 FPS"
 msgstr "Stream in 4K at 60 FPS"
 
@@ -34528,17 +34528,17 @@ msgstr "Submitting"
 
 #. Billing button that starts a recurring subscription for someone on gifted premium time.
 #. Billing button that starts a recurring subscription for someone on gifted premium time.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionActions.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionActions.tsx
 msgid "Subscribe"
 msgstr "Subscribe"
 
-#. Body of the closing call to action on the Plutonium page for members on gifted time who can subscribe.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Body of the closing call to action on the Ember page for members on gifted time who can subscribe.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Subscribe now. Your remaining gift time is added after your paid period."
 msgstr "Subscribe now. Your remaining gift time is added after your paid period."
 
-#. Plutonium page comparison row label for the subscriber badge.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison row label for the subscriber badge.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Subscriber badge on your profile"
 msgstr "Subscriber badge on your profile"
 
@@ -34550,17 +34550,17 @@ msgstr "Subscriber transport:"
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
 #. Settings search entry label. Also used as a search synonym in the settings search bar.
 #: src/features/channel/components/channel_header_components/developer_tools/OptionPresets.ts
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Subscription"
 msgstr "Subscription"
 
-#. Modal title shown when checkout is blocked because the account already has an active Plutonium subscription.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#. Modal title shown when checkout is blocked because the account already has an active Ember subscription.
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Subscription already exists"
 msgstr "Subscription already exists"
 
 #. Title of the error modal shown when reactivation is attempted but the subscription is not cancelling.
-#: src/features/app/components/dialogs/components/plutonium/utils/PremiumActionErrorModal.tsx
+#: src/features/app/components/dialogs/components/ember/utils/PremiumActionErrorModal.tsx
 msgid "Subscription is not scheduled to cancel"
 msgstr "Subscription is not scheduled to cancel"
 
@@ -34716,7 +34716,7 @@ msgid "Switch device"
 msgstr "Switch device"
 
 #. Button confirming a move of an active subscription down to the current price.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionCard.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionCard.tsx
 msgid "Switch price"
 msgstr "Switch price"
 
@@ -34726,7 +34726,7 @@ msgid "Switch to {accountName}"
 msgstr "Switch to {accountName}"
 
 #. Billing button that opens confirmation to move the subscription down to the current price. {listPriceNewLabel} is the localized new price.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionActions.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionActions.tsx
 msgid "Switch to {listPriceNewLabel}"
 msgstr "Switch to {listPriceNewLabel}"
 
@@ -34761,13 +34761,13 @@ msgstr "Switch to direct input"
 
 #. Billing button that opens confirmation to switch to monthly billing.
 #. Button confirming a change to monthly subscription billing.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionActions.tsx
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionCard.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionActions.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionCard.tsx
 msgid "Switch to monthly"
 msgstr "Switch to monthly"
 
 #. Billing confirmation title for changing an active subscription to monthly billing.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionCard.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionCard.tsx
 msgid "Switch to monthly billing?"
 msgstr "Switch to monthly billing?"
 
@@ -34812,7 +34812,7 @@ msgid "Switch to standard call"
 msgstr "Switch to standard call"
 
 #. Billing confirmation title for moving an active subscription down to the current price.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionCard.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionCard.tsx
 msgid "Switch to the new price?"
 msgstr "Switch to the new price?"
 
@@ -34842,13 +34842,13 @@ msgstr "Switch to two columns"
 
 #. Billing button that opens confirmation to switch to yearly billing.
 #. Button confirming a change to yearly subscription billing.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionActions.tsx
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionCard.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionActions.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionCard.tsx
 msgid "Switch to yearly"
 msgstr "Switch to yearly"
 
 #. Billing confirmation title for changing an active subscription to yearly billing.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionCard.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionCard.tsx
 msgid "Switch to yearly billing?"
 msgstr "Switch to yearly billing?"
 
@@ -35089,23 +35089,23 @@ msgstr "Take a moment to check who can message you. Nothing changes unless you c
 msgid "Take back offer"
 msgstr "Take back offer"
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionBillingChangeDescription.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionBillingChangeDescription.tsx
 msgid "Takes effect at your next renewal. We'll apply a {creditLabel} credit from your current monthly payment, so your first yearly charge will be <0>{firstRenewalPriceLabel}</0>. Future yearly renewals will be {renewalPrice}/year."
 msgstr "Takes effect at your next renewal. We'll apply a {creditLabel} credit from your current monthly payment, so your first yearly charge will be <0>{firstRenewalPriceLabel}</0>. Future yearly renewals will be {renewalPrice}/year."
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionBillingChangeDescription.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionBillingChangeDescription.tsx
 msgid "Takes effect at your next renewal. Your subscription stays monthly until then, and your next renewal will be <0>{renewalPrice}/year</0>."
 msgstr "Takes effect at your next renewal. Your subscription stays monthly until then, and your next renewal will be <0>{renewalPrice}/year</0>."
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionBillingChangeDescription.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionBillingChangeDescription.tsx
 msgid "Takes effect at your next renewal. Your subscription stays yearly until then, and your next renewal will be <0>{renewalPrice}/month</0>."
 msgstr "Takes effect at your next renewal. Your subscription stays yearly until then, and your next renewal will be <0>{renewalPrice}/month</0>."
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionBillingChangeDescription.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionBillingChangeDescription.tsx
 msgid "Takes effect immediately. A prorated adjustment may apply via {PAYMENT_PROVIDER_NAME}. Your next renewal will be <0>{renewalPrice}/month</0>."
 msgstr "Takes effect immediately. A prorated adjustment may apply via {PAYMENT_PROVIDER_NAME}. Your next renewal will be <0>{renewalPrice}/month</0>."
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionBillingChangeDescription.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionBillingChangeDescription.tsx
 msgid "Takes effect immediately. A prorated charge may apply via {PAYMENT_PROVIDER_NAME}. Your next renewal will be <0>{renewalPrice}/year</0>."
 msgstr "Takes effect immediately. A prorated charge may apply via {PAYMENT_PROVIDER_NAME}. Your next renewal will be <0>{renewalPrice}/year</0>."
 
@@ -35640,7 +35640,7 @@ msgid "The new channel will reuse the permissions from <0>{channelLabel}</0>."
 msgstr "The new channel will reuse the permissions from <0>{channelLabel}</0>."
 
 #. Toast success shown when a move down to the current price was already scheduled by an earlier request. {effectiveDate} is the localized date the new price starts.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "The new price is already scheduled for {effectiveDate}."
 msgstr "The new price is already scheduled for {effectiveDate}."
 
@@ -36255,8 +36255,8 @@ msgstr "This community has reached its member limit, so you can't join right now
 msgid "This community is for adults only."
 msgstr "This community is for adults only."
 
-#. Title of the error modal shown when a non-Visionary user tries to rejoin a gated Plutonium community.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCommunityActions.tsx
+#. Title of the error modal shown when a non-Visionary user tries to rejoin a gated Ember community.
+#: src/features/app/components/dialogs/components/ember/hooks/useCommunityActions.tsx
 msgid "This community is for Visionary members"
 msgstr "This community is for Visionary members"
 
@@ -36778,17 +36778,17 @@ msgstr "This person needs to set a password before they can own a community."
 msgid "This picker is only available in the desktop app."
 msgstr "This picker is only available in the desktop app."
 
-#. Error modal body shown when the selected Plutonium plan has no price ID configured.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#. Error modal body shown when the selected Ember plan has no price ID configured.
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "This plan isn't available. Contact support."
 msgstr "This plan isn't available. Contact support."
 
-#. Error modal body shown on a self-hosted instance when the selected Plutonium plan has no price ID configured.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#. Error modal body shown on a self-hosted instance when the selected Ember plan has no price ID configured.
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "This plan isn't available. Contact the administrators of this instance."
 msgstr "This plan isn't available. Contact the administrators of this instance."
 
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "This purchase is not eligible for a refund."
 msgstr "This purchase is not eligible for a refund."
 
@@ -36796,11 +36796,11 @@ msgstr "This purchase is not eligible for a refund."
 msgid "This reason will be displayed in the activity log in {activityLogSettingsPath}."
 msgstr "This reason will be displayed in the activity log in {activityLogSettingsPath}."
 
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "This refunds your most recent Google Play purchase and cancels any subscription it paid for. You won't be able to self-refund again for 30 days."
 msgstr "This refunds your most recent Google Play purchase and cancels any subscription it paid for. You won't be able to self-refund again for 30 days."
 
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "This refunds your most recent purchase and cancels any subscription it paid for. You won't be able to self-refund again for 30 days."
 msgstr "This refunds your most recent purchase and cancels any subscription it paid for. You won't be able to self-refund again for 30 days."
 
@@ -38204,7 +38204,7 @@ msgid "Unclaimed account override"
 msgstr "Unclaimed account override"
 
 #. Billing invoice status for an invoice marked as uncollectible.
-#: src/features/app/components/dialogs/components/plutonium/InvoiceList.tsx
+#: src/features/app/components/dialogs/components/ember/InvoiceList.tsx
 msgid "Uncollectible"
 msgstr "Uncollectible"
 
@@ -38358,7 +38358,7 @@ msgid "Unknown community"
 msgstr "Unknown community"
 
 #. Fallback date value for a billing invoice without a timestamp.
-#: src/features/app/components/dialogs/components/plutonium/InvoiceList.tsx
+#: src/features/app/components/dialogs/components/ember/InvoiceList.tsx
 msgid "Unknown date"
 msgstr "Unknown date"
 
@@ -38852,13 +38852,13 @@ msgstr "Up to {max} per purchase."
 msgid "Up to {maxParticipants, plural, one {# person} other {# people}}."
 msgstr "Up to {maxParticipants, plural, one {# person} other {# people}}."
 
-#. Plutonium page comparison value for paid video quality. Keep 4K and FPS as written.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison value for paid video quality. Keep 4K and FPS as written.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Up to 4K at 60 FPS"
 msgstr "Up to 4K at 60 FPS"
 
-#. Plutonium page comparison value for free video quality. Keep 720p and FPS as written.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison value for free video quality. Keep 720p and FPS as written.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Up to 720p at 30 FPS"
 msgstr "Up to 720p at 30 FPS"
 
@@ -38979,7 +38979,7 @@ msgid "Updating…"
 msgstr "Updating…"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Upgrade"
 msgstr "Upgrade"
 
@@ -39224,8 +39224,8 @@ msgstr "Use {everyoneMention}/{hereMention} and {rolesMention}"
 msgid "Use {name} on {domain}"
 msgstr "Use {name} on {domain}"
 
-#. Plutonium subscription payment method picker button. Selects Pix as the payment method.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#. Ember subscription payment method picker button. Selects Pix as the payment method.
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Use {pixPaymentMethod}"
 msgstr "Use {pixPaymentMethod}"
 
@@ -39239,8 +39239,8 @@ msgstr "Use {query} where the search text should be inserted."
 msgid "Use {query} where the text to translate should be inserted."
 msgstr "Use {query} where the text to translate should be inserted."
 
-#. Plutonium subscription payment method picker button. Selects UPI as the payment method.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#. Ember subscription payment method picker button. Selects UPI as the payment method.
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Use {upiPaymentMethod}"
 msgstr "Use {upiPaymentMethod}"
 
@@ -39288,8 +39288,8 @@ msgstr "Use actual premium type"
 msgid "Use actual value"
 msgstr "Use actual value"
 
-#. Plutonium subscription payment method picker button. Selects the alternative (non-card) method.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#. Ember subscription payment method picker button. Selects the alternative (non-card) method.
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Use alternative method"
 msgstr "Use alternative method"
 
@@ -39297,8 +39297,8 @@ msgstr "Use alternative method"
 msgid "Use an authenticator app to generate codes for two-factor authentication"
 msgstr "Use an authenticator app to generate codes for two-factor authentication"
 
-#. Plutonium page comparison row label for animated emoji use.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison row label for animated emoji use.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Use animated emojis in messages"
 msgstr "Use animated emojis in messages"
 
@@ -39320,7 +39320,7 @@ msgid "Use browser locale for time format"
 msgstr "Use browser locale for time format"
 
 #. Modal secondary button to fall back to standard card checkout instead of an alternative payment method.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Use card"
 msgstr "Use card"
 
@@ -39344,8 +39344,8 @@ msgstr "Use coal theme (pitch-black surfaces)"
 msgid "Use colored tray icon"
 msgstr "Use colored tray icon"
 
-#. Plutonium page comparison row label for global emojis and stickers.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison row label for global emojis and stickers.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Use custom emojis and stickers in any community"
 msgstr "Use custom emojis and stickers in any community"
 
@@ -39997,13 +39997,13 @@ msgstr "Video"
 msgid "Video call"
 msgstr "Video call"
 
-#. Plutonium page comparison row label for video quality.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison row label for video quality.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Video call and screen share quality"
 msgstr "Video call and screen share quality"
 
-#. Plutonium page comparison row label for saved video call backgrounds.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison row label for saved video call backgrounds.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Video call backgrounds you can save"
 msgstr "Video call backgrounds you can save"
 
@@ -40105,7 +40105,7 @@ msgid "View {premiumProductName} features"
 msgstr "View {premiumProductName} features"
 
 #. Settings search entry description. One-line summary of what the settings search entry controls. Preserve {premiumProductName}; it is inserted by code.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "View {premiumProductName} perks"
 msgstr "View {premiumProductName} perks"
 
@@ -40332,7 +40332,7 @@ msgstr "Virginia"
 msgid "Visibility"
 msgstr "Visibility"
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionCard.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionCard.tsx
 msgid "Visionary"
 msgstr "Visionary"
 
@@ -40352,7 +40352,7 @@ msgid "Visionary 2FA nagbar"
 msgstr "Visionary 2FA nagbar"
 
 #. Modal body shown when a Visionary user tries to subscribe. Reassures them and points out gift purchases stay available.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Visionary already includes permanent access, so a recurring subscription isn't needed. You can still buy gifts for others."
 msgstr "Visionary already includes permanent access, so a recurring subscription isn't needed. You can still buy gifts for others."
 
@@ -40600,7 +40600,7 @@ msgid "Voice uses your system output device in this browser. Change it in your s
 msgstr "Voice uses your system output device in this browser. Change it in your system settings."
 
 #. Billing invoice status for an invoice canceled before payment.
-#: src/features/app/components/dialogs/components/plutonium/InvoiceList.tsx
+#: src/features/app/components/dialogs/components/ember/InvoiceList.tsx
 msgid "Void"
 msgstr "Void"
 
@@ -40743,8 +40743,8 @@ msgstr "Wayland's xdg-desktop-portal owns the picker and shows every window and 
 msgid "We check new names before they go live."
 msgstr "We check new names before they go live."
 
-#. Plutonium page hero subtitle while a failed renewal is in its grace period.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page hero subtitle while a failed renewal is in its grace period.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "We could not renew your subscription. Update your payment method to keep your perks."
 msgstr "We could not renew your subscription. Update your payment method to keep your perks."
 
@@ -40775,12 +40775,12 @@ msgid "We couldn't delete your messages right now. Try again in a moment."
 msgstr "We couldn't delete your messages right now. Try again in a moment."
 
 #. Body of the error modal shown when there is no refundable purchase on the account.
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "We couldn't find a recent purchase to refund on this account."
 msgstr "We couldn't find a recent purchase to refund on this account."
 
 #. Body of the error modal shown when an action needs an active subscription but none exists.
-#: src/features/app/components/dialogs/components/plutonium/utils/PremiumActionErrorModal.tsx
+#: src/features/app/components/dialogs/components/ember/utils/PremiumActionErrorModal.tsx
 msgid "We couldn't find an active subscription on this account. Refresh and try again."
 msgstr "We couldn't find an active subscription on this account. Refresh and try again."
 
@@ -40838,7 +40838,7 @@ msgid "We couldn't save that theme."
 msgstr "We couldn't save that theme."
 
 #. Modal body for existing-subscription block. Directs the user to the billing portal and addresses the just-paid race case. Keep plain and reassuring.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "We found an existing {premiumProductFullName} subscription for this account. Manage it in the secure billing portal to update payment details or check renewal status. If you just paid, wait a minute and reopen this page."
 msgstr "We found an existing {premiumProductFullName} subscription for this account. Manage it in the secure billing portal to update payment details or check renewal status. If you just paid, wait a minute and reopen this page."
 
@@ -41108,7 +41108,7 @@ msgstr "Welcome in, {username}!"
 msgid "Welcome to {channelDisplayName}"
 msgstr "Welcome to {channelDisplayName}"
 
-#. Premium onboarding nagbar body. {premiumProductFullName} is the full premium product name, such as Hearth Plutonium. {premiumProductName} is the short product name.
+#. Premium onboarding nagbar body. {premiumProductFullName} is the full premium product name, such as Hearth Ember. {premiumProductName} is the short product name.
 #: src/features/app/components/layout/app_layout/nagbars/PremiumOnboardingNagbar.tsx
 msgid "Welcome to {premiumProductFullName}. Explore your {premiumProductName} perks and manage your subscription."
 msgstr "Welcome to {premiumProductFullName}. Explore your {premiumProductName} perks and manage your subscription."
@@ -41593,24 +41593,24 @@ msgid "Year"
 msgstr "Year"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Yearly"
 msgstr "Yearly"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Yearly gift"
 msgstr "Yearly gift"
 
-#: src/features/app/components/dialogs/components/plutonium/ScheduledSubscriptionChangeDescription.tsx
+#: src/features/app/components/dialogs/components/ember/ScheduledSubscriptionChangeDescription.tsx
 msgid "Yearly upgrade scheduled for <0>{pendingChangeDate}</0>."
 msgstr "Yearly upgrade scheduled for <0>{pendingChangeDate}</0>."
 
-#: src/features/app/components/dialogs/components/plutonium/ScheduledSubscriptionChangeDescription.tsx
+#: src/features/app/components/dialogs/components/ember/ScheduledSubscriptionChangeDescription.tsx
 msgid "Yearly upgrade scheduled for <0>{pendingChangeDate}</0>. First yearly charge: {pendingInitialPriceLabel} after a {pendingCreditPriceLabel} credit. Future yearly renewals: {pendingRecurringPriceLabel}/year."
 msgstr "Yearly upgrade scheduled for <0>{pendingChangeDate}</0>. First yearly charge: {pendingInitialPriceLabel} after a {pendingCreditPriceLabel} credit. Future yearly renewals: {pendingRecurringPriceLabel}/year."
 
-#: src/features/app/components/dialogs/components/plutonium/ScheduledSubscriptionChangeDescription.tsx
+#: src/features/app/components/dialogs/components/ember/ScheduledSubscriptionChangeDescription.tsx
 msgid "Yearly upgrade scheduled for <0>{pendingChangeDate}</0>. First yearly charge: {pendingInitialPriceLabel}. Future yearly renewals: {pendingRecurringPriceLabel}/year."
 msgstr "Yearly upgrade scheduled for <0>{pendingChangeDate}</0>. First yearly charge: {pendingInitialPriceLabel}. Future yearly renewals: {pendingRecurringPriceLabel}/year."
 
@@ -41704,7 +41704,7 @@ msgid "You are now a developer!"
 msgstr "You are now a developer!"
 
 #. Modal body for the mobile checkout confirmation. Explains that the user is leaving the app to pay.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "You are now navigating to {paymentProviderName} to complete the payment. Return to {productName} once you've completed it."
 msgstr "You are now navigating to {paymentProviderName} to complete the payment. Return to {productName} once you've completed it."
 
@@ -41797,8 +41797,8 @@ msgstr "You can only pass a pass on to a friend. Add the person as a friend firs
 msgid "You can only pass this on to one of your friends on Hearth."
 msgstr "You can only pass this on to one of your friends on Hearth."
 
-#. Footnote on the Plutonium page about custom username tags. Keep Mina#4821, mina#4821 and #0000 unchanged. visionaryLink is a link whose text is "Learn more about Visionary".
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Footnote on the Ember page about custom username tags. Keep Mina#4821, mina#4821 and #0000 unchanged. visionaryLink is a link whose text is "Learn more about Visionary".
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "You can only pick a tag that nobody else with the same username already has. Usernames aren't case sensitive, so Mina#4821 and mina#4821 count as the same. The #0000 tag is reserved for {productName} Visionary members. {visionaryLink}."
 msgstr "You can only pick a tag that nobody else with the same username already has. Usernames aren't case sensitive, so Mina#4821 and mina#4821 count as the same. The #0000 tag is reserved for {productName} Visionary members. {visionaryLink}."
 
@@ -41812,7 +41812,7 @@ msgstr "You can pick a dark or light theme and change colors and quick CSS in <0
 msgid "You can pick up to {count} tags."
 msgstr "You can pick up to {count} tags."
 
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "You can refund again after {cooldownEndsOn}. Contact support for billing issues."
 msgstr "You can refund again after {cooldownEndsOn}. Contact support for billing issues."
 
@@ -42124,7 +42124,7 @@ msgid "You have no friends yet"
 msgstr "You have no friends yet"
 
 #. Title of the error modal shown when a self-serve refund is blocked by the cooldown period.
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "You have refunded recently"
 msgstr "You have refunded recently"
 
@@ -42164,11 +42164,11 @@ msgstr "You haven't written any quick CSS yet."
 msgid "You just pressed Tab. Keyboard mode is now on so you can navigate {productName} without a mouse."
 msgstr "You just pressed Tab. Keyboard mode is now on so you can navigate {productName} without a mouse."
 
-#: src/features/premium/components/plutonium_page/PlutoniumPage.tsx
+#: src/features/premium/components/ember_page/EmberPage.tsx
 msgid "You keep your perks until your next renewal date. Reactivate before then to keep your subscriber history."
 msgstr "You keep your perks until your next renewal date. Reactivate before then to keep your subscriber history."
 
-#: src/features/premium/components/plutonium_page/PlutoniumPage.tsx
+#: src/features/premium/components/ember_page/EmberPage.tsx
 msgid "You lose all {PREMIUM_PRODUCT_NAME} perks immediately and your subscriber history resets. This cannot be undone."
 msgstr "You lose all {PREMIUM_PRODUCT_NAME} perks immediately and your subscriber history resets. This cannot be undone."
 
@@ -42253,8 +42253,8 @@ msgstr "You need to claim your account before you can start a direct message."
 msgid "You need to confirm your email address before you can start a direct message."
 msgstr "You need to confirm your email address before you can start a direct message."
 
-#. Body of the error modal shown when the account email is unverified and the user tries to purchase Plutonium. Product name is interpolated.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#. Body of the error modal shown when the account email is unverified and the user tries to purchase Ember. Product name is interpolated.
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "You need to confirm your email before you can purchase {premiumProductFullName}."
 msgstr "You need to confirm your email before you can purchase {premiumProductFullName}."
 
@@ -42309,7 +42309,7 @@ msgid "You'll appear offline"
 msgstr "You'll appear offline"
 
 #. Body of the confirmation shown before checkout when a user with gifted premium time starts a recurring subscription. The subscription is charged immediately and the unused gift time is appended after the paid period.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "You'll be charged now. Your remaining gift time is added after your paid period, so none of it is lost."
 msgstr "You'll be charged now. Your remaining gift time is added after your paid period, so none of it is lost."
 
@@ -42323,13 +42323,13 @@ msgstr "You'll enter them right after you create your account."
 msgid "You'll need one of your passkeys to sign in on a new device. If you lose every passkey you can be locked out of your account. Backup codes will be saved for you so you still have a way in."
 msgstr "You'll need one of your passkeys to sign in on a new device. If you lose every passkey you can be locked out of your account. Backup codes will be saved for you so you still have a way in."
 
-#. Plutonium page hero subtitle for members. premiumProductName is the paid tier name.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page hero subtitle for members. premiumProductName is the paid tier name.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "You're a {premiumProductName} member. Thanks for supporting an independent communication platform."
 msgstr "You're a {premiumProductName} member. Thanks for supporting an independent communication platform."
 
-#. Plutonium page hero subtitle for lifetime Visionary members.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page hero subtitle for lifetime Visionary members.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "You're a Visionary. Your perks never expire, and gifts for friends are always available."
 msgstr "You're a Visionary. Your perks never expire, and gifts for friends are always available."
 
@@ -42357,8 +42357,8 @@ msgstr "You're all caught up."
 msgid "You're already friends with this user."
 msgstr "You're already friends with this user."
 
-#. Modal title shown when a lifetime Visionary tier user tries to start a recurring Plutonium subscription.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#. Modal title shown when a lifetime Visionary tier user tries to start a recurring Ember subscription.
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "You're already Visionary"
 msgstr "You're already Visionary"
 
@@ -42372,22 +42372,22 @@ msgstr "You're an Operator"
 msgid "You're at {count, plural, one {# bookmark} other {# bookmarks}} — your instance admin sets this cap. Remove one to add another."
 msgstr "You're at {count, plural, one {# bookmark} other {# bookmarks}} — your instance admin sets this cap. Remove one to add another."
 
-#. Modal body shown when the bookmarks limit is reached and Plutonium is unavailable on this instance. {count} is the bookmark cap.
+#. Modal body shown when the bookmarks limit is reached and Ember is unavailable on this instance. {count} is the bookmark cap.
 #: src/features/app/components/alerts/MaxBookmarksModal.tsx
 msgid "You're at {count, plural, one {# bookmark} other {# bookmarks}}. Remove one to add another."
 msgstr "You're at {count, plural, one {# bookmark} other {# bookmarks}}. Remove one to add another."
 
-#. Modal body shown when the favorite-memes limit is reached on a self-hosted instance with no Plutonium upgrade path. {count} is the saved media cap.
+#. Modal body shown when the favorite-memes limit is reached on a self-hosted instance with no Ember upgrade path. {count} is the saved media cap.
 #: src/features/app/components/alerts/MaxFavoriteMemesModal.tsx
 msgid "You're at the cap of {count, plural, one {# saved media item} other {# saved media items}} — your instance admin sets this limit."
 msgstr "You're at the cap of {count, plural, one {# saved media item} other {# saved media items}} — your instance admin sets this limit."
 
-#. Modal body shown when the free bookmarks limit is reached and Plutonium would increase it. {count} is the free cap, {premiumCount} the Plutonium cap.
+#. Modal body shown when the free bookmarks limit is reached and Ember would increase it. {count} is the free cap, {premiumCount} the Ember cap.
 #: src/features/app/components/alerts/MaxBookmarksModal.tsx
 msgid "You're at the free cap of {count, plural, one {# bookmark} other {# bookmarks}}. {premiumProductName} bumps you up to {premiumCount, plural, one {# bookmark} other {# bookmarks}} — or remove one to add another."
 msgstr "You're at the free cap of {count, plural, one {# bookmark} other {# bookmarks}}. {premiumProductName} bumps you up to {premiumCount, plural, one {# bookmark} other {# bookmarks}} — or remove one to add another."
 
-#. Modal body shown when the free favorite-memes limit is reached and Plutonium would increase it. {count} is the free cap, {premiumCount} the Plutonium cap.
+#. Modal body shown when the free favorite-memes limit is reached and Ember would increase it. {count} is the free cap, {premiumCount} the Ember cap.
 #: src/features/app/components/alerts/MaxFavoriteMemesModal.tsx
 msgid "You're at the free cap of {count, plural, one {# saved media item} other {# saved media items}}. {premiumProductName} bumps you up to {premiumCount, plural, one {# saved media item} other {# saved media items}}."
 msgstr "You're at the free cap of {count, plural, one {# saved media item} other {# saved media items}}. {premiumProductName} bumps you up to {premiumCount, plural, one {# saved media item} other {# saved media items}}."
@@ -42465,13 +42465,13 @@ msgstr "You're in the voice channel"
 msgid "You're no longer previewing {community}."
 msgstr "You're no longer previewing {community}."
 
-#. Plutonium subscription card tooltip shown when the user is on a grandfathered price that is no longer offered.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionCard.tsx
+#. Ember subscription card tooltip shown when the user is on a grandfathered price that is no longer offered.
+#: src/features/app/components/dialogs/components/ember/SubscriptionCard.tsx
 msgid "You're on a legacy rate no longer available to new subscribers."
 msgstr "You're on a legacy rate no longer available to new subscribers."
 
-#. Plutonium subscription card tooltip shown when the user is on a grandfathered price; current list price is interpolated.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionCard.tsx
+#. Ember subscription card tooltip shown when the user is on a grandfathered price; current list price is interpolated.
+#: src/features/app/components/dialogs/components/ember/SubscriptionCard.tsx
 msgid "You're on a legacy rate. The current price for this plan is {currentSubscriptionListPriceLabel}."
 msgstr "You're on a legacy rate. The current price for this plan is {currentSubscriptionListPriceLabel}."
 
@@ -42530,7 +42530,7 @@ msgid "You've already reported this profile today."
 msgstr "You've already reported this profile today."
 
 #. Body of the error modal shown when a self-serve refund is blocked by the cooldown period.
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "You've already used a self-serve refund recently. You can refund again once the cooldown ends."
 msgstr "You've already used a self-serve refund recently. You can refund again once the cooldown ends."
 
@@ -42612,12 +42612,12 @@ msgid "You've seen all your recent mentions. More will appear here soon."
 msgstr "You've seen all your recent mentions. More will appear here soon."
 
 #. Modal body for existing-subscription block when the subscription was bought in a mobile app store. {storeName} is the store brand name, App Store or Google Play, and must not be translated. {premiumProductFullName} is the full premium product name.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Your {premiumProductFullName} subscription is billed through {storeName}. Manage it in your {storeName} account to change your plan or check renewal status."
 msgstr "Your {premiumProductFullName} subscription is billed through {storeName}. Manage it in your {storeName} account to change your plan or check renewal status."
 
-#. Plutonium page hero subtitle when a subscription has ended. premiumProductName is the paid tier name.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page hero subtitle when a subscription has ended. premiumProductName is the paid tier name.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Your {premiumProductName} perks have ended. Subscribe again to bring them back."
 msgstr "Your {premiumProductName} perks have ended. Subscribe again to bring them back."
 
@@ -42631,8 +42631,8 @@ msgstr "Your {premiumProductName} subscription has expired. You have lost all {p
 msgid "Your {productName} session expired. Sign in again to continue authorizing this application."
 msgstr "Your {productName} session expired. Sign in again to continue authorizing this application."
 
-#. Plutonium subscription card text shown while a failed App Store or Google Play renewal payment is being retried. {storeName} is the store brand name, App Store or Google Play, and must not be translated. {graceDate} is a date already formatted and localized by code; never write a date into the translation.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionDescription.tsx
+#. Ember subscription card text shown while a failed App Store or Google Play renewal payment is being retried. {storeName} is the store brand name, App Store or Google Play, and must not be translated. {graceDate} is a date already formatted and localized by code; never write a date into the translation.
+#: src/features/app/components/dialogs/components/ember/SubscriptionDescription.tsx
 msgid "Your {storeName} renewal payment failed but <0/> stay active until <1>{graceDate}</1>. Update your {storeName} payment method before then to keep your subscription."
 msgstr "Your {storeName} renewal payment failed but <0/> stay active until <1>{graceDate}</1>. Update your {storeName} payment method before then to keep your subscription."
 
@@ -42814,8 +42814,8 @@ msgstr "Your device will ask you to save an updated passkey for {name}. Use the 
 msgid "Your email has been verified. You can now sign in to your account."
 msgstr "Your email has been verified. You can now sign in to your account."
 
-#. Plutonium page perk card title about using custom emojis and stickers in every community.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page perk card title about using custom emojis and stickers in every community.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Your emojis, everywhere"
 msgstr "Your emojis, everywhere"
 
@@ -42874,23 +42874,23 @@ msgstr "Your full profile is visible to friends and members of your communities 
 msgid "Your full profile is visible to friends and to anyone in your communities"
 msgstr "Your full profile is visible to friends and to anyone in your communities"
 
-#. Plutonium subscription card text shown in the short grace period after gifted premium time ends. {graceDate} is a date already formatted and localized by code; never write a date into the translation.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionDescription.tsx
+#. Ember subscription card text shown in the short grace period after gifted premium time ends. {graceDate} is a date already formatted and localized by code; never write a date into the translation.
+#: src/features/app/components/dialogs/components/ember/SubscriptionDescription.tsx
 msgid "Your gift time ended but <0/> stay active until <1>{graceDate}</1>. Subscribe before then to keep them."
 msgstr "Your gift time ended but <0/> stay active until <1>{graceDate}</1>. Subscribe before then to keep them."
 
-#. Plutonium page hero subtitle while gifted premium time is in its short grace period after ending. premiumProductName is the paid tier name.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page hero subtitle while gifted premium time is in its short grace period after ending. premiumProductName is the paid tier name.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Your gift time has ended. Subscribe to keep {premiumProductName}."
 msgstr "Your gift time has ended. Subscribe to keep {premiumProductName}."
 
 #. Title of the confirmation shown before checkout when a user with gifted premium time starts a recurring subscription.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Your gift time is kept"
 msgstr "Your gift time is kept"
 
-#. Body text in the Plutonium subscription actions. Keep the tone plain and specific.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Body text in the Ember subscription actions. Keep the tone plain and specific.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Your grace period has ended."
 msgstr "Your grace period has ended."
 
@@ -42922,7 +42922,7 @@ msgstr "Your IP address is banned from this community and you cannot join."
 msgid "Your IP is banned"
 msgstr "Your IP is banned"
 
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "Your last purchase is outside the refund window. Contact support for billing issues."
 msgstr "Your last purchase is outside the refund window. Contact support for billing issues."
 
@@ -42967,7 +42967,7 @@ msgid "Your monthly donation is separate and keeps running."
 msgstr "Your monthly donation is separate and keeps running."
 
 #. Body of the error modal shown when a self-serve refund is no longer within the eligible window.
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "Your most recent purchase is no longer within the refund window. Contact support for billing issues."
 msgstr "Your most recent purchase is no longer within the refund window. Contact support for billing issues."
 
@@ -43029,8 +43029,8 @@ msgstr "Your payment was canceled. You can now close this tab and return to the 
 msgid "Your payment was successful. You can now close this tab and return to the app."
 msgstr "Your payment was successful. You can now close this tab and return to the app."
 
-#. Toast success shown after a scheduled Plutonium billing cycle change is canceled.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Toast success shown after a scheduled Ember billing cycle change is canceled.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Your pending billing change has been canceled."
 msgstr "Your pending billing change has been canceled."
 
@@ -43069,8 +43069,8 @@ msgstr "Your recovery kit"
 msgid "your region"
 msgstr "your region"
 
-#. Plutonium subscription card text shown while a failed renewal payment is being retried. {graceDate} is a date already formatted and localized by code; never write a date into the translation.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionDescription.tsx
+#. Ember subscription card text shown while a failed renewal payment is being retried. {graceDate} is a date already formatted and localized by code; never write a date into the translation.
+#: src/features/app/components/dialogs/components/ember/SubscriptionDescription.tsx
 msgid "Your renewal payment failed but <0/> stay active until <1>{graceDate}</1>. Update your payment method before then to keep your subscription."
 msgstr "Your renewal payment failed but <0/> stay active until <1>{graceDate}</1>. Update your payment method before then to keep your subscription."
 
@@ -43100,17 +43100,17 @@ msgstr "Your setup token stopped working. Enter it again."
 msgid "Your stream is still live"
 msgstr "Your stream is still live"
 
-#. Heading of the subscription management panel on the Plutonium page.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Heading of the subscription management panel on the Ember page.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Your subscription"
 msgstr "Your subscription"
 
-#. Toast error shown when the server refuses to move a Plutonium subscription down to the current price, whatever the reason.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Toast error shown when the server refuses to move a Ember subscription down to the current price, whatever the reason.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Your subscription can't move to the new price right now."
 msgstr "Your subscription can't move to the new price right now."
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionDescription.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionDescription.tsx
 msgid "Your subscription ended but <0/> stay active until <1>{graceDate}</1>. Resubscribe before then to keep your subscriber history."
 msgstr "Your subscription ended but <0/> stay active until <1>{graceDate}</1>. Resubscribe before then to keep your subscriber history."
 
@@ -43119,57 +43119,57 @@ msgstr "Your subscription ended but <0/> stay active until <1>{graceDate}</1>. R
 msgid "Your subscription failed to renew, but you still have access to {premiumProductName} perks until {formattedGraceDate}. Take action now or you'll lose all perks."
 msgstr "Your subscription failed to renew, but you still have access to {premiumProductName} perks until {formattedGraceDate}. Take action now or you'll lose all perks."
 
-#. Body text in the Plutonium subscription actions. Keep the tone plain and specific.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Body text in the Ember subscription actions. Keep the tone plain and specific.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Your subscription has been reactivated."
 msgstr "Your subscription has been reactivated."
 
-#. Toast success shown after a Plutonium subscription is set to cancel at the end of the billing period.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Toast success shown after a Ember subscription is set to cancel at the end of the billing period.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Your subscription has been set to cancel at the end of your billing period."
 msgstr "Your subscription has been set to cancel at the end of your billing period."
 
-#. Toast success shown after a Plutonium subscription is switched from yearly to monthly billing.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Toast success shown after a Ember subscription is switched from yearly to monthly billing.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Your subscription has been switched to monthly billing."
 msgstr "Your subscription has been switched to monthly billing."
 
-#. Toast success shown after a Plutonium subscription is switched from monthly to yearly billing.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Toast success shown after a Ember subscription is switched from monthly to yearly billing.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Your subscription has been switched to yearly billing."
 msgstr "Your subscription has been switched to yearly billing."
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionDescription.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionDescription.tsx
 msgid "Your subscription is active but perks are temporarily paused."
 msgstr "Your subscription is active but perks are temporarily paused."
 
 #. Body of the error modal shown when a subscription is already scheduled to cancel.
-#: src/features/app/components/dialogs/components/plutonium/utils/PremiumActionErrorModal.tsx
+#: src/features/app/components/dialogs/components/ember/utils/PremiumActionErrorModal.tsx
 msgid "Your subscription is already set to cancel at the end of your billing period."
 msgstr "Your subscription is already set to cancel at the end of your billing period."
 
 #. Body of the error modal shown when reactivation is attempted but the subscription is not cancelling.
-#: src/features/app/components/dialogs/components/plutonium/utils/PremiumActionErrorModal.tsx
+#: src/features/app/components/dialogs/components/ember/utils/PremiumActionErrorModal.tsx
 msgid "Your subscription isn't set to cancel, so there's nothing to reactivate."
 msgstr "Your subscription isn't set to cancel, so there's nothing to reactivate."
 
-#. Toast success shown after a Plutonium subscription is scheduled to move down to the current price. {effectiveDate} is the localized date the new price starts.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Toast success shown after a Ember subscription is scheduled to move down to the current price. {effectiveDate} is the localized date the new price starts.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Your subscription moves to the new price on {effectiveDate}."
 msgstr "Your subscription moves to the new price on {effectiveDate}."
 
-#. Plutonium subscription card line shown to a subscriber on a legacy price whose subscription is already set to cancel. {cancelDate} is a date and {listPriceNewLabel} is a currency amount, both already formatted and localized by code; never write a date or an amount into the translation.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionCard.tsx
+#. Ember subscription card line shown to a subscriber on a legacy price whose subscription is already set to cancel. {cancelDate} is a date and {listPriceNewLabel} is a currency amount, both already formatted and localized by code; never write a date or an amount into the translation.
+#: src/features/app/components/dialogs/components/ember/SubscriptionCard.tsx
 msgid "Your subscription still ends on <0>{cancelDate}</0>. The current price is now {listPriceNewLabel}. If you reactivate, you can switch to it from here."
 msgstr "Your subscription still ends on <0>{cancelDate}</0>. The current price is now {listPriceNewLabel}. If you reactivate, you can switch to it from here."
 
-#. Toast success shown after a Plutonium subscription is scheduled to switch to monthly billing.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Toast success shown after a Ember subscription is scheduled to switch to monthly billing.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Your subscription will switch to monthly billing at the next renewal."
 msgstr "Your subscription will switch to monthly billing at the next renewal."
 
-#. Toast success shown after a Plutonium subscription is scheduled to switch to yearly billing.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Toast success shown after a Ember subscription is scheduled to switch to yearly billing.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Your subscription will switch to yearly billing at the next renewal."
 msgstr "Your subscription will switch to yearly billing at the next renewal."
 

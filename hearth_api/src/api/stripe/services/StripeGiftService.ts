@@ -24,7 +24,7 @@ import type {UserRepository} from '@app/api/user/repositories/UserRepository';
 import {getEffectivePremiumUntil} from '@app/api/user/UserHelpers';
 import {dispatchUserUpdate} from '@app/api/user/UserMappers';
 import {UserPremiumTypes} from '@hearth/constants/src/UserConstants';
-import {CannotRedeemPlutoniumWithVisionaryError} from '@hearth/errors/src/domains/payment/CannotRedeemPlutoniumWithVisionaryError';
+import {CannotRedeemEmberWithVisionaryError} from '@hearth/errors/src/domains/payment/CannotRedeemEmberWithVisionaryError';
 import {GiftCodeAlreadyRedeemedError} from '@hearth/errors/src/domains/payment/GiftCodeAlreadyRedeemedError';
 import {NoActiveSubscriptionError} from '@hearth/errors/src/domains/payment/NoActiveSubscriptionError';
 import {StripeError} from '@hearth/errors/src/domains/payment/StripeError';
@@ -125,7 +125,7 @@ export class StripeGiftService {
 			);
 			if (user.premiumType === UserPremiumTypes.LIFETIME) {
 				Logger.debug({userId, giftCode: code}, 'Rejecting redemption for lifetime user');
-				throw new CannotRedeemPlutoniumWithVisionaryError((await getBillingBranding()).premiumName);
+				throw new CannotRedeemEmberWithVisionaryError((await getBillingBranding()).premiumName);
 			}
 			await this.userRepository.redeemGiftCode(code, userId);
 			Logger.debug({userId, giftCode: code}, 'Applied gift redemption row update');

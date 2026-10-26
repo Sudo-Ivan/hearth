@@ -177,7 +177,7 @@ export const OPERATOR_PASS_TERMS_TEXT = {
 		{kind: 'subheading', text: '3.2 What the pass does not include'},
 		{
 			kind: 'paragraph',
-			text: 'The pass unlocks nothing in the Hearth software. Self-hosted Hearth works the same with or without the pass and it stays free to run, and losing the pass never affects an instance that you run. The pass includes no Plutonium benefits, no hosting, and no license or other rights in the software. The pass has no cash value.',
+			text: 'The pass unlocks nothing in the Hearth software. Self-hosted Hearth works the same with or without the pass and it stays free to run, and losing the pass never affects an instance that you run. The pass includes no Ember benefits, no hosting, and no license or other rights in the software. The pass has no cash value.',
 		},
 		{kind: 'heading', text: '4. Price and payment'},
 		{
@@ -616,7 +616,7 @@ export const OPERATOR_PASS_TERMS_TEXT = {
 		{kind: 'subheading', text: '3.2 Vad passet inte ger'},
 		{
 			kind: 'paragraph',
-			text: 'Passet låser inte upp något i Hearth-programvaran. Hearth som du driver själv fungerar likadant med eller utan passet och förblir gratis att driva, och om du förlorar passet påverkas aldrig en instans som du driver. Passet ger inga Plutonium-förmåner, ingen hosting och ingen licens eller andra rättigheter till programvaran. Passet har inget kontantvärde.',
+			text: 'Passet låser inte upp något i Hearth-programvaran. Hearth som du driver själv fungerar likadant med eller utan passet och förblir gratis att driva, och om du förlorar passet påverkas aldrig en instans som du driver. Passet ger inga Ember-förmåner, ingen hosting och ingen licens eller andra rättigheter till programvaran. Passet har inget kontantvärde.',
 		},
 		{kind: 'heading', text: '4. Pris och betalning'},
 		{

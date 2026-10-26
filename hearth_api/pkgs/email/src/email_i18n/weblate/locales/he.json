@@ -380,9 +380,9 @@
 		"deadline_label": "יש לבטל את המחלוקת לפני",
 		"deadline_value": "{warningDate, date, long}",
 		"footer_reason": "קיבלתם את האימייל הזה בעקבות מחלוקת תשלום הקשורה לחשבון ה-{product_name} שלכם.",
-		"ground": "{product, select, plutonium {סעיף 4.4 בתנאי השירות} other {סעיף 9 בתנאי ה-Operator Pass}}",
+		"ground": "{product, select, ember {סעיף 4.4 בתנאי השירות} other {סעיף 9 בתנאי ה-Operator Pass}}",
 		"ground_label": "בסיס",
-		"intro": "פתחתם מחלוקת על {product, select, plutonium {תשלום ה-Plutonium שלכם} other {תשלום ה-Operator Pass שלכם}} מול הבנק או חברת כרטיס האשראי שלכם. איש צוות שלנו בדק את המחלוקת לפי התנאים שלנו ומצא שהיא לא מוצדקת.",
+		"intro": "פתחתם מחלוקת על {product, select, ember {תשלום ה-Ember שלכם} other {תשלום ה-Operator Pass שלכם}} מול הבנק או חברת כרטיס האשראי שלכם. איש צוות שלנו בדק את המחלוקת לפי התנאים שלנו ומצא שהיא לא מוצדקת.",
 		"next_body": "אם אתם ביצעתם את התשלום הזה, אפשר לבקש מהבנק או מחברת האשראי לבטל את המחלוקת. אם המחלוקת תבוטל או תיסגר בלי שהכסף יוחזר אליכם, שום דבר לא יקרה לחשבון שלכם. עד שהמחלוקת תיסגר, לא תוכלו לקנות שום דבר ב-{product_name}.{privacy_email, select, null {} other { אפשר לבקש עותק של הנתונים שלכם מתי שתרצו בכתיבה אל <mail>{privacy_email}</mail>.}}",
 		"next_title": "מה קורה עכשיו",
 		"order_date_label": "תאריך הזמנה",
@@ -390,7 +390,7 @@
 		"order_number_label": "מספר הזמנה",
 		"signoff": "צוות {product_name}",
 		"subject": "לגבי מחלוקת התשלום שלכם ב-{product_name}",
-		"why_body": "התשלום בוצע על ידיכם או על ידי מישהו שהרשיתם לו, חייבנו את הסכום הנכון, {product, select, plutonium {ה-Plutonium סופק כמתואר} other {ה-Operator Pass נמסר כמתואר}}, לא החזרנו לכם את התשלום, ותקופת הביטול כבר הסתיימה כשפתחתם את המחלוקת.",
+		"why_body": "התשלום בוצע על ידיכם או על ידי מישהו שהרשיתם לו, חייבנו את הסכום הנכון, {product, select, ember {ה-Ember סופק כמתואר} other {ה-Operator Pass נמסר כמתואר}}, לא החזרנו לכם את התשלום, ותקופת הביטול כבר הסתיימה כשפתחתם את המחלוקת.",
 		"why_title": "למה מצאנו שהיא לא מוצדקת"
 	},
 	"reauth_code": {

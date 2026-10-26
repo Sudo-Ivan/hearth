@@ -13,7 +13,7 @@ import {isDesktopLocalAppDocument} from '@app/features/platform/DesktopLocalAppR
 import {currentInstanceTarget} from '@app/features/platform/transport/InstanceHTTP';
 import {Logger} from '@app/features/platform/utils/AppLogger';
 import {ComponentBus} from '@app/features/platform/utils/ComponentBus';
-import * as PlutoniumPageCommands from '@app/features/premium/commands/PlutoniumPageCommands';
+import * as EmberPageCommands from '@app/features/premium/commands/EmberPageCommands';
 import {shouldShowPremiumFeatures} from '@app/features/premium/utils/PremiumUtils';
 import * as ModalCommands from '@app/features/ui/commands/ModalCommands';
 import {APP_PROTOCOL_SCHEME, isAppProtocolUrl} from '@app/features/ui/utils/AppProtocol';
@@ -132,8 +132,8 @@ const parseDeepLink = (rawUrl: string): DeepLinkTarget | null => {
 };
 
 function openUserSettingsDeepLink(target: UserSettingsDeepLinkTarget): void {
-	if (target.tab === 'plutonium') {
-		PlutoniumPageCommands.openPlutoniumPage();
+	if (target.tab === 'ember') {
+		EmberPageCommands.openEmberPage();
 		return;
 	}
 	ModalCommands.push(

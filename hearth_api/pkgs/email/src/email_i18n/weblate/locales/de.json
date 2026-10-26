@@ -380,9 +380,9 @@
 		"deadline_label": "Zahlungsstreit zurückziehen vor dem",
 		"deadline_value": "{warningDate, date, long}",
 		"footer_reason": "Du hast diese E-Mail wegen eines Zahlungsstreits zu deinem {product_name}-Account erhalten.",
-		"ground": "{product, select, plutonium {Abschnitt 4.4 der Nutzungsbedingungen} other {Abschnitt 9 der Bedingungen für den Operator Pass}}",
+		"ground": "{product, select, ember {Abschnitt 4.4 der Nutzungsbedingungen} other {Abschnitt 9 der Bedingungen für den Operator Pass}}",
 		"ground_label": "Grundlage",
-		"intro": "Du hast deine {product, select, plutonium {Plutonium-Zahlung} other {Operator-Pass-Zahlung}} bei deiner Bank oder deinem Kartenanbieter angefochten. Eine Person aus unserem Team hat den Zahlungsstreit anhand unserer Bedingungen geprüft und als ungerechtfertigt eingestuft.",
+		"intro": "Du hast deine {product, select, ember {Ember-Zahlung} other {Operator-Pass-Zahlung}} bei deiner Bank oder deinem Kartenanbieter angefochten. Eine Person aus unserem Team hat den Zahlungsstreit anhand unserer Bedingungen geprüft und als ungerechtfertigt eingestuft.",
 		"next_body": "Wenn du diese Zahlung getätigt hast, kannst du deine Bank oder deinen Kartenanbieter bitten, den Zahlungsstreit zurückzuziehen. Wenn der Zahlungsstreit zurückgezogen wird oder endet, ohne dass du das Geld zurückbekommst, passiert mit deinem Account nichts. Bis der Zahlungsstreit abgeschlossen ist, kannst du auf {product_name} nichts kaufen.{privacy_email, select, null {} other { Du kannst jederzeit eine Kopie deiner Daten anfordern, indem du an <mail>{privacy_email}</mail> schreibst.}}",
 		"next_title": "Wie es jetzt weitergeht",
 		"order_date_label": "Bestelldatum",
@@ -390,7 +390,7 @@
 		"order_number_label": "Bestellnummer",
 		"signoff": "Das {product_name}-Team",
 		"subject": "Zu deinem Zahlungsstreit bei {product_name}",
-		"why_body": "Du oder jemand mit deiner Erlaubnis hat die Zahlung getätigt, wir haben den richtigen Betrag abgebucht, {product, select, plutonium {Plutonium wurde wie beschrieben bereitgestellt} other {der Operator Pass wurde wie beschrieben geliefert}}, wir hatten die Zahlung nicht zurückerstattet, und deine Widerrufsfrist war abgelaufen, als du die Zahlung angefochten hast.",
+		"why_body": "Du oder jemand mit deiner Erlaubnis hat die Zahlung getätigt, wir haben den richtigen Betrag abgebucht, {product, select, ember {Ember wurde wie beschrieben bereitgestellt} other {der Operator Pass wurde wie beschrieben geliefert}}, wir hatten die Zahlung nicht zurückerstattet, und deine Widerrufsfrist war abgelaufen, als du die Zahlung angefochten hast.",
 		"why_title": "Warum wir ihn als ungerechtfertigt eingestuft haben"
 	},
 	"reauth_code": {

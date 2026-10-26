@@ -15,7 +15,7 @@ const HOSTED: ProfileBadgeEnvironment = {
 	selfHosted: false,
 	premiumTieringActive: true,
 	productName: 'Hearth',
-	premiumName: 'Plutonium',
+	premiumName: 'Ember',
 	premiumInfoUrl: null,
 	marketingUrl: 'https://hearth.example',
 };
@@ -79,7 +79,7 @@ describe('buildProfileBadges', () => {
 				premiumType: UserPremiumTypes.SUBSCRIPTION,
 				premiumSince: new Date('2026-10-31T23:30:00Z'),
 			});
-			expect(build({user})[0]!.label).toBe('Hearth Plutonium subscriber since October 31, 2026');
+			expect(build({user})[0]!.label).toBe('Hearth Ember subscriber since October 31, 2026');
 		});
 
 		test('every profile badge key is translated and keeps its variables in every locale', () => {

@@ -168,7 +168,7 @@ export interface EmailTemplateVariables {
 	payment_dispute_warning: {
 		appeals_email: string | null;
 		privacy_email: string | null;
-		product: 'operator_pass' | 'plutonium';
+		product: 'operator_pass' | 'ember';
 		orderDate: Date;
 		warningDate: Date;
 	};

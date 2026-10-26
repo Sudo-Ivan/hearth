@@ -20,7 +20,7 @@ export const AdminStorePurchaseResponse = z.object({
 	ownership_type: z.string().nullable().describe('Store ownership type, such as PURCHASED or FAMILY_SHARED'),
 	state: z.string().describe('Normalized state of the purchase'),
 	store_state: z.string().nullable().describe('Raw state reported by the store'),
-	entitled: z.boolean().describe('Whether the purchase currently grants Plutonium'),
+	entitled: z.boolean().describe('Whether the purchase currently grants Ember'),
 	expires_at: z.iso.datetime().nullable().describe('When the paid period ends'),
 	grace_ends_at: z.iso.datetime().nullable().describe('When the billing grace period ends'),
 	auto_renew: z.boolean().nullable().describe('Whether the subscription renews automatically'),

@@ -36,7 +36,7 @@ import {languageIndex} from '@app/features/user/components/settings_utils/search
 import {linkedAccountsIndex} from '@app/features/user/components/settings_utils/search_index/LinkedAccountsIndex';
 import {myProfileIndex} from '@app/features/user/components/settings_utils/search_index/MyProfileIndex';
 import {notificationsIndex} from '@app/features/user/components/settings_utils/search_index/NotificationsIndex';
-import {plutoniumIndex} from '@app/features/user/components/settings_utils/search_index/PlutoniumIndex';
+import {emberIndex} from '@app/features/user/components/settings_utils/search_index/EmberIndex';
 import type {
 	SearchableSettingDescriptor,
 	SearchableSettingKeyword,
@@ -100,7 +100,7 @@ const ADDITIONAL_SEARCHABLE_ITEMS: Array<SearchableSettingDescriptor> = [
 	...authorizedAppsIndex,
 	...blockedUsersIndex,
 	...devicesIndex,
-	...plutoniumIndex,
+	...emberIndex,
 	...giftInventoryIndex,
 	...appearanceIndex,
 	...themesIndex,

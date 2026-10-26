@@ -426,7 +426,7 @@ const GiftInventoryTab: React.FC = observer(() => {
 						actions={[
 							{
 								text: i18n._(GO_TO_PREMIUM_DESCRIPTOR, {premiumProductName: getPremiumProductName()}),
-								onClick: () => ComponentBus.dispatch('USER_SETTINGS_TAB_SELECT', {tab: 'plutonium'}),
+								onClick: () => ComponentBus.dispatch('USER_SETTINGS_TAB_SELECT', {tab: 'ember'}),
 								variant: 'primary',
 								fitContent: true,
 							},

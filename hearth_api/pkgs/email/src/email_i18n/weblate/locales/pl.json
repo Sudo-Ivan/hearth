@@ -380,9 +380,9 @@
 		"deadline_label": "Wycofaj spór przed",
 		"deadline_value": "{warningDate, date, long}",
 		"footer_reason": "Otrzymujesz tę wiadomość z powodu sporu dotyczącego płatności związanego z Twoim kontem {product_name}.",
-		"ground": "{product, select, plutonium {Sekcja 4.4 warunków korzystania z usługi} other {Sekcja 9 warunków Operator Pass}}",
+		"ground": "{product, select, ember {Sekcja 4.4 warunków korzystania z usługi} other {Sekcja 9 warunków Operator Pass}}",
 		"ground_label": "Podstawa",
-		"intro": "Zgłosiłeś(-aś) w banku lub u wydawcy karty spór dotyczący {product, select, plutonium {płatności za Plutonium} other {płatności za Operator Pass}}. Osoba z naszego zespołu sprawdziła spór pod kątem naszych warunków i uznała go za nieuzasadniony.",
+		"intro": "Zgłosiłeś(-aś) w banku lub u wydawcy karty spór dotyczący {product, select, ember {płatności za Ember} other {płatności za Operator Pass}}. Osoba z naszego zespołu sprawdziła spór pod kątem naszych warunków i uznała go za nieuzasadniony.",
 		"next_body": "Jeśli płatność pochodziła od Ciebie, możesz poprosić bank lub wydawcę karty o wycofanie sporu. Jeśli spór zostanie wycofany albo zakończy się bez zwrotu pieniędzy na Twoją rzecz, z Twoim kontem nic się nie stanie. Dopóki spór się nie zakończy, nie możesz nic kupić w {product_name}.{privacy_email, select, null {} other { W każdej chwili możesz poprosić o kopię swoich danych, pisząc na adres <mail>{privacy_email}</mail>.}}",
 		"next_title": "Co dzieje się teraz",
 		"order_date_label": "Data zamówienia",
@@ -390,7 +390,7 @@
 		"order_number_label": "Numer zamówienia",
 		"signoff": "Zespół {product_name}",
 		"subject": "W sprawie Twojego sporu dotyczącego płatności w {product_name}",
-		"why_body": "Płatności dokonała osoba uprawniona, czyli Ty lub ktoś za Twoją zgodą, pobraliśmy właściwą kwotę, {product, select, plutonium {Plutonium zostało zapewnione zgodnie z opisem} other {Operator Pass został dostarczony zgodnie z opisem}}, nie zwróciliśmy tej płatności, a w chwili zgłoszenia sporu okres na odstąpienie od umowy już minął.",
+		"why_body": "Płatności dokonała osoba uprawniona, czyli Ty lub ktoś za Twoją zgodą, pobraliśmy właściwą kwotę, {product, select, ember {Ember zostało zapewnione zgodnie z opisem} other {Operator Pass został dostarczony zgodnie z opisem}}, nie zwróciliśmy tej płatności, a w chwili zgłoszenia sporu okres na odstąpienie od umowy już minął.",
 		"why_title": "Dlaczego uznaliśmy go za nieuzasadniony"
 	},
 	"reauth_code": {

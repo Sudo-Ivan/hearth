@@ -380,9 +380,9 @@
 		"deadline_label": "اسحب النزاع قبل",
 		"deadline_value": "{warningDate, date, long}",
 		"footer_reason": "لقد تلقيت هذا البريد الإلكتروني بسبب نزاع دفع يتعلق بحساب {product_name} الخاص بك.",
-		"ground": "{product, select, plutonium {القسم 4.4 من شروط الخدمة} other {القسم 9 من شروط Operator Pass}}",
+		"ground": "{product, select, ember {القسم 4.4 من شروط الخدمة} other {القسم 9 من شروط Operator Pass}}",
 		"ground_label": "الأساس",
-		"intro": "لقد اعترضت على {product, select, plutonium {دفعة Plutonium الخاصة بك} other {دفعة Operator Pass الخاصة بك}} لدى البنك أو شركة البطاقة. راجع أحد أعضاء فريقنا النزاع وفق شروطنا ووجد أنه غير مبرر.",
+		"intro": "لقد اعترضت على {product, select, ember {دفعة Ember الخاصة بك} other {دفعة Operator Pass الخاصة بك}} لدى البنك أو شركة البطاقة. راجع أحد أعضاء فريقنا النزاع وفق شروطنا ووجد أنه غير مبرر.",
 		"next_body": "إذا كنت أنت من أجرى هذه الدفعة، فيمكنك أن تطلب من البنك أو شركة البطاقة سحب النزاع. إذا سُحب النزاع أو أُغلق دون أن يعود المال إليك، فلن يحدث شيء لحسابك. وإلى أن يُغلق النزاع، لا يمكنك شراء أي شيء على {product_name}.{privacy_email, select, null {} other { يمكنك طلب نسخة من بياناتك في أي وقت بمراسلة <mail>{privacy_email}</mail>.}}",
 		"next_title": "ماذا يحدث الآن",
 		"order_date_label": "تاريخ الطلب",
@@ -390,7 +390,7 @@
 		"order_number_label": "رقم الطلب",
 		"signoff": "فريق {product_name}",
 		"subject": "بخصوص نزاع الدفع الخاص بك على {product_name}",
-		"why_body": "أنت أو شخص أذنت له أجرى الدفعة، وخصمنا المبلغ الصحيح، و{product, select, plutonium {قُدِّم Plutonium كما هو موصوف} other {سُلِّم Operator Pass كما هو موصوف}}، ولم نكن قد رددنا قيمة الدفعة، وكانت فترة الانسحاب قد انتهت عندما اعترضت عليها.",
+		"why_body": "أنت أو شخص أذنت له أجرى الدفعة، وخصمنا المبلغ الصحيح، و{product, select, ember {قُدِّم Ember كما هو موصوف} other {سُلِّم Operator Pass كما هو موصوف}}، ولم نكن قد رددنا قيمة الدفعة، وكانت فترة الانسحاب قد انتهت عندما اعترضت عليها.",
 		"why_title": "لماذا وجدناه غير مبرر"
 	},
 	"reauth_code": {

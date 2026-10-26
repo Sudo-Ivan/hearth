@@ -10,7 +10,7 @@ import type {OperatorPassStateResponse} from '@hearth/schema/src/domains/operato
 const STORAGE_KEY = 'PremiumCheckoutReturnIntent';
 const INTENT_TTL_MS = 30 * 60 * 1000;
 
-export type PremiumCheckoutReturnSource = 'plutonium' | 'operator_pass';
+export type PremiumCheckoutReturnSource = 'ember' | 'operator_pass';
 
 interface PremiumCheckoutReturnIntent {
 	id: string;
@@ -37,7 +37,7 @@ function parsePremiumCheckoutReturnIntent(raw: string): PremiumCheckoutReturnInt
 	}
 	if (
 		typeof parsed.id !== 'string' ||
-		(parsed.source !== 'plutonium' && parsed.source !== 'operator_pass') ||
+		(parsed.source !== 'ember' && parsed.source !== 'operator_pass') ||
 		(typeof parsed.userId !== 'string' && parsed.userId !== null) ||
 		typeof parsed.createdAt !== 'number' ||
 		typeof parsed.expiresAt !== 'number' ||
@@ -102,7 +102,7 @@ export function recordPremiumCheckoutReturnIntent(
 	if (!storage) return;
 	const currentUser = Users.currentUser;
 	const startedPassCount = options.passCount ?? getCurrentOperatorPassCount();
-	const startedComplete = source === 'plutonium' && getCurrentPremiumActive();
+	const startedComplete = source === 'ember' && getCurrentPremiumActive();
 	if (startedComplete) {
 		storage.removeItem(STORAGE_KEY);
 		return;

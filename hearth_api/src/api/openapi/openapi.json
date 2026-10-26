@@ -31454,7 +31454,7 @@
 								"description": "Current state of the purchase",
 								"$ref": "#/components/schemas/StorePurchaseState"
 							},
-							"entitled": {"type": "boolean", "description": "Whether the purchase currently grants Plutonium"},
+							"entitled": {"type": "boolean", "description": "Whether the purchase currently grants Ember"},
 							"expires_at": {
 								"anyOf": [
 									{
@@ -34301,7 +34301,7 @@
 						"properties": {
 							"domain_migration": {"$ref": "#/components/schemas/DomainMigrationAssignmentResponse"},
 							"channel_threads": {"$ref": "#/components/schemas/ChannelThreadsAssignmentResponse"},
-							"plutonium_page": {"$ref": "#/components/schemas/PlutoniumPageAssignmentResponse"},
+							"ember_page": {"$ref": "#/components/schemas/EmberPageAssignmentResponse"},
 							"voice_p2p": {"$ref": "#/components/schemas/VoiceP2pAssignmentResponse"},
 							"guild_visits": {"$ref": "#/components/schemas/GuildVisitsAssignmentResponse"}
 						},
@@ -40386,7 +40386,7 @@
 				"required": ["enabled", "max_participants"],
 				"additionalProperties": false
 			},
-			"PlutoniumPageAssignmentResponse": {
+			"EmberPageAssignmentResponse": {
 				"type": "object",
 				"properties": {"enabled": {"type": "boolean"}},
 				"required": ["enabled"],
@@ -42742,7 +42742,7 @@
 						"$ref": "#/components/schemas/StoreEnvironment"
 					},
 					"state": {"description": "Current state of the purchase", "$ref": "#/components/schemas/StorePurchaseState"},
-					"entitled": {"type": "boolean", "description": "Whether the purchase currently grants Plutonium"},
+					"entitled": {"type": "boolean", "description": "Whether the purchase currently grants Ember"},
 					"expires_at": {
 						"anyOf": [
 							{
@@ -44041,7 +44041,7 @@
 				"properties": {
 					"kind": {
 						"type": "string",
-						"description": "Stable badge key. Known values: staff, partner, bug_hunter, operator_pass, visionary, visionary_number, plutonium, and premium on self-hosted instances. Clients must render unknown values from the other fields."
+						"description": "Stable badge key. Known values: staff, partner, bug_hunter, operator_pass, visionary, visionary_number, ember, and premium on self-hosted instances. Clients must render unknown values from the other fields."
 					},
 					"label": {
 						"type": "string",
@@ -44515,7 +44515,7 @@
 					"CANNOT_EXECUTE_ON_DM",
 					"CANNOT_BLOCK_SYSTEM_USER",
 					"CANNOT_MODIFY_SYSTEM_WEBHOOK",
-					"CANNOT_REDEEM_PLUTONIUM_WITH_VISIONARY",
+					"CANNOT_REDEEM_EMBER_WITH_VISIONARY",
 					"CANNOT_REPORT_GUILD",
 					"CANNOT_REPORT_OWN_GUILD",
 					"CANNOT_REPORT_OWN_MESSAGE",

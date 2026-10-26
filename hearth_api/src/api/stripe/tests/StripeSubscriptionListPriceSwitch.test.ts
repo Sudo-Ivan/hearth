@@ -296,7 +296,7 @@ describe('StripeSubscriptionListPriceSwitch', () => {
 						end_date: subscriber.periodEnd,
 						currency: 'brl',
 						collection_method: 'send_invoice',
-						description: 'Grandfathered Plutonium',
+						description: 'Grandfathered Ember',
 						metadata: {campaign: 'brl_2026'},
 						discounts: [{coupon: {id: 'co_grandfather_10'}, discount: null, promotion_code: null}],
 						default_tax_rates: [{id: 'txr_br_icms'}],
@@ -345,7 +345,7 @@ describe('StripeSubscriptionListPriceSwitch', () => {
 			expect(update['phases[0][items][0][metadata][seat]']).toBe('primary');
 			expect(update['phases[0][metadata][campaign]']).toBe('brl_2026');
 			expect(update['phases[0][collection_method]']).toBe('send_invoice');
-			expect(update['phases[0][description]']).toBe('Grandfathered Plutonium');
+			expect(update['phases[0][description]']).toBe('Grandfathered Ember');
 			expect(update['phases[0][currency]']).toBe('brl');
 			expect(update['phases[0][automatic_tax][enabled]']).toBe('true');
 			expect(update['phases[0][automatic_tax][liability][type]']).toBe('self');

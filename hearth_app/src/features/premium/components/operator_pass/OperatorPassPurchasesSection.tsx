@@ -1,13 +1,13 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import styles from '@app/features/app/components/dialogs/components/plutonium/PurchaseHistorySection.module.css';
+import styles from '@app/features/app/components/dialogs/components/ember/PurchaseHistorySection.module.css';
 import {Logger} from '@app/features/platform/utils/AppLogger';
 import * as OperatorPassCommands from '@app/features/premium/commands/OperatorPassCommands';
 import {
 	openOperatorPassWithdrawModal,
 	WITHDRAW_FROM_CONTRACT_HERE_DESCRIPTOR,
 } from '@app/features/premium/components/operator_pass/OperatorPassWithdrawModal';
-import {PlutoniumPageButton} from '@app/features/premium/components/plutonium_page/PlutoniumPageButton';
+import {EmberPageButton} from '@app/features/premium/components/ember_page/EmberPageButton';
 import {formatOperatorPassDate, isOperatorPassAvailable} from '@app/features/premium/utils/OperatorPassUtils';
 import type {OperatorPassPurchaseResponse} from '@hearth/schema/src/domains/operator_pass/OperatorPassSchemas';
 import {msg} from '@lingui/core/macro';
@@ -68,7 +68,7 @@ export const OperatorPassPurchasesSection = observer(function OperatorPassPurcha
 								</p>
 							)}
 						</div>
-						<PlutoniumPageButton
+						<EmberPageButton
 							variant="secondary"
 							small
 							className={styles.button}
@@ -76,7 +76,7 @@ export const OperatorPassPurchasesSection = observer(function OperatorPassPurcha
 							data-flx="premium.operator-pass-purchases-section.button.withdraw"
 						>
 							{i18n._(WITHDRAW_FROM_CONTRACT_HERE_DESCRIPTOR)}
-						</PlutoniumPageButton>
+						</EmberPageButton>
 					</div>
 				</div>
 			))}

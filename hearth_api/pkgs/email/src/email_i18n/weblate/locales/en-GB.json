@@ -380,9 +380,9 @@
 		"deadline_label": "Withdraw the dispute before",
 		"deadline_value": "{warningDate, date, long}",
 		"footer_reason": "You received this email because of a payment dispute about your {product_name} account.",
-		"ground": "{product, select, plutonium {Section 4.4 of the terms of service} other {Section 9 of the Operator Pass terms}}",
+		"ground": "{product, select, ember {Section 4.4 of the terms of service} other {Section 9 of the Operator Pass terms}}",
 		"ground_label": "Ground",
-		"intro": "You disputed your {product, select, plutonium {Plutonium payment} other {Operator Pass payment}} with your bank or card company. A person on our team checked the dispute against our terms and found it unjustified.",
+		"intro": "You disputed your {product, select, ember {Ember payment} other {Operator Pass payment}} with your bank or card company. A person on our team checked the dispute against our terms and found it unjustified.",
 		"next_body": "If you made this payment, you can ask your bank or card company to withdraw the dispute. If the dispute is withdrawn or closes without the money going back to you, nothing happens to your account. Until the dispute closes, you can't buy anything on {product_name}.{privacy_email, select, null {} other { You can ask for a copy of your data any time by writing to <mail>{privacy_email}</mail>.}}",
 		"next_title": "What happens now",
 		"order_date_label": "Order date",
@@ -390,7 +390,7 @@
 		"order_number_label": "Order number",
 		"signoff": "The {product_name} team",
 		"subject": "About your payment dispute on {product_name}",
-		"why_body": "You or someone you allowed made the payment, we charged the right amount, {product, select, plutonium {Plutonium was provided as described} other {the Operator Pass was delivered as described}}, we had not refunded the payment, and the withdrawal period had ended when you disputed it.",
+		"why_body": "You or someone you allowed made the payment, we charged the right amount, {product, select, ember {Ember was provided as described} other {the Operator Pass was delivered as described}}, we had not refunded the payment, and the withdrawal period had ended when you disputed it.",
 		"why_title": "Why we found it unjustified"
 	},
 	"reauth_code": {

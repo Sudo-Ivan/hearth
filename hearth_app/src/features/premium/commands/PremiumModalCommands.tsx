@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import * as PlutoniumPageCommands from '@app/features/premium/commands/PlutoniumPageCommands';
+import * as EmberPageCommands from '@app/features/premium/commands/EmberPageCommands';
 import {shouldShowPremiumFeatures} from '@app/features/premium/utils/PremiumUtils';
 
 interface OpenOptions {
@@ -17,8 +17,8 @@ export function open(optionsOrDefaultGiftMode: OpenOptions | boolean = {}): void
 			: optionsOrDefaultGiftMode;
 	const {defaultGiftMode = false} = options;
 	if (defaultGiftMode) {
-		PlutoniumPageCommands.openGiftPlutoniumModal();
+		EmberPageCommands.openGiftEmberModal();
 	} else {
-		PlutoniumPageCommands.openPlutoniumPage();
+		EmberPageCommands.openEmberPage();
 	}
 }

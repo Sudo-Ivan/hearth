@@ -380,9 +380,9 @@
 		"deadline_label": "Retire a contestação antes de",
 		"deadline_value": "{warningDate, date, long}",
 		"footer_reason": "Você recebeu este e-mail devido a uma contestação de pagamento relacionada à sua conta do {product_name}.",
-		"ground": "{product, select, plutonium {Seção 4.4 dos termos de serviço} other {Seção 9 dos termos do Operator Pass}}",
+		"ground": "{product, select, ember {Seção 4.4 dos termos de serviço} other {Seção 9 dos termos do Operator Pass}}",
 		"ground_label": "Fundamento",
-		"intro": "Você contestou seu {product, select, plutonium {pagamento do Plutonium} other {pagamento do Operator Pass}} junto ao seu banco ou administradora de cartão. Uma pessoa da nossa equipe analisou a contestação com base nos nossos termos e a considerou injustificada.",
+		"intro": "Você contestou seu {product, select, ember {pagamento do Ember} other {pagamento do Operator Pass}} junto ao seu banco ou administradora de cartão. Uma pessoa da nossa equipe analisou a contestação com base nos nossos termos e a considerou injustificada.",
 		"next_body": "Se você fez este pagamento, pode pedir ao seu banco ou à administradora do cartão que retire a contestação. Se a contestação for retirada ou terminar sem que o dinheiro volte para você, nada acontece com sua conta. Até a contestação terminar, você não pode comprar nada no {product_name}.{privacy_email, select, null {} other { Você pode pedir uma cópia dos seus dados a qualquer momento escrevendo para <mail>{privacy_email}</mail>.}}",
 		"next_title": "O que acontece agora",
 		"order_date_label": "Data do pedido",
@@ -390,7 +390,7 @@
 		"order_number_label": "Número do pedido",
 		"signoff": "Equipe do {product_name}",
 		"subject": "Sobre a sua contestação de pagamento no {product_name}",
-		"why_body": "Você ou alguém que você autorizou fez o pagamento, cobramos o valor correto, {product, select, plutonium {o Plutonium foi fornecido conforme descrito} other {o Operator Pass foi entregue conforme descrito}}, não havíamos reembolsado o pagamento e o prazo de desistência já tinha terminado quando você o contestou.",
+		"why_body": "Você ou alguém que você autorizou fez o pagamento, cobramos o valor correto, {product, select, ember {o Ember foi fornecido conforme descrito} other {o Operator Pass foi entregue conforme descrito}}, não havíamos reembolsado o pagamento e o prazo de desistência já tinha terminado quando você o contestou.",
 		"why_title": "Por que a consideramos injustificada"
 	},
 	"reauth_code": {

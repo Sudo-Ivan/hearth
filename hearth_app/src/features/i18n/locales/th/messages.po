@@ -927,7 +927,7 @@ msgid "{altText} — light theme preview"
 msgstr "{altText} — ตัวอย่างในธีมสว่าง"
 
 #. Amount of an invoice in the billing history, followed by its three-letter currency code so the receipt always names the currency, for example "9,99 kr (SEK)". {amount} is a price already formatted by code and {currency} is an ISO currency code such as SEK or USD. Keep both placeholders as they are and use the brackets your language normally uses.
-#: src/features/app/components/dialogs/components/plutonium/InvoiceList.tsx
+#: src/features/app/components/dialogs/components/ember/InvoiceList.tsx
 msgid "{amount} ({currency})"
 msgstr "{amount} ({currency})"
 
@@ -1778,8 +1778,8 @@ msgstr "{minutes, plural, other {มีการลองโทเค็นก�
 msgid "{minutes, plural, one {Your invite link expires in # minute.} other {Your invite link expires in # minutes.}}"
 msgstr "{minutes, plural, one {ลิงก์เชิญของคุณจะหมดอายุในอีก # นาที} other {ลิงก์เชิญของคุณจะหมดอายุในอีก # นาที}}"
 
-#. Compact monthly price on the Plutonium page hero. Preserve the monthlyPrice placeholder exactly. The price is shown bold and any text around it in a lighter style, so keep the period words outside the placeholder.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Compact monthly price on the Ember page hero. Preserve the monthlyPrice placeholder exactly. The price is shown bold and any text around it in a lighter style, so keep the period words outside the placeholder.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "{monthlyPrice}/mo"
 msgstr "{monthlyPrice}/เดือน"
 
@@ -1860,8 +1860,8 @@ msgstr "{premiumProductName} ราคาถูกลงแล้ว เปล�
 msgid "{premiumProductName} costs less now. Switch from {currentPrice} to {newPrice} a year starting {effectiveDate}, and nothing is charged today."
 msgstr "{premiumProductName} ราคาถูกลงแล้ว เปลี่ยนจาก {currentPrice} เป็น {newPrice} ต่อปี เริ่มตั้งแต่วันที่ {effectiveDate} และจะไม่มีการเรียกเก็บเงินในวันนี้"
 
-#. Accessible label of the Plutonium page region. premiumProductName is the paid tier name.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Accessible label of the Ember page region. premiumProductName is the paid tier name.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "{premiumProductName} page"
 msgstr "หน้า {premiumProductName}"
 
@@ -2392,8 +2392,8 @@ msgstr "{username} เริ่มเธรด: {threadName}"
 msgid "{width} by {height} pixels"
 msgstr "{width} × {height} พิกเซล"
 
-#. Compact yearly price on the Plutonium page hero. Preserve the yearlyPrice placeholder exactly. The price is shown bold and any text around it in a lighter style, so keep the period words outside the placeholder.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Compact yearly price on the Ember page hero. Preserve the yearlyPrice placeholder exactly. The price is shown bold and any text around it in a lighter style, so keep the period words outside the placeholder.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "{yearlyPrice}/yr"
 msgstr "{yearlyPrice}/ปี"
 
@@ -2555,7 +2555,7 @@ msgstr "1 สัปดาห์"
 #. Duration label component for an elapsed call. Shown when the call lasted about one year.
 #. Gift purchase dialog option for a one-year gift.
 #: src/features/channel/components/CallMessage.tsx
-#: src/features/premium/components/modals/GiftPlutoniumModal.tsx
+#: src/features/premium/components/modals/GiftEmberModal.tsx
 msgid "1 year"
 msgstr "1 ปี"
 
@@ -2822,8 +2822,8 @@ msgstr "ชื่อโฮสต์ เช่น {exampleDomain}"
 msgid "A landscape image, at least 1920 by 1080 pixels."
 msgstr "รูปแนวนอน ขนาดอย่างน้อย 1920 x 1080 พิกเซล"
 
-#. Plutonium subscription card line offering a move to a lower price. {listPriceEffectiveDate} is a date already formatted and localized by code; never write a date into the translation.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionCard.tsx
+#. Ember subscription card line offering a move to a lower price. {listPriceEffectiveDate} is a date already formatted and localized by code; never write a date into the translation.
+#: src/features/app/components/dialogs/components/ember/SubscriptionCard.tsx
 msgid "A lower price is available. Switching takes effect on <0>{listPriceEffectiveDate}</0> and changes nothing else."
 msgstr "มีราคาที่ถูกกว่า การเปลี่ยนจะมีผลในวันที่ <0>{listPriceEffectiveDate}</0> และจะไม่เปลี่ยนแปลงสิ่งอื่นใด"
 
@@ -2842,8 +2842,8 @@ msgstr "มีเวอร์ชันเดสก์ท็อปใหม่พ
 msgid "a poll"
 msgstr "โพล"
 
-#. Plutonium page perk card title about profile customization.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page perk card title about profile customization.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "A profile that stands out"
 msgstr "โปรไฟล์ที่โดดเด่น"
 
@@ -2861,8 +2861,8 @@ msgstr "คอมโพเนนต์ที่ใช้ซ้ำได้สำ
 msgid "a rich embed or link preview (not an uploaded file)"
 msgstr "การฝังเนื้อหาแบบสมบูรณ์หรือตัวอย่างลิงก์ (ไม่ใช่ไฟล์ที่อัปโหลด)"
 
-#. Plutonium page comparison row label for per-community profiles.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison row label for per-community profiles.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "A separate profile for each community"
 msgstr "โปรไฟล์แยกสำหรับแต่ละชุมชน"
 
@@ -3146,7 +3146,7 @@ msgstr "การดำเนินการที่มีไอคอนทั
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
 #. Subscription status badge meaning the paid subscription is active.
 #. Tab in the thread browser that lists active threads.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionStatusBadge.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionStatusBadge.tsx
 #: src/features/channel/components/channel_header_components/developer_tools/DeveloperToolsShared.ts
 #: src/features/threads/utils/ThreadMessageDescriptors.ts
 #: src/features/user/components/settings_utils/search_index/DevicesIndex.ts
@@ -4086,19 +4086,19 @@ msgstr "การควบคุมการจัดเรียงมีให
 msgid "All"
 msgstr "ทั้งหมด"
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionDescription.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionDescription.tsx
 msgid "All <0/> for <1>{effectiveMonthlyPrice}/month</1>."
 msgstr "<0/> ทั้งหมดในราคา <1>{effectiveMonthlyPrice}/เดือน</1>"
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionDescription.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionDescription.tsx
 msgid "All <0/> for <1>{effectiveYearlyPrice}/year</1>."
 msgstr "<0/> ทั้งหมดในราคา <1>{effectiveYearlyPrice}/ปี</1>"
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionDescription.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionDescription.tsx
 msgid "All <0/> included with your subscription."
 msgstr "<0/> ทั้งหมดรวมอยู่ในการสมัครสมาชิกของคุณ"
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionDescription.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionDescription.tsx
 msgid "All <0/>, forever. No billing, no renewals."
 msgstr "<0/> ทั้งหมด ตลอดไป ไม่มีการเรียกเก็บเงิน ไม่มีการต่ออายุ"
 
@@ -4471,7 +4471,7 @@ msgid "Already redeemed"
 msgstr "แลกไปแล้ว"
 
 #. Title of the error modal shown when a subscription is already scheduled to cancel.
-#: src/features/app/components/dialogs/components/plutonium/utils/PremiumActionErrorModal.tsx
+#: src/features/app/components/dialogs/components/ember/utils/PremiumActionErrorModal.tsx
 msgid "Already set to cancel"
 msgstr "ตั้งค่าให้ยกเลิกไว้แล้ว"
 
@@ -4589,7 +4589,7 @@ msgid "Amber"
 msgstr "แอมเบอร์"
 
 #. Column header for invoice amount.
-#: src/features/app/components/dialogs/components/plutonium/InvoiceList.tsx
+#: src/features/app/components/dialogs/components/ember/InvoiceList.tsx
 msgid "Amount"
 msgstr "จำนวนเงิน"
 
@@ -4647,8 +4647,8 @@ msgstr "เล่นภาพเคลื่อนไหวเมื่อมี
 msgid "Animated {avifFormatLabel} not supported"
 msgstr "ไม่รองรับ {avifFormatLabel} แบบเคลื่อนไหว"
 
-#. Plutonium page comparison row label for animated avatars and banners.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison row label for animated avatars and banners.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Animated avatar and profile banner"
 msgstr "อวาตาร์เคลื่อนไหวและแบนเนอร์โปรไฟล์"
 
@@ -4841,7 +4841,7 @@ msgid "Announcements"
 msgstr "ประกาศ"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Annual"
 msgstr "รายปี"
 
@@ -5794,7 +5794,7 @@ msgstr "AV1"
 msgid "AV1 (requires opt-in)"
 msgstr "AV1 (ต้องเปิดใช้งานก่อน)"
 
-#. Screen reader text for a check mark in the Plutonium page comparison table.
+#. Screen reader text for a check mark in the Ember page comparison table.
 #: src/features/i18n/utils/CommonMessageDescriptors.ts
 msgid "Available"
 msgstr "พร้อมใช้งาน"
@@ -5858,7 +5858,7 @@ msgstr "ค่า ping เฉลี่ย:"
 msgid "Away"
 msgstr "ไม่อยู่"
 
-#. Accessible label of the back button on the Plutonium page in the mobile layout.
+#. Accessible label of the back button on the Ember page in the mobile layout.
 #: src/features/auth/flow/IpAuthorizationScreen.tsx
 #: src/features/connection/components/modals/AddConnectionModal.tsx
 #: src/features/guild/components/modals/add_guild_modal/GuildCreateForm.tsx
@@ -6170,7 +6170,7 @@ msgid "Belgium"
 msgstr "เบลเยียม"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Benefits"
 msgstr "สิทธิประโยชน์"
 
@@ -6183,18 +6183,18 @@ msgstr "ใช้ดีที่สุดบนแอปเดสก์ท็อ
 msgid "Between 1 and 32 characters"
 msgstr "ระหว่าง 1 ถึง 32 ตัวอักษร"
 
-#. Plutonium subscription card text for an App Store or Google Play subscription. {storeName} is the store brand name, App Store or Google Play, and must not be translated.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionDescription.tsx
+#. Ember subscription card text for an App Store or Google Play subscription. {storeName} is the store brand name, App Store or Google Play, and must not be translated.
+#: src/features/app/components/dialogs/components/ember/SubscriptionDescription.tsx
 msgid "Billed through {storeName}."
 msgstr "เรียกเก็บเงินผ่าน {storeName}"
 
-#. Plutonium subscription card text for an App Store or Google Play subscription that will not renew. {storeName} is the store brand name, App Store or Google Play, and must not be translated. {endDate} is a date already formatted and localized by code; never write a date into the translation.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionDescription.tsx
+#. Ember subscription card text for an App Store or Google Play subscription that will not renew. {storeName} is the store brand name, App Store or Google Play, and must not be translated. {endDate} is a date already formatted and localized by code; never write a date into the translation.
+#: src/features/app/components/dialogs/components/ember/SubscriptionDescription.tsx
 msgid "Billed through {storeName}. Ends on <0>{endDate}</0>."
 msgstr "เรียกเก็บเงินผ่าน {storeName} สิ้นสุดในวันที่ <0>{endDate}</0>"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 #: src/features/user/components/settings_utils/SettingsConstants.tsx
 msgid "Billing"
 msgstr "การเรียกเก็บเงิน"
@@ -6206,8 +6206,8 @@ msgstr "รอบบิล"
 
 #. Accordion title in the premium billing panel.
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/app/components/dialogs/components/plutonium/PurchaseHistorySection.tsx
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/app/components/dialogs/components/ember/PurchaseHistorySection.tsx
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Billing history"
 msgstr "ประวัติการเรียกเก็บเงิน"
 
@@ -6571,8 +6571,8 @@ msgstr "ละเมิดหลักเกณฑ์คอมมูนิตี
 msgid "Brightness"
 msgstr "ความสว่าง"
 
-#. Plutonium page perk card body about global emojis and stickers.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page perk card body about global emojis and stickers.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Bring custom emojis and stickers from any of your communities into every chat and community you're in."
 msgstr "นำอิโมจิและสติกเกอร์ที่กำหนดเองจากชุมชนใดก็ได้ของคุณมาใช้ในทุกแชทและทุกชุมชนที่คุณอยู่"
 
@@ -7118,7 +7118,7 @@ msgid "Cancel pass"
 msgstr "ยกเลิกพาส"
 
 #. Billing button that cancels a scheduled move to a lower subscription price.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionActions.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionActions.tsx
 msgid "Cancel price change"
 msgstr "ยกเลิกการเปลี่ยนแปลงราคา"
 
@@ -7133,24 +7133,24 @@ msgid "Cancel request"
 msgstr "ยกเลิกคำขอ"
 
 #. Billing button that cancels a scheduled billing-cycle change.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionActions.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionActions.tsx
 msgid "Cancel scheduled switch"
 msgstr "ยกเลิกการเปลี่ยนที่กำหนดเวลาไว้"
 
 #. Billing button that starts subscription cancellation.
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionActions.tsx
-#: src/features/premium/components/plutonium_page/PlutoniumPage.tsx
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/app/components/dialogs/components/ember/SubscriptionActions.tsx
+#: src/features/premium/components/ember_page/EmberPage.tsx
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Cancel subscription"
 msgstr "ยกเลิกการสมัครสมาชิก"
 
-#: src/features/premium/components/plutonium_page/PlutoniumPage.tsx
+#: src/features/premium/components/ember_page/EmberPage.tsx
 msgid "Cancel subscription?"
 msgstr "ยกเลิกการสมัครสมาชิกใช่หรือไม่"
 
-#. Plutonium subscription card hint shown to a subscriber who could move to a lower price but has another billing change already scheduled.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionCard.tsx
+#. Ember subscription card hint shown to a subscriber who could move to a lower price but has another billing change already scheduled.
+#: src/features/app/components/dialogs/components/ember/SubscriptionCard.tsx
 msgid "Cancel the scheduled change to move to the current price instead."
 msgstr "ยกเลิกการเปลี่ยนแปลงที่กำหนดไว้เพื่อเปลี่ยนไปใช้ราคาปัจจุบันแทน"
 
@@ -7165,7 +7165,7 @@ msgid "Cancel upload"
 msgstr "ยกเลิกการอัปโหลด"
 
 #. Billing button that cancels a scheduled yearly upgrade.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionActions.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionActions.tsx
 msgid "Cancel yearly upgrade"
 msgstr "ยกเลิกการอัปเกรดรายปี"
 
@@ -7175,7 +7175,7 @@ msgid "Cancel your friend request to {displayName}?"
 msgstr "ยกเลิกคำขอเป็นเพื่อนที่ส่งถึง {displayName} ใช่หรือไม่"
 
 #. Subscription status badge meaning cancellation is scheduled for the renewal date.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionStatusBadge.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionStatusBadge.tsx
 msgid "Canceling"
 msgstr "กำลังยกเลิก"
 
@@ -7184,7 +7184,7 @@ msgstr "กำลังยกเลิก"
 msgid "Cancellation"
 msgstr "การตัดเสียงสะท้อน"
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionDescription.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionDescription.tsx
 msgid "Cancels on <0>{cancelDate}</0>. <1/> remain active until then."
 msgstr "จะยกเลิกในวันที่ <0>{cancelDate}</0> <1/> ยังคงใช้งานได้จนถึงวันนั้น"
 
@@ -7444,7 +7444,7 @@ msgid "Change password form"
 msgstr "แบบฟอร์มเปลี่ยนรหัสผ่าน"
 
 #. Subscription status badge meaning a future billing plan change is scheduled.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionStatusBadge.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionStatusBadge.tsx
 msgid "Change scheduled"
 msgstr "กำหนดการเปลี่ยนแปลงแล้ว"
 
@@ -7956,8 +7956,8 @@ msgstr "ช่องที่ฉันดูแล"
 msgid "Character limit exceeded by {remaining}"
 msgstr "เกินขีดจำกัดไป {remaining} ตัวอักษร"
 
-#. Plutonium page comparison row label for the message length limit.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison row label for the message length limit.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Characters in a single message"
 msgstr "อักขระในข้อความเดียว"
 
@@ -8096,7 +8096,7 @@ msgid "Checking the sign-in request…"
 msgstr "กำลังตรวจสอบคำขอลงชื่อเข้าใช้…"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Checkout"
 msgstr "ชำระเงิน"
 
@@ -8106,17 +8106,17 @@ msgid "Checkout canceled. You weren't charged."
 msgstr "ยกเลิกการชำระเงินแล้ว คุณไม่ได้ถูกเรียกเก็บเงิน"
 
 #. Modal body for the generic "checkout blocked" state on a self-hosted instance.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Checkout is blocked for this account."
 msgstr "การชำระเงินถูกบล็อกสำหรับบัญชีนี้"
 
 #. Modal body for the generic "checkout blocked" state. Provides the support email.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Checkout is blocked for this account. Contact {supportEmail} if you need help."
 msgstr "บัญชีนี้ถูกบล็อกไม่ให้ชำระเงิน โปรดติดต่อ {supportEmail} หากคุณต้องการความช่วยเหลือ"
 
 #. Modal title for the generic "checkout blocked" state when no more specific reason is known.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Checkout unavailable"
 msgstr "ไม่สามารถชำระเงินได้"
 
@@ -8200,7 +8200,7 @@ msgid "Choose a speed for spoken text."
 msgstr "เลือกระดับความเร็วสำหรับข้อความที่อ่านออกเสียง"
 
 #. Settings search entry description. One-line summary of what the settings search entry controls.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Choose a subscription plan or gift option"
 msgstr "เลือกแผนการสมัครสมาชิกหรือตัวเลือกของขวัญ"
 
@@ -8294,8 +8294,8 @@ msgstr "เลือกวิธีจัดเก็บ GIF ที่ติด�
 msgid "Choose how times are displayed throughout the app"
 msgstr "เลือกวิธีแสดงเวลาในแอป"
 
-#. Plutonium subscription payment method picker description, generic fallback when no country-specific copy applies.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#. Ember subscription payment method picker description, generic fallback when no country-specific copy applies.
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Choose how you'd like to pay for this subscription."
 msgstr "เลือกช่องทางชำระเงินสำหรับการสมัครสมาชิกนี้"
 
@@ -8304,7 +8304,7 @@ msgid "Choose one of the methods below to prove domain ownership. You only need 
 msgstr "เลือกวิธีใดวิธีหนึ่งด้านล่างเพื่อยืนยันความเป็นเจ้าของโดเมน คุณต้องทำเพียงวิธีเดียวเท่านั้น"
 
 #. Modal title for the payment method picker (local card vs alternative method).
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Choose payment method"
 msgstr "เลือกช่องทางการชำระเงิน"
 
@@ -8478,13 +8478,13 @@ msgstr "ยืนยันบัญชีของคุณด้วยการ
 msgid "Claim your account by choosing a username and password. You sign in with them, so pick ones you will remember."
 msgstr "ยืนยันบัญชีของคุณด้วยการเลือกชื่อผู้ใช้และรหัสผ่าน คุณจะใช้สิ่งเหล่านี้ในการลงชื่อเข้าใช้ ดังนั้นโปรดเลือกสิ่งที่จำได้ง่าย"
 
-#. Plutonium page note under disabled buttons for unclaimed accounts. premiumProductName is the paid tier name.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page note under disabled buttons for unclaimed accounts. premiumProductName is the paid tier name.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Claim your account to buy {premiumProductName}."
 msgstr "รับสิทธิ์บัญชีของคุณเพื่อซื้อ {premiumProductName}"
 
 #. Note in the gift purchase dialog for unclaimed accounts.
-#: src/features/premium/components/modals/GiftPlutoniumModal.tsx
+#: src/features/premium/components/modals/GiftEmberModal.tsx
 msgid "Claim your account to buy gifts."
 msgstr "ลงทะเบียนบัญชีของคุณเพื่อซื้อของขวัญ"
 
@@ -9130,8 +9130,8 @@ msgstr "คอมมูนิตี้ที่แสดงในหน้าส
 msgid "Communities with over 250 people are forced onto the \"mentions only\" setting. Your original setting is preserved and will be restored if the community drops below 250 members."
 msgstr "คอมมูนิตี้ที่มีสมาชิกมากกว่า 250 คนจะถูกตั้งค่าเป็น \"เฉพาะเมื่อถูกกล่าวถึง\" โดยอัตโนมัติ การตั้งค่าเดิมของคุณจะยังคงอยู่และจะกลับมาใช้เมื่อจำนวนสมาชิกในคอมมูนิตี้ลดลงต่ำกว่า 250 คน"
 
-#. Plutonium page comparison row label for the community limit.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison row label for the community limit.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Communities you can join"
 msgstr "ชุมชนที่คุณเข้าร่วมได้"
 
@@ -9379,19 +9379,19 @@ msgstr "ปุ่มกะทัดรัดที่มีเฉพาะไอ
 msgid "Compact mode"
 msgstr "โหมดกะทัดรัด"
 
-#. Heading of the comparison table on the Plutonium page. premiumProductName is the paid tier name.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Heading of the comparison table on the Ember page. premiumProductName is the paid tier name.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Compare Free and {premiumProductName}"
 msgstr "เปรียบเทียบฟรีกับ {premiumProductName}"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Comparison"
 msgstr "เปรียบเทียบ"
 
 #. Modal title for the mobile checkout confirmation when opening the payment provider in a browser.
 #. Title of the confirmation shown on mobile before opening the payment page for the Operator Pass.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 #: src/features/premium/components/modals/OperatorPassCheckoutModal.tsx
 msgid "Complete payment"
 msgstr "ชำระเงินให้เสร็จสมบูรณ์"
@@ -9613,8 +9613,8 @@ msgstr "ยืนยันอีเมลของคุณก่อนแก้
 msgid "Confirm your email before sending friend requests."
 msgstr "ยืนยันอีเมลของคุณก่อนส่งคำขอเป็นเพื่อน"
 
-#. Title of the error modal shown when an unverified account tries to purchase Plutonium.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#. Title of the error modal shown when an unverified account tries to purchase Ember.
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Confirm your email first"
 msgstr "ยืนยันอีเมลของคุณก่อน"
 
@@ -9643,13 +9643,13 @@ msgstr "ยืนยันอีเมลของคุณเพื่อเพ
 msgid "Confirm your email to add reactions."
 msgstr "ยืนยันอีเมลของคุณเพื่อเพิ่มรีแอ็กชัน"
 
-#. Plutonium page note under disabled buttons for unverified accounts. premiumProductName is the paid tier name.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page note under disabled buttons for unverified accounts. premiumProductName is the paid tier name.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Confirm your email to buy {premiumProductName}."
 msgstr "ยืนยันอีเมลของคุณเพื่อซื้อ {premiumProductName}"
 
 #. Note in the gift purchase dialog for accounts without a verified email.
-#: src/features/premium/components/modals/GiftPlutoniumModal.tsx
+#: src/features/premium/components/modals/GiftEmberModal.tsx
 msgid "Confirm your email to buy gifts."
 msgstr "ยืนยันอีเมลของคุณเพื่อซื้อของขวัญ"
 
@@ -10052,7 +10052,7 @@ msgid "Continue to {paymentProviderName}"
 msgstr "ไปที่ {paymentProviderName}"
 
 #. Button in the gift time confirmation that proceeds to subscription checkout.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Continue to checkout"
 msgstr "ดำเนินการต่อเพื่อชำระเงิน"
 
@@ -10651,13 +10651,13 @@ msgstr "ยกเลิกคำขอเป็นเพื่อนไม่ไ
 msgid "Couldn't cancel the friend request. Try again."
 msgstr "ยกเลิกคำขอเป็นเพื่อนไม่ได้ ลองอีกครั้ง"
 
-#. Title of the generic fallback error modal shown when canceling a scheduled Plutonium billing cycle change fails.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Title of the generic fallback error modal shown when canceling a scheduled Ember billing cycle change fails.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Couldn't cancel your pending billing change"
 msgstr "ยกเลิกการเปลี่ยนแปลงการเรียกเก็บเงินที่รอดำเนินการไม่ได้"
 
-#. Title of the generic fallback error modal shown when cancelling a Plutonium subscription fails.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Title of the generic fallback error modal shown when cancelling a Ember subscription fails.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Couldn't cancel your subscription"
 msgstr "ยกเลิกการสมัครสมาชิกไม่ได้"
 
@@ -10666,13 +10666,13 @@ msgstr "ยกเลิกการสมัครสมาชิกไม่ไ
 msgid "Couldn't cancel. Try again or contact support."
 msgstr "ยกเลิกไม่ได้ ลองอีกครั้ง หรือติดต่อฝ่ายสนับสนุน"
 
-#. Title of the generic fallback error modal shown when changing the Plutonium billing cycle fails.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Title of the generic fallback error modal shown when changing the Ember billing cycle fails.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Couldn't change your billing cycle"
 msgstr "เปลี่ยนรอบบิลไม่ได้"
 
-#. Title of the generic fallback error modal shown when moving a Plutonium subscription down to the current price fails.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Title of the generic fallback error modal shown when moving a Ember subscription down to the current price fails.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Couldn't change your price"
 msgstr "เปลี่ยนราคาของคุณไม่ได้"
 
@@ -10823,8 +10823,8 @@ msgstr "ดาวน์โหลดการอัปเดตเดสก์ท
 msgid "Couldn't duplicate this channel"
 msgstr "ไม่สามารถทำซ้ำช่องนี้ได้"
 
-#. Title of the generic fallback error modal shown when ending the Plutonium grace period fails.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Title of the generic fallback error modal shown when ending the Ember grace period fails.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Couldn't end your grace period"
 msgstr "สิ้นสุดช่วงผ่อนผันไม่ได้"
 
@@ -10975,8 +10975,8 @@ msgstr "ไม่สามารถเผยแพร่ข้อความน
 msgid "Couldn't reach a Hearth instance at {domain}. Check the address and that the instance is online."
 msgstr "ไม่สามารถเชื่อมต่อกับอินสแตนซ์ Hearth ที่ {domain} ได้ โปรดตรวจสอบที่อยู่และตรวจสอบว่าอินสแตนซ์กำลังทำงานอยู่"
 
-#. Title of the generic fallback error modal shown when reactivating a Plutonium subscription fails.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Title of the generic fallback error modal shown when reactivating a Ember subscription fails.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Couldn't reactivate your subscription"
 msgstr "เปิดใช้งานการสมัครสมาชิกของคุณอีกครั้งไม่ได้"
 
@@ -10991,7 +10991,7 @@ msgid "Couldn't redeem this gift. Try again."
 msgstr "แลกของขวัญนี้ไม่ได้ ลองอีกครั้ง"
 
 #. Title of the generic fallback error modal shown when a self-serve refund fails.
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "Couldn't refund this purchase"
 msgstr "ไม่สามารถคืนเงินการซื้อนี้ได้"
 
@@ -11001,7 +11001,7 @@ msgid "Couldn't regenerate secret"
 msgstr "สร้างข้อมูลลับใหม่ไม่ได้"
 
 #. Title of the generic fallback error modal shown when rejoining the Visionary community fails.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCommunityActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCommunityActions.tsx
 msgid "Couldn't rejoin the Visionary community"
 msgstr "ไม่สามารถเข้าร่วมคอมมูนิตี้ Visionary อีกครั้งได้"
 
@@ -11130,7 +11130,7 @@ msgid "Couldn't start {blueskyProviderName} authorization"
 msgstr "ไม่สามารถเริ่มการอนุญาต {blueskyProviderName} ได้"
 
 #. Title of the generic fallback error modal shown when creating a checkout session fails unexpectedly.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Couldn't start checkout"
 msgstr "ไม่สามารถเริ่มชำระเงินได้"
 
@@ -11681,7 +11681,7 @@ msgid "Ctrl"
 msgstr "Ctrl"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Currency"
 msgstr "สกุลเงิน"
 
@@ -11907,8 +11907,8 @@ msgstr "สถานะกำหนดเอง: "
 msgid "Custom tags"
 msgstr "แท็กที่กำหนดเอง"
 
-#. Plutonium page comparison row label for custom themes.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison row label for custom themes.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Custom themes for the app"
 msgstr "ธีมแบบกำหนดเองสำหรับแอป"
 
@@ -11951,8 +11951,8 @@ msgstr "กำหนดเอง…"
 
 #. Billing button that opens the external customer portal.
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionActions.tsx
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/app/components/dialogs/components/ember/SubscriptionActions.tsx
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Customer portal"
 msgstr "พอร์ทัลลูกค้า"
 
@@ -12122,7 +12122,7 @@ msgstr "การส่งออกข้อมูล"
 
 #. Column header for invoice payment or creation date.
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/app/components/dialogs/components/plutonium/InvoiceList.tsx
+#: src/features/app/components/dialogs/components/ember/InvoiceList.tsx
 #: src/features/user/components/settings_utils/section_registry/AppearanceSections.ts
 msgid "Date"
 msgstr "วันที่"
@@ -13753,7 +13753,7 @@ msgstr "ไม่ต้องแสดงอีก"
 msgid "Don't show message previews in the DM list"
 msgstr "ไม่แสดงตัวอย่างข้อความในรายการข้อความส่วนตัว"
 
-#: src/features/ui/plutonium_upsell/PlutoniumUpsell.tsx
+#: src/features/ui/ember_upsell/EmberUpsell.tsx
 msgid "Don't show this again"
 msgstr "ไม่ต้องแสดงอีก"
 
@@ -13771,8 +13771,8 @@ msgstr "ไม่ต้องแนะนำ {deviceName} อีก"
 msgid "Donate"
 msgstr "บริจาค"
 
-#. Link text in the Plutonium page donation hint. Opens the donation page on the website.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Link text in the Ember page donation hint. Opens the donation page on the website.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Donate instead"
 msgstr "บริจาคแทน"
 
@@ -13923,7 +13923,7 @@ msgid "Download video"
 msgstr "ดาวน์โหลดวิดีโอ"
 
 #. Billing invoice status for an invoice not finalized yet.
-#: src/features/app/components/dialogs/components/plutonium/InvoiceList.tsx
+#: src/features/app/components/dialogs/components/ember/InvoiceList.tsx
 msgid "Draft"
 msgstr "ฉบับร่าง"
 
@@ -14111,8 +14111,8 @@ msgstr "แต่ละข้อความที่เผยแพร่สา
 msgid "Each username belongs to one person. If a name is taken, people pick another one."
 msgstr "ชื่อผู้ใช้แต่ละชื่อเป็นของคนคนเดียว ถ้าชื่อถูกใช้แล้ว ก็ต้องเลือกชื่ออื่น"
 
-#. Plutonium page comparison row label for early access.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison row label for early access.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Early access to new features"
 msgstr "เข้าถึงฟีเจอร์ใหม่ก่อนใคร"
 
@@ -14436,11 +14436,11 @@ msgstr "กำลังแก้ไขข้อความ"
 msgid "Education"
 msgstr "การศึกษา"
 
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "Eligible for a refund until {windowEndsOn}."
 msgstr "มีสิทธิ์ได้รับเงินคืนจนถึงวันที่ {windowEndsOn}"
 
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "Eligible for a refund until {windowEndsOn}. This will also cancel your subscription immediately."
 msgstr "มีสิทธิ์ได้รับเงินคืนจนถึงวันที่ {windowEndsOn} การดำเนินการนี้จะยกเลิกการสมัครสมาชิกของคุณทันทีด้วย"
 
@@ -14983,15 +14983,15 @@ msgid "End date"
 msgstr "วันที่สิ้นสุด"
 
 #. Billing button that ends premium grace period immediately.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionActions.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionActions.tsx
 msgid "End grace now"
 msgstr "สิ้นสุดช่วงผ่อนผันตอนนี้"
 
-#: src/features/premium/components/plutonium_page/PlutoniumPage.tsx
+#: src/features/premium/components/ember_page/EmberPage.tsx
 msgid "End grace period"
 msgstr "สิ้นสุดช่วงผ่อนผัน"
 
-#: src/features/premium/components/plutonium_page/PlutoniumPage.tsx
+#: src/features/premium/components/ember_page/EmberPage.tsx
 msgid "End grace period now?"
 msgstr "สิ้นสุดช่วงผ่อนผันตอนนี้ใช่ไหม"
 
@@ -15476,10 +15476,10 @@ msgstr "ทุกชุมชนที่ติดตามช่องนี้
 msgid "Everyone"
 msgstr "ทุกคน"
 
-#. Bullet point in the P2P call dialog. Plutonium is the name of the paid subscription and must not be translated. 4K and fps are video terms.
+#. Bullet point in the P2P call dialog. Ember is the name of the paid subscription and must not be translated. 4K and fps are video terms.
 #: src/features/voice/utils/VoiceMessageDescriptors.ts
-msgid "Everyone in the call gets Plutonium stream quality for free: up to 4K source resolution and 60 fps."
-msgstr "ทุกคนในสายจะได้รับคุณภาพสตรีม Plutonium ฟรี: ความละเอียดสูงสุด 4K และ 60 fps"
+msgid "Everyone in the call gets Ember stream quality for free: up to 4K source resolution and 60 fps."
+msgstr "ทุกคนในสายจะได้รับคุณภาพสตรีม Ember ฟรี: ความละเอียดสูงสุด 4K และ 60 fps"
 
 #. Description of the single community option in the setup wizard.
 #: src/features/app/components/setup/SetupPolicySteps.tsx
@@ -15618,7 +15618,7 @@ msgstr "หมดอายุใน"
 
 #. Error message in the invite list item.
 #. Subscription status badge meaning premium access has fully expired.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionStatusBadge.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionStatusBadge.tsx
 #: src/features/invite/components/InviteListItem.tsx
 msgid "Expired"
 msgstr "หมดอายุแล้ว"
@@ -15648,7 +15648,7 @@ msgstr "หมดอายุเมื่อ {date}"
 msgid "Expired on {earliest}"
 msgstr "หมดอายุเมื่อ {earliest}"
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionDescription.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionDescription.tsx
 msgid "Expired on <0>{expiredDate}</0>. <1/> are no longer active. You can resubscribe at any time."
 msgstr "หมดอายุเมื่อ <0>{expiredDate}</0> <1/> ใช้งานไม่ได้แล้ว คุณสามารถสมัครใหม่ได้ทุกเมื่อ"
 
@@ -16225,8 +16225,8 @@ msgstr "รายการโปรด"
 msgid "Favorites"
 msgstr "รายการโปรด"
 
-#. Column header for perk names in the Plutonium page comparison table.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Column header for perk names in the Ember page comparison table.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Feature"
 msgstr "ฟีเจอร์"
 
@@ -16238,7 +16238,7 @@ msgstr "ปิดใช้งานฟีเจอร์ชั่วคราว
 #. Developer options group for feature behavior overrides.
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
 #: src/features/devtools/components/DeveloperOptionsToggleGroups.ts
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Features"
 msgstr "ฟีเจอร์"
 
@@ -16277,7 +16277,7 @@ msgstr "ตัวเลือกไฟล์"
 msgid "File ordering"
 msgstr "ลำดับไฟล์"
 
-#. Title of the file-too-large alert variant that offers a Plutonium upsell.
+#. Title of the file-too-large alert variant that offers a Ember upsell.
 #: src/features/messaging/components/alerts/FileSizeTooLargeModal.tsx
 msgid "File size limit exceeded"
 msgstr "ขนาดไฟล์เกินกำหนด"
@@ -16648,8 +16648,8 @@ msgstr "แบบอักษร"
 msgid "Food & drink"
 msgstr "อาหารและเครื่องดื่ม"
 
-#. Screen reader label for the asterisk that jumps to the custom tag footnote on the Plutonium page.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Screen reader label for the asterisk that jumps to the custom tag footnote on the Ember page.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Footnote about custom tags"
 msgstr "เชิงอรรถเกี่ยวกับแท็กที่กำหนดเอง"
 
@@ -16912,8 +16912,8 @@ msgstr "อัตราเฟรมที่สูงกว่า 30 FPS ต้�
 msgid "France"
 msgstr "ฝรั่งเศส"
 
-#. Column header for the free tier in the Plutonium page comparison table.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Column header for the free tier in the Ember page comparison table.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Free"
 msgstr "ฟรี"
 
@@ -16928,12 +16928,12 @@ msgid "Free user (with purchase history)"
 msgstr "ผู้ใช้ฟรี (พร้อมประวัติการซื้อ)"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Free versus premium"
 msgstr "ฟรีกับพรีเมียม"
 
 #. Settings search entry label. Names the settings search entry in the settings UI. Preserve {premiumProductName}; it is inserted by code.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Free vs {premiumProductName}"
 msgstr "ฟรีเทียบกับ {premiumProductName}"
 
@@ -17328,7 +17328,7 @@ msgstr "เยอรมัน"
 msgid "Germany"
 msgstr "เยอรมนี"
 
-#. Generic upsell CTA button to start the Plutonium purchase flow. Preserve {premiumProductName}.
+#. Generic upsell CTA button to start the Ember purchase flow. Preserve {premiumProductName}.
 #: src/features/i18n/utils/CommonMessageDescriptors.ts
 msgid "Get {premiumProductName}"
 msgstr "รับ {premiumProductName}"
@@ -17343,18 +17343,18 @@ msgstr "รับ {premiumProductName} เพื่อปรับแต่ง�
 msgid "Get {premiumProductName} to customize your tag or keep it when changing your username"
 msgstr "รับ {premiumProductName} เพื่อปรับแต่งแท็กของคุณ หรือเก็บแท็กเดิมไว้เมื่อเปลี่ยนชื่อผู้ใช้"
 
-#. Plutonium page perk card body about profile perks, shown on instances where people sign in with a username and have no tag.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page perk card body about profile perks, shown on instances where people sign in with a username and have no tag.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Get an animated avatar and banner, a subscriber badge and a separate profile for each community."
 msgstr "รับอวาตาร์และแบนเนอร์แบบเคลื่อนไหว, ป้ายสัญลักษณ์ผู้ติดตาม และโปรไฟล์แยกสำหรับแต่ละชุมชน"
 
-#. Plutonium page perk card body about profile perks. footnote is a clickable asterisk that points to a footnote about tags. Keep it directly after the word for username.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page perk card body about profile perks. footnote is a clickable asterisk that points to a footnote about tags. Keep it directly after the word for username.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Get an animated avatar and banner, a subscriber badge, the four-digit tag you want after your username{footnote}, and a separate profile for each community."
 msgstr "รับอวาตาร์และแบนเนอร์แบบเคลื่อนไหว, ป้ายสัญลักษณ์สมาชิก, แท็กสี่หลักที่คุณต้องการต่อท้ายชื่อผู้ใช้ของคุณ{footnote}, และโปรไฟล์แยกสำหรับแต่ละชุมชน"
 
-#. Secondary Plutonium page button that starts a monthly subscription checkout.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Secondary Ember page button that starts a monthly subscription checkout.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Get monthly"
 msgstr "รับรายเดือน"
 
@@ -17388,8 +17388,8 @@ msgstr "รับแอปเดสก์ท็อปเพื่อใช้ก
 msgid "Get the new {productName} app"
 msgstr "รับแอป {productName} ใหม่"
 
-#. Primary Plutonium page button that starts a yearly subscription checkout.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Primary Ember page button that starts a yearly subscription checkout.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Get yearly"
 msgstr "รับรายปี"
 
@@ -17447,21 +17447,21 @@ msgstr "ไม่สามารถโหลด GIF ได้"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
 #. Subscription status badge meaning premium access came from a gift.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionStatusBadge.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionStatusBadge.tsx
 #: src/features/expressions/components/modals/GiftAcceptModal.tsx
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Gift"
 msgstr "ของขวัญ"
 
-#. Plutonium page button that opens the gift purchase dialog. premiumProductName is the paid tier name.
+#. Ember page button that opens the gift purchase dialog. premiumProductName is the paid tier name.
 #. Premium gift purchase section title. premiumProductName is the short paid product name.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 #: src/features/premium/utils/PremiumMessageDescriptors.ts
 msgid "Gift {premiumProductName}"
 msgstr "มอบ {premiumProductName} เป็นของขวัญ"
 
-#. Body of the closing call to action on the Plutonium page for members. premiumProductName is the paid tier name.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Body of the closing call to action on the Ember page for members. premiumProductName is the paid tier name.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Gift {premiumProductName} to a friend for a month or a whole year. Gifts never renew."
 msgstr "มอบ {premiumProductName} ให้เพื่อนเป็นเวลาหนึ่งเดือนหรือหนึ่งปีเต็ม การให้ของขวัญจะไม่มีการต่ออายุ"
 
@@ -17524,7 +17524,7 @@ msgid "Gift inventory nagbar"
 msgstr "แถบแจ้งเตือนคลังของขวัญ"
 
 #. Accessible label of the gift length options in the gift purchase dialog.
-#: src/features/premium/components/modals/GiftPlutoniumModal.tsx
+#: src/features/premium/components/modals/GiftEmberModal.tsx
 msgid "Gift length"
 msgstr "ระยะเวลาของขวัญ"
 
@@ -17556,7 +17556,7 @@ msgid "Gift redeemed!"
 msgstr "แลกของขวัญแล้ว!"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Gift subscription"
 msgstr "ของขวัญสมัครสมาชิก"
 
@@ -17599,7 +17599,7 @@ msgstr "ของขวัญ: กำลังจะหมดอายุ"
 msgid "Gift: grace period (still have access)"
 msgstr "ของขวัญ: ช่วงผ่อนผัน (ยังคงเข้าถึงได้)"
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionDescription.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionDescription.tsx
 msgid "Gifted <0/> until <1>{giftEndDate}</1>. Does not renew automatically. Redeem more gift codes to extend."
 msgstr "ได้รับของขวัญ <0/> จนถึง <1>{giftEndDate}</1> จะไม่ต่ออายุอัตโนมัติ แลกใช้รหัสของขวัญเพิ่มเพื่อขยายเวลา"
 
@@ -17609,12 +17609,12 @@ msgid "Gifts"
 msgstr "ของขวัญ"
 
 #. Toast when someone arrives from a gift link but gift purchases are not available for this account.
-#: src/features/premium/components/plutonium_page/PlutoniumPage.tsx
+#: src/features/premium/components/ember_page/EmberPage.tsx
 msgid "Gifts aren't available for your account right now."
 msgstr "ขณะนี้ของขวัญยังไม่พร้อมใช้งานสำหรับบัญชีของคุณ"
 
 #. Message in the gift purchase dialog when gifts cannot be bought.
-#: src/features/premium/components/modals/GiftPlutoniumModal.tsx
+#: src/features/premium/components/modals/GiftEmberModal.tsx
 msgid "Gifts aren't available right now."
 msgstr "ตอนนี้ยังไม่สามารถซื้อของขวัญได้"
 
@@ -17798,7 +17798,7 @@ msgid "Got it!"
 msgstr "เข้าใจแล้ว!"
 
 #. Subscription status badge meaning access remains briefly after subscription end.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionStatusBadge.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionStatusBadge.tsx
 msgid "Grace period"
 msgstr "ช่วงผ่อนผัน"
 
@@ -18040,8 +18040,8 @@ msgstr "เคยซื้อ"
 msgid "Has ever purchased override"
 msgstr "เคยซื้อ (ตั้งค่าเอง)"
 
-#. Plutonium page hero text on an instance where the paid tier cannot be bought, only redeemed. premiumProductName is the paid tier name.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page hero text on an instance where the paid tier cannot be bought, only redeemed. premiumProductName is the paid tier name.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Have a gift code? Redeem it to unlock {premiumProductName}."
 msgstr "มีรหัสของขวัญไหม? ใช้เพื่อปลดล็อก {premiumProductName}"
 
@@ -19865,8 +19865,8 @@ msgstr "ขณะนี้ปิดใช้งานคำเชิญเข้
 
 #. Fallback label when billing invoice status is unknown.
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/app/components/dialogs/components/plutonium/InvoiceList.tsx
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/app/components/dialogs/components/ember/InvoiceList.tsx
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Invoice"
 msgstr "ใบแจ้งหนี้"
 
@@ -20224,8 +20224,8 @@ msgstr "ข้ามไปยังข้อความที่ยังไม
 msgid "Just join (keep other connections)"
 msgstr "เข้าร่วมเลย (คงการเชื่อมต่ออื่นไว้)"
 
-#. Hint under the Plutonium page hero buttons. productName is the app name. donateLink is a link whose text is "Donate instead".
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Hint under the Ember page hero buttons. productName is the app name. donateLink is a link whose text is "Donate instead".
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Just want to support {productName}'s open source development? {donateLink}."
 msgstr "แค่อยากสนับสนุนการพัฒนาโอเพนซอร์สของ {productName} ใช่ไหม? {donateLink}"
 
@@ -20270,7 +20270,7 @@ msgstr "เก็บไฟล์แนบเมื่อล้างการแ
 msgid "Keep everything"
 msgstr "เก็บทุกอย่างไว้"
 
-#: src/features/premium/components/plutonium_page/PlutoniumPage.tsx
+#: src/features/premium/components/ember_page/EmberPage.tsx
 msgid "Keep grace period"
 msgstr "คงช่วงผ่อนผัน"
 
@@ -20299,7 +20299,7 @@ msgstr "คงการซื้อไว้"
 msgid "Keep running"
 msgstr "ทำงานเบื้องหลัง"
 
-#: src/features/premium/components/plutonium_page/PlutoniumPage.tsx
+#: src/features/premium/components/ember_page/EmberPage.tsx
 msgid "Keep subscription"
 msgstr "คงการสมัครสมาชิก"
 
@@ -20323,8 +20323,8 @@ msgstr "ยังคงส่งสัญญาณต่อสักครู่
 msgid "Keep window dimensions and placement between reloads"
 msgstr "คงขนาดและตำแหน่งหน้าต่างไว้เมื่อเปิดใหม่"
 
-#. Heading of the closing call to action on the Plutonium page for members on gifted time who can subscribe.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Heading of the closing call to action on the Ember page for members on gifted time who can subscribe.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Keep your perks going"
 msgstr "รับสิทธิประโยชน์ของคุณต่อไป"
 
@@ -20448,8 +20448,8 @@ msgstr "ภาษา"
 msgid "Large"
 msgstr "ใหญ่"
 
-#. Plutonium page comparison row label for the upload size limit.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison row label for the upload size limit.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Largest file you can upload"
 msgstr "ไฟล์ที่ใหญ่ที่สุดที่คุณสามารถอัปโหลดได้"
 
@@ -20544,8 +20544,8 @@ msgstr "ดูข้อมูลเพิ่มเติมเกี่ยวก
 msgid "Learn more"
 msgstr "ดูเพิ่มเติม"
 
-#. Link text in the Plutonium page tag footnote. Opens the Visionary help article.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Link text in the Ember page tag footnote. Opens the Visionary help article.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Learn more about Visionary"
 msgstr "เรียนรู้เพิ่มเติมเกี่ยวกับ Visionary"
 
@@ -20654,7 +20654,7 @@ msgstr "ปุ่มซ้ายของเมาส์"
 msgid "Left tooltip"
 msgstr "คำแนะนำด้านซ้าย"
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionDescription.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionDescription.tsx
 msgid "Legacy rate"
 msgstr "เรทราคาเดิม"
 
@@ -21409,7 +21409,7 @@ msgid "Manage nicknames"
 msgstr "จัดการชื่อเล่น"
 
 #. Billing button that opens Stripe customer portal for payment-method management only.
-#: src/features/app/components/dialogs/components/plutonium/PurchaseHistorySection.tsx
+#: src/features/app/components/dialogs/components/ember/PurchaseHistorySection.tsx
 msgid "Manage payment methods"
 msgstr "จัดการวิธีการชำระเงิน"
 
@@ -21434,8 +21434,8 @@ msgid "Manage roles"
 msgstr "จัดการบทบาท"
 
 #. Billing action that opens subscription management or the customer billing portal.
-#. Plutonium page hero button that scrolls to the subscription management panel.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page hero button that scrolls to the subscription management panel.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 #: src/features/premium/utils/PremiumMessageDescriptors.ts
 msgid "Manage subscription"
 msgstr "จัดการการสมัครสมาชิก"
@@ -21455,7 +21455,7 @@ msgid "Manage your purchased {PREMIUM_PRODUCT_NAME} gift codes. Share the gift U
 msgstr "จัดการรหัสของขวัญ {PREMIUM_PRODUCT_NAME} ที่คุณซื้อ แชร์ลิงก์ของขวัญให้คนพิเศษ หรือแลกใช้เองก็ได้!"
 
 #. Settings search entry description. One-line summary of what the settings search entry controls.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Manage your subscription"
 msgstr "จัดการการสมัครสมาชิกของคุณ"
 
@@ -21803,8 +21803,8 @@ msgstr "สื่อในช่องที่ไม่ได้ตั้งค
 msgid "Media in group chats and in direct messages from people who aren't your friends."
 msgstr "สื่อในแชทกลุ่มและข้อความส่วนตัวจากคนที่คุณไม่ได้เป็นเพื่อนด้วย"
 
-#. Plutonium page comparison row label for the saved media limit.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison row label for the saved media limit.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Media items you can save for later"
 msgstr "รายการสื่อที่คุณสามารถบันทึกไว้ดูภายหลังได้"
 
@@ -22423,8 +22423,8 @@ msgstr "ข้อความที่เผยแพร่ในช่องป
 msgid "Messages published in these announcement channels are copied into your channels."
 msgstr "ข้อความที่โพสต์ในช่องประกาศเหล่านี้จะถูกคัดลอกไปยังช่องของคุณ"
 
-#. Plutonium page comparison row label for the bookmark limit.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison row label for the bookmark limit.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Messages you can bookmark"
 msgstr "ข้อความที่คุณสามารถบุ๊กมาร์กได้"
 
@@ -22711,15 +22711,15 @@ msgid "Month"
 msgstr "เดือน"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Monthly"
 msgstr "รายเดือน"
 
-#: src/features/app/components/dialogs/components/plutonium/ScheduledSubscriptionChangeDescription.tsx
+#: src/features/app/components/dialogs/components/ember/ScheduledSubscriptionChangeDescription.tsx
 msgid "Monthly billing starts on <0>{pendingChangeDate}</0>."
 msgstr "การเรียกเก็บเงินรายเดือนจะเริ่มในวันที่ <0>{pendingChangeDate}</0>"
 
-#: src/features/app/components/dialogs/components/plutonium/ScheduledSubscriptionChangeDescription.tsx
+#: src/features/app/components/dialogs/components/ember/ScheduledSubscriptionChangeDescription.tsx
 msgid "Monthly billing starts on <0>{pendingChangeDate}</0>. First monthly charge: {pendingInitialPriceLabel}. Future monthly renewals: {pendingRecurringPriceLabel}/month."
 msgstr "การเรียกเก็บเงินรายเดือนจะเริ่มในวันที่ <0>{pendingChangeDate}</0> ค่าบริการรายเดือนครั้งแรก: {pendingInitialPriceLabel} การต่ออายุรายเดือนในอนาคต: {pendingRecurringPriceLabel}/เดือน"
 
@@ -22729,7 +22729,7 @@ msgid "Monthly donation (optional)"
 msgstr "บริจาครายเดือน (ไม่บังคับ)"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Monthly gift"
 msgstr "ของขวัญรายเดือน"
 
@@ -23651,13 +23651,13 @@ msgstr "โพสต์ใหม่"
 msgid "New post in #{forumName}"
 msgstr "โพสต์ใหม่ใน #{forumName}"
 
-#. Plutonium subscription card line shown when a move to a lower price is scheduled but the new amount is unknown. {pendingChangeDate} is a date already formatted and localized by code; never write a date into the translation.
-#: src/features/app/components/dialogs/components/plutonium/ScheduledSubscriptionChangeDescription.tsx
+#. Ember subscription card line shown when a move to a lower price is scheduled but the new amount is unknown. {pendingChangeDate} is a date already formatted and localized by code; never write a date into the translation.
+#: src/features/app/components/dialogs/components/ember/ScheduledSubscriptionChangeDescription.tsx
 msgid "New price scheduled for <0>{pendingChangeDate}</0>."
 msgstr "ราคาใหม่จะเริ่มใช้ในวันที่ <0>{pendingChangeDate}</0>"
 
-#. Plutonium subscription card line shown when a move to a lower price is scheduled. {pendingChangeDate} is a date and {pendingTargetPriceLabel} is a currency amount, both already formatted and localized by code; never write a date or an amount into the translation.
-#: src/features/app/components/dialogs/components/plutonium/ScheduledSubscriptionChangeDescription.tsx
+#. Ember subscription card line shown when a move to a lower price is scheduled. {pendingChangeDate} is a date and {pendingTargetPriceLabel} is a currency amount, both already formatted and localized by code; never write a date or an amount into the translation.
+#: src/features/app/components/dialogs/components/ember/ScheduledSubscriptionChangeDescription.tsx
 msgid "New price scheduled for <0>{pendingChangeDate}</0>. Renewals will be {pendingTargetPriceLabel} from then on."
 msgstr "ราคาใหม่มีผลในวันที่ <0>{pendingChangeDate}</0> การต่ออายุจะเป็น {pendingTargetPriceLabel} ตั้งแต่นั้นเป็นต้นไป"
 
@@ -23779,7 +23779,7 @@ msgid "No active overrides"
 msgstr "ไม่มีการแทนที่ที่ใช้งานอยู่"
 
 #. Title of the error modal shown when an action needs an active subscription but none exists.
-#: src/features/app/components/dialogs/components/plutonium/utils/PremiumActionErrorModal.tsx
+#: src/features/app/components/dialogs/components/ember/utils/PremiumActionErrorModal.tsx
 msgid "No active subscription"
 msgstr "ไม่มีการสมัครสมาชิกที่ใช้งานอยู่"
 
@@ -24046,7 +24046,7 @@ msgid "No invites created"
 msgstr "ยังไม่มีคำเชิญ"
 
 #. Quiet empty state when no invoices exist yet.
-#: src/features/app/components/dialogs/components/plutonium/InvoiceList.tsx
+#: src/features/app/components/dialogs/components/ember/InvoiceList.tsx
 msgid "No invoices yet."
 msgstr "ยังไม่มีใบแจ้งหนี้"
 
@@ -24501,8 +24501,8 @@ msgstr "ไม่อนุญาต"
 msgid "Not assigned"
 msgstr "ไม่ได้กำหนด"
 
-#. Screen reader text for a cross in the Plutonium page comparison table.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Screen reader text for a cross in the Ember page comparison table.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Not available"
 msgstr "ไม่พร้อมใช้งาน"
 
@@ -24533,10 +24533,10 @@ msgstr "ไม่แสดงรายการ"
 #. Secondary button that closes the one-time recovery kit prompt.
 #. Secondary button that closes the passkey update modal after an attempt failed.
 #. Setup wizard option that leaves the push relay off.
-#. Short label in the Plutonium self serve refund section. Keep the tone plain and specific.
+#. Short label in the Ember self serve refund section. Keep the tone plain and specific.
 #. Short label in the authentication new device monitoring. Keep the tone plain and specific.
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionCard.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionCard.tsx
 #: src/features/app/components/layout/app_layout/nagbars/VoiceSessionRestoreNagbar.tsx
 #: src/features/app/components/setup/SetupWizardSteps.tsx
 #: src/features/auth/components/modals/AuthenticatorOfferModal.tsx
@@ -24638,7 +24638,7 @@ msgid "Nothing to preview yet."
 msgstr "ยังไม่มีอะไรให้ดูตัวอย่าง"
 
 #. Title of the error modal shown when there is no refundable purchase on the account.
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "Nothing to refund"
 msgstr "ไม่มีรายการที่ขอคืนเงินได้"
 
@@ -24889,7 +24889,7 @@ msgid "on {instanceLabel}"
 msgstr "ใน {instanceLabel}"
 
 #. Billing confirmation body for moving an active subscription down to the current price. {listPriceEffectiveDate} is a date, and {listPriceCurrentLabel} and {listPriceNewLabel} are currency amounts, all already formatted and localized by code; never write a date or an amount into the translation.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionCard.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionCard.tsx
 msgid "On <0>{listPriceEffectiveDate}</0> your subscription moves from {listPriceCurrentLabel} to {listPriceNewLabel}. Nothing is charged today, and the rest of your subscription stays exactly as it is."
 msgstr "ในวันที่ <0>{listPriceEffectiveDate}</0> การสมัครสมาชิกของคุณจะเปลี่ยนจาก {listPriceCurrentLabel} เป็น {listPriceNewLabel} จะยังไม่มีการเรียกเก็บเงินใดๆ ในวันนี้ และส่วนที่เหลือของการสมัครสมาชิกของคุณจะยังคงเหมือนเดิมทุกประการ"
 
@@ -25114,8 +25114,8 @@ msgstr "เฉพาะสมาชิกและบทบาทที่คุ
 msgid "Only the selected ones"
 msgstr "เฉพาะที่เลือกไว้"
 
-#. Body of the error modal shown when a non-Visionary user tries to rejoin a gated Plutonium community.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCommunityActions.tsx
+#. Body of the error modal shown when a non-Visionary user tries to rejoin a gated Ember community.
+#: src/features/app/components/dialogs/components/ember/hooks/useCommunityActions.tsx
 msgid "Only Visionary members can join this community. Your access may have changed since this screen was opened."
 msgstr "เฉพาะสมาชิก Visionary เท่านั้นที่เข้าร่วมคอมมูนิตี้นี้ได้ สิทธิ์การเข้าถึงของคุณอาจเปลี่ยนไปตั้งแต่หน้าจอนี้เปิดขึ้น"
 
@@ -25137,7 +25137,7 @@ msgstr "ความทึบแสง"
 #. Billing invoice status for an invoice awaiting payment.
 #. Button label that opens the source settings section for an advanced setting.
 #. Short button that opens a billing invoice or receipt.
-#: src/features/app/components/dialogs/components/plutonium/InvoiceList.tsx
+#: src/features/app/components/dialogs/components/ember/InvoiceList.tsx
 #: src/features/platform/utils/DesktopLocaleBridge.ts
 #: src/features/user/components/modals/tabs/advanced_settings_tab/AdvancedSettingRow.tsx
 msgid "Open"
@@ -25193,8 +25193,8 @@ msgstr "เปิด {landmarkName}"
 msgid "Open {name}"
 msgstr "เปิด {name}"
 
-#. Button on the settings card that opens the Plutonium page. premiumProductFullName is the full paid tier name.
-#: src/features/premium/components/plutonium_page/PlutoniumPageLinkCard.tsx
+#. Button on the settings card that opens the Ember page. premiumProductFullName is the full paid tier name.
+#: src/features/premium/components/ember_page/EmberPageLinkCard.tsx
 msgid "Open {premiumProductFullName}"
 msgstr "เปิด {premiumProductFullName}"
 
@@ -25484,7 +25484,7 @@ msgid "Open in Themes"
 msgstr "เปิดในธีม"
 
 #. Accessible label for opening a specific billing invoice.
-#: src/features/app/components/dialogs/components/plutonium/InvoiceList.tsx
+#: src/features/app/components/dialogs/components/ember/InvoiceList.tsx
 msgid "Open invoice {invoiceLabel}"
 msgstr "เปิดใบแจ้งหนี้ {invoiceLabel}"
 
@@ -25806,11 +25806,11 @@ msgstr "ตัวเลือกสำหรับ {displayName}"
 msgid "Options for {themeName}"
 msgstr "ตัวเลือกสำหรับ {themeName}"
 
-#. Compact conjunction between the monthly and yearly price on the Plutonium page hero. On narrow screens it starts the second line, right before the yearly price.
+#. Compact conjunction between the monthly and yearly price on the Ember page hero. On narrow screens it starts the second line, right before the yearly price.
 #. Small separator between alternative shortcut keycaps in the keyboard mode intro modal.
 #: src/features/connection/components/modals/AddConnectionModal.tsx
 #: src/features/input/components/modals/KeyboardModeIntroModal.tsx
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "or"
 msgstr "หรือ"
 
@@ -25978,7 +25978,7 @@ msgid "Output volume"
 msgstr "ระดับเสียงลำโพง"
 
 #. Title of the error modal shown when a self-serve refund is no longer within the eligible window.
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "Outside the refund window"
 msgstr "เกินระยะเวลาที่ขอคืนเงินได้"
 
@@ -26075,7 +26075,7 @@ msgid "Page up"
 msgstr "Page Up"
 
 #. Billing invoice status for a completed invoice.
-#: src/features/app/components/dialogs/components/plutonium/InvoiceList.tsx
+#: src/features/app/components/dialogs/components/ember/InvoiceList.tsx
 msgid "Paid"
 msgstr "ชำระเงินแล้ว"
 
@@ -26377,17 +26377,17 @@ msgid "Paused. The person who followed this channel can no longer see it. Follow
 msgstr "หยุดชั่วคราว ผู้ที่ติดตามช่องนี้ไม่สามารถดูได้อีกต่อไป ติดตามอีกครั้งเพื่อดำเนินการต่อ"
 
 #. Description at the top of the gift purchase dialog.
-#: src/features/premium/components/modals/GiftPlutoniumModal.tsx
+#: src/features/premium/components/modals/GiftEmberModal.tsx
 msgid "Pay once and get a gift link to share. Gifts never renew."
 msgstr "ชำระเงินครั้งเดียวและรับลิงก์ของขวัญเพื่อแชร์ ของขวัญจะไม่มีการต่ออายุ"
 
-#. Plutonium subscription payment method picker description for Brazil. Explains Pix recurring vs falling back to a card.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#. Ember subscription payment method picker description for Brazil. Explains Pix recurring vs falling back to a card.
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Pay with {pixPaymentMethod} Automático to authorize recurring charges directly from your Brazilian bank. Or choose \"Use card\" to enter a credit card on {paymentProviderName}'s next screen."
 msgstr "ชำระเงินด้วย {pixPaymentMethod} Automático เพื่ออนุมัติการเรียกเก็บเงินที่เกิดขึ้นประจำโดยตรงจากธนาคารในบราซิลของคุณ หรือเลือก \"ใช้บัตร\" เพื่อกรอกข้อมูลบัตรเครดิตในหน้าถัดไปของ {paymentProviderName}"
 
-#. Plutonium subscription payment method picker description for India. Explains UPI e-mandate vs falling back to a card.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#. Ember subscription payment method picker description for India. Explains UPI e-mandate vs falling back to a card.
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Pay with {upiPaymentMethod} to set up an RBI-compliant e-mandate from your Indian bank. Or choose \"Use card\" to enter a credit card on {paymentProviderName}'s next screen."
 msgstr "ชำระเงินด้วย {upiPaymentMethod} เพื่อตั้งค่า e-mandate ที่เป็นไปตามข้อกำหนดของ RBI จากธนาคารอินเดียของคุณ หรือเลือก \"ใช้บัตร\" เพื่อกรอกข้อมูลบัตรเครดิตในหน้าถัดไปของ {paymentProviderName}"
 
@@ -26405,12 +26405,12 @@ msgid "Payment successful"
 msgstr "ชำระเงินสำเร็จ"
 
 #. Body of the error modal shown when the payment provider is not configured or reachable.
-#: src/features/app/components/dialogs/components/plutonium/utils/PremiumActionErrorModal.tsx
+#: src/features/app/components/dialogs/components/ember/utils/PremiumActionErrorModal.tsx
 msgid "Payments are temporarily unavailable. Please try again in a moment."
 msgstr "ขณะนี้ไม่สามารถชำระเงินได้ โปรดลองอีกครั้งในอีกสักครู่"
 
 #. Title of the error modal shown when the payment provider is not configured or reachable.
-#: src/features/app/components/dialogs/components/plutonium/utils/PremiumActionErrorModal.tsx
+#: src/features/app/components/dialogs/components/ember/utils/PremiumActionErrorModal.tsx
 msgid "Payments are unavailable"
 msgstr "ไม่สามารถชำระเงินได้"
 
@@ -26570,12 +26570,12 @@ msgid "Performance"
 msgstr "ประสิทธิภาพ"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Perks"
 msgstr "สิทธิประโยชน์"
 
 #. Subscription status badge meaning premium is paid but perks are temporarily disabled.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionStatusBadge.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionStatusBadge.tsx
 msgid "Perks paused"
 msgstr "สิทธิประโยชน์ถูกพักชั่วคราว"
 
@@ -26697,8 +26697,8 @@ msgstr "รูปภาพ"
 msgid "Pick a friend to pass it on to. They can accept or decline, and you can take it back until it moves."
 msgstr "เลือกเพื่อนที่จะส่งต่อให้ พวกเขาสามารถรับหรือปฏิเสธได้ และคุณสามารถเอากลับคืนได้จนกว่าจะย้ายไปยังบัญชีของพวกเขา"
 
-#. Body of the closing call to action on the Plutonium page for people without the paid tier.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Body of the closing call to action on the Ember page for people without the paid tier.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Pick a plan and your perks switch on the moment checkout finishes."
 msgstr "เลือกแผนและสิทธิประโยชน์ของคุณจะเปิดใช้งานทันทีที่การชำระเงินเสร็จสมบูรณ์"
 
@@ -26737,8 +26737,8 @@ msgstr "เลือกแท็กอย่างน้อยหนึ่งแ
 msgid "Pick one or more dictionaries. Words from any selected dictionary are accepted, which is useful for multilingual chats."
 msgstr "เลือกพจนานุกรมอย่างน้อยหนึ่งรายการ คำจากพจนานุกรมที่เลือกจะได้รับการยอมรับ ซึ่งมีประโยชน์สำหรับการแชทหลายภาษา"
 
-#. Plutonium page comparison row label for the custom username tag perk.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison row label for the custom username tag perk.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Pick the 4-digit number after your username"
 msgstr "เลือกตัวเลข 4 หลักต่อท้ายชื่อผู้ใช้ของคุณ"
 
@@ -26904,12 +26904,12 @@ msgid "Plain"
 msgstr "ธรรมดา"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Plan"
 msgstr "แพ็กเกจ"
 
-#. Text on the card in settings that links to the Plutonium page.
-#: src/features/premium/components/plutonium_page/PlutoniumPageLinkCard.tsx
+#. Text on the card in settings that links to the Ember page.
+#: src/features/premium/components/ember_page/EmberPageLinkCard.tsx
 msgid "Plans, perks, gifts and your subscription are all on one page."
 msgstr "แผน สิทธิประโยชน์ ของขวัญ และการสมัครใช้งานของคุณ ทั้งหมดอยู่ในหน้าเดียว"
 
@@ -27169,7 +27169,7 @@ msgid "Prefers reduced motion"
 msgstr "ลดการเคลื่อนไหว"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Premium"
 msgstr "พรีเมียม"
 
@@ -27409,12 +27409,12 @@ msgid "Price"
 msgstr "ราคา"
 
 #. Settings search entry label. Also used as a search synonym in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Pricing"
 msgstr "ราคา"
 
 #. Error modal body shown when the user clicks a plan before price IDs have loaded.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Pricing is still loading."
 msgstr "กำลังโหลดราคา"
 
@@ -27708,18 +27708,18 @@ msgid "Publishing limit reached"
 msgstr "ถึงขีดจำกัดการโพสต์แล้ว"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Purchase"
 msgstr "การซื้อ"
 
 #. Settings search entry description. One-line summary of what the settings search entry controls. Preserve {premiumProductName}; it is inserted by code.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Purchase {premiumProductName} gifts for someone else"
 msgstr "ซื้อของขวัญ {premiumProductName} ให้ผู้อื่น"
 
 #. Settings search entry label. Also used as a search synonym in the settings search bar.
-#: src/features/app/components/dialogs/components/plutonium/PurchaseHistorySection.tsx
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/app/components/dialogs/components/ember/PurchaseHistorySection.tsx
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Purchase history"
 msgstr "ประวัติการซื้อ"
 
@@ -27735,12 +27735,12 @@ msgid "Purchased gifts"
 msgstr "ของขวัญที่ซื้อแล้ว"
 
 #. Modal body shown on a self-hosted instance when purchases are disabled for the account.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Purchases are disabled for this account."
 msgstr "การซื้อถูกปิดใช้งานสำหรับบัญชีนี้"
 
 #. Modal body shown when purchases are disabled. Provides the support email for appeals.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Purchases are disabled for this account. Contact {supportEmail} if this looks wrong."
 msgstr "การซื้อถูกปิดใช้งานสำหรับบัญชีนี้ โปรดติดต่อ {supportEmail} หากคิดว่าไม่ถูกต้อง"
 
@@ -27765,7 +27765,7 @@ msgid "Purchases are paused while a payment dispute on your account is open. The
 msgstr "การซื้อถูกพักไว้ชั่วคราวในระหว่างที่บัญชีของคุณมีการโต้แย้งการชำระเงินที่ยังไม่สิ้นสุด และจะกลับมาใช้ได้เองเมื่อการโต้แย้งสิ้นสุดลง"
 
 #. Toast when someone arrives from a subscribe link but purchases are not available for this account.
-#: src/features/premium/components/plutonium_page/PlutoniumPage.tsx
+#: src/features/premium/components/ember_page/EmberPage.tsx
 msgid "Purchases aren't available for your account right now."
 msgstr "ขณะนี้ยังไม่สามารถทำการซื้อสำหรับบัญชีของคุณได้"
 
@@ -27775,7 +27775,7 @@ msgid "Purchases paused"
 msgstr "พักการซื้อชั่วคราว"
 
 #. Modal title shown when purchases are disabled on this account (server-side enforcement).
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Purchases unavailable"
 msgstr "ไม่สามารถซื้อได้"
 
@@ -28077,13 +28077,13 @@ msgstr "รีแอ็กชัน"
 
 #. Billing button that cancels a scheduled subscription cancellation.
 #. Button label on the premium-expired nagbar. Opens billing so the user can reactivate their subscription.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionActions.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionActions.tsx
 #: src/features/app/components/layout/app_layout/nagbars/PremiumStatusNagbar.tsx
 msgid "Reactivate"
 msgstr "เปิดใช้งานอีกครั้ง"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Reactivate subscription"
 msgstr "เปิดใช้งานการสมัครสมาชิกอีกครั้ง"
 
@@ -28137,8 +28137,8 @@ msgstr "อ่านประกาศความเป็นส่วนตั
 msgid "Reading speed"
 msgstr "ความเร็วในการอ่าน"
 
-#. Heading of the closing call to action on the Plutonium page for people without the paid tier.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Heading of the closing call to action on the Ember page for people without the paid tier.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Ready to upgrade?"
 msgstr "พร้อมจะอัปเกรดหรือยัง?"
 
@@ -28168,8 +28168,8 @@ msgstr "เหตุผล: {0}"
 
 #. Column header for opening a billing receipt or invoice.
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/app/components/dialogs/components/plutonium/InvoiceList.tsx
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/app/components/dialogs/components/ember/InvoiceList.tsx
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Receipt"
 msgstr "ใบเสร็จ"
 
@@ -28319,8 +28319,8 @@ msgstr "แลก"
 msgid "Redeem a gift"
 msgstr "แลกของขวัญ"
 
-#. Plutonium page link that opens the gift code redemption settings.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page link that opens the gift code redemption settings.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Redeem a gift code"
 msgstr "แลกรับโค้ดของขวัญ"
 
@@ -28336,7 +28336,7 @@ msgid "Redeem for yourself"
 msgstr "แลกให้ตัวเอง"
 
 #. Billing button for entering a premium gift code.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionActions.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionActions.tsx
 msgid "Redeem gift code"
 msgstr "แลกรหัสของขวัญ"
 
@@ -28421,23 +28421,23 @@ msgid "Refresh push subscription"
 msgstr "รีเฟรชการสมัครรับการแจ้งเตือนแบบพุช"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Refund"
 msgstr "คืนเงิน"
 
 #. Toast success shown after a self-serve refund is issued. Keep plain.
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "Refund issued. May take a few business days to appear."
 msgstr "ออกเงินคืนแล้ว อาจใช้เวลาสองสามวันทำการกว่าจะแสดงในบัญชีของคุณ"
 
-#. Short label in the Plutonium self serve refund section. Keep the tone plain and specific.
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#. Short label in the Ember self serve refund section. Keep the tone plain and specific.
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "Refund purchase"
 msgstr "ขอคืนเงิน"
 
-#. Question prompt in the Plutonium self serve refund section. Keep the tone plain and specific.
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#. Question prompt in the Ember self serve refund section. Keep the tone plain and specific.
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "Refund your most recent purchase?"
 msgstr "คืนเงินสำหรับการซื้อล่าสุดของคุณหรือไม่"
 
@@ -29083,7 +29083,7 @@ msgstr "เปลี่ยนชื่อคอมมูนิตี้จาก
 msgid "Render all your messages as an unknown message type."
 msgstr "แสดงข้อความทั้งหมดของคุณเป็นประเภทข้อความที่ไม่รู้จัก"
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionCard.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionCard.tsx
 msgid "Renews on <0>{renewalDate}.</0>"
 msgstr "ต่ออายุในวันที่ <0>{renewalDate}</0>"
 
@@ -29772,7 +29772,7 @@ msgstr "กู้คืนหน้าต่าง"
 #. Billing button for restarting a subscription during the grace period.
 #. Billing button for starting a new subscription after premium ended.
 #. Billing button for starting a new subscription after premium expired.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionActions.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionActions.tsx
 msgid "Resubscribe"
 msgstr "สมัครใหม่"
 
@@ -29863,7 +29863,7 @@ msgid "Review needed"
 msgstr "ต้องรีวิว"
 
 #. Settings search entry description. One-line summary of what the settings search entry controls.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Review past purchases and refund options"
 msgstr "ดูประวัติการซื้อและตัวเลือกการคืนเงิน"
 
@@ -30215,7 +30215,7 @@ msgstr "ความอิ่มตัวของสี"
 msgid "Save"
 msgstr "บันทึก"
 
-#. Short caption next to a yearly price, in the gift purchase dialog and under the yearly Plutonium price, saying how much the yearly plan saves over paying monthly. Shown as written, never uppercased, so use normal sentence case. percent is a whole number such as 17.
+#. Short caption next to a yearly price, in the gift purchase dialog and under the yearly Ember price, saying how much the yearly plan saves over paying monthly. Shown as written, never uppercased, so use normal sentence case. percent is a whole number such as 17.
 #: src/features/i18n/utils/CommonMessageDescriptors.ts
 msgid "Save {percent}%"
 msgstr "ประหยัด {percent}%"
@@ -31350,8 +31350,8 @@ msgstr "ส่งรายงาน DSA"
 msgid "Send file messages in order"
 msgstr "ส่งข้อความไฟล์ตามลำดับ"
 
-#. Plutonium page perk card title about upload size. size is a formatted size such as 500 MB.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page perk card title about upload size. size is a formatted size such as 500 MB.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Send files up to {size}"
 msgstr "ส่งไฟล์ได้สูงสุด {size}"
 
@@ -32006,8 +32006,8 @@ msgstr "แชร์"
 msgid "Share and back up"
 msgstr "แชร์และสำรองข้อมูล"
 
-#. Plutonium page perk card body about upload size. freeSize is a formatted size such as 25 MB.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page perk card body about upload size. freeSize is a formatted size such as 25 MB.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Share full-length videos and big files without shrinking them first. Free accounts can send up to {freeSize}."
 msgstr "แชร์วิดีโอความยาวเต็มและไฟล์ขนาดใหญ่โดยไม่ต้องย่อขนาดก่อน บัญชีฟรีส่งได้สูงสุด {freeSize}"
 
@@ -32026,8 +32026,8 @@ msgstr "แชร์หน้าจอ"
 msgid "Share stream audio"
 msgstr "แชร์เสียงสตรีม"
 
-#. Heading of the closing call to action on the Plutonium page for members.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Heading of the closing call to action on the Ember page for members.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Share the perks"
 msgstr "แชร์สิทธิประโยชน์"
 
@@ -32059,8 +32059,8 @@ msgstr "แชร์หน้าจอของคุณ"
 msgid "Share your screen in high definition (1080p), quad HD (1440p), or native source resolution, at up to 60 FPS."
 msgstr "แชร์หน้าจอของคุณแบบความละเอียดสูง (1080p) quad HD (1440p) หรือความละเอียดเดิมของแหล่งที่มา ที่เฟรมเรตสูงสุด 60 FPS"
 
-#. Plutonium page perk card body about stream quality.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page perk card body about stream quality.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Share your screen or camera in up to 4K at 60 frames per second. Free accounts stream in up to 720p at 30."
 msgstr "แชร์หน้าจอหรือกล้องของคุณด้วยคุณภาพสูงสุด 4K ที่ 60 เฟรมต่อวินาที บัญชีฟรีสตรีมด้วยคุณภาพสูงสุด 720p ที่ 30"
 
@@ -32098,7 +32098,7 @@ msgstr "เสียงของหน้าต่างที่แชร์"
 msgid "Sharp text at 720p, up to 30 FPS"
 msgstr "ข้อความคมชัดที่ 720p สูงสุด 30 FPS"
 
-#. Description for the high-tier Screen share streaming preset (Plutonium). Resolution and frame rate are technical tokens.
+#. Description for the high-tier Screen share streaming preset (Ember). Resolution and frame rate are technical tokens.
 #: src/features/voice/components/StreamSettingsMenuContent.tsx
 msgid "Sharp text at up to 4K, up to 15 FPS"
 msgstr "ข้อความคมชัดสูงสุด 4K สูงสุด 15 FPS"
@@ -33290,7 +33290,7 @@ msgstr "อิโมจิ"
 msgid "Smooth 30 FPS at up to 720p"
 msgstr "ลื่นไหล 30 FPS ที่สูงสุด 720p"
 
-#. Description for the high-tier Gaming streaming preset (Plutonium). Resolution and frame rate are technical tokens.
+#. Description for the high-tier Gaming streaming preset (Ember). Resolution and frame rate are technical tokens.
 #: src/features/voice/components/StreamSettingsMenuContent.tsx
 msgid "Smooth 60 FPS at up to 1440p"
 msgstr "ลื่นไหล 60 FPS ที่ความละเอียดสูงสุด 1440p"
@@ -33339,8 +33339,8 @@ msgstr "ไฟล์บางไฟล์ที่คุณกำลังอั
 msgid "Some users can't be added"
 msgstr "เพิ่มผู้ใช้บางคนไม่ได้"
 
-#. Plutonium page hero subtitle for gifted members. date is a formatted calendar date.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page hero subtitle for gifted members. date is a formatted calendar date.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Someone gifted you {premiumProductName}. Your perks stay active until {date}."
 msgstr "มีคนมอบ {premiumProductName} ให้คุณ สิทธิประโยชน์ของคุณจะยังคงใช้งานได้จนถึงวันที่ {date}"
 
@@ -33362,23 +33362,23 @@ msgstr "เกิดข้อผิดพลาดและแอปขัดข
 msgid "Something went wrong loading members. Try again later."
 msgstr "เกิดข้อผิดพลาดขณะโหลดสมาชิก โปรดลองอีกครั้งในภายหลัง"
 
-#. Body of the generic fallback error modal shown when canceling a scheduled Plutonium billing cycle change fails.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Body of the generic fallback error modal shown when canceling a scheduled Ember billing cycle change fails.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Something went wrong while canceling your pending billing change. Please try again in a moment."
 msgstr "เกิดข้อผิดพลาดขณะยกเลิกการเปลี่ยนแปลงการเรียกเก็บเงินที่รอดำเนินการของคุณ โปรดลองอีกครั้งในภายหลัง"
 
-#. Body of the generic fallback error modal shown when cancelling a Plutonium subscription fails.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Body of the generic fallback error modal shown when cancelling a Ember subscription fails.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Something went wrong while canceling your subscription. Please try again in a moment."
 msgstr "เกิดข้อผิดพลาดขณะยกเลิกการสมัครสมาชิกของคุณ โปรดลองอีกครั้งในภายหลัง"
 
-#. Body of the generic fallback error modal shown when changing the Plutonium billing cycle fails.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Body of the generic fallback error modal shown when changing the Ember billing cycle fails.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Something went wrong while changing your billing cycle. Please try again in a moment."
 msgstr "เกิดข้อผิดพลาดขณะเปลี่ยนรอบบิลของคุณ โปรดลองอีกครั้งในภายหลัง"
 
-#. Body of the generic fallback error modal shown when moving a Plutonium subscription down to the current price fails.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Body of the generic fallback error modal shown when moving a Ember subscription down to the current price fails.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Something went wrong while changing your price. Please try again in a moment."
 msgstr "เกิดข้อผิดพลาดขณะเปลี่ยนราคาของคุณ โปรดลองอีกครั้งในภายหลัง"
 
@@ -33386,13 +33386,13 @@ msgstr "เกิดข้อผิดพลาดขณะเปลี่ยน
 msgid "Something went wrong while connecting your account. You can close this tab and try again."
 msgstr "เกิดข้อผิดพลาดในการเชื่อมต่อบัญชีของคุณ คุณสามารถปิดแท็บนี้แล้วลองอีกครั้ง"
 
-#. Body of the generic fallback error modal shown when ending the Plutonium grace period fails.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Body of the generic fallback error modal shown when ending the Ember grace period fails.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Something went wrong while ending your grace period. Please try again in a moment."
 msgstr "เกิดข้อผิดพลาดขณะสิ้นสุดช่วงผ่อนผันของคุณ โปรดลองอีกครั้งในภายหลัง"
 
 #. Body of the generic fallback error modal shown when a self-serve refund fails.
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "Something went wrong while issuing your refund. Contact support if this keeps happening."
 msgstr "เกิดข้อผิดพลาดขณะดำเนินการคืนเงินของคุณ หากยังคงเกิดข้อผิดพลาด โปรดติดต่อฝ่ายสนับสนุน"
 
@@ -33416,13 +33416,13 @@ msgstr "เกิดข้อผิดพลาดขณะเตรียมส
 msgid "Something went wrong while publishing. Try again in a moment."
 msgstr "เกิดข้อผิดพลาดขณะเผยแพร่ ลองอีกครั้งในอีกสักครู่"
 
-#. Body of the generic fallback error modal shown when reactivating a Plutonium subscription fails.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Body of the generic fallback error modal shown when reactivating a Ember subscription fails.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Something went wrong while reactivating your subscription. Please try again in a moment."
 msgstr "เกิดข้อผิดพลาดขณะเปิดใช้งานการสมัครสมาชิกของคุณอีกครั้ง โปรดลองอีกครั้งในภายหลัง"
 
-#. Body of the generic fallback error modal shown when rejoining a gated Plutonium community fails.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCommunityActions.tsx
+#. Body of the generic fallback error modal shown when rejoining a gated Ember community fails.
+#: src/features/app/components/dialogs/components/ember/hooks/useCommunityActions.tsx
 msgid "Something went wrong while rejoining. Please try again in a moment."
 msgstr "เกิดข้อผิดพลาดขณะเข้าร่วมอีกครั้ง โปรดลองอีกครั้งในภายหลัง"
 
@@ -33438,7 +33438,7 @@ msgid "Something went wrong while sending your verification email. Please try ag
 msgstr "เกิดข้อผิดพลาดขณะส่งอีเมลยืนยันของคุณ โปรดลองอีกครั้งในภายหลัง"
 
 #. Body of the generic fallback error modal shown when creating a checkout session fails unexpectedly.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Something went wrong while starting checkout. Please try again in a moment."
 msgstr "เกิดข้อผิดพลาดขณะเริ่มต้นการชำระเงิน โปรดลองอีกครั้งในภายหลัง"
 
@@ -34025,7 +34025,7 @@ msgstr "Static Neko"
 
 #. Column header for billing invoice status.
 #. Tray menu submenu title for the user presence status picker.
-#: src/features/app/components/dialogs/components/plutonium/InvoiceList.tsx
+#: src/features/app/components/dialogs/components/ember/InvoiceList.tsx
 #: src/features/platform/utils/DesktopLocaleBridge.ts
 msgid "Status"
 msgstr "สถานะ"
@@ -34418,8 +34418,8 @@ msgstr "สตรีมจบแล้ว"
 msgid "Stream hidden"
 msgstr "ซ่อนสตรีมแล้ว"
 
-#. Plutonium page perk card title about stream quality.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page perk card title about stream quality.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Stream in 4K at 60 FPS"
 msgstr "สตรีมด้วยคุณภาพ 4K ที่ 60 FPS"
 
@@ -34528,17 +34528,17 @@ msgstr "กำลังส่ง"
 
 #. Billing button that starts a recurring subscription for someone on gifted premium time.
 #. Billing button that starts a recurring subscription for someone on gifted premium time.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionActions.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionActions.tsx
 msgid "Subscribe"
 msgstr "สมัครสมาชิก"
 
-#. Body of the closing call to action on the Plutonium page for members on gifted time who can subscribe.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Body of the closing call to action on the Ember page for members on gifted time who can subscribe.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Subscribe now. Your remaining gift time is added after your paid period."
 msgstr "สมัครเลย เวลาของขวัญที่เหลือของคุณจะถูกเพิ่มต่อจากช่วงเวลาที่ชำระเงิน"
 
-#. Plutonium page comparison row label for the subscriber badge.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison row label for the subscriber badge.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Subscriber badge on your profile"
 msgstr "ป้ายสมาชิกบนโปรไฟล์ของคุณ"
 
@@ -34550,17 +34550,17 @@ msgstr "การส่งข้อมูลฝั่งผู้รับ:"
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
 #. Settings search entry label. Also used as a search synonym in the settings search bar.
 #: src/features/channel/components/channel_header_components/developer_tools/OptionPresets.ts
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Subscription"
 msgstr "การสมัครสมาชิก"
 
-#. Modal title shown when checkout is blocked because the account already has an active Plutonium subscription.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#. Modal title shown when checkout is blocked because the account already has an active Ember subscription.
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Subscription already exists"
 msgstr "มีการสมัครสมาชิกอยู่แล้ว"
 
 #. Title of the error modal shown when reactivation is attempted but the subscription is not cancelling.
-#: src/features/app/components/dialogs/components/plutonium/utils/PremiumActionErrorModal.tsx
+#: src/features/app/components/dialogs/components/ember/utils/PremiumActionErrorModal.tsx
 msgid "Subscription is not scheduled to cancel"
 msgstr "การสมัครสมาชิกไม่ได้ตั้งค่าให้ยกเลิก"
 
@@ -34716,7 +34716,7 @@ msgid "Switch device"
 msgstr "เปลี่ยนอุปกรณ์"
 
 #. Button confirming a move of an active subscription down to the current price.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionCard.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionCard.tsx
 msgid "Switch price"
 msgstr "เปลี่ยนราคา"
 
@@ -34726,7 +34726,7 @@ msgid "Switch to {accountName}"
 msgstr "สลับไปยัง {accountName}"
 
 #. Billing button that opens confirmation to move the subscription down to the current price. {listPriceNewLabel} is the localized new price.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionActions.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionActions.tsx
 msgid "Switch to {listPriceNewLabel}"
 msgstr "เปลี่ยนเป็น {listPriceNewLabel}"
 
@@ -34761,13 +34761,13 @@ msgstr "เปลี่ยนเป็นอินพุตโดยตรง"
 
 #. Billing button that opens confirmation to switch to monthly billing.
 #. Button confirming a change to monthly subscription billing.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionActions.tsx
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionCard.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionActions.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionCard.tsx
 msgid "Switch to monthly"
 msgstr "เปลี่ยนเป็นรายเดือน"
 
 #. Billing confirmation title for changing an active subscription to monthly billing.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionCard.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionCard.tsx
 msgid "Switch to monthly billing?"
 msgstr "เปลี่ยนเป็นการเรียกเก็บเงินรายเดือนหรือไม่"
 
@@ -34812,7 +34812,7 @@ msgid "Switch to standard call"
 msgstr "สลับไปเป็นการโทรแบบมาตรฐาน"
 
 #. Billing confirmation title for moving an active subscription down to the current price.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionCard.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionCard.tsx
 msgid "Switch to the new price?"
 msgstr "เปลี่ยนเป็นราคาใหม่หรือไม่"
 
@@ -34842,13 +34842,13 @@ msgstr "เปลี่ยนเป็นสองคอลัมน์"
 
 #. Billing button that opens confirmation to switch to yearly billing.
 #. Button confirming a change to yearly subscription billing.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionActions.tsx
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionCard.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionActions.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionCard.tsx
 msgid "Switch to yearly"
 msgstr "เปลี่ยนเป็นรายปี"
 
 #. Billing confirmation title for changing an active subscription to yearly billing.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionCard.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionCard.tsx
 msgid "Switch to yearly billing?"
 msgstr "เปลี่ยนเป็นการเรียกเก็บเงินรายปีหรือไม่"
 
@@ -35089,23 +35089,23 @@ msgstr "ใช้เวลาสักครู่เพื่อตรวจส
 msgid "Take back offer"
 msgstr "เรียกคืนข้อเสนอ"
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionBillingChangeDescription.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionBillingChangeDescription.tsx
 msgid "Takes effect at your next renewal. We'll apply a {creditLabel} credit from your current monthly payment, so your first yearly charge will be <0>{firstRenewalPriceLabel}</0>. Future yearly renewals will be {renewalPrice}/year."
 msgstr "มีผลเมื่อถึงรอบการต่ออายุครั้งถัดไป เราจะใช้เครดิต {creditLabel} จากการชำระเงินรายเดือนปัจจุบันของคุณ ดังนั้นค่าบริการรายปีครั้งแรกของคุณจะอยู่ที่ <0>{firstRenewalPriceLabel}</0> การต่ออายุรายปีในอนาคตจะอยู่ที่ {renewalPrice}/ปี"
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionBillingChangeDescription.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionBillingChangeDescription.tsx
 msgid "Takes effect at your next renewal. Your subscription stays monthly until then, and your next renewal will be <0>{renewalPrice}/year</0>."
 msgstr "มีผลเมื่อถึงรอบการต่ออายุครั้งถัดไป การสมัครสมาชิกของคุณจะยังคงเป็นรายเดือนจนถึงตอนนั้น และการต่ออายุครั้งถัดไปของคุณจะอยู่ที่ <0>{renewalPrice}/ปี</0>"
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionBillingChangeDescription.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionBillingChangeDescription.tsx
 msgid "Takes effect at your next renewal. Your subscription stays yearly until then, and your next renewal will be <0>{renewalPrice}/month</0>."
 msgstr "มีผลเมื่อถึงรอบการต่ออายุครั้งถัดไป การสมัครสมาชิกของคุณจะยังคงเป็นรายปีจนถึงตอนนั้น และการต่ออายุครั้งถัดไปของคุณจะอยู่ที่ <0>{renewalPrice}/เดือน</0>"
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionBillingChangeDescription.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionBillingChangeDescription.tsx
 msgid "Takes effect immediately. A prorated adjustment may apply via {PAYMENT_PROVIDER_NAME}. Your next renewal will be <0>{renewalPrice}/month</0>."
 msgstr "มีผลทันที อาจมีการปรับเปลี่ยนตามสัดส่วนผ่าน {PAYMENT_PROVIDER_NAME} การต่ออายุครั้งถัดไปของคุณจะอยู่ที่ <0>{renewalPrice}/เดือน</0>"
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionBillingChangeDescription.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionBillingChangeDescription.tsx
 msgid "Takes effect immediately. A prorated charge may apply via {PAYMENT_PROVIDER_NAME}. Your next renewal will be <0>{renewalPrice}/year</0>."
 msgstr "มีผลทันที อาจมีการเรียกเก็บเงินตามสัดส่วนผ่าน {PAYMENT_PROVIDER_NAME} การต่ออายุครั้งถัดไปของคุณจะอยู่ที่ <0>{renewalPrice}/ปี</0>"
 
@@ -35640,7 +35640,7 @@ msgid "The new channel will reuse the permissions from <0>{channelLabel}</0>."
 msgstr "ช่องใหม่จะใช้สิทธิ์จาก <0>{channelLabel}</0> ซ้ำ"
 
 #. Toast success shown when a move down to the current price was already scheduled by an earlier request. {effectiveDate} is the localized date the new price starts.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "The new price is already scheduled for {effectiveDate}."
 msgstr "ราคาใหม่ได้ถูกกำหนดไว้แล้วสำหรับ {effectiveDate}"
 
@@ -36255,8 +36255,8 @@ msgstr "คอมมูนิตี้นี้มีสมาชิกเต็
 msgid "This community is for adults only."
 msgstr "คอมมูนิตี้นี้สำหรับผู้ใหญ่เท่านั้น"
 
-#. Title of the error modal shown when a non-Visionary user tries to rejoin a gated Plutonium community.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCommunityActions.tsx
+#. Title of the error modal shown when a non-Visionary user tries to rejoin a gated Ember community.
+#: src/features/app/components/dialogs/components/ember/hooks/useCommunityActions.tsx
 msgid "This community is for Visionary members"
 msgstr "คอมมูนิตี้นี้สำหรับสมาชิก Visionary"
 
@@ -36778,17 +36778,17 @@ msgstr "บุคคลนี้ต้องตั้งรหัสผ่าน
 msgid "This picker is only available in the desktop app."
 msgstr "ตัวเลือกนี้ใช้ได้เฉพาะในแอปเดสก์ท็อปเท่านั้น"
 
-#. Error modal body shown when the selected Plutonium plan has no price ID configured.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#. Error modal body shown when the selected Ember plan has no price ID configured.
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "This plan isn't available. Contact support."
 msgstr "แพ็กเกจนี้ไม่พร้อมใช้งาน โปรดติดต่อฝ่ายสนับสนุน"
 
-#. Error modal body shown on a self-hosted instance when the selected Plutonium plan has no price ID configured.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#. Error modal body shown on a self-hosted instance when the selected Ember plan has no price ID configured.
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "This plan isn't available. Contact the administrators of this instance."
 msgstr "แพ็กเกจนี้ไม่พร้อมใช้งาน โปรดติดต่อผู้ดูแลระบบของอินสแตนซ์นี้"
 
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "This purchase is not eligible for a refund."
 msgstr "การซื้อนี้ไม่มีสิทธิ์ได้รับเงินคืน"
 
@@ -36796,11 +36796,11 @@ msgstr "การซื้อนี้ไม่มีสิทธิ์ได้
 msgid "This reason will be displayed in the activity log in {activityLogSettingsPath}."
 msgstr "เหตุผลนี้จะแสดงในบันทึกกิจกรรมที่ {activityLogSettingsPath}"
 
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "This refunds your most recent Google Play purchase and cancels any subscription it paid for. You won't be able to self-refund again for 30 days."
 msgstr "ระบบจะคืนเงินสำหรับการซื้อล่าสุดของคุณใน Google Play และยกเลิกการสมัครสมาชิกที่ชำระด้วยการซื้อนั้น คุณจะไม่สามารถคืนเงินด้วยตนเองได้อีกเป็นเวลา 30 วัน"
 
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "This refunds your most recent purchase and cancels any subscription it paid for. You won't be able to self-refund again for 30 days."
 msgstr "ระบบจะคืนเงินสำหรับการซื้อล่าสุดของคุณและยกเลิกการสมัครสมาชิกที่ชำระด้วยการซื้อนั้น คุณจะไม่สามารถคืนเงินด้วยตนเองได้อีกเป็นเวลา 30 วัน"
 
@@ -38204,7 +38204,7 @@ msgid "Unclaimed account override"
 msgstr "แทนที่สถานะบัญชีที่ยังไม่ได้ยืนยัน"
 
 #. Billing invoice status for an invoice marked as uncollectible.
-#: src/features/app/components/dialogs/components/plutonium/InvoiceList.tsx
+#: src/features/app/components/dialogs/components/ember/InvoiceList.tsx
 msgid "Uncollectible"
 msgstr "เรียกเก็บไม่ได้"
 
@@ -38358,7 +38358,7 @@ msgid "Unknown community"
 msgstr "คอมมูนิตี้ที่ไม่รู้จัก"
 
 #. Fallback date value for a billing invoice without a timestamp.
-#: src/features/app/components/dialogs/components/plutonium/InvoiceList.tsx
+#: src/features/app/components/dialogs/components/ember/InvoiceList.tsx
 msgid "Unknown date"
 msgstr "ไม่ระบุวันที่"
 
@@ -38852,13 +38852,13 @@ msgstr "สูงสุด {max} ใบต่อการซื้อหนึ�
 msgid "Up to {maxParticipants, plural, one {# person} other {# people}}."
 msgstr "สูงสุด {maxParticipants, plural, one {# คน} other {# คน}}"
 
-#. Plutonium page comparison value for paid video quality. Keep 4K and FPS as written.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison value for paid video quality. Keep 4K and FPS as written.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Up to 4K at 60 FPS"
 msgstr "สูงสุด 4K ที่ 60 FPS"
 
-#. Plutonium page comparison value for free video quality. Keep 720p and FPS as written.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison value for free video quality. Keep 720p and FPS as written.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Up to 720p at 30 FPS"
 msgstr "สูงสุด 720p ที่ 30 FPS"
 
@@ -38979,7 +38979,7 @@ msgid "Updating…"
 msgstr "กำลังอัปเดต…"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Upgrade"
 msgstr "อัปเกรด"
 
@@ -39224,8 +39224,8 @@ msgstr "ใช้ {everyoneMention}/{hereMention} และ {rolesMention} ไ�
 msgid "Use {name} on {domain}"
 msgstr "ใช้ {name} บน {domain}"
 
-#. Plutonium subscription payment method picker button. Selects Pix as the payment method.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#. Ember subscription payment method picker button. Selects Pix as the payment method.
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Use {pixPaymentMethod}"
 msgstr "ใช้ {pixPaymentMethod}"
 
@@ -39239,8 +39239,8 @@ msgstr "ใช้ {query} ในตำแหน่งที่ต้องกา
 msgid "Use {query} where the text to translate should be inserted."
 msgstr "ใช้ {query} ในตำแหน่งที่ต้องการแทรกข้อความเพื่อแปล"
 
-#. Plutonium subscription payment method picker button. Selects UPI as the payment method.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#. Ember subscription payment method picker button. Selects UPI as the payment method.
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Use {upiPaymentMethod}"
 msgstr "ใช้ {upiPaymentMethod}"
 
@@ -39288,8 +39288,8 @@ msgstr "ใช้ประเภทพรีเมียมจริง"
 msgid "Use actual value"
 msgstr "ใช้ค่าจริง"
 
-#. Plutonium subscription payment method picker button. Selects the alternative (non-card) method.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#. Ember subscription payment method picker button. Selects the alternative (non-card) method.
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Use alternative method"
 msgstr "ใช้วิธีอื่น"
 
@@ -39297,8 +39297,8 @@ msgstr "ใช้วิธีอื่น"
 msgid "Use an authenticator app to generate codes for two-factor authentication"
 msgstr "ใช้แอปยืนยันตัวตนเพื่อสร้างรหัสสำหรับการยืนยันตัวตนแบบสองชั้น"
 
-#. Plutonium page comparison row label for animated emoji use.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison row label for animated emoji use.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Use animated emojis in messages"
 msgstr "ใช้อีโมจิเคลื่อนไหวในข้อความ"
 
@@ -39320,7 +39320,7 @@ msgid "Use browser locale for time format"
 msgstr "ใช้รูปแบบเวลาตามภาษาของเบราว์เซอร์"
 
 #. Modal secondary button to fall back to standard card checkout instead of an alternative payment method.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Use card"
 msgstr "ใช้บัตร"
 
@@ -39344,8 +39344,8 @@ msgstr "ใช้ธีมถ่านหิน (พื้นผิวสีด�
 msgid "Use colored tray icon"
 msgstr "ใช้ไอคอนถาดสี"
 
-#. Plutonium page comparison row label for global emojis and stickers.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison row label for global emojis and stickers.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Use custom emojis and stickers in any community"
 msgstr "ใช้ อิโมจิและสติกเกอร์แบบกำหนดเองในทุกชุมชน"
 
@@ -39997,13 +39997,13 @@ msgstr "วิดีโอ"
 msgid "Video call"
 msgstr "โทรวิดีโอ"
 
-#. Plutonium page comparison row label for video quality.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison row label for video quality.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Video call and screen share quality"
 msgstr "คุณภาพการโทรวิดีโอและการแชร์หน้าจอ"
 
-#. Plutonium page comparison row label for saved video call backgrounds.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison row label for saved video call backgrounds.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Video call backgrounds you can save"
 msgstr "วิดีโอคอลพื้นหลังที่คุณบันทึกได้"
 
@@ -40105,7 +40105,7 @@ msgid "View {premiumProductName} features"
 msgstr "ดูฟีเจอร์ {premiumProductName}"
 
 #. Settings search entry description. One-line summary of what the settings search entry controls. Preserve {premiumProductName}; it is inserted by code.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "View {premiumProductName} perks"
 msgstr "ดูสิทธิประโยชน์ {premiumProductName}"
 
@@ -40332,7 +40332,7 @@ msgstr "เวอร์จิเนีย"
 msgid "Visibility"
 msgstr "การมองเห็น"
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionCard.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionCard.tsx
 msgid "Visionary"
 msgstr "Visionary"
 
@@ -40352,7 +40352,7 @@ msgid "Visionary 2FA nagbar"
 msgstr "แถบแจ้งเตือน 2FA สำหรับ Visionary"
 
 #. Modal body shown when a Visionary user tries to subscribe. Reassures them and points out gift purchases stay available.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Visionary already includes permanent access, so a recurring subscription isn't needed. You can still buy gifts for others."
 msgstr "Visionary มีสิทธิ์เข้าถึงถาวรอยู่แล้ว จึงไม่จำเป็นต้องสมัครสมาชิกแบบต่ออายุอัตโนมัติ คุณยังสามารถซื้อของขวัญให้ผู้อื่นได้"
 
@@ -40600,7 +40600,7 @@ msgid "Voice uses your system output device in this browser. Change it in your s
 msgstr "การสนทนาด้วยเสียงในเบราว์เซอร์นี้ใช้อุปกรณ์เอาต์พุตของระบบ เปลี่ยนได้ในการตั้งค่าระบบ"
 
 #. Billing invoice status for an invoice canceled before payment.
-#: src/features/app/components/dialogs/components/plutonium/InvoiceList.tsx
+#: src/features/app/components/dialogs/components/ember/InvoiceList.tsx
 msgid "Void"
 msgstr "เป็นโมฆะ"
 
@@ -40743,8 +40743,8 @@ msgstr "xdg-desktop-portal ของ Wayland เป็นเจ้าของ�
 msgid "We check new names before they go live."
 msgstr "เราตรวจสอบชื่อใหม่ก่อนแสดง"
 
-#. Plutonium page hero subtitle while a failed renewal is in its grace period.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page hero subtitle while a failed renewal is in its grace period.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "We could not renew your subscription. Update your payment method to keep your perks."
 msgstr "เราไม่สามารถต่ออายุการสมัครของคุณได้ โปรดอัปเดตวิธีการชำระเงินของคุณเพื่อรับสิทธิประโยชน์ต่อไป"
 
@@ -40775,12 +40775,12 @@ msgid "We couldn't delete your messages right now. Try again in a moment."
 msgstr "ขณะนี้เราไม่สามารถลบข้อความของคุณได้ โปรดลองอีกครั้งในภายหลัง"
 
 #. Body of the error modal shown when there is no refundable purchase on the account.
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "We couldn't find a recent purchase to refund on this account."
 msgstr "เราไม่พบการซื้อล่าสุดที่สามารถขอคืนเงินได้ในบัญชีนี้"
 
 #. Body of the error modal shown when an action needs an active subscription but none exists.
-#: src/features/app/components/dialogs/components/plutonium/utils/PremiumActionErrorModal.tsx
+#: src/features/app/components/dialogs/components/ember/utils/PremiumActionErrorModal.tsx
 msgid "We couldn't find an active subscription on this account. Refresh and try again."
 msgstr "เราไม่พบการสมัครสมาชิกที่ใช้งานอยู่สำหรับบัญชีนี้ โปรดรีเฟรชแล้วลองอีกครั้ง"
 
@@ -40838,7 +40838,7 @@ msgid "We couldn't save that theme."
 msgstr "เราไม่สามารถบันทึกธีมนั้นได้"
 
 #. Modal body for existing-subscription block. Directs the user to the billing portal and addresses the just-paid race case. Keep plain and reassuring.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "We found an existing {premiumProductFullName} subscription for this account. Manage it in the secure billing portal to update payment details or check renewal status. If you just paid, wait a minute and reopen this page."
 msgstr "เราพบการสมัครสมาชิก {premiumProductFullName} สำหรับบัญชีนี้แล้ว จัดการได้ในพอร์ทัลการเรียกเก็บเงินที่ปลอดภัยเพื่ออัปเดตรายละเอียดการชำระเงินหรือตรวจสอบสถานะการต่ออายุ หากคุณเพิ่งชำระเงิน โปรดรอสักครู่แล้วเปิดหน้านี้อีกครั้ง"
 
@@ -41108,7 +41108,7 @@ msgstr "เชิญเข้ามาเลย {username}!"
 msgid "Welcome to {channelDisplayName}"
 msgstr "ยินดีต้อนรับสู่ {channelDisplayName}"
 
-#. Premium onboarding nagbar body. {premiumProductFullName} is the full premium product name, such as Hearth Plutonium. {premiumProductName} is the short product name.
+#. Premium onboarding nagbar body. {premiumProductFullName} is the full premium product name, such as Hearth Ember. {premiumProductName} is the short product name.
 #: src/features/app/components/layout/app_layout/nagbars/PremiumOnboardingNagbar.tsx
 msgid "Welcome to {premiumProductFullName}. Explore your {premiumProductName} perks and manage your subscription."
 msgstr "ยินดีต้อนรับสู่ {premiumProductFullName} สำรวจสิทธิประโยชน์ {premiumProductName} ของคุณและจัดการการสมัครสมาชิกของคุณ"
@@ -41593,24 +41593,24 @@ msgid "Year"
 msgstr "ปี"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Yearly"
 msgstr "รายปี"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Yearly gift"
 msgstr "ของขวัญรายปี"
 
-#: src/features/app/components/dialogs/components/plutonium/ScheduledSubscriptionChangeDescription.tsx
+#: src/features/app/components/dialogs/components/ember/ScheduledSubscriptionChangeDescription.tsx
 msgid "Yearly upgrade scheduled for <0>{pendingChangeDate}</0>."
 msgstr "กำหนดอัปเกรดเป็นรายปีในวันที่ <0>{pendingChangeDate}</0>"
 
-#: src/features/app/components/dialogs/components/plutonium/ScheduledSubscriptionChangeDescription.tsx
+#: src/features/app/components/dialogs/components/ember/ScheduledSubscriptionChangeDescription.tsx
 msgid "Yearly upgrade scheduled for <0>{pendingChangeDate}</0>. First yearly charge: {pendingInitialPriceLabel} after a {pendingCreditPriceLabel} credit. Future yearly renewals: {pendingRecurringPriceLabel}/year."
 msgstr "กำหนดอัปเกรดเป็นรายปีในวันที่ <0>{pendingChangeDate}</0> ค่าบริการรายปีครั้งแรก: {pendingInitialPriceLabel} หลังหักเครดิต {pendingCreditPriceLabel} การต่ออายุรายปีครั้งถัดไป: {pendingRecurringPriceLabel}/ปี"
 
-#: src/features/app/components/dialogs/components/plutonium/ScheduledSubscriptionChangeDescription.tsx
+#: src/features/app/components/dialogs/components/ember/ScheduledSubscriptionChangeDescription.tsx
 msgid "Yearly upgrade scheduled for <0>{pendingChangeDate}</0>. First yearly charge: {pendingInitialPriceLabel}. Future yearly renewals: {pendingRecurringPriceLabel}/year."
 msgstr "กำหนดอัปเกรดเป็นรายปีในวันที่ <0>{pendingChangeDate}</0> ค่าบริการรายปีครั้งแรก: {pendingInitialPriceLabel} การต่ออายุรายปีครั้งถัดไป: {pendingRecurringPriceLabel}/ปี"
 
@@ -41704,7 +41704,7 @@ msgid "You are now a developer!"
 msgstr "ตอนนี้คุณเป็นนักพัฒนาแล้ว!"
 
 #. Modal body for the mobile checkout confirmation. Explains that the user is leaving the app to pay.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "You are now navigating to {paymentProviderName} to complete the payment. Return to {productName} once you've completed it."
 msgstr "คุณกำลังจะไปยัง {paymentProviderName} เพื่อดำเนินการชำระเงินให้เสร็จสมบูรณ์ โปรดกลับมาที่ {productName} เมื่อคุณชำระเงินเรียบร้อยแล้ว"
 
@@ -41797,8 +41797,8 @@ msgstr "คุณสามารถส่งต่อบัตรผ่านใ
 msgid "You can only pass this on to one of your friends on Hearth."
 msgstr "คุณสามารถส่งต่อสิ่งนี้ให้เพื่อนใน Hearth ได้เพียงคนเดียวเท่านั้น"
 
-#. Footnote on the Plutonium page about custom username tags. Keep Mina#4821, mina#4821 and #0000 unchanged. visionaryLink is a link whose text is "Learn more about Visionary".
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Footnote on the Ember page about custom username tags. Keep Mina#4821, mina#4821 and #0000 unchanged. visionaryLink is a link whose text is "Learn more about Visionary".
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "You can only pick a tag that nobody else with the same username already has. Usernames aren't case sensitive, so Mina#4821 and mina#4821 count as the same. The #0000 tag is reserved for {productName} Visionary members. {visionaryLink}."
 msgstr "คุณสามารถเลือกแท็กที่ไม่มีใครใช้ชื่อผู้ใช้เดียวกันแล้วเท่านั้น ชื่อผู้ใช้ไม่คำนึงถึงตัวพิมพ์เล็ก/ใหญ่ ดังนั้น Mina#4821 และ mina#4821 จึงนับว่าเป็นชื่อเดียวกัน แท็ก #0000 สงวนไว้สำหรับสมาชิก Visionary ของ {productName} {visionaryLink}"
 
@@ -41812,7 +41812,7 @@ msgstr "คุณสามารถเลือกธีมแบบมืดห
 msgid "You can pick up to {count} tags."
 msgstr "คุณสามารถเลือกแท็กได้สูงสุด {count} แท็ก"
 
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "You can refund again after {cooldownEndsOn}. Contact support for billing issues."
 msgstr "คุณจะสามารถขอคืนเงินได้อีกครั้งหลังจากวันที่ {cooldownEndsOn} หากมีปัญหาเกี่ยวกับการเรียกเก็บเงิน โปรดติดต่อฝ่ายสนับสนุน"
 
@@ -42124,7 +42124,7 @@ msgid "You have no friends yet"
 msgstr "คุณยังไม่มีเพื่อน"
 
 #. Title of the error modal shown when a self-serve refund is blocked by the cooldown period.
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "You have refunded recently"
 msgstr "คุณเพิ่งขอคืนเงินไปเมื่อไม่นานมานี้"
 
@@ -42164,11 +42164,11 @@ msgstr "คุณยังไม่ได้เขียน CSS ด่วนเ�
 msgid "You just pressed Tab. Keyboard mode is now on so you can navigate {productName} without a mouse."
 msgstr "คุณเพิ่งกด Tab ตอนนี้เปิดโหมดแป้นพิมพ์แล้ว คุณจึงสามารถไปยังส่วนต่างๆ ของ {productName} ได้โดยไม่ต้องใช้เมาส์"
 
-#: src/features/premium/components/plutonium_page/PlutoniumPage.tsx
+#: src/features/premium/components/ember_page/EmberPage.tsx
 msgid "You keep your perks until your next renewal date. Reactivate before then to keep your subscriber history."
 msgstr "คุณจะยังคงได้รับสิทธิประโยชน์จนถึงวันต่ออายุครั้งถัดไป เปิดใช้งานการสมัครสมาชิกอีกครั้งก่อนวันดังกล่าวเพื่อรักษาประวัติการเป็นสมาชิกของคุณไว้"
 
-#: src/features/premium/components/plutonium_page/PlutoniumPage.tsx
+#: src/features/premium/components/ember_page/EmberPage.tsx
 msgid "You lose all {PREMIUM_PRODUCT_NAME} perks immediately and your subscriber history resets. This cannot be undone."
 msgstr "คุณจะสูญเสียสิทธิประโยชน์ทั้งหมดของ {PREMIUM_PRODUCT_NAME} ทันที และประวัติการเป็นสมาชิกของคุณจะถูกรีเซ็ต การดำเนินการนี้ไม่สามารถยกเลิกได้"
 
@@ -42253,8 +42253,8 @@ msgstr "คุณต้องยืนยันบัญชีก่อนจึ
 msgid "You need to confirm your email address before you can start a direct message."
 msgstr "คุณต้องยืนยันอีเมลก่อนจึงจะสามารถเริ่มข้อความส่วนตัวได้"
 
-#. Body of the error modal shown when the account email is unverified and the user tries to purchase Plutonium. Product name is interpolated.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#. Body of the error modal shown when the account email is unverified and the user tries to purchase Ember. Product name is interpolated.
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "You need to confirm your email before you can purchase {premiumProductFullName}."
 msgstr "คุณต้องยืนยันอีเมลก่อนจึงจะสามารถซื้อ {premiumProductFullName} ได้"
 
@@ -42309,7 +42309,7 @@ msgid "You'll appear offline"
 msgstr "คุณจะแสดงสถานะเป็นออฟไลน์"
 
 #. Body of the confirmation shown before checkout when a user with gifted premium time starts a recurring subscription. The subscription is charged immediately and the unused gift time is appended after the paid period.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "You'll be charged now. Your remaining gift time is added after your paid period, so none of it is lost."
 msgstr "คุณจะถูกเรียกเก็บเงินทันที เวลาของขวัญที่เหลือของคุณจะถูกเพิ่มหลังจากช่วงเวลาที่ชำระเงินของคุณ ดังนั้นจะไม่มีการสูญเสีย"
 
@@ -42323,13 +42323,13 @@ msgstr "คุณจะใส่ข้อมูลเหล่านี้ทั
 msgid "You'll need one of your passkeys to sign in on a new device. If you lose every passkey you can be locked out of your account. Backup codes will be saved for you so you still have a way in."
 msgstr "คุณจะต้องใช้พาสคีย์ของคุณหนึ่งรายการเพื่อลงชื่อเข้าใช้บนอุปกรณ์ใหม่ หากคุณทำพาสคีย์หายทั้งหมด คุณอาจสูญเสียการเข้าถึงบัญชีของคุณอย่างถาวร เราจะบันทึกรหัสสำรองไว้ให้คุณ เพื่อให้คุณยังมีทางเข้าใช้บัญชีได้"
 
-#. Plutonium page hero subtitle for members. premiumProductName is the paid tier name.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page hero subtitle for members. premiumProductName is the paid tier name.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "You're a {premiumProductName} member. Thanks for supporting an independent communication platform."
 msgstr "คุณเป็นสมาชิก {premiumProductName} แล้ว ขอบคุณที่สนับสนุนแพลตฟอร์มการสื่อสารอิสระ"
 
-#. Plutonium page hero subtitle for lifetime Visionary members.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page hero subtitle for lifetime Visionary members.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "You're a Visionary. Your perks never expire, and gifts for friends are always available."
 msgstr "คุณคือ Visionary สิทธิประโยชน์ของคุณจะไม่มีวันหมดอายุ และของขวัญสำหรับเพื่อนก็พร้อมเสมอ"
 
@@ -42357,8 +42357,8 @@ msgstr "อ่านครบหมดแล้ว"
 msgid "You're already friends with this user."
 msgstr "คุณเป็นเพื่อนกับผู้ใช้นี้อยู่แล้ว"
 
-#. Modal title shown when a lifetime Visionary tier user tries to start a recurring Plutonium subscription.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#. Modal title shown when a lifetime Visionary tier user tries to start a recurring Ember subscription.
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "You're already Visionary"
 msgstr "คุณเป็น Visionary อยู่แล้ว"
 
@@ -42372,22 +42372,22 @@ msgstr "คุณเป็น Operator แล้ว"
 msgid "You're at {count, plural, one {# bookmark} other {# bookmarks}} — your instance admin sets this cap. Remove one to add another."
 msgstr "คุณมีบุ๊กมาร์กครบ {count, plural, one {# รายการ} other {# รายการ}} แล้ว ผู้ดูแลอินสแตนซ์ของคุณเป็นผู้กำหนดขีดจำกัดนี้ ลบออกหนึ่งรายการเพื่อเพิ่มรายการใหม่"
 
-#. Modal body shown when the bookmarks limit is reached and Plutonium is unavailable on this instance. {count} is the bookmark cap.
+#. Modal body shown when the bookmarks limit is reached and Ember is unavailable on this instance. {count} is the bookmark cap.
 #: src/features/app/components/alerts/MaxBookmarksModal.tsx
 msgid "You're at {count, plural, one {# bookmark} other {# bookmarks}}. Remove one to add another."
 msgstr "คุณมีบุ๊กมาร์กครบ {count, plural, one {# รายการ} other {# รายการ}} แล้ว ลบออกหนึ่งรายการเพื่อเพิ่มรายการใหม่"
 
-#. Modal body shown when the favorite-memes limit is reached on a self-hosted instance with no Plutonium upgrade path. {count} is the saved media cap.
+#. Modal body shown when the favorite-memes limit is reached on a self-hosted instance with no Ember upgrade path. {count} is the saved media cap.
 #: src/features/app/components/alerts/MaxFavoriteMemesModal.tsx
 msgid "You're at the cap of {count, plural, one {# saved media item} other {# saved media items}} — your instance admin sets this limit."
 msgstr "คุณมีสื่อที่บันทึกไว้ครบ {count, plural, one {# รายการ} other {# รายการ}} แล้ว ผู้ดูแลอินสแตนซ์ของคุณเป็นผู้กำหนดขีดจำกัดนี้"
 
-#. Modal body shown when the free bookmarks limit is reached and Plutonium would increase it. {count} is the free cap, {premiumCount} the Plutonium cap.
+#. Modal body shown when the free bookmarks limit is reached and Ember would increase it. {count} is the free cap, {premiumCount} the Ember cap.
 #: src/features/app/components/alerts/MaxBookmarksModal.tsx
 msgid "You're at the free cap of {count, plural, one {# bookmark} other {# bookmarks}}. {premiumProductName} bumps you up to {premiumCount, plural, one {# bookmark} other {# bookmarks}} — or remove one to add another."
 msgstr "คุณมีบุ๊กมาร์กครบขีดจำกัดของบัญชีฟรีที่ {count, plural, one {# รายการ} other {# รายการ}} แล้ว {premiumProductName} เพิ่มให้เป็น {premiumCount, plural, one {# รายการ} other {# รายการ}} หรือลบออกหนึ่งรายการเพื่อเพิ่มรายการใหม่"
 
-#. Modal body shown when the free favorite-memes limit is reached and Plutonium would increase it. {count} is the free cap, {premiumCount} the Plutonium cap.
+#. Modal body shown when the free favorite-memes limit is reached and Ember would increase it. {count} is the free cap, {premiumCount} the Ember cap.
 #: src/features/app/components/alerts/MaxFavoriteMemesModal.tsx
 msgid "You're at the free cap of {count, plural, one {# saved media item} other {# saved media items}}. {premiumProductName} bumps you up to {premiumCount, plural, one {# saved media item} other {# saved media items}}."
 msgstr "คุณมีสื่อที่บันทึกไว้ครบขีดจำกัดของบัญชีฟรีที่ {count, plural, one {# รายการ} other {# รายการ}} แล้ว {premiumProductName} เพิ่มให้เป็น {premiumCount, plural, one {# รายการ} other {# รายการ}}"
@@ -42465,13 +42465,13 @@ msgstr "คุณอยู่ในช่องเสียงแล้ว"
 msgid "You're no longer previewing {community}."
 msgstr "คุณไม่ได้ดูตัวอย่าง {community} แล้ว"
 
-#. Plutonium subscription card tooltip shown when the user is on a grandfathered price that is no longer offered.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionCard.tsx
+#. Ember subscription card tooltip shown when the user is on a grandfathered price that is no longer offered.
+#: src/features/app/components/dialogs/components/ember/SubscriptionCard.tsx
 msgid "You're on a legacy rate no longer available to new subscribers."
 msgstr "คุณกำลังใช้ราคาเดิมที่ไม่เปิดให้สมาชิกใหม่แล้ว"
 
-#. Plutonium subscription card tooltip shown when the user is on a grandfathered price; current list price is interpolated.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionCard.tsx
+#. Ember subscription card tooltip shown when the user is on a grandfathered price; current list price is interpolated.
+#: src/features/app/components/dialogs/components/ember/SubscriptionCard.tsx
 msgid "You're on a legacy rate. The current price for this plan is {currentSubscriptionListPriceLabel}."
 msgstr "คุณใช้ราคาเดิมอยู่ ราคาปัจจุบันสำหรับแพ็กเกจนี้คือ {currentSubscriptionListPriceLabel}"
 
@@ -42530,7 +42530,7 @@ msgid "You've already reported this profile today."
 msgstr "คุณได้รายงานโปรไฟล์นี้ไปแล้ววันนี้"
 
 #. Body of the error modal shown when a self-serve refund is blocked by the cooldown period.
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "You've already used a self-serve refund recently. You can refund again once the cooldown ends."
 msgstr "คุณได้ใช้การคืนเงินด้วยตนเองไปแล้วเมื่อเร็วๆ นี้ คุณสามารถคืนเงินได้อีกครั้งเมื่อช่วงเวลาคูลดาวน์สิ้นสุดลง"
 
@@ -42612,12 +42612,12 @@ msgid "You've seen all your recent mentions. More will appear here soon."
 msgstr "คุณดูการกล่าวถึงล่าสุดทั้งหมดแล้ว การกล่าวถึงใหม่จะแสดงที่นี่เร็วๆ นี้"
 
 #. Modal body for existing-subscription block when the subscription was bought in a mobile app store. {storeName} is the store brand name, App Store or Google Play, and must not be translated. {premiumProductFullName} is the full premium product name.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Your {premiumProductFullName} subscription is billed through {storeName}. Manage it in your {storeName} account to change your plan or check renewal status."
 msgstr "การสมัครสมาชิก {premiumProductFullName} ของคุณเรียกเก็บเงินผ่าน {storeName} จัดการได้ในบัญชี {storeName} ของคุณเพื่อเปลี่ยนแพ็กเกจหรือตรวจสอบสถานะการต่ออายุ"
 
-#. Plutonium page hero subtitle when a subscription has ended. premiumProductName is the paid tier name.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page hero subtitle when a subscription has ended. premiumProductName is the paid tier name.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Your {premiumProductName} perks have ended. Subscribe again to bring them back."
 msgstr "สิทธิประโยชน์ {premiumProductName} ของคุณสิ้นสุดลงแล้ว สมัครอีกครั้งเพื่อรับสิทธิ์กลับคืนมา"
 
@@ -42631,8 +42631,8 @@ msgstr "การสมัครสมาชิก {premiumProductName} ขอ�
 msgid "Your {productName} session expired. Sign in again to continue authorizing this application."
 msgstr "เซสชัน {productName} ของคุณหมดอายุแล้ว โปรดลงชื่อเข้าใช้อีกครั้งเพื่อดำเนินการให้สิทธิ์แอปพลิเคชันนี้ต่อ"
 
-#. Plutonium subscription card text shown while a failed App Store or Google Play renewal payment is being retried. {storeName} is the store brand name, App Store or Google Play, and must not be translated. {graceDate} is a date already formatted and localized by code; never write a date into the translation.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionDescription.tsx
+#. Ember subscription card text shown while a failed App Store or Google Play renewal payment is being retried. {storeName} is the store brand name, App Store or Google Play, and must not be translated. {graceDate} is a date already formatted and localized by code; never write a date into the translation.
+#: src/features/app/components/dialogs/components/ember/SubscriptionDescription.tsx
 msgid "Your {storeName} renewal payment failed but <0/> stay active until <1>{graceDate}</1>. Update your {storeName} payment method before then to keep your subscription."
 msgstr "การชำระเงินต่ออายุผ่าน {storeName} ของคุณไม่สำเร็จ แต่ <0/> ยังคงใช้งานได้จนถึง <1>{graceDate}</1> โปรดอัปเดตวิธีการชำระเงินใน {storeName} ก่อนวันดังกล่าวเพื่อรักษาการสมัครของคุณไว้"
 
@@ -42814,8 +42814,8 @@ msgstr "อุปกรณ์ของคุณจะขอให้บันท
 msgid "Your email has been verified. You can now sign in to your account."
 msgstr "ยืนยันอีเมลของคุณแล้ว ตอนนี้คุณสามารถลงชื่อเข้าใช้บัญชีของคุณได้"
 
-#. Plutonium page perk card title about using custom emojis and stickers in every community.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page perk card title about using custom emojis and stickers in every community.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Your emojis, everywhere"
 msgstr "อิโมจิของคุณ ใช้ได้ทุกที่"
 
@@ -42874,23 +42874,23 @@ msgstr "โปรไฟล์แบบเต็มของคุณจะแส
 msgid "Your full profile is visible to friends and to anyone in your communities"
 msgstr "โปรไฟล์แบบเต็มของคุณจะแสดงให้เพื่อนและทุกคนในคอมมูนิตี้ของคุณเห็น"
 
-#. Plutonium subscription card text shown in the short grace period after gifted premium time ends. {graceDate} is a date already formatted and localized by code; never write a date into the translation.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionDescription.tsx
+#. Ember subscription card text shown in the short grace period after gifted premium time ends. {graceDate} is a date already formatted and localized by code; never write a date into the translation.
+#: src/features/app/components/dialogs/components/ember/SubscriptionDescription.tsx
 msgid "Your gift time ended but <0/> stay active until <1>{graceDate}</1>. Subscribe before then to keep them."
 msgstr "เวลาของขวัญของคุณหมดลงแล้ว แต่ <0/> จะยังคงใช้งานได้จนถึง <1>{graceDate}</1> สมัครสมาชิกก่อนวันนั้นเพื่อรักษาไว้"
 
-#. Plutonium page hero subtitle while gifted premium time is in its short grace period after ending. premiumProductName is the paid tier name.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page hero subtitle while gifted premium time is in its short grace period after ending. premiumProductName is the paid tier name.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Your gift time has ended. Subscribe to keep {premiumProductName}."
 msgstr "เวลาของขวัญของคุณหมดแล้ว สมัครสมาชิกเพื่อรับ {premiumProductName} ต่อไป"
 
 #. Title of the confirmation shown before checkout when a user with gifted premium time starts a recurring subscription.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Your gift time is kept"
 msgstr "เวลาของขวัญของคุณจะถูกเก็บไว้"
 
-#. Body text in the Plutonium subscription actions. Keep the tone plain and specific.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Body text in the Ember subscription actions. Keep the tone plain and specific.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Your grace period has ended."
 msgstr "ช่วงผ่อนผันของคุณสิ้นสุดลงแล้ว"
 
@@ -42922,7 +42922,7 @@ msgstr "IP ของคุณถูกแบนจากคอมมูนิต
 msgid "Your IP is banned"
 msgstr "IP ของคุณถูกแบน"
 
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "Your last purchase is outside the refund window. Contact support for billing issues."
 msgstr "การซื้อครั้งล่าสุดของคุณอยู่นอกช่วงเวลาการคืนเงิน โปรดติดต่อฝ่ายสนับสนุนสำหรับปัญหาการเรียกเก็บเงิน"
 
@@ -42967,7 +42967,7 @@ msgid "Your monthly donation is separate and keeps running."
 msgstr "การบริจาครายเดือนของคุณแยกต่างหากและจะดำเนินต่อไป"
 
 #. Body of the error modal shown when a self-serve refund is no longer within the eligible window.
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "Your most recent purchase is no longer within the refund window. Contact support for billing issues."
 msgstr "การซื้อล่าสุดของคุณไม่อยู่ในช่วงเวลาที่สามารถขอคืนเงินได้แล้ว โปรดติดต่อฝ่ายสนับสนุนสำหรับปัญหาการเรียกเก็บเงิน"
 
@@ -43029,8 +43029,8 @@ msgstr "ยกเลิกการชำระเงินแล้ว ปิ�
 msgid "Your payment was successful. You can now close this tab and return to the app."
 msgstr "ชำระเงินสำเร็จแล้ว ปิดแท็บนี้แล้วกลับไปที่แอปได้เลย"
 
-#. Toast success shown after a scheduled Plutonium billing cycle change is canceled.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Toast success shown after a scheduled Ember billing cycle change is canceled.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Your pending billing change has been canceled."
 msgstr "ยกเลิกการเปลี่ยนแปลงการเรียกเก็บเงินที่รอดำเนินการแล้ว"
 
@@ -43069,8 +43069,8 @@ msgstr "ชุดกู้คืนของคุณ"
 msgid "your region"
 msgstr "ภูมิภาคของคุณ"
 
-#. Plutonium subscription card text shown while a failed renewal payment is being retried. {graceDate} is a date already formatted and localized by code; never write a date into the translation.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionDescription.tsx
+#. Ember subscription card text shown while a failed renewal payment is being retried. {graceDate} is a date already formatted and localized by code; never write a date into the translation.
+#: src/features/app/components/dialogs/components/ember/SubscriptionDescription.tsx
 msgid "Your renewal payment failed but <0/> stay active until <1>{graceDate}</1>. Update your payment method before then to keep your subscription."
 msgstr "การชำระเงินต่ออายุของคุณไม่สำเร็จ แต่ <0/> ยังคงใช้งานได้จนถึง <1>{graceDate}</1> โปรดอัปเดตวิธีการชำระเงินก่อนวันดังกล่าวเพื่อรักษาการสมัครของคุณไว้"
 
@@ -43100,17 +43100,17 @@ msgstr "โทเค็นการตั้งค่าของคุณใช
 msgid "Your stream is still live"
 msgstr "สตรีมของคุณยังคงถ่ายทอดสดอยู่"
 
-#. Heading of the subscription management panel on the Plutonium page.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Heading of the subscription management panel on the Ember page.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Your subscription"
 msgstr "การสมัครสมาชิกของคุณ"
 
-#. Toast error shown when the server refuses to move a Plutonium subscription down to the current price, whatever the reason.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Toast error shown when the server refuses to move a Ember subscription down to the current price, whatever the reason.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Your subscription can't move to the new price right now."
 msgstr "ขณะนี้การสมัครใช้งานของคุณไม่สามารถเปลี่ยนเป็นราคาใหม่ได้"
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionDescription.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionDescription.tsx
 msgid "Your subscription ended but <0/> stay active until <1>{graceDate}</1>. Resubscribe before then to keep your subscriber history."
 msgstr "การสมัครของคุณสิ้นสุดลงแล้ว แต่ <0/> ยังคงใช้งานได้จนถึง <1>{graceDate}</1> สมัครใหม่ก่อนถึงวันดังกล่าวเพื่อรักษาประวัติการเป็นสมาชิกของคุณ"
 
@@ -43119,57 +43119,57 @@ msgstr "การสมัครของคุณสิ้นสุดลงแ
 msgid "Your subscription failed to renew, but you still have access to {premiumProductName} perks until {formattedGraceDate}. Take action now or you'll lose all perks."
 msgstr "การสมัครของคุณต่ออายุไม่สำเร็จ แต่คุณยังคงเข้าถึงสิทธิประโยชน์ของ {premiumProductName} ได้จนถึงวันที่ {formattedGraceDate} ดำเนินการตอนนี้ มิฉะนั้นคุณจะสูญเสียสิทธิประโยชน์ทั้งหมด"
 
-#. Body text in the Plutonium subscription actions. Keep the tone plain and specific.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Body text in the Ember subscription actions. Keep the tone plain and specific.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Your subscription has been reactivated."
 msgstr "การสมัครของคุณเปิดใช้งานอีกครั้งแล้ว"
 
-#. Toast success shown after a Plutonium subscription is set to cancel at the end of the billing period.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Toast success shown after a Ember subscription is set to cancel at the end of the billing period.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Your subscription has been set to cancel at the end of your billing period."
 msgstr "ระบบจะยกเลิกการเป็นสมาชิกของคุณเมื่อสิ้นสุดรอบบิล"
 
-#. Toast success shown after a Plutonium subscription is switched from yearly to monthly billing.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Toast success shown after a Ember subscription is switched from yearly to monthly billing.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Your subscription has been switched to monthly billing."
 msgstr "เปลี่ยนการเรียกเก็บเงินเป็นรายเดือนแล้ว"
 
-#. Toast success shown after a Plutonium subscription is switched from monthly to yearly billing.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Toast success shown after a Ember subscription is switched from monthly to yearly billing.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Your subscription has been switched to yearly billing."
 msgstr "เปลี่ยนการเรียกเก็บเงินเป็นรายปีแล้ว"
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionDescription.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionDescription.tsx
 msgid "Your subscription is active but perks are temporarily paused."
 msgstr "การสมัครของคุณใช้งานอยู่ แต่สิทธิประโยชน์ถูกระงับชั่วคราว"
 
 #. Body of the error modal shown when a subscription is already scheduled to cancel.
-#: src/features/app/components/dialogs/components/plutonium/utils/PremiumActionErrorModal.tsx
+#: src/features/app/components/dialogs/components/ember/utils/PremiumActionErrorModal.tsx
 msgid "Your subscription is already set to cancel at the end of your billing period."
 msgstr "การสมัครของคุณถูกตั้งค่าให้ยกเลิกเมื่อสิ้นสุดรอบบิลแล้ว"
 
 #. Body of the error modal shown when reactivation is attempted but the subscription is not cancelling.
-#: src/features/app/components/dialogs/components/plutonium/utils/PremiumActionErrorModal.tsx
+#: src/features/app/components/dialogs/components/ember/utils/PremiumActionErrorModal.tsx
 msgid "Your subscription isn't set to cancel, so there's nothing to reactivate."
 msgstr "การสมัครของคุณไม่ได้ตั้งค่าให้ยกเลิก จึงไม่มีอะไรให้เปิดใช้งานอีกครั้ง"
 
-#. Toast success shown after a Plutonium subscription is scheduled to move down to the current price. {effectiveDate} is the localized date the new price starts.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Toast success shown after a Ember subscription is scheduled to move down to the current price. {effectiveDate} is the localized date the new price starts.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Your subscription moves to the new price on {effectiveDate}."
 msgstr "การสมัครใช้งานของคุณจะเปลี่ยนไปใช้ราคาใหม่ในวันที่ {effectiveDate}"
 
-#. Plutonium subscription card line shown to a subscriber on a legacy price whose subscription is already set to cancel. {cancelDate} is a date and {listPriceNewLabel} is a currency amount, both already formatted and localized by code; never write a date or an amount into the translation.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionCard.tsx
+#. Ember subscription card line shown to a subscriber on a legacy price whose subscription is already set to cancel. {cancelDate} is a date and {listPriceNewLabel} is a currency amount, both already formatted and localized by code; never write a date or an amount into the translation.
+#: src/features/app/components/dialogs/components/ember/SubscriptionCard.tsx
 msgid "Your subscription still ends on <0>{cancelDate}</0>. The current price is now {listPriceNewLabel}. If you reactivate, you can switch to it from here."
 msgstr "การสมัครของคุณจะสิ้นสุดในวันที่ <0>{cancelDate}</0> ขณะนี้ราคาอยู่ที่ {listPriceNewLabel} หากคุณเปิดใช้งานอีกครั้ง คุณสามารถเปลี่ยนไปใช้ราคานี้ได้จากที่นี่"
 
-#. Toast success shown after a Plutonium subscription is scheduled to switch to monthly billing.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Toast success shown after a Ember subscription is scheduled to switch to monthly billing.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Your subscription will switch to monthly billing at the next renewal."
 msgstr "การสมัครของคุณจะเปลี่ยนเป็นการเรียกเก็บเงินรายเดือนเมื่อถึงรอบการต่ออายุครั้งถัดไป"
 
-#. Toast success shown after a Plutonium subscription is scheduled to switch to yearly billing.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Toast success shown after a Ember subscription is scheduled to switch to yearly billing.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Your subscription will switch to yearly billing at the next renewal."
 msgstr "การสมัครของคุณจะเปลี่ยนเป็นการเรียกเก็บเงินรายปีในการต่ออายุครั้งถัดไป"
 

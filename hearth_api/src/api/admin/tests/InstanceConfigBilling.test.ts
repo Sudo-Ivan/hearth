@@ -282,12 +282,12 @@ describe('instance config billing on a self-hosted instance', () => {
 describe('instance config billing on a hosted instance', () => {
 	const context = useInstanceHarness({selfHosted: false});
 
-	it('keeps the Plutonium default and env billing', async () => {
+	it('keeps the Ember default and env billing', async () => {
 		const admin = await createAdmin(context.harness);
 		const current = await createBuilder<InstanceConfigResponse>(context.harness, admin.token)
 			.get('/admin/instance/config')
 			.execute();
-		expect(current.app_public.branding.premium_product_name).toBe('Plutonium');
+		expect(current.app_public.branding.premium_product_name).toBe('Ember');
 		expect(current.billing).toMatchObject({enabled: null, catalog_mode: 'env', stripe_secret_key_set: true});
 		const updated = await patchConfig(context.harness, admin, {policy: {premium_mode: 'everyone'}}).execute();
 		expect(updated.policy.premium_mode).toBe('everyone');
@@ -313,7 +313,7 @@ describe('instance config billing on a hosted instance', () => {
 			.get('/admin/instance/config')
 			.execute();
 		expect(current.billing).toMatchObject({enabled: null, catalog_mode: 'env', prices: null});
-		expect(current.app_public.branding).toMatchObject({premium_product_name: 'Plutonium', premium_info_url: null});
+		expect(current.app_public.branding).toMatchObject({premium_product_name: 'Ember', premium_info_url: null});
 		expect(getStoredBillingConfig()?.prices ?? null).toBeNull();
 	});
 });

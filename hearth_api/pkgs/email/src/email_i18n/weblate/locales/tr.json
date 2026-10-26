@@ -380,9 +380,9 @@
 		"deadline_label": "İtirazı şu tarihten önce geri çekin",
 		"deadline_value": "{warningDate, date, long}",
 		"footer_reason": "Bu e-postayı, {product_name} hesabınızla ilgili bir ödeme itirazı nedeniyle aldınız.",
-		"ground": "{product, select, plutonium {Hizmet şartlarının 4.4. bölümü} other {Operator Pass şartlarının 9. bölümü}}",
+		"ground": "{product, select, ember {Hizmet şartlarının 4.4. bölümü} other {Operator Pass şartlarının 9. bölümü}}",
 		"ground_label": "Gerekçe",
-		"intro": "{product, select, plutonium {Plutonium ödemenize} other {Operator Pass ödemenize}} bankanız veya kart kuruluşunuz aracılığıyla itiraz ettiniz. Ekibimizden bir kişi itirazı şartlarımıza göre inceledi ve haksız buldu.",
+		"intro": "{product, select, ember {Ember ödemenize} other {Operator Pass ödemenize}} bankanız veya kart kuruluşunuz aracılığıyla itiraz ettiniz. Ekibimizden bir kişi itirazı şartlarımıza göre inceledi ve haksız buldu.",
 		"next_body": "Bu ödemeyi siz yaptıysanız bankanızdan veya kart kuruluşunuzdan itirazı geri çekmesini isteyebilirsiniz. İtiraz geri çekilirse veya para size iade edilmeden kapanırsa hesabınıza hiçbir şey olmaz. İtiraz kapanana kadar {product_name} üzerinde satın alma yapamazsınız.{privacy_email, select, null {} other { Verilerinizin bir kopyasını istediğiniz zaman <mail>{privacy_email}</mail> adresine yazarak isteyebilirsiniz.}}",
 		"next_title": "Şimdi ne olacak",
 		"order_date_label": "Sipariş tarihi",
@@ -390,7 +390,7 @@
 		"order_number_label": "Sipariş numarası",
 		"signoff": "{product_name} ekibi",
 		"subject": "{product_name} ödeme itirazınız hakkında",
-		"why_body": "Ödemeyi siz veya izin verdiğiniz biri yaptı, doğru tutarı tahsil ettik, {product, select, plutonium {Plutonium açıklandığı gibi sağlandı} other {Operator Pass açıklandığı gibi teslim edildi}}, ödemeyi iade etmemiştik ve itiraz ettiğinizde cayma süresi sona ermişti.",
+		"why_body": "Ödemeyi siz veya izin verdiğiniz biri yaptı, doğru tutarı tahsil ettik, {product, select, ember {Ember açıklandığı gibi sağlandı} other {Operator Pass açıklandığı gibi teslim edildi}}, ödemeyi iade etmemiştik ve itiraz ettiğinizde cayma süresi sona ermişti.",
 		"why_title": "Neden haksız bulduk"
 	},
 	"reauth_code": {

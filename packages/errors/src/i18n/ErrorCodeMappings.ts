@@ -72,7 +72,7 @@ export const ErrorCodeToI18nKey = {
 	[APIErrorCodes.CANNOT_EXECUTE_ON_DM]: 'channels_and_guilds.cannot_execute_on_dm',
 	[APIErrorCodes.CANNOT_BLOCK_SYSTEM_USER]: 'friends_and_dms.cannot_block_system_user',
 	[APIErrorCodes.CANNOT_MODIFY_SYSTEM_WEBHOOK]: 'webhooks.cannot_modify_system_webhook',
-	[APIErrorCodes.CANNOT_REDEEM_PLUTONIUM_WITH_VISIONARY]: 'premium_and_plans.cannot_redeem_plutonium_with_visionary',
+	[APIErrorCodes.CANNOT_REDEEM_EMBER_WITH_VISIONARY]: 'premium_and_plans.cannot_redeem_ember_with_visionary',
 	[ValidationErrorCodes.ANIMATED_AVATARS_REQUIRE_PREMIUM]: 'premium_and_plans.animated_avatars_require_premium',
 	[ValidationErrorCodes.BANNERS_REQUIRE_PREMIUM]: 'premium_and_plans.banners_require_premium',
 	[ValidationErrorCodes.CANNOT_EDIT_ATTACHMENT_METADATA]: 'attachments_and_uploads.cannot_edit_attachment_metadata',

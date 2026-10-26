@@ -20,7 +20,7 @@ import {ms} from 'itty-time';
 import {delay, HttpResponse, http} from 'msw';
 import {afterEach, beforeAll, beforeEach, describe, expect, it} from 'vitest';
 
-const MONTHLY = 'com.hearth.plutonium.monthly';
+const MONTHLY = 'com.hearth.ember.monthly';
 const GIFT = 'com.hearth.gift.1month';
 
 async function captureError(promise: Promise<unknown>): Promise<unknown> {
@@ -226,7 +226,7 @@ describe('AppStoreServerApiClient', () => {
 			fake.addTransaction('production', {
 				transactionId: '401',
 				originalTransactionId: '401',
-				productId: 'com.hearth.plutonium.yearly',
+				productId: 'com.hearth.ember.yearly',
 				expiresDate: Date.now() + ms('365 days'),
 			});
 			fake.putSubscription('production', {

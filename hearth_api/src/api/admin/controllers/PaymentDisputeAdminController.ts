@@ -93,7 +93,7 @@ export function PaymentDisputeAdminController(app: HonoApp) {
 			security: 'adminApiKey',
 			tags: TAG,
 			description:
-				'Lists the Operator Pass and Plutonium payment disputes, newest first. A review opens when the dispute opens, and the account that made the payment cannot buy anything while any of its disputes is open. Each review shows the grounds that rule out finding it unjustified, the date a warning would name, and the other closure decision a pending closure waits for. Requires USER_LOOKUP permission.',
+				'Lists the Operator Pass and Ember payment disputes, newest first. A review opens when the dispute opens, and the account that made the payment cannot buy anything while any of its disputes is open. Each review shows the grounds that rule out finding it unjustified, the date a warning would name, and the other closure decision a pending closure waits for. Requires USER_LOOKUP permission.',
 		}),
 		async (ctx) => {
 			const reviews = await listPaymentDisputeReviews(getPaymentDisputeRepository());

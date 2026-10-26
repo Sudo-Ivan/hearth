@@ -249,7 +249,7 @@ describe('harvested user data', () => {
 				provider: 'app_store',
 				kind: 'subscription',
 				slot: 'monthly',
-				product_id: 'com.hearth.plutonium.monthly',
+				product_id: 'com.hearth.ember.monthly',
 				environment: 'production',
 				state: 'active',
 				entitled: true,

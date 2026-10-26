@@ -154,8 +154,8 @@ const testApiConfig: APIConfig = {
 		privateKeyPath: undefined,
 		apps: [{bundleId: 'com.hearth', appAppleId: 1234567890}],
 		products: {
-			'com.hearth.plutonium.monthly': 'monthly',
-			'com.hearth.plutonium.yearly': 'yearly',
+			'com.hearth.ember.monthly': 'monthly',
+			'com.hearth.ember.yearly': 'yearly',
 			'com.hearth.gift.1month': 'gift_1_month',
 			'com.hearth.gift.1year': 'gift_1_year',
 		},
@@ -170,8 +170,8 @@ const testApiConfig: APIConfig = {
 		serviceAccountJsonPath: undefined,
 		tokenUri: 'https://oauth2.googleapis.com/token',
 		products: {
-			'plutonium:monthly': 'monthly',
-			'plutonium:yearly': 'yearly',
+			'ember:monthly': 'monthly',
+			'ember:yearly': 'yearly',
 			gift_1_month: 'gift_1_month',
 			gift_1_year: 'gift_1_year',
 		},

@@ -25,13 +25,13 @@ const YOU_VE_REACHED_THE_MAXIMUM_NUMBER_OF_BOOKMARKS_DESCRIPTOR = msg({
 const YOU_VE_REACHED_THE_MAXIMUM_NUMBER_OF_BOOKMARKS_2_DESCRIPTOR = msg({
 	message: "You're at {count, plural, one {# bookmark} other {# bookmarks}}. Remove one to add another.",
 	comment:
-		'Modal body shown when the bookmarks limit is reached and Plutonium is unavailable on this instance. {count} is the bookmark cap.',
+		'Modal body shown when the bookmarks limit is reached and Ember is unavailable on this instance. {count} is the bookmark cap.',
 });
 const YOU_VE_REACHED_THE_MAXIMUM_NUMBER_OF_BOOKMARKS_3_DESCRIPTOR = msg({
 	message:
 		"You're at the free cap of {count, plural, one {# bookmark} other {# bookmarks}}. {premiumProductName} bumps you up to {premiumCount, plural, one {# bookmark} other {# bookmarks}} — or remove one to add another.",
 	comment:
-		'Modal body shown when the free bookmarks limit is reached and Plutonium would increase it. {count} is the free cap, {premiumCount} the Plutonium cap.',
+		'Modal body shown when the free bookmarks limit is reached and Ember would increase it. {count} is the free cap, {premiumCount} the Ember cap.',
 });
 const UPGRADE_TO_DESCRIPTOR = msg({
 	message: 'Upgrade to {premiumProductName}',

@@ -380,9 +380,9 @@
 		"deadline_label": "Retrage disputa înainte de",
 		"deadline_value": "{warningDate, date, long}",
 		"footer_reason": "Ai primit acest e-mail din cauza unei dispute privind plata legate de contul tău {product_name}.",
-		"ground": "{product, select, plutonium {Secțiunea 4.4 din termenii și condițiile de utilizare} other {Secțiunea 9 din termenii Operator Pass}}",
+		"ground": "{product, select, ember {Secțiunea 4.4 din termenii și condițiile de utilizare} other {Secțiunea 9 din termenii Operator Pass}}",
 		"ground_label": "Temei",
-		"intro": "Ai contestat la banca sau la emitentul cardului tău plata {product, select, plutonium {pentru Plutonium} other {pentru Operator Pass}}. O persoană din echipa noastră a analizat disputa pe baza termenilor noștri și a constatat că este nejustificată.",
+		"intro": "Ai contestat la banca sau la emitentul cardului tău plata {product, select, ember {pentru Ember} other {pentru Operator Pass}}. O persoană din echipa noastră a analizat disputa pe baza termenilor noștri și a constatat că este nejustificată.",
 		"next_body": "Dacă tu ai făcut această plată, poți cere băncii sau emitentului cardului să retragă disputa. Dacă disputa este retrasă sau se închide fără ca banii să îți fie returnați, contului tău nu i se întâmplă nimic. Până se închide disputa, nu poți cumpăra nimic pe {product_name}.{privacy_email, select, null {} other { Poți cere oricând o copie a datelor tale scriind la <mail>{privacy_email}</mail>.}}",
 		"next_title": "Ce se întâmplă acum",
 		"order_date_label": "Data comenzii",
@@ -390,7 +390,7 @@
 		"order_number_label": "Număr comandă",
 		"signoff": "Echipa {product_name}",
 		"subject": "Despre disputa ta privind plata pe {product_name}",
-		"why_body": "Plata a fost făcută de tine sau de cineva căruia i-ai permis, am încasat suma corectă, {product, select, plutonium {Plutonium a fost furnizat conform descrierii} other {Operator Pass a fost livrat conform descrierii}}, nu rambursaserăm plata, iar termenul de retragere se încheiase când ai contestat-o.",
+		"why_body": "Plata a fost făcută de tine sau de cineva căruia i-ai permis, am încasat suma corectă, {product, select, ember {Ember a fost furnizat conform descrierii} other {Operator Pass a fost livrat conform descrierii}}, nu rambursaserăm plata, iar termenul de retragere se încheiase când ai contestat-o.",
 		"why_title": "De ce am considerat-o nejustificată"
 	},
 	"reauth_code": {

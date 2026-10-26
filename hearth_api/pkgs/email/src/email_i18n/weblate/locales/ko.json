@@ -380,9 +380,9 @@
 		"deadline_label": "분쟁 철회 기한",
 		"deadline_value": "{warningDate, date, long}",
 		"footer_reason": "{product_name} 계정과 관련된 결제 분쟁으로 인해 이 이메일을 받으셨어요.",
-		"ground": "{product, select, plutonium {서비스 약관 제4.4조} other {Operator Pass 약관 제9조}}",
+		"ground": "{product, select, ember {서비스 약관 제4.4조} other {Operator Pass 약관 제9조}}",
 		"ground_label": "근거",
-		"intro": "회원님이 은행 또는 카드사에 {product, select, plutonium {Plutonium 결제} other {Operator Pass 결제}}에 대한 분쟁을 제기했어요. 저희 팀 담당자가 저희 약관에 비추어 분쟁을 검토했고 부당하다고 판단했어요.",
+		"intro": "회원님이 은행 또는 카드사에 {product, select, ember {Ember 결제} other {Operator Pass 결제}}에 대한 분쟁을 제기했어요. 저희 팀 담당자가 저희 약관에 비추어 분쟁을 검토했고 부당하다고 판단했어요.",
 		"next_body": "이 결제를 직접 하셨다면 은행이나 카드사에 분쟁 철회를 요청할 수 있어요. 분쟁이 철회되거나 돈이 회원님에게 돌아가지 않은 채 종료되면 계정에는 아무 일도 생기지 않아요. 분쟁이 종료될 때까지는 {product_name}에서 아무것도 구매할 수 없어요.{privacy_email, select, null {} other { 언제든 <mail>{privacy_email}</mail>로 연락해 데이터 사본을 요청할 수 있어요.}}",
 		"next_title": "앞으로의 절차",
 		"order_date_label": "주문 날짜",
@@ -390,7 +390,7 @@
 		"order_number_label": "주문 번호",
 		"signoff": "{product_name} 팀 드림",
 		"subject": "{product_name} 결제 분쟁 안내",
-		"why_body": "결제는 회원님 본인 또는 회원님이 허락한 사람이 했고, 청구 금액은 정확했으며, {product, select, plutonium {Plutonium은 안내된 대로 제공되었고} other {Operator Pass는 안내된 대로 전달되었고}}, 저희가 결제 금액을 환불하지 않았으며, 분쟁을 제기했을 때 철회 기간은 이미 끝난 상태였어요.",
+		"why_body": "결제는 회원님 본인 또는 회원님이 허락한 사람이 했고, 청구 금액은 정확했으며, {product, select, ember {Ember은 안내된 대로 제공되었고} other {Operator Pass는 안내된 대로 전달되었고}}, 저희가 결제 금액을 환불하지 않았으며, 분쟁을 제기했을 때 철회 기간은 이미 끝난 상태였어요.",
 		"why_title": "부당하다고 판단한 이유"
 	},
 	"reauth_code": {

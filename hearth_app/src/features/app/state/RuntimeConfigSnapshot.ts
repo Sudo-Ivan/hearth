@@ -42,7 +42,7 @@ import {
 import type {LimitConfigSnapshot, LimitFilter, LimitRule} from '@hearth/limits/src/LimitTypes';
 
 const LIMIT_KEYS_SET = new Set<string>(LIMIT_KEYS);
-const DEFAULT_PREMIUM_PRODUCT_NAME = 'Plutonium';
+const DEFAULT_PREMIUM_PRODUCT_NAME = 'Ember';
 
 export interface RuntimeConfigIdentity {
 	readonly apiEndpoint: string;

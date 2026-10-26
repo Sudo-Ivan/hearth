@@ -87,7 +87,7 @@ export function getPaymentDisputeReviewBlockers(review: PaymentDisputeReviewRow)
 	if (review.perks_removed_at) {
 		blockers.push('perks_removed');
 	}
-	if (review.product === 'plutonium' && !underClosureTerms(review, disputedAt)) {
+	if (review.product === 'ember' && !underClosureTerms(review, disputedAt)) {
 		blockers.push('before_terms_effective');
 	}
 	return blockers;

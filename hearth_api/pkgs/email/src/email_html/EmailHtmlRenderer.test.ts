@@ -283,7 +283,7 @@ const EMAILS: Array<[string, string | null, Send]> = [
 				'payment_dispute_warning',
 				USER,
 				{
-					product: 'plutonium',
+					product: 'ember',
 					invoiceNumber: 'A1B2C3D4-0007',
 					orderDate: DATE,
 					amountMinor: 9900,

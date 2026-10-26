@@ -141,14 +141,14 @@ describe('ConfigLoader', () => {
 	});
 
 	test('rejects a Google Play product mapped to an unknown slot', async () => {
-		stubMinimalEnv({FLUXER_GOOGLE_PLAY_PRODUCTS: '{"plutonium:weekly":"weekly"}'});
-		await expect(loadConfig()).rejects.toThrow('Invalid FLUXER_GOOGLE_PLAY_PRODUCTS slot for plutonium:weekly: weekly');
+		stubMinimalEnv({FLUXER_GOOGLE_PLAY_PRODUCTS: '{"ember:weekly":"weekly"}'});
+		await expect(loadConfig()).rejects.toThrow('Invalid FLUXER_GOOGLE_PLAY_PRODUCTS slot for ember:weekly: weekly');
 	});
 
 	test('rejects a Google Play product key that does not fit its slot kind', async () => {
-		stubMinimalEnv({FLUXER_GOOGLE_PLAY_PRODUCTS: '{"plutonium":"monthly"}'});
+		stubMinimalEnv({FLUXER_GOOGLE_PLAY_PRODUCTS: '{"ember":"monthly"}'});
 		await expect(loadConfig()).rejects.toThrow(
-			'FLUXER_GOOGLE_PLAY_PRODUCTS key plutonium does not match its monthly slot',
+			'FLUXER_GOOGLE_PLAY_PRODUCTS key ember does not match its monthly slot',
 		);
 		resetConfig();
 		stubMinimalEnv({FLUXER_GOOGLE_PLAY_PRODUCTS: '{"gift:one":"gift_1_month"}'});

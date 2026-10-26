@@ -110,7 +110,7 @@ These are the values of the top-level `code`, and the [OpenAPI document](/http-a
 | `CANNOT_EDIT_OTHER_USER_MESSAGE` | You can't edit another user's message |
 | `CANNOT_EXECUTE_ON_DM` | This action can't be performed in a DM |
 | `CANNOT_MODIFY_SYSTEM_WEBHOOK` | You can't edit system messages |
-| `CANNOT_REDEEM_PLUTONIUM_WITH_VISIONARY` | You already have lifetime {premium_tier_name} |
+| `CANNOT_REDEEM_EMBER_WITH_VISIONARY` | You already have lifetime {premium_tier_name} |
 | `CANNOT_REPORT_GUILD` | You can't report this community |
 | `CANNOT_REPORT_OWN_GUILD` | You can't report your own community |
 | `CANNOT_REPORT_OWN_MESSAGE` | You can't report your own message |

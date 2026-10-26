@@ -5,7 +5,7 @@ import {NagbarButton} from '@app/features/app/components/layout/NagbarButton';
 import {NagbarContent} from '@app/features/app/components/layout/NagbarContent';
 import {NAGBAR_TONES, NagbarToneKind} from '@app/features/app/components/layout/NagbarTones';
 import RuntimeConfig from '@app/features/app/state/RuntimeConfig';
-import * as PlutoniumPageCommands from '@app/features/premium/commands/PlutoniumPageCommands';
+import * as EmberPageCommands from '@app/features/premium/commands/EmberPageCommands';
 import PremiumState from '@app/features/premium/state/PremiumState';
 import {getSubscriptionRenewalDate} from '@app/features/premium/utils/PremiumSubscriptionClassification';
 import {
@@ -27,7 +27,7 @@ import {useCallback, useMemo} from 'react';
 const PREMIUM_ONBOARDING_DEFAULT_MESSAGE_DESCRIPTOR = msg({
 	message: 'Welcome to {premiumProductFullName}. Explore your {premiumProductName} perks and manage your subscription.',
 	comment:
-		'Premium onboarding nagbar body. {premiumProductFullName} is the full premium product name, such as Hearth Plutonium. {premiumProductName} is the short product name.',
+		'Premium onboarding nagbar body. {premiumProductFullName} is the full premium product name, such as Hearth Ember. {premiumProductName} is the short product name.',
 });
 const PREMIUM_ONBOARDING_VISIONARY_MESSAGE_DESCRIPTOR = msg({
 	message:
@@ -137,7 +137,7 @@ export const PremiumOnboardingNagbar = observer(function PremiumOnboardingNagbar
 	const handleOpenPremiumSettings = useCallback(() => {
 		NagbarCommands.dismissNagbar('premiumOnboardingDismissed');
 		void UserCommands.update({has_dismissed_premium_onboarding: true});
-		PlutoniumPageCommands.openPlutoniumPage();
+		EmberPageCommands.openEmberPage();
 	}, []);
 	const handleDismiss = useCallback(() => {
 		NagbarCommands.dismissNagbar('premiumOnboardingDismissed');

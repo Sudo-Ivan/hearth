@@ -4,7 +4,7 @@ import type {UserID} from '@app/api/BrandedTypes';
 
 type Nullish<T> = T | null;
 
-export type PaymentDisputeProduct = 'operator_pass' | 'plutonium';
+export type PaymentDisputeProduct = 'operator_pass' | 'ember';
 
 type PaymentDisputeReviewStatus = 'open' | 'justified' | 'unjustified';
 

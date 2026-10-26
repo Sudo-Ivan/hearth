@@ -97,7 +97,7 @@ describe('Store billing with no store configuration', () => {
 			.execute();
 		await createBuilder(harness, account.token)
 			.post('/premium/store/google-play/purchases')
-			.body({purchase_token: 'not-a-token', product_id: 'plutonium', package_name: 'com.hearth'})
+			.body({purchase_token: 'not-a-token', product_id: 'ember', package_name: 'com.hearth'})
 			.expect(HTTP_STATUS.SERVICE_UNAVAILABLE, APIErrorCodes.STORE_BILLING_UNAVAILABLE)
 			.execute();
 	});

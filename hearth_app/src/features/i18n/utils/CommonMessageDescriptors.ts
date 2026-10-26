@@ -814,7 +814,7 @@ export const CHANNEL_ADDED_TO_FAVORITES_DESCRIPTOR = msg({
 });
 export const GET_PREMIUM_DESCRIPTOR = msg({
 	message: 'Get {premiumProductName}',
-	comment: 'Generic upsell CTA button to start the Plutonium purchase flow. Preserve {premiumProductName}.',
+	comment: 'Generic upsell CTA button to start the Ember purchase flow. Preserve {premiumProductName}.',
 });
 export const MENTION_COUNT_ARIA_DESCRIPTOR = msg({
 	message: '{mentionCount, plural, one {# mention} other {# mentions}}',
@@ -838,7 +838,7 @@ export const BACKUP_CODE_DESCRIPTOR = msg({
 });
 export const BACK_DESCRIPTOR = msg({
 	message: 'Back',
-	comment: 'Accessible label of the back button on the Plutonium page in the mobile layout.',
+	comment: 'Accessible label of the back button on the Ember page in the mobile layout.',
 });
 export const DONE_DESCRIPTOR = msg({
 	message: 'Done',
@@ -923,11 +923,11 @@ export const RETRY_SEARCH_DESCRIPTOR = msg({
 
 export const AVAILABLE_DESCRIPTOR = msg({
 	message: 'Available',
-	comment: 'Screen reader text for a check mark in the Plutonium page comparison table.',
+	comment: 'Screen reader text for a check mark in the Ember page comparison table.',
 });
 
 export const SAVE_PERCENT_DESCRIPTOR = msg({
 	message: 'Save {percent}%',
 	comment:
-		'Short caption next to a yearly price, in the gift purchase dialog and under the yearly Plutonium price, saying how much the yearly plan saves over paying monthly. Shown as written, never uppercased, so use normal sentence case. percent is a whole number such as 17.',
+		'Short caption next to a yearly price, in the gift purchase dialog and under the yearly Ember price, saying how much the yearly plan saves over paying monthly. Shown as written, never uppercased, so use normal sentence case. percent is a whole number such as 17.',
 });

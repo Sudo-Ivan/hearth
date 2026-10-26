@@ -16,7 +16,7 @@ import LanguageTab from '@app/features/user/components/modals/tabs/LanguageTab';
 import LinkedAccountsTab from '@app/features/user/components/modals/tabs/LinkedAccountsTab';
 import MyProfileTab from '@app/features/user/components/modals/tabs/MyProfileTab';
 import NotificationsTab from '@app/features/user/components/modals/tabs/NotificationsTab';
-import PlutoniumTab from '@app/features/user/components/modals/tabs/PlutoniumTab';
+import EmberTab from '@app/features/user/components/modals/tabs/EmberTab';
 import PrivacySafetyTab from '@app/features/user/components/modals/tabs/PrivacySafetyTab';
 import VoiceVideoTab from '@app/features/user/components/modals/tabs/VoiceVideoTab';
 import type {UserSettingsTabType} from '@app/features/user/components/settings_utils/SettingsSectionRegistry';
@@ -25,7 +25,7 @@ import type React from 'react';
 const DESKTOP_TAB_COMPONENTS: Partial<Record<UserSettingsTabType, React.ComponentType<Record<string, unknown>>>> = {
 	my_profile: MyProfileTab,
 	account_security: AccountSecurityTab,
-	plutonium: PlutoniumTab,
+	ember: EmberTab,
 	gift_inventory: GiftInventoryTab,
 	privacy_safety: PrivacySafetyTab,
 	authorized_apps: AccountSecurityTab,

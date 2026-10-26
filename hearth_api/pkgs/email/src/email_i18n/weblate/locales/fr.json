@@ -380,9 +380,9 @@
 		"deadline_label": "Retirer le litige avant le",
 		"deadline_value": "{warningDate, date, long}",
 		"footer_reason": "Vous avez reçu cet e-mail en raison d'un litige de paiement concernant votre compte {product_name}.",
-		"ground": "{product, select, plutonium {Section 4.4 des conditions d'utilisation} other {Section 9 des conditions de l'Operator Pass}}",
+		"ground": "{product, select, ember {Section 4.4 des conditions d'utilisation} other {Section 9 des conditions de l'Operator Pass}}",
 		"ground_label": "Motif",
-		"intro": "Vous avez contesté votre {product, select, plutonium {paiement de Plutonium} other {paiement de l'Operator Pass}} auprès de votre banque ou de l’émetteur de votre carte. Un membre de notre équipe a examiné le litige par rapport à nos conditions et l'a jugé injustifié.",
+		"intro": "Vous avez contesté votre {product, select, ember {paiement de Ember} other {paiement de l'Operator Pass}} auprès de votre banque ou de l’émetteur de votre carte. Un membre de notre équipe a examiné le litige par rapport à nos conditions et l'a jugé injustifié.",
 		"next_body": "Si vous avez effectué ce paiement, vous pouvez demander à votre banque ou à l’émetteur de votre carte de retirer le litige. Si le litige est retiré ou se termine sans que l’argent vous soit rendu, il n’arrive rien à votre compte. Tant que le litige n’est pas clos, vous ne pouvez rien acheter sur {product_name}.{privacy_email, select, null {} other { Vous pouvez demander une copie de vos données à tout moment en écrivant à <mail>{privacy_email}</mail>.}}",
 		"next_title": "Ce qui se passe maintenant",
 		"order_date_label": "Date de commande",
@@ -390,7 +390,7 @@
 		"order_number_label": "Numéro de commande",
 		"signoff": "L’équipe {product_name}",
 		"subject": "À propos de votre litige de paiement sur {product_name}",
-		"why_body": "Vous ou une personne que vous avez autorisée avez effectué le paiement, nous avons facturé le bon montant, {product, select, plutonium {Plutonium a été fourni comme décrit} other {l'Operator Pass a été livré comme décrit}}, nous n'avions pas remboursé le paiement, et la période de rétractation était terminée lorsque vous l'avez contesté.",
+		"why_body": "Vous ou une personne que vous avez autorisée avez effectué le paiement, nous avons facturé le bon montant, {product, select, ember {Ember a été fourni comme décrit} other {l'Operator Pass a été livré comme décrit}}, nous n'avions pas remboursé le paiement, et la période de rétractation était terminée lorsque vous l'avez contesté.",
 		"why_title": "Pourquoi nous l'avons jugé injustifié"
 	},
 	"reauth_code": {

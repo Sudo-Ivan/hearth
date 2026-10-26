@@ -6,7 +6,7 @@ import {
 	INERT_DOMAIN_MIGRATION_ASSIGNMENT,
 } from '@hearth/schema/src/domains/admin/DomainMigrationSchemas';
 import {GuildVisitsAssignmentResponse} from '@hearth/schema/src/domains/admin/GuildVisitsSchemas';
-import {PlutoniumPageAssignmentResponse} from '@hearth/schema/src/domains/admin/PlutoniumPageSchemas';
+import {EmberPageAssignmentResponse} from '@hearth/schema/src/domains/admin/EmberPageSchemas';
 import {INERT_VOICE_P2P_ASSIGNMENT, VoiceP2pAssignmentResponse} from '@hearth/schema/src/domains/admin/VoiceP2pSchemas';
 import {z} from 'zod';
 
@@ -45,7 +45,7 @@ export type ExperimentDeliveryConfigResponse = z.infer<typeof ExperimentDelivery
 const ExperimentAssignmentsSchema = z.object({
 	domain_migration: DomainMigrationAssignmentResponse.optional(),
 	channel_threads: ChannelThreadsAssignmentResponse.optional(),
-	plutonium_page: PlutoniumPageAssignmentResponse.optional(),
+	ember_page: EmberPageAssignmentResponse.optional(),
 	voice_p2p: VoiceP2pAssignmentResponse.optional(),
 	guild_visits: GuildVisitsAssignmentResponse.optional(),
 });

@@ -119,7 +119,7 @@ export function buildFakeSubscriptionPurchase(overrides: Partial<SubscriptionPur
 		acknowledgementState: 'ACKNOWLEDGEMENT_STATE_PENDING',
 		lineItems: [
 			{
-				productId: 'plutonium',
+				productId: 'ember',
 				expiryTime: futureIso(30 * 24 * 60 * 60 * 1000),
 				latestSuccessfulOrderId: 'GPA.1111-2222-3333-44444',
 				autoRenewingPlan: {autoRenewEnabled: true},

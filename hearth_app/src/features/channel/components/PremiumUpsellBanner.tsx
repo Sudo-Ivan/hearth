@@ -6,7 +6,7 @@ import Guilds from '@app/features/guild/state/Guilds';
 import * as PremiumModalCommands from '@app/features/premium/commands/PremiumModalCommands';
 import DismissedUpsell from '@app/features/premium/state/DismissedUpsell';
 import {getPremiumProductName} from '@app/features/premium/utils/PremiumUtils';
-import {PlutoniumUpsell} from '@app/features/ui/plutonium_upsell/PlutoniumUpsell';
+import {EmberUpsell} from '@app/features/ui/ember_upsell/EmberUpsell';
 import {msg} from '@lingui/core/macro';
 import {useLingui} from '@lingui/react/macro';
 import {observer} from 'mobx-react-lite';
@@ -55,7 +55,7 @@ export const PremiumUpsellBanner = observer(
 		const extraCommunityCount =
 			communityCount && communityCount > renderedCommunityIds.length ? communityCount - renderedCommunityIds.length : 0;
 		return (
-			<PlutoniumUpsell
+			<EmberUpsell
 				className={styles.banner}
 				onButtonClick={handleClick}
 				dismissible={true}
@@ -84,7 +84,7 @@ export const PremiumUpsellBanner = observer(
 						</div>
 					)}
 				</div>
-			</PlutoniumUpsell>
+			</EmberUpsell>
 		);
 	},
 );

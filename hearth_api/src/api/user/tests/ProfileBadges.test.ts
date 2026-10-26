@@ -162,7 +162,7 @@ describe('profile badges', () => {
 			.execute();
 		const masked = await profile(viewer, target);
 		expect(masked.premium_type).toBe(UserPremiumTypes.SUBSCRIPTION);
-		expect(kinds(masked)).toEqual(['plutonium']);
+		expect(kinds(masked)).toEqual(['ember']);
 	});
 
 	test('a restricted viewer only sees the flag badges', async () => {
@@ -195,7 +195,7 @@ describe('profile badges', () => {
 		await makeVisionary(account);
 		expect(kinds(await preview(account, {}))).toEqual(['visionary', 'visionary_number']);
 		expect(kinds(await preview(account, {premium_badge_hidden: true}))).toEqual([]);
-		expect(kinds(await preview(account, {premium_badge_masked: true}))).toEqual(['plutonium']);
+		expect(kinds(await preview(account, {premium_badge_masked: true}))).toEqual(['ember']);
 		expect(kinds(await preview(account, {premium_badge_sequence_hidden: true}))).toEqual(['visionary']);
 		const dateless = await preview(account, {premium_badge_timestamp_hidden: true});
 		expect(dateless.profile_badges[0]?.label).toBe('Hearth Visionary');

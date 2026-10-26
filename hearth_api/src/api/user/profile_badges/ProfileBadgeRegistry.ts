@@ -19,7 +19,7 @@ export type ProfileBadgeKind =
 	| 'operator_pass'
 	| 'visionary'
 	| 'visionary_number'
-	| 'plutonium'
+	| 'ember'
 	| 'premium';
 
 export interface ProfileBadgeEnvironment {
@@ -207,10 +207,10 @@ export const PROFILE_BADGE_REGISTRY: ReadonlyArray<ProfileBadgeDefinition> = [
 		},
 	},
 	{
-		kind: 'plutonium',
-		asset: PROFILE_BADGE_ASSETS.plutonium,
+		kind: 'ember',
+		asset: PROFILE_BADGE_ASSETS.ember,
 		availability: 'hosted',
-		href: marketing('plutonium'),
+		href: marketing('ember'),
 		qualify: (view) =>
 			view.premium.premiumType === UserPremiumTypes.SUBSCRIPTION ? {label: premiumLabel(view)} : null,
 	},

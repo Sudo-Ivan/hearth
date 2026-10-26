@@ -53,7 +53,7 @@ describe('GooglePlayDeveloperApiClient', () => {
 					subscriptionState: 'SUBSCRIPTION_STATE_SOMETHING_NEW',
 					acknowledgementState: 'ACKNOWLEDGEMENT_STATE_FUTURE',
 					futureField: {nested: true},
-					lineItems: [{productId: 'plutonium', offerPhase: {basePrice: {}}, offerDetails: {basePlanId: 'monthly'}}],
+					lineItems: [{productId: 'ember', offerPhase: {basePrice: {}}, offerDetails: {basePlanId: 'monthly'}}],
 				}),
 			),
 		);
@@ -161,19 +161,19 @@ describe('GooglePlayDeveloperApiClient', () => {
 
 	it('acknowledges a subscription with the account token and reports a repeat as invalid', async () => {
 		fake.setSubscription(PACKAGE, TOKEN, buildFakeSubscriptionPurchase());
-		await client.acknowledgeSubscription(PACKAGE, 'plutonium', TOKEN, {
+		await client.acknowledgeSubscription(PACKAGE, 'ember', TOKEN, {
 			obfuscatedAccountId: '0f1e2d3c-4b5a-4968-8776-655443322110',
 		});
 		expect(fake.spies.acknowledged).toEqual([
 			{
 				packageName: PACKAGE,
-				productId: 'plutonium',
+				productId: 'ember',
 				purchaseToken: TOKEN,
 				body: {externalAccountIds: {obfuscatedAccountId: '0f1e2d3c-4b5a-4968-8776-655443322110'}},
 			},
 		]);
 		expect(fake.getSubscription(TOKEN)?.acknowledgementState).toBe('ACKNOWLEDGEMENT_STATE_ACKNOWLEDGED');
-		const repeat = await captureError(client.acknowledgeSubscription(PACKAGE, 'plutonium', TOKEN));
+		const repeat = await captureError(client.acknowledgeSubscription(PACKAGE, 'ember', TOKEN));
 		expect(repeat).toMatchObject({kind: 'invalid_token', status: 400});
 		const reread = await client.getSubscription(PACKAGE, TOKEN);
 		expect(reread.acknowledgementState).toBe('ACKNOWLEDGEMENT_STATE_ACKNOWLEDGED');
@@ -181,7 +181,7 @@ describe('GooglePlayDeveloperApiClient', () => {
 
 	it('acknowledges without a body when no account token is given', async () => {
 		fake.setSubscription(PACKAGE, TOKEN, buildFakeSubscriptionPurchase());
-		await client.acknowledgeSubscription(PACKAGE, 'plutonium', TOKEN);
+		await client.acknowledgeSubscription(PACKAGE, 'ember', TOKEN);
 		expect(fake.spies.acknowledged[0]?.body).toEqual({});
 	});
 

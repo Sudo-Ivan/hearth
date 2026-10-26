@@ -33,7 +33,7 @@ import {HttpResponse, http} from 'msw';
 import {afterAll, afterEach, beforeAll, beforeEach, describe, expect, it} from 'vitest';
 
 const PACKAGE_NAME = 'com.hearth';
-const SUBSCRIPTION_PRODUCT = 'plutonium';
+const SUBSCRIPTION_PRODUCT = 'ember';
 const STRIPE_CUSTOMER_ID = 'cus_play_refund';
 
 describe('Google Play self-service refunds', () => {

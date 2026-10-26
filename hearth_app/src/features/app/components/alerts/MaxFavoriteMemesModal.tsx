@@ -19,13 +19,13 @@ const YOU_VE_REACHED_THE_MAXIMUM_LIMIT_OF_THIS_DESCRIPTOR = msg({
 	message:
 		"You're at the cap of {count, plural, one {# saved media item} other {# saved media items}} — your instance admin sets this limit.",
 	comment:
-		'Modal body shown when the favorite-memes limit is reached on a self-hosted instance with no Plutonium upgrade path. {count} is the saved media cap.',
+		'Modal body shown when the favorite-memes limit is reached on a self-hosted instance with no Ember upgrade path. {count} is the saved media cap.',
 });
 const YOU_VE_REACHED_THE_MAXIMUM_LIMIT_OF_FOR_DESCRIPTOR = msg({
 	message:
 		"You're at the free cap of {count, plural, one {# saved media item} other {# saved media items}}. {premiumProductName} bumps you up to {premiumCount, plural, one {# saved media item} other {# saved media items}}.",
 	comment:
-		'Modal body shown when the free favorite-memes limit is reached and Plutonium would increase it. {count} is the free cap, {premiumCount} the Plutonium cap.',
+		'Modal body shown when the free favorite-memes limit is reached and Ember would increase it. {count} is the free cap, {premiumCount} the Ember cap.',
 });
 const UPGRADE_TO_DESCRIPTOR = msg({
 	message: 'Upgrade to {premiumProductName}',

@@ -42,7 +42,7 @@ describe('buildGooglePlaySubscriptionSnapshot', () => {
 			subscriptionSnapshot({
 				regionCode: 'BR',
 				externalAccountIdentifiers: {obfuscatedExternalAccountId: '0f1e2d3c-4b5a-4968-8776-655443322110'},
-				lineItems: [lineItem('plutonium', 'yearly', FUTURE)],
+				lineItems: [lineItem('ember', 'yearly', FUTURE)],
 			}),
 		).toEqual({
 			storeKey: `google_play:${TOKEN}`,
@@ -51,10 +51,10 @@ describe('buildGooglePlaySubscriptionSnapshot', () => {
 			slot: 'yearly',
 			environment: 'production',
 			appId: PACKAGE,
-			productId: 'plutonium',
+			productId: 'ember',
 			basePlanId: 'yearly',
 			storeReference: TOKEN,
-			latestTransactionId: 'GPA.plutonium.yearly',
+			latestTransactionId: 'GPA.ember.yearly',
 			appTransactionId: null,
 			accountToken: '0f1e2d3c-4b5a-4968-8776-655443322110',
 			ownershipType: null,
@@ -64,7 +64,7 @@ describe('buildGooglePlaySubscriptionSnapshot', () => {
 			expiresAt: new Date(FUTURE),
 			graceEndsAt: null,
 			autoRenew: true,
-			autoRenewProductId: 'plutonium',
+			autoRenewProductId: 'ember',
 			startedAt: new Date('2026-09-01T00:00:00.000Z'),
 			purchasedAt: new Date('2026-09-01T00:00:00.000Z'),
 			revokedAt: null,
@@ -198,7 +198,7 @@ describe('buildGooglePlaySubscriptionSnapshot', () => {
 		({subscriptionState, expiryTime, state, entitled, graceEndsAt}) => {
 			const snapshot = subscriptionSnapshot({
 				subscriptionState,
-				lineItems: [lineItem('plutonium', 'monthly', expiryTime)],
+				lineItems: [lineItem('ember', 'monthly', expiryTime)],
 			});
 			expect(snapshot?.state).toBe(state);
 			expect(snapshot?.storeState).toBe(subscriptionState);
@@ -209,7 +209,7 @@ describe('buildGooglePlaySubscriptionSnapshot', () => {
 	);
 
 	it('treats an active purchase past its expiry as silent grace with no explicit grace end', () => {
-		const snapshot = subscriptionSnapshot({lineItems: [lineItem('plutonium', 'monthly', PAST)]});
+		const snapshot = subscriptionSnapshot({lineItems: [lineItem('ember', 'monthly', PAST)]});
 		expect(snapshot).toMatchObject({state: 'active', providerEntitled: true, graceEndsAt: null});
 		expect(snapshot?.expiresAt).toEqual(new Date(PAST));
 	});
@@ -225,7 +225,7 @@ describe('buildGooglePlaySubscriptionSnapshot', () => {
 
 	it('never entitles an active purchase without an expiry', () => {
 		const snapshot = subscriptionSnapshot({
-			lineItems: [{productId: 'plutonium', offerDetails: {basePlanId: 'monthly'}}],
+			lineItems: [{productId: 'ember', offerDetails: {basePlanId: 'monthly'}}],
 		});
 		expect(snapshot).toMatchObject({state: 'active', providerEntitled: false, expiresAt: null});
 	});
@@ -234,27 +234,27 @@ describe('buildGooglePlaySubscriptionSnapshot', () => {
 		const snapshot = subscriptionSnapshot({
 			lineItems: [
 				lineItem('addon', 'monthly', '2027-09-29T12:00:00.000Z'),
-				lineItem('plutonium', 'weekly', '2027-09-29T12:00:00.000Z'),
-				lineItem('plutonium', 'monthly', FUTURE),
+				lineItem('ember', 'weekly', '2027-09-29T12:00:00.000Z'),
+				lineItem('ember', 'monthly', FUTURE),
 			],
 		});
-		expect(snapshot).toMatchObject({productId: 'plutonium', basePlanId: 'monthly', slot: 'monthly'});
+		expect(snapshot).toMatchObject({productId: 'ember', basePlanId: 'monthly', slot: 'monthly'});
 		expect(snapshot?.expiresAt).toEqual(new Date(FUTURE));
 	});
 
 	it('picks the configured line item with the latest expiry', () => {
 		const snapshot = subscriptionSnapshot({
 			lineItems: [
-				lineItem('plutonium', 'monthly', FUTURE),
-				lineItem('plutonium', 'yearly', '2027-09-29T12:00:00.000Z'),
+				lineItem('ember', 'monthly', FUTURE),
+				lineItem('ember', 'yearly', '2027-09-29T12:00:00.000Z'),
 			],
 		});
-		expect(snapshot).toMatchObject({slot: 'yearly', latestTransactionId: 'GPA.plutonium.yearly'});
+		expect(snapshot).toMatchObject({slot: 'yearly', latestTransactionId: 'GPA.ember.yearly'});
 	});
 
 	it('returns null when no line item is a configured subscription', () => {
 		expect(subscriptionSnapshot({lineItems: [lineItem('addon', 'monthly', FUTURE)]})).toBeNull();
-		expect(subscriptionSnapshot({lineItems: [lineItem('plutonium', undefined, FUTURE)]})).toBeNull();
+		expect(subscriptionSnapshot({lineItems: [lineItem('ember', undefined, FUTURE)]})).toBeNull();
 		expect(subscriptionSnapshot({lineItems: [lineItem('gift_1_month', 'monthly', FUTURE)]})).toBeNull();
 		expect(subscriptionSnapshot({lineItems: []})).toBeNull();
 		expect(subscriptionSnapshot({lineItems: undefined})).toBeNull();
@@ -299,7 +299,7 @@ describe('buildGooglePlaySubscriptionSnapshot', () => {
 	});
 
 	it('reads auto renewal from the plan type', () => {
-		const base = {productId: 'plutonium', expiryTime: FUTURE, offerDetails: {basePlanId: 'monthly'}};
+		const base = {productId: 'ember', expiryTime: FUTURE, offerDetails: {basePlanId: 'monthly'}};
 		expect(subscriptionSnapshot({lineItems: [{...base, autoRenewingPlan: {}}]})?.autoRenew).toBe(false);
 		expect(subscriptionSnapshot({lineItems: [{...base, autoRenewingPlan: {autoRenewEnabled: false}}]})?.autoRenew).toBe(
 			false,
@@ -311,16 +311,16 @@ describe('buildGooglePlaySubscriptionSnapshot', () => {
 	it('reports the product a deferred replacement renews into', () => {
 		const snapshot = subscriptionSnapshot({
 			lineItems: [
-				{...lineItem('plutonium', 'monthly', FUTURE), deferredItemReplacement: {productId: 'plutonium_plus'}},
+				{...lineItem('ember', 'monthly', FUTURE), deferredItemReplacement: {productId: 'ember_plus'}},
 			],
 		});
-		expect(snapshot?.autoRenewProductId).toBe('plutonium_plus');
+		expect(snapshot?.autoRenewProductId).toBe('ember_plus');
 	});
 
 	it('falls back to the deprecated latest order id', () => {
 		const snapshot = subscriptionSnapshot({
 			latestOrderId: 'GPA.legacy',
-			lineItems: [{productId: 'plutonium', expiryTime: FUTURE, offerDetails: {basePlanId: 'monthly'}}],
+			lineItems: [{productId: 'ember', expiryTime: FUTURE, offerDetails: {basePlanId: 'monthly'}}],
 		});
 		expect(snapshot?.latestTransactionId).toBe('GPA.legacy');
 	});
@@ -434,7 +434,7 @@ describe('buildGooglePlayProductSnapshot', () => {
 
 	it('only accepts configured gift products', () => {
 		expect(productSnapshot({productLineItem: [{productId: 'gems_100'}]})).toBeNull();
-		expect(productSnapshot({productLineItem: [{productId: 'plutonium'}]})).toBeNull();
+		expect(productSnapshot({productLineItem: [{productId: 'ember'}]})).toBeNull();
 		expect(productSnapshot({productLineItem: []})).toBeNull();
 		expect(productSnapshot({productLineItem: [{productId: 'gems_100'}, {productId: 'gift_1_year'}]})?.slot).toBe(
 			'gift_1_year',

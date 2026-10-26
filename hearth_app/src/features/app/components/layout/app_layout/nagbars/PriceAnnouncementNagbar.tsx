@@ -4,7 +4,7 @@ import {Nagbar} from '@app/features/app/components/layout/Nagbar';
 import {NagbarButton} from '@app/features/app/components/layout/NagbarButton';
 import {NagbarContent} from '@app/features/app/components/layout/NagbarContent';
 import {NAGBAR_TONES, NagbarToneKind} from '@app/features/app/components/layout/NagbarTones';
-import * as PlutoniumPageCommands from '@app/features/premium/commands/PlutoniumPageCommands';
+import * as EmberPageCommands from '@app/features/premium/commands/EmberPageCommands';
 import {resolvePriceAnnouncementCampaign} from '@app/features/premium/config/PriceAnnouncementCampaign';
 import PremiumState from '@app/features/premium/state/PremiumState';
 import {VIEW_PLANS_DESCRIPTOR} from '@app/features/premium/utils/PremiumMessageDescriptors';
@@ -27,7 +27,7 @@ export const PriceAnnouncementNagbar = observer(function PriceAnnouncementNagbar
 		if (campaignId != null) {
 			NagbarState.dismissPriceAnnouncement(campaignId);
 		}
-		PlutoniumPageCommands.openPlutoniumPage();
+		EmberPageCommands.openEmberPage();
 	}, [campaignId]);
 	const handleDismiss = useCallback(() => {
 		if (campaignId == null) return;

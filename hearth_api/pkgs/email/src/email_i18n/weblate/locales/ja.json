@@ -380,9 +380,9 @@
 		"deadline_label": "チャージバックの取り下げ期限",
 		"deadline_value": "{warningDate, date, long}",
 		"footer_reason": "このメールは、{product_name}アカウントに関するチャージバックのため送信されました。",
-		"ground": "{product, select, plutonium {利用規約第4.4条} other {Operator Pass利用規約第9条}}",
+		"ground": "{product, select, ember {利用規約第4.4条} other {Operator Pass利用規約第9条}}",
 		"ground_label": "根拠",
-		"intro": "銀行またはカード会社を通じて、{product, select, plutonium {Plutoniumのお支払い} other {Operator Passのお支払い}}に対するチャージバックを申請されました。当社の担当者が当社の規約に照らしてこのチャージバックを確認し、不当であると判断しました。",
+		"intro": "銀行またはカード会社を通じて、{product, select, ember {Emberのお支払い} other {Operator Passのお支払い}}に対するチャージバックを申請されました。当社の担当者が当社の規約に照らしてこのチャージバックを確認し、不当であると判断しました。",
 		"next_body": "このお支払いをご自身で行った場合は、銀行またはカード会社にチャージバックの取り下げを依頼できます。チャージバックが取り下げられた場合、またはお金があなたに戻らないまま終了した場合、アカウントには何の影響もありません。チャージバックが終了するまで、{product_name}では何も購入できません。{privacy_email, select, null {} other {<mail>{privacy_email}</mail>に連絡すれば、いつでもあなたのデータのコピーを請求できます。}}",
 		"next_title": "今後の流れ",
 		"order_date_label": "注文日",
@@ -390,7 +390,7 @@
 		"order_number_label": "注文番号",
 		"signoff": "{product_name}チーム",
 		"subject": "{product_name}でのチャージバックについて",
-		"why_body": "お支払いはあなたご本人または許可した人が行い、請求額は正しく、{product, select, plutonium {Plutoniumは説明どおりに提供されており} other {Operator Passは説明どおりにお届けしており}}、当社はそのお支払いを返金しておらず、チャージバックの申請時には撤回期間がすでに終了していました。",
+		"why_body": "お支払いはあなたご本人または許可した人が行い、請求額は正しく、{product, select, ember {Emberは説明どおりに提供されており} other {Operator Passは説明どおりにお届けしており}}、当社はそのお支払いを返金しておらず、チャージバックの申請時には撤回期間がすでに終了していました。",
 		"why_title": "不当と判断した理由"
 	},
 	"reauth_code": {

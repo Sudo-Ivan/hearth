@@ -11,8 +11,8 @@ const logger = new Logger('PurchaseIntent');
 const PURCHASE_INTENT_KEY = 'hearth.purchase_intent';
 
 const PRODUCT_PLANS: Readonly<Record<string, PurchasePlan>> = Object.freeze({
-	'plutonium-monthly': 'monthly',
-	'plutonium-yearly': 'yearly',
+	'ember-monthly': 'monthly',
+	'ember-yearly': 'yearly',
 	'gift-1-month': 'gift_1_month',
 	'gift-1-year': 'gift_1_year',
 });

@@ -314,7 +314,7 @@ function getGroupId(name: string): string {
 	if (name.startsWith('--markup') || name.includes('spoiler')) return 'markup';
 	if (name.startsWith('--alert')) return 'alerts';
 	if (name.startsWith('--status')) return 'status';
-	if (name.startsWith('--brand') || name.startsWith('--accent') || name.startsWith('--plutonium')) return 'brand';
+	if (name.startsWith('--brand') || name.startsWith('--accent') || name.startsWith('--ember')) return 'brand';
 	if (name.startsWith('--text')) return 'text';
 	if (name.includes('border') || name.includes('focus') || name.includes('radius')) return 'borders';
 	if (name.includes('layout') || name.includes('spacing') || name.includes('padding') || name.includes('gap'))

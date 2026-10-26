@@ -19,8 +19,8 @@ import {server} from '@app/api/test/msw/server';
 import {ms} from 'itty-time';
 import {afterEach, beforeAll, beforeEach, describe, expect, it} from 'vitest';
 
-const MONTHLY = 'com.hearth.plutonium.monthly';
-const YEARLY = 'com.hearth.plutonium.yearly';
+const MONTHLY = 'com.hearth.ember.monthly';
+const YEARLY = 'com.hearth.ember.yearly';
 const GIFT_MONTH = 'com.hearth.gift.1month';
 const GIFT_YEAR = 'com.hearth.gift.1year';
 const ORIGINAL_ID = '2000000100000001';

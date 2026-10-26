@@ -32,7 +32,7 @@ const PURCHASER_ID = createUserID(1001n);
 function review(overrides: Partial<PaymentDisputeReviewRow> = {}): PaymentDisputeReviewRow {
 	return {
 		dispute_id: 'dp_test_1',
-		product: 'plutonium',
+		product: 'ember',
 		order_id: 'cs_test_1',
 		invoice_number: 'ABCD1234-0001',
 		purchaser_id: PURCHASER_ID,
@@ -86,7 +86,7 @@ function warnedLostReview(closedAt: Date): PaymentDisputeReviewRow {
 }
 
 const SUBJECT: PaymentDisputeSubject = {
-	product: 'plutonium',
+	product: 'ember',
 	orderId: 'cs_test_1',
 	invoiceNumber: 'ABCD1234-0001',
 	purchaserId: PURCHASER_ID,
@@ -171,7 +171,7 @@ afterEach(() => {
 });
 
 describe('the closure terms effective date', () => {
-	test('blocks every Plutonium review while the date is unset, and no closure follows a loss', () => {
+	test('blocks every Ember review while the date is unset, and no closure follows a loss', () => {
 		Config.paymentDisputes.closureEffectiveAt = null;
 		expect(getPaymentDisputeReviewBlockers(review())).toEqual(['before_terms_effective']);
 		expect(shouldCloseAfterPaymentDispute(warnedLostReview(WARNING_DEADLINE))).toBe(false);
@@ -324,7 +324,7 @@ describe('payment dispute review alerts through SMTP', () => {
 					auditLogReason: 'Payment dispute opened, purchases are blocked until it closes and a person reviews it',
 					metadata: new Map([
 						['dispute_id', 'dp_test_1'],
-						['product', 'plutonium'],
+						['product', 'ember'],
 						['order_id', 'cs_test_1'],
 						['reason', 'general'],
 						['evidence_due_by', ''],
@@ -335,9 +335,9 @@ describe('payment dispute review alerts through SMTP', () => {
 			]);
 			expect(smtp.delivered).toEqual([]);
 			expect(smtp.attempts).toMatchObject([{from: '<reviews@example.com>', to: '<support@hearth.com>'}]);
-			expect(smtp.attempts[0].body).toContain('Subject: Plutonium payment dispute dp_test_1');
+			expect(smtp.attempts[0].body).toContain('Subject: Ember payment dispute dp_test_1');
 			expect(smtp.attempts[0].body).toContain(
-				'A Plutonium payment dispute opened and needs a review.\r\n\r\nDispute: dp_test_1\r\nInvoice: ABCD1234-0001\r\nAccount: 1001\r\nAmount: $4.99\r\nReason: general\r\nEvidence due: not given\r\nNothing in the terms rules out finding it unjustified.\r\n\r\nReview it: https://admin.example.test/payment-disputes',
+				'A Ember payment dispute opened and needs a review.\r\n\r\nDispute: dp_test_1\r\nInvoice: ABCD1234-0001\r\nAccount: 1001\r\nAmount: $4.99\r\nReason: general\r\nEvidence due: not given\r\nNothing in the terms rules out finding it unjustified.\r\n\r\nReview it: https://admin.example.test/payment-disputes',
 			);
 
 			smtp.release();

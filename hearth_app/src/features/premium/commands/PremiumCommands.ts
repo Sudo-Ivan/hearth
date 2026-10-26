@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import {showPremiumActionErrorModal} from '@app/features/app/components/dialogs/components/plutonium/utils/PremiumActionErrorModal';
+import {showPremiumActionErrorModal} from '@app/features/app/components/dialogs/components/ember/utils/PremiumActionErrorModal';
 import {Endpoints} from '@app/features/app/constants/Endpoints';
 import GeoIP from '@app/features/app/state/GeoIP';
 import {whenDateOfBirthStepClosed} from '@app/features/auth/state/DateOfBirthStep';

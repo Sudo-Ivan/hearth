@@ -10,7 +10,7 @@ function auditReview(disputeId: string, purchaserId: UserID, status: PaymentDisp
 	const now = new Date();
 	return {
 		dispute_id: disputeId,
-		product: 'plutonium',
+		product: 'ember',
 		order_id: `cs_${disputeId}`,
 		invoice_number: null,
 		purchaser_id: purchaserId,
@@ -84,7 +84,7 @@ export const PaymentDisputeAdminAuditCases: ReadonlyArray<AdminAuditCoverageCase
 					targetId: target.userId,
 					metadata: {
 						dispute_id: 'dp_audit_decision',
-						product: 'plutonium',
+						product: 'ember',
 						decision: 'justified',
 						status: 'justified',
 						warning_email_sent: 'false',
@@ -113,7 +113,7 @@ export const PaymentDisputeAdminAuditCases: ReadonlyArray<AdminAuditCoverageCase
 					targetId: target.userId,
 					metadata: {
 						dispute_id: 'dp_audit_reversal',
-						product: 'plutonium',
+						product: 'ember',
 						decision_ended: 'false',
 					},
 				},

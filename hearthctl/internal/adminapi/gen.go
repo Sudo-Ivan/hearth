@@ -1522,7 +1522,7 @@ type AdminProfileBadgeResponse struct {
 	// Href Absolute URL to open when the badge is clicked, or null
 	Href *string `json:"href"`
 
-	// Kind Stable badge key. Known values: staff, partner, bug_hunter, operator_pass, visionary, visionary_number, plutonium, and premium on self-hosted instances. Clients must render unknown values from the other fields.
+	// Kind Stable badge key. Known values: staff, partner, bug_hunter, operator_pass, visionary, visionary_number, ember, and premium on self-hosted instances. Clients must render unknown values from the other fields.
 	Kind string `json:"kind"`
 
 	// Label Full badge description, localized for the viewer. Use it as the tooltip, and as alt text when there is no caption

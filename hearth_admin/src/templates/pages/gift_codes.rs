@@ -27,7 +27,7 @@ pub struct GiftCodesPremium {
 
 impl GiftCodesPremium {
     pub fn from_branding(self_hosted: bool, branding: Option<&PremiumBranding>) -> Self {
-        let default_name = if self_hosted { "Premium" } else { "Plutonium" };
+        let default_name = if self_hosted { "Premium" } else { "Ember" };
         Self {
             name: branding
                 .and_then(|branding| branding.name.as_deref())

@@ -380,9 +380,9 @@
 		"deadline_label": "Træk indsigelsen tilbage inden",
 		"deadline_value": "{warningDate, date, long}",
 		"footer_reason": "Du har modtaget denne e-mail på grund af en indsigelse mod en betaling vedrørende din {product_name}-konto.",
-		"ground": "{product, select, plutonium {Afsnit 4.4 i servicevilkårene} other {Afsnit 9 i vilkårene for Operator Pass}}",
+		"ground": "{product, select, ember {Afsnit 4.4 i servicevilkårene} other {Afsnit 9 i vilkårene for Operator Pass}}",
 		"ground_label": "Grundlag",
-		"intro": "Du har gjort indsigelse mod din {product, select, plutonium {Plutonium-betaling} other {Operator Pass-betaling}} hos din bank eller kortudsteder. En person fra vores team gennemgik indsigelsen i henhold til vores vilkår og fandt den uberettiget.",
+		"intro": "Du har gjort indsigelse mod din {product, select, ember {Ember-betaling} other {Operator Pass-betaling}} hos din bank eller kortudsteder. En person fra vores team gennemgik indsigelsen i henhold til vores vilkår og fandt den uberettiget.",
 		"next_body": "Hvis du selv foretog denne betaling, kan du bede din bank eller kortudsteder om at trække indsigelsen tilbage. Hvis indsigelsen trækkes tilbage eller lukkes, uden at du får pengene tilbage, sker der intet med din konto. Indtil indsigelsen er lukket, kan du ikke købe noget på {product_name}.{privacy_email, select, null {} other { Du kan når som helst bede om en kopi af dine data ved at skrive til <mail>{privacy_email}</mail>.}}",
 		"next_title": "Hvad der sker nu",
 		"order_date_label": "Ordredato",
@@ -390,7 +390,7 @@
 		"order_number_label": "Ordrenummer",
 		"signoff": "Teamet bag {product_name}",
 		"subject": "Om din indsigelse mod en betaling på {product_name}",
-		"why_body": "Du eller en person, du har givet tilladelse til det, foretog betalingen, vi opkrævede det korrekte beløb, {product, select, plutonium {Plutonium blev leveret som beskrevet} other {Operator Pass blev leveret som beskrevet}}, vi havde ikke refunderet betalingen, og fortrydelsesperioden var udløbet, da du gjorde indsigelse.",
+		"why_body": "Du eller en person, du har givet tilladelse til det, foretog betalingen, vi opkrævede det korrekte beløb, {product, select, ember {Ember blev leveret som beskrevet} other {Operator Pass blev leveret som beskrevet}}, vi havde ikke refunderet betalingen, og fortrydelsesperioden var udløbet, da du gjorde indsigelse.",
 		"why_title": "Hvorfor vi fandt den uberettiget"
 	},
 	"reauth_code": {

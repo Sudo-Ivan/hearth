@@ -380,9 +380,9 @@
 		"deadline_label": "Peru kiista ennen",
 		"deadline_value": "{warningDate, date, long}",
 		"footer_reason": "Sait tämän sähköpostin {product_name}-tiliäsi koskevan maksukiistan vuoksi.",
-		"ground": "{product, select, plutonium {Käyttöehtojen kohta 4.4} other {Operator Pass -ehtojen kohta 9}}",
+		"ground": "{product, select, ember {Käyttöehtojen kohta 4.4} other {Operator Pass -ehtojen kohta 9}}",
 		"ground_label": "Peruste",
-		"intro": "Kiistit {product, select, plutonium {Plutonium-maksusi} other {Operator Pass -maksusi}} pankkisi tai korttiyhtiösi kautta. Tiimimme jäsen arvioi kiistan ehtojemme perusteella ja totesi sen perusteettomaksi.",
+		"intro": "Kiistit {product, select, ember {Ember-maksusi} other {Operator Pass -maksusi}} pankkisi tai korttiyhtiösi kautta. Tiimimme jäsen arvioi kiistan ehtojemme perusteella ja totesi sen perusteettomaksi.",
 		"next_body": "Jos teit tämän maksun, voit pyytää pankkiasi tai korttiyhtiötäsi perumaan kiistan. Jos kiista perutaan tai se päättyy ilman, että rahat palautetaan sinulle, tilillesi ei tapahdu mitään. Ennen kuin kiista on päättynyt, et voi ostaa mitään palvelussa {product_name}.{privacy_email, select, null {} other { Voit milloin tahansa pyytää kopion tiedoistasi kirjoittamalla osoitteeseen <mail>{privacy_email}</mail>.}}",
 		"next_title": "Mitä nyt tapahtuu",
 		"order_date_label": "Tilauspäivämäärä",
@@ -390,7 +390,7 @@
 		"order_number_label": "Tilausnumero",
 		"signoff": "{product_name}-tiimi",
 		"subject": "Maksukiistastasi {product_name}-palvelussa",
-		"why_body": "Maksun teit sinä tai joku, jolle annoit luvan, veloitimme oikean summan, {product, select, plutonium {Plutonium tarjottiin kuvatulla tavalla} other {Operator Pass toimitettiin kuvatulla tavalla}}, emme olleet hyvittäneet maksua, ja peruuttamisaika oli päättynyt, kun kiistit maksun.",
+		"why_body": "Maksun teit sinä tai joku, jolle annoit luvan, veloitimme oikean summan, {product, select, ember {Ember tarjottiin kuvatulla tavalla} other {Operator Pass toimitettiin kuvatulla tavalla}}, emme olleet hyvittäneet maksua, ja peruuttamisaika oli päättynyt, kun kiistit maksun.",
 		"why_title": "Miksi totesimme sen perusteettomaksi"
 	},
 	"reauth_code": {

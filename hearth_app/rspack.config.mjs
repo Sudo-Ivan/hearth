@@ -764,9 +764,9 @@ export default () => {
 								enforce: true,
 								chunks: (chunk) => !chunk.canBeInitial() && !isWorkerPath({chunk}),
 							},
-							plutoniumAtom: {
+							emberAtom: {
 								test: /[\\/]node_modules[\\/]three[\\/]/,
-								name: 'plutonium-atom',
+								name: 'ember-atom',
 								priority: 54,
 								reuseExistingChunk: true,
 								enforce: true,

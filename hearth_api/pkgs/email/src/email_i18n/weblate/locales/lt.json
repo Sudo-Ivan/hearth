@@ -380,9 +380,9 @@
 		"deadline_label": "Atšauk ginčą iki",
 		"deadline_value": "{warningDate, date, long}",
 		"footer_reason": "Šį el. laišką gavai dėl mokėjimo ginčo, susijusio su tavo {product_name} paskyra.",
-		"ground": "{product, select, plutonium {Paslaugų teikimo sąlygų 4.4 skirsnis} other {Operator Pass sąlygų 9 skirsnis}}",
+		"ground": "{product, select, ember {Paslaugų teikimo sąlygų 4.4 skirsnis} other {Operator Pass sąlygų 9 skirsnis}}",
 		"ground_label": "Pagrindas",
-		"intro": "Savo banke arba pas kortelės išdavėją užginčijai savo {product, select, plutonium {Plutonium mokėjimą} other {Operator Pass mokėjimą}}. Mūsų komandos narys patikrino ginčą pagal mūsų sąlygas ir nustatė, kad jis nepagrįstas.",
+		"intro": "Savo banke arba pas kortelės išdavėją užginčijai savo {product, select, ember {Ember mokėjimą} other {Operator Pass mokėjimą}}. Mūsų komandos narys patikrino ginčą pagal mūsų sąlygas ir nustatė, kad jis nepagrįstas.",
 		"next_body": "Jei šį mokėjimą atlikai tu, gali paprašyti savo banko ar kortelės išdavėjo atšaukti ginčą. Jei ginčas bus atšauktas arba baigsis negrąžinus tau pinigų, tavo paskyrai nieko nenutiks. Kol ginčas neužbaigtas, {product_name} platformoje nieko negali pirkti.{privacy_email, select, null {} other { Savo duomenų kopijos gali bet kada paprašyti parašęs adresu <mail>{privacy_email}</mail>.}}",
 		"next_title": "Kas vyksta dabar",
 		"order_date_label": "Užsakymo data",
@@ -390,7 +390,7 @@
 		"order_number_label": "Užsakymo numeris",
 		"signoff": "{product_name} komanda",
 		"subject": "Dėl tavo {product_name} mokėjimo ginčo",
-		"why_body": "Mokėjimą atlikai tu arba asmuo, kuriam leidai, nuskaitėme teisingą sumą, {product, select, plutonium {Plutonium suteiktas taip, kaip aprašyta} other {Operator Pass pristatytas taip, kaip aprašyta}}, mokėjimo negrąžinome, o kai jį užginčijai, sutarties atsisakymo laikotarpis jau buvo pasibaigęs.",
+		"why_body": "Mokėjimą atlikai tu arba asmuo, kuriam leidai, nuskaitėme teisingą sumą, {product, select, ember {Ember suteiktas taip, kaip aprašyta} other {Operator Pass pristatytas taip, kaip aprašyta}}, mokėjimo negrąžinome, o kai jį užginčijai, sutarties atsisakymo laikotarpis jau buvo pasibaigęs.",
 		"why_title": "Kodėl nusprendėme, kad jis nepagrįstas"
 	},
 	"reauth_code": {

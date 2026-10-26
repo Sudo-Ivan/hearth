@@ -483,7 +483,7 @@
 	"permissions.user_owns_guilds": "Dieser Benutzer besitzt Communitys.",
 	"premium_and_plans.animated_avatars_require_premium": "Animierte Avatare erfordern Premium.",
 	"premium_and_plans.banners_require_premium": "Banner erfordern Premium.",
-	"premium_and_plans.cannot_redeem_plutonium_with_visionary": "Du hast {premium_tier_name} bereits auf Lebenszeit.",
+	"premium_and_plans.cannot_redeem_ember_with_visionary": "Du hast {premium_tier_name} bereits auf Lebenszeit.",
 	"premium_and_plans.custom_emojis_outside_source_require_premium": "Du kannst benutzerdefinierte Emojis außerhalb ihrer Quell-Communitys nicht ohne Premium verwenden.",
 	"premium_and_plans.custom_stickers_in_dms_require_premium": "Du kannst benutzerdefinierte Sticker in DMs nicht ohne Premium verwenden.",
 	"premium_and_plans.custom_stickers_outside_source_require_premium": "Du kannst benutzerdefinierte Sticker außerhalb ihrer Quell-Communitys nicht ohne Premium verwenden.",

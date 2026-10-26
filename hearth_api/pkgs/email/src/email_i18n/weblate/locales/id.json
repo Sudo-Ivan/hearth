@@ -380,9 +380,9 @@
 		"deadline_label": "Cabut sengketa sebelum",
 		"deadline_value": "{warningDate, date, long}",
 		"footer_reason": "Kamu menerima email ini karena adanya sengketa pembayaran terkait akun {product_name} kamu.",
-		"ground": "{product, select, plutonium {Bagian 4.4 ketentuan layanan} other {Bagian 9 ketentuan Operator Pass}}",
+		"ground": "{product, select, ember {Bagian 4.4 ketentuan layanan} other {Bagian 9 ketentuan Operator Pass}}",
 		"ground_label": "Dasar",
-		"intro": "Kamu menyengketakan {product, select, plutonium {pembayaran Plutonium-mu} other {pembayaran Operator Pass-mu}} melalui bank atau penerbit kartumu. Seseorang di tim kami memeriksa sengketa tersebut berdasarkan ketentuan kami dan menilainya tidak beralasan.",
+		"intro": "Kamu menyengketakan {product, select, ember {pembayaran Ember-mu} other {pembayaran Operator Pass-mu}} melalui bank atau penerbit kartumu. Seseorang di tim kami memeriksa sengketa tersebut berdasarkan ketentuan kami dan menilainya tidak beralasan.",
 		"next_body": "Jika kamu yang melakukan pembayaran ini, kamu bisa meminta bank atau penerbit kartumu untuk mencabut sengketa. Jika sengketa dicabut atau berakhir tanpa uang dikembalikan kepadamu, tidak ada yang terjadi pada akunmu. Sampai sengketa selesai, kamu tidak bisa membeli apa pun di {product_name}.{privacy_email, select, null {} other { Kamu bisa meminta salinan datamu kapan saja dengan menulis ke <mail>{privacy_email}</mail>.}}",
 		"next_title": "Apa yang terjadi sekarang",
 		"order_date_label": "Tanggal pesanan",
@@ -390,7 +390,7 @@
 		"order_number_label": "Nomor pesanan",
 		"signoff": "Tim {product_name}",
 		"subject": "Tentang sengketa pembayaranmu di {product_name}",
-		"why_body": "Pembayaran dilakukan olehmu atau orang yang kamu izinkan, kami menagih jumlah yang benar, {product, select, plutonium {Plutonium diberikan sesuai deskripsi} other {Operator Pass dikirimkan sesuai deskripsi}}, kami belum mengembalikan dana pembayaran tersebut, dan masa penarikan diri sudah berakhir saat kamu menyengketakannya.",
+		"why_body": "Pembayaran dilakukan olehmu atau orang yang kamu izinkan, kami menagih jumlah yang benar, {product, select, ember {Ember diberikan sesuai deskripsi} other {Operator Pass dikirimkan sesuai deskripsi}}, kami belum mengembalikan dana pembayaran tersebut, dan masa penarikan diri sudah berakhir saat kamu menyengketakannya.",
 		"why_title": "Mengapa kami menilainya tidak beralasan"
 	},
 	"reauth_code": {

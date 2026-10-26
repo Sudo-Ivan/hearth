@@ -263,7 +263,7 @@ export const DMList = observer(() => {
 		currentUserId != null &&
 		(routeDmChannelId === currentUserId || (isMobileDmIndexRoute && lastSelectedDmChannelId === currentUserId));
 	const showPremiumFeatures = shouldShowPremiumFeatures();
-	const showMobilePlutoniumButton = showPremiumFeatures && !isMobile;
+	const showMobileEmberButton = showPremiumFeatures && !isMobile;
 	const personalNotesVisible = currentUserId != null && RuntimeConfig.personalNotesEnabled;
 	const displayedDmChannelCount = filteredDmChannels.length;
 	const dmRowsContainerRef = useRef<HTMLDivElement | null>(null);
@@ -273,7 +273,7 @@ export const DMList = observer(() => {
 		isMobile,
 		friendsDisabled,
 		personalNotesVisible,
-		showMobilePlutoniumButton,
+		showMobileEmberButton,
 		filteredDmChannels.map((channel) => channel.id).join(','),
 		dmSidebarSkeletonSubtextFlags.map((flag) => (flag ? '1' : '0')).join(''),
 	].join(':');
@@ -282,7 +282,7 @@ export const DMList = observer(() => {
 			isMobile,
 			friendsVisible: !isMobile && !friendsDisabled,
 			personalNotesVisible,
-			premiumVisible: showMobilePlutoniumButton,
+			premiumVisible: showMobileEmberButton,
 			sectionVisible: !isMobile,
 			channelRowCount: displayedDmChannelCount,
 			channelSubtextFlags: dmSidebarSkeletonSubtextFlags,
@@ -422,13 +422,13 @@ export const DMList = observer(() => {
 								</LongPressable>
 							</FocusRing>
 						)}
-						{showMobilePlutoniumButton && (
+						{showMobileEmberButton && (
 							<FocusRing offset={-2} data-flx="channel.direct-message.dm-list.focus-ring--4">
 								<button
 									type="button"
 									onClick={() => PremiumModalCommands.open()}
-									className={styles.mobilePlutoniumButton}
-									data-flx="channel.direct-message.dm-list.mobile-plutonium-button.open"
+									className={styles.mobileEmberButton}
+									data-flx="channel.direct-message.dm-list.mobile-ember-button.open"
 								>
 									<div
 										className={styles.mobileSpecialButtonContent}
@@ -604,7 +604,7 @@ export const DMList = observer(() => {
 					)}
 					{showPremiumFeatures && (
 						<ClickableItem
-							isSelected={location.pathname === Routes.PLUTONIUM}
+							isSelected={location.pathname === Routes.EMBER}
 							onClick={() => PremiumModalCommands.open()}
 							data-flx="channel.direct-message.dm-list.clickable-item.open"
 						>

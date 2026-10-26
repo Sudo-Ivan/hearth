@@ -20,7 +20,7 @@ import type {
 } from '@hearth/instance_bootstrap/src/Types';
 import type {LimitConfigSnapshot, LimitConfigWireFormat} from '@hearth/limits/src/LimitTypes';
 
-const DEFAULT_PREMIUM_PRODUCT_NAME = 'Plutonium';
+const DEFAULT_PREMIUM_PRODUCT_NAME = 'Ember';
 
 export interface ClientRuntimeDiscoveryEndpoints {
 	readonly discoveryApiEndpoint: string;

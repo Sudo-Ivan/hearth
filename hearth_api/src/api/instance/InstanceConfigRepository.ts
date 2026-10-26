@@ -185,6 +185,8 @@ const APP_PUBLIC_CONFIG_KEY = 'app_public_config';
 const ADMIN_BOOTSTRAP_KEY = 'admin_bootstrapped';
 const ADMIN_BOOTSTRAP_USER_ID_KEY = 'admin_bootstrap_user_id';
 const SETUP_TOKEN_HASH_KEY = 'setup_token_hash';
+const SETUP_TOKEN_CREATED_KEY = 'setup_token_created_at';
+const SETUP_TOKEN_TTL_MS = 60 * 60 * 1000;
 const INSTANCE_POLICY_CONFIG_KEY = 'instance_policy_config';
 const LIMIT_CONFIG_KEY = 'limit_config';
 const INSTANCE_INTEGRATIONS_CONFIG_KEY = 'instance_integrations_config';
@@ -492,7 +494,7 @@ function normalizeOptionalPublicString(value: string | null | undefined, fallbac
 }
 
 function getDefaultPremiumProductName(): string {
-	return Config.instance.selfHosted ? 'Premium' : 'Plutonium';
+	return Config.instance.selfHosted ? 'Premium' : 'Ember';
 }
 
 function getDefaultAppPublicConfig(): InstanceAppPublicConfig {
@@ -1898,19 +1900,49 @@ export class InstanceConfigRepository {
 			value: raw ? null : sha256Hex(token),
 			result: undefined,
 		}));
-		return written ? token : null;
+		if (!written) return null;
+		await this.compareAndSetStoredValue(this.configCache, SETUP_TOKEN_CREATED_KEY, () => ({
+			value: String(Date.now()),
+			result: undefined,
+		}));
+		return token;
+	}
+
+	async getSetupTokenCreatedAt(): Promise<number | null> {
+		const raw = await this.fetchConfigFromDatabase(SETUP_TOKEN_CREATED_KEY);
+		const created = raw ? Number(raw) : Number.NaN;
+		return Number.isFinite(created) ? created : null;
+	}
+
+	async clearSetupToken(): Promise<void> {
+		await this.compareAndSetStoredValue(this.configCache, SETUP_TOKEN_HASH_KEY, () => ({
+			value: null,
+			result: undefined,
+		}));
+		await this.compareAndSetStoredValue(this.configCache, SETUP_TOKEN_CREATED_KEY, () => ({
+			value: null,
+			result: undefined,
+		}));
 	}
 
 	async verifySetupToken(presented: string | null | undefined): Promise<boolean> {
-		const expectedHash = Config.instance.setup.token
-			? sha256Hex(Config.instance.setup.token)
-			: await this.fetchConfigFromDatabase(SETUP_TOKEN_HASH_KEY);
+		if (Config.instance.setup.token) {
+			return secretMatchesHash(presented, sha256Hex(Config.instance.setup.token));
+		}
+		const expectedHash = await this.fetchConfigFromDatabase(SETUP_TOKEN_HASH_KEY);
+		if (!expectedHash) return false;
+		const created = await this.getSetupTokenCreatedAt();
+		if (created === null || Date.now() - created > SETUP_TOKEN_TTL_MS) return false;
 		return secretMatchesHash(presented, expectedHash);
 	}
 
 	async burnSetupToken(): Promise<void> {
 		await this.compareAndSetStoredValue(this.configCache, SETUP_TOKEN_HASH_KEY, (raw) => ({
 			value: raw ? '' : null,
+			result: undefined,
+		}));
+		await this.compareAndSetStoredValue(this.configCache, SETUP_TOKEN_CREATED_KEY, () => ({
+			value: null,
 			result: undefined,
 		}));
 	}

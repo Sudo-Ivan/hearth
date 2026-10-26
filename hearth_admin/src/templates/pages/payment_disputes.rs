@@ -40,7 +40,7 @@ pub fn format_amount(minor: i64, currency: &str) -> String {
 fn product_label(product: AdminPaymentDisputeProductSchema) -> &'static str {
     match product {
         AdminPaymentDisputeProductSchema::OperatorPass => "Operator Pass",
-        AdminPaymentDisputeProductSchema::Plutonium => "Plutonium",
+        AdminPaymentDisputeProductSchema::Ember => "Ember",
     }
 }
 

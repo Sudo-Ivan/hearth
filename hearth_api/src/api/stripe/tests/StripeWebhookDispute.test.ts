@@ -93,7 +93,7 @@ function longDate(iso: string): string {
 	return new Intl.DateTimeFormat('en-US', {dateStyle: 'long', timeZone: 'UTC'}).format(new Date(iso));
 }
 
-describe('Plutonium payment disputes', () => {
+describe('Ember payment disputes', () => {
 	let harness: ApiTestHarness;
 	let stripe: StripeApiHandlers;
 	let originalPrices: typeof Config.stripe.prices;
@@ -422,7 +422,7 @@ describe('Plutonium payment disputes', () => {
 	}
 
 	describe('while a dispute is open', () => {
-		test('a subscription dispute opens a review and pauses purchases while Plutonium keeps working', async () => {
+		test('a subscription dispute opens a review and pauses purchases while Ember keeps working', async () => {
 			const buyer = await subscriber('pi_open_subscription');
 			await openDispute('pi_open_subscription');
 			await expectAccountUntouched(buyer);
@@ -431,7 +431,7 @@ describe('Plutonium payment disputes', () => {
 			expect(stripe.spies.cancelledSubscriptions).toEqual([]);
 			expect(stripe.spies.updatedSubscriptions).toEqual([]);
 			expect(await disputes.findReview('dp_pi_open_subscription')).toMatchObject({
-				product: 'plutonium',
+				product: 'ember',
 				order_id: 'cs_pi_open_subscription',
 				purchaser_id: idOf(buyer),
 				status: 'open',
@@ -449,7 +449,7 @@ describe('Plutonium payment disputes', () => {
 				(email) => email.type === 'payment_dispute_review_alert' && email.metadata.dispute_id === 'dp_pi_open_alert',
 			);
 			expect(alerts).toHaveLength(1);
-			expect(alerts[0]?.metadata).toMatchObject({product: 'plutonium', reason: 'general'});
+			expect(alerts[0]?.metadata).toMatchObject({product: 'ember', reason: 'general'});
 		});
 
 		test('changing the billing cycle, reactivating and moving to the list price are refused too', async () => {
@@ -661,7 +661,7 @@ describe('Plutonium payment disputes', () => {
 			expect(user?.stripeSubscriptionId).toBeNull();
 			expect(await premiumType(buyer)).toBe(UserPremiumTypes.NONE);
 			expect(await disputes.findReview('dp_pi_lost_subscription')).toMatchObject({
-				product: 'plutonium',
+				product: 'ember',
 				order_id: 'cs_pi_lost_subscription',
 				purchaser_id: idOf(buyer),
 				is_gift: false,
@@ -690,7 +690,7 @@ describe('Plutonium payment disputes', () => {
 			expect(findLastTestEmail(emails, 'gift_chargeback_notification')).not.toBeNull();
 			await expectAccountUntouched(buyer);
 			expect(await disputes.findReview('dp_pi_lost_gift')).toMatchObject({
-				product: 'plutonium',
+				product: 'ember',
 				is_gift: true,
 				purchaser_id: idOf(buyer),
 				order_id: 'cs_pi_lost_gift',
@@ -744,7 +744,7 @@ describe('Plutonium payment disputes', () => {
 			expect(await reviews(admin)).toEqual([
 				expect.objectContaining({
 					dispute_id: `dp_pi_reviewable_${reason}`,
-					product: 'plutonium',
+					product: 'ember',
 					reason,
 					blockers: [],
 					warnable: true,
@@ -753,7 +753,7 @@ describe('Plutonium payment disputes', () => {
 			]);
 		});
 
-		test('a Plutonium dispute stays out of reach until the closure terms take effect', async () => {
+		test('a Ember dispute stays out of reach until the closure terms take effect', async () => {
 			Config.paymentDisputes.closureEffectiveAt = null;
 			try {
 				const buyer = await subscriber('pi_before_terms');
@@ -851,7 +851,7 @@ describe('Plutonium payment disputes', () => {
 			await openDispute('pi_warn', {dueInDays: 10});
 			const review = await disputes.findReview('dp_pi_warn');
 			const admin = await staff();
-			const decided = await decide(admin, 'dp_pi_warn', 'unjustified', 'Plutonium was used for three weeks.');
+			const decided = await decide(admin, 'dp_pi_warn', 'unjustified', 'Ember was used for three weeks.');
 			const expectedDeadline = (review?.evidence_due_by?.getTime() ?? 0) - 3 * DAY_MS;
 			expect(decided.status).toBe('unjustified');
 			expect(new Date(decided.warning_deadline ?? 0).getTime()).toBe(expectedDeadline);
@@ -863,7 +863,7 @@ describe('Plutonium payment disputes', () => {
 				'payment_dispute_warning',
 			);
 			expect(email?.metadata).toMatchObject({
-				product: 'plutonium',
+				product: 'ember',
 				invoice_number: '',
 				warning_date: new Date(expectedDeadline).toISOString(),
 			});
@@ -873,7 +873,7 @@ describe('Plutonium payment disputes', () => {
 			expect(dms[0]).toContain("we'll permanently delete your");
 			expect(dms[0]).toContain("you can't buy anything");
 			expect(dms[0]).toContain('copy of your data');
-			expect(dms[0]).toContain('Plutonium was used for three weeks.');
+			expect(dms[0]).toContain('Ember was used for three weeks.');
 			await expectAccountUntouched(buyer);
 			await expectPurchasesBlocked(buyer, true);
 		});
@@ -888,7 +888,7 @@ describe('Plutonium payment disputes', () => {
 			await openDispute('pi_warn_email_retry');
 			const admin = await staff();
 			const smtp = await warningSmtp('reject');
-			const first = await decide(admin, 'dp_pi_warn_email_retry', 'unjustified', 'Plutonium was used.');
+			const first = await decide(admin, 'dp_pi_warn_email_retry', 'unjustified', 'Ember was used.');
 			expect(first.status).toBe('unjustified');
 			expect(first.warning_email_sent_at).toBeNull();
 			expect(first.warning_dm_sent_at).not.toBeNull();
@@ -979,11 +979,11 @@ describe('Plutonium payment disputes', () => {
 			await expectPurchasesBlocked(buyer, false);
 		});
 
-		test('a lost dispute after a warning takes back Plutonium and closes the account by an enforcement decision', async () => {
+		test('a lost dispute after a warning takes back Ember and closes the account by an enforcement decision', async () => {
 			const buyer = await subscriber('pi_warn_lost');
 			await openDispute('pi_warn_lost');
 			const admin = await staff();
-			await decide(admin, 'dp_pi_warn_lost', 'unjustified', 'Plutonium was used for three weeks.');
+			await decide(admin, 'dp_pi_warn_lost', 'unjustified', 'Ember was used for three weeks.');
 			await passWarningDate('dp_pi_warn_lost');
 			await closeDispute('pi_warn_lost', 'lost');
 			expect(stripe.spies.cancelledSubscriptions).toEqual(['sub_pi_warn_lost']);
@@ -1007,7 +1007,7 @@ describe('Plutonium payment disputes', () => {
 				source: 'own_review',
 				automation: 'none',
 				decided_by: admin.userId,
-				statement: 'Plutonium was used for three weeks.',
+				statement: 'Ember was used for three weeks.',
 				deletion_at: user.pendingDeletionAt?.toISOString(),
 				notice_status: 'sent',
 			});
@@ -1017,7 +1017,7 @@ describe('Plutonium payment disputes', () => {
 			expect(findLastTestEmail(emails, 'enforcement_notice')?.metadata).toMatchObject({
 				decision_id: String(decisionId),
 				kind_label: 'closure',
-				statement: 'Plutonium was used for three weeks.',
+				statement: 'Ember was used for three weeks.',
 			});
 			expect(findLastTestEmail(emails, 'payment_dispute_warning')).not.toBeNull();
 			expect(await new AdminRepository().isEmailBanned(buyer.email)).toBe(true);
@@ -1127,7 +1127,7 @@ describe('Plutonium payment disputes', () => {
 			const buyer = await subscriber('pi_warn_waits');
 			await openDispute('pi_warn_waits');
 			const admin = await staff();
-			await decide(admin, 'dp_pi_warn_waits', 'unjustified', 'Plutonium was used for three weeks.');
+			await decide(admin, 'dp_pi_warn_waits', 'unjustified', 'Ember was used for three weeks.');
 			const spamDecisionId = await close(harness, admin, buyer.userId);
 			await passWarningDate('dp_pi_warn_waits');
 			await closeDispute('pi_warn_waits', 'lost');
@@ -1150,7 +1150,7 @@ describe('Plutonium payment disputes', () => {
 			expect(decision).toMatchObject({
 				kind: 'closure',
 				reason_code: DeletionReasons.BILLING_DISPUTE_OR_ABUSE,
-				statement: 'Plutonium was used for three weeks.',
+				statement: 'Ember was used for three weeks.',
 				notice_status: 'sent',
 			});
 			const settled = (await reviews(admin)).find((entry) => entry.dispute_id === 'dp_pi_warn_waits');
@@ -1200,7 +1200,7 @@ describe('Plutonium payment disputes', () => {
 			expect((await disputes.findReview('dp_pi_warn_swept'))?.enforcement_decision_id).toBe(decisionId);
 		});
 
-		test('a dispute lost before the warning date takes back Plutonium and closes nothing', async () => {
+		test('a dispute lost before the warning date takes back Ember and closes nothing', async () => {
 			const buyer = await subscriber('pi_warn_early');
 			await openDispute('pi_warn_early');
 			const admin = await staff();

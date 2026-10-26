@@ -90,7 +90,7 @@ import {useCallback, useEffect, useMemo, useState} from 'react';
 const SMOOTH_60_FPS_AT_UP_TO_1440P_DESCRIPTOR = msg({
 	message: 'Smooth 60 FPS at up to 1440p',
 	comment:
-		'Description for the high-tier Gaming streaming preset (Plutonium). Resolution and frame rate are technical tokens.',
+		'Description for the high-tier Gaming streaming preset (Ember). Resolution and frame rate are technical tokens.',
 });
 const SMOOTH_30_FPS_AT_UP_TO_720P_DESCRIPTOR = msg({
 	message: 'Smooth 30 FPS at up to 720p',
@@ -100,7 +100,7 @@ const SMOOTH_30_FPS_AT_UP_TO_720P_DESCRIPTOR = msg({
 const SHARP_TEXT_AT_UP_TO_4K_DESCRIPTOR = msg({
 	message: 'Sharp text at up to 4K, up to 15 FPS',
 	comment:
-		'Description for the high-tier Screen share streaming preset (Plutonium). Resolution and frame rate are technical tokens.',
+		'Description for the high-tier Screen share streaming preset (Ember). Resolution and frame rate are technical tokens.',
 });
 const SHARP_TEXT_AT_720P_DESCRIPTOR = msg({
 	message: 'Sharp text at 720p, up to 30 FPS',
@@ -557,7 +557,7 @@ export const StreamSettingsMenuContent = observer(
 										{i18n._(FRAMERATE_DESCRIPTOR)}
 									</MenuGroupLabel>
 									{qualityMenuState.frameRates.map((option) => {
-										const isPlutoniumReserved = showPremiumFeatures && option.premium;
+										const isEmberReserved = showPremiumFeatures && option.premium;
 										return (
 											<MenuItemRadio
 												key={option.value}
@@ -575,7 +575,7 @@ export const StreamSettingsMenuContent = observer(
 													>
 														{i18n._(FPS_DESCRIPTOR, {frameRate: option.value})}
 													</span>
-													{isPlutoniumReserved && (
+													{isEmberReserved && (
 														<PremiumBadge data-flx="voice.stream-settings-menu-content.compact-live.frame-rate-premium-badge" />
 													)}
 												</span>
@@ -591,7 +591,7 @@ export const StreamSettingsMenuContent = observer(
 										{i18n._(RESOLUTION_DESCRIPTOR)}
 									</MenuGroupLabel>
 									{qualityMenuState.resolutions.map((option) => {
-										const isPlutoniumReserved = showPremiumFeatures && option.premium;
+										const isEmberReserved = showPremiumFeatures && option.premium;
 										return (
 											<MenuItemRadio
 												key={option.value}
@@ -609,7 +609,7 @@ export const StreamSettingsMenuContent = observer(
 													>
 														{getScreenShareResolutionLabel(i18n, option.value)}
 													</span>
-													{isPlutoniumReserved && (
+													{isEmberReserved && (
 														<PremiumBadge data-flx="voice.stream-settings-menu-content.compact-live.resolution-premium-badge" />
 													)}
 												</span>
@@ -646,7 +646,7 @@ export const StreamSettingsMenuContent = observer(
 						{i18n._(STREAMING_MODE_DESCRIPTOR)}
 					</MenuGroupLabel>
 					{modeOptions.map((option) => {
-						const isPlutoniumReserved = showPremiumFeatures && option.isPremium;
+						const isEmberReserved = showPremiumFeatures && option.isPremium;
 						return (
 							<MenuItemRadio
 								key={option.value}
@@ -679,7 +679,7 @@ export const StreamSettingsMenuContent = observer(
 											</span>
 										)}
 									</span>
-									{isPlutoniumReserved && <PremiumBadge data-flx="voice.stream-settings-menu-content.premium-badge" />}
+									{isEmberReserved && <PremiumBadge data-flx="voice.stream-settings-menu-content.premium-badge" />}
 								</span>
 							</MenuItemRadio>
 						);
@@ -692,7 +692,7 @@ export const StreamSettingsMenuContent = observer(
 							render={() => (
 								<MenuGroup data-flx="voice.stream-settings-menu-content.menu-group--3">
 									{qualityMenuState.resolutions.map((option) => {
-										const isPlutoniumReserved = showPremiumFeatures && option.premium;
+										const isEmberReserved = showPremiumFeatures && option.premium;
 										return (
 											<MenuItemRadio
 												key={option.value}
@@ -704,7 +704,7 @@ export const StreamSettingsMenuContent = observer(
 													<span className={styles.rowLabel} data-flx="voice.stream-settings-menu-content.row-label">
 														{getScreenShareResolutionLabel(i18n, option.value)}
 													</span>
-													{isPlutoniumReserved && (
+													{isEmberReserved && (
 														<PremiumBadge data-flx="voice.stream-settings-menu-content.premium-badge--2" />
 													)}
 												</span>
@@ -720,7 +720,7 @@ export const StreamSettingsMenuContent = observer(
 							render={() => (
 								<MenuGroup data-flx="voice.stream-settings-menu-content.menu-group--4">
 									{qualityMenuState.frameRates.map((option) => {
-										const isPlutoniumReserved = showPremiumFeatures && option.premium;
+										const isEmberReserved = showPremiumFeatures && option.premium;
 										return (
 											<MenuItemRadio
 												key={option.value}
@@ -732,7 +732,7 @@ export const StreamSettingsMenuContent = observer(
 													<span className={styles.rowLabel} data-flx="voice.stream-settings-menu-content.row-label--2">
 														{i18n._(FPS_DESCRIPTOR, {frameRate: option.value})}
 													</span>
-													{isPlutoniumReserved && (
+													{isEmberReserved && (
 														<PremiumBadge data-flx="voice.stream-settings-menu-content.premium-badge--3" />
 													)}
 												</span>

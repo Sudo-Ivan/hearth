@@ -3,37 +3,375 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hearth — self-hosted chat for friends and family</title>
+<title>Hearth - self-hosted chat for friends and family</title>
 <meta name="description" content="Hearth is a self-hosted instant messaging and VoIP app. A personal fork of Fluxer, tuned for single-host Podman deployments.">
 <link rel="icon" href="symbol.svg" type="image/svg+xml">
 <style>
-  :root { --red:#E5484D; --bg:#14100F; --fg:#F2EDEC; --dim:#B7A9A8; }
-  * { box-sizing: border-box; margin: 0; }
-  body { background: var(--bg); color: var(--fg); font: 400 18px/1.6 system-ui, sans-serif; }
-  main { max-width: 720px; margin: 0 auto; padding: 12vh 24px 64px; }
-  img.logo { width: min(420px, 80%); display: block; margin-bottom: 40px; }
-  p.lede { font-size: 22px; color: var(--dim); margin-bottom: 32px; }
-  ul { list-style: none; padding: 0; margin: 0 0 40px; }
-  li { padding: 10px 0 10px 28px; border-top: 1px solid #2a2322; position: relative; }
-  li::before { content: ""; position: absolute; left: 0; top: 20px; width: 8px; height: 8px; border-radius: 50%; background: var(--red); }
-  a { color: var(--red); }
-  a.btn { display: inline-block; padding: 12px 24px; background: var(--red); color: #fff; text-decoration: none; border-radius: 10px; font-weight: 700; }
-  a.btn:hover { background: #d13b40; }
-  footer { margin-top: 64px; color: var(--dim); font-size: 14px; }
+  :root {
+    --bg: #14100F;
+    --bg-raise: #1C1716;
+    --bg-hover: #241E1C;
+    --border: #2C2523;
+    --border-hi: #3D3330;
+    --fg: #F2EDEC;
+    --dim: #B3A5A4;
+    --faint: #7E716F;
+    --red: #E5484D;
+    --red-hi: #EC6165;
+    --red-dim: #8E2C30;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --wrap: 1080px;
+    --radius: 12px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font: 400 17px/1.65 var(--sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--red); text-decoration: none; }
+  a:hover { color: var(--red-hi); }
+  .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 24px; }
+
+  /* Nav */
+  header.nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(20, 16, 15, 0.82);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+  }
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--fg);
+    font-weight: 650;
+    font-size: 17px;
+    letter-spacing: 0.01em;
+  }
+  .nav-brand:hover { color: var(--fg); }
+  .nav-brand img { width: 22px; height: 22px; display: block; }
+  .nav-links { display: flex; align-items: center; gap: 24px; font-size: 15px; }
+  .nav-links a { color: var(--dim); }
+  .nav-links a:hover { color: var(--fg); }
+  .nav-links a.gh {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 14px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--fg);
+    background: var(--bg-raise);
+  }
+  .nav-links a.gh:hover { border-color: var(--border-hi); background: var(--bg-hover); }
+  .nav-links a.gh svg { display: block; }
+
+  /* Hero */
+  .hero {
+    text-align: center;
+    padding: 112px 24px 96px;
+    border-bottom: 1px solid var(--border);
+    background:
+      radial-gradient(700px 320px at 50% -60px, rgba(229, 72, 77, 0.10), transparent 70%),
+      var(--bg);
+  }
+  .hero img.wordmark {
+    width: min(440px, 78vw);
+    height: auto;
+    display: block;
+    margin: 0 auto 36px;
+  }
+  .hero .tagline {
+    font-size: clamp(24px, 4vw, 34px);
+    font-weight: 650;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+    max-width: 640px;
+    margin: 0 auto 18px;
+  }
+  .hero .sub {
+    font-size: 18px;
+    color: var(--dim);
+    max-width: 560px;
+    margin: 0 auto 40px;
+  }
+  .cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 28px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    border: 1px solid transparent;
+    transition: background 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+  }
+  .btn:active { transform: translateY(1px); }
+  .btn-primary { background: var(--red); color: #fff; }
+  .btn-primary:hover { background: var(--red-hi); color: #fff; }
+  .btn-ghost {
+    background: var(--bg-raise);
+    color: var(--fg);
+    border-color: var(--border);
+  }
+  .btn-ghost:hover { background: var(--bg-hover); border-color: var(--border-hi); color: var(--fg); }
+
+  /* Sections */
+  section { padding: 88px 0; }
+  .section-head { margin-bottom: 44px; }
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--red);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  h2 {
+    font-size: clamp(26px, 3.4vw, 32px);
+    font-weight: 650;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+  }
+  .section-head p { color: var(--dim); margin-top: 12px; max-width: 560px; }
+
+  /* Features */
+  .features { border-bottom: 1px solid var(--border); }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 18px;
+  }
+  .card {
+    background: var(--bg-raise);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 26px 26px 28px;
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+  .card:hover { border-color: var(--border-hi); background: var(--bg-hover); }
+  .card .glyph {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: rgba(229, 72, 77, 0.12);
+    border: 1px solid rgba(229, 72, 77, 0.25);
+    margin-bottom: 18px;
+  }
+  .card .glyph svg { display: block; }
+  .card h3 { font-size: 17px; font-weight: 650; margin-bottom: 8px; letter-spacing: -0.01em; }
+  .card p { font-size: 15px; color: var(--dim); }
+
+  /* Quickstart */
+  .quickstart { border-bottom: 1px solid var(--border); }
+  .codeblock {
+    background: #0E0B0A;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .codeblock .bar {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+  }
+  .codeblock .bar i {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--border-hi);
+    display: block;
+  }
+  .codeblock .bar i:first-child { background: var(--red-dim); }
+  .codeblock .bar span {
+    margin-left: auto;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--faint);
+  }
+  .codeblock pre {
+    padding: 22px 20px;
+    font-family: var(--mono);
+    font-size: 14.5px;
+    line-height: 1.7;
+    overflow-x: auto;
+    white-space: pre;
+    color: var(--fg);
+  }
+  .codeblock .prompt { color: var(--red); user-select: none; }
+  .codeblock .path { color: #E8B4B6; }
+  .codeblock .arg { color: var(--dim); }
+  .quickstart .note {
+    margin-top: 20px;
+    font-size: 15px;
+    color: var(--dim);
+  }
+  .quickstart .note code {
+    font-family: var(--mono);
+    font-size: 13.5px;
+    background: var(--bg-raise);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 2px 7px;
+    color: var(--fg);
+  }
+
+  /* Footer */
+  footer {
+    padding: 48px 0 56px;
+    font-size: 14px;
+    color: var(--faint);
+  }
+  footer .foot-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  footer .left { display: flex; align-items: center; gap: 10px; }
+  footer .left img { width: 18px; height: 18px; opacity: 0.75; display: block; }
+  footer a { color: var(--dim); }
+  footer a:hover { color: var(--fg); }
+
+  @media (max-width: 640px) {
+    .hero { padding: 76px 24px 68px; }
+    section { padding: 64px 0; }
+    .nav-links { gap: 16px; }
+    .nav-links a.plain { display: none; }
+  }
 </style>
 </head>
 <body>
-<main>
-  <img class="logo" src="logo.svg" alt="Hearth">
-  <p class="lede">Self-hosted instant messaging and VoIP for friends, family and small communities.</p>
-  <ul>
-    <li>One host, one compose stack: API, realtime gateway, voice, media and admin.</li>
-    <li>Podman-first and rootless friendly, plain Docker works too.</li>
-    <li>Happy behind your existing reverse proxy with CrowdSec on the edge.</li>
-    <li>AGPL-3.0, forked from Fluxer.</li>
-  </ul>
-  <a class="btn" href="https://github.com/Sudo-Ivan/hearth">Get it on GitHub</a>
-  <footer>Self-hosting guide lives in <a href="https://github.com/Sudo-Ivan/hearth/tree/master/deploy/self-hosting">deploy/self-hosting</a>.</footer>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="nav-brand" href="#top">
+      <img src="symbol.svg" alt="" width="22" height="22">
+      Hearth
+    </a>
+    <nav class="nav-links">
+      <a class="plain" href="#features">Features</a>
+      <a class="plain" href="#quickstart">Quickstart</a>
+      <a class="gh" href="https://github.com/Sudo-Ivan/hearth" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        GitHub
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <img class="wordmark" src="logo.svg" alt="Hearth">
+    <h1 class="tagline">Self-hosted chat and calls for the people you actually know.</h1>
+    <p class="sub">Instant messaging and VoIP on your own box. A personal fork of Fluxer, tuned for a single host and a small circle of friends and family.</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="https://github.com/Sudo-Ivan/hearth/tree/master/deploy/self-hosting">Self-host</a>
+      <a class="btn btn-ghost" href="https://github.com/Sudo-Ivan/hearth">Source</a>
+    </div>
+  </section>
+
+  <section class="features" id="features">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Why Hearth</div>
+        <h2>Everything a small server needs, nothing it does not.</h2>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <div class="glyph" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E5484D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.3 7 12 12l8.7-5"/><path d="M12 22V12"/></svg>
+          </div>
+          <h3>Podman-first, rootless</h3>
+          <p>Runs unprivileged as a single compose stack. One host, one user, no daemon socket drama. Plain Docker works too.</p>
+        </div>
+        <div class="card">
+          <div class="glyph" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E5484D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <h3>Reverse-proxy friendly</h3>
+          <p>Sits happily behind nginx, Caddy or Traefik. Let your existing TLS and vhost setup handle the front door.</p>
+        </div>
+        <div class="card">
+          <div class="glyph" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E5484D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>CrowdSec on the edge</h3>
+          <p>Pairs naturally with a CrowdSec bouncer on the proxy, so scanners and brute-forcers get bounced before they arrive.</p>
+        </div>
+        <div class="card">
+          <div class="glyph" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E5484D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+          </div>
+          <h3>Voice and video via LiveKit</h3>
+          <p>Self-hosted LiveKit SFU ships in the stack, so calls stay crisp and your media never touches a third party.</p>
+        </div>
+        <div class="card">
+          <div class="glyph" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E5484D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+          </div>
+          <h3>Admin panel built in</h3>
+          <p>Manage users, invites and moderation from a bundled admin UI. No database spelunking required.</p>
+        </div>
+        <div class="card">
+          <div class="glyph" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E5484D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M15 9.4a4 4 0 1 0 0 5.2"/></svg>
+          </div>
+          <h3>AGPL-3.0</h3>
+          <p>Free software end to end. Forked from Fluxer and kept open, so you can read, patch and share every line.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quickstart" id="quickstart">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Quickstart</div>
+        <h2>One script, one host, running.</h2>
+        <p>Clone the repo, point the deploy script at an install directory and your domain.</p>
+      </div>
+      <div class="codeblock">
+        <div class="bar" aria-hidden="true">
+          <i></i><i></i><i></i>
+          <span>sh</span>
+        </div>
+        <pre><span class="prompt">$</span> deploy/self-hosting/deploy.sh <span class="path">~/hearth</span> <span class="arg">chat.example.com https://chat.example.com</span></pre>
+      </div>
+      <p class="note">Full guide, DNS notes and upgrade path live in <code>deploy/self-hosting</code> in the <a href="https://github.com/Sudo-Ivan/hearth/tree/master/deploy/self-hosting">repository</a>.</p>
+    </div>
+  </section>
 </main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div class="left">
+      <img src="symbol.svg" alt="">
+      <span>Hearth is an AGPL-3.0 personal fork of <a href="https://github.com/Sudo-Ivan/hearth" rel="noopener">Fluxer</a>.</span>
+    </div>
+    <span>Warm by default. No trackers, no ads, no telemetry.</span>
+  </div>
+</footer>
+
 </body>
 </html>

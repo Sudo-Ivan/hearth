@@ -54,7 +54,7 @@
 	display: inline-flex;
 	align-items: center;
 	gap: 0.25rem;
-	color: var(--plutonium-icon);
+	color: var(--ember-icon);
 	flex-shrink: 0;
 }
 

@@ -104,10 +104,10 @@ const NotificationsPage = createNamedLoadableComponent<AppRouteComponentProps>({
 	displayName: 'NotificationsPage',
 	load: async () => (await import('@app/features/notification/components/pages/NotificationsPage')).NotificationsPage,
 });
-const PlutoniumPageLayout = createNamedLoadableComponent<AppRouteComponentProps>({
-	displayName: 'PlutoniumPageLayout',
+const EmberPageLayout = createNamedLoadableComponent<AppRouteComponentProps>({
+	displayName: 'EmberPageLayout',
 	load: async () =>
-		(await import('@app/features/premium/components/plutonium_page/PlutoniumPageLayout')).PlutoniumPageLayout,
+		(await import('@app/features/premium/components/ember_page/EmberPageLayout')).EmberPageLayout,
 });
 const OperatorPassRoutePage = createNamedLoadableComponent<AppRouteComponentProps>({
 	displayName: 'OperatorPassRoutePage',
@@ -280,22 +280,22 @@ const legacyDiscoverRoute = createRoute({
 	path: Routes.LEGACY_DISCOVER,
 	onEnter: () => new Redirect(Routes.DISCOVER),
 });
-const plutoniumRoute = createRoute({
+const emberRoute = createRoute({
 	getParentRoute: () => guildsLayoutRoute,
-	id: 'plutonium',
-	path: Routes.PLUTONIUM,
-	preload: PlutoniumPageLayout.preload,
+	id: 'ember',
+	path: Routes.EMBER,
+	preload: EmberPageLayout.preload,
 	component: () => (
-		<DMLayout data-flx="app.router.app-routes.dm-layout--plutonium">
-			<PlutoniumPageLayout data-flx="app.router.app-routes.plutonium-page-layout" />
+		<DMLayout data-flx="app.router.app-routes.dm-layout--ember">
+			<EmberPageLayout data-flx="app.router.app-routes.ember-page-layout" />
 		</DMLayout>
 	),
 });
-const legacyPlutoniumRoute = createRoute({
+const legacyEmberRoute = createRoute({
 	getParentRoute: () => guildsLayoutRoute,
-	id: 'legacyPlutonium',
-	path: Routes.LEGACY_PLUTONIUM,
-	onEnter: () => new Redirect(Routes.PLUTONIUM),
+	id: 'legacyEmber',
+	path: Routes.LEGACY_EMBER,
+	onEnter: () => new Redirect(Routes.EMBER),
 });
 const operatorPassRoute = createRoute({
 	getParentRoute: () => guildsLayoutRoute,
@@ -445,8 +445,8 @@ export const appRouteTree = appLayoutRoute.addChildren([
 		meRoute,
 		discoverRoute,
 		legacyDiscoverRoute,
-		plutoniumRoute,
-		legacyPlutoniumRoute,
+		emberRoute,
+		legacyEmberRoute,
 		operatorPassRoute,
 		favoritesRoute.addChildren([favoritesChannelRoute]),
 		channelsRoute.addChildren([membersRoute, channelRoute.addChildren([messageRoute, threadPanelRoute])]),

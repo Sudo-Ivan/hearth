@@ -11,7 +11,7 @@ export interface BillingBranding {
 }
 
 const HOSTED_PRODUCT_NAME = 'Hearth';
-const HOSTED_PREMIUM_NAME = 'Plutonium';
+const HOSTED_PREMIUM_NAME = 'Ember';
 const HOSTED_UPI_MANDATE_DESCRIPTION = 'Hearth Premium';
 
 export async function getBillingBranding(): Promise<BillingBranding> {

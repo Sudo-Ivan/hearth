@@ -95,7 +95,7 @@ const FIXTURE: {[K in EmailTemplateKey]: EmailTemplateVariables[K]} = {
 	payment_dispute_warning: {
 		appeals_email: 'appeals@hearth.com',
 		privacy_email: 'privacy@hearth.com',
-		product: 'plutonium',
+		product: 'ember',
 		orderDate: DATE,
 		warningDate: DATE,
 	},

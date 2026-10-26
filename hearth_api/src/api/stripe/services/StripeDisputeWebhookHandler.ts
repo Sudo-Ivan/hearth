@@ -37,7 +37,7 @@ import {StripeError} from '@hearth/errors/src/domains/payment/StripeError';
 import type {IEmailService} from '@pkgs/email/src/IEmailService';
 import type Stripe from 'stripe';
 
-type PlutoniumDisputeTarget =
+type EmberDisputeTarget =
 	| {kind: 'gift'; purchaserId: UserID; giftCode: GiftCode; payment: Payment | null}
 	| {kind: 'purchase'; purchaserId: UserID; payment: Payment | null};
 
@@ -74,14 +74,14 @@ export class StripeDisputeWebhookHandler {
 			await this.disputeReviews.openReview(await this.buildOperatorPassSubject(current, dispute), dispute);
 			return;
 		}
-		const target = await this.resolvePlutoniumTarget(dispute, paymentIntentId);
+		const target = await this.resolveEmberTarget(dispute, paymentIntentId);
 		if (!target) {
 			return;
 		}
-		await this.disputeReviews.openReview(await this.buildPlutoniumSubject(target, dispute, paymentIntentId), dispute);
+		await this.disputeReviews.openReview(await this.buildEmberSubject(target, dispute, paymentIntentId), dispute);
 		Logger.info(
 			{disputeId: dispute.id, paymentIntentId, purchaserId: target.purchaserId, kind: target.kind},
-			'Plutonium payment dispute opened; purchases are blocked until it closes',
+			'Ember payment dispute opened; purchases are blocked until it closes',
 		);
 	}
 
@@ -105,7 +105,7 @@ export class StripeDisputeWebhookHandler {
 			await this.enforceAfterClose(review);
 			return;
 		}
-		const target = await this.resolvePlutoniumTarget(dispute, paymentIntentId);
+		const target = await this.resolveEmberTarget(dispute, paymentIntentId);
 		if (!target) {
 			return;
 		}
@@ -122,11 +122,11 @@ export class StripeDisputeWebhookHandler {
 			}
 			Logger.info(
 				{disputeId: dispute.id, paymentIntentId, status: dispute.status},
-				'Plutonium payment dispute closed without the money being returned',
+				'Ember payment dispute closed without the money being returned',
 			);
 		}
 		const review = await this.disputeReviews.closeReview(
-			await this.buildPlutoniumSubject(target, dispute, paymentIntentId),
+			await this.buildEmberSubject(target, dispute, paymentIntentId),
 			dispute,
 		);
 		await this.enforceAfterClose(review);
@@ -164,10 +164,10 @@ export class StripeDisputeWebhookHandler {
 		return getOperatorPassDisputeSubject(purchase, dispute, holderRemovals);
 	}
 
-	private async resolvePlutoniumTarget(
+	private async resolveEmberTarget(
 		dispute: Stripe.Dispute,
 		paymentIntentId: string,
-	): Promise<PlutoniumDisputeTarget | null> {
+	): Promise<EmberDisputeTarget | null> {
 		const payment = await this.userRepository.getPaymentByPaymentIntent(paymentIntentId);
 		const giftCode =
 			(await this.userRepository.findGiftCodeByPaymentIntent(paymentIntentId)) ??
@@ -197,7 +197,7 @@ export class StripeDisputeWebhookHandler {
 		throw new StripeError('No payment found for chargeback');
 	}
 
-	private async findPlutoniumInvoiceNumber(
+	private async findEmberInvoiceNumber(
 		invoiceId: string | null,
 		charge: BillingChargeRow | null,
 	): Promise<string | null> {
@@ -205,8 +205,8 @@ export class StripeDisputeWebhookHandler {
 		return invoice?.number ?? charge?.receipt_number ?? null;
 	}
 
-	private async buildPlutoniumSubject(
-		target: PlutoniumDisputeTarget,
+	private async buildEmberSubject(
+		target: EmberDisputeTarget,
 		dispute: Stripe.Dispute,
 		paymentIntentId: string,
 	): Promise<PaymentDisputeSubject> {
@@ -220,13 +220,13 @@ export class StripeDisputeWebhookHandler {
 			(target.kind === 'gift' ? target.giftCode.createdAt : null);
 		const disputedAt = new Date(dispute.created * 1000);
 		return {
-			product: 'plutonium',
+			product: 'ember',
 			orderId:
 				payment?.checkoutSessionId ??
 				(target.kind === 'gift' ? target.giftCode.checkoutSessionId : null) ??
 				payment?.invoiceId ??
 				paymentIntentId,
-			invoiceNumber: await this.findPlutoniumInvoiceNumber(charge?.invoice_id ?? payment?.invoiceId ?? null, charge),
+			invoiceNumber: await this.findEmberInvoiceNumber(charge?.invoice_id ?? payment?.invoiceId ?? null, charge),
 			purchaserId: target.purchaserId,
 			isGift: target.kind === 'gift' || payment?.isGift === true,
 			paymentIntentId,
@@ -234,7 +234,7 @@ export class StripeDisputeWebhookHandler {
 			currency: dispute.currency ?? payment?.currency ?? 'usd',
 			disputedAt,
 			purchasedAt,
-			perksStartedAt: this.plutoniumProvidedAt(target, purchasedAt),
+			perksStartedAt: this.emberProvidedAt(target, purchasedAt),
 			withdrawalEndsAt: purchasedAt ? getWithdrawalPeriodEndsAt(purchasedAt) : null,
 			withdrawnAt: null,
 			refundedAt: await this.findFirstRefundAt(paymentIntentId, payment, disputedAt),
@@ -242,7 +242,7 @@ export class StripeDisputeWebhookHandler {
 		};
 	}
 
-	private plutoniumProvidedAt(target: PlutoniumDisputeTarget, purchasedAt: Date | null): Date | null {
+	private emberProvidedAt(target: EmberDisputeTarget, purchasedAt: Date | null): Date | null {
 		if (target.kind === 'gift') {
 			return target.giftCode.createdAt;
 		}
@@ -265,7 +265,7 @@ export class StripeDisputeWebhookHandler {
 	}
 
 	private async endWhatTheDisputedPaymentBought(
-		target: PlutoniumDisputeTarget,
+		target: EmberDisputeTarget,
 		dispute: Stripe.Dispute,
 	): Promise<void> {
 		if (target.kind === 'gift') {
@@ -290,7 +290,7 @@ export class StripeDisputeWebhookHandler {
 		);
 		Logger.info(
 			{disputeId: dispute.id, userId: user.id, subscriptionId: user.stripeSubscriptionId},
-			'Plutonium ended right away after a dispute returned the money',
+			'Ember ended right away after a dispute returned the money',
 		);
 	}
 

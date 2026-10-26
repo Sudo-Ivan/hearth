@@ -483,7 +483,7 @@
 	"permissions.user_owns_guilds": "Cet utilisateur est propriétaire de communautés.",
 	"premium_and_plans.animated_avatars_require_premium": "Les avatars animés nécessitent une formule Premium.",
 	"premium_and_plans.banners_require_premium": "Les bannières nécessitent une formule Premium.",
-	"premium_and_plans.cannot_redeem_plutonium_with_visionary": "Vous avez déjà {premium_tier_name} à vie.",
+	"premium_and_plans.cannot_redeem_ember_with_visionary": "Vous avez déjà {premium_tier_name} à vie.",
 	"premium_and_plans.custom_emojis_outside_source_require_premium": "Vous ne pouvez pas utiliser d’emojis personnalisés en dehors de leur communauté d’origine sans Premium.",
 	"premium_and_plans.custom_stickers_in_dms_require_premium": "Vous ne pouvez pas utiliser de stickers personnalisés dans les MP sans Premium.",
 	"premium_and_plans.custom_stickers_outside_source_require_premium": "Vous ne pouvez pas utiliser de stickers personnalisés en dehors de leur communauté d’origine sans Premium.",

@@ -82,7 +82,7 @@ function ProfileBadgeDetailsTooltip({
 
 function opensPremiumModal(badge: ProfileBadgeResponse): boolean {
 	if (badge.kind === 'premium') return badge.href === null;
-	return badge.kind === 'plutonium';
+	return badge.kind === 'ember';
 }
 
 export const UserProfileBadges: React.FC<UserProfileBadgesProps> = observer(

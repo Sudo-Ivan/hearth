@@ -52,7 +52,7 @@ const SOURCE_TAB_CATEGORY: Partial<Record<UserSettingsTabType, SettingsCategoryT
 	account_security: 'account',
 	devices: 'account',
 	linked_accounts: 'account',
-	plutonium: 'account',
+	ember: 'account',
 	gift_inventory: 'account',
 	privacy_safety: 'privacy',
 	authorized_apps: 'privacy',

@@ -6,7 +6,7 @@ import {z} from 'zod';
 export const AdminPaymentDisputeProductSchema = createNamedStringLiteralUnion(
 	[
 		['operator_pass', 'OPERATOR_PASS', 'An Operator Pass purchase or gift, under section 9 of the Operator Pass terms'],
-		['plutonium', 'PLUTONIUM', 'A Plutonium subscription, purchase or gift, under section 4.4 of the terms of service'],
+		['ember', 'EMBER', 'A Ember subscription, purchase or gift, under section 4.4 of the terms of service'],
 	],
 	'Product the disputed payment was for',
 );
@@ -30,7 +30,7 @@ export const AdminPaymentDisputeReviewBlockerSchema = createNamedStringLiteralUn
 		[
 			'before_terms_effective',
 			'BEFORE_TERMS_EFFECTIVE',
-			'A Plutonium payment or its dispute came before the terms that allow closing an account for a dispute took effect',
+			'A Ember payment or its dispute came before the terms that allow closing an account for a dispute took effect',
 		],
 	],
 	'Why the terms rule out finding the dispute unjustified',

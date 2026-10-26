@@ -6,7 +6,7 @@ export const PROFILE_BADGE_ASSETS = {
 	bug_hunter: '5d3b4eacacb0ca67',
 	operator_pass: '8120d774496aa5f7',
 	visionary: '90fd8b9b5421bb6a',
-	plutonium: '80bb0940d19fa614',
+	ember: '80bb0940d19fa614',
 	premium: 'c61a26d1f983369c',
 } as const;
 

@@ -380,9 +380,9 @@
 		"deadline_label": "Spor stáhněte před datem",
 		"deadline_value": "{warningDate, date, long}",
 		"footer_reason": "Tento e-mail jste obdrželi kvůli platebnímu sporu týkajícímu se vašeho účtu {product_name}.",
-		"ground": "{product, select, plutonium {§ 4.4 podmínek služby} other {§ 9 podmínek Operator Pass}}",
+		"ground": "{product, select, ember {§ 4.4 podmínek služby} other {§ 9 podmínek Operator Pass}}",
 		"ground_label": "Právní základ",
-		"intro": "U své banky nebo vydavatele karty jste rozporovali {product, select, plutonium {platbu za Plutonium} other {platbu za Operator Pass}}. Člověk z našeho týmu spor posoudil podle našich podmínek a shledal ho neoprávněným.",
+		"intro": "U své banky nebo vydavatele karty jste rozporovali {product, select, ember {platbu za Ember} other {platbu za Operator Pass}}. Člověk z našeho týmu spor posoudil podle našich podmínek a shledal ho neoprávněným.",
 		"next_body": "Pokud jste tuto platbu provedli vy, můžete banku nebo vydavatele karty požádat o stažení sporu. Pokud bude spor stažen nebo skončí, aniž by vám byly peníze vráceny, s vaším účtem se nic nestane. Dokud spor neskončí, nemůžete na {product_name} nic kupovat.{privacy_email, select, null {} other { O kopii svých dat můžete kdykoli požádat na adrese <mail>{privacy_email}</mail>.}}",
 		"next_title": "Co bude dál",
 		"order_date_label": "Datum objednávky",
@@ -390,7 +390,7 @@
 		"order_number_label": "Číslo objednávky",
 		"signoff": "Tým {product_name}",
 		"subject": "K vašemu platebnímu sporu na {product_name}",
-		"why_body": "Platbu jste provedli vy nebo někdo, komu jste to dovolili, naúčtovali jsme správnou částku, {product, select, plutonium {Plutonium bylo poskytnuto podle popisu} other {Operator Pass byl dodán podle popisu}}, platbu jsme vám nevrátili a lhůta pro odstoupení od smlouvy už v době rozporování uplynula.",
+		"why_body": "Platbu jste provedli vy nebo někdo, komu jste to dovolili, naúčtovali jsme správnou částku, {product, select, ember {Ember bylo poskytnuto podle popisu} other {Operator Pass byl dodán podle popisu}}, platbu jsme vám nevrátili a lhůta pro odstoupení od smlouvy už v době rozporování uplynula.",
 		"why_title": "Proč jsme ho shledali neoprávněným"
 	},
 	"reauth_code": {

@@ -120,7 +120,7 @@ export const StorePurchaseResponse = z.object({
 	product_id: z.string().describe('Store product identifier'),
 	environment: StoreEnvironmentSchema.describe('Whether the purchase was a real purchase or a test purchase'),
 	state: StorePurchaseStateSchema.describe('Current state of the purchase'),
-	entitled: z.boolean().describe('Whether the purchase currently grants Plutonium'),
+	entitled: z.boolean().describe('Whether the purchase currently grants Ember'),
 	expires_at: z.iso.datetime().nullable().describe('When the paid period ends, null for gifts'),
 	entitled_until: z.iso
 		.datetime()

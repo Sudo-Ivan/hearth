@@ -927,7 +927,7 @@ msgid "{altText} — light theme preview"
 msgstr "{altText} — προεπισκόπηση με ανοιχτό θέμα"
 
 #. Amount of an invoice in the billing history, followed by its three-letter currency code so the receipt always names the currency, for example "9,99 kr (SEK)". {amount} is a price already formatted by code and {currency} is an ISO currency code such as SEK or USD. Keep both placeholders as they are and use the brackets your language normally uses.
-#: src/features/app/components/dialogs/components/plutonium/InvoiceList.tsx
+#: src/features/app/components/dialogs/components/ember/InvoiceList.tsx
 msgid "{amount} ({currency})"
 msgstr "{amount} ({currency})"
 
@@ -1778,8 +1778,8 @@ msgstr "{minutes, plural, one {Από το δίκτυό σας δοκιμάστ�
 msgid "{minutes, plural, one {Your invite link expires in # minute.} other {Your invite link expires in # minutes.}}"
 msgstr "{minutes, plural, one {Ο σύνδεσμος πρόσκλησής σας λήγει σε # λεπτό.} other {Ο σύνδεσμος πρόσκλησής σας λήγει σε # λεπτά.}}"
 
-#. Compact monthly price on the Plutonium page hero. Preserve the monthlyPrice placeholder exactly. The price is shown bold and any text around it in a lighter style, so keep the period words outside the placeholder.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Compact monthly price on the Ember page hero. Preserve the monthlyPrice placeholder exactly. The price is shown bold and any text around it in a lighter style, so keep the period words outside the placeholder.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "{monthlyPrice}/mo"
 msgstr "{monthlyPrice}/μήνα"
 
@@ -1860,8 +1860,8 @@ msgstr "Το {premiumProductName} κοστίζει πλέον λιγότερο. 
 msgid "{premiumProductName} costs less now. Switch from {currentPrice} to {newPrice} a year starting {effectiveDate}, and nothing is charged today."
 msgstr "Το {premiumProductName} κοστίζει πλέον λιγότερο. Μεταβείτε από {currentPrice} σε {newPrice} τον χρόνο με ισχύ από {effectiveDate} και δεν χρεώνεστε τίποτα σήμερα."
 
-#. Accessible label of the Plutonium page region. premiumProductName is the paid tier name.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Accessible label of the Ember page region. premiumProductName is the paid tier name.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "{premiumProductName} page"
 msgstr "Σελίδα {premiumProductName}"
 
@@ -2392,8 +2392,8 @@ msgstr "Ο χρήστης {username} ξεκίνησε ένα νήμα: {threadNa
 msgid "{width} by {height} pixels"
 msgstr "{width} επί {height} pixel"
 
-#. Compact yearly price on the Plutonium page hero. Preserve the yearlyPrice placeholder exactly. The price is shown bold and any text around it in a lighter style, so keep the period words outside the placeholder.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Compact yearly price on the Ember page hero. Preserve the yearlyPrice placeholder exactly. The price is shown bold and any text around it in a lighter style, so keep the period words outside the placeholder.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "{yearlyPrice}/yr"
 msgstr "{yearlyPrice}/έτος"
 
@@ -2555,7 +2555,7 @@ msgstr "1 εβδομάδα"
 #. Duration label component for an elapsed call. Shown when the call lasted about one year.
 #. Gift purchase dialog option for a one-year gift.
 #: src/features/channel/components/CallMessage.tsx
-#: src/features/premium/components/modals/GiftPlutoniumModal.tsx
+#: src/features/premium/components/modals/GiftEmberModal.tsx
 msgid "1 year"
 msgstr "1 έτος"
 
@@ -2822,8 +2822,8 @@ msgstr "ένα όνομα κεντρικού υπολογιστή, π.χ. {examp
 msgid "A landscape image, at least 1920 by 1080 pixels."
 msgstr "Οριζόντια εικόνα, τουλάχιστον 1920 × 1080 pixel."
 
-#. Plutonium subscription card line offering a move to a lower price. {listPriceEffectiveDate} is a date already formatted and localized by code; never write a date into the translation.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionCard.tsx
+#. Ember subscription card line offering a move to a lower price. {listPriceEffectiveDate} is a date already formatted and localized by code; never write a date into the translation.
+#: src/features/app/components/dialogs/components/ember/SubscriptionCard.tsx
 msgid "A lower price is available. Switching takes effect on <0>{listPriceEffectiveDate}</0> and changes nothing else."
 msgstr "Υπάρχει διαθέσιμη χαμηλότερη τιμή. Η αλλαγή τίθεται σε ισχύ στις <0>{listPriceEffectiveDate}</0> και δεν αλλάζει τίποτα άλλο."
 
@@ -2842,8 +2842,8 @@ msgstr "Υπάρχει διαθέσιμη νέα έκδοση για υπολο�
 msgid "a poll"
 msgstr "μια δημοσκόπηση"
 
-#. Plutonium page perk card title about profile customization.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page perk card title about profile customization.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "A profile that stands out"
 msgstr "Ένα προφίλ που ξεχωρίζει"
 
@@ -2861,8 +2861,8 @@ msgstr "Ένα επαναχρησιμοποιήσιμο στοιχείο για 
 msgid "a rich embed or link preview (not an uploaded file)"
 msgstr "μια εμπλουτισμένη ενσωμάτωση ή προεπισκόπηση συνδέσμου (όχι αρχείο που ανέβηκε)"
 
-#. Plutonium page comparison row label for per-community profiles.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison row label for per-community profiles.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "A separate profile for each community"
 msgstr "Ένα ξεχωριστό προφίλ για κάθε κοινότητα"
 
@@ -3146,7 +3146,7 @@ msgstr "Ενέργεια με τα δύο εικονίδια."
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
 #. Subscription status badge meaning the paid subscription is active.
 #. Tab in the thread browser that lists active threads.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionStatusBadge.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionStatusBadge.tsx
 #: src/features/channel/components/channel_header_components/developer_tools/DeveloperToolsShared.ts
 #: src/features/threads/utils/ThreadMessageDescriptors.ts
 #: src/features/user/components/settings_utils/search_index/DevicesIndex.ts
@@ -4086,19 +4086,19 @@ msgstr "Οι ρυθμίσεις στοίχισης είναι διαθέσιμε
 msgid "All"
 msgstr "Όλα"
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionDescription.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionDescription.tsx
 msgid "All <0/> for <1>{effectiveMonthlyPrice}/month</1>."
 msgstr "Όλα τα <0/> με <1>{effectiveMonthlyPrice}/μήνα</1>."
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionDescription.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionDescription.tsx
 msgid "All <0/> for <1>{effectiveYearlyPrice}/year</1>."
 msgstr "Όλα τα <0/> με <1>{effectiveYearlyPrice}/έτος</1>."
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionDescription.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionDescription.tsx
 msgid "All <0/> included with your subscription."
 msgstr "Όλα τα <0/> περιλαμβάνονται στη συνδρομή σας."
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionDescription.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionDescription.tsx
 msgid "All <0/>, forever. No billing, no renewals."
 msgstr "Όλα τα <0/>, για πάντα. Χωρίς χρέωση, χωρίς ανανεώσεις."
 
@@ -4471,7 +4471,7 @@ msgid "Already redeemed"
 msgstr "Έχει ήδη εξαργυρωθεί"
 
 #. Title of the error modal shown when a subscription is already scheduled to cancel.
-#: src/features/app/components/dialogs/components/plutonium/utils/PremiumActionErrorModal.tsx
+#: src/features/app/components/dialogs/components/ember/utils/PremiumActionErrorModal.tsx
 msgid "Already set to cancel"
 msgstr "Έχει ήδη οριστεί για ακύρωση"
 
@@ -4589,7 +4589,7 @@ msgid "Amber"
 msgstr "Κεχριμπάρι"
 
 #. Column header for invoice amount.
-#: src/features/app/components/dialogs/components/plutonium/InvoiceList.tsx
+#: src/features/app/components/dialogs/components/ember/InvoiceList.tsx
 msgid "Amount"
 msgstr "Ποσό"
 
@@ -4647,8 +4647,8 @@ msgstr "Εφέ κίνησης στην αλληλεπίδραση"
 msgid "Animated {avifFormatLabel} not supported"
 msgstr "Τα κινούμενα {avifFormatLabel} δεν υποστηρίζονται"
 
-#. Plutonium page comparison row label for animated avatars and banners.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison row label for animated avatars and banners.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Animated avatar and profile banner"
 msgstr "Κινούμενο avatar και banner προφίλ"
 
@@ -4841,7 +4841,7 @@ msgid "Announcements"
 msgstr "Ανακοινώσεις"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Annual"
 msgstr "Ετήσιο"
 
@@ -5794,7 +5794,7 @@ msgstr "AV1"
 msgid "AV1 (requires opt-in)"
 msgstr "AV1 (απαιτείται ενεργοποίηση)"
 
-#. Screen reader text for a check mark in the Plutonium page comparison table.
+#. Screen reader text for a check mark in the Ember page comparison table.
 #: src/features/i18n/utils/CommonMessageDescriptors.ts
 msgid "Available"
 msgstr "Διαθέσιμο"
@@ -5858,7 +5858,7 @@ msgstr "Μέσος όρος ping:"
 msgid "Away"
 msgstr "Απουσία"
 
-#. Accessible label of the back button on the Plutonium page in the mobile layout.
+#. Accessible label of the back button on the Ember page in the mobile layout.
 #: src/features/auth/flow/IpAuthorizationScreen.tsx
 #: src/features/connection/components/modals/AddConnectionModal.tsx
 #: src/features/guild/components/modals/add_guild_modal/GuildCreateForm.tsx
@@ -6170,7 +6170,7 @@ msgid "Belgium"
 msgstr "Βέλγιο"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Benefits"
 msgstr "Οφέλη"
 
@@ -6183,18 +6183,18 @@ msgstr "Καλύτερα με την εφαρμογή υπολογιστή"
 msgid "Between 1 and 32 characters"
 msgstr "Μεταξύ 1 και 32 χαρακτήρων"
 
-#. Plutonium subscription card text for an App Store or Google Play subscription. {storeName} is the store brand name, App Store or Google Play, and must not be translated.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionDescription.tsx
+#. Ember subscription card text for an App Store or Google Play subscription. {storeName} is the store brand name, App Store or Google Play, and must not be translated.
+#: src/features/app/components/dialogs/components/ember/SubscriptionDescription.tsx
 msgid "Billed through {storeName}."
 msgstr "Χρεώνεται μέσω {storeName}."
 
-#. Plutonium subscription card text for an App Store or Google Play subscription that will not renew. {storeName} is the store brand name, App Store or Google Play, and must not be translated. {endDate} is a date already formatted and localized by code; never write a date into the translation.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionDescription.tsx
+#. Ember subscription card text for an App Store or Google Play subscription that will not renew. {storeName} is the store brand name, App Store or Google Play, and must not be translated. {endDate} is a date already formatted and localized by code; never write a date into the translation.
+#: src/features/app/components/dialogs/components/ember/SubscriptionDescription.tsx
 msgid "Billed through {storeName}. Ends on <0>{endDate}</0>."
 msgstr "Χρεώνεται μέσω {storeName}. Λήγει στις <0>{endDate}</0>."
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 #: src/features/user/components/settings_utils/SettingsConstants.tsx
 msgid "Billing"
 msgstr "Χρέωση"
@@ -6206,8 +6206,8 @@ msgstr "Κύκλος χρέωσης"
 
 #. Accordion title in the premium billing panel.
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/app/components/dialogs/components/plutonium/PurchaseHistorySection.tsx
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/app/components/dialogs/components/ember/PurchaseHistorySection.tsx
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Billing history"
 msgstr "Ιστορικό χρεώσεων"
 
@@ -6571,8 +6571,8 @@ msgstr "Παραβιάζει τις οδηγίες κοινότητας"
 msgid "Brightness"
 msgstr "Φωτεινότητα"
 
-#. Plutonium page perk card body about global emojis and stickers.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page perk card body about global emojis and stickers.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Bring custom emojis and stickers from any of your communities into every chat and community you're in."
 msgstr "Φέρε προσαρμοσμένα emoji και αυτοκόλλητα από οποιαδήποτε από τις κοινότητές σου σε κάθε συνομιλία και κοινότητα στην οποία βρίσκεσαι."
 
@@ -7118,7 +7118,7 @@ msgid "Cancel pass"
 msgstr "Ακύρωση πάσου"
 
 #. Billing button that cancels a scheduled move to a lower subscription price.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionActions.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionActions.tsx
 msgid "Cancel price change"
 msgstr "Ακύρωση αλλαγής τιμής"
 
@@ -7133,24 +7133,24 @@ msgid "Cancel request"
 msgstr "Ακύρωση αιτήματος"
 
 #. Billing button that cancels a scheduled billing-cycle change.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionActions.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionActions.tsx
 msgid "Cancel scheduled switch"
 msgstr "Ακύρωση προγραμματισμένης αλλαγής"
 
 #. Billing button that starts subscription cancellation.
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionActions.tsx
-#: src/features/premium/components/plutonium_page/PlutoniumPage.tsx
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/app/components/dialogs/components/ember/SubscriptionActions.tsx
+#: src/features/premium/components/ember_page/EmberPage.tsx
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Cancel subscription"
 msgstr "Ακύρωση συνδρομής"
 
-#: src/features/premium/components/plutonium_page/PlutoniumPage.tsx
+#: src/features/premium/components/ember_page/EmberPage.tsx
 msgid "Cancel subscription?"
 msgstr "Ακύρωση συνδρομής;"
 
-#. Plutonium subscription card hint shown to a subscriber who could move to a lower price but has another billing change already scheduled.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionCard.tsx
+#. Ember subscription card hint shown to a subscriber who could move to a lower price but has another billing change already scheduled.
+#: src/features/app/components/dialogs/components/ember/SubscriptionCard.tsx
 msgid "Cancel the scheduled change to move to the current price instead."
 msgstr "Ακυρώστε την προγραμματισμένη αλλαγή για να μεταβείτε στην τρέχουσα τιμή."
 
@@ -7165,7 +7165,7 @@ msgid "Cancel upload"
 msgstr "Ακύρωση μεταφόρτωσης"
 
 #. Billing button that cancels a scheduled yearly upgrade.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionActions.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionActions.tsx
 msgid "Cancel yearly upgrade"
 msgstr "Ακύρωση ετήσιας αναβάθμισης"
 
@@ -7175,7 +7175,7 @@ msgid "Cancel your friend request to {displayName}?"
 msgstr "Ακύρωση του αιτήματος φιλίας προς τον/την {displayName};"
 
 #. Subscription status badge meaning cancellation is scheduled for the renewal date.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionStatusBadge.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionStatusBadge.tsx
 msgid "Canceling"
 msgstr "Ακυρώνεται"
 
@@ -7184,7 +7184,7 @@ msgstr "Ακυρώνεται"
 msgid "Cancellation"
 msgstr "Ακύρωση ηχούς"
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionDescription.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionDescription.tsx
 msgid "Cancels on <0>{cancelDate}</0>. <1/> remain active until then."
 msgstr "Ακυρώνεται στις <0>{cancelDate}</0>. <1/> παραμένουν ενεργά μέχρι τότε."
 
@@ -7444,7 +7444,7 @@ msgid "Change password form"
 msgstr "Φόρμα αλλαγής κωδικού πρόσβασης"
 
 #. Subscription status badge meaning a future billing plan change is scheduled.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionStatusBadge.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionStatusBadge.tsx
 msgid "Change scheduled"
 msgstr "Προγραμματισμένη αλλαγή"
 
@@ -7956,8 +7956,8 @@ msgstr "Κανάλια που συντονίζω"
 msgid "Character limit exceeded by {remaining}"
 msgstr "Έχετε υπερβεί το όριο χαρακτήρων κατά {remaining}"
 
-#. Plutonium page comparison row label for the message length limit.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison row label for the message length limit.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Characters in a single message"
 msgstr "Χαρακτήρες σε ένα μήνυμα"
 
@@ -8096,7 +8096,7 @@ msgid "Checking the sign-in request…"
 msgstr "Ελέγχεται το αίτημα σύνδεσης…"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Checkout"
 msgstr "Ολοκλήρωση αγοράς"
 
@@ -8106,17 +8106,17 @@ msgid "Checkout canceled. You weren't charged."
 msgstr "Η αγορά ακυρώθηκε. Δεν χρεωθήκατε."
 
 #. Modal body for the generic "checkout blocked" state on a self-hosted instance.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Checkout is blocked for this account."
 msgstr "Το ταμείο έχει αποκλειστεί για αυτόν τον λογαριασμό."
 
 #. Modal body for the generic "checkout blocked" state. Provides the support email.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Checkout is blocked for this account. Contact {supportEmail} if you need help."
 msgstr "Η ολοκλήρωση αγοράς έχει αποκλειστεί για αυτόν τον λογαριασμό. Επικοινωνήστε με το {supportEmail} εάν χρειάζεστε βοήθεια."
 
 #. Modal title for the generic "checkout blocked" state when no more specific reason is known.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Checkout unavailable"
 msgstr "Η ολοκλήρωση αγοράς δεν είναι διαθέσιμη"
 
@@ -8200,7 +8200,7 @@ msgid "Choose a speed for spoken text."
 msgstr "Επιλέξτε μια ταχύτητα για την εκφώνηση του κειμένου."
 
 #. Settings search entry description. One-line summary of what the settings search entry controls.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Choose a subscription plan or gift option"
 msgstr "Επιλέξτε ένα πρόγραμμα συνδρομής ή μια επιλογή δώρου"
 
@@ -8294,8 +8294,8 @@ msgstr "Επιλέξτε πώς αποθηκεύονται τα αγαπημέν
 msgid "Choose how times are displayed throughout the app"
 msgstr "Επιλέξτε πώς θα εμφανίζονται οι ώρες στην εφαρμογή"
 
-#. Plutonium subscription payment method picker description, generic fallback when no country-specific copy applies.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#. Ember subscription payment method picker description, generic fallback when no country-specific copy applies.
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Choose how you'd like to pay for this subscription."
 msgstr "Επίλεξε πώς θέλεις να πληρώσεις για αυτήν τη συνδρομή."
 
@@ -8304,7 +8304,7 @@ msgid "Choose one of the methods below to prove domain ownership. You only need 
 msgstr "Επιλέξτε μία από τις παρακάτω μεθόδους για να αποδείξετε την ιδιοκτησία του τομέα. Χρειάζεται να ολοκληρώσετε μόνο μία."
 
 #. Modal title for the payment method picker (local card vs alternative method).
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Choose payment method"
 msgstr "Επιλέξτε τρόπο πληρωμής"
 
@@ -8478,13 +8478,13 @@ msgstr "Διεκδικήστε τον λογαριασμό σας προσθέτ
 msgid "Claim your account by choosing a username and password. You sign in with them, so pick ones you will remember."
 msgstr "Διεκδίκησε τον λογαριασμό σου επιλέγοντας ένα όνομα χρήστη και έναν κωδικό πρόσβασης. Με αυτά θα συνδέεσαι, οπότε διάλεξε αυτά που θα θυμάσαι."
 
-#. Plutonium page note under disabled buttons for unclaimed accounts. premiumProductName is the paid tier name.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page note under disabled buttons for unclaimed accounts. premiumProductName is the paid tier name.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Claim your account to buy {premiumProductName}."
 msgstr "Διεκδίκησε τον λογαριασμό σου για να αγοράσεις {premiumProductName}."
 
 #. Note in the gift purchase dialog for unclaimed accounts.
-#: src/features/premium/components/modals/GiftPlutoniumModal.tsx
+#: src/features/premium/components/modals/GiftEmberModal.tsx
 msgid "Claim your account to buy gifts."
 msgstr "Διεκδίκησε τον λογαριασμό σου για να αγοράσεις δώρα."
 
@@ -9130,8 +9130,8 @@ msgstr "Οι κοινότητες που εμφανίζονται στην Εξ�
 msgid "Communities with over 250 people are forced onto the \"mentions only\" setting. Your original setting is preserved and will be restored if the community drops below 250 members."
 msgstr "Οι κοινότητες με πάνω από 250 άτομα αναγκάζονται να χρησιμοποιούν τη ρύθμιση \"μόνο αναφορές\". Η αρχική σας ρύθμιση διατηρείται και θα αποκατασταθεί αν η κοινότητα πέσει κάτω από 250 μέλη."
 
-#. Plutonium page comparison row label for the community limit.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison row label for the community limit.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Communities you can join"
 msgstr "Κοινότητες στις οποίες μπορείτε να συμμετάσχετε"
 
@@ -9379,19 +9379,19 @@ msgstr "Μικρά κουμπιά μόνο με ένα εικονίδιο, ιδ�
 msgid "Compact mode"
 msgstr "Συμπαγής λειτουργία"
 
-#. Heading of the comparison table on the Plutonium page. premiumProductName is the paid tier name.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Heading of the comparison table on the Ember page. premiumProductName is the paid tier name.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Compare Free and {premiumProductName}"
 msgstr "Σύγκριση Δωρεάν και {premiumProductName}"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Comparison"
 msgstr "Σύγκριση"
 
 #. Modal title for the mobile checkout confirmation when opening the payment provider in a browser.
 #. Title of the confirmation shown on mobile before opening the payment page for the Operator Pass.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 #: src/features/premium/components/modals/OperatorPassCheckoutModal.tsx
 msgid "Complete payment"
 msgstr "Ολοκλήρωση πληρωμής"
@@ -9613,8 +9613,8 @@ msgstr "Επιβεβαιώστε το email σας πριν επεξεργαστ
 msgid "Confirm your email before sending friend requests."
 msgstr "Επιβεβαιώστε το email σας πριν στείλετε αιτήματα φιλίας."
 
-#. Title of the error modal shown when an unverified account tries to purchase Plutonium.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#. Title of the error modal shown when an unverified account tries to purchase Ember.
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Confirm your email first"
 msgstr "Επιβεβαιώστε πρώτα το email σας"
 
@@ -9643,13 +9643,13 @@ msgstr "Επιβεβαιώστε το email σας για να προσθέτε�
 msgid "Confirm your email to add reactions."
 msgstr "Επιβεβαιώστε το email σας για να προσθέτετε αντιδράσεις."
 
-#. Plutonium page note under disabled buttons for unverified accounts. premiumProductName is the paid tier name.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page note under disabled buttons for unverified accounts. premiumProductName is the paid tier name.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Confirm your email to buy {premiumProductName}."
 msgstr "Επιβεβαιώστε το email σας για να αγοράσετε το {premiumProductName}."
 
 #. Note in the gift purchase dialog for accounts without a verified email.
-#: src/features/premium/components/modals/GiftPlutoniumModal.tsx
+#: src/features/premium/components/modals/GiftEmberModal.tsx
 msgid "Confirm your email to buy gifts."
 msgstr "Επιβεβαιώστε το email σας για να αγοράσετε δώρα."
 
@@ -10052,7 +10052,7 @@ msgid "Continue to {paymentProviderName}"
 msgstr "Συνέχεια στο {paymentProviderName}"
 
 #. Button in the gift time confirmation that proceeds to subscription checkout.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Continue to checkout"
 msgstr "Συνέχεια στο ταμείο"
 
@@ -10651,13 +10651,13 @@ msgstr "Δεν ήταν δυνατή η ακύρωση του αιτήματος
 msgid "Couldn't cancel the friend request. Try again."
 msgstr "Δεν ήταν δυνατή η ακύρωση του αιτήματος φιλίας. Δοκιμάστε ξανά."
 
-#. Title of the generic fallback error modal shown when canceling a scheduled Plutonium billing cycle change fails.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Title of the generic fallback error modal shown when canceling a scheduled Ember billing cycle change fails.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Couldn't cancel your pending billing change"
 msgstr "Δεν ήταν δυνατή η ακύρωση της εκκρεμούς αλλαγής χρέωσης"
 
-#. Title of the generic fallback error modal shown when cancelling a Plutonium subscription fails.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Title of the generic fallback error modal shown when cancelling a Ember subscription fails.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Couldn't cancel your subscription"
 msgstr "Δεν ήταν δυνατή η ακύρωση της συνδρομής σας"
 
@@ -10666,13 +10666,13 @@ msgstr "Δεν ήταν δυνατή η ακύρωση της συνδρομής
 msgid "Couldn't cancel. Try again or contact support."
 msgstr "Δεν ήταν δυνατή η ακύρωση. Δοκιμάστε ξανά ή επικοινωνήστε με την υποστήριξη."
 
-#. Title of the generic fallback error modal shown when changing the Plutonium billing cycle fails.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Title of the generic fallback error modal shown when changing the Ember billing cycle fails.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Couldn't change your billing cycle"
 msgstr "Δεν ήταν δυνατή η αλλαγή του κύκλου χρέωσης"
 
-#. Title of the generic fallback error modal shown when moving a Plutonium subscription down to the current price fails.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Title of the generic fallback error modal shown when moving a Ember subscription down to the current price fails.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Couldn't change your price"
 msgstr "Δεν ήταν δυνατή η αλλαγή της τιμής σας"
 
@@ -10823,8 +10823,8 @@ msgstr "Δεν ήταν δυνατή η λήψη της ενημέρωσης γ�
 msgid "Couldn't duplicate this channel"
 msgstr "Δεν ήταν δυνατή η αντιγραφή αυτού του καναλιού"
 
-#. Title of the generic fallback error modal shown when ending the Plutonium grace period fails.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Title of the generic fallback error modal shown when ending the Ember grace period fails.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Couldn't end your grace period"
 msgstr "Δεν ήταν δυνατή η λήξη της περιόδου χάριτος"
 
@@ -10975,8 +10975,8 @@ msgstr "Δεν ήταν δυνατή η δημοσίευση αυτού του �
 msgid "Couldn't reach a Hearth instance at {domain}. Check the address and that the instance is online."
 msgstr "Δεν ήταν δυνατή η σύνδεση με μια παρουσία Hearth στη διεύθυνση {domain}. Ελέγξτε τη διεύθυνση και βεβαιωθείτε ότι η παρουσία είναι σε λειτουργία."
 
-#. Title of the generic fallback error modal shown when reactivating a Plutonium subscription fails.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Title of the generic fallback error modal shown when reactivating a Ember subscription fails.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Couldn't reactivate your subscription"
 msgstr "Δεν ήταν δυνατή η επανενεργοποίηση της συνδρομής σας"
 
@@ -10991,7 +10991,7 @@ msgid "Couldn't redeem this gift. Try again."
 msgstr "Δεν ήταν δυνατή η εξαργύρωση αυτού του δώρου. Δοκιμάστε ξανά."
 
 #. Title of the generic fallback error modal shown when a self-serve refund fails.
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "Couldn't refund this purchase"
 msgstr "Δεν ήταν δυνατή η επιστροφή χρημάτων για αυτήν την αγορά"
 
@@ -11001,7 +11001,7 @@ msgid "Couldn't regenerate secret"
 msgstr "Δεν ήταν δυνατή η ανανέωση του μυστικού κλειδιού"
 
 #. Title of the generic fallback error modal shown when rejoining the Visionary community fails.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCommunityActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCommunityActions.tsx
 msgid "Couldn't rejoin the Visionary community"
 msgstr "Δεν ήταν δυνατή η εκ νέου συμμετοχή στην κοινότητα Visionary"
 
@@ -11130,7 +11130,7 @@ msgid "Couldn't start {blueskyProviderName} authorization"
 msgstr "Δεν ήταν δυνατή η έναρξη της εξουσιοδότησης {blueskyProviderName}"
 
 #. Title of the generic fallback error modal shown when creating a checkout session fails unexpectedly.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Couldn't start checkout"
 msgstr "Δεν ήταν δυνατή η έναρξη της ολοκλήρωσης αγοράς"
 
@@ -11681,7 +11681,7 @@ msgid "Ctrl"
 msgstr "Ctrl"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Currency"
 msgstr "Νόμισμα"
 
@@ -11907,8 +11907,8 @@ msgstr "Προσαρμοσμένη κατάσταση: "
 msgid "Custom tags"
 msgstr "Προσαρμοσμένες ετικέτες"
 
-#. Plutonium page comparison row label for custom themes.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison row label for custom themes.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Custom themes for the app"
 msgstr "Προσαρμοσμένα θέματα για την εφαρμογή"
 
@@ -11951,8 +11951,8 @@ msgstr "Προσαρμοσμένο…"
 
 #. Billing button that opens the external customer portal.
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionActions.tsx
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/app/components/dialogs/components/ember/SubscriptionActions.tsx
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Customer portal"
 msgstr "Πύλη πελατών"
 
@@ -12122,7 +12122,7 @@ msgstr "Εξαγωγή δεδομένων"
 
 #. Column header for invoice payment or creation date.
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/app/components/dialogs/components/plutonium/InvoiceList.tsx
+#: src/features/app/components/dialogs/components/ember/InvoiceList.tsx
 #: src/features/user/components/settings_utils/section_registry/AppearanceSections.ts
 msgid "Date"
 msgstr "Ημερομηνία"
@@ -13753,7 +13753,7 @@ msgstr "Να μην εμφανιστεί ξανά"
 msgid "Don't show message previews in the DM list"
 msgstr "Να μην εμφανίζονται προεπισκοπήσεις μηνυμάτων στη λίστα DM"
 
-#: src/features/ui/plutonium_upsell/PlutoniumUpsell.tsx
+#: src/features/ui/ember_upsell/EmberUpsell.tsx
 msgid "Don't show this again"
 msgstr "Να μην εμφανιστεί ξανά"
 
@@ -13771,8 +13771,8 @@ msgstr "Να μην προταθεί ξανά η συσκευή {deviceName}"
 msgid "Donate"
 msgstr "Δωρεά"
 
-#. Link text in the Plutonium page donation hint. Opens the donation page on the website.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Link text in the Ember page donation hint. Opens the donation page on the website.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Donate instead"
 msgstr "Κάνε μια δωρεά"
 
@@ -13923,7 +13923,7 @@ msgid "Download video"
 msgstr "Λήψη βίντεο"
 
 #. Billing invoice status for an invoice not finalized yet.
-#: src/features/app/components/dialogs/components/plutonium/InvoiceList.tsx
+#: src/features/app/components/dialogs/components/ember/InvoiceList.tsx
 msgid "Draft"
 msgstr "Πρόχειρο"
 
@@ -14111,8 +14111,8 @@ msgstr "Κάθε δημοσιευμένο μήνυμα επιτρέπει 3 γρ
 msgid "Each username belongs to one person. If a name is taken, people pick another one."
 msgstr "Κάθε όνομα χρήστη ανήκει σε ένα άτομο. Αν ένα όνομα είναι πιασμένο, επιλέγεται άλλο."
 
-#. Plutonium page comparison row label for early access.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison row label for early access.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Early access to new features"
 msgstr "Πρόσβαση σε νέες λειτουργίες νωρίτερα"
 
@@ -14436,11 +14436,11 @@ msgstr "Επεξεργασία μηνύματος"
 msgid "Education"
 msgstr "Εκπαίδευση"
 
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "Eligible for a refund until {windowEndsOn}."
 msgstr "Δικαιούστε επιστροφή χρημάτων έως {windowEndsOn}."
 
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "Eligible for a refund until {windowEndsOn}. This will also cancel your subscription immediately."
 msgstr "Δικαιούστε επιστροφή χρημάτων έως {windowEndsOn}. Αυτό θα ακυρώσει επίσης τη συνδρομή σας άμεσα."
 
@@ -14983,15 +14983,15 @@ msgid "End date"
 msgstr "Ημερομηνία λήξης"
 
 #. Billing button that ends premium grace period immediately.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionActions.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionActions.tsx
 msgid "End grace now"
 msgstr "Τερματισμός περιόδου χάριτος τώρα"
 
-#: src/features/premium/components/plutonium_page/PlutoniumPage.tsx
+#: src/features/premium/components/ember_page/EmberPage.tsx
 msgid "End grace period"
 msgstr "Τερματισμός περιόδου χάριτος"
 
-#: src/features/premium/components/plutonium_page/PlutoniumPage.tsx
+#: src/features/premium/components/ember_page/EmberPage.tsx
 msgid "End grace period now?"
 msgstr "Να τερματιστεί τώρα η περίοδος χάριτος;"
 
@@ -15476,10 +15476,10 @@ msgstr "Κάθε κοινότητα που ακολουθεί αυτό το κα
 msgid "Everyone"
 msgstr "Όλοι"
 
-#. Bullet point in the P2P call dialog. Plutonium is the name of the paid subscription and must not be translated. 4K and fps are video terms.
+#. Bullet point in the P2P call dialog. Ember is the name of the paid subscription and must not be translated. 4K and fps are video terms.
 #: src/features/voice/utils/VoiceMessageDescriptors.ts
-msgid "Everyone in the call gets Plutonium stream quality for free: up to 4K source resolution and 60 fps."
-msgstr "Όλοι στην κλήση λαμβάνουν δωρεάν ποιότητα ροής Plutonium: έως 4K ανάλυση πηγής και 60 fps."
+msgid "Everyone in the call gets Ember stream quality for free: up to 4K source resolution and 60 fps."
+msgstr "Όλοι στην κλήση λαμβάνουν δωρεάν ποιότητα ροής Ember: έως 4K ανάλυση πηγής και 60 fps."
 
 #. Description of the single community option in the setup wizard.
 #: src/features/app/components/setup/SetupPolicySteps.tsx
@@ -15618,7 +15618,7 @@ msgstr "Λήξη μετά από"
 
 #. Error message in the invite list item.
 #. Subscription status badge meaning premium access has fully expired.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionStatusBadge.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionStatusBadge.tsx
 #: src/features/invite/components/InviteListItem.tsx
 msgid "Expired"
 msgstr "Έληξε"
@@ -15648,7 +15648,7 @@ msgstr "Έληξε στις {date}"
 msgid "Expired on {earliest}"
 msgstr "Έληξε στις {earliest}"
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionDescription.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionDescription.tsx
 msgid "Expired on <0>{expiredDate}</0>. <1/> are no longer active. You can resubscribe at any time."
 msgstr "Έληξε στις <0>{expiredDate}</0>. Τα <1/> δεν είναι πλέον ενεργά. Μπορείτε να εγγραφείτε ξανά ανά πάσα στιγμή."
 
@@ -16225,8 +16225,8 @@ msgstr "Αγαπημένα"
 msgid "Favorites"
 msgstr "Αγαπημένα"
 
-#. Column header for perk names in the Plutonium page comparison table.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Column header for perk names in the Ember page comparison table.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Feature"
 msgstr "Λειτουργία"
 
@@ -16238,7 +16238,7 @@ msgstr "Η λειτουργία έχει απενεργοποιηθεί προσ
 #. Developer options group for feature behavior overrides.
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
 #: src/features/devtools/components/DeveloperOptionsToggleGroups.ts
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Features"
 msgstr "Λειτουργίες"
 
@@ -16277,7 +16277,7 @@ msgstr "Επιλογές αρχείου"
 msgid "File ordering"
 msgstr "Σειρά αρχείων"
 
-#. Title of the file-too-large alert variant that offers a Plutonium upsell.
+#. Title of the file-too-large alert variant that offers a Ember upsell.
 #: src/features/messaging/components/alerts/FileSizeTooLargeModal.tsx
 msgid "File size limit exceeded"
 msgstr "Το μέγεθος αρχείου υπερβαίνει το όριο"
@@ -16648,8 +16648,8 @@ msgstr "Γραμματοσειρές"
 msgid "Food & drink"
 msgstr "Φαγητό & ποτό"
 
-#. Screen reader label for the asterisk that jumps to the custom tag footnote on the Plutonium page.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Screen reader label for the asterisk that jumps to the custom tag footnote on the Ember page.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Footnote about custom tags"
 msgstr "Υποσημείωση σχετικά με προσαρμοσμένες ετικέτες"
 
@@ -16912,8 +16912,8 @@ msgstr "Οι ρυθμοί καρέ πάνω από 30 FPS απαιτούν {prem
 msgid "France"
 msgstr "Γαλλία"
 
-#. Column header for the free tier in the Plutonium page comparison table.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Column header for the free tier in the Ember page comparison table.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Free"
 msgstr "Δωρεάν"
 
@@ -16928,12 +16928,12 @@ msgid "Free user (with purchase history)"
 msgstr "Δωρεάν χρήστης (με ιστορικό αγορών)"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Free versus premium"
 msgstr "Δωρεάν έναντι premium"
 
 #. Settings search entry label. Names the settings search entry in the settings UI. Preserve {premiumProductName}; it is inserted by code.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Free vs {premiumProductName}"
 msgstr "Δωρεάν έναντι {premiumProductName}"
 
@@ -17328,7 +17328,7 @@ msgstr "Γερμανικά"
 msgid "Germany"
 msgstr "Γερμανία"
 
-#. Generic upsell CTA button to start the Plutonium purchase flow. Preserve {premiumProductName}.
+#. Generic upsell CTA button to start the Ember purchase flow. Preserve {premiumProductName}.
 #: src/features/i18n/utils/CommonMessageDescriptors.ts
 msgid "Get {premiumProductName}"
 msgstr "Αποκτήστε {premiumProductName}"
@@ -17343,18 +17343,18 @@ msgstr "Αποκτήστε {premiumProductName} για να προσαρμόσε
 msgid "Get {premiumProductName} to customize your tag or keep it when changing your username"
 msgstr "Αποκτήστε {premiumProductName} για να προσαρμόσετε την ετικέτα σας ή να τη διατηρήσετε όταν αλλάζετε το όνομα χρήστη σας"
 
-#. Plutonium page perk card body about profile perks, shown on instances where people sign in with a username and have no tag.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page perk card body about profile perks, shown on instances where people sign in with a username and have no tag.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Get an animated avatar and banner, a subscriber badge and a separate profile for each community."
 msgstr "Απόκτησε κινούμενη εικόνα προφίλ και banner, σήμα συνδρομητή και ξεχωριστό προφίλ για κάθε κοινότητα."
 
-#. Plutonium page perk card body about profile perks. footnote is a clickable asterisk that points to a footnote about tags. Keep it directly after the word for username.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page perk card body about profile perks. footnote is a clickable asterisk that points to a footnote about tags. Keep it directly after the word for username.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Get an animated avatar and banner, a subscriber badge, the four-digit tag you want after your username{footnote}, and a separate profile for each community."
 msgstr "Απόκτησε ένα κινούμενο avatar και banner, μια κονκάρδα συνδρομητή, την τετραψήφια ετικέτα που θέλεις μετά το όνομά σου{footnote}, και ένα ξεχωριστό προφίλ για κάθε κοινότητα."
 
-#. Secondary Plutonium page button that starts a monthly subscription checkout.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Secondary Ember page button that starts a monthly subscription checkout.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Get monthly"
 msgstr "Λήψη μηνιαίως"
 
@@ -17388,8 +17388,8 @@ msgstr "Αποκτήστε την εφαρμογή υπολογιστή για p
 msgid "Get the new {productName} app"
 msgstr "Λήψη της νέας εφαρμογής {productName}"
 
-#. Primary Plutonium page button that starts a yearly subscription checkout.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Primary Ember page button that starts a yearly subscription checkout.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Get yearly"
 msgstr "Λήψη ετήσια"
 
@@ -17447,21 +17447,21 @@ msgstr "Δεν ήταν δυνατή η φόρτωση των GIF"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
 #. Subscription status badge meaning premium access came from a gift.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionStatusBadge.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionStatusBadge.tsx
 #: src/features/expressions/components/modals/GiftAcceptModal.tsx
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Gift"
 msgstr "Δώρο"
 
-#. Plutonium page button that opens the gift purchase dialog. premiumProductName is the paid tier name.
+#. Ember page button that opens the gift purchase dialog. premiumProductName is the paid tier name.
 #. Premium gift purchase section title. premiumProductName is the short paid product name.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 #: src/features/premium/utils/PremiumMessageDescriptors.ts
 msgid "Gift {premiumProductName}"
 msgstr "Δωρίστε {premiumProductName}"
 
-#. Body of the closing call to action on the Plutonium page for members. premiumProductName is the paid tier name.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Body of the closing call to action on the Ember page for members. premiumProductName is the paid tier name.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Gift {premiumProductName} to a friend for a month or a whole year. Gifts never renew."
 msgstr "Δώρισε το {premiumProductName} σε έναν φίλο για έναν μήνα ή ολόκληρο χρόνο. Οι δωρεές δεν ανανεώνονται ποτέ."
 
@@ -17524,7 +17524,7 @@ msgid "Gift inventory nagbar"
 msgstr "Γραμμή ειδοποιήσεων αποθέματος δώρων"
 
 #. Accessible label of the gift length options in the gift purchase dialog.
-#: src/features/premium/components/modals/GiftPlutoniumModal.tsx
+#: src/features/premium/components/modals/GiftEmberModal.tsx
 msgid "Gift length"
 msgstr "Διάρκεια δώρου"
 
@@ -17556,7 +17556,7 @@ msgid "Gift redeemed!"
 msgstr "Το δώρο εξαργυρώθηκε!"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Gift subscription"
 msgstr "Συνδρομή δώρου"
 
@@ -17599,7 +17599,7 @@ msgstr "Δώρο: λήγει σύντομα"
 msgid "Gift: grace period (still have access)"
 msgstr "Δώρο: περίοδος χάριτος (έχετε ακόμα πρόσβαση)"
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionDescription.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionDescription.tsx
 msgid "Gifted <0/> until <1>{giftEndDate}</1>. Does not renew automatically. Redeem more gift codes to extend."
 msgstr "Έχετε ως δώρο <0/> έως <1>{giftEndDate}</1>. Δεν ανανεώνεται αυτόματα. Εξαργυρώστε περισσότερους κωδικούς δώρου για παράταση."
 
@@ -17609,12 +17609,12 @@ msgid "Gifts"
 msgstr "Δώρα"
 
 #. Toast when someone arrives from a gift link but gift purchases are not available for this account.
-#: src/features/premium/components/plutonium_page/PlutoniumPage.tsx
+#: src/features/premium/components/ember_page/EmberPage.tsx
 msgid "Gifts aren't available for your account right now."
 msgstr "Τα δώρα δεν είναι διαθέσιμα για τον λογαριασμό σας αυτήν τη στιγμή."
 
 #. Message in the gift purchase dialog when gifts cannot be bought.
-#: src/features/premium/components/modals/GiftPlutoniumModal.tsx
+#: src/features/premium/components/modals/GiftEmberModal.tsx
 msgid "Gifts aren't available right now."
 msgstr "Τα δώρα δεν είναι διαθέσιμα αυτήν τη στιγμή."
 
@@ -17798,7 +17798,7 @@ msgid "Got it!"
 msgstr "Εντάξει!"
 
 #. Subscription status badge meaning access remains briefly after subscription end.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionStatusBadge.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionStatusBadge.tsx
 msgid "Grace period"
 msgstr "Περίοδος χάριτος"
 
@@ -18040,8 +18040,8 @@ msgstr "Έχει κάνει ποτέ αγορά"
 msgid "Has ever purchased override"
 msgstr "Έχει κάνει ποτέ αγορά (παράκαμψη)"
 
-#. Plutonium page hero text on an instance where the paid tier cannot be bought, only redeemed. premiumProductName is the paid tier name.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page hero text on an instance where the paid tier cannot be bought, only redeemed. premiumProductName is the paid tier name.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Have a gift code? Redeem it to unlock {premiumProductName}."
 msgstr "Έχετε κωδικό δώρου; Εξαργυρώστε τον για να ξεκλειδώσετε το {premiumProductName}."
 
@@ -19865,8 +19865,8 @@ msgstr "Οι προσκλήσεις στην κοινότητα {communityName} 
 
 #. Fallback label when billing invoice status is unknown.
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/app/components/dialogs/components/plutonium/InvoiceList.tsx
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/app/components/dialogs/components/ember/InvoiceList.tsx
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Invoice"
 msgstr "Τιμολόγιο"
 
@@ -20224,8 +20224,8 @@ msgstr "Μετάβαση στο παλαιότερο μη αναγνωσμένο
 msgid "Just join (keep other connections)"
 msgstr "Απλή σύνδεση (διατήρηση άλλων συνδέσεων)"
 
-#. Hint under the Plutonium page hero buttons. productName is the app name. donateLink is a link whose text is "Donate instead".
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Hint under the Ember page hero buttons. productName is the app name. donateLink is a link whose text is "Donate instead".
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Just want to support {productName}'s open source development? {donateLink}."
 msgstr "Θέλετε απλώς να υποστηρίξετε την ανάπτυξη ανοιχτού κώδικα του {productName}; {donateLink}."
 
@@ -20270,7 +20270,7 @@ msgstr "Διατήρηση συνημμένων κατά την εκκαθάρι
 msgid "Keep everything"
 msgstr "Διατήρηση όλων"
 
-#: src/features/premium/components/plutonium_page/PlutoniumPage.tsx
+#: src/features/premium/components/ember_page/EmberPage.tsx
 msgid "Keep grace period"
 msgstr "Διατήρηση περιόδου χάριτος"
 
@@ -20299,7 +20299,7 @@ msgstr "Διατήρηση αγοράς"
 msgid "Keep running"
 msgstr "Παραμονή σε λειτουργία"
 
-#: src/features/premium/components/plutonium_page/PlutoniumPage.tsx
+#: src/features/premium/components/ember_page/EmberPage.tsx
 msgid "Keep subscription"
 msgstr "Διατήρηση συνδρομής"
 
@@ -20323,8 +20323,8 @@ msgstr "Συνεχίζει τη μετάδοση για λίγο αφού αφή
 msgid "Keep window dimensions and placement between reloads"
 msgstr "Διατήρηση διαστάσεων και θέσης παραθύρου μεταξύ των ανανεώσεων"
 
-#. Heading of the closing call to action on the Plutonium page for members on gifted time who can subscribe.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Heading of the closing call to action on the Ember page for members on gifted time who can subscribe.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Keep your perks going"
 msgstr "Διατήρησε τα προνόμιά σου"
 
@@ -20448,8 +20448,8 @@ msgstr "Γλώσσες"
 msgid "Large"
 msgstr "Μεγάλο"
 
-#. Plutonium page comparison row label for the upload size limit.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison row label for the upload size limit.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Largest file you can upload"
 msgstr "Το μεγαλύτερο αρχείο που μπορείς να ανεβάσεις"
 
@@ -20544,8 +20544,8 @@ msgstr "Μάθετε περισσότερα για τις προεπισκοπή
 msgid "Learn more"
 msgstr "Μάθετε περισσότερα"
 
-#. Link text in the Plutonium page tag footnote. Opens the Visionary help article.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Link text in the Ember page tag footnote. Opens the Visionary help article.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Learn more about Visionary"
 msgstr "Μάθετε περισσότερα για το Visionary"
 
@@ -20654,7 +20654,7 @@ msgstr "Αριστερό κουμπί ποντικιού"
 msgid "Left tooltip"
 msgstr "Αριστερή επεξήγηση εργαλείου"
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionDescription.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionDescription.tsx
 msgid "Legacy rate"
 msgstr "Παλιά τιμή"
 
@@ -21409,7 +21409,7 @@ msgid "Manage nicknames"
 msgstr "Διαχείριση ψευδωνύμων"
 
 #. Billing button that opens Stripe customer portal for payment-method management only.
-#: src/features/app/components/dialogs/components/plutonium/PurchaseHistorySection.tsx
+#: src/features/app/components/dialogs/components/ember/PurchaseHistorySection.tsx
 msgid "Manage payment methods"
 msgstr "Διαχείριση τρόπων πληρωμής"
 
@@ -21434,8 +21434,8 @@ msgid "Manage roles"
 msgstr "Διαχείριση ρόλων"
 
 #. Billing action that opens subscription management or the customer billing portal.
-#. Plutonium page hero button that scrolls to the subscription management panel.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page hero button that scrolls to the subscription management panel.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 #: src/features/premium/utils/PremiumMessageDescriptors.ts
 msgid "Manage subscription"
 msgstr "Διαχείριση συνδρομής"
@@ -21455,7 +21455,7 @@ msgid "Manage your purchased {PREMIUM_PRODUCT_NAME} gift codes. Share the gift U
 msgstr "Διαχειριστείτε τους κωδικούς δώρου {PREMIUM_PRODUCT_NAME} που αγοράσατε. Μοιραστείτε το URL του δώρου με κάποιον ξεχωριστό ή εξαργυρώστε το για τον εαυτό σας!"
 
 #. Settings search entry description. One-line summary of what the settings search entry controls.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Manage your subscription"
 msgstr "Διαχείριση συνδρομής"
 
@@ -21803,8 +21803,8 @@ msgstr "Μέσα σε κανάλια που δεν είναι χαρακτηρι
 msgid "Media in group chats and in direct messages from people who aren't your friends."
 msgstr "Μέσα σε ομαδικές συνομιλίες και σε απευθείας μηνύματα από άτομα που δεν είναι φίλοι σας."
 
-#. Plutonium page comparison row label for the saved media limit.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison row label for the saved media limit.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Media items you can save for later"
 msgstr "Μέσα που μπορείς να αποθηκεύσεις για αργότερα"
 
@@ -22423,8 +22423,8 @@ msgstr "Τα μηνύματα που δημοσιεύονται σε αυτά τ
 msgid "Messages published in these announcement channels are copied into your channels."
 msgstr "Τα μηνύματα που δημοσιεύονται σε αυτά τα κανάλια ανακοινώσεων αντιγράφονται στα κανάλια σας."
 
-#. Plutonium page comparison row label for the bookmark limit.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison row label for the bookmark limit.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Messages you can bookmark"
 msgstr "Μηνύματα που μπορείτε να αποθηκεύσετε"
 
@@ -22711,15 +22711,15 @@ msgid "Month"
 msgstr "Μήνας"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Monthly"
 msgstr "Μηνιαία"
 
-#: src/features/app/components/dialogs/components/plutonium/ScheduledSubscriptionChangeDescription.tsx
+#: src/features/app/components/dialogs/components/ember/ScheduledSubscriptionChangeDescription.tsx
 msgid "Monthly billing starts on <0>{pendingChangeDate}</0>."
 msgstr "Η μηνιαία χρέωση ξεκινά στις <0>{pendingChangeDate}</0>."
 
-#: src/features/app/components/dialogs/components/plutonium/ScheduledSubscriptionChangeDescription.tsx
+#: src/features/app/components/dialogs/components/ember/ScheduledSubscriptionChangeDescription.tsx
 msgid "Monthly billing starts on <0>{pendingChangeDate}</0>. First monthly charge: {pendingInitialPriceLabel}. Future monthly renewals: {pendingRecurringPriceLabel}/month."
 msgstr "Η μηνιαία χρέωση ξεκινά στις <0>{pendingChangeDate}</0>. Πρώτη μηνιαία χρέωση: {pendingInitialPriceLabel}. Μελλοντικές μηνιαίες ανανεώσεις: {pendingRecurringPriceLabel}/μήνα."
 
@@ -22729,7 +22729,7 @@ msgid "Monthly donation (optional)"
 msgstr "Μηνιαία δωρεά (προαιρετική)"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Monthly gift"
 msgstr "Μηνιαίο δώρο"
 
@@ -23651,13 +23651,13 @@ msgstr "Νέα δημοσίευση"
 msgid "New post in #{forumName}"
 msgstr "Νέα δημοσίευση στο #{forumName}"
 
-#. Plutonium subscription card line shown when a move to a lower price is scheduled but the new amount is unknown. {pendingChangeDate} is a date already formatted and localized by code; never write a date into the translation.
-#: src/features/app/components/dialogs/components/plutonium/ScheduledSubscriptionChangeDescription.tsx
+#. Ember subscription card line shown when a move to a lower price is scheduled but the new amount is unknown. {pendingChangeDate} is a date already formatted and localized by code; never write a date into the translation.
+#: src/features/app/components/dialogs/components/ember/ScheduledSubscriptionChangeDescription.tsx
 msgid "New price scheduled for <0>{pendingChangeDate}</0>."
 msgstr "Νέα τιμή προγραμματισμένη για <0>{pendingChangeDate}</0>."
 
-#. Plutonium subscription card line shown when a move to a lower price is scheduled. {pendingChangeDate} is a date and {pendingTargetPriceLabel} is a currency amount, both already formatted and localized by code; never write a date or an amount into the translation.
-#: src/features/app/components/dialogs/components/plutonium/ScheduledSubscriptionChangeDescription.tsx
+#. Ember subscription card line shown when a move to a lower price is scheduled. {pendingChangeDate} is a date and {pendingTargetPriceLabel} is a currency amount, both already formatted and localized by code; never write a date or an amount into the translation.
+#: src/features/app/components/dialogs/components/ember/ScheduledSubscriptionChangeDescription.tsx
 msgid "New price scheduled for <0>{pendingChangeDate}</0>. Renewals will be {pendingTargetPriceLabel} from then on."
 msgstr "Νέα τιμή προγραμματισμένη για <0>{pendingChangeDate}</0>. Οι ανανεώσεις θα είναι {pendingTargetPriceLabel} από εκείνη την ημερομηνία και μετά."
 
@@ -23779,7 +23779,7 @@ msgid "No active overrides"
 msgstr "Δεν υπάρχουν ενεργές παρακάμψεις"
 
 #. Title of the error modal shown when an action needs an active subscription but none exists.
-#: src/features/app/components/dialogs/components/plutonium/utils/PremiumActionErrorModal.tsx
+#: src/features/app/components/dialogs/components/ember/utils/PremiumActionErrorModal.tsx
 msgid "No active subscription"
 msgstr "Δεν υπάρχει ενεργή συνδρομή"
 
@@ -24046,7 +24046,7 @@ msgid "No invites created"
 msgstr "Δεν έχουν δημιουργηθεί προσκλήσεις"
 
 #. Quiet empty state when no invoices exist yet.
-#: src/features/app/components/dialogs/components/plutonium/InvoiceList.tsx
+#: src/features/app/components/dialogs/components/ember/InvoiceList.tsx
 msgid "No invoices yet."
 msgstr "Δεν υπάρχουν τιμολόγια ακόμα."
 
@@ -24501,8 +24501,8 @@ msgstr "Δεν επιτρέπεται"
 msgid "Not assigned"
 msgstr "Δεν έχει οριστεί"
 
-#. Screen reader text for a cross in the Plutonium page comparison table.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Screen reader text for a cross in the Ember page comparison table.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Not available"
 msgstr "Μη διαθέσιμο"
 
@@ -24533,10 +24533,10 @@ msgstr "Δεν εμφανίζεται στον τοίχο."
 #. Secondary button that closes the one-time recovery kit prompt.
 #. Secondary button that closes the passkey update modal after an attempt failed.
 #. Setup wizard option that leaves the push relay off.
-#. Short label in the Plutonium self serve refund section. Keep the tone plain and specific.
+#. Short label in the Ember self serve refund section. Keep the tone plain and specific.
 #. Short label in the authentication new device monitoring. Keep the tone plain and specific.
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionCard.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionCard.tsx
 #: src/features/app/components/layout/app_layout/nagbars/VoiceSessionRestoreNagbar.tsx
 #: src/features/app/components/setup/SetupWizardSteps.tsx
 #: src/features/auth/components/modals/AuthenticatorOfferModal.tsx
@@ -24638,7 +24638,7 @@ msgid "Nothing to preview yet."
 msgstr "Τίποτα για προεπισκόπηση ακόμα."
 
 #. Title of the error modal shown when there is no refundable purchase on the account.
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "Nothing to refund"
 msgstr "Δεν υπάρχει τίποτα για επιστροφή χρημάτων"
 
@@ -24889,7 +24889,7 @@ msgid "on {instanceLabel}"
 msgstr "στο {instanceLabel}"
 
 #. Billing confirmation body for moving an active subscription down to the current price. {listPriceEffectiveDate} is a date, and {listPriceCurrentLabel} and {listPriceNewLabel} are currency amounts, all already formatted and localized by code; never write a date or an amount into the translation.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionCard.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionCard.tsx
 msgid "On <0>{listPriceEffectiveDate}</0> your subscription moves from {listPriceCurrentLabel} to {listPriceNewLabel}. Nothing is charged today, and the rest of your subscription stays exactly as it is."
 msgstr "Στις <0>{listPriceEffectiveDate}</0> η συνδρομή σας αλλάζει από {listPriceCurrentLabel} σε {listPriceNewLabel}. Δεν χρεώνεστε τίποτα σήμερα και το υπόλοιπο της συνδρομής σας παραμένει ακριβώς όπως είναι."
 
@@ -25114,8 +25114,8 @@ msgstr "Μόνο τα μέλη και οι ρόλοι που θα επιλέξε
 msgid "Only the selected ones"
 msgstr "Μόνο οι επιλεγμένες"
 
-#. Body of the error modal shown when a non-Visionary user tries to rejoin a gated Plutonium community.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCommunityActions.tsx
+#. Body of the error modal shown when a non-Visionary user tries to rejoin a gated Ember community.
+#: src/features/app/components/dialogs/components/ember/hooks/useCommunityActions.tsx
 msgid "Only Visionary members can join this community. Your access may have changed since this screen was opened."
 msgstr "Μόνο τα μέλη Visionary μπορούν να συμμετέχουν σε αυτήν την κοινότητα. Η πρόσβασή σας μπορεί να έχει αλλάξει από τότε που άνοιξε αυτή η οθόνη."
 
@@ -25137,7 +25137,7 @@ msgstr "Διαφάνεια"
 #. Billing invoice status for an invoice awaiting payment.
 #. Button label that opens the source settings section for an advanced setting.
 #. Short button that opens a billing invoice or receipt.
-#: src/features/app/components/dialogs/components/plutonium/InvoiceList.tsx
+#: src/features/app/components/dialogs/components/ember/InvoiceList.tsx
 #: src/features/platform/utils/DesktopLocaleBridge.ts
 #: src/features/user/components/modals/tabs/advanced_settings_tab/AdvancedSettingRow.tsx
 msgid "Open"
@@ -25193,8 +25193,8 @@ msgstr "Άνοιγμα {landmarkName}"
 msgid "Open {name}"
 msgstr "Άνοιγμα {name}"
 
-#. Button on the settings card that opens the Plutonium page. premiumProductFullName is the full paid tier name.
-#: src/features/premium/components/plutonium_page/PlutoniumPageLinkCard.tsx
+#. Button on the settings card that opens the Ember page. premiumProductFullName is the full paid tier name.
+#: src/features/premium/components/ember_page/EmberPageLinkCard.tsx
 msgid "Open {premiumProductFullName}"
 msgstr "Άνοιγμα {premiumProductFullName}"
 
@@ -25484,7 +25484,7 @@ msgid "Open in Themes"
 msgstr "Άνοιγμα στις Εμφανίσεις"
 
 #. Accessible label for opening a specific billing invoice.
-#: src/features/app/components/dialogs/components/plutonium/InvoiceList.tsx
+#: src/features/app/components/dialogs/components/ember/InvoiceList.tsx
 msgid "Open invoice {invoiceLabel}"
 msgstr "Άνοιγμα τιμολογίου {invoiceLabel}"
 
@@ -25806,11 +25806,11 @@ msgstr "Επιλογές για το {displayName}"
 msgid "Options for {themeName}"
 msgstr "Επιλογές για {themeName}"
 
-#. Compact conjunction between the monthly and yearly price on the Plutonium page hero. On narrow screens it starts the second line, right before the yearly price.
+#. Compact conjunction between the monthly and yearly price on the Ember page hero. On narrow screens it starts the second line, right before the yearly price.
 #. Small separator between alternative shortcut keycaps in the keyboard mode intro modal.
 #: src/features/connection/components/modals/AddConnectionModal.tsx
 #: src/features/input/components/modals/KeyboardModeIntroModal.tsx
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "or"
 msgstr "ή"
 
@@ -25978,7 +25978,7 @@ msgid "Output volume"
 msgstr "Ένταση εξόδου"
 
 #. Title of the error modal shown when a self-serve refund is no longer within the eligible window.
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "Outside the refund window"
 msgstr "Εκτός του παραθύρου επιστροφής χρημάτων"
 
@@ -26075,7 +26075,7 @@ msgid "Page up"
 msgstr "Page Up"
 
 #. Billing invoice status for a completed invoice.
-#: src/features/app/components/dialogs/components/plutonium/InvoiceList.tsx
+#: src/features/app/components/dialogs/components/ember/InvoiceList.tsx
 msgid "Paid"
 msgstr "Πληρωμένο"
 
@@ -26377,17 +26377,17 @@ msgid "Paused. The person who followed this channel can no longer see it. Follow
 msgstr "Σε παύση. Το άτομο που παρακολούθησε αυτό το κανάλι δεν μπορεί πλέον να το δει. Παρακολούθησέ το ξανά για να συνεχιστεί."
 
 #. Description at the top of the gift purchase dialog.
-#: src/features/premium/components/modals/GiftPlutoniumModal.tsx
+#: src/features/premium/components/modals/GiftEmberModal.tsx
 msgid "Pay once and get a gift link to share. Gifts never renew."
 msgstr "Πληρώστε μία φορά και λάβετε έναν σύνδεσμο δώρου για να τον μοιραστείτε. Τα δώρα δεν ανανεώνονται ποτέ."
 
-#. Plutonium subscription payment method picker description for Brazil. Explains Pix recurring vs falling back to a card.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#. Ember subscription payment method picker description for Brazil. Explains Pix recurring vs falling back to a card.
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Pay with {pixPaymentMethod} Automático to authorize recurring charges directly from your Brazilian bank. Or choose \"Use card\" to enter a credit card on {paymentProviderName}'s next screen."
 msgstr "Πληρώστε με {pixPaymentMethod} Automático για να εξουσιοδοτήσετε επαναλαμβανόμενες χρεώσεις απευθείας από την τράπεζά σας στη Βραζιλία. Ή επιλέξτε «Χρήση κάρτας» για να εισαγάγετε μια πιστωτική κάρτα στην επόμενη οθόνη του {paymentProviderName}."
 
-#. Plutonium subscription payment method picker description for India. Explains UPI e-mandate vs falling back to a card.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#. Ember subscription payment method picker description for India. Explains UPI e-mandate vs falling back to a card.
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Pay with {upiPaymentMethod} to set up an RBI-compliant e-mandate from your Indian bank. Or choose \"Use card\" to enter a credit card on {paymentProviderName}'s next screen."
 msgstr "Πληρώστε με {upiPaymentMethod} για να ρυθμίσετε μια ηλεκτρονική εντολή πληρωμής (e-mandate) συμβατή με την RBI από την ινδική σας τράπεζα. Ή επιλέξτε «Χρήση κάρτας» για να εισαγάγετε μια πιστωτική κάρτα στην επόμενη οθόνη του {paymentProviderName}."
 
@@ -26405,12 +26405,12 @@ msgid "Payment successful"
 msgstr "Η πληρωμή ήταν επιτυχής"
 
 #. Body of the error modal shown when the payment provider is not configured or reachable.
-#: src/features/app/components/dialogs/components/plutonium/utils/PremiumActionErrorModal.tsx
+#: src/features/app/components/dialogs/components/ember/utils/PremiumActionErrorModal.tsx
 msgid "Payments are temporarily unavailable. Please try again in a moment."
 msgstr "Οι πληρωμές είναι προσωρινά μη διαθέσιμες. Παρακαλούμε δοκιμάστε ξανά σε λίγο."
 
 #. Title of the error modal shown when the payment provider is not configured or reachable.
-#: src/features/app/components/dialogs/components/plutonium/utils/PremiumActionErrorModal.tsx
+#: src/features/app/components/dialogs/components/ember/utils/PremiumActionErrorModal.tsx
 msgid "Payments are unavailable"
 msgstr "Οι πληρωμές δεν είναι διαθέσιμες"
 
@@ -26570,12 +26570,12 @@ msgid "Performance"
 msgstr "Απόδοση"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Perks"
 msgstr "Προνόμια"
 
 #. Subscription status badge meaning premium is paid but perks are temporarily disabled.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionStatusBadge.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionStatusBadge.tsx
 msgid "Perks paused"
 msgstr "Προνόμια σε παύση"
 
@@ -26697,8 +26697,8 @@ msgstr "Φωτογραφία"
 msgid "Pick a friend to pass it on to. They can accept or decline, and you can take it back until it moves."
 msgstr "Διάλεξε έναν φίλο για να του το δώσεις. Μπορεί να το δεχτεί ή να το απορρίψει, και μπορείς να το πάρεις πίσω μέχρι να μεταφερθεί."
 
-#. Body of the closing call to action on the Plutonium page for people without the paid tier.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Body of the closing call to action on the Ember page for people without the paid tier.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Pick a plan and your perks switch on the moment checkout finishes."
 msgstr "Διάλεξε ένα πρόγραμμα και τα προνόμιά σου θα ενεργοποιηθούν αμέσως μόλις ολοκληρωθεί η πληρωμή."
 
@@ -26737,8 +26737,8 @@ msgstr "Επίλεξε τουλάχιστον μία ετικέτα για αυ�
 msgid "Pick one or more dictionaries. Words from any selected dictionary are accepted, which is useful for multilingual chats."
 msgstr "Επιλέξτε ένα ή περισσότερα λεξικά. Γίνονται δεκτές λέξεις από οποιοδήποτε επιλεγμένο λεξικό, κάτι που είναι χρήσιμο για πολύγλωσσες συνομιλίες."
 
-#. Plutonium page comparison row label for the custom username tag perk.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison row label for the custom username tag perk.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Pick the 4-digit number after your username"
 msgstr "Διάλεξε τον 4ψήφιο αριθμό μετά το όνομά σου"
 
@@ -26904,12 +26904,12 @@ msgid "Plain"
 msgstr "Απλό"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Plan"
 msgstr "Πρόγραμμα"
 
-#. Text on the card in settings that links to the Plutonium page.
-#: src/features/premium/components/plutonium_page/PlutoniumPageLinkCard.tsx
+#. Text on the card in settings that links to the Ember page.
+#: src/features/premium/components/ember_page/EmberPageLinkCard.tsx
 msgid "Plans, perks, gifts and your subscription are all on one page."
 msgstr "Πλάνα, προνόμια, δώρα και η συνδρομή σας βρίσκονται όλα σε μία σελίδα."
 
@@ -27169,7 +27169,7 @@ msgid "Prefers reduced motion"
 msgstr "Προτιμά μειωμένη κίνηση"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Premium"
 msgstr "Premium"
 
@@ -27409,12 +27409,12 @@ msgid "Price"
 msgstr "Τιμή"
 
 #. Settings search entry label. Also used as a search synonym in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Pricing"
 msgstr "Τιμολόγηση"
 
 #. Error modal body shown when the user clicks a plan before price IDs have loaded.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Pricing is still loading."
 msgstr "Οι τιμές φορτώνονται ακόμα."
 
@@ -27708,18 +27708,18 @@ msgid "Publishing limit reached"
 msgstr "Όριο δημοσίευσης έφτασε"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Purchase"
 msgstr "Αγορά"
 
 #. Settings search entry description. One-line summary of what the settings search entry controls. Preserve {premiumProductName}; it is inserted by code.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Purchase {premiumProductName} gifts for someone else"
 msgstr "Αγοράστε δώρα {premiumProductName} για κάποιον άλλο"
 
 #. Settings search entry label. Also used as a search synonym in the settings search bar.
-#: src/features/app/components/dialogs/components/plutonium/PurchaseHistorySection.tsx
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/app/components/dialogs/components/ember/PurchaseHistorySection.tsx
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Purchase history"
 msgstr "Ιστορικό αγορών"
 
@@ -27735,12 +27735,12 @@ msgid "Purchased gifts"
 msgstr "Αγορασμένα δώρα"
 
 #. Modal body shown on a self-hosted instance when purchases are disabled for the account.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Purchases are disabled for this account."
 msgstr "Οι αγορές έχουν απενεργοποιηθεί για αυτόν τον λογαριασμό."
 
 #. Modal body shown when purchases are disabled. Provides the support email for appeals.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Purchases are disabled for this account. Contact {supportEmail} if this looks wrong."
 msgstr "Οι αγορές έχουν απενεργοποιηθεί για αυτόν τον λογαριασμό. Επικοινωνήστε με το {supportEmail} αν πιστεύετε ότι πρόκειται για λάθος."
 
@@ -27765,7 +27765,7 @@ msgid "Purchases are paused while a payment dispute on your account is open. The
 msgstr "Οι αγορές είναι σε παύση όσο υπάρχει ανοιχτή αμφισβήτηση πληρωμής στον λογαριασμό σας. Θα είναι ξανά διαθέσιμες αυτόματα όταν κλείσει η αμφισβήτηση."
 
 #. Toast when someone arrives from a subscribe link but purchases are not available for this account.
-#: src/features/premium/components/plutonium_page/PlutoniumPage.tsx
+#: src/features/premium/components/ember_page/EmberPage.tsx
 msgid "Purchases aren't available for your account right now."
 msgstr "Οι αγορές δεν είναι διαθέσιμες για τον λογαριασμό σας αυτήν τη στιγμή."
 
@@ -27775,7 +27775,7 @@ msgid "Purchases paused"
 msgstr "Αγορές σε παύση"
 
 #. Modal title shown when purchases are disabled on this account (server-side enforcement).
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Purchases unavailable"
 msgstr "Οι αγορές δεν είναι διαθέσιμες"
 
@@ -28077,13 +28077,13 @@ msgstr "Αντιδράσεις"
 
 #. Billing button that cancels a scheduled subscription cancellation.
 #. Button label on the premium-expired nagbar. Opens billing so the user can reactivate their subscription.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionActions.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionActions.tsx
 #: src/features/app/components/layout/app_layout/nagbars/PremiumStatusNagbar.tsx
 msgid "Reactivate"
 msgstr "Ενεργοποίηση ξανά"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Reactivate subscription"
 msgstr "Επανενεργοποίηση συνδρομής"
 
@@ -28137,8 +28137,8 @@ msgstr "Διαβάστε τη σημείωση απορρήτου του push re
 msgid "Reading speed"
 msgstr "Ταχύτητα ανάγνωσης"
 
-#. Heading of the closing call to action on the Plutonium page for people without the paid tier.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Heading of the closing call to action on the Ember page for people without the paid tier.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Ready to upgrade?"
 msgstr "Έτοιμοι για αναβάθμιση;"
 
@@ -28168,8 +28168,8 @@ msgstr "Λόγος: {0}"
 
 #. Column header for opening a billing receipt or invoice.
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/app/components/dialogs/components/plutonium/InvoiceList.tsx
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/app/components/dialogs/components/ember/InvoiceList.tsx
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Receipt"
 msgstr "Απόδειξη"
 
@@ -28319,8 +28319,8 @@ msgstr "Εξαργύρωση"
 msgid "Redeem a gift"
 msgstr "Εξαργύρωση δώρου"
 
-#. Plutonium page link that opens the gift code redemption settings.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page link that opens the gift code redemption settings.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Redeem a gift code"
 msgstr "Εξαργύρωση κωδικού δώρου"
 
@@ -28336,7 +28336,7 @@ msgid "Redeem for yourself"
 msgstr "Εξαργύρωση για εσάς"
 
 #. Billing button for entering a premium gift code.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionActions.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionActions.tsx
 msgid "Redeem gift code"
 msgstr "Εξαργύρωση κωδικού δώρου"
 
@@ -28421,23 +28421,23 @@ msgid "Refresh push subscription"
 msgstr "Ανανέωση συνδρομής push"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Refund"
 msgstr "Επιστροφή χρημάτων"
 
 #. Toast success shown after a self-serve refund is issued. Keep plain.
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "Refund issued. May take a few business days to appear."
 msgstr "Η επιστροφή χρημάτων εκδόθηκε. Ενδέχεται να χρειαστούν μερικές εργάσιμες ημέρες για να εμφανιστεί."
 
-#. Short label in the Plutonium self serve refund section. Keep the tone plain and specific.
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#. Short label in the Ember self serve refund section. Keep the tone plain and specific.
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "Refund purchase"
 msgstr "Επιστροφή χρημάτων αγοράς"
 
-#. Question prompt in the Plutonium self serve refund section. Keep the tone plain and specific.
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#. Question prompt in the Ember self serve refund section. Keep the tone plain and specific.
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "Refund your most recent purchase?"
 msgstr "Επιστροφή χρημάτων για την πιο πρόσφατη αγορά σας;"
 
@@ -29083,7 +29083,7 @@ msgstr "Μετονομάστηκε η κοινότητα από {oldName} σε {
 msgid "Render all your messages as an unknown message type."
 msgstr "Εμφάνιση όλων των μηνυμάτων σας ως άγνωστου τύπου."
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionCard.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionCard.tsx
 msgid "Renews on <0>{renewalDate}.</0>"
 msgstr "Ανανεώνεται στις <0>{renewalDate}.</0>"
 
@@ -29772,7 +29772,7 @@ msgstr "Επαναφορά παραθύρου"
 #. Billing button for restarting a subscription during the grace period.
 #. Billing button for starting a new subscription after premium ended.
 #. Billing button for starting a new subscription after premium expired.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionActions.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionActions.tsx
 msgid "Resubscribe"
 msgstr "Επανεγγραφή"
 
@@ -29863,7 +29863,7 @@ msgid "Review needed"
 msgstr "Χρειάζεται έλεγχος"
 
 #. Settings search entry description. One-line summary of what the settings search entry controls.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Review past purchases and refund options"
 msgstr "Έλεγχος προηγούμενων αγορών και επιλογών επιστροφής χρημάτων"
 
@@ -30215,7 +30215,7 @@ msgstr "Κορεσμός"
 msgid "Save"
 msgstr "Αποθήκευση"
 
-#. Short caption next to a yearly price, in the gift purchase dialog and under the yearly Plutonium price, saying how much the yearly plan saves over paying monthly. Shown as written, never uppercased, so use normal sentence case. percent is a whole number such as 17.
+#. Short caption next to a yearly price, in the gift purchase dialog and under the yearly Ember price, saying how much the yearly plan saves over paying monthly. Shown as written, never uppercased, so use normal sentence case. percent is a whole number such as 17.
 #: src/features/i18n/utils/CommonMessageDescriptors.ts
 msgid "Save {percent}%"
 msgstr "Εξοικονόμηση {percent}%"
@@ -31350,8 +31350,8 @@ msgstr "Αποστολή αναφοράς DSA"
 msgid "Send file messages in order"
 msgstr "Διαδοχική αποστολή μηνυμάτων με αρχεία"
 
-#. Plutonium page perk card title about upload size. size is a formatted size such as 500 MB.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page perk card title about upload size. size is a formatted size such as 500 MB.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Send files up to {size}"
 msgstr "Στείλτε αρχεία έως {size}"
 
@@ -32006,8 +32006,8 @@ msgstr "Ενέργεια κοινοποίησης."
 msgid "Share and back up"
 msgstr "Κοινοποίηση και δημιουργία αντιγράφων ασφαλείας"
 
-#. Plutonium page perk card body about upload size. freeSize is a formatted size such as 25 MB.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page perk card body about upload size. freeSize is a formatted size such as 25 MB.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Share full-length videos and big files without shrinking them first. Free accounts can send up to {freeSize}."
 msgstr "Μοιράσου βίντεο πλήρους μήκους και μεγάλα αρχεία χωρίς να τα συμπιέσεις πρώτα. Οι δωρεάν λογαριασμοί μπορούν να στείλουν έως και {freeSize}."
 
@@ -32026,8 +32026,8 @@ msgstr "Κοινοποίηση οθόνης"
 msgid "Share stream audio"
 msgstr "Κοινή χρήση ήχου ροής"
 
-#. Heading of the closing call to action on the Plutonium page for members.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Heading of the closing call to action on the Ember page for members.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Share the perks"
 msgstr "Μοιράσου τα προνόμια"
 
@@ -32059,8 +32059,8 @@ msgstr "Κοινοποίηση οθόνης"
 msgid "Share your screen in high definition (1080p), quad HD (1440p), or native source resolution, at up to 60 FPS."
 msgstr "Κοινοποιήστε την οθόνη σας σε υψηλή ευκρίνεια (1080p), quad HD (1440p) ή εγγενή ανάλυση πηγής, έως 60 FPS."
 
-#. Plutonium page perk card body about stream quality.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page perk card body about stream quality.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Share your screen or camera in up to 4K at 60 frames per second. Free accounts stream in up to 720p at 30."
 msgstr "Μοιράσου την οθόνη ή την κάμερά σου σε έως 4K στα 60 καρέ ανά δευτερόλεπτο. Οι δωρεάν λογαριασμοί κάνουν streaming σε έως 720p στα 30."
 
@@ -32098,7 +32098,7 @@ msgstr "Ήχος κοινόχρηστου παραθύρου"
 msgid "Sharp text at 720p, up to 30 FPS"
 msgstr "Ευκρινές κείμενο στα 720p, έως 30 FPS"
 
-#. Description for the high-tier Screen share streaming preset (Plutonium). Resolution and frame rate are technical tokens.
+#. Description for the high-tier Screen share streaming preset (Ember). Resolution and frame rate are technical tokens.
 #: src/features/voice/components/StreamSettingsMenuContent.tsx
 msgid "Sharp text at up to 4K, up to 15 FPS"
 msgstr "Ευκρινές κείμενο έως 4K, έως 15 FPS"
@@ -33290,7 +33290,7 @@ msgstr "Φατσούλες"
 msgid "Smooth 30 FPS at up to 720p"
 msgstr "Ομαλή ροή 30 FPS σε ανάλυση έως 720p"
 
-#. Description for the high-tier Gaming streaming preset (Plutonium). Resolution and frame rate are technical tokens.
+#. Description for the high-tier Gaming streaming preset (Ember). Resolution and frame rate are technical tokens.
 #: src/features/voice/components/StreamSettingsMenuContent.tsx
 msgid "Smooth 60 FPS at up to 1440p"
 msgstr "Ομαλή ροή 60 FPS σε ανάλυση έως 1440p"
@@ -33339,8 +33339,8 @@ msgstr "Ορισμένα αρχεία που προσπαθείτε να ανε�
 msgid "Some users can't be added"
 msgstr "Ορισμένοι χρήστες δεν μπορούν να προστεθούν"
 
-#. Plutonium page hero subtitle for gifted members. date is a formatted calendar date.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page hero subtitle for gifted members. date is a formatted calendar date.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Someone gifted you {premiumProductName}. Your perks stay active until {date}."
 msgstr "Κάποιος σου έκανε δώρο {premiumProductName}. Τα προνόμιά σου παραμένουν ενεργά μέχρι τις {date}."
 
@@ -33362,23 +33362,23 @@ msgstr "Κάτι πήγε στραβά και η εφαρμογή έκλεισε
 msgid "Something went wrong loading members. Try again later."
 msgstr "Κάτι πήγε στραβά κατά τη φόρτωση των μελών. Δοκιμάστε ξανά αργότερα."
 
-#. Body of the generic fallback error modal shown when canceling a scheduled Plutonium billing cycle change fails.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Body of the generic fallback error modal shown when canceling a scheduled Ember billing cycle change fails.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Something went wrong while canceling your pending billing change. Please try again in a moment."
 msgstr "Κάτι πήγε στραβά κατά την ακύρωση της εκκρεμούς αλλαγής χρέωσης. Δοκιμάστε ξανά σε λίγο."
 
-#. Body of the generic fallback error modal shown when cancelling a Plutonium subscription fails.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Body of the generic fallback error modal shown when cancelling a Ember subscription fails.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Something went wrong while canceling your subscription. Please try again in a moment."
 msgstr "Κάτι πήγε στραβά κατά την ακύρωση της συνδρομής σας. Δοκιμάστε ξανά σε λίγο."
 
-#. Body of the generic fallback error modal shown when changing the Plutonium billing cycle fails.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Body of the generic fallback error modal shown when changing the Ember billing cycle fails.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Something went wrong while changing your billing cycle. Please try again in a moment."
 msgstr "Κάτι πήγε στραβά κατά την αλλαγή του κύκλου χρέωσής σας. Δοκιμάστε ξανά σε λίγο."
 
-#. Body of the generic fallback error modal shown when moving a Plutonium subscription down to the current price fails.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Body of the generic fallback error modal shown when moving a Ember subscription down to the current price fails.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Something went wrong while changing your price. Please try again in a moment."
 msgstr "Κάτι πήγε στραβά κατά την αλλαγή της τιμής σας. Δοκιμάστε ξανά σε λίγο."
 
@@ -33386,13 +33386,13 @@ msgstr "Κάτι πήγε στραβά κατά την αλλαγή της τι�
 msgid "Something went wrong while connecting your account. You can close this tab and try again."
 msgstr "Κάτι πήγε στραβά κατά τη σύνδεση του λογαριασμού σας. Μπορείτε να κλείσετε αυτήν την καρτέλα και να δοκιμάσετε ξανά."
 
-#. Body of the generic fallback error modal shown when ending the Plutonium grace period fails.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Body of the generic fallback error modal shown when ending the Ember grace period fails.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Something went wrong while ending your grace period. Please try again in a moment."
 msgstr "Κάτι πήγε στραβά κατά τον τερματισμό της περιόδου χάριτος. Δοκιμάστε ξανά σε λίγο."
 
 #. Body of the generic fallback error modal shown when a self-serve refund fails.
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "Something went wrong while issuing your refund. Contact support if this keeps happening."
 msgstr "Κάτι πήγε στραβά κατά την έκδοση της επιστροφής χρημάτων σας. Επικοινωνήστε με την υποστήριξη αν αυτό συνεχιστεί."
 
@@ -33416,13 +33416,13 @@ msgstr "Κάτι πήγε στραβά κατά την προετοιμασία 
 msgid "Something went wrong while publishing. Try again in a moment."
 msgstr "Κάτι πήγε στραβά κατά τη δημοσίευση. Δοκιμάστε ξανά σε λίγο."
 
-#. Body of the generic fallback error modal shown when reactivating a Plutonium subscription fails.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Body of the generic fallback error modal shown when reactivating a Ember subscription fails.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Something went wrong while reactivating your subscription. Please try again in a moment."
 msgstr "Κάτι πήγε στραβά κατά την επανενεργοποίηση της συνδρομής σας. Δοκιμάστε ξανά σε λίγο."
 
-#. Body of the generic fallback error modal shown when rejoining a gated Plutonium community fails.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCommunityActions.tsx
+#. Body of the generic fallback error modal shown when rejoining a gated Ember community fails.
+#: src/features/app/components/dialogs/components/ember/hooks/useCommunityActions.tsx
 msgid "Something went wrong while rejoining. Please try again in a moment."
 msgstr "Κάτι πήγε στραβά κατά την εκ νέου συμμετοχή. Δοκιμάστε ξανά σε λίγο."
 
@@ -33438,7 +33438,7 @@ msgid "Something went wrong while sending your verification email. Please try ag
 msgstr "Κάτι πήγε στραβά κατά την αποστολή του email επαλήθευσης. Δοκιμάστε ξανά σε λίγο."
 
 #. Body of the generic fallback error modal shown when creating a checkout session fails unexpectedly.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Something went wrong while starting checkout. Please try again in a moment."
 msgstr "Κάτι πήγε στραβά κατά την έναρξη της ολοκλήρωσης αγοράς. Δοκιμάστε ξανά σε λίγο."
 
@@ -34025,7 +34025,7 @@ msgstr "Στατικό Neko"
 
 #. Column header for billing invoice status.
 #. Tray menu submenu title for the user presence status picker.
-#: src/features/app/components/dialogs/components/plutonium/InvoiceList.tsx
+#: src/features/app/components/dialogs/components/ember/InvoiceList.tsx
 #: src/features/platform/utils/DesktopLocaleBridge.ts
 msgid "Status"
 msgstr "Κατάσταση"
@@ -34418,8 +34418,8 @@ msgstr "Η ροή έληξε"
 msgid "Stream hidden"
 msgstr "Η ροή είναι κρυφή"
 
-#. Plutonium page perk card title about stream quality.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page perk card title about stream quality.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Stream in 4K at 60 FPS"
 msgstr "Ροή σε 4K στα 60 FPS"
 
@@ -34528,17 +34528,17 @@ msgstr "Υποβάλλεται"
 
 #. Billing button that starts a recurring subscription for someone on gifted premium time.
 #. Billing button that starts a recurring subscription for someone on gifted premium time.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionActions.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionActions.tsx
 msgid "Subscribe"
 msgstr "Εγγραφή"
 
-#. Body of the closing call to action on the Plutonium page for members on gifted time who can subscribe.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Body of the closing call to action on the Ember page for members on gifted time who can subscribe.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Subscribe now. Your remaining gift time is added after your paid period."
 msgstr "Εγγραφείτε τώρα. Ο υπόλοιπος δωρεάν χρόνος σας θα προστεθεί μετά την περίοδο πληρωμής."
 
-#. Plutonium page comparison row label for the subscriber badge.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison row label for the subscriber badge.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Subscriber badge on your profile"
 msgstr "Σήμα συνδρομητή στο προφίλ σας"
 
@@ -34550,17 +34550,17 @@ msgstr "Μεταφορά συνδρομητή:"
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
 #. Settings search entry label. Also used as a search synonym in the settings search bar.
 #: src/features/channel/components/channel_header_components/developer_tools/OptionPresets.ts
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Subscription"
 msgstr "Συνδρομή"
 
-#. Modal title shown when checkout is blocked because the account already has an active Plutonium subscription.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#. Modal title shown when checkout is blocked because the account already has an active Ember subscription.
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Subscription already exists"
 msgstr "Η συνδρομή υπάρχει ήδη"
 
 #. Title of the error modal shown when reactivation is attempted but the subscription is not cancelling.
-#: src/features/app/components/dialogs/components/plutonium/utils/PremiumActionErrorModal.tsx
+#: src/features/app/components/dialogs/components/ember/utils/PremiumActionErrorModal.tsx
 msgid "Subscription is not scheduled to cancel"
 msgstr "Η συνδρομή δεν έχει προγραμματιστεί για ακύρωση"
 
@@ -34716,7 +34716,7 @@ msgid "Switch device"
 msgstr "Αλλαγή συσκευής"
 
 #. Button confirming a move of an active subscription down to the current price.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionCard.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionCard.tsx
 msgid "Switch price"
 msgstr "Αλλαγή τιμής"
 
@@ -34726,7 +34726,7 @@ msgid "Switch to {accountName}"
 msgstr "Μετάβαση στο {accountName}"
 
 #. Billing button that opens confirmation to move the subscription down to the current price. {listPriceNewLabel} is the localized new price.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionActions.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionActions.tsx
 msgid "Switch to {listPriceNewLabel}"
 msgstr "Μετάβαση στο {listPriceNewLabel}"
 
@@ -34761,13 +34761,13 @@ msgstr "Εναλλαγή σε απευθείας εισαγωγή"
 
 #. Billing button that opens confirmation to switch to monthly billing.
 #. Button confirming a change to monthly subscription billing.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionActions.tsx
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionCard.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionActions.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionCard.tsx
 msgid "Switch to monthly"
 msgstr "Αλλαγή σε μηνιαία συνδρομή"
 
 #. Billing confirmation title for changing an active subscription to monthly billing.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionCard.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionCard.tsx
 msgid "Switch to monthly billing?"
 msgstr "Να γίνει μηνιαία χρέωση;"
 
@@ -34812,7 +34812,7 @@ msgid "Switch to standard call"
 msgstr "Μετάβαση σε τυπική κλήση"
 
 #. Billing confirmation title for moving an active subscription down to the current price.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionCard.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionCard.tsx
 msgid "Switch to the new price?"
 msgstr "Αλλαγή στη νέα τιμή;"
 
@@ -34842,13 +34842,13 @@ msgstr "Εναλλαγή σε δύο στήλες"
 
 #. Billing button that opens confirmation to switch to yearly billing.
 #. Button confirming a change to yearly subscription billing.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionActions.tsx
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionCard.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionActions.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionCard.tsx
 msgid "Switch to yearly"
 msgstr "Αλλαγή σε ετήσια συνδρομή"
 
 #. Billing confirmation title for changing an active subscription to yearly billing.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionCard.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionCard.tsx
 msgid "Switch to yearly billing?"
 msgstr "Να γίνει ετήσια χρέωση;"
 
@@ -35089,23 +35089,23 @@ msgstr "Αφιερώστε λίγο χρόνο για να ελέγξετε πο
 msgid "Take back offer"
 msgstr "Απόσυρση πρότασης"
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionBillingChangeDescription.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionBillingChangeDescription.tsx
 msgid "Takes effect at your next renewal. We'll apply a {creditLabel} credit from your current monthly payment, so your first yearly charge will be <0>{firstRenewalPriceLabel}</0>. Future yearly renewals will be {renewalPrice}/year."
 msgstr "Θα τεθεί σε ισχύ στην επόμενη ανανέωσή σας. Θα εφαρμόσουμε μια πίστωση {creditLabel} από την τρέχουσα μηνιαία πληρωμή σας, οπότε η πρώτη ετήσια χρέωση θα είναι <0>{firstRenewalPriceLabel}</0>. Οι μελλοντικές ετήσιες ανανεώσεις θα είναι {renewalPrice}/έτος."
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionBillingChangeDescription.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionBillingChangeDescription.tsx
 msgid "Takes effect at your next renewal. Your subscription stays monthly until then, and your next renewal will be <0>{renewalPrice}/year</0>."
 msgstr "Θα τεθεί σε ισχύ στην επόμενη ανανέωσή σας. Η συνδρομή σας παραμένει μηνιαία μέχρι τότε και η επόμενη ανανέωσή σας θα είναι <0>{renewalPrice}/έτος</0>."
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionBillingChangeDescription.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionBillingChangeDescription.tsx
 msgid "Takes effect at your next renewal. Your subscription stays yearly until then, and your next renewal will be <0>{renewalPrice}/month</0>."
 msgstr "Θα τεθεί σε ισχύ στην επόμενη ανανέωσή σας. Η συνδρομή σας παραμένει ετήσια μέχρι τότε και η επόμενη ανανέωσή σας θα είναι <0>{renewalPrice}/μήνα</0>."
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionBillingChangeDescription.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionBillingChangeDescription.tsx
 msgid "Takes effect immediately. A prorated adjustment may apply via {PAYMENT_PROVIDER_NAME}. Your next renewal will be <0>{renewalPrice}/month</0>."
 msgstr "Ισχύει άμεσα. Ενδέχεται να εφαρμοστεί αναλογική προσαρμογή μέσω {PAYMENT_PROVIDER_NAME}. Η επόμενη ανανέωσή σας θα είναι <0>{renewalPrice}/μήνα</0>."
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionBillingChangeDescription.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionBillingChangeDescription.tsx
 msgid "Takes effect immediately. A prorated charge may apply via {PAYMENT_PROVIDER_NAME}. Your next renewal will be <0>{renewalPrice}/year</0>."
 msgstr "Ισχύει άμεσα. Ενδέχεται να εφαρμοστεί αναλογική χρέωση μέσω {PAYMENT_PROVIDER_NAME}. Η επόμενη ανανέωσή σας θα είναι <0>{renewalPrice}/έτος</0>."
 
@@ -35640,7 +35640,7 @@ msgid "The new channel will reuse the permissions from <0>{channelLabel}</0>."
 msgstr "Το νέο κανάλι θα επαναχρησιμοποιήσει τα δικαιώματα από το <0>{channelLabel}</0>."
 
 #. Toast success shown when a move down to the current price was already scheduled by an earlier request. {effectiveDate} is the localized date the new price starts.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "The new price is already scheduled for {effectiveDate}."
 msgstr "Η νέα τιμή έχει ήδη προγραμματιστεί για τις {effectiveDate}."
 
@@ -36255,8 +36255,8 @@ msgstr "Αυτή η κοινότητα έχει φτάσει το όριο με�
 msgid "This community is for adults only."
 msgstr "Αυτή η κοινότητα είναι μόνο για ενήλικες."
 
-#. Title of the error modal shown when a non-Visionary user tries to rejoin a gated Plutonium community.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCommunityActions.tsx
+#. Title of the error modal shown when a non-Visionary user tries to rejoin a gated Ember community.
+#: src/features/app/components/dialogs/components/ember/hooks/useCommunityActions.tsx
 msgid "This community is for Visionary members"
 msgstr "Αυτή η κοινότητα είναι για μέλη Visionary"
 
@@ -36778,17 +36778,17 @@ msgstr "Αυτό το άτομο πρέπει να ορίσει έναν κωδ�
 msgid "This picker is only available in the desktop app."
 msgstr "Αυτός ο επιλογέας είναι διαθέσιμος μόνο στην εφαρμογή για υπολογιστές."
 
-#. Error modal body shown when the selected Plutonium plan has no price ID configured.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#. Error modal body shown when the selected Ember plan has no price ID configured.
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "This plan isn't available. Contact support."
 msgstr "Αυτό το πρόγραμμα δεν είναι διαθέσιμο. Επικοινωνήστε με την υποστήριξη."
 
-#. Error modal body shown on a self-hosted instance when the selected Plutonium plan has no price ID configured.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#. Error modal body shown on a self-hosted instance when the selected Ember plan has no price ID configured.
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "This plan isn't available. Contact the administrators of this instance."
 msgstr "Αυτό το πρόγραμμα δεν είναι διαθέσιμο. Επικοινωνήστε με τους διαχειριστές αυτής της παρουσίας."
 
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "This purchase is not eligible for a refund."
 msgstr "Δεν γίνεται επιστροφή χρημάτων για αυτήν την αγορά."
 
@@ -36796,11 +36796,11 @@ msgstr "Δεν γίνεται επιστροφή χρημάτων για αυτ�
 msgid "This reason will be displayed in the activity log in {activityLogSettingsPath}."
 msgstr "Αυτός ο λόγος θα εμφανίζεται στο αρχείο καταγραφής δραστηριότητας στην ενότητα {activityLogSettingsPath}."
 
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "This refunds your most recent Google Play purchase and cancels any subscription it paid for. You won't be able to self-refund again for 30 days."
 msgstr "Αυτό επιστρέφει τα χρήματα της πιο πρόσφατης αγοράς σας στο Google Play και ακυρώνει τυχόν συνδρομή που πληρώθηκε με αυτήν. Δεν θα μπορείτε να κάνετε ξανά επιστροφή χρημάτων μόνοι σας για 30 ημέρες."
 
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "This refunds your most recent purchase and cancels any subscription it paid for. You won't be able to self-refund again for 30 days."
 msgstr "Αυτό επιστρέφει τα χρήματα της πιο πρόσφατης αγοράς σας και ακυρώνει τυχόν συνδρομή που πληρώθηκε με αυτήν. Δεν θα μπορείτε να κάνετε ξανά επιστροφή χρημάτων μόνοι σας για 30 ημέρες."
 
@@ -38204,7 +38204,7 @@ msgid "Unclaimed account override"
 msgstr "Παράκαμψη μη διεκδικημένου λογαριασμού"
 
 #. Billing invoice status for an invoice marked as uncollectible.
-#: src/features/app/components/dialogs/components/plutonium/InvoiceList.tsx
+#: src/features/app/components/dialogs/components/ember/InvoiceList.tsx
 msgid "Uncollectible"
 msgstr "Μη εισπράξιμο"
 
@@ -38358,7 +38358,7 @@ msgid "Unknown community"
 msgstr "Άγνωστη κοινότητα"
 
 #. Fallback date value for a billing invoice without a timestamp.
-#: src/features/app/components/dialogs/components/plutonium/InvoiceList.tsx
+#: src/features/app/components/dialogs/components/ember/InvoiceList.tsx
 msgid "Unknown date"
 msgstr "Άγνωστη ημερομηνία"
 
@@ -38852,13 +38852,13 @@ msgstr "Έως {max} ανά αγορά."
 msgid "Up to {maxParticipants, plural, one {# person} other {# people}}."
 msgstr "Έως {maxParticipants, plural, one {# άτομο} other {# άτομα}}."
 
-#. Plutonium page comparison value for paid video quality. Keep 4K and FPS as written.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison value for paid video quality. Keep 4K and FPS as written.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Up to 4K at 60 FPS"
 msgstr "Έως 4K στα 60 FPS"
 
-#. Plutonium page comparison value for free video quality. Keep 720p and FPS as written.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison value for free video quality. Keep 720p and FPS as written.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Up to 720p at 30 FPS"
 msgstr "Έως 720p στα 30 FPS"
 
@@ -38979,7 +38979,7 @@ msgid "Updating…"
 msgstr "Ενημέρωση…"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Upgrade"
 msgstr "Αναβάθμιση"
 
@@ -39224,8 +39224,8 @@ msgstr "Χρήση {everyoneMention}/{hereMention} και {rolesMention}"
 msgid "Use {name} on {domain}"
 msgstr "Χρήση {name} στο {domain}"
 
-#. Plutonium subscription payment method picker button. Selects Pix as the payment method.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#. Ember subscription payment method picker button. Selects Pix as the payment method.
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Use {pixPaymentMethod}"
 msgstr "Χρήση {pixPaymentMethod}"
 
@@ -39239,8 +39239,8 @@ msgstr "Χρησιμοποιήστε το {query} στο σημείο όπου �
 msgid "Use {query} where the text to translate should be inserted."
 msgstr "Χρησιμοποιήστε το {query} όπου θα πρέπει να εισαχθεί το κείμενο προς μετάφραση."
 
-#. Plutonium subscription payment method picker button. Selects UPI as the payment method.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#. Ember subscription payment method picker button. Selects UPI as the payment method.
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Use {upiPaymentMethod}"
 msgstr "Χρήση {upiPaymentMethod}"
 
@@ -39288,8 +39288,8 @@ msgstr "Χρήση πραγματικού τύπου premium"
 msgid "Use actual value"
 msgstr "Χρήση πραγματικής τιμής"
 
-#. Plutonium subscription payment method picker button. Selects the alternative (non-card) method.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#. Ember subscription payment method picker button. Selects the alternative (non-card) method.
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Use alternative method"
 msgstr "Χρήση εναλλακτικής μεθόδου"
 
@@ -39297,8 +39297,8 @@ msgstr "Χρήση εναλλακτικής μεθόδου"
 msgid "Use an authenticator app to generate codes for two-factor authentication"
 msgstr "Χρησιμοποιήστε μια εφαρμογή ελέγχου ταυτότητας για να δημιουργήσετε κωδικούς για έλεγχο ταυτότητας δύο παραγόντων"
 
-#. Plutonium page comparison row label for animated emoji use.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison row label for animated emoji use.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Use animated emojis in messages"
 msgstr "Χρησιμοποίησε κινούμενα emoji στα μηνύματα"
 
@@ -39320,7 +39320,7 @@ msgid "Use browser locale for time format"
 msgstr "Χρήση τοπικών ρυθμίσεων του προγράμματος περιήγησης για τη μορφή ώρας"
 
 #. Modal secondary button to fall back to standard card checkout instead of an alternative payment method.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Use card"
 msgstr "Χρήση κάρτας"
 
@@ -39344,8 +39344,8 @@ msgstr "Χρήση θέματος Coal (κατάμαυρες επιφάνειε�
 msgid "Use colored tray icon"
 msgstr "Χρησιμοποιήστε έγχρωμο εικονίδιο στη γραμμή εργασιών"
 
-#. Plutonium page comparison row label for global emojis and stickers.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison row label for global emojis and stickers.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Use custom emojis and stickers in any community"
 msgstr "Χρησιμοποιήστε προσαρμοσμένα emoji και αυτοκόλλητα σε οποιαδήποτε κοινότητα"
 
@@ -39997,13 +39997,13 @@ msgstr "Βίντεο"
 msgid "Video call"
 msgstr "Βιντεοκλήση"
 
-#. Plutonium page comparison row label for video quality.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison row label for video quality.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Video call and screen share quality"
 msgstr "Ποιότητα βιντεοκλήσης και κοινής χρήσης οθόνης"
 
-#. Plutonium page comparison row label for saved video call backgrounds.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page comparison row label for saved video call backgrounds.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Video call backgrounds you can save"
 msgstr "Βιντεοκλήσεις με φόντο που μπορείς να αποθηκεύσεις"
 
@@ -40105,7 +40105,7 @@ msgid "View {premiumProductName} features"
 msgstr "Δείτε τις δυνατότητες {premiumProductName}"
 
 #. Settings search entry description. One-line summary of what the settings search entry controls. Preserve {premiumProductName}; it is inserted by code.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "View {premiumProductName} perks"
 msgstr "Δείτε τα προνόμια {premiumProductName}"
 
@@ -40332,7 +40332,7 @@ msgstr "Βιρτζίνια"
 msgid "Visibility"
 msgstr "Ορατότητα"
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionCard.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionCard.tsx
 msgid "Visionary"
 msgstr "Visionary"
 
@@ -40352,7 +40352,7 @@ msgid "Visionary 2FA nagbar"
 msgstr "Μπάρα ειδοποιήσεων 2FA Visionary"
 
 #. Modal body shown when a Visionary user tries to subscribe. Reassures them and points out gift purchases stay available.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Visionary already includes permanent access, so a recurring subscription isn't needed. You can still buy gifts for others."
 msgstr "Το Visionary περιλαμβάνει ήδη μόνιμη πρόσβαση, οπότε δεν χρειάζεται επαναλαμβανόμενη συνδρομή. Μπορείτε να αγοράσετε δώρα για άλλους."
 
@@ -40600,7 +40600,7 @@ msgid "Voice uses your system output device in this browser. Change it in your s
 msgstr "Η φωνή χρησιμοποιεί τη συσκευή εξόδου του συστήματός σας σε αυτό το πρόγραμμα περιήγησης. Αλλάξτε την στις ρυθμίσεις του συστήματός σας."
 
 #. Billing invoice status for an invoice canceled before payment.
-#: src/features/app/components/dialogs/components/plutonium/InvoiceList.tsx
+#: src/features/app/components/dialogs/components/ember/InvoiceList.tsx
 msgid "Void"
 msgstr "Άκυρο"
 
@@ -40743,8 +40743,8 @@ msgstr "Το xdg-desktop-portal του Wayland διαχειρίζεται τον
 msgid "We check new names before they go live."
 msgstr "Ελέγχουμε τα νέα ονόματα πριν εμφανιστούν."
 
-#. Plutonium page hero subtitle while a failed renewal is in its grace period.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page hero subtitle while a failed renewal is in its grace period.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "We could not renew your subscription. Update your payment method to keep your perks."
 msgstr "Δεν μπορέσαμε να ανανεώσουμε τη συνδρομή σας. Ενημερώστε τη μέθοδο πληρωμής σας για να διατηρήσετε τα προνόμιά σας."
 
@@ -40775,12 +40775,12 @@ msgid "We couldn't delete your messages right now. Try again in a moment."
 msgstr "Δεν ήταν δυνατή η διαγραφή των μηνυμάτων σας αυτήν τη στιγμή. Δοκιμάστε ξανά σε λίγο."
 
 #. Body of the error modal shown when there is no refundable purchase on the account.
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "We couldn't find a recent purchase to refund on this account."
 msgstr "Δεν μπορέσαμε να βρούμε μια πρόσφατη αγορά για επιστροφή χρημάτων σε αυτόν τον λογαριασμό."
 
 #. Body of the error modal shown when an action needs an active subscription but none exists.
-#: src/features/app/components/dialogs/components/plutonium/utils/PremiumActionErrorModal.tsx
+#: src/features/app/components/dialogs/components/ember/utils/PremiumActionErrorModal.tsx
 msgid "We couldn't find an active subscription on this account. Refresh and try again."
 msgstr "Δεν βρέθηκε ενεργή συνδρομή σε αυτόν τον λογαριασμό. Ανανεώστε και δοκιμάστε ξανά."
 
@@ -40838,7 +40838,7 @@ msgid "We couldn't save that theme."
 msgstr "Δεν καταφέραμε να αποθηκεύσουμε αυτό το θέμα."
 
 #. Modal body for existing-subscription block. Directs the user to the billing portal and addresses the just-paid race case. Keep plain and reassuring.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "We found an existing {premiumProductFullName} subscription for this account. Manage it in the secure billing portal to update payment details or check renewal status. If you just paid, wait a minute and reopen this page."
 msgstr "Βρήκαμε μια υπάρχουσα συνδρομή {premiumProductFullName} για αυτόν τον λογαριασμό. Διαχειριστείτε την στην ασφαλή πύλη χρεώσεων για να ενημερώσετε τα στοιχεία πληρωμής ή να ελέγξετε την κατάσταση ανανέωσης. Αν μόλις πληρώσατε, περιμένετε ένα λεπτό και ανοίξτε ξανά αυτήν τη σελίδα."
 
@@ -41108,7 +41108,7 @@ msgstr "Καλώς όρισες, {username}!"
 msgid "Welcome to {channelDisplayName}"
 msgstr "Καλώς ήρθατε στο {channelDisplayName}"
 
-#. Premium onboarding nagbar body. {premiumProductFullName} is the full premium product name, such as Hearth Plutonium. {premiumProductName} is the short product name.
+#. Premium onboarding nagbar body. {premiumProductFullName} is the full premium product name, such as Hearth Ember. {premiumProductName} is the short product name.
 #: src/features/app/components/layout/app_layout/nagbars/PremiumOnboardingNagbar.tsx
 msgid "Welcome to {premiumProductFullName}. Explore your {premiumProductName} perks and manage your subscription."
 msgstr "Καλώς ήρθατε στο {premiumProductFullName}. Ανακαλύψτε τα προνόμια του {premiumProductName} και διαχειριστείτε τη συνδρομή σας."
@@ -41593,24 +41593,24 @@ msgid "Year"
 msgstr "Έτος"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Yearly"
 msgstr "Ετήσιο"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts
+#: src/features/user/components/settings_utils/search_index/EmberIndex.ts
 msgid "Yearly gift"
 msgstr "Ετήσιο δώρο"
 
-#: src/features/app/components/dialogs/components/plutonium/ScheduledSubscriptionChangeDescription.tsx
+#: src/features/app/components/dialogs/components/ember/ScheduledSubscriptionChangeDescription.tsx
 msgid "Yearly upgrade scheduled for <0>{pendingChangeDate}</0>."
 msgstr "Η αναβάθμιση σε ετήσια συνδρομή έχει προγραμματιστεί για <0>{pendingChangeDate}</0>."
 
-#: src/features/app/components/dialogs/components/plutonium/ScheduledSubscriptionChangeDescription.tsx
+#: src/features/app/components/dialogs/components/ember/ScheduledSubscriptionChangeDescription.tsx
 msgid "Yearly upgrade scheduled for <0>{pendingChangeDate}</0>. First yearly charge: {pendingInitialPriceLabel} after a {pendingCreditPriceLabel} credit. Future yearly renewals: {pendingRecurringPriceLabel}/year."
 msgstr "Η ετήσια αναβάθμιση έχει προγραμματιστεί για <0>{pendingChangeDate}</0>. Πρώτη ετήσια χρέωση: {pendingInitialPriceLabel} μετά από πίστωση {pendingCreditPriceLabel}. Μελλοντικές ετήσιες ανανεώσεις: {pendingRecurringPriceLabel}/έτος."
 
-#: src/features/app/components/dialogs/components/plutonium/ScheduledSubscriptionChangeDescription.tsx
+#: src/features/app/components/dialogs/components/ember/ScheduledSubscriptionChangeDescription.tsx
 msgid "Yearly upgrade scheduled for <0>{pendingChangeDate}</0>. First yearly charge: {pendingInitialPriceLabel}. Future yearly renewals: {pendingRecurringPriceLabel}/year."
 msgstr "Η ετήσια αναβάθμιση έχει προγραμματιστεί για <0>{pendingChangeDate}</0>. Πρώτη ετήσια χρέωση: {pendingInitialPriceLabel}. Μελλοντικές ετήσιες ανανεώσεις: {pendingRecurringPriceLabel}/έτος."
 
@@ -41704,7 +41704,7 @@ msgid "You are now a developer!"
 msgstr "Είστε πλέον προγραμματιστής!"
 
 #. Modal body for the mobile checkout confirmation. Explains that the user is leaving the app to pay.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "You are now navigating to {paymentProviderName} to complete the payment. Return to {productName} once you've completed it."
 msgstr "Μεταβαίνετε τώρα στο {paymentProviderName} για να ολοκληρώσετε την πληρωμή. Επιστρέψτε στο {productName} μόλις την ολοκληρώσετε."
 
@@ -41797,8 +41797,8 @@ msgstr "Μπορείς να δώσεις ένα πάσο μόνο σε φίλο.
 msgid "You can only pass this on to one of your friends on Hearth."
 msgstr "Μπορείς να το δώσεις μόνο σε έναν από τους φίλους σου στο Hearth."
 
-#. Footnote on the Plutonium page about custom username tags. Keep Mina#4821, mina#4821 and #0000 unchanged. visionaryLink is a link whose text is "Learn more about Visionary".
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Footnote on the Ember page about custom username tags. Keep Mina#4821, mina#4821 and #0000 unchanged. visionaryLink is a link whose text is "Learn more about Visionary".
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "You can only pick a tag that nobody else with the same username already has. Usernames aren't case sensitive, so Mina#4821 and mina#4821 count as the same. The #0000 tag is reserved for {productName} Visionary members. {visionaryLink}."
 msgstr "Μπορείς να επιλέξεις μόνο ένα tag που κανείς άλλος με το ίδιο όνομα χρήστη δεν έχει ήδη. Τα ονόματα χρήστη δεν κάνουν διάκριση πεζών-κεφαλαίων, οπότε οι Mina#4821 και mina#4821 μετράνε ως το ίδιο. Το tag #0000 είναι αποκλειστικό για τα μέλη Visionary του {productName}. {visionaryLink}."
 
@@ -41812,7 +41812,7 @@ msgstr "Μπορείς να επιλέξεις σκούρο ή φωτεινό θ
 msgid "You can pick up to {count} tags."
 msgstr "Μπορείς να επιλέξεις έως και {count} ετικέτες."
 
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "You can refund again after {cooldownEndsOn}. Contact support for billing issues."
 msgstr "Μπορείτε να ζητήσετε επιστροφή χρημάτων ξανά μετά τις {cooldownEndsOn}. Επικοινωνήστε με την υποστήριξη για θέματα χρέωσης."
 
@@ -42124,7 +42124,7 @@ msgid "You have no friends yet"
 msgstr "Δεν έχετε φίλους ακόμα"
 
 #. Title of the error modal shown when a self-serve refund is blocked by the cooldown period.
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "You have refunded recently"
 msgstr "Έχετε κάνει πρόσφατα επιστροφή χρημάτων"
 
@@ -42164,11 +42164,11 @@ msgstr "Δεν έχεις γράψει ακόμα κανένα γρήγορο CS
 msgid "You just pressed Tab. Keyboard mode is now on so you can navigate {productName} without a mouse."
 msgstr "Μόλις πατήσατε Tab. Η λειτουργία πληκτρολογίου είναι πλέον ενεργή, ώστε να μπορείτε να περιηγηθείτε στο {productName} χωρίς ποντίκι."
 
-#: src/features/premium/components/plutonium_page/PlutoniumPage.tsx
+#: src/features/premium/components/ember_page/EmberPage.tsx
 msgid "You keep your perks until your next renewal date. Reactivate before then to keep your subscriber history."
 msgstr "Διατηρείτε τα προνόμιά σας μέχρι την επόμενη ημερομηνία ανανέωσης. Ενεργοποιήστε ξανά τη συνδρομή σας πριν από τότε για να διατηρήσετε το ιστορικό συνδρομών σας."
 
-#: src/features/premium/components/plutonium_page/PlutoniumPage.tsx
+#: src/features/premium/components/ember_page/EmberPage.tsx
 msgid "You lose all {PREMIUM_PRODUCT_NAME} perks immediately and your subscriber history resets. This cannot be undone."
 msgstr "Χάνετε όλα τα προνόμια {PREMIUM_PRODUCT_NAME} αμέσως και το ιστορικό συνδρομών σας μηδενίζεται. Αυτό δεν μπορεί να αναιρεθεί."
 
@@ -42253,8 +42253,8 @@ msgstr "Πρέπει να διεκδικήσετε τον λογαριασμό �
 msgid "You need to confirm your email address before you can start a direct message."
 msgstr "Πρέπει να επιβεβαιώσετε τη διεύθυνση email σας πριν ξεκινήσετε μια απευθείας συνομιλία."
 
-#. Body of the error modal shown when the account email is unverified and the user tries to purchase Plutonium. Product name is interpolated.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#. Body of the error modal shown when the account email is unverified and the user tries to purchase Ember. Product name is interpolated.
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "You need to confirm your email before you can purchase {premiumProductFullName}."
 msgstr "Πρέπει να επιβεβαιώσετε το email σας πριν μπορέσετε να αγοράσετε το {premiumProductFullName}."
 
@@ -42309,7 +42309,7 @@ msgid "You'll appear offline"
 msgstr "Θα εμφανίζεστε εκτός σύνδεσης"
 
 #. Body of the confirmation shown before checkout when a user with gifted premium time starts a recurring subscription. The subscription is charged immediately and the unused gift time is appended after the paid period.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "You'll be charged now. Your remaining gift time is added after your paid period, so none of it is lost."
 msgstr "Θα χρεωθείτε τώρα. Ο υπόλοιπος χρόνος δώρου σας προστίθεται μετά την περίοδο πληρωμής, ώστε να μην χαθεί τίποτα."
 
@@ -42323,13 +42323,13 @@ msgstr "Θα τα εισαγάγετε αμέσως μετά τη δημιουρ
 msgid "You'll need one of your passkeys to sign in on a new device. If you lose every passkey you can be locked out of your account. Backup codes will be saved for you so you still have a way in."
 msgstr "Θα χρειαστείτε ένα από τα κλειδιά πρόσβασής σας για να συνδεθείτε σε μια νέα συσκευή. Αν χάσετε όλα τα κλειδιά πρόσβασης, μπορεί να χάσετε οριστικά την πρόσβαση στον λογαριασμό σας. Θα αποθηκευτούν εφεδρικοί κωδικοί για εσάς, ώστε να έχετε πάντα έναν τρόπο να συνδεθείτε."
 
-#. Plutonium page hero subtitle for members. premiumProductName is the paid tier name.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page hero subtitle for members. premiumProductName is the paid tier name.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "You're a {premiumProductName} member. Thanks for supporting an independent communication platform."
 msgstr "Είστε μέλος του {premiumProductName}. Ευχαριστούμε που υποστηρίζετε μια ανεξάρτητη πλατφόρμα επικοινωνίας."
 
-#. Plutonium page hero subtitle for lifetime Visionary members.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page hero subtitle for lifetime Visionary members.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "You're a Visionary. Your perks never expire, and gifts for friends are always available."
 msgstr "Είσαι Visionary. Τα προνόμιά σου δεν λήγουν ποτέ και τα δώρα για φίλους είναι πάντα διαθέσιμα."
 
@@ -42357,8 +42357,8 @@ msgstr "Τα είδατε όλα."
 msgid "You're already friends with this user."
 msgstr "Είστε ήδη φίλοι με αυτόν τον χρήστη."
 
-#. Modal title shown when a lifetime Visionary tier user tries to start a recurring Plutonium subscription.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#. Modal title shown when a lifetime Visionary tier user tries to start a recurring Ember subscription.
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "You're already Visionary"
 msgstr "Είστε ήδη Visionary"
 
@@ -42372,22 +42372,22 @@ msgstr "Είστε Operator"
 msgid "You're at {count, plural, one {# bookmark} other {# bookmarks}} — your instance admin sets this cap. Remove one to add another."
 msgstr "Έχετε φτάσει το όριο: {count, plural, one {# σελιδοδείκτης} other {# σελιδοδείκτες}}. Το όριο το ορίζει ο διαχειριστής της παρουσίας σας. Αφαιρέστε έναν για να προσθέσετε άλλον."
 
-#. Modal body shown when the bookmarks limit is reached and Plutonium is unavailable on this instance. {count} is the bookmark cap.
+#. Modal body shown when the bookmarks limit is reached and Ember is unavailable on this instance. {count} is the bookmark cap.
 #: src/features/app/components/alerts/MaxBookmarksModal.tsx
 msgid "You're at {count, plural, one {# bookmark} other {# bookmarks}}. Remove one to add another."
 msgstr "Έχετε φτάσει το όριο: {count, plural, one {# σελιδοδείκτης} other {# σελιδοδείκτες}}. Αφαιρέστε έναν για να προσθέσετε άλλον."
 
-#. Modal body shown when the favorite-memes limit is reached on a self-hosted instance with no Plutonium upgrade path. {count} is the saved media cap.
+#. Modal body shown when the favorite-memes limit is reached on a self-hosted instance with no Ember upgrade path. {count} is the saved media cap.
 #: src/features/app/components/alerts/MaxFavoriteMemesModal.tsx
 msgid "You're at the cap of {count, plural, one {# saved media item} other {# saved media items}} — your instance admin sets this limit."
 msgstr "Έχετε φτάσει το όριο: {count, plural, one {# αποθηκευμένο στοιχείο πολυμέσων} other {# αποθηκευμένα στοιχεία πολυμέσων}}. Το όριο το ορίζει ο διαχειριστής της παρουσίας σας."
 
-#. Modal body shown when the free bookmarks limit is reached and Plutonium would increase it. {count} is the free cap, {premiumCount} the Plutonium cap.
+#. Modal body shown when the free bookmarks limit is reached and Ember would increase it. {count} is the free cap, {premiumCount} the Ember cap.
 #: src/features/app/components/alerts/MaxBookmarksModal.tsx
 msgid "You're at the free cap of {count, plural, one {# bookmark} other {# bookmarks}}. {premiumProductName} bumps you up to {premiumCount, plural, one {# bookmark} other {# bookmarks}} — or remove one to add another."
 msgstr "Έχετε φτάσει το δωρεάν όριο: {count, plural, one {# σελιδοδείκτης} other {# σελιδοδείκτες}}. Με το {premiumProductName} ανεβαίνει σε {premiumCount, plural, one {# σελιδοδείκτη} other {# σελιδοδείκτες}}, ή αφαιρέστε έναν για να προσθέσετε άλλον."
 
-#. Modal body shown when the free favorite-memes limit is reached and Plutonium would increase it. {count} is the free cap, {premiumCount} the Plutonium cap.
+#. Modal body shown when the free favorite-memes limit is reached and Ember would increase it. {count} is the free cap, {premiumCount} the Ember cap.
 #: src/features/app/components/alerts/MaxFavoriteMemesModal.tsx
 msgid "You're at the free cap of {count, plural, one {# saved media item} other {# saved media items}}. {premiumProductName} bumps you up to {premiumCount, plural, one {# saved media item} other {# saved media items}}."
 msgstr "Έχετε φτάσει το δωρεάν όριο: {count, plural, one {# αποθηκευμένο στοιχείο πολυμέσων} other {# αποθηκευμένα στοιχεία πολυμέσων}}. Με το {premiumProductName} ανεβαίνει σε {premiumCount, plural, one {# αποθηκευμένο στοιχείο πολυμέσων} other {# αποθηκευμένα στοιχεία πολυμέσων}}."
@@ -42465,13 +42465,13 @@ msgstr "Είστε στο φωνητικό κανάλι"
 msgid "You're no longer previewing {community}."
 msgstr "Δεν κάνετε πλέον προεπισκόπηση της κοινότητας {community}."
 
-#. Plutonium subscription card tooltip shown when the user is on a grandfathered price that is no longer offered.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionCard.tsx
+#. Ember subscription card tooltip shown when the user is on a grandfathered price that is no longer offered.
+#: src/features/app/components/dialogs/components/ember/SubscriptionCard.tsx
 msgid "You're on a legacy rate no longer available to new subscribers."
 msgstr "Έχετε μια παλιά τιμή που δεν είναι πλέον διαθέσιμη σε νέους συνδρομητές."
 
-#. Plutonium subscription card tooltip shown when the user is on a grandfathered price; current list price is interpolated.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionCard.tsx
+#. Ember subscription card tooltip shown when the user is on a grandfathered price; current list price is interpolated.
+#: src/features/app/components/dialogs/components/ember/SubscriptionCard.tsx
 msgid "You're on a legacy rate. The current price for this plan is {currentSubscriptionListPriceLabel}."
 msgstr "Έχετε μια παλιά τιμή. Η τρέχουσα τιμή για αυτό το πρόγραμμα είναι {currentSubscriptionListPriceLabel}."
 
@@ -42530,7 +42530,7 @@ msgid "You've already reported this profile today."
 msgstr "Έχετε ήδη αναφέρει αυτό το προφίλ σήμερα."
 
 #. Body of the error modal shown when a self-serve refund is blocked by the cooldown period.
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "You've already used a self-serve refund recently. You can refund again once the cooldown ends."
 msgstr "Έχετε ήδη χρησιμοποιήσει πρόσφατα μια αυτόματη επιστροφή χρημάτων. Μπορείτε να ζητήσετε ξανά επιστροφή χρημάτων μόλις λήξει η περίοδος αναμονής."
 
@@ -42612,12 +42612,12 @@ msgid "You've seen all your recent mentions. More will appear here soon."
 msgstr "Έχετε δει όλες τις πρόσφατες αναφορές σας. Σύντομα θα εμφανιστούν κι άλλες εδώ."
 
 #. Modal body for existing-subscription block when the subscription was bought in a mobile app store. {storeName} is the store brand name, App Store or Google Play, and must not be translated. {premiumProductFullName} is the full premium product name.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Your {premiumProductFullName} subscription is billed through {storeName}. Manage it in your {storeName} account to change your plan or check renewal status."
 msgstr "Η συνδρομή σας {premiumProductFullName} χρεώνεται μέσω {storeName}. Διαχειριστείτε την από τον λογαριασμό σας στο {storeName} για να αλλάξετε πρόγραμμα ή να ελέγξετε την κατάσταση ανανέωσης."
 
-#. Plutonium page hero subtitle when a subscription has ended. premiumProductName is the paid tier name.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page hero subtitle when a subscription has ended. premiumProductName is the paid tier name.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Your {premiumProductName} perks have ended. Subscribe again to bring them back."
 msgstr "Τα προνόμια του {premiumProductName} έληξαν. Εγγράψου ξανά για να τα επαναφέρεις."
 
@@ -42631,8 +42631,8 @@ msgstr "Η συνδρομή σας στο {premiumProductName} έληξε. Έχ�
 msgid "Your {productName} session expired. Sign in again to continue authorizing this application."
 msgstr "Η περίοδος λειτουργίας σας στο {productName} έληξε. Συνδεθείτε ξανά για να συνεχίσετε την εξουσιοδότηση αυτής της εφαρμογής."
 
-#. Plutonium subscription card text shown while a failed App Store or Google Play renewal payment is being retried. {storeName} is the store brand name, App Store or Google Play, and must not be translated. {graceDate} is a date already formatted and localized by code; never write a date into the translation.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionDescription.tsx
+#. Ember subscription card text shown while a failed App Store or Google Play renewal payment is being retried. {storeName} is the store brand name, App Store or Google Play, and must not be translated. {graceDate} is a date already formatted and localized by code; never write a date into the translation.
+#: src/features/app/components/dialogs/components/ember/SubscriptionDescription.tsx
 msgid "Your {storeName} renewal payment failed but <0/> stay active until <1>{graceDate}</1>. Update your {storeName} payment method before then to keep your subscription."
 msgstr "Η πληρωμή ανανέωσης μέσω {storeName} απέτυχε, αλλά τα <0/> παραμένουν ενεργά έως <1>{graceDate}</1>. Ενημερώστε τον τρόπο πληρωμής σας στο {storeName} πριν από τότε για να διατηρήσετε τη συνδρομή σας."
 
@@ -42814,8 +42814,8 @@ msgstr "Η συσκευή σας θα σας ζητήσει να αποθηκε�
 msgid "Your email has been verified. You can now sign in to your account."
 msgstr "Η διεύθυνση email σας έχει επαληθευτεί. Μπορείτε τώρα να συνδεθείτε στον λογαριασμό σας."
 
-#. Plutonium page perk card title about using custom emojis and stickers in every community.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page perk card title about using custom emojis and stickers in every community.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Your emojis, everywhere"
 msgstr "Τα emoji σου, παντού"
 
@@ -42874,23 +42874,23 @@ msgstr "Το πλήρες προφίλ σας είναι ορατό σε φίλ�
 msgid "Your full profile is visible to friends and to anyone in your communities"
 msgstr "Το πλήρες προφίλ σας είναι ορατό σε φίλους και σε οποιονδήποτε βρίσκεται στις κοινότητές σας"
 
-#. Plutonium subscription card text shown in the short grace period after gifted premium time ends. {graceDate} is a date already formatted and localized by code; never write a date into the translation.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionDescription.tsx
+#. Ember subscription card text shown in the short grace period after gifted premium time ends. {graceDate} is a date already formatted and localized by code; never write a date into the translation.
+#: src/features/app/components/dialogs/components/ember/SubscriptionDescription.tsx
 msgid "Your gift time ended but <0/> stay active until <1>{graceDate}</1>. Subscribe before then to keep them."
 msgstr "Ο δωρεάν χρόνος σας έληξε, αλλά <0/> παραμένουν ενεργά μέχρι <1>{graceDate}</1>. Εγγραφείτε πριν από τότε για να τα διατηρήσετε."
 
-#. Plutonium page hero subtitle while gifted premium time is in its short grace period after ending. premiumProductName is the paid tier name.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Ember page hero subtitle while gifted premium time is in its short grace period after ending. premiumProductName is the paid tier name.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Your gift time has ended. Subscribe to keep {premiumProductName}."
 msgstr "Ο χρόνος δώρου σου έληξε. Εγγράψου για να συνεχίσεις με το {premiumProductName}."
 
 #. Title of the confirmation shown before checkout when a user with gifted premium time starts a recurring subscription.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx
+#: src/features/app/components/dialogs/components/ember/hooks/useCheckoutActions.tsx
 msgid "Your gift time is kept"
 msgstr "Ο δωρεάνης χρόνος σου διατηρείται"
 
-#. Body text in the Plutonium subscription actions. Keep the tone plain and specific.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Body text in the Ember subscription actions. Keep the tone plain and specific.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Your grace period has ended."
 msgstr "Η περίοδος χάριτος έληξε."
 
@@ -42922,7 +42922,7 @@ msgstr "Η διεύθυνση IP σας έχει αποκλειστεί από �
 msgid "Your IP is banned"
 msgstr "Η IP σας έχει αποκλειστεί"
 
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "Your last purchase is outside the refund window. Contact support for billing issues."
 msgstr "Η τελευταία σας αγορά είναι εκτός του παραθύρου επιστροφής χρημάτων. Επικοινωνήστε με την υποστήριξη για ζητήματα χρέωσης."
 
@@ -42967,7 +42967,7 @@ msgid "Your monthly donation is separate and keeps running."
 msgstr "Η μηνιαία δωρεά σας είναι ξεχωριστή και συνεχίζεται."
 
 #. Body of the error modal shown when a self-serve refund is no longer within the eligible window.
-#: src/features/app/components/dialogs/components/plutonium/SelfServeRefundSection.tsx
+#: src/features/app/components/dialogs/components/ember/SelfServeRefundSection.tsx
 msgid "Your most recent purchase is no longer within the refund window. Contact support for billing issues."
 msgstr "Η πιο πρόσφατη αγορά σας δεν είναι πλέον εντός του παραθύρου επιστροφής χρημάτων. Επικοινωνήστε με την υποστήριξη για θέματα χρέωσης."
 
@@ -43029,8 +43029,8 @@ msgstr "Η πληρωμή σας ακυρώθηκε. Μπορείτε τώρα �
 msgid "Your payment was successful. You can now close this tab and return to the app."
 msgstr "Η πληρωμή σας ήταν επιτυχής. Μπορείτε τώρα να κλείσετε αυτήν την καρτέλα και να επιστρέψετε στην εφαρμογή."
 
-#. Toast success shown after a scheduled Plutonium billing cycle change is canceled.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Toast success shown after a scheduled Ember billing cycle change is canceled.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Your pending billing change has been canceled."
 msgstr "Η εκκρεμής αλλαγή χρέωσης ακυρώθηκε."
 
@@ -43069,8 +43069,8 @@ msgstr "Το κιτ ανάκτησής σου"
 msgid "your region"
 msgstr "η περιοχή σας"
 
-#. Plutonium subscription card text shown while a failed renewal payment is being retried. {graceDate} is a date already formatted and localized by code; never write a date into the translation.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionDescription.tsx
+#. Ember subscription card text shown while a failed renewal payment is being retried. {graceDate} is a date already formatted and localized by code; never write a date into the translation.
+#: src/features/app/components/dialogs/components/ember/SubscriptionDescription.tsx
 msgid "Your renewal payment failed but <0/> stay active until <1>{graceDate}</1>. Update your payment method before then to keep your subscription."
 msgstr "Η πληρωμή ανανέωσης απέτυχε, αλλά τα <0/> παραμένουν ενεργά έως <1>{graceDate}</1>. Ενημερώστε τον τρόπο πληρωμής σας πριν από τότε για να διατηρήσετε τη συνδρομή σας."
 
@@ -43100,17 +43100,17 @@ msgstr "Το διακριτικό ρύθμισης σταμάτησε να λε�
 msgid "Your stream is still live"
 msgstr "Η ροή σας είναι ακόμα ενεργή"
 
-#. Heading of the subscription management panel on the Plutonium page.
-#: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts
+#. Heading of the subscription management panel on the Ember page.
+#: src/features/premium/components/ember_page/EmberPageMessages.ts
 msgid "Your subscription"
 msgstr "Η συνδρομή σας"
 
-#. Toast error shown when the server refuses to move a Plutonium subscription down to the current price, whatever the reason.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Toast error shown when the server refuses to move a Ember subscription down to the current price, whatever the reason.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Your subscription can't move to the new price right now."
 msgstr "Η συνδρομή σας δεν μπορεί να μετακινηθεί στη νέα τιμή αυτήν τη στιγμή."
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionDescription.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionDescription.tsx
 msgid "Your subscription ended but <0/> stay active until <1>{graceDate}</1>. Resubscribe before then to keep your subscriber history."
 msgstr "Η συνδρομή σας έληξε, αλλά τα <0/> παραμένουν ενεργά έως <1>{graceDate}</1>. Κάντε επανεγγραφή πριν από τότε για να διατηρήσετε το ιστορικό συνδρομής σας."
 
@@ -43119,57 +43119,57 @@ msgstr "Η συνδρομή σας έληξε, αλλά τα <0/> παραμέν
 msgid "Your subscription failed to renew, but you still have access to {premiumProductName} perks until {formattedGraceDate}. Take action now or you'll lose all perks."
 msgstr "Η συνδρομή σας δεν ανανεώθηκε, αλλά εξακολουθείτε να έχετε πρόσβαση στα προνόμια του {premiumProductName} μέχρι τις {formattedGraceDate}. Ενεργήστε τώρα, αλλιώς θα χάσετε όλα τα προνόμια."
 
-#. Body text in the Plutonium subscription actions. Keep the tone plain and specific.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Body text in the Ember subscription actions. Keep the tone plain and specific.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Your subscription has been reactivated."
 msgstr "Η συνδρομή σας έχει ενεργοποιηθεί ξανά."
 
-#. Toast success shown after a Plutonium subscription is set to cancel at the end of the billing period.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Toast success shown after a Ember subscription is set to cancel at the end of the billing period.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Your subscription has been set to cancel at the end of your billing period."
 msgstr "Η συνδρομή σας έχει ρυθμιστεί να ακυρωθεί στο τέλος της τρέχουσας περιόδου χρέωσης."
 
-#. Toast success shown after a Plutonium subscription is switched from yearly to monthly billing.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Toast success shown after a Ember subscription is switched from yearly to monthly billing.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Your subscription has been switched to monthly billing."
 msgstr "Η συνδρομή σας άλλαξε σε μηνιαία χρέωση."
 
-#. Toast success shown after a Plutonium subscription is switched from monthly to yearly billing.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Toast success shown after a Ember subscription is switched from monthly to yearly billing.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Your subscription has been switched to yearly billing."
 msgstr "Η συνδρομή σας έχει αλλάξει σε ετήσια χρέωση."
 
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionDescription.tsx
+#: src/features/app/components/dialogs/components/ember/SubscriptionDescription.tsx
 msgid "Your subscription is active but perks are temporarily paused."
 msgstr "Η συνδρομή σας είναι ενεργή, αλλά τα προνόμια έχουν προσωρινά τεθεί σε παύση."
 
 #. Body of the error modal shown when a subscription is already scheduled to cancel.
-#: src/features/app/components/dialogs/components/plutonium/utils/PremiumActionErrorModal.tsx
+#: src/features/app/components/dialogs/components/ember/utils/PremiumActionErrorModal.tsx
 msgid "Your subscription is already set to cancel at the end of your billing period."
 msgstr "Η συνδρομή σας έχει ήδη οριστεί να ακυρωθεί στο τέλος της περιόδου χρέωσής σας."
 
 #. Body of the error modal shown when reactivation is attempted but the subscription is not cancelling.
-#: src/features/app/components/dialogs/components/plutonium/utils/PremiumActionErrorModal.tsx
+#: src/features/app/components/dialogs/components/ember/utils/PremiumActionErrorModal.tsx
 msgid "Your subscription isn't set to cancel, so there's nothing to reactivate."
 msgstr "Η συνδρομή σας δεν έχει οριστεί για ακύρωση, επομένως δεν υπάρχει κάτι για επανενεργοποίηση."
 
-#. Toast success shown after a Plutonium subscription is scheduled to move down to the current price. {effectiveDate} is the localized date the new price starts.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Toast success shown after a Ember subscription is scheduled to move down to the current price. {effectiveDate} is the localized date the new price starts.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Your subscription moves to the new price on {effectiveDate}."
 msgstr "Η συνδρομή σας μεταβαίνει στη νέα τιμή στις {effectiveDate}."
 
-#. Plutonium subscription card line shown to a subscriber on a legacy price whose subscription is already set to cancel. {cancelDate} is a date and {listPriceNewLabel} is a currency amount, both already formatted and localized by code; never write a date or an amount into the translation.
-#: src/features/app/components/dialogs/components/plutonium/SubscriptionCard.tsx
+#. Ember subscription card line shown to a subscriber on a legacy price whose subscription is already set to cancel. {cancelDate} is a date and {listPriceNewLabel} is a currency amount, both already formatted and localized by code; never write a date or an amount into the translation.
+#: src/features/app/components/dialogs/components/ember/SubscriptionCard.tsx
 msgid "Your subscription still ends on <0>{cancelDate}</0>. The current price is now {listPriceNewLabel}. If you reactivate, you can switch to it from here."
 msgstr "Η συνδρομή σας εξακολουθεί να λήγει στις <0>{cancelDate}</0>. Η τρέχουσα τιμή είναι τώρα {listPriceNewLabel}. Αν ενεργοποιήσετε ξανά τη συνδρομή, μπορείτε να περάσετε σε αυτήν την τιμή από εδώ."
 
-#. Toast success shown after a Plutonium subscription is scheduled to switch to monthly billing.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Toast success shown after a Ember subscription is scheduled to switch to monthly billing.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Your subscription will switch to monthly billing at the next renewal."
 msgstr "Η συνδρομή σας θα αλλάξει σε μηνιαία χρέωση στην επόμενη ανανέωση."
 
-#. Toast success shown after a Plutonium subscription is scheduled to switch to yearly billing.
-#: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts
+#. Toast success shown after a Ember subscription is scheduled to switch to yearly billing.
+#: src/features/app/components/dialogs/components/ember/hooks/useSubscriptionActions.ts
 msgid "Your subscription will switch to yearly billing at the next renewal."
 msgstr "Η συνδρομή σας θα μεταβεί σε ετήσια χρέωση στην επόμενη ανανέωση."
 

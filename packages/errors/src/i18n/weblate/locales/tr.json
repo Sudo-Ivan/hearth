@@ -483,7 +483,7 @@
 	"permissions.user_owns_guilds": "Bu kullanıcının sahip olduğu topluluklar var.",
 	"premium_and_plans.animated_avatars_require_premium": "Hareketli avatarlar için Premium gerekli.",
 	"premium_and_plans.banners_require_premium": "Banner'lar için Premium gerekli.",
-	"premium_and_plans.cannot_redeem_plutonium_with_visionary": "Zaten ömür boyu {premium_tier_name} sahibisin.",
+	"premium_and_plans.cannot_redeem_ember_with_visionary": "Zaten ömür boyu {premium_tier_name} sahibisin.",
 	"premium_and_plans.custom_emojis_outside_source_require_premium": "Premium olmadan özel emojileri kaynak topluluklar dışında kullanamazsın.",
 	"premium_and_plans.custom_stickers_in_dms_require_premium": "Premium olmadan özel çıkartmaları DM'lerde kullanamazsın.",
 	"premium_and_plans.custom_stickers_outside_source_require_premium": "Premium olmadan özel çıkartmaları kaynak topluluklar dışında kullanamazsın.",

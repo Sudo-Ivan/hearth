@@ -380,9 +380,9 @@
 		"deadline_label": "Retira la disputa antes del",
 		"deadline_value": "{warningDate, date, long}",
 		"footer_reason": "Has recibido este correo electrónico debido a una disputa de pago relacionada con tu cuenta de {product_name}.",
-		"ground": "{product, select, plutonium {Sección 4.4 de las condiciones del servicio} other {Sección 9 de las condiciones del Operator Pass}}",
+		"ground": "{product, select, ember {Sección 4.4 de las condiciones del servicio} other {Sección 9 de las condiciones del Operator Pass}}",
 		"ground_label": "Fundamento",
-		"intro": "Has disputado tu {product, select, plutonium {pago de Plutonium} other {pago del Operator Pass}} con tu banco o compañía de tarjeta. Una persona de nuestro equipo ha revisado la disputa según nuestras condiciones y la ha considerado injustificada.",
+		"intro": "Has disputado tu {product, select, ember {pago de Ember} other {pago del Operator Pass}} con tu banco o compañía de tarjeta. Una persona de nuestro equipo ha revisado la disputa según nuestras condiciones y la ha considerado injustificada.",
 		"next_body": "Si has hecho este pago, puedes pedir a tu banco o a tu compañía de tarjeta que retire la disputa. Si la disputa se retira o se cierra sin que te devuelvan el dinero, no le pasa nada a tu cuenta. Hasta que se cierre la disputa, no puedes comprar nada en {product_name}.{privacy_email, select, null {} other { Puedes pedir una copia de tus datos cuando quieras escribiendo a <mail>{privacy_email}</mail>.}}",
 		"next_title": "Qué pasa ahora",
 		"order_date_label": "Fecha del pedido",
@@ -390,7 +390,7 @@
 		"order_number_label": "Número de pedido",
 		"signoff": "El equipo de {product_name}",
 		"subject": "Sobre tu disputa de pago en {product_name}",
-		"why_body": "El pago lo hiciste tú o alguien a quien autorizaste, te cobramos el importe correcto, {product, select, plutonium {Plutonium se prestó según lo descrito} other {el Operator Pass se entregó según lo descrito}}, no habíamos reembolsado el pago y tu plazo de desistimiento ya había terminado cuando lo disputaste.",
+		"why_body": "El pago lo hiciste tú o alguien a quien autorizaste, te cobramos el importe correcto, {product, select, ember {Ember se prestó según lo descrito} other {el Operator Pass se entregó según lo descrito}}, no habíamos reembolsado el pago y tu plazo de desistimiento ya había terminado cuando lo disputaste.",
 		"why_title": "Por qué la consideramos injustificada"
 	},
 	"reauth_code": {

@@ -7,7 +7,7 @@ export const ProfileBadgeResponse = z.object({
 	kind: z
 		.string()
 		.describe(
-			'Stable badge key. Known values: staff, partner, bug_hunter, operator_pass, visionary, visionary_number, plutonium, and premium on self-hosted instances. Clients must render unknown values from the other fields.',
+			'Stable badge key. Known values: staff, partner, bug_hunter, operator_pass, visionary, visionary_number, ember, and premium on self-hosted instances. Clients must render unknown values from the other fields.',
 		),
 	label: z
 		.string()

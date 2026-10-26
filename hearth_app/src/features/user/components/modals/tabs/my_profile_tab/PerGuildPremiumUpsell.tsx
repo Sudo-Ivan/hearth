@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 import {getPremiumProductName, shouldShowPremiumFeatures} from '@app/features/premium/utils/PremiumUtils';
-import {PlutoniumUpsell} from '@app/features/ui/plutonium_upsell/PlutoniumUpsell';
+import {EmberUpsell} from '@app/features/ui/ember_upsell/EmberUpsell';
 import {WarningAlert} from '@app/features/ui/warning_alert/WarningAlert';
 import {Trans} from '@lingui/react/macro';
 import {observer} from 'mobx-react-lite';
@@ -20,11 +20,11 @@ export const PerGuildPremiumUpsell = observer(() => {
 		);
 	}
 	return (
-		<PlutoniumUpsell data-flx="user.my-profile-tab.per-guild-premium-upsell.plutonium-upsell">
+		<EmberUpsell data-flx="user.my-profile-tab.per-guild-premium-upsell.ember-upsell">
 			<Trans>
 				Customizing your avatar, banner, accent color, and bio for individual communities requires{' '}
 				{PREMIUM_PRODUCT_NAME}. Community nicknames and pronouns are free for everyone.
 			</Trans>
-		</PlutoniumUpsell>
+		</EmberUpsell>
 	);
 });

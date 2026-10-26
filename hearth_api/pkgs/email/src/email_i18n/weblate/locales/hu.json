@@ -380,9 +380,9 @@
 		"deadline_label": "A vitát eddig vond vissza",
 		"deadline_value": "{warningDate, date, long}",
 		"footer_reason": "Ezt az e-mailt a {product_name}-fiókodat érintő fizetési vita miatt kaptad.",
-		"ground": "{product, select, plutonium {A szolgáltatási feltételek 4.4. pontja} other {Az Operator Pass feltételeinek 9. pontja}}",
+		"ground": "{product, select, ember {A szolgáltatási feltételek 4.4. pontja} other {Az Operator Pass feltételeinek 9. pontja}}",
 		"ground_label": "Jogalap",
-		"intro": "Vitattad {product, select, plutonium {a Plutonium kifizetésedet} other {az Operator Pass kifizetésedet}} a bankodnál vagy a kártyakibocsátódnál. Csapatunk egyik tagja a feltételeink alapján megvizsgálta a vitát, és indokolatlannak találta.",
+		"intro": "Vitattad {product, select, ember {a Ember kifizetésedet} other {az Operator Pass kifizetésedet}} a bankodnál vagy a kártyakibocsátódnál. Csapatunk egyik tagja a feltételeink alapján megvizsgálta a vitát, és indokolatlannak találta.",
 		"next_body": "Ha te fizettél, megkérheted a bankodat vagy a kártyakibocsátódat, hogy vonja vissza a vitát. Ha a vitát visszavonják, vagy úgy zárul le, hogy nem kapod vissza a pénzt, a fiókodat semmi sem érinti. Amíg a vita le nem zárul, semmit sem vásárolhatsz a(z) {product_name} szolgáltatásban.{privacy_email, select, null {} other { Az adataidról bármikor kérhetsz másolatot, ha írsz a(z) <mail>{privacy_email}</mail> címre.}}",
 		"next_title": "Mi történik most",
 		"order_date_label": "Rendelés dátuma",
@@ -390,7 +390,7 @@
 		"order_number_label": "Rendelésszám",
 		"signoff": "{product_name} csapata",
 		"subject": "A(z) {product_name}-fizetéseddel kapcsolatos vitáról",
-		"why_body": "A fizetést te vagy valaki más végezte, akinek ezt megengedted, a helyes összeget terheltük, {product, select, plutonium {a Plutoniumot a leírtak szerint biztosítottuk} other {az Operator Passt a leírtak szerint átadtuk}}, a fizetést nem térítettük vissza, és amikor vitattad, az elállási időszak már lejárt.",
+		"why_body": "A fizetést te vagy valaki más végezte, akinek ezt megengedted, a helyes összeget terheltük, {product, select, ember {a Emberot a leírtak szerint biztosítottuk} other {az Operator Passt a leírtak szerint átadtuk}}, a fizetést nem térítettük vissza, és amikor vitattad, az elállási időszak már lejárt.",
 		"why_title": "Miért találtuk indokolatlannak"
 	},
 	"reauth_code": {

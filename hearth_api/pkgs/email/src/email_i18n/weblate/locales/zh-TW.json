@@ -380,9 +380,9 @@
 		"deadline_label": "撤回爭議的截止日期",
 		"deadline_value": "{warningDate, date, long}",
 		"footer_reason": "您收到此電子郵件，是因為您的 {product_name} 帳號涉及一項付款爭議。",
-		"ground": "{product, select, plutonium {服務條款第 4.4 條} other {Operator Pass 條款第 9 條}}",
+		"ground": "{product, select, ember {服務條款第 4.4 條} other {Operator Pass 條款第 9 條}}",
 		"ground_label": "依據",
-		"intro": "您透過銀行或發卡機構對您的 {product, select, plutonium {Plutonium 付款} other {Operator Pass 付款}}提出了爭議。我們團隊的一名成員依據我們的條款審查了該爭議，認定其不合理。",
+		"intro": "您透過銀行或發卡機構對您的 {product, select, ember {Ember 付款} other {Operator Pass 付款}}提出了爭議。我們團隊的一名成員依據我們的條款審查了該爭議，認定其不合理。",
 		"next_body": "如果這筆款項是您本人支付的，您可以請銀行或發卡機構撤回爭議。如果爭議被撤回，或在款項沒有退還給您的情況下結束，您的帳號不會受到任何影響。在爭議結束之前，您無法在 {product_name} 上購買任何東西。{privacy_email, select, null {} other {您可以隨時寄信至 <mail>{privacy_email}</mail>，索取您的資料副本。}}",
 		"next_title": "接下來會如何",
 		"order_date_label": "訂單日期",
@@ -390,7 +390,7 @@
 		"order_number_label": "訂單編號",
 		"signoff": "{product_name} 團隊",
 		"subject": "關於您在 {product_name} 的付款爭議",
-		"why_body": "付款由您本人或您授權的人完成，我們收取的金額正確，{product, select, plutonium {Plutonium 已依描述提供} other {Operator Pass 已依描述交付}}，我們尚未退還這筆款項，且您提出爭議時撤回期已經結束。",
+		"why_body": "付款由您本人或您授權的人完成，我們收取的金額正確，{product, select, ember {Ember 已依描述提供} other {Operator Pass 已依描述交付}}，我們尚未退還這筆款項，且您提出爭議時撤回期已經結束。",
 		"why_title": "我們認定其不合理的原因"
 	},
 	"reauth_code": {

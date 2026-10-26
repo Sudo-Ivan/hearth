@@ -380,9 +380,9 @@
 		"deadline_label": "Rút lại tranh chấp trước",
 		"deadline_value": "{warningDate, date, long}",
 		"footer_reason": "Bạn nhận được email này vì một tranh chấp thanh toán liên quan đến tài khoản {product_name} của bạn.",
-		"ground": "{product, select, plutonium {Mục 4.4 của điều khoản dịch vụ} other {Mục 9 của điều khoản Operator Pass}}",
+		"ground": "{product, select, ember {Mục 4.4 của điều khoản dịch vụ} other {Mục 9 của điều khoản Operator Pass}}",
 		"ground_label": "Căn cứ",
-		"intro": "Bạn đã tranh chấp {product, select, plutonium {khoản thanh toán Plutonium} other {khoản thanh toán Operator Pass}} của mình với ngân hàng hoặc tổ chức phát hành thẻ. Một nhân viên của chúng tôi đã đối chiếu tranh chấp này với điều khoản của chúng tôi và xác định rằng tranh chấp không chính đáng.",
+		"intro": "Bạn đã tranh chấp {product, select, ember {khoản thanh toán Ember} other {khoản thanh toán Operator Pass}} của mình với ngân hàng hoặc tổ chức phát hành thẻ. Một nhân viên của chúng tôi đã đối chiếu tranh chấp này với điều khoản của chúng tôi và xác định rằng tranh chấp không chính đáng.",
 		"next_body": "Nếu bạn đã thực hiện khoản thanh toán này, bạn có thể yêu cầu ngân hàng hoặc công ty thẻ rút lại tranh chấp. Nếu tranh chấp được rút lại hoặc kết thúc mà tiền không được trả lại cho bạn, tài khoản của bạn sẽ không bị ảnh hưởng gì. Cho đến khi tranh chấp kết thúc, bạn không thể mua gì trên {product_name}.{privacy_email, select, null {} other { Bạn có thể yêu cầu bản sao dữ liệu của mình bất cứ lúc nào bằng cách viết đến <mail>{privacy_email}</mail>.}}",
 		"next_title": "Điều gì xảy ra bây giờ",
 		"order_date_label": "Ngày đặt hàng",
@@ -390,7 +390,7 @@
 		"order_number_label": "Số đơn hàng",
 		"signoff": "Đội ngũ {product_name}",
 		"subject": "Về tranh chấp thanh toán của bạn trên {product_name}",
-		"why_body": "Bạn hoặc người được bạn cho phép đã thực hiện thanh toán, chúng tôi đã tính đúng số tiền, {product, select, plutonium {Plutonium đã được cung cấp như mô tả} other {Operator Pass đã được giao như mô tả}}, chúng tôi chưa hoàn lại khoản thanh toán, và thời hạn rút khỏi hợp đồng đã kết thúc khi bạn tranh chấp.",
+		"why_body": "Bạn hoặc người được bạn cho phép đã thực hiện thanh toán, chúng tôi đã tính đúng số tiền, {product, select, ember {Ember đã được cung cấp như mô tả} other {Operator Pass đã được giao như mô tả}}, chúng tôi chưa hoàn lại khoản thanh toán, và thời hạn rút khỏi hợp đồng đã kết thúc khi bạn tranh chấp.",
 		"why_title": "Lý do chúng tôi xác định tranh chấp không chính đáng"
 	},
 	"reauth_code": {

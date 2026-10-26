@@ -380,9 +380,9 @@
 		"deadline_label": "Ritira la contestazione prima del",
 		"deadline_value": "{warningDate, date, long}",
 		"footer_reason": "Hai ricevuto questa email a causa di una contestazione di pagamento relativa al tuo account {product_name}.",
-		"ground": "{product, select, plutonium {Sezione 4.4 dei termini di servizio} other {Sezione 9 dei termini dell'Operator Pass}}",
+		"ground": "{product, select, ember {Sezione 4.4 dei termini di servizio} other {Sezione 9 dei termini dell'Operator Pass}}",
 		"ground_label": "Motivazione",
-		"intro": "Hai contestato il tuo {product, select, plutonium {pagamento di Plutonium} other {pagamento dell'Operator Pass}} presso la tua banca o la società emittente della carta. Una persona del nostro team ha esaminato la contestazione rispetto ai nostri termini e l'ha ritenuta ingiustificata.",
+		"intro": "Hai contestato il tuo {product, select, ember {pagamento di Ember} other {pagamento dell'Operator Pass}} presso la tua banca o la società emittente della carta. Una persona del nostro team ha esaminato la contestazione rispetto ai nostri termini e l'ha ritenuta ingiustificata.",
 		"next_body": "Se hai effettuato tu questo pagamento, puoi chiedere alla tua banca o alla società della carta di ritirare la contestazione. Se la contestazione viene ritirata o si chiude senza che il denaro ti venga restituito, al tuo account non succede nulla. Finché la contestazione non si chiude, non puoi acquistare nulla su {product_name}.{privacy_email, select, null {} other { Puoi chiedere una copia dei tuoi dati in qualsiasi momento scrivendo a <mail>{privacy_email}</mail>.}}",
 		"next_title": "Cosa succede ora",
 		"order_date_label": "Data dell'ordine",
@@ -390,7 +390,7 @@
 		"order_number_label": "Numero d'ordine",
 		"signoff": "Il team di {product_name}",
 		"subject": "Informazioni sulla tua contestazione di pagamento su {product_name}",
-		"why_body": "Tu o qualcuno da te autorizzato avete effettuato il pagamento, abbiamo addebitato l'importo corretto, {product, select, plutonium {Plutonium è stato fornito come descritto} other {l'Operator Pass è stato consegnato come descritto}}, non avevamo rimborsato il pagamento e il periodo di recesso era già terminato quando l'hai contestato.",
+		"why_body": "Tu o qualcuno da te autorizzato avete effettuato il pagamento, abbiamo addebitato l'importo corretto, {product, select, ember {Ember è stato fornito come descritto} other {l'Operator Pass è stato consegnato come descritto}}, non avevamo rimborsato il pagamento e il periodo di recesso era già terminato quando l'hai contestato.",
 		"why_title": "Perché l'abbiamo ritenuta ingiustificata"
 	},
 	"reauth_code": {

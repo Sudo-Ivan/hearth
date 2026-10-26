@@ -43,7 +43,7 @@ import {ms} from 'itty-time';
 import {afterAll, afterEach, beforeAll, beforeEach, describe, expect, it} from 'vitest';
 
 const PACKAGE_NAME = 'com.hearth';
-const SUBSCRIPTION_PRODUCT = 'plutonium';
+const SUBSCRIPTION_PRODUCT = 'ember';
 
 interface SubscriptionSeed {
 	state?: string;

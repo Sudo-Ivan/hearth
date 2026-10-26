@@ -73,7 +73,7 @@ export function buildStorePurchaseRow(overrides: Partial<StorePurchaseRow> = {})
 		slot: 'monthly',
 		environment: 'production',
 		app_id: 'com.hearth',
-		product_id: 'com.hearth.plutonium.monthly',
+		product_id: 'com.hearth.ember.monthly',
 		base_plan_id: null,
 		store_reference: reference,
 		latest_transaction_id: reference,
@@ -89,7 +89,7 @@ export function buildStorePurchaseRow(overrides: Partial<StorePurchaseRow> = {})
 		expires_at: new Date(now.getTime() + ms('20 days')),
 		grace_ends_at: null,
 		auto_renew: true,
-		auto_renew_product_id: 'com.hearth.plutonium.monthly',
+		auto_renew_product_id: 'com.hearth.ember.monthly',
 		started_at: new Date(now.getTime() - ms('10 days')),
 		purchased_at: new Date(now.getTime() - ms('10 days')),
 		revoked_at: null,
@@ -126,7 +126,7 @@ export async function seedOpenPaymentDisputeReview(
 	const now = new Date();
 	const review: PaymentDisputeReviewRow = {
 		dispute_id: disputeId,
-		product: 'plutonium',
+		product: 'ember',
 		order_id: `cs_${disputeId}`,
 		invoice_number: null,
 		purchaser_id: purchaserId,

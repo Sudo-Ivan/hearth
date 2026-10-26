@@ -380,9 +380,9 @@
 		"deadline_label": "Povuci prigovor prije",
 		"deadline_value": "{warningDate, date, long}",
 		"footer_reason": "Ovu si e-poruku primio zbog prigovora na plaćanje povezanog s tvojim računom na {product_name}u.",
-		"ground": "{product, select, plutonium {Odjeljak 4.4 Uvjeta pružanja usluge} other {Odjeljak 9. uvjeta za Operator Pass}}",
+		"ground": "{product, select, ember {Odjeljak 4.4 Uvjeta pružanja usluge} other {Odjeljak 9. uvjeta za Operator Pass}}",
 		"ground_label": "Osnova",
-		"intro": "Uložio si prigovor na {product, select, plutonium {plaćanje za Plutonium} other {plaćanje za Operator Pass}} kod svoje banke ili izdavatelja kartice. Osoba iz našeg tima provjerila je prigovor prema našim uvjetima i utvrdila da je neopravdan.",
+		"intro": "Uložio si prigovor na {product, select, ember {plaćanje za Ember} other {plaćanje za Operator Pass}} kod svoje banke ili izdavatelja kartice. Osoba iz našeg tima provjerila je prigovor prema našim uvjetima i utvrdila da je neopravdan.",
 		"next_body": "Ako si ti izvršio ovo plaćanje, možeš zamoliti banku ili izdavatelja kartice da povuče prigovor. Ako se prigovor povuče ili zatvori, a novac ti se ne vrati, tvom se računu ništa ne događa. Dok se prigovor ne zatvori, ne možeš ništa kupiti na platformi {product_name}.{privacy_email, select, null {} other { Kopiju svojih podataka možeš zatražiti kad god želiš tako da pišeš na <mail>{privacy_email}</mail>.}}",
 		"next_title": "Što se sada događa",
 		"order_date_label": "Datum narudžbe",
@@ -390,7 +390,7 @@
 		"order_number_label": "Broj narudžbe",
 		"signoff": "Tim {product_name}a",
 		"subject": "O tvom prigovoru na plaćanje na {product_name}u",
-		"why_body": "Uplatu si izvršio ti ili netko kome si to dopustio, naplatili smo točan iznos, {product, select, plutonium {Plutonium je pružen kako je opisano} other {Operator Pass je isporučen kako je opisano}}, nismo ti vratili novac za tu uplatu, a rok za odustajanje već je istekao kad si uložio prigovor.",
+		"why_body": "Uplatu si izvršio ti ili netko kome si to dopustio, naplatili smo točan iznos, {product, select, ember {Ember je pružen kako je opisano} other {Operator Pass je isporučen kako je opisano}}, nismo ti vratili novac za tu uplatu, a rok za odustajanje već je istekao kad si uložio prigovor.",
 		"why_title": "Zašto smo utvrdili da je neopravdan"
 	},
 	"reauth_code": {

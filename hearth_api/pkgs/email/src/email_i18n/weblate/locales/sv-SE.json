@@ -380,9 +380,9 @@
 		"deadline_label": "Dra tillbaka bestridandet före",
 		"deadline_value": "{warningDate, date, long}",
 		"footer_reason": "Du fick det här mejlet på grund av ett bestridande av en betalning som gäller ditt {product_name}-konto.",
-		"ground": "{product, select, plutonium {Avsnitt 4.4 i användarvillkoren} other {Avsnitt 9 i villkoren för Operator Pass}}",
+		"ground": "{product, select, ember {Avsnitt 4.4 i användarvillkoren} other {Avsnitt 9 i villkoren för Operator Pass}}",
 		"ground_label": "Grund",
-		"intro": "Du har bestridit din {product, select, plutonium {betalning för Plutonium} other {betalning för Operator Pass}} hos din bank eller ditt kortföretag. En person i vårt team prövade bestridandet mot våra villkor och bedömde det som obefogat.",
+		"intro": "Du har bestridit din {product, select, ember {betalning för Ember} other {betalning för Operator Pass}} hos din bank eller ditt kortföretag. En person i vårt team prövade bestridandet mot våra villkor och bedömde det som obefogat.",
 		"next_body": "Om du gjorde betalningen kan du be din bank eller ditt kortföretag att dra tillbaka bestridandet. Om bestridandet dras tillbaka eller avslutas utan att pengarna betalas tillbaka till dig händer inget med ditt konto. Tills bestridandet är avslutat kan du inte köpa något på {product_name}.{privacy_email, select, null {} other { Du kan när som helst be om en kopia av dina data genom att skriva till <mail>{privacy_email}</mail>.}}",
 		"next_title": "Vad som händer nu",
 		"order_date_label": "Orderdatum",
@@ -390,7 +390,7 @@
 		"order_number_label": "Ordernummer",
 		"signoff": "{product_name}-teamet",
 		"subject": "Om ditt bestridande av en betalning på {product_name}",
-		"why_body": "Du själv eller någon som du hade gett lov gjorde betalningen, vi debiterade rätt belopp, {product, select, plutonium {Plutonium tillhandahölls som det beskrivs} other {Operator Pass levererades som det beskrivs}}, vi hade inte betalat tillbaka beloppet och ångerfristen hade gått ut när du bestred betalningen.",
+		"why_body": "Du själv eller någon som du hade gett lov gjorde betalningen, vi debiterade rätt belopp, {product, select, ember {Ember tillhandahölls som det beskrivs} other {Operator Pass levererades som det beskrivs}}, vi hade inte betalat tillbaka beloppet och ångerfristen hade gått ut när du bestred betalningen.",
 		"why_title": "Varför vi bedömde det som obefogat"
 	},
 	"reauth_code": {

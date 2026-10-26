@@ -63,7 +63,7 @@ function transactionPayload(overrides: Record<string, unknown> = {}): Record<str
 		originalTransactionId: '2000000123456789',
 		webOrderLineItemId: '2000000011112222',
 		bundleId: 'com.hearth',
-		productId: 'com.hearth.plutonium.monthly',
+		productId: 'com.hearth.ember.monthly',
 		subscriptionGroupIdentifier: '21000000',
 		purchaseDate: now - ms('1 hour'),
 		originalPurchaseDate: now - ms('1 hour'),
@@ -88,8 +88,8 @@ function renewalPayload(overrides: Record<string, unknown> = {}): Record<string,
 	const now = Date.now();
 	return {
 		originalTransactionId: '2000000123456789',
-		autoRenewProductId: 'com.hearth.plutonium.monthly',
-		productId: 'com.hearth.plutonium.monthly',
+		autoRenewProductId: 'com.hearth.ember.monthly',
+		productId: 'com.hearth.ember.monthly',
 		autoRenewStatus: 1,
 		signedDate: now,
 		environment: 'Production',
@@ -447,7 +447,7 @@ describe('App Store JWS verification with a test chain', () => {
 	it('rejects a payload changed after signing', async () => {
 		const signed = await pki.signJws(transactionPayload());
 		const [header, , signature] = signed.split('.');
-		const forged = Buffer.from(JSON.stringify(transactionPayload({productId: 'com.hearth.plutonium.yearly'}))).toString(
+		const forged = Buffer.from(JSON.stringify(transactionPayload({productId: 'com.hearth.ember.yearly'}))).toString(
 			'base64url',
 		);
 		await expectRejection(verifyTransaction(`${header}.${forged}.${signature}`), 'invalid_signature');
@@ -613,7 +613,7 @@ describe('App Store JWS verification with a test chain', () => {
 					environment: 'Production',
 					appAppleId: 1234567890,
 					bundleId: 'com.hearth',
-					productId: 'com.hearth.plutonium.monthly',
+					productId: 'com.hearth.ember.monthly',
 					succeededCount: 5,
 					failedCount: 0,
 				},

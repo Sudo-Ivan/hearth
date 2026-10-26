@@ -23,7 +23,7 @@ import {Form} from '@app/features/ui/components/form/Form';
 import {Input} from '@app/features/ui/components/form/FormInput';
 import {UsernameValidationRules} from '@app/features/ui/components/form/UsernameValidationRules';
 import FocusRing from '@app/features/ui/focus_ring/FocusRing';
-import {PlutoniumUpsell} from '@app/features/ui/plutonium_upsell/PlutoniumUpsell';
+import {EmberUpsell} from '@app/features/ui/ember_upsell/EmberUpsell';
 import {Tooltip} from '@app/features/ui/tooltip/Tooltip';
 import {WarningAlert} from '@app/features/ui/warning_alert/WarningAlert';
 import * as UserCommands from '@app/features/user/commands/UserCommands';
@@ -414,12 +414,12 @@ export const HearthTagChangeModal = observer(({user}: HearthTagChangeModalProps)
 								</WarningAlert>
 							)}
 							{!usernameOnly && !hasCustomDiscriminator && (
-								<PlutoniumUpsell
+								<EmberUpsell
 									className={styles.premiumUpsell}
 									data-flx="user.hearth-tag-change-modal.premium-upsell"
 								>
 									<Trans>Customize your tag or keep it when changing your username</Trans>
-								</PlutoniumUpsell>
+								</EmberUpsell>
 							)}
 						</div>
 					</Modal.ContentLayout>

@@ -198,7 +198,7 @@ describe('decodeGooglePlayDeveloperNotification', () => {
 		expect(
 			decode({
 				packageName: 'com.hearth',
-				subscriptionNotification: {notificationType: 99, purchaseToken: 'sub-token', subscriptionId: 'plutonium'},
+				subscriptionNotification: {notificationType: 99, purchaseToken: 'sub-token', subscriptionId: 'ember'},
 			})?.event,
 		).toEqual({type: 'subscription', notificationType: 99, purchaseToken: 'sub-token'});
 	});

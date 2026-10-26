@@ -483,7 +483,7 @@
 	"permissions.user_owns_guilds": "Den här användaren äger communities.",
 	"premium_and_plans.animated_avatars_require_premium": "Animerade avatarer kräver Premium.",
 	"premium_and_plans.banners_require_premium": "Bannrar kräver Premium.",
-	"premium_and_plans.cannot_redeem_plutonium_with_visionary": "Du har redan {premium_tier_name} på livstid.",
+	"premium_and_plans.cannot_redeem_ember_with_visionary": "Du har redan {premium_tier_name} på livstid.",
 	"premium_and_plans.custom_emojis_outside_source_require_premium": "Du kan inte använda anpassade emojis utanför de communities de kommer från utan Premium.",
 	"premium_and_plans.custom_stickers_in_dms_require_premium": "Du kan inte använda anpassade klistermärken i DM utan Premium.",
 	"premium_and_plans.custom_stickers_outside_source_require_premium": "Du kan inte använda anpassade klistermärken utanför de communities de kommer från utan Premium.",
