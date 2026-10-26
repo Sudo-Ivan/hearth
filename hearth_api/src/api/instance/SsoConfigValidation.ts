@@ -75,6 +75,10 @@ export function deriveSsoRedirectUri(webAppEndpoint: string): string {
 	return `${webAppEndpoint.replace(/\/+$/, '')}/auth/sso/callback`;
 }
 
+export function deriveOidcCallbackUri(apiPublicEndpoint: string): string {
+	return `${apiPublicEndpoint.replace(/\/+$/, '')}/auth/oidc/callback`;
+}
+
 export function isTestSsoProvider(
 	config: {
 		authorizationUrl: string | null;

@@ -31,6 +31,7 @@ import {
 } from '@app/api/instance/InstanceConfigRepository';
 import {canJoinSingleCommunity, type SingleCommunityService} from '@app/api/instance/SingleCommunityService';
 import {
+	deriveOidcCallbackUri,
 	deriveSsoRedirectUri,
 	getSsoRequestUrlPolicy,
 	isTestSsoProvider,
@@ -377,13 +378,22 @@ export class SsoService {
 		return config.enabled && config.ready && config.enforced;
 	}
 
-	async startLogin({redirectTo, redirectUri}: {redirectTo?: string; redirectUri?: string} = {}): Promise<{
+	async startLogin({
+		redirectTo,
+		redirectUri,
+		callbackUri,
+	}: {
+		redirectTo?: string;
+		redirectUri?: string;
+		callbackUri?: string;
+	} = {}): Promise<{
 		authorization_url: string;
 		state: string;
 		redirect_uri: string;
 	}> {
 		const config = await this.requireReadyConfig();
-		const isMobile = isMobileSsoRedirectUri(redirectUri, config.redirectUri);
+		const effectiveRedirectUri = callbackUri ?? config.redirectUri;
+		const isMobile = isMobileSsoRedirectUri(redirectUri, effectiveRedirectUri);
 		const state = `${isMobile ? SSO_MOBILE_STATE_PREFIX : ''}${randomHexToken(STATE_BYTE_LENGTH)}`;
 		const codeVerifier = randomBase64Url(CODE_VERIFIER_BYTE_LENGTH);
 		const codeChallenge = buildCodeChallenge(codeVerifier);
@@ -392,7 +402,7 @@ export class SsoService {
 			codeVerifier,
 			nonce,
 			redirectTo: sanitizeSsoRedirectTo(redirectTo),
-			redirectUri: config.redirectUri,
+			redirectUri: effectiveRedirectUri,
 			createdAt: Date.now(),
 		};
 		const {cache} = this.apiContext.services;
@@ -400,7 +410,7 @@ export class SsoService {
 		const searchParams = new URLSearchParams({
 			response_type: 'code',
 			client_id: config.clientId ?? '',
-			redirect_uri: config.redirectUri,
+			redirect_uri: effectiveRedirectUri,
 			scope: config.scope,
 			state,
 			code_challenge: codeChallenge,
@@ -422,7 +432,7 @@ export class SsoService {
 				throw new FeatureTemporarilyDisabledError();
 			}
 		}
-		return {authorization_url: authorizationUrlString, state, redirect_uri: config.redirectUri};
+		return {authorization_url: authorizationUrlString, state, redirect_uri: effectiveRedirectUri};
 	}
 
 	async completeLogin({
@@ -1140,10 +1150,54 @@ export class SsoService {
 		return parseTokenEndpointResponse(resp.headers.get('content-type'), rawBody);
 	}
 
+	private envOidcConfig(): {
+		issuer: string;
+		clientId: string;
+		clientSecret: string | null;
+		scope: string;
+		buttonLabel: string;
+		autoProvision: boolean;
+	} | null {
+		const oidc = this.apiContext.services.config.auth.oidc;
+		const issuer = oidc.issuer?.trim();
+		const clientId = oidc.clientId?.trim();
+		if (!issuer || !clientId) {
+			return null;
+		}
+		return {
+			issuer,
+			clientId,
+			clientSecret: oidc.clientSecret,
+			scope: oidc.scopes,
+			buttonLabel: oidc.buttonLabel,
+			autoProvision: oidc.autoRegister,
+		};
+	}
+
 	private async getResolvedConfig(): Promise<ResolvedSsoConfig> {
 		const {config} = this.apiContext.services;
-		const stored = await this.instanceConfigRepository.getSsoConfig({includeSecret: true});
-		const redirectUri = deriveSsoRedirectUri(config.endpoints.webApp);
+		const storedConfig = await this.instanceConfigRepository.getSsoConfig({includeSecret: true});
+		const envOidc = this.envOidcConfig();
+		// Environment OIDC configures the provider itself while stored instance config keeps
+		// owning policy fields like allowed domains, enforced sign-in and group role mappings.
+		// Any field the admin set explicitly wins over its environment counterpart.
+		const stored: InstanceSsoConfig =
+			envOidc === null
+				? storedConfig
+				: {
+						...storedConfig,
+						enabled: true,
+						issuer: storedConfig.issuer ?? envOidc.issuer,
+						clientId: storedConfig.clientId ?? envOidc.clientId,
+						clientSecret: storedConfig.clientSecret ?? envOidc.clientSecret,
+						scope: storedConfig.scope ?? envOidc.scope,
+						buttonLabel: storedConfig.buttonLabel ?? envOidc.buttonLabel,
+						autoProvision: storedConfig.enabled ? storedConfig.autoProvision : envOidc.autoProvision,
+					};
+		const envDriven = envOidc !== null && !storedConfig.enabled;
+		const redirectUri = envDriven
+			? deriveOidcCallbackUri(config.endpoints.apiPublic)
+			: deriveSsoRedirectUri(config.endpoints.webApp);
 		const scope = stored.scope?.trim() || 'openid email profile';
 		const providerId = ssoProviderIdOf(stored);
 		let authorizationUrl = stored.authorizationUrl;

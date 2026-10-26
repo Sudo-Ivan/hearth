@@ -13,6 +13,7 @@ import Authentication from '@app/features/auth/state/Authentication';
 import {canReportMessage} from '@app/features/channel/components/MessageActionUtils';
 import Channels from '@app/features/channel/state/Channels';
 import DeveloperOptions from '@app/features/devtools/state/DeveloperOptions';
+import ChannelE2ee from '@app/features/e2ee/state/ChannelE2ee';
 import GatewaySessions from '@app/features/gateway/transport/GatewaySessionPool';
 import GuildMatureContentAgree from '@app/features/guild/state/GuildMatureContentAgree';
 import {DELETE_MESSAGE_DESCRIPTOR} from '@app/features/i18n/utils/CommonMessageDescriptors';
@@ -68,6 +69,7 @@ import {modal} from '@app/features/ui/commands/ModalCommands';
 import * as ToastCommands from '@app/features/ui/commands/ToastCommands';
 import {Switch} from '@app/features/ui/components/form/FormSwitch';
 import {blockIfAccountLimited, handleAccountLimitedError} from '@app/features/user/utils/AccountLimitUtils';
+import {isE2eeMessageContent} from '@hearth/channel_e2ee/src/index';
 import {APIErrorCodes} from '@hearth/constants/src/ApiErrorCodes';
 import {MessageFlags, Permissions} from '@hearth/constants/src/ChannelConstants';
 import type {JumpType} from '@hearth/constants/src/JumpConstants';
@@ -621,11 +623,37 @@ function nextChannelOrder(channelId: string): number {
 	return getOrCreateChannelState(channelId).nextOrder++;
 }
 
+// Encrypts outgoing message text when the channel has encryption enabled.
+// Returns the envelope string to send as content, or null when encryption
+// failed and the send must be aborted rather than fall back to plaintext.
+async function encryptContentForChannel(channelId: string, content: string): Promise<string | null> {
+	if (content.length === 0 || isE2eeMessageContent(content)) {
+		return content;
+	}
+	try {
+		return await ChannelE2ee.encryptOutgoingMessage(channelId, content);
+	} catch (error) {
+		logger.debug(`e2ee encryption failed for channel ${channelId}`, error);
+		return null;
+	}
+}
+
 export async function send(channelId: string, params: SendMessageParams): Promise<WireMessage | null> {
 	const accountKey = SessionManager.currentAccountKey;
 	if (!MessageQueue.consumeLocalSendReservation(channelId, params.nonce)) {
 		MessageQueue.rejectLocalRateLimitedSend(channelId, params.nonce, params.hasAttachments);
 		return null;
+	}
+	let sendContent = params.content;
+	let sendFlags = params.flags;
+	if (ChannelE2ee.isEncryptionEnabled(channelId)) {
+		const encrypted = await encryptContentForChannel(channelId, params.content);
+		if (encrypted === null) {
+			Messages.handleSendFailed({channelId, nonce: params.nonce});
+			return null;
+		}
+		sendContent = encrypted;
+		sendFlags = (sendFlags ?? 0) | MessageFlags.E2EE;
 	}
 	const sendOrder = Accessibility.sequentialFileSend && params.hasAttachments ? nextChannelOrder(channelId) : -1;
 	const prepared = await prepareSendAttachments(channelId, params);
@@ -640,13 +668,13 @@ export async function send(channelId: string, params: SendMessageParams): Promis
 		accountKey,
 		channelId,
 		nonce: params.nonce,
-		content: params.content,
+		content: sendContent,
 		hasAttachments: params.hasAttachments,
 		preparedAttachments: prepared.attachments,
 		preparedFiles: prepared.files,
 		allowedMentions: params.allowedMentions,
 		messageReference: params.messageReference,
-		flags: params.flags,
+		flags: sendFlags,
 		favoriteMemeId: params.favoriteMemeId,
 		stickers: params.stickers,
 		tts: params.tts,
@@ -791,9 +819,19 @@ export async function edit(
 ): Promise<WireMessage | null> {
 	logger.debug(`Editing message ${messageId} in channel ${channelId}`);
 	const isPublished = Messages.getMessage(channelId, messageId)?.isCrossposted === true;
+	let editContent = content;
+	let editFlags = flags;
+	if (ChannelE2ee.isEncryptionEnabled(channelId) && content != null && content.length > 0) {
+		const encrypted = await encryptContentForChannel(channelId, content);
+		if (encrypted === null) {
+			return null;
+		}
+		editContent = encrypted;
+		editFlags = (editFlags ?? 0) | MessageFlags.E2EE;
+	}
 	try {
 		const response = await http.patch<WireMessage>(Endpoints.CHANNEL_MESSAGE(channelId, messageId), {
-			body: buildMessageEditRequest({content, flags, allowedMentions, attachments}),
+			body: buildMessageEditRequest({content: editContent, flags: editFlags, allowedMentions, attachments}),
 			mode: isPublished ? 'strict' : 'auto-retry',
 			retries: MESSAGE_EDIT_MAX_RETRIES,
 			timeoutMs: MESSAGE_EDIT_TIMEOUT_MS,

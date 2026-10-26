@@ -6,6 +6,7 @@ import {TextareaButton} from '@app/features/channel/components/textarea/Textarea
 import textareaButtonsStyles from '@app/features/channel/components/textarea/TextareaButtons.module.css';
 import styles from '@app/features/channel/components/textarea/TextareaInput.module.css';
 import VoiceMessageRecorder from '@app/features/channel/components/VoiceMessageRecorder';
+import {E2eeComposerToggle} from '@app/features/e2ee/components/E2eeComposerToggle';
 import type {ExpressionPickerTabType} from '@app/features/expressions/components/popouts/ExpressionPickerPopout';
 import {
 	EMOJIS_DESCRIPTOR,
@@ -167,6 +168,7 @@ export const TextareaButtons = React.forwardRef<HTMLDivElement, TextareaButtonsP
 						)}
 					</>
 				)}
+				<E2eeComposerToggle channelId={channelId} data-flx="channel.textarea.textarea-buttons.e2ee-composer-toggle" />
 				{showEmojiButton && (
 					<TextareaButton
 						ref={isMobile ? undefined : expressionPickerTriggerRef}

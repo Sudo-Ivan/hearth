@@ -283,6 +283,7 @@ export interface APIConfig {
 		connectionInitiationSecret: string;
 		profilePseudonymSecret: string;
 		ssoAllowPrivateAddresses: boolean;
+		oidc: OidcConfig;
 		passkeys: {
 			rpName: string;
 			rpId: string;
@@ -340,6 +341,9 @@ export interface APIConfig {
 	presignedAttachmentUploadsEnabled: boolean;
 	presignedHarvestDownloadsEnabled: boolean;
 	attachmentDecayEnabled: boolean;
+	e2ee: {
+		enabled: boolean;
+	};
 	deletionGracePeriodHours: number;
 	reportRetention: {
 		days: number;
@@ -390,6 +394,15 @@ export interface APIConfig {
 			crosspost?: number;
 		};
 	};
+}
+
+export interface OidcConfig {
+	issuer: string | null;
+	clientId: string | null;
+	clientSecret: string | null;
+	scopes: string;
+	buttonLabel: string;
+	autoRegister: boolean;
 }
 
 export interface BlueskyOAuthKeyConfig {

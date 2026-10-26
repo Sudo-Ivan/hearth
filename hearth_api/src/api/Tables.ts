@@ -134,6 +134,14 @@ import {
 } from '@app/api/database/types/ChannelTypes';
 import {USER_CONNECTION_STORAGE_COLUMNS, type UserConnectionStorageRow} from '@app/api/database/types/ConnectionTypes';
 import {
+	CHANNEL_E2EE_STATE_COLUMNS,
+	CHANNEL_E2EE_WRAPPED_KEY_COLUMNS,
+	type ChannelE2eeStateRow,
+	type ChannelE2eeWrappedKeyRow,
+	USER_E2EE_DEVICE_COLUMNS,
+	type UserE2eeDeviceRow,
+} from '@app/api/database/types/E2eeTypes';
+import {
 	ENFORCEMENT_DECISION_BY_SUBJECT_COLUMNS,
 	ENFORCEMENT_DECISION_COLUMNS,
 	ENFORCEMENT_DECISION_EVIDENCE_COLUMNS,
@@ -758,6 +766,27 @@ export const AttachmentLookup = defineTable<AttachmentLookupRow, 'channel_id' | 
 	name: 'attachment_lookup',
 	columns: ATTACHMENT_LOOKUP_COLUMNS,
 	primaryKey: ['channel_id', 'attachment_id', 'filename'],
+});
+export const UserE2eeDevices = defineTable<UserE2eeDeviceRow, 'user_id' | 'device_id', 'user_id'>({
+	name: 'user_e2ee_devices',
+	columns: USER_E2EE_DEVICE_COLUMNS,
+	primaryKey: ['user_id', 'device_id'],
+	partitionKey: ['user_id'],
+});
+export const ChannelE2eeStates = defineTable<ChannelE2eeStateRow, 'channel_id'>({
+	name: 'channel_e2ee_states',
+	columns: CHANNEL_E2EE_STATE_COLUMNS,
+	primaryKey: ['channel_id'],
+});
+export const ChannelE2eeWrappedKeys = defineTable<
+	ChannelE2eeWrappedKeyRow,
+	'channel_id' | 'user_id' | 'epoch' | 'device_id',
+	'channel_id' | 'user_id'
+>({
+	name: 'channel_e2ee_wrapped_keys',
+	columns: CHANNEL_E2EE_WRAPPED_KEY_COLUMNS,
+	primaryKey: ['channel_id', 'user_id', 'epoch', 'device_id'],
+	partitionKey: ['channel_id', 'user_id'],
 });
 export const RecentMentions = defineTable<RecentMentionRow, 'user_id' | 'message_id'>({
 	name: 'recent_mentions',

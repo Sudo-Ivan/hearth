@@ -2,6 +2,7 @@
 
 import {CallController} from '@app/api/channel/controllers/CallController';
 import {ChannelController} from '@app/api/channel/controllers/ChannelController';
+import {ChannelE2eeController} from '@app/api/channel/controllers/ChannelE2eeController';
 import {ChannelFollowController} from '@app/api/channel/controllers/ChannelFollowController';
 import {ForumController} from '@app/api/channel/controllers/ForumController';
 import {MessageController} from '@app/api/channel/controllers/MessageController';
@@ -19,6 +20,7 @@ export function registerChannelControllers(app: HonoApp) {
 	CallController(app);
 	StreamController(app);
 	ThreadController(app);
+	ChannelE2eeController(app);
 	ForumController(app);
 	ThreadMemberSettingsController(app);
 }

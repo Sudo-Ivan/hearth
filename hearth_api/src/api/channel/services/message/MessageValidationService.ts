@@ -15,6 +15,7 @@ import type {User} from '@app/api/models/User';
 import {
 	isMessageTypeDeletable,
 	MessageFlags,
+	MessageReferenceTypes,
 	MessageTypes,
 	Permissions,
 	SENDABLE_MESSAGE_FLAGS,
@@ -34,6 +35,30 @@ import {InputValidationError} from '@hearth/errors/src/domains/core/InputValidat
 import type {GuildResponse} from '@hearth/schema/src/domains/guild/GuildResponseSchemas';
 import {hasVisibleContent} from '@hearth/schema/src/primitives/MessageValidators';
 import type {ICacheService} from '@pkgs/cache/src/ICacheService';
+
+function isValidE2eeEnvelope(content: string | null | undefined): boolean {
+	if (content == null) return false;
+	let parsed: unknown;
+	try {
+		parsed = JSON.parse(content);
+	} catch {
+		return false;
+	}
+	if (typeof parsed !== 'object' || parsed === null || Array.isArray(parsed)) return false;
+	const record = parsed as Record<string, unknown>;
+	return (
+		record.v === 1 &&
+		typeof record.key_id === 'string' &&
+		record.key_id.length > 0 &&
+		typeof record.epoch === 'number' &&
+		Number.isInteger(record.epoch) &&
+		record.epoch >= 0 &&
+		typeof record.iv === 'string' &&
+		record.iv.length > 0 &&
+		typeof record.ct === 'string' &&
+		record.ct.length > 0
+	);
+}
 
 export class MessageValidationService {
 	constructor(
@@ -58,6 +83,12 @@ export class MessageValidationService {
 		const hasStickers = Boolean('sticker_ids' in data && data.sticker_ids != null && data.sticker_ids.length > 0);
 		const hasFlags = data.flags !== undefined && data.flags !== null;
 		const guildFeatures = options?.guildFeatures ?? null;
+		const hasE2eeFlag = !!(data.flags && data.flags & MessageFlags.E2EE);
+		if (hasE2eeFlag) {
+			this.validateE2eeMessage(data, hasContent, hasEmbeds, hasStickers, hasFavoriteMeme);
+			this.validateContentLength(data.content, user, guildFeatures, options?.messageAuthorType);
+			return;
+		}
 		const hasVoiceMessageFlag = !!(data.flags && data.flags & MessageFlags.VOICE_MESSAGE);
 		if (hasVoiceMessageFlag) {
 			this.validateVoiceMessageConstraints(
@@ -147,6 +178,37 @@ export class MessageValidationService {
 			throw InputValidationError.fromCode('content', ValidationErrorCodes.CONTENT_EXCEEDS_MAX_LENGTH, {
 				maxLength,
 			});
+		}
+	}
+
+	// End to end encrypted messages carry an opaque JSON envelope as content.
+	// The server cannot inspect ciphertext, so it only bounds the payload and
+	// rejects features that would leak metadata (rich embeds, stickers, memes,
+	// forwards) instead of scanning the content.
+	private validateE2eeMessage(
+		data: MessageRequest | MessageUpdateRequest,
+		hasContent: boolean,
+		hasEmbeds: boolean,
+		hasStickers: boolean,
+		hasFavoriteMeme: boolean,
+	): void {
+		if (!hasContent) {
+			throw new CannotSendEmptyMessageError();
+		}
+		if (hasEmbeds) {
+			throw InputValidationError.fromCode('embeds', ValidationErrorCodes.TOO_MANY_EMBEDS);
+		}
+		if (hasStickers) {
+			throw InputValidationError.fromCode('sticker_ids', ValidationErrorCodes.INVALID_FORMAT);
+		}
+		if (hasFavoriteMeme) {
+			throw InputValidationError.fromCode('favorite_meme_id', ValidationErrorCodes.INVALID_FORMAT);
+		}
+		if ('message_reference' in data && data.message_reference?.type === MessageReferenceTypes.FORWARD) {
+			throw InputValidationError.fromCode('message_reference', ValidationErrorCodes.INVALID_FORMAT);
+		}
+		if (!isValidE2eeEnvelope(data.content)) {
+			throw InputValidationError.fromCode('content', ValidationErrorCodes.INVALID_MESSAGE_DATA);
 		}
 	}
 

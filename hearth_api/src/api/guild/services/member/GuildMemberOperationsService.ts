@@ -409,6 +409,7 @@ export class GuildMemberOperationsService {
 			);
 		}
 		await this.gatewayService.leaveGuild({userId: targetId, guildId});
+		await this.channelService.e2ee?.rotateOnMembershipShrink({guildId, actorId});
 		await emitGuildMemberRemoved({guildId, userId: targetId, actorId, kind: 'kicked'});
 	}
 
@@ -566,6 +567,7 @@ export class GuildMemberOperationsService {
 			});
 		}
 		await this.gatewayService.leaveGuild({userId, guildId});
+		await this.channelService.e2ee?.rotateOnMembershipShrink({guildId, actorId: userId});
 		await emitGuildMemberRemoved({guildId, userId, actorId: null, kind: 'left'});
 	}
 

@@ -5,6 +5,7 @@ import type {ChannelID, UserID} from '@app/api/BrandedTypes';
 import {createMessageID} from '@app/api/BrandedTypes';
 import {mapChannelToResponse} from '@app/api/channel/ChannelMappers';
 import type {ChannelRepository} from '@app/api/channel/ChannelRepository';
+import type {ChannelE2eeService} from '@app/api/channel/services/ChannelE2eeService';
 import {
 	dispatchChannelDelete,
 	dispatchDmChannelDelete,
@@ -58,6 +59,7 @@ export class GroupDmOperationsService {
 		private readonly limitConfigService: LimitConfigService,
 		private readonly voiceRoomStore: IVoiceRoomStore,
 		private readonly liveKitService: ILiveKitService,
+		private readonly e2eeService: ChannelE2eeService,
 	) {
 		this.userPermissionUtils = new UserPermissionUtils(userRepository, guildRepository);
 	}
@@ -323,6 +325,7 @@ export class GroupDmOperationsService {
 				await this.syncGroupDmRecipientsForUser(recId);
 			}),
 		);
+		await this.e2eeService.rotateOnMembershipShrink({channelId, actorId: userId});
 	}
 
 	private async disconnectRemovedRecipientFromCall(channelId: ChannelID, recipientId: UserID): Promise<void> {

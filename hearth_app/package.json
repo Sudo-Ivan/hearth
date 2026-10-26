@@ -37,6 +37,8 @@
 		"i18n:refresh": "pnpm i18n:extract && pnpm i18n:compile",
 		"lingui:compile": "lingui compile --strict",
 		"lingui:extract": "lingui extract --clean",
+		"test": "vitest run",
+		"test:watch": "vitest",
 		"wasm:codegen": "../tools/ci/run.sh build-app-wasm"
 	},
 	"browserslist": [
@@ -165,6 +167,7 @@
 		"@codemirror/view": "^6.43.12",
 		"@floating-ui/react": "catalog:",
 		"@floating-ui/react-dom": "catalog:",
+		"@hearth/channel_e2ee": "workspace:*",
 		"@hearth/constants": "workspace:*",
 		"@hearth/date_utils": "workspace:*",
 		"@hearth/desktop_ipc": "workspace:*",
@@ -264,7 +267,8 @@
 		"sharp": "catalog:",
 		"tsx": "catalog:",
 		"typed-css-modules": "catalog:",
-		"typescript": "catalog:ts7"
+		"typescript": "catalog:ts7",
+		"vitest": "catalog:"
 	},
 	"packageManager": "pnpm@11.27.0"
 }

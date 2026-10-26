@@ -3,6 +3,8 @@
 import Authentication from '@app/features/auth/state/Authentication';
 import {useCollapsedMessageVisibility} from '@app/features/channel/components/CollapsedMessageVisibilityContext';
 import {PreloadableUserPopout} from '@app/features/channel/components/PreloadableUserPopout';
+import {E2eeMessagePlaceholder} from '@app/features/e2ee/components/E2eeMessageIndicator';
+import {useE2eeMessageContent} from '@app/features/e2ee/hooks/useE2eeMessageContent';
 import GuildMembers from '@app/features/member/state/GuildMembers';
 import {SafeMarkdown} from '@app/features/messaging/components/markdown';
 import {MarkdownContext} from '@app/features/messaging/components/markdown/renderers/RendererTypes';
@@ -42,6 +44,34 @@ const MESSAGE_CONTAINS_ATTACHED_MEDIA_DESCRIPTOR = msg({
 	message: 'Message contains attached media',
 	comment: 'Label in the channel and chat reply preview.',
 });
+
+const RepliedMessageContent = observer(
+	({referencedMessage, channelId}: {referencedMessage: Message; channelId: string}) => {
+		const e2ee = useE2eeMessageContent(referencedMessage);
+		if (e2ee.state === 'pending' || e2ee.state === 'undecryptable') {
+			return (
+				<E2eeMessagePlaceholder
+					undecryptable={e2ee.state === 'undecryptable'}
+					data-flx="channel.reply-preview.e2ee-message-placeholder"
+				/>
+			);
+		}
+		return (
+			<SafeMarkdown
+				content={e2ee.content}
+				options={{
+					context: MarkdownContext.RESTRICTED_INLINE_REPLY,
+					messageId: referencedMessage.id,
+					channelId,
+					disableInteractions: true,
+					mentionChannels: referencedMessage.mentionChannels,
+				}}
+				data-flx="channel.reply-preview.safe-markdown"
+			/>
+		);
+	},
+);
+
 export const ReplyPreview = observer(
 	({
 		message,
@@ -247,16 +277,10 @@ export const ReplyPreview = observer(
 								className={clsx(styles.repliedTextContent, markupStyles.markup)}
 								data-flx="channel.reply-preview.replied-text-content--2"
 							>
-								<SafeMarkdown
-									content={referencedMessage.content}
-									options={{
-										context: MarkdownContext.RESTRICTED_INLINE_REPLY,
-										messageId: referencedMessage.id,
-										channelId,
-										disableInteractions: true,
-										mentionChannels: referencedMessage.mentionChannels,
-									}}
-									data-flx="channel.reply-preview.safe-markdown"
+								<RepliedMessageContent
+									referencedMessage={referencedMessage}
+									channelId={channelId}
+									data-flx="channel.reply-preview.replied-message-content"
 								/>
 							</span>
 						) : (

@@ -5,6 +5,10 @@ import type {RuntimeConfigSnapshot} from '@app/features/app/state/InstanceSnapsh
 import RuntimeConfig from '@app/features/app/state/RuntimeConfig';
 import * as AuthenticationCommands from '@app/features/auth/commands/AuthenticationCommands';
 import styles from '@app/features/auth/components/pages/LoginPage.module.css';
+import {
+	parseSsoCallbackFragment,
+	type SsoCallbackFragment,
+} from '@app/features/auth/components/pages/SsoCallbackFragment';
 import {useAuthSingleUseRequest} from '@app/features/auth/flow/AuthSingleUseRequest';
 import MfaScreen from '@app/features/auth/flow/MfaScreen';
 import {useAuthPresentation} from '@app/features/auth/flow/useAuthPresentation';
@@ -28,6 +32,7 @@ import {
 	TRY_AGAIN_DESCRIPTOR,
 } from '@app/features/i18n/utils/CommonMessageDescriptors';
 import * as RouterUtils from '@app/features/navigation/utils/RouterUtils';
+import {Logger} from '@app/features/platform/utils/AppLogger';
 import {failureCode} from '@app/features/platform/utils/ResponseInspection';
 import {Spinner} from '@app/features/ui/components/Spinner';
 import {navigateToExternalURL} from '@app/features/ui/utils/NativeUtils';
@@ -71,6 +76,8 @@ const OPEN_PRODUCT_DESCRIPTOR = msg({
 });
 const SSO_TIMEOUT_MS = 30_000;
 
+const logger = new Logger('SsoCallbackPage');
+
 interface SsoCallbackParameters {
 	code: string;
 	state: string;
@@ -78,6 +85,7 @@ interface SsoCallbackParameters {
 
 interface SsoCallbackAttemptDependencies {
 	callbackContext: SsoPendingContext | null;
+	callbackFragment: SsoCallbackFragment | null;
 	callbackParameters: SsoCallbackParameters | null;
 	i18n: I18n;
 	isCurrent: () => boolean;
@@ -129,7 +137,15 @@ class SsoCallbackAttempt {
 	private async run(): Promise<void> {
 		const providerErrorMessage = this.providerErrorMessage();
 		if (providerErrorMessage != null) {
-			this.finishWithError(providerErrorMessage);
+			this.finishWithError(
+				providerErrorMessage,
+				this.dependencies.providerError === APIErrorCodes.REGISTRATION_PENDING_APPROVAL,
+			);
+			return;
+		}
+		const callbackFragment = this.dependencies.callbackFragment;
+		if (callbackFragment != null) {
+			await this.runFragmentCallback(callbackFragment);
 			return;
 		}
 		const callbackParameters = this.dependencies.callbackParameters;
@@ -176,6 +192,62 @@ class SsoCallbackAttempt {
 		);
 		this.dependencies.runtimeTarget.reset();
 		this.settled = true;
+	}
+
+	private async runFragmentCallback(fragment: SsoCallbackFragment): Promise<void> {
+		this.scrubLocationFragment();
+		const runtimeSnapshot =
+			this.dependencies.callbackContext?.runtimeSnapshot ??
+			this.dependencies.runtimeTarget.snapshot ??
+			RuntimeConfig.getSnapshotOrNull();
+		if (runtimeSnapshot == null) {
+			this.finishWithError(this.dependencies.i18n._(FAILED_TO_COMPLETE_SSO_SIGN_IN_DESCRIPTOR));
+			return;
+		}
+		if (this.settled || !this.dependencies.isCurrent()) {
+			return;
+		}
+		this.stopTimeout();
+		if (fragment.type === 'mfa') {
+			this.settled = true;
+			AuthenticationCommands.setMfaTicket({...fragment.challenge, runtimeSnapshot});
+			this.dependencies.onRequireMfa({
+				challenge: fragment.challenge,
+				redirectTo: resolveSsoRedirectTarget(
+					fragment.redirectTo ?? undefined,
+					this.dependencies.callbackContext,
+					runtimeSnapshot,
+				),
+				runtimeSnapshot,
+			});
+			return;
+		}
+		const redirectTo = resolveSsoRedirectTarget(
+			fragment.redirectTo ?? undefined,
+			this.dependencies.callbackContext,
+			runtimeSnapshot,
+		);
+		await AuthenticationCommands.completeLogin(
+			{
+				token: fragment.token,
+				userId: fragment.userId,
+				runtimeSnapshot,
+			},
+			{redirectPath: redirectTo},
+		);
+		this.dependencies.runtimeTarget.reset();
+		this.settled = true;
+	}
+
+	private scrubLocationFragment(): void {
+		if (window.location.hash.length === 0) {
+			return;
+		}
+		try {
+			window.history.replaceState(window.history.state, '', `${window.location.pathname}${window.location.search}`);
+		} catch (error) {
+			logger.warn('Failed to remove the SSO credential fragment from the address bar', error);
+		}
 	}
 
 	private handleTimeout(): void {
@@ -239,6 +311,8 @@ const SsoCallbackPage = observer(function SsoCallbackPage() {
 	const state = params['get']('state');
 	const providerError = params['get']('error');
 	const providerErrorDescription = params['get']('error_description');
+	const [callbackLocationHash] = useState(() => window.location.hash);
+	const callbackFragment = parseSsoCallbackFragment(callbackLocationHash);
 	const mobileCallbackUrl = state?.startsWith(SSO_MOBILE_STATE_PREFIX)
 		? `${SSO_MOBILE_CALLBACK_URI}${window.location.search}`
 		: null;
@@ -268,14 +342,14 @@ const SsoCallbackPage = observer(function SsoCallbackPage() {
 				return;
 			}
 			const {authorizationUrl} = await startSsoLogin({
-				redirectTo: pendingRedirectTo(pendingContext),
+				redirectTo: pendingRedirectTo(pendingContext) ?? callbackFragment?.redirectTo ?? null,
 				runtimeSnapshot,
 			});
 			await navigateToExternalURL(authorizationUrl);
 		} catch {
 			RouterUtils.replaceWith('/login');
 		}
-	}, [pendingContext, runtimeTarget]);
+	}, [callbackFragment, pendingContext, runtimeTarget]);
 	const handleMfaSuccess = useCallback(
 		async (payload: LoginSuccessPayload) => {
 			if (mfa == null) {
@@ -295,7 +369,7 @@ const SsoCallbackPage = observer(function SsoCallbackPage() {
 		setMfa(null);
 		handleBackToLogin();
 	}, [handleBackToLogin]);
-	useAuthSingleUseRequest(`${code ?? ''}:${state ?? ''}`, (request) => {
+	useAuthSingleUseRequest(`${code ?? ''}:${state ?? ''}:${callbackLocationHash}`, (request) => {
 		if (mobileCallbackUrl != null) {
 			window.location.replace(mobileCallbackUrl);
 			return;
@@ -304,6 +378,7 @@ const SsoCallbackPage = observer(function SsoCallbackPage() {
 		setPendingContext(callbackContext);
 		const attempt = new SsoCallbackAttempt({
 			callbackContext,
+			callbackFragment,
 			callbackParameters: resolveCallbackParameters(code, state),
 			i18n,
 			isCurrent: () => request.isCurrent(),

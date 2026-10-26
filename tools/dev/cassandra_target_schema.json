@@ -3469,6 +3469,64 @@
 			"options": "default_time_to_live = 7776000 AND gc_grace_seconds = 864000 AND compaction = {'class': 'TimeWindowCompactionStrategy', 'compaction_window_unit': 'DAYS', 'compaction_window_size': '3'}"
 		},
 		{
+			"name": "channel_e2ee_states",
+			"columns": [
+				{
+					"name": "channel_id",
+					"type": "bigint"
+				},
+				{
+					"name": "epoch",
+					"type": "int"
+				},
+				{
+					"name": "rotated_by",
+					"type": "bigint"
+				},
+				{
+					"name": "updated_at",
+					"type": "timestamp"
+				}
+			],
+			"primary_key": "(channel_id)",
+			"options": ""
+		},
+		{
+			"name": "channel_e2ee_wrapped_keys",
+			"columns": [
+				{
+					"name": "channel_id",
+					"type": "bigint"
+				},
+				{
+					"name": "user_id",
+					"type": "bigint"
+				},
+				{
+					"name": "epoch",
+					"type": "int"
+				},
+				{
+					"name": "device_id",
+					"type": "text"
+				},
+				{
+					"name": "sender_user_id",
+					"type": "bigint"
+				},
+				{
+					"name": "wrapped_key",
+					"type": "text"
+				},
+				{
+					"name": "created_at",
+					"type": "timestamp"
+				}
+			],
+			"primary_key": "((channel_id, user_id), epoch, device_id)",
+			"options": "CLUSTERING ORDER BY (epoch ASC, device_id ASC)"
+		},
+		{
 			"name": "channel_empty_buckets",
 			"columns": [
 				{
@@ -6991,6 +7049,41 @@
 				}
 			],
 			"primary_key": "((user_id), code)",
+			"options": ""
+		},
+		{
+			"name": "user_e2ee_devices",
+			"columns": [
+				{
+					"name": "user_id",
+					"type": "bigint"
+				},
+				{
+					"name": "device_id",
+					"type": "text"
+				},
+				{
+					"name": "identity_key",
+					"type": "text"
+				},
+				{
+					"name": "signed_prekey",
+					"type": "text"
+				},
+				{
+					"name": "signature",
+					"type": "text"
+				},
+				{
+					"name": "created_at",
+					"type": "timestamp"
+				},
+				{
+					"name": "updated_at",
+					"type": "timestamp"
+				}
+			],
+			"primary_key": "((user_id), device_id)",
 			"options": ""
 		},
 		{

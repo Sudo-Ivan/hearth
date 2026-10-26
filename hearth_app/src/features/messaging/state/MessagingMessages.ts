@@ -2,6 +2,7 @@
 
 import {ResettableStates} from '@app/features/app/state/ResettableStates';
 import Channels from '@app/features/channel/state/Channels';
+import ChannelE2ee from '@app/features/e2ee/state/ChannelE2ee';
 import GatewaySessions from '@app/features/gateway/transport/GatewaySessionPool';
 import Guilds from '@app/features/guild/state/Guilds';
 import * as MessageCommands from '@app/features/messaging/commands/MessageCommands';
@@ -473,6 +474,9 @@ class Messages {
 		cached?: boolean;
 		messages: Array<WireMessage>;
 	}): boolean {
+		for (const message of action.messages) {
+			ChannelE2ee.observeWireMessage(message);
+		}
 		const messages = ChannelMessages.getOrCreate(action.channelId).applyLoadedWindow({
 			windowMessages: action.messages,
 			isBefore: action.isBefore,
@@ -520,6 +524,7 @@ class Messages {
 
 	handleIncomingMessage(action: {channelId: string; message: WireMessage}): boolean {
 		Channels.handleMessageCreate({message: action.message});
+		ChannelE2ee.observeWireMessage(action.message);
 		const existing = ChannelMessages.get(action.channelId);
 		if (!existing?.ready) {
 			return false;

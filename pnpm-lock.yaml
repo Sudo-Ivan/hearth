@@ -1365,6 +1365,9 @@ importers:
       '@floating-ui/react-dom':
         specifier: 'catalog:'
         version: 2.1.9(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+      '@hearth/channel_e2ee':
+        specifier: workspace:*
+        version: link:../packages/channel_e2ee
       '@hearth/constants':
         specifier: workspace:*
         version: link:../packages/constants
@@ -1660,6 +1663,9 @@ importers:
       typescript:
         specifier: catalog:ts7
         version: 7.0.2
+      vitest:
+        specifier: 'catalog:'
+        version: 5.0.5(@opentelemetry/api@1.9.1)(@types/node@26.6.1)(msw@2.15.0(@types/node@26.6.1)(typescript@7.0.2))(vite@8.3.4(@types/node@26.6.1)(esbuild@0.28.2)(jiti@2.7.0)(tsx@4.23.13)(yaml@2.9.1))
 
   hearth_app/pkgs/livekit-client:
     dependencies:
@@ -1871,6 +1877,22 @@ importers:
       typescript:
         specifier: 'catalog:'
         version: 6.0.3
+
+  packages/channel_e2ee:
+    dependencies:
+      uint8array-extras:
+        specifier: 'catalog:'
+        version: 1.5.0
+    devDependencies:
+      '@types/node':
+        specifier: 'catalog:'
+        version: 26.6.1
+      typescript:
+        specifier: catalog:ts7
+        version: 7.0.2
+      vitest:
+        specifier: 'catalog:'
+        version: 5.0.5(@opentelemetry/api@1.9.1)(@types/node@26.6.1)(msw@2.15.0(@types/node@26.6.1)(typescript@7.0.2))(vite@8.3.4(@types/node@26.6.1)(esbuild@0.28.2)(jiti@2.7.0)(tsx@4.23.13)(yaml@2.9.1))
 
   packages/config:
     devDependencies:
@@ -15737,7 +15759,7 @@ snapshots:
 
   '@types/archiver@8.0.0':
     dependencies:
-      '@types/node': 26.6.1
+      '@types/node': 24.13.5
       '@types/readdir-glob': 1.1.5
 
   '@types/chai@5.2.3':
@@ -15815,13 +15837,13 @@ snapshots:
 
   '@types/pg@8.23.1':
     dependencies:
-      '@types/node': 26.6.1
+      '@types/node': 24.13.5
       pg-protocol: 1.16.0
       pg-types: 2.2.0
 
   '@types/qrcode@1.5.6':
     dependencies:
-      '@types/node': 26.6.1
+      '@types/node': 24.13.5
 
   '@types/react-dom@19.3.0(@types/react@19.3.0)':
     dependencies:
@@ -15845,7 +15867,7 @@ snapshots:
 
   '@types/send@1.2.1':
     dependencies:
-      '@types/node': 26.6.1
+      '@types/node': 24.13.5
 
   '@types/set-cookie-parser@2.4.10':
     dependencies:

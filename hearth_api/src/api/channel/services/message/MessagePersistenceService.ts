@@ -204,7 +204,8 @@ export class MessagePersistenceService {
 				processedAttachments = [...processedAttachments, ...attachmentResult.attachments];
 			}
 		}
-		const allowEmbeds = params.allowEmbeds ?? true;
+		// encrypted content must not trigger url embed extraction
+		const allowEmbeds = (params.allowEmbeds ?? true) && (params.flags & MessageFlags.E2EE) === 0;
 		let initialEmbeds: Array<MessageEmbed> | null = null;
 		let hasUncachedUrls = false;
 		const referencedFilenames = params.processedEmbeds
@@ -280,6 +281,10 @@ export class MessagePersistenceService {
 		const messageContent = params.content ?? null;
 		if (!messageContent || !hasVisibleContent(messageContent)) {
 			return null;
+		}
+		// e2ee envelopes are opaque ciphertext and must be stored verbatim
+		if ((params.flags & MessageFlags.E2EE) !== 0) {
+			return messageContent;
 		}
 		if (!params.channel) {
 			return messageContent;
@@ -413,6 +418,7 @@ export class MessagePersistenceService {
 		if (message.messageSnapshots && message.messageSnapshots.length > 0) {
 			throw InputValidationError.fromCode('message', ValidationErrorCodes.MESSAGES_WITH_SNAPSHOTS_CANNOT_BE_EDITED);
 		}
+		const isE2ee = (message.flags & MessageFlags.E2EE) !== 0;
 		const attachmentNsfwMode = this.contentService.attachmentNsfwMode({
 			channel: await this.nsfwScopeChannel(channel),
 			guild,
@@ -423,11 +429,11 @@ export class MessagePersistenceService {
 		const isNSFWAllowed = attachmentNsfwMode !== 'block';
 		const updatedRowData = {...message.toRow()};
 		let hasChanges = false;
-		const allowEmbeds = params.allowEmbeds ?? true;
+		const allowEmbeds = (params.allowEmbeds ?? true) && !isE2ee;
 		let hasUncachedUrls = false;
 		if (data.content !== undefined && data.content !== message.content) {
 			let sanitizedContent = data.content && hasVisibleContent(data.content) ? data.content : '';
-			if (sanitizedContent) {
+			if (sanitizedContent && !isE2ee) {
 				sanitizedContent = await this.contentService.sanitizeCustomEmojis({
 					content: sanitizedContent,
 					userId: message.authorId ?? null,
@@ -445,7 +451,9 @@ export class MessagePersistenceService {
 		if (data.flags !== undefined) {
 			const preservedFlags = message.flags & ~SENDABLE_MESSAGE_FLAGS;
 			const newFlags = data.flags & SENDABLE_MESSAGE_FLAGS;
-			updatedRowData.flags = preservedFlags | newFlags;
+			// once a message is marked e2ee the flag cannot be stripped, otherwise
+			// the stored ciphertext would be treated as plaintext on future edits
+			updatedRowData.flags = preservedFlags | newFlags | (isE2ee ? MessageFlags.E2EE : 0);
 			hasChanges = true;
 		}
 		if (data.attachments !== undefined) {

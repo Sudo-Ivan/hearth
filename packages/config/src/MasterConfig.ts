@@ -164,6 +164,14 @@ export interface MasterConfig {
 		connection_initiation_secret: string;
 		profile_pseudonym_secret: string;
 		sso_allow_private_addresses: boolean;
+		oidc: {
+			issuer?: string;
+			client_id?: string;
+			client_secret?: string;
+			scopes?: string;
+			button_label?: string;
+			auto_register?: boolean;
+		};
 		passkeys: {
 			rp_name: string;
 			rp_id: string;
@@ -346,6 +354,9 @@ export interface MasterConfig {
 		min_member_count: number;
 	};
 	attachment_decay_enabled: boolean;
+	e2ee?: {
+		enabled?: boolean;
+	};
 	deletion_grace_period_hours: number;
 	inactivity_deletion_threshold_days?: number;
 	report_retention: {

@@ -120,6 +120,7 @@ export const MessageFlags = {
 	SOURCE_MESSAGE_DELETED: 1 << 3,
 	SUPPRESS_NOTIFICATIONS: 1 << 12,
 	VOICE_MESSAGE: 1 << 13,
+	E2EE: 1 << 20,
 } as const;
 export const MessageFlagsDescriptions: Record<keyof typeof MessageFlags, string> = {
 	CROSSPOSTED: 'This message has been published to channels that follow this announcement channel',
@@ -128,9 +129,10 @@ export const MessageFlagsDescriptions: Record<keyof typeof MessageFlags, string>
 	SOURCE_MESSAGE_DELETED: 'The published message this copy came from has been deleted',
 	SUPPRESS_NOTIFICATIONS: 'This message will not trigger push or desktop notifications',
 	VOICE_MESSAGE: 'This message is a voice message',
+	E2EE: 'This message carries an end-to-end encrypted envelope that the server treats as opaque ciphertext',
 };
 export const SENDABLE_MESSAGE_FLAGS =
-	MessageFlags.SUPPRESS_EMBEDS | MessageFlags.SUPPRESS_NOTIFICATIONS | MessageFlags.VOICE_MESSAGE;
+	MessageFlags.SUPPRESS_EMBEDS | MessageFlags.SUPPRESS_NOTIFICATIONS | MessageFlags.VOICE_MESSAGE | MessageFlags.E2EE;
 export const MessageAttachmentFlags = {
 	IS_SPOILER: 1 << 3,
 	CONTAINS_EXPLICIT_MEDIA: 1 << 4,

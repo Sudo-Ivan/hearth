@@ -15,6 +15,8 @@ import * as AuthSession from '@app/api/auth/AuthSession';
 import {redeemSignInLink} from '@app/api/auth/SignInLinks';
 import {requireSudoMode} from '@app/api/auth/services/SudoVerificationService';
 import {usesUsernameSignIn} from '@app/api/instance/AccountIdentityModeCache';
+import {deriveOidcCallbackUri} from '@app/api/instance/SsoConfigValidation';
+import {Logger} from '@app/api/Logger';
 import {
 	onUsernameInstance,
 	RequireEmailAccountIdentity,
@@ -34,6 +36,10 @@ import {tierContextFrom} from '@app/api/user/AccountTier';
 import {isJsonRecord} from '@app/api/utils/JsonBoundaryUtils';
 import {requireRequestClientIp} from '@app/api/utils/RequestClientIp';
 import {Validator} from '@app/api/Validator';
+import {SSO_MOBILE_CALLBACK_URI, SSO_MOBILE_STATE_PREFIX} from '@hearth/constants/src/SsoConstants';
+import {ValidationErrorCodes} from '@hearth/constants/src/ValidationErrorCodes';
+import {InputValidationError} from '@hearth/errors/src/domains/core/InputValidationError';
+import {resolveApiErrorCode} from '@hearth/errors/src/error_handling/ErrorIntrospection';
 import {
 	AuthLoginResponse,
 	AuthorizeIpRequest,
@@ -166,6 +172,61 @@ export function AuthController(app: HonoApp) {
 			return ctx.json(result);
 		},
 	);
+	app.get('/auth/oidc/start', RateLimitMiddleware(RateLimitConfigs.AUTH_SSO_START), async (ctx) => {
+		const {config} = ctx.get('apiContext').services;
+		const result = await ctx.get('ssoService').startLogin({
+			redirectTo: ctx.req.query('redirect_to') ?? undefined,
+			callbackUri: deriveOidcCallbackUri(config.endpoints.apiPublic),
+		});
+		return ctx.redirect(result.authorization_url, 302);
+	});
+	app.get('/auth/oidc/callback', RateLimitMiddleware(RateLimitConfigs.AUTH_SSO_COMPLETE), async (ctx) => {
+		const {config} = ctx.get('apiContext').services;
+		const appCallbackUrl = `${config.endpoints.webApp.replace(/\/+$/, '')}/auth/sso/callback`;
+		const providerError = ctx.req.query('error');
+		if (providerError !== undefined) {
+			const params = new URLSearchParams({error: providerError});
+			const description = ctx.req.query('error_description');
+			if (description !== undefined) {
+				params.set('error_description', description);
+			}
+			return ctx.redirect(`${appCallbackUrl}?${params.toString()}`, 302);
+		}
+		const code = ctx.req.query('code');
+		const state = ctx.req.query('state');
+		if (state?.startsWith(SSO_MOBILE_STATE_PREFIX)) {
+			const params = new URLSearchParams({code: code ?? '', state});
+			return ctx.redirect(`${SSO_MOBILE_CALLBACK_URI}?${params.toString()}`, 302);
+		}
+		try {
+			if (code === undefined || code.length === 0 || state === undefined || state.length === 0) {
+				throw InputValidationError.fromCode('state', ValidationErrorCodes.INVALID_OR_EXPIRED_SSO_STATE);
+			}
+			const result = await ctx.get('ssoService').completeLogin({
+				code,
+				state,
+				request: ctx.req.raw,
+				requestCache: ctx.get('requestCache'),
+				clientIp: requireRequestClientIp(ctx),
+			});
+			const fragment = new URLSearchParams();
+			if ('mfa' in result) {
+				fragment.set('mfa_ticket', result.ticket);
+				fragment.set('allowed_methods', result.allowed_methods.join(','));
+			} else {
+				fragment.set('token', result.token);
+				fragment.set('user_id', result.user_id);
+			}
+			if (result.redirect_to.length > 0) {
+				fragment.set('redirect_to', result.redirect_to);
+			}
+			return ctx.redirect(`${appCallbackUrl}#${fragment.toString()}`, 302);
+		} catch (error) {
+			Logger.warn({error}, 'OIDC callback failed');
+			const reason = resolveApiErrorCode(error) ?? 'SSO_FAILED';
+			return ctx.redirect(`${appCallbackUrl}?error=${encodeURIComponent(reason)}`, 302);
+		}
+	});
 	app.post(
 		'/auth/register',
 		LocalAuthMiddleware,

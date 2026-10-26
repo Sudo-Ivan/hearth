@@ -29,6 +29,11 @@ function runAccountReadyWork(userId: string): void {
 		.catch((error) => {
 			logger.warn('Failed to run the passkey migration check after READY', error);
 		});
+	void import('@app/features/e2ee/E2eeBootstrap')
+		.then((module) => module.startE2eeSession(userId))
+		.catch((error) => {
+			logger.warn('Failed to start the e2ee session after READY', error);
+		});
 }
 
 export function scheduleAccountReadyWork(userId: string): void {

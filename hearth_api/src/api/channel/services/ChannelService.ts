@@ -8,6 +8,7 @@ import {AttachmentUploadService} from '@app/api/channel/services/AttachmentUploa
 import type {AuthenticatedChannel} from '@app/api/channel/services/AuthenticatedChannel';
 import {CallService} from '@app/api/channel/services/CallService';
 import {ChannelDataService} from '@app/api/channel/services/ChannelDataService';
+import {ChannelE2eeService} from '@app/api/channel/services/ChannelE2eeService';
 import {GroupDmOperationsService} from '@app/api/channel/services/group_dm/GroupDmOperationsService';
 import {MessageInteractionService} from '@app/api/channel/services/MessageInteractionService';
 import {MessageService} from '@app/api/channel/services/MessageService';
@@ -55,6 +56,7 @@ export class ChannelService {
 	public readonly attachments: AttachmentUploadService;
 	public readonly groupDms: GroupDmOperationsService;
 	public readonly calls: CallService;
+	public readonly e2ee: ChannelE2eeService;
 	public readonly userMessageDeletion: UserMessageDeletionService;
 	private readonly rateLimitService: IRateLimitService;
 
@@ -89,6 +91,7 @@ export class ChannelService {
 			rateLimit: rateLimitService,
 		} = apiContext.services;
 		this.rateLimitService = rateLimitService;
+		this.e2ee = new ChannelE2eeService(channelRepository);
 		this.userMessageDeletion = new UserMessageDeletionService({
 			channelRepository,
 			gatewayService,
@@ -182,6 +185,7 @@ export class ChannelService {
 			limitConfigService,
 			voiceRoomStore,
 			liveKitService,
+			this.e2ee,
 		);
 		this.calls = new CallService(
 			channelRepository,

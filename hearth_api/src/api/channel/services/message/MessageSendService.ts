@@ -67,6 +67,7 @@ import {assertGuildMemberCanCommunicate} from '@app/api/utils/GuildCommunication
 import {checkGuildVerificationWithResponse} from '@app/api/utils/GuildVerificationUtils';
 import {
 	ChannelTypes,
+	MessageFlags,
 	MessageReferenceTypes,
 	MessageTypes,
 	Permissions,
@@ -754,9 +755,10 @@ export class MessageSendService {
 		});
 		const dmNsfwContext = guild ? undefined : await this.deps.persistenceService.resolveDmNsfwContext(channel, user.id);
 		const messageId = forumStarter ? channelIdToMessageId(channel.id) : await this.generateMessageId(channel);
+		const isE2eeMessage = ((data.flags ?? 0) & MessageFlags.E2EE) !== 0;
 		let mentionData: SendMentionData | undefined;
 		const shouldExtractMentions =
-			channel && !isForwardMessage && (data.content !== undefined || data.message_reference != null);
+			channel && !isForwardMessage && !isE2eeMessage && (data.content !== undefined || data.message_reference != null);
 		if (shouldExtractMentions) {
 			const mentionContent = data.content ?? '';
 			const mentions = await this.deps.mentionService.extractMentions({

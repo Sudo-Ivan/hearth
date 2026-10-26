@@ -176,4 +176,12 @@ export const ChannelRateLimitConfigs = {
 		bucket: 'voice:p2p:connection_reports',
 		config: {limit: 10, windowMs: ms('1 minute')},
 	} as RouteRateLimitConfig,
+	CHANNEL_E2EE_KEYS_GET: {
+		bucket: 'channel:e2ee:keys:get::channel_id',
+		config: {limit: 60, windowMs: ms('10 seconds')},
+	} as RouteRateLimitConfig,
+	CHANNEL_E2EE_KEYS_PUT: {
+		bucket: 'channel:e2ee:keys:put::channel_id',
+		config: {limit: 20, windowMs: ms('10 seconds')},
+	} as RouteRateLimitConfig,
 } as const;

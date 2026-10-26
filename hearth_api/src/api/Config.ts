@@ -1,6 +1,12 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import type {APIConfig, BlueskyOAuthConfig, OperatorPassConfig, TrustedCallerConfig} from '@app/api/config/APIConfig';
+import type {
+	APIConfig,
+	BlueskyOAuthConfig,
+	OidcConfig,
+	OperatorPassConfig,
+	TrustedCallerConfig,
+} from '@app/api/config/APIConfig';
 import {
 	parseOperatorPassMaxQuantity,
 	parseOperatorPassReleaseLists,
@@ -222,6 +228,18 @@ function resolveOperatorPassClockOffsetMs(master: MasterConfig): number {
 		return 0;
 	}
 	return overrideAt.getTime() - Date.now();
+}
+
+function buildOidcConfig(master: MasterConfig): OidcConfig {
+	const oidc = master.auth.oidc;
+	return {
+		issuer: oidc.issuer?.trim() || null,
+		clientId: oidc.client_id?.trim() || null,
+		clientSecret: oidc.client_secret?.trim() || null,
+		scopes: oidc.scopes?.trim() || 'openid profile email',
+		buttonLabel: oidc.button_label?.trim() || 'Single Sign-On',
+		autoRegister: oidc.auto_register ?? true,
+	};
 }
 
 function buildOperatorPassConfig(master: MasterConfig): OperatorPassConfig {
@@ -533,6 +551,7 @@ export function buildAPIConfigFromMaster(master: MasterConfig): APIConfig {
 			connectionInitiationSecret: master.auth.connection_initiation_secret,
 			profilePseudonymSecret: master.auth.profile_pseudonym_secret,
 			ssoAllowPrivateAddresses: master.auth.sso_allow_private_addresses,
+			oidc: buildOidcConfig(master),
 			passkeys: {
 				rpName: master.auth.passkeys.rp_name,
 				rpId: master.auth.passkeys.rp_id,
@@ -593,6 +612,9 @@ export function buildAPIConfigFromMaster(master: MasterConfig): APIConfig {
 		presignedAttachmentUploadsEnabled: master.services.api.presigned_attachment_uploads_enabled ?? false,
 		presignedHarvestDownloadsEnabled: master.services.api.presigned_harvest_downloads_enabled ?? true,
 		attachmentDecayEnabled: master.attachment_decay_enabled,
+		e2ee: {
+			enabled: master.e2ee?.enabled ?? master.instance.self_hosted,
+		},
 		deletionGracePeriodHours: master.dev.test_mode_enabled ? 0.01 : master.deletion_grace_period_hours,
 		inactivityDeletionThresholdDays: master.inactivity_deletion_threshold_days,
 		reportRetention: {

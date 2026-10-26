@@ -1,0 +1,19 @@
+.e2eeLockIndicator {
+	display: inline-block;
+	margin-inline-start: 0.25rem;
+	vertical-align: -0.125rem;
+	color: var(--text-chat-muted);
+}
+
+.e2eePlaceholder {
+	font-style: italic;
+	color: var(--text-chat-muted);
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+.e2eePlaceholderIcon {
+	display: inline-block;
+	margin-inline-end: 0.25rem;
+	vertical-align: -0.125rem;
+}

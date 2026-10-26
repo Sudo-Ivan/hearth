@@ -228,6 +228,10 @@ export const UserRateLimitConfigs = {
 		bucket: 'user:push:list',
 		config: {limit: 40, windowMs: ms('10 seconds')},
 	} as RouteRateLimitConfig,
+	USER_E2EE_KEYS_PUBLISH: {
+		bucket: 'user:e2ee:keys:publish',
+		config: {limit: 20, windowMs: ms('1 minute')},
+	} as RouteRateLimitConfig,
 	USER_HARVEST_LATEST: {
 		bucket: 'user:harvest:latest',
 		config: {limit: 40, windowMs: ms('10 seconds')},

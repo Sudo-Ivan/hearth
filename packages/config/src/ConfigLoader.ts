@@ -148,6 +148,7 @@ function defaultConfig(): MasterConfig {
 			connection_initiation_secret: '',
 			profile_pseudonym_secret: '',
 			sso_allow_private_addresses: false,
+			oidc: {},
 			passkeys: {
 				rp_name: 'Hearth',
 				rp_id: '',
@@ -525,6 +526,31 @@ function validateApiWorkerConfig(config: MasterConfig): void {
 	}
 }
 
+function validateOidcConfig(config: MasterConfig): void {
+	const oidc = config.auth.oidc;
+	const issuer = oidc.issuer?.trim() ?? '';
+	const clientId = oidc.client_id?.trim() ?? '';
+	if (issuer.length === 0 && clientId.length === 0) {
+		return;
+	}
+	if (issuer.length === 0 || clientId.length === 0) {
+		throw new Error('FLUXER_OIDC_ISSUER and FLUXER_OIDC_CLIENT_ID must be set together');
+	}
+	const parsed = URL.parse(issuer);
+	if (
+		parsed === null ||
+		(parsed.protocol !== 'https:' && parsed.protocol !== 'http:') ||
+		parsed.username !== '' ||
+		parsed.password !== '' ||
+		parsed.hash !== ''
+	) {
+		throw new Error('FLUXER_OIDC_ISSUER must be an absolute http or https URL without credentials or a fragment');
+	}
+	if (oidc.auto_register !== undefined) {
+		assertBoolean(oidc.auto_register, 'FLUXER_OIDC_AUTO_REGISTER');
+	}
+}
+
 function validateReportRetentionConfig(config: MasterConfig): void {
 	const retention = config.report_retention;
 	assertIntegerInRange(retention.days, 'FLUXER_REPORT_RETENTION_DAYS', 1, MAX_REPORT_RETENTION_DAYS);
@@ -702,6 +728,7 @@ function normalizeConfig(config: MasterConfig): MasterConfig {
 	}
 	validatePostgresConfig(config);
 	validateApiWorkerConfig(config);
+	validateOidcConfig(config);
 	validateStorageChangeFeedConfig(config);
 	validateReportRetentionConfig(config);
 	validateCachePurgeConfig(config);

@@ -16,6 +16,8 @@ import {useMessageViewContext} from '@app/features/channel/components/MessageVie
 import {ReplyPreview} from '@app/features/channel/components/ReplyPreview';
 import {TimestampWithTooltip} from '@app/features/channel/components/TimestampWithTooltip';
 import {createSystemMessage} from '@app/features/devtools/utils/CommandUtils';
+import {E2eeLockIndicator, E2eeMessagePlaceholder} from '@app/features/e2ee/components/E2eeMessageIndicator';
+import {useE2eeMessageContent} from '@app/features/e2ee/hooks/useE2eeMessageContent';
 import Emoji from '@app/features/emoji/state/Emoji';
 import {checkEmojiAvailability} from '@app/features/expressions/utils/ExpressionPermissionUtils';
 import {isOriginalPoster} from '@app/features/forum/utils/ForumChannelUtils';
@@ -138,13 +140,20 @@ export const UserMessage = observer(() => {
 	) : null;
 	const AuthorHeading = (onHeadingActivate ? 'div' : 'h3') as 'div' | 'h3';
 	const showUserAvatarsInCompactMode = Accessibility.showUserAvatarsInCompactMode;
+	const e2ee = useE2eeMessageContent(message);
+	let displayedContent = e2ee.content;
+	if (message.isCrosspostSourceDeleted) {
+		displayedContent = i18n._(SOURCE_DELETED_CONTENT_DESCRIPTOR);
+	} else if (e2ee.state === 'pending' || e2ee.state === 'undecryptable') {
+		displayedContent = '';
+	}
 	const {nodes: astNodes} = useMemo(
 		() =>
 			parse({
-				content: message.content,
+				content: displayedContent,
 				context: MarkdownContext.STANDARD_WITH_JUMBO,
 			}),
-		[message.content],
+		[displayedContent],
 	);
 	const markdownOptions = useMemo(
 		() => ({
@@ -313,11 +322,21 @@ export const UserMessage = observer(() => {
 				data-flx="channel.user-message.render-message-content.div"
 				{...messageContentCopyBlockProps(contentCopyText)}
 			>
-				<SafeMarkdown
-					content={getDisplayedContent(message, i18n)}
-					options={markdownOptions}
-					data-flx="channel.user-message.render-message-content.safe-markdown"
-				/>
+				{e2ee.state === 'pending' || e2ee.state === 'undecryptable' ? (
+					<E2eeMessagePlaceholder
+						undecryptable={e2ee.state === 'undecryptable'}
+						data-flx="channel.user-message.render-message-content.e2ee-message-placeholder"
+					/>
+				) : (
+					<SafeMarkdown
+						content={displayedContent}
+						options={markdownOptions}
+						data-flx="channel.user-message.render-message-content.safe-markdown"
+					/>
+				)}
+				{e2ee.state === 'decrypted' && (
+					<E2eeLockIndicator data-flx="channel.user-message.render-message-content.e2ee-lock-indicator" />
+				)}
 				{(message.editedTimestamp || message.isEditing) &&
 					(message.isEditing ? (
 						<span className={styles.editedLabel} data-flx="channel.user-message.render-message-content.edited-label">
@@ -346,6 +365,8 @@ export const UserMessage = observer(() => {
 		shouldHideContent,
 		markdownOptions,
 		contentCopyText,
+		e2ee,
+		displayedContent,
 		message,
 		message.content,
 		message.id,
@@ -599,12 +620,21 @@ export const UserMessage = observer(() => {
 								{...compactMarkdownProps()}
 							>
 								{showMetadata && compactAuthorPrefix}
-								{!shouldHideContent && (
-									<SafeMarkdown
-										content={getDisplayedContent(message, i18n)}
-										options={markdownOptions}
-										data-flx="channel.user-message.safe-markdown--2"
-									/>
+								{!shouldHideContent &&
+									(e2ee.state === 'pending' || e2ee.state === 'undecryptable' ? (
+										<E2eeMessagePlaceholder
+											undecryptable={e2ee.state === 'undecryptable'}
+											data-flx="channel.user-message.e2ee-message-placeholder"
+										/>
+									) : (
+										<SafeMarkdown
+											content={displayedContent}
+											options={markdownOptions}
+											data-flx="channel.user-message.safe-markdown--2"
+										/>
+									))}
+								{e2ee.state === 'decrypted' && (
+									<E2eeLockIndicator data-flx="channel.user-message.e2ee-lock-indicator" />
 								)}
 								{(message.editedTimestamp || message.isEditing) &&
 									(message.isEditing ? (
