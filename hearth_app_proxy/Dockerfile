@@ -34,6 +34,7 @@ RUN set -eux; \
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 COPY patches/ ./patches/
 COPY hearth_app/package.json ./hearth_app/
+COPY packages/channel_e2ee/package.json ./packages/channel_e2ee/
 COPY packages/constants/package.json ./packages/constants/
 COPY packages/date_utils/package.json ./packages/date_utils/
 COPY packages/desktop_ipc/package.json ./packages/desktop_ipc/
@@ -50,6 +51,7 @@ COPY hearth_app/pkgs/livekit-client/package.json ./hearth_app/pkgs/livekit-clien
 RUN pnpm install --frozen-lockfile --filter hearth_app...
 
 COPY tsconfigs ./tsconfigs
+COPY packages/channel_e2ee/ ./packages/channel_e2ee/
 COPY packages/constants/ ./packages/constants/
 COPY packages/date_utils/ ./packages/date_utils/
 COPY packages/desktop_ipc/ ./packages/desktop_ipc/
