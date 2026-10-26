@@ -6,18 +6,18 @@ import {
 	GuildMemberProfileFlagsDescriptions,
 	SystemChannelFlags,
 	SystemChannelFlagsDescriptions,
-} from '@fluxer/constants/src/GuildConstants';
+} from '@hearth/constants/src/GuildConstants';
 import {
 	MAX_GUILD_ROLES,
 	MAX_GUILD_STICKER_TAGS,
 	MAX_TEMP_BAN_DURATION_SECONDS,
 	MIN_TEMP_BAN_DURATION_SECONDS,
-} from '@fluxer/constants/src/LimitConstants';
-import {SudoVerificationSchema} from '@fluxer/schema/src/domains/auth/AuthSchemas';
-import {GuildFeatureSchema} from '@fluxer/schema/src/domains/guild/GuildResponseSchemas';
-import {TemplateSerializedGuild} from '@fluxer/schema/src/domains/guild/GuildTemplateSchemas';
-import {VanityURLCodeType} from '@fluxer/schema/src/primitives/ChannelValidators';
-import {createBase64ImageType} from '@fluxer/schema/src/primitives/FileValidators';
+} from '@hearth/constants/src/LimitConstants';
+import {SudoVerificationSchema} from '@hearth/schema/src/domains/auth/AuthSchemas';
+import {GuildFeatureSchema} from '@hearth/schema/src/domains/guild/GuildResponseSchemas';
+import {TemplateSerializedGuild} from '@hearth/schema/src/domains/guild/GuildTemplateSchemas';
+import {VanityURLCodeType} from '@hearth/schema/src/primitives/ChannelValidators';
+import {createBase64ImageType} from '@hearth/schema/src/primitives/FileValidators';
 import {
 	ContentWarningLevelSchema,
 	DefaultMessageNotificationsSchema,
@@ -26,8 +26,8 @@ import {
 	GuildVerificationLevelInputSchema,
 	NSFWLevelSchema,
 	SplashCardAlignmentSchema,
-} from '@fluxer/schema/src/primitives/GuildValidators';
-import {QueryBooleanType} from '@fluxer/schema/src/primitives/QueryValidators';
+} from '@hearth/schema/src/primitives/GuildValidators';
+import {QueryBooleanType} from '@hearth/schema/src/primitives/QueryValidators';
 import {
 	ColorType,
 	createBitflagInt32Type,
@@ -35,9 +35,9 @@ import {
 	SnowflakeType,
 	UnsignedInt64Type,
 	withFieldDescription,
-} from '@fluxer/schema/src/primitives/SchemaPrimitives';
-import {MentionReplyPreferencesSchema} from '@fluxer/schema/src/primitives/UserSettingsValidators';
-import {PasswordType} from '@fluxer/schema/src/primitives/UserValidators';
+} from '@hearth/schema/src/primitives/SchemaPrimitives';
+import {MentionReplyPreferencesSchema} from '@hearth/schema/src/primitives/UserSettingsValidators';
+import {PasswordType} from '@hearth/schema/src/primitives/UserValidators';
 import {z} from 'zod';
 
 function coerceBlankStringToNull(value: unknown): unknown {

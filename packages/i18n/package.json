@@ -1,5 +1,5 @@
 {
-	"name": "@fluxer/i18n",
+	"name": "@hearth/i18n",
 	"version": "0.0.0",
 	"private": true,
 	"type": "module",
@@ -14,8 +14,8 @@
 		"typecheck": "tsc --noEmit"
 	},
 	"dependencies": {
-		"@fluxer/constants": "workspace:*",
-		"@fluxer/record_utils": "workspace:*",
+		"@hearth/constants": "workspace:*",
+		"@hearth/record_utils": "workspace:*",
 		"@messageformat/core": "catalog:",
 		"@messageformat/parser": "catalog:"
 	},

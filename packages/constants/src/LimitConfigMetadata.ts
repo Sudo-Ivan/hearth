@@ -5,7 +5,7 @@ import {
 	MAX_BIO_LENGTH,
 	MAX_SCREEN_SHARE_BITRATE_CEILING,
 	MIN_SCREEN_SHARE_BITRATE_CEILING,
-} from '@fluxer/constants/src/LimitConstants';
+} from '@hearth/constants/src/LimitConstants';
 
 export const LIMIT_KEYS = [
 	'avatar_max_size',

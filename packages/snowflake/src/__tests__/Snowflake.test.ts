@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import {FLUXER_EPOCH as FLUXER_EPOCH_NUMBER} from '@fluxer/constants/src/Core';
+import {FLUXER_EPOCH as FLUXER_EPOCH_NUMBER} from '@hearth/constants/src/Core';
 import {
 	createSnowflake,
 	createSnowflakeFromTimestamp,
@@ -10,7 +10,7 @@ import {
 	parseSnowflake,
 	SnowflakeGenerator,
 	snowflakeToDate,
-} from '@fluxer/snowflake/src/Snowflake';
+} from '@hearth/snowflake/src/Snowflake';
 import {describe, expect, it} from 'vitest';
 
 const WORKER_ID_BITS = 10n;
@@ -19,7 +19,7 @@ const TIMESTAMP_SHIFT = SEQUENCE_BITS + WORKER_ID_BITS;
 const WORKER_ID_SHIFT = SEQUENCE_BITS;
 
 describe('FLUXER_EPOCH', () => {
-	it('should match the epoch constant from @fluxer/constants', () => {
+	it('should match the epoch constant from @hearth/constants', () => {
 		expect(FLUXER_EPOCH).toBe(BigInt(FLUXER_EPOCH_NUMBER));
 	});
 	it('should equal January 1, 2015 00:00:00 UTC', () => {
@@ -180,7 +180,7 @@ describe('createSnowflakeFromTimestamp', () => {
 	});
 	it('should throw error for timestamp before epoch', () => {
 		const timestamp = Number(FLUXER_EPOCH) - 1;
-		expect(() => createSnowflakeFromTimestamp(timestamp)).toThrow('Timestamp must be on or after the Fluxer epoch');
+		expect(() => createSnowflakeFromTimestamp(timestamp)).toThrow('Timestamp must be on or after the Hearth epoch');
 	});
 	it('should accept timestamp exactly at epoch', () => {
 		const timestamp = Number(FLUXER_EPOCH);

@@ -1,21 +1,21 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 import assert from 'node:assert/strict';
-import {convertPathToOpenAPI} from '@fluxer/openapi/src/extractors/PathParameters';
-import {discoverControllerFiles, extractRoutesFromControllers} from '@fluxer/openapi/src/extractors/RouteExtractor';
-import {isExcludedRoutePath, OpenAPIGeneratorCatalog} from '@fluxer/openapi/src/generator/OpenAPIGeneratorCatalog';
-import {OpenAPIOperationBuilder} from '@fluxer/openapi/src/generator/OpenAPIOperationBuilder';
-import {collectReferencedSchemaNames} from '@fluxer/openapi/src/generator/OpenAPISchemaReferenceCollector';
-import {loadSchemasIntoRegistry} from '@fluxer/openapi/src/generator/OpenAPISchemaRegistryLoader';
+import {convertPathToOpenAPI} from '@hearth/openapi/src/extractors/PathParameters';
+import {discoverControllerFiles, extractRoutesFromControllers} from '@hearth/openapi/src/extractors/RouteExtractor';
+import {isExcludedRoutePath, OpenAPIGeneratorCatalog} from '@hearth/openapi/src/generator/OpenAPIGeneratorCatalog';
+import {OpenAPIOperationBuilder} from '@hearth/openapi/src/generator/OpenAPIOperationBuilder';
+import {collectReferencedSchemaNames} from '@hearth/openapi/src/generator/OpenAPISchemaReferenceCollector';
+import {loadSchemasIntoRegistry} from '@hearth/openapi/src/generator/OpenAPISchemaRegistryLoader';
 import type {
 	OpenAPIGenerationResult,
 	OpenAPIGeneratorOptions,
 	OpenAPIRouteScope,
 	OpenAPISchemaTarget,
 	SkippedRoute,
-} from '@fluxer/openapi/src/OpenAPIGenerationTypes';
-import type {ExtractedRoute, OpenAPIDocument, OpenAPIPathItem, OpenAPISchema} from '@fluxer/openapi/src/OpenAPITypes';
-import {SchemaRegistry} from '@fluxer/openapi/src/registry/SchemaRegistry';
+} from '@hearth/openapi/src/OpenAPIGenerationTypes';
+import type {ExtractedRoute, OpenAPIDocument, OpenAPIPathItem, OpenAPISchema} from '@hearth/openapi/src/OpenAPITypes';
+import {SchemaRegistry} from '@hearth/openapi/src/registry/SchemaRegistry';
 
 interface PathBuildResult {
 	readonly paths: Record<string, OpenAPIPathItem>;
@@ -38,10 +38,10 @@ interface GeneratorSettings {
 function createGeneratorSettings(options: OpenAPIGeneratorOptions): GeneratorSettings {
 	return {
 		basePath: options.basePath,
-		title: options.title ?? 'Fluxer API',
+		title: options.title ?? 'Hearth API',
 		version: options.version ?? '1.0.0',
-		description: options.description ?? 'The Fluxer API',
-		serverUrl: options.serverUrl ?? 'https://api.fluxer.app',
+		description: options.description ?? 'The Hearth API',
+		serverUrl: options.serverUrl ?? 'https://api.hearth.app',
 		routeScope: options.routeScope ?? 'public',
 		schemaTarget: options.schemaTarget ?? 'draft-2020-12',
 	};
@@ -68,7 +68,7 @@ export class OpenAPIGenerator {
 	}
 	public async generateWithStats(): Promise<OpenAPIGenerationResult> {
 		const schemaRegistry = new SchemaRegistry(this.settings.schemaTarget, this.settings.routeScope !== 'admin');
-		const controllerFiles = discoverControllerFiles(`${this.settings.basePath}/fluxer_api`);
+		const controllerFiles = discoverControllerFiles(`${this.settings.basePath}/hearth_api`);
 		const routes = this.filterRoutesForScope(extractRoutesFromControllers(controllerFiles));
 		await loadSchemasIntoRegistry(this.settings.basePath, schemaRegistry);
 		const registeredSchemaCount = schemaRegistry.size;
@@ -89,8 +89,8 @@ export class OpenAPIGenerator {
 				version: this.settings.version,
 				description: this.settings.description,
 				contact: {
-					name: 'Fluxer Platform AB',
-					email: 'support@fluxer.com',
+					name: 'Hearth Platform AB',
+					email: 'support@hearth.com',
 				},
 				license: {
 					name: 'AGPL-3.0',

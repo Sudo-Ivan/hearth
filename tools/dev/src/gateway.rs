@@ -20,7 +20,7 @@ use std::time::{Duration, Instant};
 use tokio::time::sleep;
 
 const GATEWAY_FOREGROUND_EVAL: &str = concat!(
-    "case application:ensure_all_started(fluxer_gateway) of ",
+    "case application:ensure_all_started(hearth_gateway) of ",
     "{ok, _Apps} -> io:format(\"gateway started~n\"), receive after infinity -> ok end; ",
     "Error -> io:format(\"gateway failed: ~p~n\", [Error]), halt(1) end."
 );
@@ -34,7 +34,7 @@ const GATEWAY_CLUSTER_ROLES: &[&str] = &[
 ];
 const GATEWAY_CLUSTER_DEFAULT_REPLICAS: u16 = 3;
 const GATEWAY_CLUSTER_DIST_PORT_BASE: u16 = 9001;
-const GATEWAY_CLUSTER_COOKIE: &str = "fluxer-dev";
+const GATEWAY_CLUSTER_COOKIE: &str = "hearth-dev";
 const GATEWAY_COMPILE_COMMAND: &[&str] = &[
     "cargo",
     "run",
@@ -71,7 +71,7 @@ impl GatewayNode {
 
     pub fn erlang_name(&self) -> String {
         let prefix = env::var("FLUXER_DEV_GATEWAY_CLUSTER_NODE_PREFIX")
-            .unwrap_or_else(|_| "fluxer_gateway".to_owned());
+            .unwrap_or_else(|_| "hearth_gateway".to_owned());
         format!("{prefix}_{}_{}@127.0.0.1", self.role, self.ordinal)
     }
 
@@ -81,7 +81,7 @@ impl GatewayNode {
 }
 
 pub fn gateway_dir() -> PathBuf {
-    ROOT.join("fluxer_gateway")
+    ROOT.join("hearth_gateway")
 }
 
 fn gateway_ebin_root() -> PathBuf {
@@ -92,7 +92,7 @@ pub fn setup_gateway_config() -> Result<()> {
     write_gateway_config(
         DEV_GATEWAY_DIR.as_path(),
         &env::var("FLUXER_ERLANG_NODE_NAME")
-            .unwrap_or_else(|_| "fluxer_gateway@127.0.0.1".to_owned()),
+            .unwrap_or_else(|_| "hearth_gateway@127.0.0.1".to_owned()),
         &env::var("FLUXER_ERLANG_COOKIE").unwrap_or_else(|_| GATEWAY_CLUSTER_COOKIE.to_owned()),
         &env::var("FLUXER_ERLANG_DIST_PORT").unwrap_or_else(|_| "8081".to_owned()),
     )?;
@@ -136,7 +136,7 @@ fn remove_stale_gateway_config() -> Result<()> {
 pub async fn run_gateway() -> Result<i32> {
     let mut shutdown = ShutdownSignal::new()?;
     let node_names = std::collections::HashSet::from([env::var("FLUXER_ERLANG_NODE_NAME")
-        .unwrap_or_else(|_| "fluxer_gateway@127.0.0.1".to_owned())]);
+        .unwrap_or_else(|_| "hearth_gateway@127.0.0.1".to_owned())]);
     cleanup_orphaned_gateway_processes(&node_names).await?;
     if let Some(signal) = pending_shutdown(&mut shutdown).await {
         println!("Received {signal}; stopping gateway startup...");

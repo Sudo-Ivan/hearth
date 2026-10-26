@@ -4,64 +4,64 @@ import {
 	GIFT_CODE_DURATION_TYPE_DEFINITIONS,
 	MAX_GIFT_CODES_PER_REQUEST,
 	MAX_GIFT_DURATION_QUANTITY,
-} from '@fluxer/constants/src/GiftCodeConstants';
+} from '@hearth/constants/src/GiftCodeConstants';
 import {
 	CONTENT_WARNING_TEXT_MAX_LENGTH,
 	SystemChannelFlags,
 	SystemChannelFlagsDescriptions,
-} from '@fluxer/constants/src/GuildConstants';
-import {LIMIT_KEY_METADATA, LIMIT_KEYS} from '@fluxer/constants/src/LimitConfigMetadata';
-import {SmtpTlsModes} from '@fluxer/constants/src/SmtpConstants';
-import {ValidationErrorCodes} from '@fluxer/constants/src/ValidationErrorCodes';
+} from '@hearth/constants/src/GuildConstants';
+import {LIMIT_KEY_METADATA, LIMIT_KEYS} from '@hearth/constants/src/LimitConfigMetadata';
+import {SmtpTlsModes} from '@hearth/constants/src/SmtpConstants';
+import {ValidationErrorCodes} from '@hearth/constants/src/ValidationErrorCodes';
 import {
 	EmailDeliveryModeSchema,
 	EmailDeliveryStateSchema,
 	InstantAccountAvailabilitySchema,
-} from '@fluxer/schema/src/domains/account/AccountTierSchemas';
+} from '@hearth/schema/src/domains/account/AccountTierSchemas';
 import {
 	AccountsConfigSchema,
 	AccountsConfigUpdateRequest,
 	AuthConfigSchema,
 	AuthConfigUpdateRequest,
-} from '@fluxer/schema/src/domains/admin/AccountsConfigSchemas';
-import {ADMIN_ACL_COUNT, AdminAclType} from '@fluxer/schema/src/domains/admin/AdminAclType';
-import {AdminArchiveResponseSchema} from '@fluxer/schema/src/domains/admin/AdminArchiveSchemas';
-import {GuildAdminResponse} from '@fluxer/schema/src/domains/admin/AdminGuildSchemas';
-import {ReportNoteResponse} from '@fluxer/schema/src/domains/admin/AdminReportNoteSchemas';
-import {UserAdminResponseSchema} from '@fluxer/schema/src/domains/admin/AdminUserSchemas';
-import {CaptchaConfigResponse, CaptchaConfigUpdateRequest} from '@fluxer/schema/src/domains/admin/CaptchaSchemas';
+} from '@hearth/schema/src/domains/admin/AccountsConfigSchemas';
+import {ADMIN_ACL_COUNT, AdminAclType} from '@hearth/schema/src/domains/admin/AdminAclType';
+import {AdminArchiveResponseSchema} from '@hearth/schema/src/domains/admin/AdminArchiveSchemas';
+import {GuildAdminResponse} from '@hearth/schema/src/domains/admin/AdminGuildSchemas';
+import {ReportNoteResponse} from '@hearth/schema/src/domains/admin/AdminReportNoteSchemas';
+import {UserAdminResponseSchema} from '@hearth/schema/src/domains/admin/AdminUserSchemas';
+import {CaptchaConfigResponse, CaptchaConfigUpdateRequest} from '@hearth/schema/src/domains/admin/CaptchaSchemas';
 import {
 	DomainMigrationConfigResponse,
 	DomainMigrationConfigUpdateRequest,
-} from '@fluxer/schema/src/domains/admin/DomainMigrationSchemas';
+} from '@hearth/schema/src/domains/admin/DomainMigrationSchemas';
 import {
 	GatewayRolloutConfigResponse,
 	GatewayRolloutConfigUpdateRequest,
-} from '@fluxer/schema/src/domains/admin/GatewayRolloutSchemas';
+} from '@hearth/schema/src/domains/admin/GatewayRolloutSchemas';
 import {
 	GuildVisitsConfigResponse,
 	GuildVisitsConfigUpdateRequest,
-} from '@fluxer/schema/src/domains/admin/GuildVisitsSchemas';
+} from '@hearth/schema/src/domains/admin/GuildVisitsSchemas';
 import {
 	InstanceBillingResponse,
 	InstanceBillingUpdateRequest,
-} from '@fluxer/schema/src/domains/admin/InstanceBillingSchemas';
-import {PushRelayConfigResponse, PushRelayConfigUpdateRequest} from '@fluxer/schema/src/domains/admin/PushRelaySchemas';
-import {VoiceP2pConfigResponse, VoiceP2pConfigUpdateRequest} from '@fluxer/schema/src/domains/admin/VoiceP2pSchemas';
+} from '@hearth/schema/src/domains/admin/InstanceBillingSchemas';
+import {PushRelayConfigResponse, PushRelayConfigUpdateRequest} from '@hearth/schema/src/domains/admin/PushRelaySchemas';
+import {VoiceP2pConfigResponse, VoiceP2pConfigUpdateRequest} from '@hearth/schema/src/domains/admin/VoiceP2pSchemas';
 import {
 	ExperimentDeliveryConfigResponse,
 	ExperimentDeliveryConfigUpdateRequest,
-} from '@fluxer/schema/src/domains/experiment/ExperimentSchemas';
-import {GuildMemberResponse} from '@fluxer/schema/src/domains/guild/GuildMemberSchemas';
+} from '@hearth/schema/src/domains/experiment/ExperimentSchemas';
+import {GuildMemberResponse} from '@hearth/schema/src/domains/guild/GuildMemberSchemas';
 import {
 	AccountIdentityLockReasonSchema,
 	AccountIdentityModeSchema,
 	InstanceNoticeSchema,
 	InstanceRegistrationModeSchema,
 	TagStyleSchema,
-} from '@fluxer/schema/src/domains/instance/InstanceSchemas';
-import {MessageResponseSchema} from '@fluxer/schema/src/domains/message/MessageResponseSchemas';
-import {ChannelTypeSchema} from '@fluxer/schema/src/primitives/ChannelValidators';
+} from '@hearth/schema/src/domains/instance/InstanceSchemas';
+import {MessageResponseSchema} from '@hearth/schema/src/domains/message/MessageResponseSchemas';
+import {ChannelTypeSchema} from '@hearth/schema/src/primitives/ChannelValidators';
 import {
 	ContentWarningLevelSchema,
 	DefaultMessageNotificationsSchema,
@@ -69,9 +69,9 @@ import {
 	GuildMFALevelSchema,
 	GuildVerificationLevelSchema,
 	NSFWLevelSchema,
-} from '@fluxer/schema/src/primitives/GuildValidators';
-import {PermissionStringType} from '@fluxer/schema/src/primitives/PermissionValidators';
-import {createQueryIntegerType, QueryBooleanType} from '@fluxer/schema/src/primitives/QueryValidators';
+} from '@hearth/schema/src/primitives/GuildValidators';
+import {PermissionStringType} from '@hearth/schema/src/primitives/PermissionValidators';
+import {createQueryIntegerType, QueryBooleanType} from '@hearth/schema/src/primitives/QueryValidators';
 import {
 	createBitflagInt32Type,
 	createInt32EnumType,
@@ -83,10 +83,10 @@ import {
 	SnowflakeStringType,
 	SnowflakeType,
 	withOpenApiType,
-} from '@fluxer/schema/src/primitives/SchemaPrimitives';
-import {EmailBlocklistEntryType, EmailType} from '@fluxer/schema/src/primitives/UserValidators';
-import {WebhookTypeSchema} from '@fluxer/schema/src/primitives/WebhookValidators';
-import {schemaMetadata} from '@fluxer/schema/src/SchemaMetadata';
+} from '@hearth/schema/src/primitives/SchemaPrimitives';
+import {EmailBlocklistEntryType, EmailType} from '@hearth/schema/src/primitives/UserValidators';
+import {WebhookTypeSchema} from '@hearth/schema/src/primitives/WebhookValidators';
+import {schemaMetadata} from '@hearth/schema/src/SchemaMetadata';
 import {z} from 'zod';
 
 const ReportStatusSchema = withOpenApiType(

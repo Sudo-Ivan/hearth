@@ -1,4 +1,4 @@
-name: fluxer-dev
+name: hearth-dev
 
 services:
   workspace:
@@ -29,201 +29,201 @@ services:
       FLUXER_ADMIN_OAUTH_REDIRECT_URI: "http://localhost:${FLUXER_DEV_PROXY_PORT:-8088}/admin/oauth2_callback"
       FLUXER_PASSKEY_ADDITIONAL_ALLOWED_ORIGINS: "http://localhost,http://localhost:${FLUXER_DEV_PROXY_PORT:-8088}"
     volumes:
-      - ..:/workspaces/fluxer:cached
+      - ..:/workspaces/hearth:cached
       - type: volume
         source: root-node-modules
-        target: /workspaces/fluxer/node_modules
+        target: /workspaces/hearth/node_modules
         volume:
           nocopy: true
       - type: volume
-        source: fluxer-api-node-modules
-        target: /workspaces/fluxer/fluxer_api/node_modules
+        source: hearth-api-node-modules
+        target: /workspaces/hearth/hearth_api/node_modules
         volume:
           nocopy: true
       - type: volume
-        source: fluxer-app-node-modules
-        target: /workspaces/fluxer/fluxer_app/node_modules
+        source: hearth-app-node-modules
+        target: /workspaces/hearth/hearth_app/node_modules
         volume:
           nocopy: true
       - type: volume
-        source: fluxer-desktop-node-modules
-        target: /workspaces/fluxer/fluxer_desktop/node_modules
+        source: hearth-desktop-node-modules
+        target: /workspaces/hearth/hearth_desktop/node_modules
         volume:
           nocopy: true
       - type: volume
-        source: fluxer-admin-node-modules
-        target: /workspaces/fluxer/fluxer_admin/node_modules
+        source: hearth-admin-node-modules
+        target: /workspaces/hearth/hearth_admin/node_modules
         volume:
           nocopy: true
       - type: volume
         source: package-config-node-modules
-        target: /workspaces/fluxer/packages/config/node_modules
+        target: /workspaces/hearth/packages/config/node_modules
         volume:
           nocopy: true
       - type: volume
         source: package-constants-node-modules
-        target: /workspaces/fluxer/packages/constants/node_modules
+        target: /workspaces/hearth/packages/constants/node_modules
         volume:
           nocopy: true
       - type: volume
         source: package-date-utils-node-modules
-        target: /workspaces/fluxer/packages/date_utils/node_modules
+        target: /workspaces/hearth/packages/date_utils/node_modules
         volume:
           nocopy: true
       - type: volume
         source: package-errors-node-modules
-        target: /workspaces/fluxer/packages/errors/node_modules
+        target: /workspaces/hearth/packages/errors/node_modules
         volume:
           nocopy: true
       - type: volume
         source: package-geo-utils-node-modules
-        target: /workspaces/fluxer/packages/geo_utils/node_modules
+        target: /workspaces/hearth/packages/geo_utils/node_modules
         volume:
           nocopy: true
       - type: volume
         source: package-hono-node-modules
-        target: /workspaces/fluxer/packages/hono/node_modules
+        target: /workspaces/hearth/packages/hono/node_modules
         volume:
           nocopy: true
       - type: volume
         source: package-i18n-node-modules
-        target: /workspaces/fluxer/packages/i18n/node_modules
+        target: /workspaces/hearth/packages/i18n/node_modules
         volume:
           nocopy: true
       - type: volume
         source: package-instance-bootstrap-node-modules
-        target: /workspaces/fluxer/packages/instance_bootstrap/node_modules
+        target: /workspaces/hearth/packages/instance_bootstrap/node_modules
         volume:
           nocopy: true
       - type: volume
         source: package-ip-utils-node-modules
-        target: /workspaces/fluxer/packages/ip_utils/node_modules
+        target: /workspaces/hearth/packages/ip_utils/node_modules
         volume:
           nocopy: true
       - type: volume
         source: package-limits-node-modules
-        target: /workspaces/fluxer/packages/limits/node_modules
+        target: /workspaces/hearth/packages/limits/node_modules
         volume:
           nocopy: true
       - type: volume
         source: package-logger-node-modules
-        target: /workspaces/fluxer/packages/logger/node_modules
+        target: /workspaces/hearth/packages/logger/node_modules
         volume:
           nocopy: true
       - type: volume
         source: package-number-utils-node-modules
-        target: /workspaces/fluxer/packages/number_utils/node_modules
+        target: /workspaces/hearth/packages/number_utils/node_modules
         volume:
           nocopy: true
       - type: volume
         source: package-openapi-node-modules
-        target: /workspaces/fluxer/packages/openapi/node_modules
+        target: /workspaces/hearth/packages/openapi/node_modules
         volume:
           nocopy: true
       - type: volume
         source: package-schema-node-modules
-        target: /workspaces/fluxer/packages/schema/node_modules
+        target: /workspaces/hearth/packages/schema/node_modules
         volume:
           nocopy: true
       - type: volume
         source: package-snowflake-node-modules
-        target: /workspaces/fluxer/packages/snowflake/node_modules
+        target: /workspaces/hearth/packages/snowflake/node_modules
         volume:
           nocopy: true
       - type: volume
-        source: fluxer-api-cache-node-modules
-        target: /workspaces/fluxer/fluxer_api/pkgs/cache/node_modules
+        source: hearth-api-cache-node-modules
+        target: /workspaces/hearth/hearth_api/pkgs/cache/node_modules
         volume:
           nocopy: true
       - type: volume
-        source: fluxer-api-captcha-node-modules
-        target: /workspaces/fluxer/fluxer_api/pkgs/captcha/node_modules
+        source: hearth-api-captcha-node-modules
+        target: /workspaces/hearth/hearth_api/pkgs/captcha/node_modules
         volume:
           nocopy: true
       - type: volume
-        source: fluxer-api-cassandra-node-modules
-        target: /workspaces/fluxer/fluxer_api/pkgs/cassandra/node_modules
+        source: hearth-api-cassandra-node-modules
+        target: /workspaces/hearth/hearth_api/pkgs/cassandra/node_modules
         volume:
           nocopy: true
       - type: volume
-        source: fluxer-api-elasticsearch-search-node-modules
-        target: /workspaces/fluxer/fluxer_api/pkgs/elasticsearch_search/node_modules
+        source: hearth-api-elasticsearch-search-node-modules
+        target: /workspaces/hearth/hearth_api/pkgs/elasticsearch_search/node_modules
         volume:
           nocopy: true
       - type: volume
-        source: fluxer-api-email-node-modules
-        target: /workspaces/fluxer/fluxer_api/pkgs/email/node_modules
+        source: hearth-api-email-node-modules
+        target: /workspaces/hearth/hearth_api/pkgs/email/node_modules
         volume:
           nocopy: true
       - type: volume
-        source: fluxer-api-geoip-node-modules
-        target: /workspaces/fluxer/fluxer_api/pkgs/geoip/node_modules
+        source: hearth-api-geoip-node-modules
+        target: /workspaces/hearth/hearth_api/pkgs/geoip/node_modules
         volume:
           nocopy: true
       - type: volume
-        source: fluxer-api-http-client-node-modules
-        target: /workspaces/fluxer/fluxer_api/pkgs/http_client/node_modules
+        source: hearth-api-http-client-node-modules
+        target: /workspaces/hearth/hearth_api/pkgs/http_client/node_modules
         volume:
           nocopy: true
       - type: volume
-        source: fluxer-api-kv-client-node-modules
-        target: /workspaces/fluxer/fluxer_api/pkgs/kv_client/node_modules
+        source: hearth-api-kv-client-node-modules
+        target: /workspaces/hearth/hearth_api/pkgs/kv_client/node_modules
         volume:
           nocopy: true
       - type: volume
-        source: fluxer-api-media-proxy-utils-node-modules
-        target: /workspaces/fluxer/fluxer_api/pkgs/media_proxy_utils/node_modules
+        source: hearth-api-media-proxy-utils-node-modules
+        target: /workspaces/hearth/hearth_api/pkgs/media_proxy_utils/node_modules
         volume:
           nocopy: true
       - type: volume
-        source: fluxer-api-mime-utils-node-modules
-        target: /workspaces/fluxer/fluxer_api/pkgs/mime_utils/node_modules
+        source: hearth-api-mime-utils-node-modules
+        target: /workspaces/hearth/hearth_api/pkgs/mime_utils/node_modules
         volume:
           nocopy: true
       - type: volume
-        source: fluxer-api-nats-node-modules
-        target: /workspaces/fluxer/fluxer_api/pkgs/nats/node_modules
+        source: hearth-api-nats-node-modules
+        target: /workspaces/hearth/hearth_api/pkgs/nats/node_modules
         volume:
           nocopy: true
       - type: volume
-        source: fluxer-api-rate-limit-node-modules
-        target: /workspaces/fluxer/fluxer_api/pkgs/rate_limit/node_modules
+        source: hearth-api-rate-limit-node-modules
+        target: /workspaces/hearth/hearth_api/pkgs/rate_limit/node_modules
         volume:
           nocopy: true
       - type: volume
-        source: fluxer-api-virus-scan-node-modules
-        target: /workspaces/fluxer/fluxer_api/pkgs/virus_scan/node_modules
+        source: hearth-api-virus-scan-node-modules
+        target: /workspaces/hearth/hearth_api/pkgs/virus_scan/node_modules
         volume:
           nocopy: true
       - type: volume
-        source: fluxer-api-worker-node-modules
-        target: /workspaces/fluxer/fluxer_api/pkgs/worker/node_modules
+        source: hearth-api-worker-node-modules
+        target: /workspaces/hearth/hearth_api/pkgs/worker/node_modules
         volume:
           nocopy: true
       - type: volume
-        source: fluxer-app-list-utils-node-modules
-        target: /workspaces/fluxer/fluxer_app/pkgs/list_utils/node_modules
+        source: hearth-app-list-utils-node-modules
+        target: /workspaces/hearth/hearth_app/pkgs/list_utils/node_modules
         volume:
           nocopy: true
       - type: volume
-        source: fluxer-app-livekit-client-node-modules
-        target: /workspaces/fluxer/fluxer_app/pkgs/livekit-client/node_modules
+        source: hearth-app-livekit-client-node-modules
+        target: /workspaces/hearth/hearth_app/pkgs/livekit-client/node_modules
         volume:
           nocopy: true
       - type: volume
         source: package-voice-engine-v2-node-modules
-        target: /workspaces/fluxer/packages/voice_engine_v2/node_modules
+        target: /workspaces/hearth/packages/voice_engine_v2/node_modules
         volume:
           nocopy: true
       - type: volume
-        source: fluxer-api-postgres-node-modules
-        target: /workspaces/fluxer/fluxer_api/pkgs/postgres/node_modules
+        source: hearth-api-postgres-node-modules
+        target: /workspaces/hearth/hearth_api/pkgs/postgres/node_modules
         volume:
           nocopy: true
       - pnpm-store:/home/vscode/.local/share/pnpm/store
       - cargo-registry:/home/vscode/.cargo/registry
       - cargo-git:/home/vscode/.cargo/git
-      - rust-target:/workspaces/fluxer/target
+      - rust-target:/workspaces/hearth/target
       - type: bind
         source: ${FLUXER_DOCKER_SOCKET:-/var/run/docker.sock}
         target: /var/run/docker.sock
@@ -255,15 +255,15 @@ services:
   postgres:
     image: postgres:16-alpine
     environment:
-      POSTGRES_DB: fluxer
-      POSTGRES_USER: fluxer
-      POSTGRES_PASSWORD: fluxer
+      POSTGRES_DB: hearth
+      POSTGRES_USER: hearth
+      POSTGRES_PASSWORD: hearth
     volumes:
       - postgres-data:/var/lib/postgresql/data
     ports:
       - "127.0.0.1:${FLUXER_DEV_POSTGRES_PORT:-5432}:5432"
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U fluxer -d fluxer"]
+      test: ["CMD-SHELL", "pg_isready -U hearth -d hearth"]
       interval: 2s
       timeout: 5s
       retries: 30
@@ -303,7 +303,7 @@ services:
     environment:
       MEILI_NO_ANALYTICS: "true"
       MEILI_UPGRADE_DB: "true"
-      MEILI_MASTER_KEY: fluxer-dev-meilisearch
+      MEILI_MASTER_KEY: hearth-dev-meilisearch
     volumes:
       - meilisearch-data:/meili_data
     ports:
@@ -329,10 +329,10 @@ services:
 volumes:
   pnpm-store:
   root-node-modules:
-  fluxer-api-node-modules:
-  fluxer-app-node-modules:
-  fluxer-desktop-node-modules:
-  fluxer-admin-node-modules:
+  hearth-api-node-modules:
+  hearth-app-node-modules:
+  hearth-desktop-node-modules:
+  hearth-admin-node-modules:
   package-config-node-modules:
   package-constants-node-modules:
   package-date-utils-node-modules:
@@ -348,24 +348,24 @@ volumes:
   package-openapi-node-modules:
   package-schema-node-modules:
   package-snowflake-node-modules:
-  fluxer-api-cache-node-modules:
-  fluxer-api-captcha-node-modules:
-  fluxer-api-cassandra-node-modules:
-  fluxer-api-elasticsearch-search-node-modules:
-  fluxer-api-email-node-modules:
-  fluxer-api-geoip-node-modules:
-  fluxer-api-http-client-node-modules:
-  fluxer-api-kv-client-node-modules:
-  fluxer-api-media-proxy-utils-node-modules:
-  fluxer-api-mime-utils-node-modules:
-  fluxer-api-nats-node-modules:
-  fluxer-api-rate-limit-node-modules:
-  fluxer-api-virus-scan-node-modules:
-  fluxer-api-worker-node-modules:
-  fluxer-app-list-utils-node-modules:
-  fluxer-app-livekit-client-node-modules:
+  hearth-api-cache-node-modules:
+  hearth-api-captcha-node-modules:
+  hearth-api-cassandra-node-modules:
+  hearth-api-elasticsearch-search-node-modules:
+  hearth-api-email-node-modules:
+  hearth-api-geoip-node-modules:
+  hearth-api-http-client-node-modules:
+  hearth-api-kv-client-node-modules:
+  hearth-api-media-proxy-utils-node-modules:
+  hearth-api-mime-utils-node-modules:
+  hearth-api-nats-node-modules:
+  hearth-api-rate-limit-node-modules:
+  hearth-api-virus-scan-node-modules:
+  hearth-api-worker-node-modules:
+  hearth-app-list-utils-node-modules:
+  hearth-app-livekit-client-node-modules:
   package-voice-engine-v2-node-modules:
-  fluxer-api-postgres-node-modules:
+  hearth-api-postgres-node-modules:
   cargo-registry:
   cargo-git:
   rust-target:

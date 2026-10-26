@@ -1,5 +1,5 @@
 {
-	"name": "@fluxer/geo_utils",
+	"name": "@hearth/geo_utils",
 	"version": "0.0.0",
 	"private": true,
 	"type": "module",
@@ -10,7 +10,7 @@
 		"typecheck": "tsc --noEmit"
 	},
 	"dependencies": {
-		"@fluxer/constants": "workspace:*"
+		"@hearth/constants": "workspace:*"
 	},
 	"devDependencies": {
 		"@types/node": "catalog:",

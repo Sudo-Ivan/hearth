@@ -54,14 +54,14 @@ struct BuiltNodeAddon {
 
 const LINUX_AUDIO_CAPTURE_PKG_CONFIG: &[PkgConfigRequirement] = &[PkgConfigRequirement {
     package: "libpipewire-0.3",
-    message: "@fluxer/linux-audio-capture requires libpipewire-0.3-dev (or your distro's equivalent: `apt install libpipewire-0.3-dev`, `dnf install pipewire-devel`, `apk add pipewire-dev`) to build. Install it on the build host, then re-run `pnpm build`.",
+    message: "@hearth/linux-audio-capture requires libpipewire-0.3-dev (or your distro's equivalent: `apt install libpipewire-0.3-dev`, `dnf install pipewire-devel`, `apk add pipewire-dev`) to build. Install it on the build host, then re-run `pnpm build`.",
 }];
 
 const DESKTOP_NATIVE_ADDONS: &[DesktopNativeAddon] = &[
     DesktopNativeAddon {
         package_dir: "app-store",
-        package_name: "@fluxer/app-store",
-        crate_name: "fluxer_app_store",
+        package_name: "@hearth/app-store",
+        crate_name: "hearth_app_store",
         node_file_stem: "app-store",
         required_platform: None,
         features: &[],
@@ -70,8 +70,8 @@ const DESKTOP_NATIVE_ADDONS: &[DesktopNativeAddon] = &[
     },
     DesktopNativeAddon {
         package_dir: "gateway-socket",
-        package_name: "@fluxer/gateway-socket",
-        crate_name: "fluxer_gateway_socket",
+        package_name: "@hearth/gateway-socket",
+        crate_name: "hearth_gateway_socket",
         node_file_stem: "gateway-socket",
         required_platform: None,
         features: &[],
@@ -80,8 +80,8 @@ const DESKTOP_NATIVE_ADDONS: &[DesktopNativeAddon] = &[
     },
     DesktopNativeAddon {
         package_dir: "hardware-encoder",
-        package_name: "@fluxer/hardware-encoder",
-        crate_name: "fluxer_hardware_encoder",
+        package_name: "@hearth/hardware-encoder",
+        crate_name: "hearth_hardware_encoder",
         node_file_stem: "hardware-encoder",
         required_platform: None,
         features: &[],
@@ -90,8 +90,8 @@ const DESKTOP_NATIVE_ADDONS: &[DesktopNativeAddon] = &[
     },
     DesktopNativeAddon {
         package_dir: "linux-audio-capture",
-        package_name: "@fluxer/linux-audio-capture",
-        crate_name: "fluxer_linux_audio_capture",
+        package_name: "@hearth/linux-audio-capture",
+        crate_name: "hearth_linux_audio_capture",
         node_file_stem: "linux-audio-capture",
         required_platform: Some("linux"),
         features: &[],
@@ -100,8 +100,8 @@ const DESKTOP_NATIVE_ADDONS: &[DesktopNativeAddon] = &[
     },
     DesktopNativeAddon {
         package_dir: "linux-evdev",
-        package_name: "@fluxer/linux-evdev",
-        crate_name: "fluxer_linux_evdev",
+        package_name: "@hearth/linux-evdev",
+        crate_name: "hearth_linux_evdev",
         node_file_stem: "linux-evdev",
         required_platform: Some("linux"),
         features: &[],
@@ -110,8 +110,8 @@ const DESKTOP_NATIVE_ADDONS: &[DesktopNativeAddon] = &[
     },
     DesktopNativeAddon {
         package_dir: "linux-input-hook",
-        package_name: "@fluxer/linux-input-hook",
-        crate_name: "fluxer_linux_input_hook",
+        package_name: "@hearth/linux-input-hook",
+        crate_name: "hearth_linux_input_hook",
         node_file_stem: "linux-input-hook",
         required_platform: Some("linux"),
         features: &[],
@@ -120,8 +120,8 @@ const DESKTOP_NATIVE_ADDONS: &[DesktopNativeAddon] = &[
     },
     DesktopNativeAddon {
         package_dir: "linux-notifications",
-        package_name: "@fluxer/linux-notifications",
-        crate_name: "fluxer_linux_notifications",
+        package_name: "@hearth/linux-notifications",
+        crate_name: "hearth_linux_notifications",
         node_file_stem: "linux-notifications",
         required_platform: Some("linux"),
         features: &[],
@@ -130,8 +130,8 @@ const DESKTOP_NATIVE_ADDONS: &[DesktopNativeAddon] = &[
     },
     DesktopNativeAddon {
         package_dir: "linux-portals",
-        package_name: "@fluxer/linux-portals",
-        crate_name: "fluxer_linux_portals",
+        package_name: "@hearth/linux-portals",
+        crate_name: "hearth_linux_portals",
         node_file_stem: "linux-portals",
         required_platform: Some("linux"),
         features: &[],
@@ -140,8 +140,8 @@ const DESKTOP_NATIVE_ADDONS: &[DesktopNativeAddon] = &[
     },
     DesktopNativeAddon {
         package_dir: "mac-app-audio",
-        package_name: "@fluxer/mac-app-audio",
-        crate_name: "fluxer_mac_app_audio",
+        package_name: "@hearth/mac-app-audio",
+        crate_name: "hearth_mac_app_audio",
         node_file_stem: "mac-app-audio",
         required_platform: Some("darwin"),
         features: &[],
@@ -150,8 +150,8 @@ const DESKTOP_NATIVE_ADDONS: &[DesktopNativeAddon] = &[
     },
     DesktopNativeAddon {
         package_dir: "mac-clipboard",
-        package_name: "@fluxer/mac-clipboard",
-        crate_name: "fluxer_mac_clipboard",
+        package_name: "@hearth/mac-clipboard",
+        crate_name: "hearth_mac_clipboard",
         node_file_stem: "mac-clipboard",
         required_platform: Some("darwin"),
         features: &[],
@@ -160,8 +160,8 @@ const DESKTOP_NATIVE_ADDONS: &[DesktopNativeAddon] = &[
     },
     DesktopNativeAddon {
         package_dir: "mac-screen-capture",
-        package_name: "@fluxer/mac-screen-capture",
-        crate_name: "fluxer_mac_screen_capture",
+        package_name: "@hearth/mac-screen-capture",
+        crate_name: "hearth_mac_screen_capture",
         node_file_stem: "mac-screen-capture",
         required_platform: Some("darwin"),
         features: &[],
@@ -170,8 +170,8 @@ const DESKTOP_NATIVE_ADDONS: &[DesktopNativeAddon] = &[
     },
     DesktopNativeAddon {
         package_dir: "mac-sysctl",
-        package_name: "@fluxer/mac-sysctl",
-        crate_name: "fluxer_mac_sysctl",
+        package_name: "@hearth/mac-sysctl",
+        crate_name: "hearth_mac_sysctl",
         node_file_stem: "mac-sysctl",
         required_platform: Some("darwin"),
         features: &[],
@@ -180,8 +180,8 @@ const DESKTOP_NATIVE_ADDONS: &[DesktopNativeAddon] = &[
     },
     DesktopNativeAddon {
         package_dir: "mac-tcc",
-        package_name: "@fluxer/mac-tcc",
-        crate_name: "fluxer_mac_tcc",
+        package_name: "@hearth/mac-tcc",
+        crate_name: "hearth_mac_tcc",
         node_file_stem: "mac-tcc",
         required_platform: Some("darwin"),
         features: &[],
@@ -190,8 +190,8 @@ const DESKTOP_NATIVE_ADDONS: &[DesktopNativeAddon] = &[
     },
     DesktopNativeAddon {
         package_dir: "macos-input-hook",
-        package_name: "@fluxer/macos-input-hook",
-        crate_name: "fluxer_macos_input_hook",
+        package_name: "@hearth/macos-input-hook",
+        crate_name: "hearth_macos_input_hook",
         node_file_stem: "macos-input-hook",
         required_platform: Some("darwin"),
         features: &[],
@@ -200,8 +200,8 @@ const DESKTOP_NATIVE_ADDONS: &[DesktopNativeAddon] = &[
     },
     DesktopNativeAddon {
         package_dir: "platform-info",
-        package_name: "@fluxer/platform-info",
-        crate_name: "fluxer_platform_info",
+        package_name: "@hearth/platform-info",
+        crate_name: "hearth_platform_info",
         node_file_stem: "platform-info",
         required_platform: None,
         features: &[],
@@ -210,8 +210,8 @@ const DESKTOP_NATIVE_ADDONS: &[DesktopNativeAddon] = &[
     },
     DesktopNativeAddon {
         package_dir: "system-hunspell",
-        package_name: "@fluxer/system-hunspell",
-        crate_name: "fluxer_system_hunspell",
+        package_name: "@hearth/system-hunspell",
+        crate_name: "hearth_system_hunspell",
         node_file_stem: "system-hunspell",
         required_platform: Some("linux"),
         features: &[],
@@ -220,8 +220,8 @@ const DESKTOP_NATIVE_ADDONS: &[DesktopNativeAddon] = &[
     },
     DesktopNativeAddon {
         package_dir: "webauthn",
-        package_name: "@fluxer/webauthn",
-        crate_name: "fluxer_webauthn",
+        package_name: "@hearth/webauthn",
+        crate_name: "hearth_webauthn",
         node_file_stem: "webauthn",
         required_platform: None,
         features: &[],
@@ -230,8 +230,8 @@ const DESKTOP_NATIVE_ADDONS: &[DesktopNativeAddon] = &[
     },
     DesktopNativeAddon {
         package_dir: "win-clipboard",
-        package_name: "@fluxer/win-clipboard",
-        crate_name: "fluxer_win_clipboard",
+        package_name: "@hearth/win-clipboard",
+        crate_name: "hearth_win_clipboard",
         node_file_stem: "win-clipboard",
         required_platform: Some("win32"),
         features: &[],
@@ -240,8 +240,8 @@ const DESKTOP_NATIVE_ADDONS: &[DesktopNativeAddon] = &[
     },
     DesktopNativeAddon {
         package_dir: "win-game-capture",
-        package_name: "@fluxer/win-game-capture",
-        crate_name: "fluxer_win_game_capture",
+        package_name: "@hearth/win-game-capture",
+        crate_name: "hearth_win_game_capture",
         node_file_stem: "win-game-capture",
         required_platform: Some("win32"),
         features: &[],
@@ -250,8 +250,8 @@ const DESKTOP_NATIVE_ADDONS: &[DesktopNativeAddon] = &[
     },
     DesktopNativeAddon {
         package_dir: "win-process-loopback",
-        package_name: "@fluxer/win-process-loopback",
-        crate_name: "fluxer_win_process_loopback",
+        package_name: "@hearth/win-process-loopback",
+        crate_name: "hearth_win_process_loopback",
         node_file_stem: "win-process-loopback",
         required_platform: Some("win32"),
         features: &[],
@@ -260,8 +260,8 @@ const DESKTOP_NATIVE_ADDONS: &[DesktopNativeAddon] = &[
     },
     DesktopNativeAddon {
         package_dir: "win-shell",
-        package_name: "@fluxer/win-shell",
-        crate_name: "fluxer_win_shell",
+        package_name: "@hearth/win-shell",
+        crate_name: "hearth_win_shell",
         node_file_stem: "win-shell",
         required_platform: Some("win32"),
         features: &[],
@@ -270,8 +270,8 @@ const DESKTOP_NATIVE_ADDONS: &[DesktopNativeAddon] = &[
     },
     DesktopNativeAddon {
         package_dir: "windows-input-hook",
-        package_name: "@fluxer/windows-input-hook",
-        crate_name: "fluxer_windows_input_hook",
+        package_name: "@hearth/windows-input-hook",
+        crate_name: "hearth_windows_input_hook",
         node_file_stem: "windows-input-hook",
         required_platform: Some("win32"),
         features: &[],
@@ -698,9 +698,9 @@ fn remove_stale_win_game_capture_outputs(root: &Path, primary_node: &Path) -> Re
         let Some(file_name) = path.file_name().and_then(OsStr::to_str) else {
             return false;
         };
-        file_name.starts_with("fluxer-game-hook.")
-            || file_name.starts_with("fluxer-inject-helper.")
-            || file_name.starts_with("fluxer-vulkan-layer.")
+        file_name.starts_with("hearth-game-hook.")
+            || file_name.starts_with("hearth-inject-helper.")
+            || file_name.starts_with("hearth-vulkan-layer.")
             || (file_name.starts_with("win-game-capture.")
                 && file_name.ends_with(".node")
                 && file_name != primary_node_name)
@@ -722,7 +722,7 @@ fn assert_no_redistributable_runtime_imports(node_file_path: &Path, platform: &s
         return Ok(());
     }
     bail!(
-        "{} imports redistributable Microsoft runtime DLL(s) that are not on a clean Windows install:\n{}\nEnsure the crate is built with +crt-static so the C/C++ runtime is statically linked into the addon.\nSee fluxer_desktop/native/.cargo/config.toml for the cargo configuration that enables this for MSVC targets.",
+        "{} imports redistributable Microsoft runtime DLL(s) that are not on a clean Windows install:\n{}\nEnsure the crate is built with +crt-static so the C/C++ runtime is statically linked into the addon.\nSee hearth_desktop/native/.cargo/config.toml for the cargo configuration that enables this for MSVC targets.",
         node_file_path.display(),
         offenders
             .iter()
@@ -881,7 +881,7 @@ const DISABLED_WIN_GAME_CAPTURE_BINARY_MARKERS: &[&[u8]] = &[
     b"VirtualFreeEx",
     b"WriteProcessMemory",
     b"SetWindowsHookExW",
-    b"fluxer-inject-helper.",
+    b"hearth-inject-helper.",
 ];
 
 const LOAD_LIBRARY_SEARCH_SYSTEM32: u16 = 0x0800;
@@ -912,7 +912,7 @@ fn assert_system32_dependent_load_flag(node_file_path: &Path, platform: &str) ->
     let flags = read_dependent_load_flags(node_file_path);
     ensure!(
         flags.is_some_and(|value| value & LOAD_LIBRARY_SEARCH_SYSTEM32 != 0),
-        "{} does not set LOAD_LIBRARY_SEARCH_SYSTEM32 in its load config DependentLoadFlags (read {}).\nEvery import of a shipped addon must resolve from System32 so a planted DLL cannot be loaded in its place.\nSee fluxer_desktop/native/.cargo/config.toml for the /DEPENDENTLOADFLAG:0x800 link argument that sets it.",
+        "{} does not set LOAD_LIBRARY_SEARCH_SYSTEM32 in its load config DependentLoadFlags (read {}).\nEvery import of a shipped addon must resolve from System32 so a planted DLL cannot be loaded in its place.\nSee hearth_desktop/native/.cargo/config.toml for the /DEPENDENTLOADFLAG:0x800 link argument that sets it.",
         node_file_path.display(),
         flags.map_or_else(
             || "no load config".to_string(),
@@ -1134,13 +1134,13 @@ mod tests {
     #[test]
     fn the_desktop_build_script_builds_and_verifies_every_registered_addon() {
         let build_script =
-            Path::new(env!("CARGO_MANIFEST_DIR")).join("../../fluxer_desktop/scripts/build.mjs");
+            Path::new(env!("CARGO_MANIFEST_DIR")).join("../../hearth_desktop/scripts/build.mjs");
         let source = fs::read_to_string(&build_script)
             .unwrap_or_else(|error| panic!("failed to read {}: {error}", build_script.display()));
         for addon in DESKTOP_NATIVE_ADDONS {
             assert!(
                 source.contains(&format!("dirName: '{}'", addon.package_dir)),
-                "{} is registered but fluxer_desktop/scripts/build.mjs never builds it",
+                "{} is registered but hearth_desktop/scripts/build.mjs never builds it",
                 addon.package_dir
             );
             assert!(
@@ -1148,7 +1148,7 @@ mod tests {
                     .matches(&format!("label: '{}'", addon.package_name))
                     .count()
                     >= 2,
-                "{} must appear in both the build list and the artifact verification list in fluxer_desktop/scripts/build.mjs",
+                "{} must appear in both the build list and the artifact verification list in hearth_desktop/scripts/build.mjs",
                 addon.package_name
             );
         }
@@ -1167,7 +1167,7 @@ mod tests {
 
     #[test]
     fn the_registry_covers_every_shipped_addon_package() {
-        let native_root = Path::new(env!("CARGO_MANIFEST_DIR")).join("../../fluxer_desktop/native");
+        let native_root = Path::new(env!("CARGO_MANIFEST_DIR")).join("../../hearth_desktop/native");
         let mut shipped = Vec::new();
         for entry in fs::read_dir(&native_root).expect("failed to read the native addon root") {
             let entry = entry.expect("failed to read a native addon directory entry");
@@ -1183,13 +1183,13 @@ mod tests {
         registered.sort();
         assert_eq!(
             shipped, registered,
-            "every fluxer_desktop/native/* directory with a package.json must be registered in DESKTOP_NATIVE_ADDONS"
+            "every hearth_desktop/native/* directory with a package.json must be registered in DESKTOP_NATIVE_ADDONS"
         );
     }
 
     #[test]
     fn every_addon_ships_a_byte_identical_loader_diagnostics_copy() {
-        let native_root = Path::new(env!("CARGO_MANIFEST_DIR")).join("../../fluxer_desktop/native");
+        let native_root = Path::new(env!("CARGO_MANIFEST_DIR")).join("../../hearth_desktop/native");
         let mut canonical: Option<(String, Vec<u8>)> = None;
         let mut checked = 0;
         for addon in DESKTOP_NATIVE_ADDONS {

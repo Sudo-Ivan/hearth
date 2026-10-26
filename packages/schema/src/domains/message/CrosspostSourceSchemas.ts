@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import {GuildFeatureSchema} from '@fluxer/schema/src/domains/guild/GuildResponseSchemas';
-import {Int32Type, SnowflakeStringType} from '@fluxer/schema/src/primitives/SchemaPrimitives';
+import {GuildFeatureSchema} from '@hearth/schema/src/domains/guild/GuildResponseSchemas';
+import {Int32Type, SnowflakeStringType} from '@hearth/schema/src/primitives/SchemaPrimitives';
 import {z} from 'zod';
 
 export const CrosspostSourceGuildResponse = z.object({

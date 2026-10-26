@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import {PremiumStoreSubscriptionState} from '@fluxer/schema/src/domains/premium/StoreBillingSchemas';
-import {createStringType, withOpenApiType} from '@fluxer/schema/src/primitives/SchemaPrimitives';
-import {UserPremiumTypesSchema} from '@fluxer/schema/src/primitives/UserSettingsValidators';
+import {PremiumStoreSubscriptionState} from '@hearth/schema/src/domains/premium/StoreBillingSchemas';
+import {createStringType, withOpenApiType} from '@hearth/schema/src/primitives/SchemaPrimitives';
+import {UserPremiumTypesSchema} from '@hearth/schema/src/primitives/UserSettingsValidators';
 import {z} from 'zod';
 
 export const PremiumCurrency = z.string().regex(/^[A-Z]{3}$/);

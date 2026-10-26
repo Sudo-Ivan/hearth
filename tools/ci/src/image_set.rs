@@ -13,13 +13,13 @@ use std::fs;
 use std::path::{Path, PathBuf};
 
 const SCHEMA_VERSION: u8 = 1;
-const DEFAULT_REGISTRY: &str = "ghcr.io/fluxerapp";
+const DEFAULT_REGISTRY: &str = "ghcr.io/hearthapp";
 const DEFAULT_MOVING_TAGS: &str = "v1,latest";
 const DEFAULT_FROM_TAG: &str = "v1";
 const DEFAULT_OUT_DIR: &str = "release-out";
-const RELEASE_COMPONENT: &str = "fluxer-release";
+const RELEASE_COMPONENT: &str = "hearth-release";
 const COMPOSE_IMAGE_PREFIX: &str =
-    "${FLUXER_REGISTRY:-ghcr.io/${FLUXER_REGISTRY_OWNER:-fluxerapp}}";
+    "${FLUXER_REGISTRY:-ghcr.io/${FLUXER_REGISTRY_OWNER:-hearthapp}}";
 const OCI_INDEX_MEDIA_TYPE: &str = "application/vnd.oci.image.index.v1+json";
 const DOCKER_MANIFEST_LIST_MEDIA_TYPE: &str =
     "application/vnd.docker.distribution.manifest.list.v2+json";
@@ -33,59 +33,59 @@ struct Component {
 
 const COMPONENTS: &[Component] = &[
     Component {
-        image: "fluxer-admin",
+        image: "hearth-admin",
         services: &["admin"],
     },
     Component {
-        image: "fluxer-api",
+        image: "hearth-api",
         services: &["api", "worker"],
     },
     Component {
-        image: "fluxer-app-proxy",
+        image: "hearth-app-proxy",
         services: &[],
     },
     Component {
-        image: "fluxer-app-proxy-self-hosted",
+        image: "hearth-app-proxy-self-hosted",
         services: &["app-proxy"],
     },
     Component {
-        image: "fluxer-docs",
+        image: "hearth-docs",
         services: &[],
     },
     Component {
-        image: "fluxer-gateway",
+        image: "hearth-gateway",
         services: &["gateway"],
     },
     Component {
-        image: "fluxer-gifs",
+        image: "hearth-gifs",
         services: &["gifs"],
     },
     Component {
-        image: "fluxer-media-proxy",
+        image: "hearth-media-proxy",
         services: &["media-proxy"],
     },
     Component {
-        image: "fluxer-messages",
+        image: "hearth-messages",
         services: &["messages"],
     },
     Component {
-        image: "fluxer-push",
+        image: "hearth-push",
         services: &["push"],
     },
     Component {
-        image: "fluxer-snowflakes",
+        image: "hearth-snowflakes",
         services: &["snowflakes"],
     },
     Component {
-        image: "fluxer-static",
+        image: "hearth-static",
         services: &["static-proxy"],
     },
     Component {
-        image: "fluxer-unfurl",
+        image: "hearth-unfurl",
         services: &["unfurl"],
     },
     Component {
-        image: "fluxer-users",
+        image: "hearth-users",
         services: &["users"],
     },
 ];
@@ -650,7 +650,7 @@ fn component(image: &str) -> Result<&'static Component> {
 }
 
 fn workflow_suffix(image: &str) -> &str {
-    image.strip_prefix("fluxer-").unwrap_or(image)
+    image.strip_prefix("hearth-").unwrap_or(image)
 }
 
 fn digest_env_name(component: &str) -> String {
@@ -856,7 +856,7 @@ mod tests {
     #[test]
     fn components_cover_every_self_hosting_service() {
         let compose =
-            include_str!("../../../fluxer_rexctl/internal/stack/files/docker-compose.yml");
+            include_str!("../../../hearth_rexctl/internal/stack/files/docker-compose.yml");
         let expected: BTreeSet<(&str, &str)> = COMPONENTS
             .iter()
             .flat_map(|component| {
@@ -895,8 +895,8 @@ mod tests {
                 continue;
             }
             let image = compose_component(reference)
-                .unwrap_or_else(|| panic!("Unexpected Fluxer image line: {trimmed}"));
-            let service = service.expect("a Fluxer image line must follow a service header");
+                .unwrap_or_else(|| panic!("Unexpected Hearth image line: {trimmed}"));
+            let service = service.expect("a Hearth image line must follow a service header");
             observed.insert((image, service));
         }
 
@@ -906,18 +906,18 @@ mod tests {
     #[test]
     fn manifest_requires_every_component() {
         let mut resolved = resolved_set();
-        resolved.retain(|entry| entry.component != "fluxer-api");
+        resolved.retain(|entry| entry.component != "hearth-api");
         let error = build_manifest(RELEASE_VERSION, DEFAULT_REGISTRY, &resolved, true)
             .unwrap_err()
             .to_string();
         assert!(error.contains("missing components"), "{error}");
-        assert!(error.contains("fluxer-api"), "{error}");
+        assert!(error.contains("hearth-api"), "{error}");
     }
 
     #[test]
     fn manifest_rejects_unknown_and_duplicate_components() {
         let mut unknown = resolved_set();
-        unknown[0].component = "fluxer-unknown".to_string();
+        unknown[0].component = "hearth-unknown".to_string();
         let error = build_manifest(RELEASE_VERSION, DEFAULT_REGISTRY, &unknown, true)
             .unwrap_err()
             .to_string();
@@ -939,7 +939,7 @@ mod tests {
             "{:?}",
             build_manifest(RELEASE_VERSION, DEFAULT_REGISTRY, &resolved, true).unwrap_err()
         );
-        assert!(error.contains("fluxer-admin"), "{error}");
+        assert!(error.contains("hearth-admin"), "{error}");
         assert!(error.contains("Invalid image digest"), "{error}");
     }
 
@@ -963,12 +963,12 @@ mod tests {
         let error = build_manifest(RELEASE_VERSION, DEFAULT_REGISTRY, &resolved, false)
             .unwrap_err()
             .to_string();
-        assert!(error.contains("fluxer-admin@2026.830.191141"), "{error}");
+        assert!(error.contains("hearth-admin@2026.830.191141"), "{error}");
         assert!(error.contains("--allow-unreleased"), "{error}");
 
         let manifest = build_manifest(RELEASE_VERSION, DEFAULT_REGISTRY, &resolved, true).unwrap();
         assert_eq!(manifest.components[0].source_sha, None);
-        assert_eq!(manifest.release_tag, "fluxer-release@2026.901.120000");
+        assert_eq!(manifest.release_tag, "hearth-release@2026.901.120000");
         assert_eq!(manifest.components.len(), COMPONENTS.len());
     }
 
@@ -987,12 +987,12 @@ mod tests {
         let api = manifest
             .components
             .iter()
-            .find(|entry| entry.component == "fluxer-api")
+            .find(|entry| entry.component == "hearth-api")
             .unwrap();
         for service in ["api", "worker"] {
             assert!(
                 rendered.contains(&format!(
-                    "  {service}:\n    image: {COMPOSE_IMAGE_PREFIX}/fluxer-api@${{FLUXER_API_IMAGE_DIGEST:-{}}}\n",
+                    "  {service}:\n    image: {COMPOSE_IMAGE_PREFIX}/hearth-api@${{FLUXER_API_IMAGE_DIGEST:-{}}}\n",
                     api.digest
                 )),
                 "{rendered}"
@@ -1002,19 +1002,19 @@ mod tests {
         let app_proxy = manifest
             .components
             .iter()
-            .find(|entry| entry.component == "fluxer-app-proxy-self-hosted")
+            .find(|entry| entry.component == "hearth-app-proxy-self-hosted")
             .unwrap();
         assert!(
             rendered.contains(&format!(
-                "  app-proxy:\n    image: {COMPOSE_IMAGE_PREFIX}/fluxer-app-proxy-self-hosted@${{FLUXER_APP_PROXY_SELF_HOSTED_IMAGE_DIGEST:-{}}}\n",
+                "  app-proxy:\n    image: {COMPOSE_IMAGE_PREFIX}/hearth-app-proxy-self-hosted@${{FLUXER_APP_PROXY_SELF_HOSTED_IMAGE_DIGEST:-{}}}\n",
                 app_proxy.digest
             )),
             "{rendered}"
         );
-        assert!(!rendered.contains("fluxer-docs"), "{rendered}");
+        assert!(!rendered.contains("hearth-docs"), "{rendered}");
         assert!(
             rendered.starts_with(
-                "# fluxer-release@2026.901.120000 image set\n# docker compose -f docker-compose.yml -f fluxer-release-2026.901.120000.yml up -d\nservices:\n"
+                "# hearth-release@2026.901.120000 image set\n# docker compose -f docker-compose.yml -f hearth-release-2026.901.120000.yml up -d\nservices:\n"
             ),
             "{rendered}"
         );
@@ -1024,7 +1024,7 @@ mod tests {
     fn promote_command_targets_the_digest() {
         let digest = format!("sha256:{}", "0".repeat(64));
         let spec = promote_command(
-            "ghcr.io/fluxerapp/fluxer-api",
+            "ghcr.io/hearthapp/hearth-api",
             &digest,
             &["v1".to_string(), "latest".to_string()],
         );
@@ -1036,10 +1036,10 @@ mod tests {
                 "imagetools",
                 "create",
                 "-t",
-                "ghcr.io/fluxerapp/fluxer-api:v1",
+                "ghcr.io/hearthapp/hearth-api:v1",
                 "-t",
-                "ghcr.io/fluxerapp/fluxer-api:latest",
-                &format!("ghcr.io/fluxerapp/fluxer-api@{digest}"),
+                "ghcr.io/hearthapp/hearth-api:latest",
+                &format!("ghcr.io/hearthapp/hearth-api@{digest}"),
             ]
         );
     }
@@ -1074,7 +1074,7 @@ mod tests {
         let error = verify_resolved(&manifest, &resolved)
             .unwrap_err()
             .to_string();
-        assert!(error.contains("fluxer-api"), "{error}");
+        assert!(error.contains("hearth-api"), "{error}");
         assert!(error.contains("drifted"), "{error}");
 
         let mut retagged = resolved_set();
@@ -1112,31 +1112,31 @@ mod tests {
             history[2].as_str(),
         ];
         let candidates = [
-            ("fluxer-api", history[2]),
-            ("fluxer-gateway", history[0]),
-            ("fluxer-users", history[1]),
+            ("hearth-api", history[2]),
+            ("hearth-gateway", history[0]),
+            ("hearth-users", history[1]),
         ];
         assert_eq!(
             oldest_common_commit(&candidates, linear_compare(&history)).unwrap(),
-            ("fluxer-gateway", history[0])
+            ("hearth-gateway", history[0])
         );
 
-        let single = [("fluxer-api", history[2])];
+        let single = [("hearth-api", history[2])];
         assert_eq!(
             oldest_common_commit(&single, linear_compare(&history)).unwrap(),
-            ("fluxer-api", history[2])
+            ("hearth-api", history[2])
         );
     }
 
     #[test]
     fn oldest_common_commit_refuses_divergent_component_builds() {
-        let candidates = [("fluxer-api", "aa"), ("fluxer-gateway", "bb")];
+        let candidates = [("hearth-api", "aa"), ("hearth-gateway", "bb")];
         let error =
             oldest_common_commit(&candidates, |_: &str, _: &str| Ok(CommitCompare::Diverged))
                 .unwrap_err()
                 .to_string();
-        assert!(error.contains("fluxer-api"), "{error}");
-        assert!(error.contains("fluxer-gateway"), "{error}");
+        assert!(error.contains("hearth-api"), "{error}");
+        assert!(error.contains("hearth-gateway"), "{error}");
         assert!(error.contains("divergent branches"), "{error}");
     }
 
@@ -1154,11 +1154,11 @@ mod tests {
     fn release_filenames_are_stable() {
         assert_eq!(
             manifest_filename(RELEASE_VERSION),
-            "fluxer-release-2026.901.120000.json"
+            "hearth-release-2026.901.120000.json"
         );
         assert_eq!(
             compose_filename(RELEASE_VERSION),
-            "fluxer-release-2026.901.120000.yml"
+            "hearth-release-2026.901.120000.yml"
         );
     }
 }

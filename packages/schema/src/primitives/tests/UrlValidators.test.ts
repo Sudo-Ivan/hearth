@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import {ValidationErrorCodes} from '@fluxer/constants/src/ValidationErrorCodes';
-import {AttachmentURLType, setIsDevelopment, URLType} from '@fluxer/schema/src/primitives/UrlValidators';
+import {ValidationErrorCodes} from '@hearth/constants/src/ValidationErrorCodes';
+import {AttachmentURLType, setIsDevelopment, URLType} from '@hearth/schema/src/primitives/UrlValidators';
 import {beforeEach, describe, expect, it} from 'vitest';
 
 describe('URLType', () => {

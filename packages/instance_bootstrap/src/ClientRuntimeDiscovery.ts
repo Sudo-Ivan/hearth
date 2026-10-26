@@ -4,7 +4,7 @@ import {
 	type InstanceDiscoveryDocument,
 	type InstanceGeneration,
 	InvalidInstanceDiscoveryDocumentError,
-} from '@fluxer/instance_bootstrap/src/Discovery';
+} from '@hearth/instance_bootstrap/src/Discovery';
 import type {
 	InstanceAgePolicy,
 	InstanceAppPublic,
@@ -17,8 +17,8 @@ import type {
 	InstanceRegistration,
 	InstanceServices,
 	InstanceSso,
-} from '@fluxer/instance_bootstrap/src/Types';
-import type {LimitConfigSnapshot, LimitConfigWireFormat} from '@fluxer/limits/src/LimitTypes';
+} from '@hearth/instance_bootstrap/src/Types';
+import type {LimitConfigSnapshot, LimitConfigWireFormat} from '@hearth/limits/src/LimitTypes';
 
 const DEFAULT_PREMIUM_PRODUCT_NAME = 'Plutonium';
 

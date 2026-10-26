@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import {LIMIT_KEYS, type LimitKey} from '@fluxer/constants/src/LimitConfigMetadata';
-import {DEFAULT_RESTRICTED_LIMITS} from '@fluxer/limits/src/LimitDefaults';
-import {computeDefaultsHash} from '@fluxer/limits/src/LimitHashing';
-import type {LimitConfigSnapshot, LimitConfigWireFormat} from '@fluxer/limits/src/LimitTypes';
+import {LIMIT_KEYS, type LimitKey} from '@hearth/constants/src/LimitConfigMetadata';
+import {DEFAULT_RESTRICTED_LIMITS} from '@hearth/limits/src/LimitDefaults';
+import {computeDefaultsHash} from '@hearth/limits/src/LimitHashing';
+import type {LimitConfigSnapshot, LimitConfigWireFormat} from '@hearth/limits/src/LimitTypes';
 
 const WIRE_COMPATIBILITY_LIMIT_KEYS: ReadonlySet<LimitKey> = new Set<LimitKey>([
 	'max_guild_emojis',

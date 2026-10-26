@@ -11,10 +11,10 @@ import {
 	isValidDiscoveryLanguage,
 	isValidDiscoveryTag,
 	normalizeDiscoveryTag,
-} from '@fluxer/constants/src/DiscoveryConstants';
-import {NSFWLevelSchema} from '@fluxer/schema/src/primitives/GuildValidators';
-import {SnowflakeStringType, SnowflakeType, withOpenApiType} from '@fluxer/schema/src/primitives/SchemaPrimitives';
-import {withSchemaMetadata} from '@fluxer/schema/src/SchemaMetadata';
+} from '@hearth/constants/src/DiscoveryConstants';
+import {NSFWLevelSchema} from '@hearth/schema/src/primitives/GuildValidators';
+import {SnowflakeStringType, SnowflakeType, withOpenApiType} from '@hearth/schema/src/primitives/SchemaPrimitives';
+import {withSchemaMetadata} from '@hearth/schema/src/SchemaMetadata';
 import {z} from 'zod';
 
 const DISCOVERY_CATEGORY_MAX = Math.max(...Object.values(DiscoveryCategories));

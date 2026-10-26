@@ -1,5 +1,5 @@
 {
-	"name": "@fluxer/limits",
+	"name": "@hearth/limits",
 	"version": "0.0.0",
 	"type": "module",
 	"exports": {
@@ -11,7 +11,7 @@
 		"test": "vitest run"
 	},
 	"dependencies": {
-		"@fluxer/constants": "workspace:*"
+		"@hearth/constants": "workspace:*"
 	},
 	"devDependencies": {
 		"typescript": "catalog:ts7",

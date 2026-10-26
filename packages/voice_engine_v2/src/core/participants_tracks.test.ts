@@ -1,28 +1,28 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import inboundVideoFramesFixtureJson from '@fluxer/voice_engine_v2/fixtures/event_logs/inbound_video_frames.json';
-import participantsTracksFixtureJson from '@fluxer/voice_engine_v2/fixtures/event_logs/participants_tracks.json';
-import subscriptionQualityFixtureJson from '@fluxer/voice_engine_v2/fixtures/event_logs/subscription_quality.json';
-import watchedStreamsFixtureJson from '@fluxer/voice_engine_v2/fixtures/event_logs/watched_streams.json';
-import {transitionVoiceEngineV2} from '@fluxer/voice_engine_v2/src/core/reducer';
+import inboundVideoFramesFixtureJson from '@hearth/voice_engine_v2/fixtures/event_logs/inbound_video_frames.json';
+import participantsTracksFixtureJson from '@hearth/voice_engine_v2/fixtures/event_logs/participants_tracks.json';
+import subscriptionQualityFixtureJson from '@hearth/voice_engine_v2/fixtures/event_logs/subscription_quality.json';
+import watchedStreamsFixtureJson from '@hearth/voice_engine_v2/fixtures/event_logs/watched_streams.json';
+import {transitionVoiceEngineV2} from '@hearth/voice_engine_v2/src/core/reducer';
 import {
 	selectVoiceEngineV2ParticipantProjection,
 	selectVoiceEngineV2WatchedStreams,
-} from '@fluxer/voice_engine_v2/src/core/selectors';
+} from '@hearth/voice_engine_v2/src/core/selectors';
 import {
 	availableVoiceEngineV2Capabilities,
 	createVoiceEngineV2InitialSnapshot,
 	type VoiceEngineV2Snapshot,
-} from '@fluxer/voice_engine_v2/src/core/state';
-import type {VoiceEngineV2Command} from '@fluxer/voice_engine_v2/src/protocol/commands';
-import type {VoiceEngineV2Event} from '@fluxer/voice_engine_v2/src/protocol/events';
+} from '@hearth/voice_engine_v2/src/core/state';
+import type {VoiceEngineV2Command} from '@hearth/voice_engine_v2/src/protocol/commands';
+import type {VoiceEngineV2Event} from '@hearth/voice_engine_v2/src/protocol/events';
 import type {
 	VoiceEngineV2InboundVideoTrack,
 	VoiceEngineV2Participant,
 	VoiceEngineV2RemoteTrackSubscriptionOptions,
 	VoiceEngineV2Track,
 	VoiceEngineV2WatchedStream,
-} from '@fluxer/voice_engine_v2/src/protocol/types';
+} from '@hearth/voice_engine_v2/src/protocol/types';
 import {describe, expect, it} from 'vitest';
 
 interface ParticipantsTracksFixtureExpected {

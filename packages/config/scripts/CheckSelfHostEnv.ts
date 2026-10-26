@@ -3,13 +3,13 @@
 import {readFileSync} from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
-import {type ConfigObject, isConfigObject} from '@fluxer/config/src/config_loader/ConfigObject';
-import {NAMED_FLUXER_ENV_NAMES} from '@fluxer/config/src/config_loader/EnvironmentOverrides';
+import {type ConfigObject, isConfigObject} from '@hearth/config/src/config_loader/ConfigObject';
+import {NAMED_FLUXER_ENV_NAMES} from '@hearth/config/src/config_loader/EnvironmentOverrides';
 import {parse} from 'yaml';
 
 const REPO_ROOT = fileURLToPath(new URL('../../../', import.meta.url));
-const SELF_HOSTING = path.join(REPO_ROOT, 'fluxer_rexctl/internal/stack/files');
-const CHART = path.join(REPO_ROOT, 'deploy/helm/fluxer');
+const SELF_HOSTING = path.join(REPO_ROOT, 'hearth_rexctl/internal/stack/files');
+const CHART = path.join(REPO_ROOT, 'deploy/helm/hearth');
 
 const HOSTED_ONLY_OPERATOR_PASS = 'the Operator Pass is sold only by the hosted service';
 
@@ -113,12 +113,12 @@ function checkHelmChart(): void {
 	const composeCaddyfile = readFileSync(path.join(SELF_HOSTING, 'Caddyfile'));
 	const chartCaddyfile = readFileSync(path.join(CHART, 'files/Caddyfile'));
 	if (!chartCaddyfile.equals(composeCaddyfile)) {
-		problems.push('deploy/helm/fluxer/files/Caddyfile differs from fluxer_rexctl/internal/stack/files/Caddyfile');
+		problems.push('deploy/helm/hearth/files/Caddyfile differs from hearth_rexctl/internal/stack/files/Caddyfile');
 	}
 }
 
 function expectedInput(serviceName: string, key: string): string {
-	const prefix = `FLUXER_${serviceName.toUpperCase().replace('-', '_')}`;
+	const prefix = `HEARTH_${serviceName.toUpperCase().replace('-', '_')}`;
 	if (key === 'FLUXER_POSTGRES_MAX_CONNECTIONS' && OWN_POOL_SIZES.has(serviceName)) {
 		return `${prefix}_POSTGRES_MAX_CONNECTIONS`;
 	}
@@ -173,7 +173,7 @@ function checkComposeForwarding(): void {
 		problems.push('seaweedfs-init must run one script through /bin/sh -c');
 	}
 	if (
-		!init.includes('s3.configure -user=fluxer -access_key=$$FLUXER_S3_ACCESS_KEY -secret_key=$$FLUXER_S3_SECRET_KEY') ||
+		!init.includes('s3.configure -user=hearth -access_key=$$FLUXER_S3_ACCESS_KEY -secret_key=$$FLUXER_S3_SECRET_KEY') ||
 		!init.includes('-apply')
 	) {
 		problems.push('seaweedfs-init must apply an S3 identity built from the .env credentials');

@@ -1,12 +1,12 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 import assert from 'node:assert/strict';
-import type {VoiceEngineV2Snapshot, VoiceEngineV2Transition} from '@fluxer/voice_engine_v2/src/core/state';
-import type {VoiceEngineV2Event} from '@fluxer/voice_engine_v2/src/protocol/events';
+import type {VoiceEngineV2Snapshot, VoiceEngineV2Transition} from '@hearth/voice_engine_v2/src/core/state';
+import type {VoiceEngineV2Event} from '@hearth/voice_engine_v2/src/protocol/events';
 import type {
 	VoiceEngineV2InboundVideoFrame,
 	VoiceEngineV2InboundVideoTrackSubscription,
-} from '@fluxer/voice_engine_v2/src/protocol/types';
+} from '@hearth/voice_engine_v2/src/protocol/types';
 
 type VoiceEngineV2InboundVideoEvent = Extract<VoiceEngineV2Event, {type: `inboundVideo.${string}`}>;
 

@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import {FLUXER_EPOCH as FLUXER_EPOCH_NUMBER} from '@fluxer/constants/src/Core';
+import {FLUXER_EPOCH as FLUXER_EPOCH_NUMBER} from '@hearth/constants/src/Core';
 
 export const FLUXER_EPOCH = BigInt(FLUXER_EPOCH_NUMBER);
 export const WORKER_ID_BITS = 10n;
@@ -78,7 +78,7 @@ function assertValidSequence(sequence: number): bigint {
 
 function assertValidRelativeTimestamp(relativeTimestamp: bigint): void {
 	if (relativeTimestamp < 0n) {
-		throw new Error('Timestamp must be on or after the Fluxer epoch');
+		throw new Error('Timestamp must be on or after the Hearth epoch');
 	}
 }
 

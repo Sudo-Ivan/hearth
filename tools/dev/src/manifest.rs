@@ -52,7 +52,7 @@ pub const PROXY_ROUTES: &[ProxyRoute] = &[
         alternate_ports: &[],
     },
     ProxyRoute {
-        prefix: "/fluxer-uploads",
+        prefix: "/hearth-uploads",
         host: LOOPBACK_HOST,
         port: 8333,
         strip_prefix: false,
@@ -156,32 +156,32 @@ pub fn rust_services() -> Vec<RustServiceSpec> {
     vec![
         RustServiceSpec {
             name: "gifs",
-            package: "fluxer-gifs",
-            path: ROOT.join("fluxer_gifs"),
+            package: "hearth-gifs",
+            path: ROOT.join("hearth_gifs"),
             port_base: 8110,
         },
         RustServiceSpec {
             name: "messages",
-            package: "fluxer-messages",
-            path: ROOT.join("fluxer_messages"),
+            package: "hearth-messages",
+            path: ROOT.join("hearth_messages"),
             port_base: 8112,
         },
         RustServiceSpec {
             name: "snowflakes",
-            package: "fluxer-snowflakes",
-            path: ROOT.join("fluxer_snowflakes"),
+            package: "hearth-snowflakes",
+            path: ROOT.join("hearth_snowflakes"),
             port_base: 8120,
         },
         RustServiceSpec {
             name: "unfurl",
-            package: "fluxer-unfurl",
-            path: ROOT.join("fluxer_unfurl"),
+            package: "hearth-unfurl",
+            path: ROOT.join("hearth_unfurl"),
             port_base: 8122,
         },
         RustServiceSpec {
             name: "users",
-            package: "fluxer-users",
-            path: ROOT.join("fluxer_users"),
+            package: "hearth-users",
+            path: ROOT.join("hearth_users"),
             port_base: 8124,
         },
     ]

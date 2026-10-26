@@ -554,7 +554,7 @@ fn orphaned_process_leaders(
     is_orphan_root: impl Fn(&ProcProcess, &[String]) -> bool,
     is_supervisor: impl Fn(&[String], &Path) -> bool,
 ) -> Result<Vec<ProcessGroupLeader>> {
-    let current_exe = std::env::current_exe().context("failed to resolve fluxer-dev executable")?;
+    let current_exe = std::env::current_exe().context("failed to resolve hearth-dev executable")?;
     let processes = process_snapshot()?;
     let mut owned_pids = BTreeSet::new();
     for process in &processes {

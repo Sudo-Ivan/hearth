@@ -4,7 +4,7 @@ import type {
 	VoiceEngineV2CameraEncodingOptions,
 	VoiceEngineV2CameraOptions,
 	VoiceEngineV2Error,
-} from '@fluxer/voice_engine_v2/src/protocol/types';
+} from '@hearth/voice_engine_v2/src/protocol/types';
 
 type VoiceEngineV2CameraEncodingPlanAction = 'noop' | 'updateEncoding' | 'republish' | 'reject';
 

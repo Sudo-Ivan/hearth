@@ -1,12 +1,12 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import {MAX_APPLICATION_REDIRECT_URIS} from '@fluxer/constants/src/LimitConstants';
+import {MAX_APPLICATION_REDIRECT_URIS} from '@hearth/constants/src/LimitConstants';
 import {
 	createStringType,
 	Int32Type,
 	SnowflakeStringType,
 	SnowflakeType,
-} from '@fluxer/schema/src/primitives/SchemaPrimitives';
+} from '@hearth/schema/src/primitives/SchemaPrimitives';
 import {z} from 'zod';
 
 export const ApplicationAdminResponse = z.object({

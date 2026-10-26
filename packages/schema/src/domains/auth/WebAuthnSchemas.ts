@@ -1,4 +1,4 @@
-import {schemaMetadata} from '@fluxer/schema/src/SchemaMetadata';
+import {schemaMetadata} from '@hearth/schema/src/SchemaMetadata';
 import type {
 	AuthenticationResponseJSON,
 	PublicKeyCredentialRequestOptionsJSON,

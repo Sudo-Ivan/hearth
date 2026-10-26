@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import {ValidationErrorCodes} from '@fluxer/constants/src/ValidationErrorCodes';
-import {normalizeString, withStringLengthRangeValidation} from '@fluxer/schema/src/primitives/SchemaPrimitives';
+import {ValidationErrorCodes} from '@hearth/constants/src/ValidationErrorCodes';
+import {normalizeString, withStringLengthRangeValidation} from '@hearth/schema/src/primitives/SchemaPrimitives';
 import validator from 'validator';
 import {z} from 'zod';
 

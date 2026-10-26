@@ -1,11 +1,11 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import {RegistrationModes} from '@fluxer/constants/src/AccountConfigConstants';
+import {RegistrationModes} from '@hearth/constants/src/AccountConfigConstants';
 import {
 	AccountIdentityLockReasons,
 	AccountIdentityModes,
 	TagStyles,
-} from '@fluxer/constants/src/AccountIdentityConstants';
+} from '@hearth/constants/src/AccountIdentityConstants';
 import {
 	CaptchaProviderSchema,
 	EffectiveVerificationBasisSchema,
@@ -13,10 +13,10 @@ import {
 	GuildJoinGateSchema,
 	InstantAccountAvailabilitySchema,
 	InteractionTierModeSchema,
-} from '@fluxer/schema/src/domains/account/AccountTierSchemas';
-import {DomainMigrationDiscoveryResponse} from '@fluxer/schema/src/domains/admin/DomainMigrationSchemas';
-import {SsoStatusResponse} from '@fluxer/schema/src/domains/auth/AuthSchemas';
-import {createNamedStringLiteralUnion, createStringType} from '@fluxer/schema/src/primitives/SchemaPrimitives';
+} from '@hearth/schema/src/domains/account/AccountTierSchemas';
+import {DomainMigrationDiscoveryResponse} from '@hearth/schema/src/domains/admin/DomainMigrationSchemas';
+import {SsoStatusResponse} from '@hearth/schema/src/domains/auth/AuthSchemas';
+import {createNamedStringLiteralUnion, createStringType} from '@hearth/schema/src/primitives/SchemaPrimitives';
 import {z} from 'zod';
 
 const LimitFilterResponse = z.object({
@@ -379,7 +379,7 @@ export const InstanceNoticeSchema = z
 	.describe('Notice from the instance administrator shown to everyone, such as planned maintenance');
 export type InstanceNotice = z.infer<typeof InstanceNoticeSchema>;
 
-export const WellKnownFluxerResponse = z.object({
+export const WellKnownHearthResponse = z.object({
 	codename: z.string().optional().describe('Protocol generation spoken by this instance'),
 	api_code_version: z.number().int().describe('Version of the API server code'),
 	endpoints: InstanceEndpointsSchema,
@@ -402,7 +402,7 @@ export const WellKnownFluxerResponse = z.object({
 	),
 });
 
-export type WellKnownFluxerResponse = z.infer<typeof WellKnownFluxerResponse>;
+export type WellKnownHearthResponse = z.infer<typeof WellKnownHearthResponse>;
 
 export const InstanceAccountIdentityUpdateRequest = z.object({
 	mode: AccountIdentityModeSchema.describe('Sign-in method for the new instance'),

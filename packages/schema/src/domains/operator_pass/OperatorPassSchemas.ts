@@ -1,15 +1,15 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import {PurchaseBlockedReasons} from '@fluxer/constants/src/AccountTierConstants';
-import type {ValueOf} from '@fluxer/constants/src/ValueOf';
-import {CaptchaProviderSchema} from '@fluxer/schema/src/domains/account/AccountTierSchemas';
+import {PurchaseBlockedReasons} from '@hearth/constants/src/AccountTierConstants';
+import type {ValueOf} from '@hearth/constants/src/ValueOf';
+import {CaptchaProviderSchema} from '@hearth/schema/src/domains/account/AccountTierSchemas';
 import {
 	createNamedStringLiteralUnion,
 	createStringType,
 	SnowflakeStringType,
 	SnowflakeType,
-} from '@fluxer/schema/src/primitives/SchemaPrimitives';
-import {DiscriminatorType, UsernameType} from '@fluxer/schema/src/primitives/UserValidators';
+} from '@hearth/schema/src/primitives/SchemaPrimitives';
+import {DiscriminatorType, UsernameType} from '@hearth/schema/src/primitives/UserValidators';
 import {z} from 'zod';
 
 export const OPERATOR_PASS_PHASES = ['waitlist', 'early_bird', 'standard'] as const;
@@ -127,7 +127,7 @@ export const OperatorPassWallDeclineReasonSchema = createNamedStringLiteralUnion
 		['guidelines', 'GUIDELINES', 'It breaks the community guidelines'],
 		['impersonation', 'IMPERSONATION', 'It pretends to be someone else'],
 		['rights', 'RIGHTS', 'It uses a name or image the holder has no right to use'],
-		['age_suitability', 'AGE_SUITABILITY', 'It is not suitable for the youngest people allowed to use Fluxer'],
+		['age_suitability', 'AGE_SUITABILITY', 'It is not suitable for the youngest people allowed to use Hearth'],
 	],
 	"Why staff declined a name or avatar on the Operators' wall, under section 2.1 of the Operator Pass terms",
 );
@@ -323,7 +323,7 @@ export const OPERATOR_PASS_WAITLIST_ABOUT_KEYS = [
 	'self_hosting_experienced',
 	'bots_new',
 	'bots_experienced',
-	'support_fluxer',
+	'support_hearth',
 	'community_owner',
 ] as const;
 
@@ -335,8 +335,8 @@ export const OperatorPassWaitlistAboutKeySchema = createNamedStringLiteralUnion(
 		['self_hosting_experienced', 'SELF_HOSTING_EXPERIENCED', "I've self-hosted before"],
 		['bots_new', 'BOTS_NEW', "I'm new to building bots"],
 		['bots_experienced', 'BOTS_EXPERIENCED', "I've built bots before"],
-		['support_fluxer', 'SUPPORT_FLUXER', 'I mainly want to support Fluxer'],
-		['community_owner', 'COMMUNITY_OWNER', 'I run a community on Fluxer'],
+		['support_hearth', 'SUPPORT_HEARTH', 'I mainly want to support Hearth'],
+		['community_owner', 'COMMUNITY_OWNER', 'I run a community on Hearth'],
 	],
 	'A description a waitlist visitor picked for themselves',
 );
@@ -733,7 +733,7 @@ export type OperatorPassWallResponse = z.infer<typeof OperatorPassWallResponse>;
 
 export const OperatorPassReleaseResponse = z.object({
 	year: z.number().int().describe('The year of the list, as in The Operators of 2026'),
-	tag: z.string().describe('The tag of the Fluxer release the list shipped in'),
+	tag: z.string().describe('The tag of the Hearth release the list shipped in'),
 	released_at: z.iso.datetime().describe('When the release shipped'),
 	names: z.array(z.string()).describe('Names in the list, sorted'),
 });

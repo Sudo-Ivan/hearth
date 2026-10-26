@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import {DEFAULT_RESTRICTED_LIMITS, DEFAULT_STOCK_LIMITS} from '@fluxer/limits/src/LimitDefaults';
-import {resolveLimit, resolveLimits} from '@fluxer/limits/src/LimitResolver';
-import type {LimitConfigSnapshot, LimitMatchContext} from '@fluxer/limits/src/LimitTypes';
+import {DEFAULT_RESTRICTED_LIMITS, DEFAULT_STOCK_LIMITS} from '@hearth/limits/src/LimitDefaults';
+import {resolveLimit, resolveLimits} from '@hearth/limits/src/LimitResolver';
+import type {LimitConfigSnapshot, LimitMatchContext} from '@hearth/limits/src/LimitTypes';
 import {describe, expect, test} from 'vitest';
 
 describe('LimitResolver', () => {

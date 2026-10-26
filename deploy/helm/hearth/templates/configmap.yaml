@@ -1,0 +1,20 @@
+{{- include "hearth.validate" . }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: hearth-config
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "hearth.labels" (dict "root" . "name" "hearth-config" "component" "config") | nindent 4 }}
+data:
+  {{- include "hearth.configData" . | nindent 2 }}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: hearth-app-proxy
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "hearth.labels" (dict "root" . "name" "hearth-app-proxy" "component" "config") | nindent 4 }}
+data:
+  {{- include "hearth.appProxyConfigData" . | nindent 2 }}

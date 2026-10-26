@@ -10,12 +10,12 @@ use std::time::{Duration, Instant};
 use tokio::time::sleep;
 
 pub const S3_BUCKETS: &[&str] = &[
-    "fluxer",
-    "fluxer-uploads",
-    "fluxer-downloads",
-    "fluxer-reports",
-    "fluxer-harvests",
-    "fluxer-static",
+    "hearth",
+    "hearth-uploads",
+    "hearth-downloads",
+    "hearth-reports",
+    "hearth-harvests",
+    "hearth-static",
 ];
 
 pub fn s3_endpoint() -> String {
@@ -26,13 +26,13 @@ pub fn s3_env() -> Vec<(String, Option<String>)> {
     vec![
         (
             "AWS_ACCESS_KEY_ID".to_owned(),
-            Some(env::var("FLUXER_S3_ACCESS_KEY_ID").unwrap_or_else(|_| "fluxer".to_owned())),
+            Some(env::var("FLUXER_S3_ACCESS_KEY_ID").unwrap_or_else(|_| "hearth".to_owned())),
         ),
         (
             "AWS_SECRET_ACCESS_KEY".to_owned(),
             Some(
                 env::var("FLUXER_S3_SECRET_ACCESS_KEY")
-                    .unwrap_or_else(|_| "fluxer-secret".to_owned()),
+                    .unwrap_or_else(|_| "hearth-secret".to_owned()),
             ),
         ),
         (

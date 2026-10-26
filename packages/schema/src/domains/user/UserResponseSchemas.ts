@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import type {AccountTier, AccountVerificationNeed} from '@fluxer/constants/src/AccountTierConstants';
+import type {AccountTier, AccountVerificationNeed} from '@hearth/constants/src/AccountTierConstants';
 import {
 	DEFAULT_GUILD_FOLDER_ICON,
 	FriendSourceFlags,
@@ -16,13 +16,13 @@ import {
 	ProfileFieldPrivacyFlagsDescriptions,
 	PublicUserFlags,
 	PublicUserFlagsDescriptions,
-} from '@fluxer/constants/src/UserConstants';
-import {AccountTierSchema, AccountVerificationNeedSchema} from '@fluxer/schema/src/domains/account/AccountTierSchemas';
-import {ConnectionResponse} from '@fluxer/schema/src/domains/connection/ConnectionSchemas';
-import {GuildMemberResponse} from '@fluxer/schema/src/domains/guild/GuildMemberSchemas';
-import {MessageResponseSchema} from '@fluxer/schema/src/domains/message/MessageResponseSchemas';
-import {ProfileBadgeListResponse} from '@fluxer/schema/src/domains/user/ProfileBadgeSchemas';
-import {LocaleSchema} from '@fluxer/schema/src/primitives/LocaleSchema';
+} from '@hearth/constants/src/UserConstants';
+import {AccountTierSchema, AccountVerificationNeedSchema} from '@hearth/schema/src/domains/account/AccountTierSchemas';
+import {ConnectionResponse} from '@hearth/schema/src/domains/connection/ConnectionSchemas';
+import {GuildMemberResponse} from '@hearth/schema/src/domains/guild/GuildMemberSchemas';
+import {MessageResponseSchema} from '@hearth/schema/src/domains/message/MessageResponseSchemas';
+import {ProfileBadgeListResponse} from '@hearth/schema/src/domains/user/ProfileBadgeSchemas';
+import {LocaleSchema} from '@hearth/schema/src/primitives/LocaleSchema';
 import {
 	createBitflagInt32Type,
 	createNamedStringLiteralUnion,
@@ -33,7 +33,7 @@ import {
 	SnowflakeStringType,
 	withFieldDescription,
 	withOpenApiType,
-} from '@fluxer/schema/src/primitives/SchemaPrimitives';
+} from '@hearth/schema/src/primitives/SchemaPrimitives';
 import {
 	GuildFolderIconSchema,
 	MentionReplyPreferencesSchema,
@@ -47,7 +47,7 @@ import {
 	UserAuthenticatorTypesSchema,
 	UserNotificationSettingsSchema,
 	UserPremiumTypesSchema,
-} from '@fluxer/schema/src/primitives/UserSettingsValidators';
+} from '@hearth/schema/src/primitives/UserSettingsValidators';
 import {z} from 'zod';
 
 export const UserPartialResponse = z.object({

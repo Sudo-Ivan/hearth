@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import {GuildFeatures} from '@fluxer/constants/src/GuildConstants';
-import {MAX_GUILD_STICKER_TAGS} from '@fluxer/constants/src/LimitConstants';
-import {type UserPartial, UserPartialResponse} from '@fluxer/schema/src/domains/user/UserResponseSchemas';
-import {SnowflakeStringType} from '@fluxer/schema/src/primitives/SchemaPrimitives';
+import {GuildFeatures} from '@hearth/constants/src/GuildConstants';
+import {MAX_GUILD_STICKER_TAGS} from '@hearth/constants/src/LimitConstants';
+import {type UserPartial, UserPartialResponse} from '@hearth/schema/src/domains/user/UserResponseSchemas';
+import {SnowflakeStringType} from '@hearth/schema/src/primitives/SchemaPrimitives';
 import {z} from 'zod';
 
 export const GuildEmojiResponse = z.object({

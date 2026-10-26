@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import {createSnowflake, FLUXER_EPOCH, TIMESTAMP_SHIFT} from '@fluxer/snowflake/src/Snowflake';
+import {createSnowflake, FLUXER_EPOCH, TIMESTAMP_SHIFT} from '@hearth/snowflake/src/Snowflake';
 
 const FLUXER_EPOCH_NUMBER = Number(FLUXER_EPOCH);
 

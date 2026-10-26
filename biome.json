@@ -7,7 +7,7 @@
 		"lineWidth": 120,
 		"lineEnding": "lf",
 		"bracketSpacing": false,
-		"includes": ["**", "!**/fluxer_app/src/features/theme/variables/ThemeVariableManifest.ts"]
+		"includes": ["**", "!**/hearth_app/src/features/theme/variables/ThemeVariableManifest.ts"]
 	},
 	"javascript": {
 		"formatter": {
@@ -132,11 +132,11 @@
 		{
 			"includes": [
 				"packages/**",
-				"fluxer_desktop/**",
-				"fluxer_docs/**",
-				"fluxer_api/**",
-				"fluxer_app/**",
-				"!fluxer_app/pkgs/livekit-client/**"
+				"hearth_desktop/**",
+				"hearth_docs/**",
+				"hearth_api/**",
+				"hearth_app/**",
+				"!hearth_app/pkgs/livekit-client/**"
 			],
 			"linter": {"rules": {"style": {"noNestedTernary": "error"}}}
 		},
@@ -157,19 +157,19 @@
 			}
 		},
 		{
-			"includes": ["fluxer_app/src/**/*.tsx"],
+			"includes": ["hearth_app/src/**/*.tsx"],
 			"plugins": ["./tools/lint/no-adjacent-jsx-text.grit"]
 		},
 		{
-			"includes": ["fluxer_app/src/features/i18n/components/AppI18nProvider.tsx"],
+			"includes": ["hearth_app/src/features/i18n/components/AppI18nProvider.tsx"],
 			"linter": {"rules": {"style": {"noRestrictedImports": "off"}}}
 		},
 		{
-			"includes": ["fluxer_app/src/**/*.worklet.js"],
+			"includes": ["hearth_app/src/**/*.worklet.js"],
 			"javascript": {"globals": ["AudioWorkletProcessor", "registerProcessor", "sampleRate", "currentTime"]}
 		},
 		{
-			"includes": ["fluxer_app/src/features/app/config/WebAppHostedImages.json"],
+			"includes": ["hearth_app/src/features/app/config/WebAppHostedImages.json"],
 			"json": {"formatter": {"indentStyle": "space", "indentWidth": 2}}
 		},
 		{
@@ -189,12 +189,12 @@
 			"!**/.git",
 			"!**/app.css",
 			"!**/build",
-			"fluxer_app/scripts/build",
+			"hearth_app/scripts/build",
 			"!**/dist",
-			"!**/fluxer_app/src/media/data/emojis.json",
-			"!**/fluxer_app/src/features/i18n/locales/*/messages.js",
-			"!**/fluxer_app/src/features/i18n/locales/*/messages.mjs",
-			"!**/fluxer_app/src/env.d.ts",
+			"!**/hearth_app/src/media/data/emojis.json",
+			"!**/hearth_app/src/features/i18n/locales/*/messages.js",
+			"!**/hearth_app/src/features/i18n/locales/*/messages.mjs",
+			"!**/hearth_app/src/env.d.ts",
 			"!**/*.generated.*",
 			"!**/*.pb.*",
 			"!**/*_pb.*",
@@ -203,17 +203,17 @@
 			"!**/tailwind.css",
 			"!**/*.html",
 			"!**/*.module.css.d.ts",
-			"!**/fluxer_app/src/features/ui/components/SVGMasks.tsx",
-			"!fluxer_static",
+			"!**/hearth_app/src/features/ui/components/SVGMasks.tsx",
+			"!hearth_static",
 			"!packages/fonts",
-			"!fluxer_admin/static/htmx.min.js",
-			"!fluxer_api/src/api/openapi/openapi.json",
-			"!fluxer_api/pkgs/email/src/email_i18n/weblate",
-			"!fluxer_api/src/api/content_i18n/weblate",
+			"!hearth_admin/static/htmx.min.js",
+			"!hearth_api/src/api/openapi/openapi.json",
+			"!hearth_api/pkgs/email/src/email_i18n/weblate",
+			"!hearth_api/src/api/content_i18n/weblate",
 			"!packages/errors/src/i18n/weblate",
-			"!fluxer_rexctl/internal/adminapi/configschema.json",
-			"!fluxer_rexctl/internal/stack/imageset.json",
-			"!fluxer_rexctl/internal/stack/files/profiles.json"
+			"!hearth_rexctl/internal/adminapi/configschema.json",
+			"!hearth_rexctl/internal/stack/imageset.json",
+			"!hearth_rexctl/internal/stack/files/profiles.json"
 		],
 		"ignoreUnknown": true
 	}

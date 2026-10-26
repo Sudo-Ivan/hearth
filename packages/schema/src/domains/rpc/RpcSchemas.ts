@@ -4,38 +4,38 @@ import {
 	RTC_REGION_ID_MAX_LENGTH,
 	RTC_REGION_ID_MIN_LENGTH,
 	VOICE_P2P_MAX_PARTICIPANTS,
-} from '@fluxer/constants/src/LimitConstants';
-import {FORUM_UNREAD_COUNT_CAP, FORUM_UNREADS_MAX_THREADS} from '@fluxer/constants/src/ThreadConstants';
-import {AccountTierSchema} from '@fluxer/schema/src/domains/account/AccountTierSchemas';
-import {ChannelThreadsConfigResponse} from '@fluxer/schema/src/domains/admin/ChannelThreadsSchemas';
-import {GatewayRolloutConfigResponse} from '@fluxer/schema/src/domains/admin/GatewayRolloutSchemas';
-import {LegacyPushServiceDeliveryWire} from '@fluxer/schema/src/domains/admin/PushRelaySchemas';
-import {WebAuthnCredentialResponse} from '@fluxer/schema/src/domains/auth/AuthSchemas';
-import {ChannelResponse, RtcRegionResponse} from '@fluxer/schema/src/domains/channel/ChannelSchemas';
+} from '@hearth/constants/src/LimitConstants';
+import {FORUM_UNREAD_COUNT_CAP, FORUM_UNREADS_MAX_THREADS} from '@hearth/constants/src/ThreadConstants';
+import {AccountTierSchema} from '@hearth/schema/src/domains/account/AccountTierSchemas';
+import {ChannelThreadsConfigResponse} from '@hearth/schema/src/domains/admin/ChannelThreadsSchemas';
+import {GatewayRolloutConfigResponse} from '@hearth/schema/src/domains/admin/GatewayRolloutSchemas';
+import {LegacyPushServiceDeliveryWire} from '@hearth/schema/src/domains/admin/PushRelaySchemas';
+import {WebAuthnCredentialResponse} from '@hearth/schema/src/domains/auth/AuthSchemas';
+import {ChannelResponse, RtcRegionResponse} from '@hearth/schema/src/domains/channel/ChannelSchemas';
 import {
 	ThreadMemberRpcResponse,
 	ThreadParentSettingsRpcResponse,
-} from '@fluxer/schema/src/domains/channel/ThreadSchemas';
-import {VoiceStateResponse} from '@fluxer/schema/src/domains/gateway/GatewaySchemas';
-import {GuildEmojiResponse, GuildStickerResponse} from '@fluxer/schema/src/domains/guild/GuildEmojiSchemas';
-import {GuildMemberResponse} from '@fluxer/schema/src/domains/guild/GuildMemberSchemas';
-import {GuildResponse} from '@fluxer/schema/src/domains/guild/GuildResponseSchemas';
-import {GuildRoleResponse} from '@fluxer/schema/src/domains/guild/GuildRoleSchemas';
-import {FavoriteMemeResponse} from '@fluxer/schema/src/domains/meme/MemeSchemas';
-import {CustomStatusPayload} from '@fluxer/schema/src/domains/user/UserRequestSchemas';
+} from '@hearth/schema/src/domains/channel/ThreadSchemas';
+import {VoiceStateResponse} from '@hearth/schema/src/domains/gateway/GatewaySchemas';
+import {GuildEmojiResponse, GuildStickerResponse} from '@hearth/schema/src/domains/guild/GuildEmojiSchemas';
+import {GuildMemberResponse} from '@hearth/schema/src/domains/guild/GuildMemberSchemas';
+import {GuildResponse} from '@hearth/schema/src/domains/guild/GuildResponseSchemas';
+import {GuildRoleResponse} from '@hearth/schema/src/domains/guild/GuildRoleSchemas';
+import {FavoriteMemeResponse} from '@hearth/schema/src/domains/meme/MemeSchemas';
+import {CustomStatusPayload} from '@hearth/schema/src/domains/user/UserRequestSchemas';
 import {
 	CustomStatusResponse,
 	RelationshipResponse,
 	UserGuildSettingsResponse,
 	UserPrivateResponse,
 	UserSettingsResponse,
-} from '@fluxer/schema/src/domains/user/UserResponseSchemas';
+} from '@hearth/schema/src/domains/user/UserResponseSchemas';
 import {
 	createStringType,
 	SnowflakeStringType,
 	SnowflakeType,
 	UnsignedInt64StringType,
-} from '@fluxer/schema/src/primitives/SchemaPrimitives';
+} from '@hearth/schema/src/primitives/SchemaPrimitives';
 import {z} from 'zod';
 
 const RPC_USER_BATCH_MAX = 1000;

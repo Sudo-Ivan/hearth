@@ -1,16 +1,16 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import type {GuildSplashCardAlignmentValue} from '@fluxer/constants/src/GuildConstants';
+import type {GuildSplashCardAlignmentValue} from '@hearth/constants/src/GuildConstants';
 import {
 	GuildFeatures,
 	GuildOperations,
 	GuildOperationsDescriptions,
 	SystemChannelFlags,
 	SystemChannelFlagsDescriptions,
-} from '@fluxer/constants/src/GuildConstants';
-import {ChannelResponse} from '@fluxer/schema/src/domains/channel/ChannelSchemas';
-import {GuildEmojiResponse, GuildStickerResponse} from '@fluxer/schema/src/domains/guild/GuildEmojiSchemas';
-import {GuildRoleResponse} from '@fluxer/schema/src/domains/guild/GuildRoleSchemas';
+} from '@hearth/constants/src/GuildConstants';
+import {ChannelResponse} from '@hearth/schema/src/domains/channel/ChannelSchemas';
+import {GuildEmojiResponse, GuildStickerResponse} from '@hearth/schema/src/domains/guild/GuildEmojiSchemas';
+import {GuildRoleResponse} from '@hearth/schema/src/domains/guild/GuildRoleSchemas';
 import {
 	ContentWarningLevelSchema,
 	DefaultMessageNotificationsSchema,
@@ -19,8 +19,8 @@ import {
 	GuildVerificationLevelSchema,
 	NSFWLevelSchema,
 	SplashCardAlignmentSchema,
-} from '@fluxer/schema/src/primitives/GuildValidators';
-import {PermissionStringType} from '@fluxer/schema/src/primitives/PermissionValidators';
+} from '@hearth/schema/src/primitives/GuildValidators';
+import {PermissionStringType} from '@hearth/schema/src/primitives/PermissionValidators';
 import {
 	coerceNumberFromString,
 	createBitflagInt32Type,
@@ -29,8 +29,8 @@ import {
 	SnowflakeStringType,
 	withFieldDescription,
 	withOpenApiType,
-} from '@fluxer/schema/src/primitives/SchemaPrimitives';
-import {withSchemaMetadata} from '@fluxer/schema/src/SchemaMetadata';
+} from '@hearth/schema/src/primitives/SchemaPrimitives';
+import {withSchemaMetadata} from '@hearth/schema/src/SchemaMetadata';
 import {z} from 'zod';
 
 function normalizeGuildFeatures(features: Array<string>): Array<string> {

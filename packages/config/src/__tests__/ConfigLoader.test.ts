@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 import {generateKeyPairSync} from 'node:crypto';
-import {loadConfig, resetConfig} from '@fluxer/config/src/ConfigLoader';
+import {loadConfig, resetConfig} from '@hearth/config/src/ConfigLoader';
 import {afterEach, beforeEach, describe, expect, test, vi} from 'vitest';
 
 const MINIMAL_ENV: Record<string, string> = {
@@ -11,7 +11,7 @@ const MINIMAL_ENV: Record<string, string> = {
 	FLUXER_PUBLIC_PORT: '8088',
 	FLUXER_CASSANDRA_HOSTS: '127.0.0.1',
 	FLUXER_CASSANDRA_PORT: '9042',
-	FLUXER_CASSANDRA_KEYSPACE: 'fluxer_test',
+	FLUXER_CASSANDRA_KEYSPACE: 'hearth_test',
 	FLUXER_CASSANDRA_LOCAL_DC: 'datacenter1',
 	FLUXER_CASSANDRA_USERNAME: 'test-user',
 	FLUXER_CASSANDRA_PASSWORD: 'test-password',
@@ -48,9 +48,9 @@ function stubMinimalEnv(overrides: Record<string, string> = {}): void {
 	}
 }
 
-function clearFluxerEnv(): void {
+function clearHearthEnv(): void {
 	for (const key of Object.keys(process.env)) {
-		if (key.startsWith('FLUXER_')) {
+		if (key.startsWith('HEARTH_')) {
 			vi.stubEnv(key, undefined);
 		}
 	}
@@ -59,7 +59,7 @@ function clearFluxerEnv(): void {
 describe('ConfigLoader', () => {
 	beforeEach(() => {
 		resetConfig();
-		clearFluxerEnv();
+		clearHearthEnv();
 	});
 
 	afterEach(() => {
@@ -72,7 +72,7 @@ describe('ConfigLoader', () => {
 			FLUXER_SELF_HOSTED: 'true',
 			FLUXER_PROFILE_PSEUDONYM_SECRET: 'self-hosted-secret',
 			FLUXER_POSTGRES_HOST: 'postgres',
-			FLUXER_POSTGRES_DATABASE: 'fluxer',
+			FLUXER_POSTGRES_DATABASE: 'hearth',
 			FLUXER_POSTGRES_PASSWORD: 'self-hosted-password',
 		});
 		vi.stubEnv('FLUXER_ENV', undefined);
@@ -84,13 +84,13 @@ describe('ConfigLoader', () => {
 		expect((await loadConfig()).auth.profile_pseudonym_secret).toBe('test-profile-pseudonym-secret');
 		resetConfig();
 		stubMinimalEnv({FLUXER_PROFILE_PSEUDONYM_SECRET: ''});
-		expect((await loadConfig()).auth.profile_pseudonym_secret).toBe('fluxer-dev-profile-pseudonym-secret');
+		expect((await loadConfig()).auth.profile_pseudonym_secret).toBe('hearth-dev-profile-pseudonym-secret');
 		resetConfig();
 		stubMinimalEnv({
 			FLUXER_ENV: 'production',
 			FLUXER_POSTGRES_HOST: 'postgres.internal',
-			FLUXER_POSTGRES_DATABASE: 'fluxer_prod',
-			FLUXER_POSTGRES_USERNAME: 'fluxer_app',
+			FLUXER_POSTGRES_DATABASE: 'hearth_prod',
+			FLUXER_POSTGRES_USERNAME: 'hearth_app',
 			FLUXER_POSTGRES_PASSWORD: 'prod-postgres-secret',
 			FLUXER_POSTGRES_SSL: 'true',
 			FLUXER_PROFILE_PSEUDONYM_SECRET: '',
@@ -108,8 +108,8 @@ describe('ConfigLoader', () => {
 			FLUXER_ENV: 'production',
 			FLUXER_SELF_HOSTED: 'true',
 			FLUXER_POSTGRES_HOST: 'postgres',
-			FLUXER_POSTGRES_DATABASE: 'fluxer',
-			FLUXER_POSTGRES_USERNAME: 'fluxer',
+			FLUXER_POSTGRES_DATABASE: 'hearth',
+			FLUXER_POSTGRES_USERNAME: 'hearth',
 			FLUXER_POSTGRES_PASSWORD: 'self-hosted-postgres-secret',
 			FLUXER_POSTGRES_SSL: 'false',
 		});
@@ -124,8 +124,8 @@ describe('ConfigLoader', () => {
 		stubMinimalEnv({
 			FLUXER_ENV: 'production',
 			FLUXER_POSTGRES_HOST: 'postgres.internal',
-			FLUXER_POSTGRES_DATABASE: 'fluxer_prod',
-			FLUXER_POSTGRES_USERNAME: 'fluxer_app',
+			FLUXER_POSTGRES_DATABASE: 'hearth_prod',
+			FLUXER_POSTGRES_USERNAME: 'hearth_app',
 			FLUXER_POSTGRES_PASSWORD: 'prod-postgres-secret',
 			FLUXER_POSTGRES_SSL: 'false',
 		});
@@ -134,9 +134,9 @@ describe('ConfigLoader', () => {
 	});
 
 	test('rejects an App Store product mapped to an unknown slot', async () => {
-		stubMinimalEnv({FLUXER_APP_STORE_PRODUCTS: '{"com.fluxer.visionary":"visionary"}'});
+		stubMinimalEnv({FLUXER_APP_STORE_PRODUCTS: '{"com.hearth.visionary":"visionary"}'});
 		await expect(loadConfig()).rejects.toThrow(
-			'Invalid FLUXER_APP_STORE_PRODUCTS slot for com.fluxer.visionary: visionary',
+			'Invalid FLUXER_APP_STORE_PRODUCTS slot for com.hearth.visionary: visionary',
 		);
 	});
 
@@ -279,7 +279,7 @@ describe('ConfigLoader', () => {
 describe('FLUXER_PUBLIC_ORIGIN', () => {
 	beforeEach(() => {
 		resetConfig();
-		clearFluxerEnv();
+		clearHearthEnv();
 	});
 
 	afterEach(() => {

@@ -11,10 +11,10 @@ import {
 	InteractionTierModes,
 	LastSessionCleanupModes,
 	VerificationBases,
-} from '@fluxer/constants/src/AccountConfigConstants';
-import {AccountTiers, AccountVerificationNeeds} from '@fluxer/constants/src/AccountTierConstants';
-import {CaptchaProviders} from '@fluxer/constants/src/CaptchaConstants';
-import {createNamedStringLiteralUnion, withOpenApiType} from '@fluxer/schema/src/primitives/SchemaPrimitives';
+} from '@hearth/constants/src/AccountConfigConstants';
+import {AccountTiers, AccountVerificationNeeds} from '@hearth/constants/src/AccountTierConstants';
+import {CaptchaProviders} from '@hearth/constants/src/CaptchaConstants';
+import {createNamedStringLiteralUnion, withOpenApiType} from '@hearth/schema/src/primitives/SchemaPrimitives';
 
 export const AccountTierSchema = withOpenApiType(
 	createNamedStringLiteralUnion(

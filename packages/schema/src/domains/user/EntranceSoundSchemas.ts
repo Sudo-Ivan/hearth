@@ -5,9 +5,9 @@ import {
 	ENTRANCE_SOUND_MAX_BYTES,
 	ENTRANCE_SOUND_MAX_DURATION_MS,
 	ENTRANCE_SOUND_NAME_MAX_LENGTH,
-} from '@fluxer/constants/src/EntranceSoundConstants';
-import {createBase64StringType} from '@fluxer/schema/src/primitives/FileValidators';
-import {createStringType, SnowflakeStringType, SnowflakeType} from '@fluxer/schema/src/primitives/SchemaPrimitives';
+} from '@hearth/constants/src/EntranceSoundConstants';
+import {createBase64StringType} from '@hearth/schema/src/primitives/FileValidators';
+import {createStringType, SnowflakeStringType, SnowflakeType} from '@hearth/schema/src/primitives/SchemaPrimitives';
 import {z} from 'zod';
 
 const ScopeIdSchema = z

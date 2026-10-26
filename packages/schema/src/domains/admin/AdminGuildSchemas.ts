@@ -4,13 +4,13 @@ import {
 	CONTENT_WARNING_TEXT_MAX_LENGTH,
 	GuildOperations,
 	GuildOperationsDescriptions,
-} from '@fluxer/constants/src/GuildConstants';
-import {CommunityRemovalBasis} from '@fluxer/schema/src/domains/admin/EnforcementSchemas';
-import {GuildAuditLogListResponse} from '@fluxer/schema/src/domains/guild/GuildAuditLogSchemas';
-import {GuildBanCreateRequest} from '@fluxer/schema/src/domains/guild/GuildRequestSchemas';
-import {GuildFeatureSchema} from '@fluxer/schema/src/domains/guild/GuildResponseSchemas';
-import {AuditLogActionTypeSchema} from '@fluxer/schema/src/primitives/AuditLogValidators';
-import {VanityURLCodeType} from '@fluxer/schema/src/primitives/ChannelValidators';
+} from '@hearth/constants/src/GuildConstants';
+import {CommunityRemovalBasis} from '@hearth/schema/src/domains/admin/EnforcementSchemas';
+import {GuildAuditLogListResponse} from '@hearth/schema/src/domains/guild/GuildAuditLogSchemas';
+import {GuildBanCreateRequest} from '@hearth/schema/src/domains/guild/GuildRequestSchemas';
+import {GuildFeatureSchema} from '@hearth/schema/src/domains/guild/GuildResponseSchemas';
+import {AuditLogActionTypeSchema} from '@hearth/schema/src/primitives/AuditLogValidators';
+import {VanityURLCodeType} from '@hearth/schema/src/primitives/ChannelValidators';
 import {
 	ContentWarningLevelSchema,
 	DefaultMessageNotificationsSchema,
@@ -18,8 +18,8 @@ import {
 	GuildMFALevelSchema,
 	GuildVerificationLevelInputSchema,
 	NSFWLevelSchema,
-} from '@fluxer/schema/src/primitives/GuildValidators';
-import {createQueryIntegerType} from '@fluxer/schema/src/primitives/QueryValidators';
+} from '@hearth/schema/src/primitives/GuildValidators';
+import {createQueryIntegerType} from '@hearth/schema/src/primitives/QueryValidators';
 import {
 	createBitflagInt32Type,
 	createNamedStringLiteralUnion,
@@ -28,7 +28,7 @@ import {
 	SnowflakeStringType,
 	SnowflakeType,
 	withFieldDescription,
-} from '@fluxer/schema/src/primitives/SchemaPrimitives';
+} from '@hearth/schema/src/primitives/SchemaPrimitives';
 import {z} from 'zod';
 
 export const GuildAdminResponse = z.object({

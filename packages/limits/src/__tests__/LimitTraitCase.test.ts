@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import {resolveLimits} from '@fluxer/limits/src/LimitResolver';
-import {ruleMatches} from '@fluxer/limits/src/LimitRuleRuntime';
+import {resolveLimits} from '@hearth/limits/src/LimitResolver';
+import {ruleMatches} from '@hearth/limits/src/LimitRuleRuntime';
 import {describe, expect, test} from 'vitest';
 
 const NO_GUILD = new Set<string>();

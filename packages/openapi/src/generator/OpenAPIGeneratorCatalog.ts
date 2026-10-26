@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
-import {APIErrorCodeSchema} from '@fluxer/openapi/src/converters/BuiltInSchemas';
-import type {OpenAPISchema, OpenAPISecurityScheme} from '@fluxer/openapi/src/OpenAPITypes';
-import {ERROR_SCHEMA, THROTTLED_ERROR_SCHEMA} from '@fluxer/openapi/src/registry/ResponseRegistry';
+import {APIErrorCodeSchema} from '@hearth/openapi/src/converters/BuiltInSchemas';
+import type {OpenAPISchema, OpenAPISecurityScheme} from '@hearth/openapi/src/OpenAPITypes';
+import {ERROR_SCHEMA, THROTTLED_ERROR_SCHEMA} from '@hearth/openapi/src/registry/ResponseRegistry';
 
 interface TagDefinition {
 	readonly name: string;

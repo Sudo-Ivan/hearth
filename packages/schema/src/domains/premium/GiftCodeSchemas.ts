@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import {GIFT_CODE_DURATION_TYPE_DEFINITIONS} from '@fluxer/constants/src/GiftCodeConstants';
-import {UserPartialResponse} from '@fluxer/schema/src/domains/user/UserResponseSchemas';
-import {createNamedStringLiteralUnion, createStringType} from '@fluxer/schema/src/primitives/SchemaPrimitives';
+import {GIFT_CODE_DURATION_TYPE_DEFINITIONS} from '@hearth/constants/src/GiftCodeConstants';
+import {UserPartialResponse} from '@hearth/schema/src/domains/user/UserResponseSchemas';
+import {createNamedStringLiteralUnion, createStringType} from '@hearth/schema/src/primitives/SchemaPrimitives';
 import {z} from 'zod';
 
 export const CheckoutPaymentMethodEnum = z.enum(['card', 'pix', 'upi']);

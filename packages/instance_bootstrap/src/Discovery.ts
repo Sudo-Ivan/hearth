@@ -6,17 +6,17 @@ import {
 	InstantAccountAvailability,
 	InteractionTierModes,
 	VerificationBases,
-} from '@fluxer/constants/src/AccountConfigConstants';
+} from '@hearth/constants/src/AccountConfigConstants';
 import {
 	AccountIdentityLockReasons,
 	AccountIdentityModes,
 	TagStyles,
-} from '@fluxer/constants/src/AccountIdentityConstants';
-import {Headers as HttpHeader} from '@fluxer/constants/src/Headers';
-import {HttpStatus, MimeType} from '@fluxer/constants/src/HttpConstants';
-import type {LimitKey} from '@fluxer/constants/src/LimitConfigMetadata';
-import {InstanceEndpointKind, normalizeInstanceEndpoint} from '@fluxer/instance_bootstrap/src/EndpointNormalization';
-import {CanonicalNetworkProtocol} from '@fluxer/instance_bootstrap/src/NetworkOrigin';
+} from '@hearth/constants/src/AccountIdentityConstants';
+import {Headers as HttpHeader} from '@hearth/constants/src/Headers';
+import {HttpStatus, MimeType} from '@hearth/constants/src/HttpConstants';
+import type {LimitKey} from '@hearth/constants/src/LimitConfigMetadata';
+import {InstanceEndpointKind, normalizeInstanceEndpoint} from '@hearth/instance_bootstrap/src/EndpointNormalization';
+import {CanonicalNetworkProtocol} from '@hearth/instance_bootstrap/src/NetworkOrigin';
 import {
 	AGE_POLICY_ACTIONS,
 	CURRENT_INSTANCE_CODENAME,
@@ -37,11 +37,11 @@ import {
 	type InstanceSso,
 	PUSH_DELIVERY_MODES,
 	REGISTRATION_MODES,
-} from '@fluxer/instance_bootstrap/src/Types';
-import type {LimitConfigSnapshot, LimitConfigWireFormat, LimitFilter, LimitRule} from '@fluxer/limits/src/LimitTypes';
-import {EXPERIMENT_BUCKET_RESOLUTION} from '@fluxer/schema/src/domains/experiment/ExperimentBucket';
+} from '@hearth/instance_bootstrap/src/Types';
+import type {LimitConfigSnapshot, LimitConfigWireFormat, LimitFilter, LimitRule} from '@hearth/limits/src/LimitTypes';
+import {EXPERIMENT_BUCKET_RESOLUTION} from '@hearth/schema/src/domains/experiment/ExperimentBucket';
 
-export const INSTANCE_DISCOVERY_PATH = '/.well-known/fluxer';
+export const INSTANCE_DISCOVERY_PATH = '/.well-known/hearth';
 const INSTANCE_DISCOVERY_CONVENTIONAL_ENDPOINT_PATH = '/api';
 export const INSTANCE_DISCOVERY_MAX_BYTES = 1024 * 1024;
 export const INSTANCE_DISCOVERY_MAX_CHUNKS = 1024;

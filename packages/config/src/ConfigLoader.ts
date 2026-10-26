@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 import {createECDH} from 'node:crypto';
-import {isConfigObject} from '@fluxer/config/src/config_loader/ConfigObject';
-import {buildNamedFluxerEnvOverrides, readEnvValue} from '@fluxer/config/src/config_loader/EnvironmentOverrides';
+import {isConfigObject} from '@hearth/config/src/config_loader/ConfigObject';
+import {buildNamedHearthEnvOverrides, readEnvValue} from '@hearth/config/src/config_loader/EnvironmentOverrides';
 import {
 	buildUrl,
 	type DerivedEndpoints,
@@ -10,25 +10,25 @@ import {
 	normalizePublicEndpoint,
 	parsePublicOrigin,
 	parseWebOrigin,
-} from '@fluxer/config/src/EndpointDerivation';
+} from '@hearth/config/src/EndpointDerivation';
 import {
 	ACCOUNT_IDENTITY_MODE_NAMES,
 	CACHE_PURGE_ADAPTER_NAMES,
 	type MasterConfig,
 	STORE_PRODUCT_SLOT_NAMES,
 	TAG_STYLE_NAMES,
-} from '@fluxer/config/src/MasterConfig';
+} from '@hearth/config/src/MasterConfig';
 
 let cachedConfig: MasterConfig | null = null;
 
 const MAX_REPORT_RETENTION_DAYS = 36_500;
 
 const DEFAULT_PASSKEY_ORIGINS = [
-	'https://fluxer.app',
-	'https://web.fluxer.app',
-	'https://web.canary.fluxer.app',
-	'https://fluxer.com',
-	'https://canary.fluxer.com',
+	'https://hearth.app',
+	'https://web.hearth.app',
+	'https://web.canary.hearth.app',
+	'https://hearth.com',
+	'https://canary.hearth.com',
 	'android:apk-key-hash:keSY4bimyLqZQV7bKXgpa2xYuqXi0qZJzsYtp6gpx7w',
 ];
 
@@ -66,7 +66,7 @@ function defaultConfig(): MasterConfig {
 			cassandra: {
 				hosts: ['127.0.0.1'],
 				port: 9042,
-				keyspace: 'fluxer',
+				keyspace: 'hearth',
 				local_dc: 'datacenter1',
 				username: '',
 				password: '',
@@ -75,13 +75,13 @@ function defaultConfig(): MasterConfig {
 				url: '',
 				host: '127.0.0.1',
 				port: 5432,
-				database: 'fluxer',
-				username: 'fluxer',
-				password: 'fluxer',
+				database: 'hearth',
+				username: 'hearth',
+				password: 'hearth',
 				ssl: false,
 				ssl_ca: '',
 				max_connections: 20,
-				kv_table: 'fluxer_kv',
+				kv_table: 'hearth_kv',
 				prepared_statements: true,
 			},
 		},
@@ -92,10 +92,10 @@ function defaultConfig(): MasterConfig {
 			access_key_id: '',
 			secret_access_key: '',
 			buckets: {
-				cdn: 'fluxer',
-				uploads: 'fluxer-uploads',
-				reports: 'fluxer-reports',
-				harvests: 'fluxer-harvests',
+				cdn: 'hearth',
+				uploads: 'hearth-uploads',
+				reports: 'hearth-reports',
+				harvests: 'hearth-harvests',
 			},
 		},
 		services: {
@@ -149,7 +149,7 @@ function defaultConfig(): MasterConfig {
 			profile_pseudonym_secret: '',
 			sso_allow_private_addresses: false,
 			passkeys: {
-				rp_name: 'Fluxer',
+				rp_name: 'Hearth',
 				rp_id: '',
 				additional_allowed_origins: DEFAULT_PASSKEY_ORIGINS,
 			},
@@ -160,7 +160,7 @@ function defaultConfig(): MasterConfig {
 			},
 			bluesky: {
 				enabled: false,
-				client_name: 'Fluxer',
+				client_name: 'Hearth',
 				client_uri: '',
 				logo_uri: '',
 				tos_uri: '',
@@ -246,7 +246,7 @@ function defaultConfig(): MasterConfig {
 		instance: {
 			self_hosted: false,
 			branding: {
-				product_name: 'Fluxer',
+				product_name: 'Hearth',
 			},
 			setup: {
 				configured: false,
@@ -315,7 +315,7 @@ function requireString(value: string | undefined, envName: string): void {
 	}
 }
 
-const DEVELOPMENT_PROFILE_PSEUDONYM_SECRET = 'fluxer-dev-profile-pseudonym-secret';
+const DEVELOPMENT_PROFILE_PSEUDONYM_SECRET = 'hearth-dev-profile-pseudonym-secret';
 
 function applyProfilePseudonymSecret(config: MasterConfig): void {
 	if (config.auth.profile_pseudonym_secret.trim().length > 0) {
@@ -500,7 +500,7 @@ function validatePostgresConfig(config: MasterConfig): void {
 		if (['127.0.0.1', 'localhost'].includes(postgres.host.trim().toLowerCase())) {
 			throw new Error('FLUXER_POSTGRES_HOST must be explicitly configured for production');
 		}
-		if (postgres.password === 'fluxer') {
+		if (postgres.password === 'hearth') {
 			throw new Error('FLUXER_POSTGRES_PASSWORD must not use the development default in production');
 		}
 	}
@@ -657,7 +657,7 @@ function validateDomain(value: string, envName: string): void {
 
 function validatePublicEndpoints(endpoints: DerivedEndpoints): void {
 	for (const [key, value] of Object.entries(endpoints)) {
-		const envName = `FLUXER_${key.toUpperCase()}_ENDPOINT`;
+		const envName = `HEARTH_${key.toUpperCase()}_ENDPOINT`;
 		requireString(value, envName);
 		const gateway = key === 'gateway';
 		const parsed = URL.parse(value);
@@ -721,7 +721,7 @@ function normalizeConfig(config: MasterConfig): MasterConfig {
 	assertIntegerInRange(config.domain.public_port, 'FLUXER_PUBLIC_PORT', 1, 65_535);
 	requireString(config.domain.base_domain, 'FLUXER_BASE_DOMAIN');
 	for (const key of ['base_domain', 'static_cdn_domain', 'invite_domain', 'gift_domain'] as const) {
-		validateDomain(config.domain[key], `FLUXER_${key.toUpperCase()}`);
+		validateDomain(config.domain[key], `HEARTH_${key.toUpperCase()}`);
 	}
 	requireString(config.auth.sudo_mode_secret, 'FLUXER_SUDO_MODE_SECRET');
 	requireString(config.auth.connection_initiation_secret, 'FLUXER_CONNECTION_INITIATION_SECRET');
@@ -868,7 +868,7 @@ export async function loadConfig(): Promise<MasterConfig> {
 	if (cachedConfig) {
 		return cachedConfig;
 	}
-	const overrides = buildNamedFluxerEnvOverrides(process.env);
+	const overrides = buildNamedHearthEnvOverrides(process.env);
 	const merged = applySelfHostedEnvDefault(
 		applyPublicOrigin(mergeConfig(defaultConfig(), overrides)),
 		readEnvValue(process.env, 'FLUXER_ENV'),

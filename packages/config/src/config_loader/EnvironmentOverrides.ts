@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 import {readFileSync} from 'node:fs';
-import {type ConfigObject, isConfigObject} from '@fluxer/config/src/config_loader/ConfigObject';
+import {type ConfigObject, isConfigObject} from '@hearth/config/src/config_loader/ConfigObject';
 
 type ConfigPathKey = string | number;
 type ConfigContainer = ConfigObject | Array<unknown>;
@@ -553,7 +553,7 @@ export function readEnvValue(env: NodeJS.ProcessEnv, name: string): string | und
 	return nonBlank(contents.replace(/\r?\n$/, ''));
 }
 
-export function buildNamedFluxerEnvOverrides(env: NodeJS.ProcessEnv): ConfigObject {
+export function buildNamedHearthEnvOverrides(env: NodeJS.ProcessEnv): ConfigObject {
 	const overrides: ConfigObject = {};
 	for (const [envKey, mapping] of Object.entries(NAMED_FLUXER_ENV_OVERRIDES)) {
 		const alias = NAMED_FLUXER_ENV_ALIASES[envKey];

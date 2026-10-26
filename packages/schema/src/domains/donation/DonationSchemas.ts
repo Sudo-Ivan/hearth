@@ -3,7 +3,7 @@
 import {
 	DONATION_CURRENCIES,
 	getDonationAmountConstraints,
-} from '@fluxer/schema/src/domains/donation/DonationAmountUtils';
+} from '@hearth/schema/src/domains/donation/DonationAmountUtils';
 import {z} from 'zod';
 
 const DonorEmail = z.string().trim().toLowerCase().check(z.email()).max(254);

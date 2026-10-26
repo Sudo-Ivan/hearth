@@ -2,7 +2,7 @@
 
 use std::time::{Duration, Instant};
 
-use fluxer_markdown_parser::{EmojiContext, MarkdownParser, ParserFlags};
+use hearth_markdown_parser::{EmojiContext, MarkdownParser, ParserFlags};
 
 #[test]
 fn unclosed_masked_links_parse_in_linear_time() {

@@ -369,7 +369,7 @@ export const ERROR_I18N_MESSAGES = {
 	'donation.magic_link_used': 'Magic link has already been used.',
 	'operator_pass.offer_unavailable': 'This pass cannot be passed on to that account right now.',
 	'operator_pass.offer_busy': 'Another offer from your account is still being sent. Try again in a moment.',
-	'operator_pass.recipient_not_friend': 'You can only pass this on to one of your friends on Fluxer.',
+	'operator_pass.recipient_not_friend': 'You can only pass this on to one of your friends on Hearth.',
 	'operator_pass.not_transferable':
 		'This pass cannot be passed on. A pass you received, or one that comes with Visionary, stays with you.',
 	'operator_pass.last_pass_confirmation_required':
@@ -711,11 +711,11 @@ export const ERROR_I18N_MESSAGES = {
 		'Username can only contain Latin letters (a-z, A-Z), numbers (0-9), and underscores (_).',
 	'usernames_and_tags.username_length_invalid': 'Username must be between {min} and {max} characters.',
 	'usernames_and_tags.username_not_available': 'This username is not available.',
-	'usernames_and_tags.username_reserved_terms': 'Username can\'t contain "fluxer" or "system message".',
+	'usernames_and_tags.username_reserved_terms': 'Username can\'t contain "hearth" or "system message".',
 	'usernames_and_tags.username_reserved_value': 'Username can\'t be "everyone" or "here".',
 	'vanity_urls.vanity_url_already_taken': 'This vanity URL is already taken.',
 	'vanity_urls.vanity_url_code_already_taken': 'Vanity URL code is already taken.',
-	'vanity_urls.vanity_url_code_cannot_contain_fluxer': 'Vanity URL code can\'t contain "fluxer".',
+	'vanity_urls.vanity_url_code_cannot_contain_hearth': 'Vanity URL code can\'t contain "hearth".',
 	'vanity_urls.vanity_url_code_length_invalid': 'Vanity URL code must be between {min} and {max} characters.',
 	'vanity_urls.vanity_url_invalid_characters':
 		'Vanity URL can only contain lowercase letters (a-z), digits (0-9), and hyphens (-).',

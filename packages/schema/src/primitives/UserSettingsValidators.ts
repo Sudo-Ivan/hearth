@@ -22,12 +22,12 @@ import {
 	UserNotificationSettingsDescriptions,
 	UserPremiumTypes,
 	UserPremiumTypesDescriptions,
-} from '@fluxer/constants/src/UserConstants';
+} from '@hearth/constants/src/UserConstants';
 import {
 	createInt32EnumType,
 	createNamedStringLiteralUnion,
 	withOpenApiType,
-} from '@fluxer/schema/src/primitives/SchemaPrimitives';
+} from '@hearth/schema/src/primitives/SchemaPrimitives';
 
 export const GuildFolderIconSchema = withOpenApiType(
 	createNamedStringLiteralUnion(

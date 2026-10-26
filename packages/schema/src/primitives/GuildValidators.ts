@@ -8,9 +8,9 @@ import {
 	GuildSplashCardAlignment,
 	GuildVerificationLevel,
 	JoinSourceTypes,
-} from '@fluxer/constants/src/GuildConstants';
-import {MessageNotifications} from '@fluxer/constants/src/NotificationConstants';
-import {createInt32EnumType, createNamedLiteralUnion} from '@fluxer/schema/src/primitives/SchemaPrimitives';
+} from '@hearth/constants/src/GuildConstants';
+import {MessageNotifications} from '@hearth/constants/src/NotificationConstants';
+import {createInt32EnumType, createNamedLiteralUnion} from '@hearth/schema/src/primitives/SchemaPrimitives';
 import {z} from 'zod';
 
 const RETIRED_GUILD_VERIFICATION_LEVEL = 4;

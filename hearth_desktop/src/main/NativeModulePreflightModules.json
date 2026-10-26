@@ -1,0 +1,97 @@
+[
+	{
+		"name": "@hearth/webauthn",
+		"platforms": ["darwin", "linux", "win32"],
+		"severity": "fatal"
+	},
+	{
+		"name": "@hearth/platform-info",
+		"platforms": ["darwin", "linux", "win32"],
+		"severity": "fatal"
+	},
+	{
+		"name": "@hearth/mac-app-audio",
+		"platforms": ["darwin"],
+		"severity": "fatal"
+	},
+	{
+		"name": "@hearth/mac-clipboard",
+		"platforms": ["darwin"],
+		"severity": "fatal"
+	},
+	{
+		"name": "@hearth/mac-sysctl",
+		"platforms": ["darwin"],
+		"severity": "fatal"
+	},
+	{
+		"name": "@hearth/mac-tcc",
+		"platforms": ["darwin"],
+		"severity": "fatal"
+	},
+	{
+		"name": "@hearth/macos-input-hook",
+		"platforms": ["darwin"],
+		"severity": "fatal"
+	},
+	{
+		"name": "@hearth/linux-audio-capture",
+		"platforms": ["linux"],
+		"severity": "fatal"
+	},
+	{
+		"name": "@hearth/linux-evdev",
+		"platforms": ["linux"],
+		"severity": "fatal"
+	},
+	{
+		"name": "@hearth/linux-input-hook",
+		"platforms": ["linux"],
+		"severity": "fatal"
+	},
+	{
+		"name": "@hearth/linux-notifications",
+		"platforms": ["linux"],
+		"severity": "fatal"
+	},
+	{
+		"name": "@hearth/linux-portals",
+		"platforms": ["linux"],
+		"severity": "fatal"
+	},
+	{
+		"name": "@hearth/system-hunspell",
+		"platforms": ["linux"],
+		"severity": "fatal"
+	},
+	{
+		"name": "@hearth/win-clipboard",
+		"platforms": ["win32"],
+		"severity": "fatal"
+	},
+	{
+		"name": "@hearth/win-process-loopback",
+		"platforms": ["win32"],
+		"severity": "fatal"
+	},
+	{
+		"name": "@hearth/win-shell",
+		"platforms": ["win32"],
+		"severity": "fatal"
+	},
+	{
+		"name": "@hearth/windows-input-hook",
+		"platforms": ["win32"],
+		"severity": "fatal"
+	},
+	{
+		"name": "@hearth/app-store",
+		"platforms": ["darwin", "linux", "win32"],
+		"severity": "degraded"
+	},
+	{
+		"name": "@hearth/gateway-socket",
+		"platforms": ["darwin", "linux", "win32"],
+		"severity": "degraded"
+	}
+]

@@ -4,7 +4,7 @@
 		"lib": ["ESNext", "DOM"],
 		"types": ["node"],
 		"paths": {
-			"@fluxer/*": ["./../../packages/*"]
+			"@hearth/*": ["./../../packages/*"]
 		}
 	},
 	"include": ["src/**/*.tsx", "src/**/*.ts"]

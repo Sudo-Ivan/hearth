@@ -15,16 +15,16 @@ were changed:
 
 | Original | Modified Version |
 | --- | --- |
-| IBM Plex Sans | Fluxer Sans |
-| IBM Plex Mono | Fluxer Mono |
-| IBM Plex Sans Arabic | Fluxer Sans Arabic |
-| IBM Plex Sans Devanagari | Fluxer Sans Devanagari |
-| IBM Plex Sans Hebrew | Fluxer Sans Hebrew |
-| IBM Plex Sans Thai Looped | Fluxer Sans Thai Looped |
-| IBM Plex Sans JP | Fluxer Sans JP |
-| IBM Plex Sans KR | Fluxer Sans KR |
-| IBM Plex Sans SC | Fluxer Sans SC |
-| IBM Plex Sans TC | Fluxer Sans TC |
+| IBM Plex Sans | Hearth Sans |
+| IBM Plex Mono | Hearth Mono |
+| IBM Plex Sans Arabic | Hearth Sans Arabic |
+| IBM Plex Sans Devanagari | Hearth Sans Devanagari |
+| IBM Plex Sans Hebrew | Hearth Sans Hebrew |
+| IBM Plex Sans Thai Looped | Hearth Sans Thai Looped |
+| IBM Plex Sans JP | Hearth Sans JP |
+| IBM Plex Sans KR | Hearth Sans KR |
+| IBM Plex Sans SC | Hearth Sans SC |
+| IBM Plex Sans TC | Hearth Sans TC |
 
 The `gasp` table was normalised, and the JP, KR, SC and TC families were split
 into subsets. The copyright, licence, trademark, manufacturer, designer and

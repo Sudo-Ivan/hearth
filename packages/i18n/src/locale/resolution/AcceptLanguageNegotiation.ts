@@ -1,13 +1,13 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import {type LocaleCode, Locales} from '@fluxer/constants/src/Locales';
+import {type LocaleCode, Locales} from '@hearth/constants/src/Locales';
 import {
 	DEFAULT_LOCALE,
 	findLocaleByLanguagePrefix,
 	getLocaleByCode,
 	getPreferredLocaleForLanguageCode,
 	normalizeLocaleCode,
-} from '@fluxer/i18n/src/locale/catalog/LocaleCatalog';
+} from '@hearth/i18n/src/locale/catalog/LocaleCatalog';
 
 interface AcceptLanguagePreference {
 	locale: string;

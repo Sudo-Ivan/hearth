@@ -1,0 +1,11 @@
+/.velopack/
+/dist-electron/
+
+/native/**/*.node
+/native/webauthn/*.so*
+/native/win-game-capture/hearth-game-hook.*.dll
+/native/win-game-capture/hearth-inject-helper.*.exe
+/native/win-game-capture/hearth-vulkan-layer.*.dll
+/native/win-game-capture/hearth-vulkan-layer.*.json
+
+/src/common/BuildChannel.ts

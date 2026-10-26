@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import {createInt32EnumType} from '@fluxer/schema/src/primitives/SchemaPrimitives';
+import {createInt32EnumType} from '@hearth/schema/src/primitives/SchemaPrimitives';
 
 export const WebhookTypeSchema = createInt32EnumType(
 	[

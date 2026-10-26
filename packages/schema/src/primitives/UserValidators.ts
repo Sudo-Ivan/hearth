@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import {ValidationErrorCodes} from '@fluxer/constants/src/ValidationErrorCodes';
+import {ValidationErrorCodes} from '@hearth/constants/src/ValidationErrorCodes';
 import {
 	MAX_STRING_PROCESSING_LENGTH,
 	normalizeString,
@@ -10,7 +10,7 @@ import {
 	stripVariationSelectors,
 	withOpenApiType,
 	withStringLengthRangeValidation,
-} from '@fluxer/schema/src/primitives/SchemaPrimitives';
+} from '@hearth/schema/src/primitives/SchemaPrimitives';
 import {z} from 'zod';
 
 const EMAIL_LOCAL_REGEX = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+$/;
@@ -86,7 +86,7 @@ export const UsernameType = withOpenApiType(
 		}, ValidationErrorCodes.USERNAME_RESERVED_VALUE)
 		.refine((value) => {
 			const lowerValue = value.toLowerCase();
-			return !lowerValue.includes('fluxer') && !lowerValue.includes('system message');
+			return !lowerValue.includes('hearth') && !lowerValue.includes('system message');
 		}, ValidationErrorCodes.USERNAME_CANNOT_CONTAIN_RESERVED_TERMS),
 	'UsernameType',
 );

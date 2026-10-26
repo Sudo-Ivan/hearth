@@ -134,9 +134,9 @@ RUN curl --retry 5 --retry-delay 2 --retry-all-errors -fsSL https://deb.nodesour
 
 RUN python3 -m pip install --break-system-packages --no-cache-dir awscli
 
-COPY fluxer_media_proxy/tools/install-native-deps.sh /tmp/fluxer-install-native-deps.sh
-RUN /tmp/fluxer-install-native-deps.sh /usr/local \
-	&& rm /tmp/fluxer-install-native-deps.sh
+COPY hearth_media_proxy/tools/install-native-deps.sh /tmp/hearth-install-native-deps.sh
+RUN /tmp/hearth-install-native-deps.sh /usr/local \
+	&& rm /tmp/hearth-install-native-deps.sh
 
 ENV PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/local/lib64/pkgconfig
 ENV LD_LIBRARY_PATH=/usr/local/lib
@@ -148,15 +148,15 @@ RUN printf '%s\n' \
 		'#error the source-built libheif headers must win the include search' \
 		'#endif' \
 		'int main(void) { return strcmp(heif_get_version(), LIBHEIF_VERSION) != 0; }' \
-		>/tmp/fluxer-heif-probe.c \
-	&& cc /tmp/fluxer-heif-probe.c $(pkg-config --cflags --libs libheif) -o /tmp/fluxer-heif-probe \
-	&& /tmp/fluxer-heif-probe \
+		>/tmp/hearth-heif-probe.c \
+	&& cc /tmp/hearth-heif-probe.c $(pkg-config --cflags --libs libheif) -o /tmp/hearth-heif-probe \
+	&& /tmp/hearth-heif-probe \
 	&& [ "$(pkg-config --variable=prefix libheif)" = /usr/local ] \
-	&& rm /tmp/fluxer-heif-probe.c /tmp/fluxer-heif-probe
+	&& rm /tmp/hearth-heif-probe.c /tmp/hearth-heif-probe
 
-COPY tools/fonts/requirements.txt /tmp/fluxer-fonts-requirements.txt
-RUN python3 -m pip install --break-system-packages --no-cache-dir -r /tmp/fluxer-fonts-requirements.txt \
-	&& rm /tmp/fluxer-fonts-requirements.txt \
+COPY tools/fonts/requirements.txt /tmp/hearth-fonts-requirements.txt
+RUN python3 -m pip install --break-system-packages --no-cache-dir -r /tmp/hearth-fonts-requirements.txt \
+	&& rm /tmp/hearth-fonts-requirements.txt \
 	&& pyftsubset --help >/dev/null \
 	&& python3 -c "import fontTools, brotli"
 
@@ -193,4 +193,4 @@ RUN curl --retry 5 --retry-delay 2 --retry-all-errors -fsSL https://sh.rustup.rs
 	&& cargo install wasm-bindgen-cli --version "${WASM_BINDGEN_VERSION}" --locked \
 	&& rm -rf "/home/${USERNAME}/.cargo/registry" "/home/${USERNAME}/.cargo/git"
 
-WORKDIR /workspaces/fluxer
+WORKDIR /workspaces/hearth

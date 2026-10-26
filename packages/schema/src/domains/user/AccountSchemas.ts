@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import {ClaimAccountNextSteps} from '@fluxer/constants/src/AccountConfigConstants';
-import {UserPrivateResponse} from '@fluxer/schema/src/domains/user/UserResponseSchemas';
-import {createStringType, SnowflakeStringType} from '@fluxer/schema/src/primitives/SchemaPrimitives';
-import {EmailType, PasswordType} from '@fluxer/schema/src/primitives/UserValidators';
+import {ClaimAccountNextSteps} from '@hearth/constants/src/AccountConfigConstants';
+import {UserPrivateResponse} from '@hearth/schema/src/domains/user/UserResponseSchemas';
+import {createStringType, SnowflakeStringType} from '@hearth/schema/src/primitives/SchemaPrimitives';
+import {EmailType, PasswordType} from '@hearth/schema/src/primitives/UserValidators';
 import {z} from 'zod';
 
 export const GuildEntryResult = z

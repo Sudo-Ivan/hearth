@@ -263,7 +263,7 @@ async fn monitor_object_store_dependency() -> Result<()> {
             .await
     {
         bail!(
-            "Dev object store is unreachable and automatic repair failed: {error}\nRun `fluxer-dev media-proxy doctor --repair` inside the devcontainer, then restart `fluxer-dev dev`."
+            "Dev object store is unreachable and automatic repair failed: {error}\nRun `hearth-dev media-proxy doctor --repair` inside the devcontainer, then restart `hearth-dev dev`."
         );
     }
     println!("Dev object store recovered.");
@@ -325,9 +325,9 @@ fn normalize_selected_tasks(mut selected: Vec<String>, cloudflare_tunnel: bool) 
 
 pub fn task_table() -> Result<BTreeMap<&'static str, DevTask>> {
     let self_tool = self_tool_command()?;
-    let api_dir = ROOT.join("fluxer_api");
+    let api_dir = ROOT.join("hearth_api");
     let api_tsx = api_dir.join("node_modules/.bin/tsx");
-    let app_dir = ROOT.join("fluxer_app");
+    let app_dir = ROOT.join("hearth_app");
     let app_dev_server = ROOT.join("tools/ci/run.sh");
     let public_url = public_url();
     let admin_endpoint =
@@ -413,7 +413,7 @@ pub fn task_table() -> Result<BTreeMap<&'static str, DevTask>> {
     });
     insert(DevTask {
         name: "app-proxy",
-        args: strings(&["cargo", "run", "-p", "fluxer_app_proxy"]),
+        args: strings(&["cargo", "run", "-p", "hearth_app_proxy"]),
         cwd: ROOT.clone(),
         env: vec![
             (
@@ -430,7 +430,7 @@ pub fn task_table() -> Result<BTreeMap<&'static str, DevTask>> {
             ),
             (
                 "FLUXER_STATIC_DIR".to_owned(),
-                Some("fluxer_static".to_owned()),
+                Some("hearth_static".to_owned()),
             ),
             ("RELEASE_CHANNEL".to_owned(), Some("canary".to_owned())),
         ],
@@ -441,9 +441,9 @@ pub fn task_table() -> Result<BTreeMap<&'static str, DevTask>> {
             "cargo",
             "run",
             "-p",
-            "fluxer-media-proxy",
+            "hearth-media-proxy",
             "--bin",
-            "fluxer-media-proxy",
+            "hearth-media-proxy",
             "--",
             "--bind-host",
             ANY_HOST,
@@ -463,9 +463,9 @@ pub fn task_table() -> Result<BTreeMap<&'static str, DevTask>> {
             "cargo",
             "run",
             "-p",
-            "fluxer-push",
+            "hearth-push",
             "--bin",
-            "fluxer-push",
+            "hearth-push",
             "--",
             "--bind-host",
             ANY_HOST,
@@ -506,17 +506,17 @@ pub fn task_table() -> Result<BTreeMap<&'static str, DevTask>> {
             "watch",
             "--no-dot-ignores",
             "-w",
-            "fluxer_admin/src",
+            "hearth_admin/src",
             "-w",
-            "fluxer_admin/Cargo.toml",
+            "hearth_admin/Cargo.toml",
             "-w",
-            "fluxer_admin/build.rs",
+            "hearth_admin/build.rs",
             "-w",
-            "fluxer_admin/openapi-admin.json",
+            "hearth_admin/openapi-admin.json",
             "-w",
-            "fluxer_admin/static",
+            "hearth_admin/static",
             "-x",
-            "run -p fluxer_admin",
+            "run -p hearth_admin",
         ]),
         cwd: ROOT.clone(),
         env: vec![

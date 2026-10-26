@@ -1,5 +1,5 @@
 {
-	"name": "@fluxer/errors",
+	"name": "@hearth/errors",
 	"version": "0.0.0",
 	"private": true,
 	"type": "module",
@@ -12,11 +12,11 @@
 		"typecheck": "tsc --noEmit"
 	},
 	"dependencies": {
-		"@fluxer/constants": "workspace:*",
-		"@fluxer/i18n": "workspace:*",
-		"@fluxer/logger": "workspace:*",
-		"@fluxer/record_utils": "workspace:*",
-		"@fluxer/schema": "workspace:*",
+		"@hearth/constants": "workspace:*",
+		"@hearth/i18n": "workspace:*",
+		"@hearth/logger": "workspace:*",
+		"@hearth/record_utils": "workspace:*",
+		"@hearth/schema": "workspace:*",
 		"hono": "catalog:"
 	},
 	"devDependencies": {

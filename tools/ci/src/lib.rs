@@ -19,7 +19,7 @@ use anyhow::Result;
 use clap::{Parser, Subcommand};
 
 #[derive(Debug, Parser)]
-#[command(name = "fluxer-ci")]
+#[command(name = "hearth-ci")]
 struct Cli {
     #[command(subcommand)]
     command: Command,

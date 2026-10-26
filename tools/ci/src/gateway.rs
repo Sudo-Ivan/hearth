@@ -338,15 +338,15 @@ fn gateway_nif_build(
 fn resolve_gateway_dir() -> Result<PathBuf> {
     let cwd = env::current_dir().context("Failed to resolve current directory")?;
     if cwd.join("rebar.config").is_file()
-        && cwd.file_name().and_then(|value| value.to_str()) == Some("fluxer_gateway")
+        && cwd.file_name().and_then(|value| value.to_str()) == Some("hearth_gateway")
     {
         return Ok(cwd);
     }
-    if cwd.join("fluxer_gateway/rebar.config").is_file() {
-        return Ok(cwd.join("fluxer_gateway"));
+    if cwd.join("hearth_gateway/rebar.config").is_file() {
+        return Ok(cwd.join("hearth_gateway"));
     }
     Err(anyhow!(
-        "Could not resolve fluxer_gateway directory from {}",
+        "Could not resolve hearth_gateway directory from {}",
         cwd.display()
     ))
 }

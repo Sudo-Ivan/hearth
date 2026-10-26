@@ -38,7 +38,7 @@ use tempfile::TempDir;
 use walkdir::WalkDir;
 use zip::write::SimpleFileOptions;
 
-const PACKAGE_ORIGIN_BASE: &str = "https://pkgs.fluxer.com";
+const PACKAGE_ORIGIN_BASE: &str = "https://pkgs.hearth.com";
 const PACKAGE_ORIGIN_BASE_ENV: &str = "PKGS_DOWNLOAD_BASE_URL";
 const PNPM_VERSION: &str = "12.4.2";
 const RUST_TOOLCHAIN: &str = "1.98.1";
@@ -63,8 +63,8 @@ const DESKTOP_MODULE_FILE_LIST_NAME: &str = "module.json";
 const DESKTOP_MODULE_CLASSIFICATION_NAME: &str = "classification.json";
 pub(crate) const DESKTOP_MODULE_PACKAGE_NAME: &str = "package.br";
 const DESKTOP_MODULE_PACKAGE_CHECKSUM_NAME: &str = "package.br.sha256";
-pub(crate) const DESKTOP_RENDERER_MODULE: &str = "fluxer_renderer";
-const DESKTOP_SOURCEMAP_MODULE: &str = "fluxer_sourcemaps";
+pub(crate) const DESKTOP_RENDERER_MODULE: &str = "hearth_renderer";
+const DESKTOP_SOURCEMAP_MODULE: &str = "hearth_sourcemaps";
 const DESKTOP_SOURCEMAP_EXTENSION: &str = "map";
 const DESKTOP_MODULE_ASSETS_DIR_NAME: &str = "assets";
 const DESKTOP_MODULE_NAME_MAX_LENGTH: usize = 64;
@@ -87,7 +87,7 @@ const DESKTOP_MODULE_ASSET_SEGMENT_RULE: &str = "module_asset_segment";
 const DESKTOP_RENDERER_REMAINDER_RULE: &str = "renderer_remainder";
 const DESKTOP_SOURCEMAP_RULE: &str = "source_map";
 const DESKTOP_SPELLCHECK_DICTIONARY_RULE: &str = "spellcheck_dictionary";
-const DESKTOP_DICTIONARY_MODULE_PREFIX: &str = "fluxer_dict_";
+const DESKTOP_DICTIONARY_MODULE_PREFIX: &str = "hearth_dict_";
 const DESKTOP_DICTIONARY_PACKAGE_PREFIX: &str = "dictionary-";
 const DESKTOP_DICTIONARY_FILE_NAMES: &[&str] = &["index.aff", "index.dic"];
 const DESKTOP_MODULE_MINIMUM_SHELL_VERSION: &str = "0.0.0";
@@ -187,7 +187,7 @@ const PLATFORMS: &[Platform] = &[
     Platform {
         platform: "macos",
         arch: MACOS_UNIVERSAL_ARCH,
-        os: "fluxer-desktop-macos-arm64",
+        os: "hearth-desktop-macos-arm64",
         electron_arch: MACOS_UNIVERSAL_ARCH,
     },
     Platform {
@@ -314,14 +314,14 @@ fn set_build_channel_step() -> Result<()> {
 
 fn resolve_desktop_dir() -> Result<PathBuf> {
     let cwd = env::current_dir().context("Failed to resolve current directory")?;
-    if cwd.file_name().and_then(|value| value.to_str()) == Some("fluxer_desktop") {
+    if cwd.file_name().and_then(|value| value.to_str()) == Some("hearth_desktop") {
         return Ok(cwd);
     }
-    if cwd.join("fluxer_desktop").is_dir() {
-        return Ok(cwd.join("fluxer_desktop"));
+    if cwd.join("hearth_desktop").is_dir() {
+        return Ok(cwd.join("hearth_desktop"));
     }
     Err(anyhow!(
-        "Could not resolve fluxer_desktop directory from {}",
+        "Could not resolve hearth_desktop directory from {}",
         cwd.display()
     ))
 }
@@ -468,7 +468,7 @@ fn workdir_path(value: &str) -> PathBuf {
 }
 
 fn desktop_dist_dir() -> PathBuf {
-    workdir().join("fluxer_desktop").join("dist-electron")
+    workdir().join("hearth_desktop").join("dist-electron")
 }
 
 async fn windows_paths_step() -> Result<()> {
@@ -720,7 +720,7 @@ fn install_setuptools_macos_step() -> Result<()> {
 }
 
 async fn install_linux_deps_step() -> Result<()> {
-    let apt_conf = runner_temp().join("99fluxer-ci-network");
+    let apt_conf = runner_temp().join("99hearth-ci-network");
     fs::write(
         &apt_conf,
         r#"Acquire::Retries "6";
@@ -734,7 +734,7 @@ DPkg::Lock::Timeout "120";
     run_command(CommandSpec::new("sudo").args([
         "cp",
         apt_conf.to_string_lossy().as_ref(),
-        "/etc/apt/apt.conf.d/99fluxer-ci-network",
+        "/etc/apt/apt.conf.d/99hearth-ci-network",
     ]))?;
 
     rewrite_ubuntu_ports_sources()?;
@@ -1430,7 +1430,7 @@ struct DesktopSharedAssetManifest {
 
 fn desktop_renderer_dir() -> PathBuf {
     workdir()
-        .join("fluxer_desktop")
+        .join("hearth_desktop")
         .join("dist")
         .join("renderer")
 }
@@ -2091,7 +2091,7 @@ fn desktop_dictionary_module_name(directory_name: &str) -> Option<String> {
 
 fn desktop_dictionary_source_root() -> PathBuf {
     workdir()
-        .join("fluxer_static")
+        .join("hearth_static")
         .join("desktop")
         .join("spellcheck")
         .join("dictionaries")
@@ -2101,7 +2101,7 @@ fn desktop_dictionary_sources() -> Result<Vec<(String, PathBuf)>> {
     run_command(
         CommandSpec::new("sh").arg(
             workdir()
-                .join("fluxer_static")
+                .join("hearth_static")
                 .join("fetch-spellcheck-dictionaries.sh"),
         ),
     )?;
@@ -2590,7 +2590,7 @@ fn validate_macos_signing_env() -> Result<PathBuf> {
         missing.join(" ")
     );
 
-    let keychain = require_home()?.join("Library/Keychains/fluxer-build.keychain-db");
+    let keychain = require_home()?.join("Library/Keychains/hearth-build.keychain-db");
     ensure!(
         keychain.exists(),
         "Signing keychain {} not found on runner host. Run the runner's keychain bootstrap to import the Developer ID cert.",
@@ -2698,14 +2698,14 @@ fn verify_bundle_id_step() -> Result<()> {
     ]))?;
 
     let expected = if build_channel == "canary" {
-        "app.fluxer.canary"
+        "app.hearth.canary"
     } else {
-        "app.fluxer"
+        "app.hearth"
     };
     let expected_profile = if build_channel == "canary" {
-        "3G5837T29K.app.fluxer.canary"
+        "3G5837T29K.app.hearth.canary"
     } else {
-        "3G5837T29K.app.fluxer"
+        "3G5837T29K.app.hearth"
     };
     println!("Bundle id in zip: {bid} (expected: {expected})");
     ensure!(bid == expected, "Unexpected bundle id: {bid}");
@@ -2784,15 +2784,15 @@ fn macos_native_runtime_targets(electron_arch: &str) -> Vec<(String, &'static st
         "x86_64"
     };
     [
-        "@fluxer/webauthn/webauthn",
-        "@fluxer/mac-app-audio/mac-app-audio",
-        "@fluxer/mac-clipboard/mac-clipboard",
-        "@fluxer/mac-sysctl/mac-sysctl",
-        "@fluxer/mac-tcc/mac-tcc",
-        "@fluxer/macos-input-hook/macos-input-hook",
-        "@fluxer/platform-info/platform-info",
-        "@fluxer/app-store/app-store",
-        "@fluxer/gateway-socket/gateway-socket",
+        "@hearth/webauthn/webauthn",
+        "@hearth/mac-app-audio/mac-app-audio",
+        "@hearth/mac-clipboard/mac-clipboard",
+        "@hearth/mac-sysctl/mac-sysctl",
+        "@hearth/mac-tcc/mac-tcc",
+        "@hearth/macos-input-hook/macos-input-hook",
+        "@hearth/platform-info/platform-info",
+        "@hearth/app-store/app-store",
+        "@hearth/gateway-socket/gateway-socket",
     ]
     .into_iter()
     .map(|prefix| {
@@ -2945,17 +2945,17 @@ struct VelopackAssetIndexEntry {
 
 fn windows_package_config(build_channel: &str, arch: &str) -> Result<WindowsPackageConfig> {
     let (pack_id, pack_title, artifact_prefix, icon_dir) = match build_channel {
-        "stable" => ("fluxer_desktop", "Fluxer", "Fluxer", "icons-stable"),
+        "stable" => ("hearth_desktop", "Hearth", "Hearth", "icons-stable"),
         "canary" => (
-            "fluxer_desktop_canary",
-            "Fluxer Canary",
-            "Fluxer-Canary",
+            "hearth_desktop_canary",
+            "Hearth Canary",
+            "Hearth-Canary",
             "icons-canary",
         ),
         "development" => (
-            "fluxer_desktop_development",
-            "Fluxer Development",
-            "Fluxer-Development",
+            "hearth_desktop_development",
+            "Hearth Development",
+            "Hearth-Development",
             "icons-development",
         ),
         other => bail!(
@@ -3037,7 +3037,7 @@ fn pack_and_validate_windows_velopack(
         "--packTitle",
         config.pack_title,
         "--packAuthors",
-        "Fluxer Platform AB",
+        "Hearth Platform AB",
         "--shortcuts",
         "Desktop,StartMenu",
         "--runtime",
@@ -3063,7 +3063,7 @@ fn remove_velopack_portable_archives(output_dir: &Path) -> Result<()> {
         }
         fs::remove_file(&path).with_context(|| format!("Failed to remove {}", path.display()))?;
         println!(
-            "Removed Velopack portable archive {}. Fluxer publishes its own portable ZIP built from the signed application tree.",
+            "Removed Velopack portable archive {}. Hearth publishes its own portable ZIP built from the signed application tree.",
             path.display()
         );
     }
@@ -3401,7 +3401,7 @@ fn create_portable_zip_windows_step() -> Result<()> {
     Ok(())
 }
 
-const FLUXER_WINDOWS_SIGNER_COMMON_NAME: &str = "Fluxer Platform AB";
+const FLUXER_WINDOWS_SIGNER_COMMON_NAME: &str = "Hearth Platform AB";
 const THIRD_PARTY_WINDOWS_SIGNATURE_ALLOWLIST: &[(&str, &str)] = &[
     (
         "d3dcompiler_47.dll",
@@ -3414,12 +3414,12 @@ const THIRD_PARTY_WINDOWS_SIGNATURE_ALLOWLIST: &[(&str, &str)] = &[
 ];
 const KNOWN_OPTIONAL_WINDOWS_PE_INVENTORY: &[&str] = &[];
 const FORBIDDEN_WINDOWS_GAME_CAPTURE_ARTIFACT_PREFIXES: &[&str] = &[
-    "fluxer-game-hook.",
-    "fluxer-inject-helper.",
-    "fluxer-vulkan-layer.",
-    "fluxer_game_hook.",
-    "fluxer_inject_helper.",
-    "fluxer_vulkan_layer.",
+    "hearth-game-hook.",
+    "hearth-inject-helper.",
+    "hearth-vulkan-layer.",
+    "hearth_game_hook.",
+    "hearth_inject_helper.",
+    "hearth_vulkan_layer.",
 ];
 const WINDOWS_NATIVE_ADDON_STEMS: &[&str] = &[
     "app-store",
@@ -4011,7 +4011,7 @@ fn certificate_common_name(subject: &str) -> Option<&str> {
         .find_map(|component| component.strip_prefix("CN="))
 }
 
-fn assert_fluxer_signed(row: &SignatureRow) -> Result<()> {
+fn assert_hearth_signed(row: &SignatureRow) -> Result<()> {
     ensure!(
         row.status == "Valid",
         "Authenticode status is {} (expected Valid)",
@@ -4062,10 +4062,10 @@ fn assert_third_party_signed(row: &SignatureRow, relative: &str) -> Result<()> {
 }
 
 fn assert_signed_by_known_publisher(row: &SignatureRow, relative: &str) -> Result<()> {
-    match assert_fluxer_signed(row) {
+    match assert_hearth_signed(row) {
         Ok(()) => Ok(()),
-        Err(fluxer_error) => assert_third_party_signed(row, relative)
-            .map_err(|third_party_error| anyhow!("{fluxer_error}; {third_party_error}")),
+        Err(hearth_error) => assert_third_party_signed(row, relative)
+            .map_err(|third_party_error| anyhow!("{hearth_error}; {third_party_error}")),
     }
 }
 
@@ -4575,7 +4575,7 @@ fn handoff_artifact_name(
     } else {
         ""
     };
-    format!("fluxer-desktop-{build_channel}-{platform}-{arch}{signed_suffix}")
+    format!("hearth-desktop-{build_channel}-{platform}-{arch}{signed_suffix}")
 }
 
 fn build_payload_step() -> Result<()> {
@@ -4698,7 +4698,7 @@ fn prepare_release_assets_step() -> Result<()> {
         kind: DesktopReleaseKind::Full,
         channel: channel.clone(),
         version: version.clone(),
-        release_tag: format!("fluxer-desktop-{channel}@{version}"),
+        release_tag: format!("hearth-desktop-{channel}@{version}"),
         source_sha,
         assets: descriptor_assets,
         modules: descriptor_modules,
@@ -4947,7 +4947,7 @@ struct ArtifactIdentity {
 }
 
 fn parse_artifact_dir_name(base: &str, channel: &str) -> Option<ArtifactIdentity> {
-    let prefix = format!("fluxer-desktop-{channel}-");
+    let prefix = format!("hearth-desktop-{channel}-");
     let rest = base.strip_prefix(&prefix)?;
     let (rest, signed) = rest
         .strip_suffix("-signed")
@@ -5570,10 +5570,10 @@ const DESKTOP_SHELL_CONTRACT_FILE: &str = "shell-contract.json";
 const DESKTOP_LIVE_MANIFEST_TIMEOUT: Duration = Duration::from_secs(30);
 const DESKTOP_FIRST_MODULE_SHELL_COMMIT: &str = "7c5fa2180a60e4d39bb06c3c384557fd9a3eabc4";
 const DESKTOP_CONTRACT_ROOTS: &[&str] = &[
-    "fluxer_desktop/src/preload/index.ts",
-    "fluxer_app/src/types/electron.d.ts",
+    "hearth_desktop/src/preload/index.ts",
+    "hearth_app/src/types/electron.d.ts",
 ];
-const DESKTOP_CONTRACT_MAIN_DIR: &str = "fluxer_desktop/src/main/";
+const DESKTOP_CONTRACT_MAIN_DIR: &str = "hearth_desktop/src/main/";
 const DESKTOP_CONTRACT_MAIN_BOUNDARY_PREFIX: &str = "LocalApp";
 const DESKTOP_CONTRACT_IPC_CALLS: &[&str] = &[
     "ipcMain.handle(",
@@ -5595,8 +5595,8 @@ const DESKTOP_CONTRACT_PROBE_SUFFIXES: &[&str] = &[
     "/index.ts",
 ];
 const DESKTOP_CONTRACT_ELECTRON_ALIAS: &str = "@electron/";
-const DESKTOP_CONTRACT_ELECTRON_ROOT: &str = "fluxer_desktop/src/";
-const DESKTOP_CONTRACT_PACKAGE_ALIAS: &str = "@fluxer/";
+const DESKTOP_CONTRACT_ELECTRON_ROOT: &str = "hearth_desktop/src/";
+const DESKTOP_CONTRACT_PACKAGE_ALIAS: &str = "@hearth/";
 const DESKTOP_CONTRACT_EXPORT_CONDITIONS: &[&str] = &["types", "import", "default"];
 const DESKTOP_CONTRACT_GENERATED_MODULES: &[&str] = &["@electron/common/BuildChannel"];
 
@@ -6770,7 +6770,7 @@ fn prepare_modules_release_assets_step() -> Result<()> {
         kind: DesktopReleaseKind::Modules,
         channel: channel.clone(),
         version: version.clone(),
-        release_tag: format!("fluxer-desktop-{channel}@{version}"),
+        release_tag: format!("hearth-desktop-{channel}@{version}"),
         source_sha,
         assets: Vec::new(),
         modules: descriptor_modules,
@@ -6994,9 +6994,9 @@ mod tests {
             "pub_date": "2026-10-08T03:23:23Z",
             "metadata_version": 1791433225,
             "shell": {"latest_version": shell, "minimum_version": "0.0.0"},
-            "linux_security_minimum": {"version": "2026.1001.1", "required_modules": ["fluxer_renderer"]},
+            "linux_security_minimum": {"version": "2026.1001.1", "required_modules": ["hearth_renderer"]},
             "modules": {},
-            "required_modules": ["fluxer_renderer"],
+            "required_modules": ["hearth_renderer"],
         })
     }
 
@@ -7040,24 +7040,24 @@ mod tests {
     fn contract_fixture() -> Vec<(&'static str, &'static str)> {
         vec![
             (
-                "fluxer_desktop/src/preload/index.ts",
-                "import {isRecord} from '@fluxer/record_utils/src/RecordGuards';\nimport {BUILD_CHANNEL} from '@electron/common/BuildChannel';\nimport type {DesktopApi} from '@electron/common/Types';\nimport {bridge} from '@fluxer/voice_engine_v2/bridge';\nexport {helper} from './Helper';\nimport {contextBridge} from 'electron';\nconst later = import.meta.url;\nconst lazy = () => import('@electron/preload/Lazy');\n",
+                "hearth_desktop/src/preload/index.ts",
+                "import {isRecord} from '@hearth/record_utils/src/RecordGuards';\nimport {BUILD_CHANNEL} from '@electron/common/BuildChannel';\nimport type {DesktopApi} from '@electron/common/Types';\nimport {bridge} from '@hearth/voice_engine_v2/bridge';\nexport {helper} from './Helper';\nimport {contextBridge} from 'electron';\nconst later = import.meta.url;\nconst lazy = () => import('@electron/preload/Lazy');\n",
             ),
             (
-                "fluxer_desktop/src/preload/Helper.ts",
+                "hearth_desktop/src/preload/Helper.ts",
                 "export const helper = 1;\n",
             ),
             (
-                "fluxer_desktop/src/preload/Lazy.ts",
+                "hearth_desktop/src/preload/Lazy.ts",
                 "export const lazy = 1;\n",
             ),
             (
-                "fluxer_desktop/src/preload/splash.cjs",
+                "hearth_desktop/src/preload/splash.cjs",
                 "require('electron');\n",
             ),
             (
-                "fluxer_desktop/src/common/Types.ts",
-                "export type * from '@fluxer/desktop_ipc/src/DesktopBridgeTypes';\n",
+                "hearth_desktop/src/common/Types.ts",
+                "export type * from '@hearth/desktop_ipc/src/DesktopBridgeTypes';\n",
             ),
             (
                 "packages/desktop_ipc/src/DesktopBridgeTypes.ts",
@@ -7073,37 +7073,37 @@ mod tests {
             ),
             (
                 "packages/voice_engine_v2/package.json",
-                r#"{"name":"@fluxer/voice_engine_v2","exports":{"./bridge":"./src/bridge/index.ts"}}"#,
+                r#"{"name":"@hearth/voice_engine_v2","exports":{"./bridge":"./src/bridge/index.ts"}}"#,
             ),
             (
                 "packages/voice_engine_v2/src/bridge/index.ts",
-                "import type {Frame} from '@fluxer/voice_engine_v2/src/protocol/types';\n",
+                "import type {Frame} from '@hearth/voice_engine_v2/src/protocol/types';\n",
             ),
             (
                 "packages/voice_engine_v2/src/protocol/types.ts",
                 "export interface Frame {}\n",
             ),
             (
-                "fluxer_app/src/types/electron.d.ts",
-                "import type {B} from '@fluxer/desktop_ipc/src/ModuleContract';\nimport type {C} from '@simplewebauthn/browser';\nimport type {D} from '@app/features/Thing';\n",
+                "hearth_app/src/types/electron.d.ts",
+                "import type {B} from '@hearth/desktop_ipc/src/ModuleContract';\nimport type {C} from '@simplewebauthn/browser';\nimport type {D} from '@app/features/Thing';\n",
             ),
             (
-                "fluxer_desktop/src/main/LocalAppProtocol.ts",
+                "hearth_desktop/src/main/LocalAppProtocol.ts",
                 "export const protocol = 1;\n",
             ),
             (
-                "fluxer_desktop/src/main/Updater.ts",
+                "hearth_desktop/src/main/Updater.ts",
                 "ipcMain.handle('updater-check', async () => {});\n",
             ),
             (
-                "fluxer_desktop/src/main/Window.ts",
+                "hearth_desktop/src/main/Window.ts",
                 "export const window = 1;\n",
             ),
             (
-                "fluxer_desktop/src/main/Ipc.test.ts",
+                "hearth_desktop/src/main/Ipc.test.ts",
                 "ipcMain.on('test', () => {});\n",
             ),
-            ("fluxer_desktop/src/main/README.md", "ipcMain.on(\n"),
+            ("hearth_desktop/src/main/README.md", "ipcMain.on(\n"),
         ]
     }
 
@@ -7124,12 +7124,12 @@ mod tests {
         assert_eq!(
             surface.into_iter().collect::<Vec<_>>(),
             vec![
-                "fluxer_app/src/types/electron.d.ts",
-                "fluxer_desktop/src/common/Types.ts",
-                "fluxer_desktop/src/main/LocalAppProtocol.ts",
-                "fluxer_desktop/src/preload/Helper.ts",
-                "fluxer_desktop/src/preload/Lazy.ts",
-                "fluxer_desktop/src/preload/index.ts",
+                "hearth_app/src/types/electron.d.ts",
+                "hearth_desktop/src/common/Types.ts",
+                "hearth_desktop/src/main/LocalAppProtocol.ts",
+                "hearth_desktop/src/preload/Helper.ts",
+                "hearth_desktop/src/preload/Lazy.ts",
+                "hearth_desktop/src/preload/index.ts",
                 "packages/desktop_ipc/src/DesktopBridgeTypes.ts",
                 "packages/desktop_ipc/src/ModuleContract.ts",
                 "packages/record_utils/src/RecordGuards.ts",
@@ -7141,8 +7141,8 @@ mod tests {
 
     #[test]
     fn main_process_files_count_only_where_their_ipc_calls_change() {
-        let surface = BTreeSet::from(["fluxer_desktop/src/main/LocalAppProtocol.ts".to_string()]);
-        let updater = "fluxer_desktop/src/main/Updater.ts";
+        let surface = BTreeSet::from(["hearth_desktop/src/main/LocalAppProtocol.ts".to_string()]);
+        let updater = "hearth_desktop/src/main/Updater.ts";
         let base = "ipcMain.handle('updater-check', async (_event, context) => {\n\treturn check(context);\n});\nfunction poll() {\n\treturn 1;\n}\n";
         let changed = |base: &str, head: &str, path: &str| {
             let base = base.to_string();
@@ -7179,7 +7179,7 @@ mod tests {
             &base.replace("'updater-check'", "'updater-probe'"),
             updater
         ));
-        let tray = "fluxer_desktop/src/main/DesktopTray.ts";
+        let tray = "hearth_desktop/src/main/DesktopTray.ts";
         let send =
             "client.webContents.send('tray-action', {id: 'quit', label: ')'});\nconst other = 1;\n";
         assert!(!changed(
@@ -7196,12 +7196,12 @@ mod tests {
         assert!(changed(
             "a",
             "b",
-            "fluxer_desktop/src/main/LocalAppProtocol.ts"
+            "hearth_desktop/src/main/LocalAppProtocol.ts"
         ));
         assert!(!changed(
             send,
             "",
-            "fluxer_desktop/src/main/fixtures/Tray.ts"
+            "hearth_desktop/src/main/fixtures/Tray.ts"
         ));
     }
 
@@ -7223,7 +7223,7 @@ mod tests {
         let files = contract_fixture()
             .into_iter()
             .map(|(path, contents)| {
-                if path == "fluxer_desktop/src/preload/Helper.ts" {
+                if path == "hearth_desktop/src/preload/Helper.ts" {
                     (path, "import {gone} from '@electron/common/Gone';\n")
                 } else {
                     (path, contents)
@@ -7263,13 +7263,13 @@ mod tests {
         let read = |path: &str| read_worktree_file(&root, path);
         let surface = desktop_shell_contract_surface(&read, &main_files).unwrap();
         for path in [
-            "fluxer_desktop/src/preload/index.ts",
-            "fluxer_desktop/src/preload/LocalAppPreload.ts",
-            "fluxer_desktop/src/common/Types.ts",
+            "hearth_desktop/src/preload/index.ts",
+            "hearth_desktop/src/preload/LocalAppPreload.ts",
+            "hearth_desktop/src/common/Types.ts",
             "packages/desktop_ipc/src/ModuleContract.ts",
             "packages/voice_engine_v2/src/bridge/index.ts",
             "packages/voice_engine_v2/src/protocol/types.ts",
-            "fluxer_app/src/types/electron.d.ts",
+            "hearth_app/src/types/electron.d.ts",
         ] {
             assert!(
                 surface.contains(path),
@@ -7277,8 +7277,8 @@ mod tests {
             );
         }
         for path in [
-            "fluxer_desktop/src/preload/splash.cjs",
-            "fluxer_desktop/src/preload/LegacyHarvestPreload.ts",
+            "hearth_desktop/src/preload/splash.cjs",
+            "hearth_desktop/src/preload/LegacyHarvestPreload.ts",
         ] {
             assert!(
                 !surface.contains(path),
@@ -7334,19 +7334,19 @@ mod tests {
             "2026.1010.1",
             "2026-10-10T00:00:01Z",
             1791590401,
-            &[packed_module("fluxer_renderer", &"a".repeat(64))],
+            &[packed_module("hearth_renderer", &"a".repeat(64))],
             &decided,
         )
         .unwrap();
         assert_eq!(
-            manifest["modules"]["fluxer_renderer"]["minimum_shell_version"], "0.0.0",
+            manifest["modules"]["hearth_renderer"]["minimum_shell_version"], "0.0.0",
             "a modules-only release must not cut off the shell 2026.1008.32323 the AUR package ships"
         );
     }
 
     #[test]
     fn a_contract_change_marked_unchanged_refuses_the_release() {
-        let changes = vec!["fluxer_desktop/src/preload/index.ts".to_string()];
+        let changes = vec!["hearth_desktop/src/preload/index.ts".to_string()];
         let error = decide_shell_compatibility(
             &baseline_shell_compatibility(SHA_BASELINE),
             SHA_BASELINE,
@@ -7359,7 +7359,7 @@ mod tests {
         .to_string();
         assert!(error.contains("shell_contract"), "{error}");
         assert!(
-            error.contains("fluxer_desktop/src/preload/index.ts"),
+            error.contains("hearth_desktop/src/preload/index.ts"),
             "{error}"
         );
         assert!(error.contains(SHA_BASELINE), "{error}");
@@ -7367,7 +7367,7 @@ mod tests {
 
     #[test]
     fn a_compatible_contract_change_keeps_the_floor_and_records_the_paths() {
-        let changes = vec!["fluxer_desktop/src/main/Updater.ts".to_string()];
+        let changes = vec!["hearth_desktop/src/main/Updater.ts".to_string()];
         let mut previous = compatibility("2026.1009.1", SHA_LIVE);
         previous.floor_source_sha = Some(SHA_BASELINE.to_string());
         let decided = decide_shell_compatibility(
@@ -7387,7 +7387,7 @@ mod tests {
 
     #[test]
     fn every_release_states_changes_since_the_oldest_shell_the_floor_admits() {
-        let changes = vec!["fluxer_desktop/src/preload/index.ts".to_string()];
+        let changes = vec!["hearth_desktop/src/preload/index.ts".to_string()];
         let acknowledged = decide_shell_compatibility(
             &baseline_shell_compatibility(SHA_BASELINE),
             SHA_BASELINE,
@@ -7429,7 +7429,7 @@ mod tests {
         let error = decide_shell_compatibility(
             &compatibility("2026.1009.1", SHA_LIVE),
             SHA_BASELINE,
-            &["fluxer_desktop/src/preload/index.ts".to_string()],
+            &["hearth_desktop/src/preload/index.ts".to_string()],
             DesktopShellContractChoice::Raise,
             Some(("2026.10x9.1", SHA_SOURCE)),
             SHA_SOURCE,
@@ -7480,7 +7480,7 @@ mod tests {
             checked,
             vec!["a".repeat(40), "b".repeat(40), "c".repeat(40)]
         );
-        let changes = vec!["fluxer_desktop/src/preload/index.ts".to_string()];
+        let changes = vec!["hearth_desktop/src/preload/index.ts".to_string()];
         let raised = decide_shell_compatibility(
             &baseline_shell_compatibility(SHA_BASELINE),
             SHA_BASELINE,
@@ -7587,7 +7587,7 @@ mod tests {
     fn published(version: &str, coordinates: &[(&str, &str)]) -> DesktopPublishedRelease {
         DesktopPublishedRelease {
             version: version.to_string(),
-            tag: format!("fluxer-desktop-canary@{version}"),
+            tag: format!("hearth-desktop-canary@{version}"),
             assets: coordinates
                 .iter()
                 .map(|(platform, arch)| {
@@ -7667,19 +7667,19 @@ mod tests {
         let renderer = "a".repeat(64);
         let dictionary = "b".repeat(64);
         let packed = vec![
-            packed_module("fluxer_renderer", &renderer),
-            packed_module("fluxer_dict_en", &dictionary),
+            packed_module("hearth_renderer", &renderer),
+            packed_module("hearth_dict_en", &dictionary),
         ];
         let decided = compatibility("2026.1009.1", SHA_SOURCE);
         let mut recorded = live.clone();
         recorded["modules"] = json!({
-            "fluxer_dict_en": {"sha256": dictionary, "bytes": 42, "url": "https://pkgs.invalid/x", "minimum_shell_version": "2026.1001.1", "maximum_shell_version": "2026.1100.1"},
-            "fluxer_renderer": {"sha256": "c".repeat(64), "bytes": 42, "url": "https://pkgs.invalid/y", "minimum_shell_version": "2026.1001.1", "maximum_shell_version": null},
+            "hearth_dict_en": {"sha256": dictionary, "bytes": 42, "url": "https://pkgs.invalid/x", "minimum_shell_version": "2026.1001.1", "maximum_shell_version": "2026.1100.1"},
+            "hearth_renderer": {"sha256": "c".repeat(64), "bytes": 42, "url": "https://pkgs.invalid/y", "minimum_shell_version": "2026.1001.1", "maximum_shell_version": null},
         });
         let mut unrecorded = recorded.clone();
         recorded["shell_compatibility"] =
             serde_json::to_value(compatibility("0.0.0", SHA_LIVE)).unwrap();
-        unrecorded["modules"]["fluxer_dict_en"]["minimum_shell_version"] = json!("2026.1009.45608");
+        unrecorded["modules"]["hearth_dict_en"]["minimum_shell_version"] = json!("2026.1009.45608");
         for (live, dictionary_floor, dictionary_ceiling) in [
             (&recorded, "2026.1001.1", json!("2026.1100.1")),
             (&unrecorded, "2026.1009.1", Value::Null),
@@ -7705,16 +7705,16 @@ mod tests {
                 serde_json::to_value(&decided).unwrap()
             );
             assert_eq!(
-                manifest["modules"]["fluxer_renderer"]["minimum_shell_version"],
+                manifest["modules"]["hearth_renderer"]["minimum_shell_version"],
                 "2026.1009.1"
             );
-            assert!(manifest["modules"]["fluxer_renderer"]["maximum_shell_version"].is_null());
+            assert!(manifest["modules"]["hearth_renderer"]["maximum_shell_version"].is_null());
             assert_eq!(
-                manifest["modules"]["fluxer_dict_en"]["minimum_shell_version"],
+                manifest["modules"]["hearth_dict_en"]["minimum_shell_version"],
                 dictionary_floor
             );
             assert_eq!(
-                manifest["modules"]["fluxer_dict_en"]["maximum_shell_version"],
+                manifest["modules"]["hearth_dict_en"]["maximum_shell_version"],
                 dictionary_ceiling
             );
             let parsed: DesktopChannelManifest = serde_json::from_value(manifest).unwrap();
@@ -7763,14 +7763,14 @@ mod tests {
 
         let upload = workflow_job("upload");
         assert!(
-            upload.contains("pattern: fluxer-desktop-${{ needs.meta.outputs.build_channel }}-*"),
+            upload.contains("pattern: hearth-desktop-${{ needs.meta.outputs.build_channel }}-*"),
             "the upload job must collect every build leg for this channel"
         );
         assert!(upload.contains("path: artifacts"));
-        assert!(upload.contains("name: fluxer-desktop-release-assets"));
+        assert!(upload.contains("name: hearth-desktop-release-assets"));
 
         let publish = workflow_job("publish_release");
-        assert!(publish.contains("name: fluxer-desktop-release-assets"));
+        assert!(publish.contains("name: hearth-desktop-release-assets"));
         assert!(publish.contains("path: release_assets"));
 
         for job in ["build", "upload", "publish_release"] {
@@ -7880,9 +7880,9 @@ mod tests {
     fn payload_artifact_dirs_prefer_signed_windows_artifacts() {
         let temp = tempfile::tempdir().unwrap();
         let artifacts = temp.path();
-        fs::create_dir_all(artifacts.join("fluxer-desktop-canary-windows-x64")).unwrap();
-        fs::create_dir_all(artifacts.join("fluxer-desktop-canary-windows-x64-signed")).unwrap();
-        fs::create_dir_all(artifacts.join("fluxer-desktop-canary-linux-x64")).unwrap();
+        fs::create_dir_all(artifacts.join("hearth-desktop-canary-windows-x64")).unwrap();
+        fs::create_dir_all(artifacts.join("hearth-desktop-canary-windows-x64-signed")).unwrap();
+        fs::create_dir_all(artifacts.join("hearth-desktop-canary-linux-x64")).unwrap();
         fs::create_dir_all(artifacts.join("unrelated")).unwrap();
 
         let selected = payload_artifact_dirs(artifacts, "canary")
@@ -7900,7 +7900,7 @@ mod tests {
             selected,
             vec![
                 (
-                    "fluxer-desktop-canary-linux-x64".to_string(),
+                    "hearth-desktop-canary-linux-x64".to_string(),
                     ArtifactIdentity {
                         platform: "linux".to_string(),
                         arch: "x64".to_string(),
@@ -7908,7 +7908,7 @@ mod tests {
                     },
                 ),
                 (
-                    "fluxer-desktop-canary-windows-x64-signed".to_string(),
+                    "hearth-desktop-canary-windows-x64-signed".to_string(),
                     ArtifactIdentity {
                         platform: "windows".to_string(),
                         arch: "x64".to_string(),
@@ -7923,12 +7923,12 @@ mod tests {
     fn desktop_manifest_uses_checksum_detail_when_present() {
         let temp = tempfile::tempdir().unwrap();
         let root = temp.path();
-        write_file(&root.join("Fluxer-2026.520.1-x64.AppImage"), "app");
+        write_file(&root.join("Hearth-2026.520.1-x64.AppImage"), "app");
         write_file(
-            &root.join("Fluxer-2026.520.1-x64.AppImage.sha256"),
+            &root.join("Hearth-2026.520.1-x64.AppImage.sha256"),
             "abc123\n",
         );
-        write_file(&root.join("Fluxer-2026.520.1-x64.deb"), "deb");
+        write_file(&root.join("Hearth-2026.520.1-x64.deb"), "deb");
 
         let manifest = build_desktop_manifest(
             root,
@@ -7945,14 +7945,14 @@ mod tests {
         assert_eq!(
             manifest.files.get("appimage"),
             Some(&DesktopManifestFile::Detail {
-                filename: "Fluxer-2026.520.1-x64.AppImage".to_string(),
+                filename: "Hearth-2026.520.1-x64.AppImage".to_string(),
                 sha256: "abc123".to_string(),
             })
         );
         assert_eq!(
             manifest.files.get("deb"),
             Some(&DesktopManifestFile::Name(
-                "Fluxer-2026.520.1-x64.deb".to_string()
+                "Hearth-2026.520.1-x64.deb".to_string()
             ))
         );
     }
@@ -7969,7 +7969,7 @@ mod tests {
             minimum_system_version: Some(MACOS_MINIMUM_SYSTEM_VERSION.to_string()),
             files: BTreeMap::from([(
                 "zip".to_string(),
-                DesktopManifestFile::Name("Fluxer-2026.520.1-arm64.zip".to_string()),
+                DesktopManifestFile::Name("Hearth-2026.520.1-arm64.zip".to_string()),
             )]),
         };
 
@@ -7980,7 +7980,7 @@ mod tests {
 
         assert_eq!(
             releases["releases"][0]["updateTo"]["url"],
-            "https://pkgs.fluxer.com/desktop/canary/darwin/arm64/Fluxer-2026.520.1-arm64.zip"
+            "https://pkgs.hearth.com/desktop/canary/darwin/arm64/Hearth-2026.520.1-arm64.zip"
         );
         assert!(temp.path().join("releases.json").exists());
     }
@@ -7990,7 +7990,7 @@ mod tests {
         let temp = tempfile::tempdir().unwrap();
 
         let darwin_root = temp.path().join("darwin");
-        write_file(&darwin_root.join("Fluxer-2026.520.1-arm64.zip"), "zip");
+        write_file(&darwin_root.join("Hearth-2026.520.1-arm64.zip"), "zip");
         let darwin_manifest = build_desktop_manifest(
             &darwin_root,
             &PayloadManifestInput {
@@ -8008,7 +8008,7 @@ mod tests {
         );
 
         let linux_root = temp.path().join("linux");
-        write_file(&linux_root.join("Fluxer-2026.520.1-x64.deb"), "deb");
+        write_file(&linux_root.join("Hearth-2026.520.1-x64.deb"), "deb");
         let linux_manifest = build_desktop_manifest(
             &linux_root,
             &PayloadManifestInput {
@@ -8023,7 +8023,7 @@ mod tests {
         assert_eq!(linux_manifest.minimum_system_version, None);
 
         let windows_root = temp.path().join("win32");
-        write_file(&windows_root.join("Fluxer-Setup-2026.520.1-x64.exe"), "exe");
+        write_file(&windows_root.join("Hearth-Setup-2026.520.1-x64.exe"), "exe");
         let windows_manifest = build_desktop_manifest(
             &windows_root,
             &PayloadManifestInput {
@@ -8041,7 +8041,7 @@ mod tests {
     #[test]
     fn desktop_macos_minimum_matches_electron_builder_config() {
         let config_path = Path::new(env!("CARGO_MANIFEST_DIR"))
-            .join("../../fluxer_desktop/electron-builder.config.cjs");
+            .join("../../hearth_desktop/electron-builder.config.cjs");
         let config = fs::read_to_string(&config_path)
             .expect("the electron-builder config should be readable");
         let declared = config
@@ -8069,7 +8069,7 @@ mod tests {
         }
 
         let entries =
-            velopack_path_lengths(&archive_path, Path::new(r"C:\Users\a\AppData\Local\Fluxer"))
+            velopack_path_lengths(&archive_path, Path::new(r"C:\Users\a\AppData\Local\Hearth"))
                 .unwrap();
 
         assert_eq!(entries[0].name, "deep/path/with/long/file.txt");
@@ -8079,21 +8079,21 @@ mod tests {
     #[test]
     fn windows_package_config_tracks_channel_and_arch() {
         let stable = windows_package_config("stable", "x64").unwrap();
-        assert_eq!(stable.pack_id, "fluxer_desktop");
+        assert_eq!(stable.pack_id, "hearth_desktop");
         assert_eq!(stable.runtime, "win-x64");
-        assert_eq!(stable.main_exe, "Fluxer.exe");
+        assert_eq!(stable.main_exe, "Hearth.exe");
 
         let canary = windows_package_config("canary", "arm64").unwrap();
-        assert_eq!(canary.pack_id, "fluxer_desktop_canary");
+        assert_eq!(canary.pack_id, "hearth_desktop_canary");
         assert_eq!(canary.runtime, "win-arm64");
-        assert_eq!(canary.main_exe, "Fluxer Canary.exe");
+        assert_eq!(canary.main_exe, "Hearth Canary.exe");
 
         let development = windows_package_config("development", "x64").unwrap();
-        assert_eq!(development.pack_id, "fluxer_desktop_development");
-        assert_eq!(development.pack_title, "Fluxer Development");
-        assert_eq!(development.artifact_prefix, "Fluxer-Development");
+        assert_eq!(development.pack_id, "hearth_desktop_development");
+        assert_eq!(development.pack_title, "Hearth Development");
+        assert_eq!(development.artifact_prefix, "Hearth-Development");
         assert_eq!(development.icon_dir, "icons-development");
-        assert_eq!(development.main_exe, "Fluxer Development.exe");
+        assert_eq!(development.main_exe, "Hearth Development.exe");
 
         assert!(windows_package_config("nightly", "x64").is_err());
     }
@@ -8101,7 +8101,7 @@ mod tests {
     #[test]
     fn shipped_account_switching_addons_are_required_windows_binaries() {
         for arch in ["x64", "arm64"] {
-            let inventory = expected_windows_pe_inventory(arch, "Fluxer.exe");
+            let inventory = expected_windows_pe_inventory(arch, "Hearth.exe");
             for stem in ["app-store", "gateway-socket"] {
                 let expected = format!("{stem}.win32-{arch}-msvc.node");
                 assert!(
@@ -8117,7 +8117,7 @@ mod tests {
         for arch in ["x64", "arm64"] {
             let targets = macos_native_runtime_targets(arch);
             for stem in ["app-store", "gateway-socket"] {
-                let expected = format!("@fluxer/{stem}/{stem}.darwin-{arch}.node");
+                let expected = format!("@hearth/{stem}/{stem}.darwin-{arch}.node");
                 assert!(
                     targets.iter().any(|(relative, _)| relative == &expected),
                     "{expected} must be Mach-O architecture verified"
@@ -8142,9 +8142,9 @@ mod tests {
         write_file(&root.join("canary/darwin/arm64/manifest.json"), "{}");
         write_file(&root.join("canary/darwin/x64/manifest.json"), "{}");
         write_file(&root.join("canary/win32/x64/manifest.json"), "{}");
-        write_file(&root.join("canary/win32/arm64/Fluxer.exe"), "exe");
+        write_file(&root.join("canary/win32/arm64/Hearth.exe"), "exe");
         write_file(
-            &root.join("canary/modules/fluxer_renderer/5c1e/package.br"),
+            &root.join("canary/modules/hearth_renderer/5c1e/package.br"),
             "package",
         );
 
@@ -8190,12 +8190,12 @@ mod tests {
             floor_source_sha: Some(SHA_BASELINE.to_string()),
             decision: DesktopShellContractChoice::Raise,
             contract_base_sha: SHA_BASELINE.to_string(),
-            contract_changes: vec!["fluxer_desktop/src/preload/index.ts".to_string()],
+            contract_changes: vec!["hearth_desktop/src/preload/index.ts".to_string()],
         }
     }
 
     fn write_fake_module_payload(root: &Path) -> (PathBuf, Vec<DesktopPackedModule>) {
-        let packed = ["fluxer_renderer", "fluxer_sourcemaps"]
+        let packed = ["hearth_renderer", "hearth_sourcemaps"]
             .into_iter()
             .map(|module| fake_packed_module(&root.join("desktop-modules"), module))
             .collect::<Vec<_>>();
@@ -8243,12 +8243,12 @@ mod tests {
             assert_eq!(manifest.platform, platform);
             assert_eq!(manifest.arch, arch);
             assert_eq!(manifest.build_version, LAYOUT_VERSION);
-            assert_eq!(manifest.required_modules, vec!["fluxer_renderer"]);
+            assert_eq!(manifest.required_modules, vec!["hearth_renderer"]);
             assert_eq!(manifest.shell.minimum_version, "0.0.0");
             assert_eq!(manifest.shell_compatibility, Some(layout_compatibility()));
             assert_eq!(
                 manifest.modules.keys().collect::<Vec<_>>(),
-                vec!["fluxer_renderer", "fluxer_sourcemaps"]
+                vec!["hearth_renderer", "hearth_sourcemaps"]
             );
             for module in &packed {
                 let entry = &manifest.modules[&module.module];
@@ -8259,7 +8259,7 @@ mod tests {
                 assert_eq!(
                     entry.url,
                     format!(
-                        "https://pkgs.fluxer.com/desktop/canary/modules/{}/{}/package.br",
+                        "https://pkgs.hearth.com/desktop/canary/modules/{}/{}/package.br",
                         module.module, module.sha256
                     )
                 );
@@ -8288,7 +8288,7 @@ mod tests {
         let mut builder = DesktopReleaseAssetBuilder::new(
             "canary",
             LAYOUT_VERSION,
-            "Fluxer-Canary",
+            "Hearth-Canary",
             &release_assets,
         );
         add_desktop_module_release_assets(&mut builder, &payload_root.join("canary")).unwrap();
@@ -8304,7 +8304,7 @@ mod tests {
                 };
                 (
                     format!("desktop/canary/{platform}/{arch}/modules.json"),
-                    format!("Fluxer-Canary-{LAYOUT_VERSION}-{token}-{arch}-modules.json"),
+                    format!("Hearth-Canary-{LAYOUT_VERSION}-{token}-{arch}-modules.json"),
                 )
             })
             .collect::<Vec<_>>();
@@ -8315,7 +8315,7 @@ mod tests {
                     module.module, module.sha256
                 ),
                 format!(
-                    "Fluxer-Canary-{LAYOUT_VERSION}-module-{}-{}.br",
+                    "Hearth-Canary-{LAYOUT_VERSION}-module-{}-{}.br",
                     module.module, module.sha256
                 ),
             ));
@@ -8343,7 +8343,7 @@ mod tests {
             kind: DesktopReleaseKind::Full,
             channel: "canary".to_string(),
             version: LAYOUT_VERSION.to_string(),
-            release_tag: format!("fluxer-desktop-canary@{LAYOUT_VERSION}"),
+            release_tag: format!("hearth-desktop-canary@{LAYOUT_VERSION}"),
             source_sha: "0".repeat(40),
             assets,
             modules,
@@ -8368,7 +8368,7 @@ mod tests {
         let mut builder = DesktopReleaseAssetBuilder::new(
             "canary",
             LAYOUT_VERSION,
-            "Fluxer-Canary",
+            "Hearth-Canary",
             &release_assets,
         );
         assert!(
@@ -8386,14 +8386,14 @@ mod tests {
         let path = payload_root.join("canary/linux/arm64/modules.json");
         let mut manifest: DesktopChannelManifest =
             serde_json::from_slice(&fs::read(&path).unwrap()).unwrap();
-        manifest.modules.get_mut("fluxer_renderer").unwrap().sha256 = "f".repeat(64);
+        manifest.modules.get_mut("hearth_renderer").unwrap().sha256 = "f".repeat(64);
         fs::write(&path, serde_json::to_vec(&manifest).unwrap()).unwrap();
         let release_assets = temp.path().join("release_assets");
         fs::create_dir_all(&release_assets).unwrap();
         let mut builder = DesktopReleaseAssetBuilder::new(
             "canary",
             LAYOUT_VERSION,
-            "Fluxer-Canary",
+            "Hearth-Canary",
             &release_assets,
         );
         assert!(
@@ -8412,42 +8412,42 @@ mod tests {
         write_file(&root.join("version.json"), "{\"version\":\"2026.1009.1\"}");
         write_file(&root.join("assets/main.js"), "main");
         write_file(&root.join("assets/main.js.map"), "{}");
-        write_file(&root.join("assets/fluxer_fonts_jp/a.woff2"), "font");
-        write_file(&root.join("assets/fluxer_grammar_rust/b.wasm"), "wasm");
+        write_file(&root.join("assets/hearth_fonts_jp/a.woff2"), "font");
+        write_file(&root.join("assets/hearth_grammar_rust/b.wasm"), "wasm");
 
         let removed = prune_on_demand_modules_from_renderer_tree(&root).unwrap();
 
         assert_eq!(
             removed.keys().map(String::as_str).collect::<Vec<_>>(),
             vec![
-                "fluxer_fonts_jp",
-                "fluxer_grammar_rust",
-                "fluxer_sourcemaps"
+                "hearth_fonts_jp",
+                "hearth_grammar_rust",
+                "hearth_sourcemaps"
             ]
         );
         assert!(root.join("index.html").is_file());
         assert!(root.join("assets/main.js").is_file());
         assert!(!root.join("assets/main.js.map").exists());
-        assert!(!root.join("assets/fluxer_fonts_jp").exists());
+        assert!(!root.join("assets/hearth_fonts_jp").exists());
         assert_eq!(read_bundled_renderer_version(&root).unwrap(), "2026.1009.1");
     }
 
     #[test]
     fn on_demand_module_manifests_do_not_change_between_builds() {
         let files = vec![DesktopSharedAssetFile {
-            path: "assets/fluxer_fonts_jp/a.woff2".to_string(),
+            path: "assets/hearth_fonts_jp/a.woff2".to_string(),
             sha256: "a".repeat(64),
             bytes: 4,
         }];
         let first = desktop_module_manifest(
-            "fluxer_fonts_jp",
+            "hearth_fonts_jp",
             "2026.1009.1",
             "canary",
             &"1".repeat(40),
             files.clone(),
         );
         let second = desktop_module_manifest(
-            "fluxer_fonts_jp",
+            "hearth_fonts_jp",
             "2026.1010.7",
             "canary",
             &"2".repeat(40),
@@ -8475,7 +8475,7 @@ mod tests {
         write_file(&root.join("index.html"), "<html></html>");
         write_file(&root.join("assets/app.js"), "app");
         write_file(&root.join("assets/app.js.map"), "{}");
-        write_file(&root.join("assets/fluxer_grammars/en.json"), "{}");
+        write_file(&root.join("assets/hearth_grammars/en.json"), "{}");
 
         let classified = classify_renderer_files(&root)
             .unwrap()
@@ -8485,19 +8485,19 @@ mod tests {
         assert_eq!(
             classified,
             vec![
-                ("assets/app.js".to_string(), "fluxer_renderer".to_string()),
+                ("assets/app.js".to_string(), "hearth_renderer".to_string()),
                 (
                     "assets/app.js.map".to_string(),
-                    "fluxer_sourcemaps".to_string()
+                    "hearth_sourcemaps".to_string()
                 ),
                 (
-                    "assets/fluxer_grammars/en.json".to_string(),
-                    "fluxer_grammars".to_string()
+                    "assets/hearth_grammars/en.json".to_string(),
+                    "hearth_grammars".to_string()
                 ),
-                ("index.html".to_string(), "fluxer_renderer".to_string()),
+                ("index.html".to_string(), "hearth_renderer".to_string()),
             ]
         );
-        assert!(desktop_module_for_relative_path("assets/fluxer_renderer/app.js").is_err());
+        assert!(desktop_module_for_relative_path("assets/hearth_renderer/app.js").is_err());
         assert!(desktop_module_for_relative_path("assets/Bad/app.js").is_err());
         assert!(desktop_module_for_relative_path("assets/a/b/c.js").is_err());
     }
@@ -8505,7 +8505,7 @@ mod tests {
     #[test]
     fn packed_modules_round_trip_through_brotli_tar() {
         let temp = tempfile::tempdir().unwrap();
-        let module_dir = temp.path().join("fluxer_renderer");
+        let module_dir = temp.path().join("hearth_renderer");
         write_file(&module_dir.join("files/assets/app.js"), "console.log(1)");
         write_file(&module_dir.join("files/index.html"), "<html></html>");
         let files = ["assets/app.js", "index.html"]
@@ -8520,7 +8520,7 @@ mod tests {
             })
             .collect::<Vec<_>>();
         let manifest = DesktopModuleManifest {
-            module: "fluxer_renderer".to_string(),
+            module: "hearth_renderer".to_string(),
             build_version: "2026.820.1".to_string(),
             release_channel: "canary".to_string(),
             source_sha: "0".repeat(40),

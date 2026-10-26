@@ -8,7 +8,7 @@
 
 /.claude/
 /.direnv/
-/.fluxer/
+/.hearth/
 /.pnpm-store/
 /.vscode/
 
@@ -24,18 +24,18 @@
 **/target/
 **/test-results.json
 
-/fluxer_app/.devserver-cache.json
-/fluxer_app/pkgs/libfluxcore/
-/fluxer_app/pkgs/libfluxwebp/
-/fluxer_app/src/features/i18n/locales/*/messages.mjs
-/fluxer_app/src/features/messaging/utils/markdown/parser/MarkdownParserWasmBytes.ts
-/fluxer_app/src/features/theme/styles/generated/
-/fluxer_app/src/features/ui/components/SVGMasks.tsx
-/fluxer_app/src/features/ui/constants/AvatarStatusGeometry.ts
-/fluxer_gateway/priv/
-/fluxer_static/desktop/spellcheck/dictionaries/*/*
-!/fluxer_static/desktop/spellcheck/dictionaries/dictionary-et@2.0.0/LICENSE
-!/fluxer_static/desktop/spellcheck/dictionaries/dictionary-eu@4.0.0/LICENSE
+/hearth_app/.devserver-cache.json
+/hearth_app/pkgs/libfluxcore/
+/hearth_app/pkgs/libfluxwebp/
+/hearth_app/src/features/i18n/locales/*/messages.mjs
+/hearth_app/src/features/messaging/utils/markdown/parser/MarkdownParserWasmBytes.ts
+/hearth_app/src/features/theme/styles/generated/
+/hearth_app/src/features/ui/components/SVGMasks.tsx
+/hearth_app/src/features/ui/constants/AvatarStatusGeometry.ts
+/hearth_gateway/priv/
+/hearth_static/desktop/spellcheck/dictionaries/*/*
+!/hearth_static/desktop/spellcheck/dictionaries/dictionary-et@2.0.0/LICENSE
+!/hearth_static/desktop/spellcheck/dictionaries/dictionary-eu@4.0.0/LICENSE
 
 /packages/markdown_parser/rust/fuzz/artifacts/
 /packages/markdown_parser/rust/fuzz/corpus/

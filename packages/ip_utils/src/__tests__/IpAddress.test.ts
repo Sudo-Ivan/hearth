@@ -12,7 +12,7 @@ import {
 	maskIpForDisplay,
 	normalizeIpString,
 	parseIpAddress,
-} from '@fluxer/ip_utils/src/IpAddress';
+} from '@hearth/ip_utils/src/IpAddress';
 import {describe, expect, it} from 'vitest';
 
 describe('normalizeIpString', () => {

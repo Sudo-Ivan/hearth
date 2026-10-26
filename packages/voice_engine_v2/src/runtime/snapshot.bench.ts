@@ -4,12 +4,12 @@ import {
 	availableVoiceEngineV2Capabilities,
 	createVoiceEngineV2InitialSnapshot,
 	type VoiceEngineV2Snapshot,
-} from '@fluxer/voice_engine_v2/src/core/state';
+} from '@hearth/voice_engine_v2/src/core/state';
 import type {
 	VoiceEngineV2Participant,
 	VoiceEngineV2Track,
 	VoiceEngineV2TrackSource,
-} from '@fluxer/voice_engine_v2/src/protocol/types';
+} from '@hearth/voice_engine_v2/src/protocol/types';
 import {test} from 'vitest';
 
 const PARTICIPANT_COUNT = 8;

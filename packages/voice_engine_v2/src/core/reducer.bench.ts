@@ -1,20 +1,20 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import basicSessionFixture from '@fluxer/voice_engine_v2/fixtures/basic_session.json';
-import {transitionVoiceEngineV2} from '@fluxer/voice_engine_v2/src/core/reducer';
+import basicSessionFixture from '@hearth/voice_engine_v2/fixtures/basic_session.json';
+import {transitionVoiceEngineV2} from '@hearth/voice_engine_v2/src/core/reducer';
 import {
 	availableVoiceEngineV2Capabilities,
 	createVoiceEngineV2InitialSnapshot,
 	type VoiceEngineV2Snapshot,
-} from '@fluxer/voice_engine_v2/src/core/state';
-import type {VoiceEngineV2Event} from '@fluxer/voice_engine_v2/src/protocol/events';
+} from '@hearth/voice_engine_v2/src/core/state';
+import type {VoiceEngineV2Event} from '@hearth/voice_engine_v2/src/protocol/events';
 import type {
 	VoiceEngineV2InboundVideoFrame,
 	VoiceEngineV2MicrophoneOptions,
 	VoiceEngineV2Participant,
 	VoiceEngineV2ScreenOptions,
 	VoiceEngineV2Stats,
-} from '@fluxer/voice_engine_v2/src/protocol/types';
+} from '@hearth/voice_engine_v2/src/protocol/types';
 import {test} from 'vitest';
 
 interface VoiceEngineV2BenchFixture {

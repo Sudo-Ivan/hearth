@@ -2,15 +2,15 @@
 
 packages:
   - packages/*
-  - fluxer_api
-  - fluxer_app
-  - fluxer_api/pkgs/*
-  - fluxer_app/pkgs/*
-  - '!fluxer_app/pkgs/libfluxcore'
-  - '!fluxer_app/pkgs/libfluxwebp'
-  - fluxer_desktop
-  - fluxer_admin
-  - fluxer_docs
+  - hearth_api
+  - hearth_app
+  - hearth_api/pkgs/*
+  - hearth_app/pkgs/*
+  - '!hearth_app/pkgs/libfluxcore'
+  - '!hearth_app/pkgs/libfluxwebp'
+  - hearth_desktop
+  - hearth_admin
+  - hearth_docs
 
 allowBuilds:
   '@bufbuild/buf': true

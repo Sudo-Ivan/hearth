@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import {GuildMemberResponse} from '@fluxer/schema/src/domains/guild/GuildMemberSchemas';
-import {Int32Type, SnowflakeStringType, UnsignedInt64StringType} from '@fluxer/schema/src/primitives/SchemaPrimitives';
+import {GuildMemberResponse} from '@hearth/schema/src/domains/guild/GuildMemberSchemas';
+import {Int32Type, SnowflakeStringType, UnsignedInt64StringType} from '@hearth/schema/src/primitives/SchemaPrimitives';
 import {z} from 'zod';
 
 export const VoiceStateResponse = z.object({

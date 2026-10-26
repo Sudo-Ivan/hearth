@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import {WebAuthnAuthenticationOptionsResponse} from '@fluxer/schema/src/domains/auth/AuthSchemas';
-import {WebAuthnAuthenticationResponse} from '@fluxer/schema/src/domains/auth/WebAuthnSchemas';
-import {UserPartialResponse} from '@fluxer/schema/src/domains/user/UserResponseSchemas';
-import {SnowflakeStringType} from '@fluxer/schema/src/primitives/SchemaPrimitives';
+import {WebAuthnAuthenticationOptionsResponse} from '@hearth/schema/src/domains/auth/AuthSchemas';
+import {WebAuthnAuthenticationResponse} from '@hearth/schema/src/domains/auth/WebAuthnSchemas';
+import {UserPartialResponse} from '@hearth/schema/src/domains/user/UserResponseSchemas';
+import {SnowflakeStringType} from '@hearth/schema/src/primitives/SchemaPrimitives';
 import {z} from 'zod';
 
 const Base64UrlPattern = /^[A-Za-z0-9_-]+$/u;

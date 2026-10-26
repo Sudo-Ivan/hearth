@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 import {isDeepStrictEqual} from 'node:util';
-import {type SchemaIO, ZodOpenAPIConverter} from '@fluxer/openapi/src/converters/ZodToOpenAPI';
-import {createOpenAPIComponentRef, validateOpenAPIComponentName} from '@fluxer/openapi/src/OpenAPIComponentRef';
-import type {OpenAPISchemaTarget} from '@fluxer/openapi/src/OpenAPIGenerationTypes';
-import type {OpenAPIDocument, OpenAPIRef, OpenAPISchema} from '@fluxer/openapi/src/OpenAPITypes';
+import {type SchemaIO, ZodOpenAPIConverter} from '@hearth/openapi/src/converters/ZodToOpenAPI';
+import {createOpenAPIComponentRef, validateOpenAPIComponentName} from '@hearth/openapi/src/OpenAPIComponentRef';
+import type {OpenAPISchemaTarget} from '@hearth/openapi/src/OpenAPIGenerationTypes';
+import type {OpenAPIDocument, OpenAPIRef, OpenAPISchema} from '@hearth/openapi/src/OpenAPITypes';
 import {core} from 'zod';
 
 export class SchemaRegistry {

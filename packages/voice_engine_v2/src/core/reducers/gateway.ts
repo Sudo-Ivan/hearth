@@ -6,20 +6,20 @@ import {
 	isConnected,
 	markOperation,
 	queueCommand,
-} from '@fluxer/voice_engine_v2/src/core/reducers/_helpers';
+} from '@hearth/voice_engine_v2/src/core/reducers/_helpers';
 import {
 	beginGatewayVoiceStateClear,
 	planPendingConnectionTeardown,
-} from '@fluxer/voice_engine_v2/src/core/reducers/connection';
-import type {VoiceEngineV2Snapshot, VoiceEngineV2Transition} from '@fluxer/voice_engine_v2/src/core/state';
-import type {VoiceEngineV2Event} from '@fluxer/voice_engine_v2/src/protocol/events';
+} from '@hearth/voice_engine_v2/src/core/reducers/connection';
+import type {VoiceEngineV2Snapshot, VoiceEngineV2Transition} from '@hearth/voice_engine_v2/src/core/state';
+import type {VoiceEngineV2Event} from '@hearth/voice_engine_v2/src/protocol/events';
 import type {
 	VoiceEngineV2Error,
 	VoiceEngineV2GatewayDesiredVoiceState,
 	VoiceEngineV2GatewayVoiceState,
 	VoiceEngineV2GatewayVoiceStateWrite,
 	VoiceEngineV2OperationId,
-} from '@fluxer/voice_engine_v2/src/protocol/types';
+} from '@hearth/voice_engine_v2/src/protocol/types';
 
 type VoiceEngineV2GatewayEvent = Extract<VoiceEngineV2Event, {type: `gateway.${string}`}>;
 

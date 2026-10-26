@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import {PremiumCurrency} from '@fluxer/schema/src/domains/premium/PremiumSchemas';
-import {schemaMetadata} from '@fluxer/schema/src/SchemaMetadata';
+import {PremiumCurrency} from '@hearth/schema/src/domains/premium/PremiumSchemas';
+import {schemaMetadata} from '@hearth/schema/src/SchemaMetadata';
 import {z} from 'zod';
 
 const BILLING_MAX_CURRENCIES = 64;

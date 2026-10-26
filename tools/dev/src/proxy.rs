@@ -61,7 +61,7 @@ const X_FORWARDED_FOR_HEADER: &str = "x-forwarded-for";
 pub async fn run_proxy(host: &str, port: u16) -> Result<()> {
     let bind = format!("{host}:{port}");
     let listener = TcpListener::bind(&bind).await?;
-    println!("Fluxer dev proxy listening on {}", listener.local_addr()?);
+    println!("Hearth dev proxy listening on {}", listener.local_addr()?);
 
     let http_client = reqwest::Client::builder()
         .pool_max_idle_per_host(64)
@@ -72,7 +72,7 @@ pub async fn run_proxy(host: &str, port: u16) -> Result<()> {
         .context("failed to build dev proxy HTTP client")?;
     let gateway_ports = gateway_proxy_ports()?;
     println!(
-        "Fluxer dev proxy gateway ports: {}",
+        "Hearth dev proxy gateway ports: {}",
         gateway_ports
             .iter()
             .map(u16::to_string)
@@ -484,7 +484,7 @@ fn host_without_port(host: &str) -> Option<String> {
 
 pub fn route_for_path(path: &str) -> &'static ProxyRoute {
     let normalized_path = normalize_request_target(path);
-    let parsed_path = Url::parse(&format!("http://fluxer.local{normalized_path}"))
+    let parsed_path = Url::parse(&format!("http://hearth.local{normalized_path}"))
         .map(|url| url.path().to_owned())
         .unwrap_or_else(|_| {
             normalized_path

@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import {DEFAULT_RESTRICTED_LIMITS, DEFAULT_STOCK_LIMITS} from '@fluxer/limits/src/LimitDefaults';
-import {computeOverrides, computeWireFormat, expandWireFormat} from '@fluxer/limits/src/LimitDiffer';
-import type {LimitConfigSnapshot} from '@fluxer/limits/src/LimitTypes';
+import {DEFAULT_RESTRICTED_LIMITS, DEFAULT_STOCK_LIMITS} from '@hearth/limits/src/LimitDefaults';
+import {computeOverrides, computeWireFormat, expandWireFormat} from '@hearth/limits/src/LimitDiffer';
+import type {LimitConfigSnapshot} from '@hearth/limits/src/LimitTypes';
 import {describe, expect, test} from 'vitest';
 
 const WIRE_COMPATIBILITY_LIMIT_KEYS = [

@@ -7,7 +7,7 @@ import {
 	type DomainConfig,
 	deriveEndpointsFromDomain,
 	parsePublicOrigin,
-} from '@fluxer/config/src/EndpointDerivation';
+} from '@hearth/config/src/EndpointDerivation';
 import {describe, expect, test} from 'vitest';
 
 interface EndpointScenario {

@@ -1,0 +1,67 @@
+{
+	"name": "hearth_desktop",
+	"version": "0.0.0",
+	"description": "Instant messaging and VoIP application",
+	"homepage": "https://hearth.app",
+	"author": "Hearth Platform AB <support@hearth.com>",
+	"license": "AGPL-3.0-or-later",
+	"private": true,
+	"type": "module",
+	"main": "dist/main/index.js",
+	"scripts": {
+		"build": "node scripts/build.mjs",
+		"generate:windows-badges": "electron scripts/generate-windows-badges.mjs",
+		"set-channel": "../tools/ci/run.sh build-desktop --step set_build_channel",
+		"typecheck": "pnpm set-channel && tsc --noEmit"
+	},
+	"dependencies": {
+		"@hearth/constants": "workspace:*",
+		"@hearth/desktop_ipc": "workspace:*",
+		"@hearth/instance_bootstrap": "workspace:*",
+		"@hearth/ip_utils": "workspace:*",
+		"@hearth/record_utils": "workspace:*",
+		"@hearth/voice_engine_v2": "workspace:*",
+		"@simplewebauthn/browser": "14.0.0",
+		"franc-min": "6.2.0",
+		"hunspell-asm": "4.0.2",
+		"undici": "catalog:",
+		"velopack": "1.2.0"
+	},
+	"devDependencies": {
+		"@types/node": "24.13.5",
+		"electron": "44.9.1",
+		"electron-builder": "27.0.0-alpha.8",
+		"esbuild": "catalog:",
+		"typescript": "catalog:ts7"
+	},
+	"knip": {
+		"ignoreDependencies": [
+			"electron-builder"
+		]
+	},
+	"optionalDependencies": {
+		"@hearth/app-store": "file:./native/app-store",
+		"@hearth/gateway-socket": "file:./native/gateway-socket",
+		"@hearth/hardware-encoder": "file:./native/hardware-encoder",
+		"@hearth/linux-audio-capture": "file:./native/linux-audio-capture",
+		"@hearth/linux-evdev": "file:./native/linux-evdev",
+		"@hearth/linux-input-hook": "file:./native/linux-input-hook",
+		"@hearth/linux-notifications": "file:./native/linux-notifications",
+		"@hearth/linux-portals": "file:./native/linux-portals",
+		"@hearth/mac-app-audio": "file:./native/mac-app-audio",
+		"@hearth/mac-clipboard": "file:./native/mac-clipboard",
+		"@hearth/mac-screen-capture": "file:./native/mac-screen-capture",
+		"@hearth/mac-sysctl": "file:./native/mac-sysctl",
+		"@hearth/mac-tcc": "file:./native/mac-tcc",
+		"@hearth/macos-input-hook": "file:./native/macos-input-hook",
+		"@hearth/platform-info": "file:./native/platform-info",
+		"@hearth/system-hunspell": "file:./native/system-hunspell",
+		"@hearth/webauthn": "file:./native/webauthn",
+		"@hearth/win-clipboard": "file:./native/win-clipboard",
+		"@hearth/win-shell": "file:./native/win-shell",
+		"@hearth/win-game-capture": "file:./native/win-game-capture",
+		"@hearth/win-process-loopback": "file:./native/win-process-loopback",
+		"@hearth/windows-input-hook": "file:./native/windows-input-hook",
+		"electron-log": "5.4.4"
+	}
+}

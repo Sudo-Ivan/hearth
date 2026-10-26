@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import {FLUXER_EPOCH, TIMESTAMP_SHIFT} from '@fluxer/snowflake/src/Snowflake';
+import {FLUXER_EPOCH, TIMESTAMP_SHIFT} from '@hearth/snowflake/src/Snowflake';
 import {ms} from 'itty-time';
 
 export const SNOWFLAKE_BUCKET_SIZE_MS = BigInt(ms('10 days'));

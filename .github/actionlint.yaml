@@ -1,6 +1,6 @@
 self-hosted-runner:
   labels:
-    - fluxer-desktop-macos-arm64
-    - fluxer-electron-build
+    - hearth-desktop-macos-arm64
+    - hearth-electron-build
 
 config-variables: null

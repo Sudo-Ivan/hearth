@@ -1,24 +1,24 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import {DeletionReasons} from '@fluxer/constants/src/Core';
+import {DeletionReasons} from '@hearth/constants/src/Core';
 import {
 	PremiumFlags,
 	PremiumFlagsDescriptions,
 	UserFlags,
 	UserFlagsDescriptions,
-} from '@fluxer/constants/src/UserConstants';
-import {AccountTierSchema} from '@fluxer/schema/src/domains/account/AccountTierSchemas';
-import {ADMIN_ACL_COUNT, AdminAclType} from '@fluxer/schema/src/domains/admin/AdminAclType';
+} from '@hearth/constants/src/UserConstants';
+import {AccountTierSchema} from '@hearth/schema/src/domains/account/AccountTierSchemas';
+import {ADMIN_ACL_COUNT, AdminAclType} from '@hearth/schema/src/domains/admin/AdminAclType';
 import {
 	BulkModerationBasis,
 	ModerationBasis,
 	NetworkBlockRequest,
 	SkippedNetworkBlock,
-} from '@fluxer/schema/src/domains/admin/EnforcementSchemas';
-import {AdminProfileBadgeResponse} from '@fluxer/schema/src/domains/user/ProfileBadgeSchemas';
-import {CalendarDateType} from '@fluxer/schema/src/primitives/DateValidators';
-import {NSFWLevelSchema} from '@fluxer/schema/src/primitives/GuildValidators';
-import {createQueryIntegerType, QueryBooleanType} from '@fluxer/schema/src/primitives/QueryValidators';
+} from '@hearth/schema/src/domains/admin/EnforcementSchemas';
+import {AdminProfileBadgeResponse} from '@hearth/schema/src/domains/user/ProfileBadgeSchemas';
+import {CalendarDateType} from '@hearth/schema/src/primitives/DateValidators';
+import {NSFWLevelSchema} from '@hearth/schema/src/primitives/GuildValidators';
+import {createQueryIntegerType, QueryBooleanType} from '@hearth/schema/src/primitives/QueryValidators';
 import {
 	createBitflagInt32Type,
 	createBitflagStringType,
@@ -28,8 +28,8 @@ import {
 	Int32Type,
 	SnowflakeStringType,
 	SnowflakeType,
-} from '@fluxer/schema/src/primitives/SchemaPrimitives';
-import {DiscriminatorType, EmailType, UsernameType} from '@fluxer/schema/src/primitives/UserValidators';
+} from '@hearth/schema/src/primitives/SchemaPrimitives';
+import {DiscriminatorType, EmailType, UsernameType} from '@hearth/schema/src/primitives/UserValidators';
 import {z} from 'zod';
 
 const DeletionReasonCodeType = createInt32EnumType(

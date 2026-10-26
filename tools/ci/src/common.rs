@@ -33,14 +33,14 @@ pub(crate) const CALVER_SCHEME: &str = "YYYY.MDD.MICRO";
 #[derive(Default)]
 pub(crate) struct CalverEnv {
     pub(crate) build_version: Option<String>,
-    pub(crate) fluxer_build_date: Option<String>,
+    pub(crate) hearth_build_date: Option<String>,
 }
 
 impl CalverEnv {
     pub(crate) fn from_process() -> Self {
         Self {
             build_version: trim_option(env::var("BUILD_VERSION").ok()),
-            fluxer_build_date: trim_option(env::var("FLUXER_BUILD_DATE").ok()),
+            hearth_build_date: trim_option(env::var("FLUXER_BUILD_DATE").ok()),
         }
     }
 }
@@ -342,7 +342,7 @@ pub(crate) fn resolve_calver(calver_env: &CalverEnv, now: DateTime<Utc>) -> Resu
 }
 
 fn parse_instant(calver_env: &CalverEnv, now: DateTime<Utc>) -> Result<DateTime<Utc>> {
-    let Some(override_value) = calver_env.fluxer_build_date.as_deref() else {
+    let Some(override_value) = calver_env.hearth_build_date.as_deref() else {
         return Ok(now);
     };
 

@@ -5,22 +5,22 @@ import {
 	MessageAttachmentFlagsDescriptions,
 	MessageFlags,
 	MessageFlagsDescriptions,
-} from '@fluxer/constants/src/ChannelConstants';
-import {MAX_MESSAGE_LENGTH_PREMIUM} from '@fluxer/constants/src/LimitConstants';
+} from '@hearth/constants/src/ChannelConstants';
+import {MAX_MESSAGE_LENGTH_PREMIUM} from '@hearth/constants/src/LimitConstants';
 import {
 	MAX_APPLIED_TAGS_PER_THREAD,
 	THREAD_NAME_MAX_LENGTH,
 	THREAD_NAME_MIN_LENGTH,
-} from '@fluxer/constants/src/ThreadConstants';
-import {ClientUploadedAttachmentRequest} from '@fluxer/schema/src/domains/message/AttachmentSchemas';
+} from '@hearth/constants/src/ThreadConstants';
+import {ClientUploadedAttachmentRequest} from '@hearth/schema/src/domains/message/AttachmentSchemas';
 import {
 	MessageContentRequest,
 	MessageNonceRequest,
 	RichEmbedRequest,
-} from '@fluxer/schema/src/domains/message/MessageRequestSchemas';
-import {AllowedMentionsRequest, MessageReferenceRequest} from '@fluxer/schema/src/domains/message/SharedMessageSchemas';
-import {createBase64ImageType} from '@fluxer/schema/src/primitives/FileValidators';
-import {QueryBooleanType} from '@fluxer/schema/src/primitives/QueryValidators';
+} from '@hearth/schema/src/domains/message/MessageRequestSchemas';
+import {AllowedMentionsRequest, MessageReferenceRequest} from '@hearth/schema/src/domains/message/SharedMessageSchemas';
+import {createBase64ImageType} from '@hearth/schema/src/primitives/FileValidators';
+import {QueryBooleanType} from '@hearth/schema/src/primitives/QueryValidators';
 import {
 	coerceNumberFromString,
 	createBitflagInt32Type,
@@ -29,10 +29,10 @@ import {
 	Int32Type,
 	NonNegativeSafeIntegerType,
 	SnowflakeType,
-} from '@fluxer/schema/src/primitives/SchemaPrimitives';
-import {URLType} from '@fluxer/schema/src/primitives/UrlValidators';
-import {WebhookNameType} from '@fluxer/schema/src/primitives/UserValidators';
-import {withSchemaMetadata} from '@fluxer/schema/src/SchemaMetadata';
+} from '@hearth/schema/src/primitives/SchemaPrimitives';
+import {URLType} from '@hearth/schema/src/primitives/UrlValidators';
+import {WebhookNameType} from '@hearth/schema/src/primitives/UserValidators';
+import {withSchemaMetadata} from '@hearth/schema/src/SchemaMetadata';
 import {z} from 'zod';
 
 export const WebhookCreateRequest = z.object({

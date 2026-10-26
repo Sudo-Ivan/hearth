@@ -1,19 +1,19 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import {transitionVoiceEngineV2} from '@fluxer/voice_engine_v2/src/core/reducer';
+import {transitionVoiceEngineV2} from '@hearth/voice_engine_v2/src/core/reducer';
 import {
 	availableVoiceEngineV2Capabilities,
 	createVoiceEngineV2InitialSnapshot,
 	type VoiceEngineV2OperationStatus,
 	type VoiceEngineV2Snapshot,
-} from '@fluxer/voice_engine_v2/src/core/state';
-import type {VoiceEngineV2Command} from '@fluxer/voice_engine_v2/src/protocol/commands';
-import type {VoiceEngineV2Event} from '@fluxer/voice_engine_v2/src/protocol/events';
+} from '@hearth/voice_engine_v2/src/core/state';
+import type {VoiceEngineV2Command} from '@hearth/voice_engine_v2/src/protocol/commands';
+import type {VoiceEngineV2Event} from '@hearth/voice_engine_v2/src/protocol/events';
 import type {
 	VoiceEngineV2AudioControls,
 	VoiceEngineV2Error,
 	VoiceEngineV2NativeCaptureOptions,
-} from '@fluxer/voice_engine_v2/src/protocol/types';
+} from '@hearth/voice_engine_v2/src/protocol/types';
 import {describe, expect, it} from 'vitest';
 
 const captureOptions: VoiceEngineV2NativeCaptureOptions = {

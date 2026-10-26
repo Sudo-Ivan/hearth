@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import {ChannelTypes} from '@fluxer/constants/src/ChannelConstants';
+import {ChannelTypes} from '@hearth/constants/src/ChannelConstants';
 import {
 	THREAD_ARCHIVED_LIST_DEFAULT_LIMIT,
 	THREAD_ARCHIVED_LIST_MAX_LIMIT,
@@ -8,17 +8,17 @@ import {
 	THREAD_NAME_MAX_LENGTH,
 	THREAD_NAME_MIN_LENGTH,
 	THREAD_RATE_LIMIT_PER_USER_MAX,
-} from '@fluxer/constants/src/ThreadConstants';
-import {ThreadChannelResponse} from '@fluxer/schema/src/domains/channel/ChannelSchemas';
-import {ThreadMemberResponse} from '@fluxer/schema/src/domains/channel/ThreadSchemas';
-import {IsoTimestampStringType} from '@fluxer/schema/src/primitives/DateValidators';
-import {createQueryIntegerType, QueryBooleanType} from '@fluxer/schema/src/primitives/QueryValidators';
+} from '@hearth/constants/src/ThreadConstants';
+import {ThreadChannelResponse} from '@hearth/schema/src/domains/channel/ChannelSchemas';
+import {ThreadMemberResponse} from '@hearth/schema/src/domains/channel/ThreadSchemas';
+import {IsoTimestampStringType} from '@hearth/schema/src/primitives/DateValidators';
+import {createQueryIntegerType, QueryBooleanType} from '@hearth/schema/src/primitives/QueryValidators';
 import {
 	createInt32EnumType,
 	createStringType,
 	Int32Type,
 	SnowflakeType,
-} from '@fluxer/schema/src/primitives/SchemaPrimitives';
+} from '@hearth/schema/src/primitives/SchemaPrimitives';
 import {z} from 'zod';
 
 const THREAD_MEMBERS_LIST_MAX_LIMIT = 100;

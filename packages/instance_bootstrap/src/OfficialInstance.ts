@@ -4,26 +4,26 @@ import {
 	type CanonicalNetworkEndpointRule,
 	HTTP_NETWORK_PROTOCOLS,
 	normalizeCanonicalNetworkEndpoint,
-} from '@fluxer/instance_bootstrap/src/NetworkOrigin';
+} from '@hearth/instance_bootstrap/src/NetworkOrigin';
 
-export const OFFICIAL_INSTANCE_NAME = 'Fluxer';
+export const OFFICIAL_INSTANCE_NAME = 'Hearth';
 
-export const OFFICIAL_INSTANCE_DISPLAY_HOST = 'fluxer.app';
+export const OFFICIAL_INSTANCE_DISPLAY_HOST = 'hearth.app';
 
-export const OFFICIAL_INSTANCE_DISPLAY_NAME = 'Fluxer.app';
+export const OFFICIAL_INSTANCE_DISPLAY_NAME = 'Hearth.app';
 
 export const OFFICIAL_STABLE_MARKETING_ORIGIN = `https://${OFFICIAL_INSTANCE_DISPLAY_HOST}`;
 
 export const OFFICIAL_CLIENT_API_ENDPOINTS = Object.freeze({
-	stable: 'https://web.fluxer.app/api',
-	canary: 'https://web.canary.fluxer.app/api',
+	stable: 'https://web.hearth.app/api',
+	canary: 'https://web.canary.hearth.app/api',
 } as const);
 
 export type OfficialReleaseChannel = keyof typeof OFFICIAL_CLIENT_API_ENDPOINTS;
 
 export const OFFICIAL_MARKETING_ORIGINS = Object.freeze({
 	stable: OFFICIAL_STABLE_MARKETING_ORIGIN,
-	canary: 'https://canary.fluxer.app',
+	canary: 'https://canary.hearth.app',
 } as const) satisfies Record<OfficialReleaseChannel, string>;
 
 export function officialMarketingOrigin(releaseChannel: string | null | undefined): string {
@@ -31,8 +31,8 @@ export function officialMarketingOrigin(releaseChannel: string | null | undefine
 }
 
 const OFFICIAL_MIGRATED_WEB_APP_HOSTS = Object.freeze({
-	stable: 'fluxer.com',
-	canary: 'canary.fluxer.com',
+	stable: 'hearth.com',
+	canary: 'canary.hearth.com',
 } as const) satisfies Record<OfficialReleaseChannel, string>;
 
 const OFFICIAL_CLIENT_API_PATH = '/api';
@@ -67,13 +67,13 @@ export function officialClientApiEndpointForAlias(apiEndpoint: string): string |
 
 export const OFFICIAL_INSTANCE_HOSTS: ReadonlyArray<string> = Object.freeze([
 	OFFICIAL_INSTANCE_DISPLAY_HOST,
-	'web.fluxer.app',
-	'api.fluxer.app',
-	'canary.fluxer.app',
-	'web.canary.fluxer.app',
-	'api.canary.fluxer.app',
-	'fluxer.com',
-	'canary.fluxer.com',
+	'web.hearth.app',
+	'api.hearth.app',
+	'canary.hearth.app',
+	'web.canary.hearth.app',
+	'api.canary.hearth.app',
+	'hearth.com',
+	'canary.hearth.com',
 ]);
 
 const OFFICIAL_HOST_LOOKUP_RULE: CanonicalNetworkEndpointRule = Object.freeze({

@@ -1707,7 +1707,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "fluxer-ci"
+name = "hearth-ci"
 version = "0.1.0"
 dependencies = [
  "anyhow",
@@ -1731,7 +1731,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "fluxer-dev"
+name = "hearth-dev"
 version = "0.1.0"
 dependencies = [
  "anyhow",
@@ -1754,12 +1754,12 @@ dependencies = [
 ]
 
 [[package]]
-name = "fluxer-gifs"
+name = "hearth-gifs"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "fluxer-svc",
- "fluxer_common",
+ "hearth-svc",
+ "hearth_common",
  "futures",
  "moka",
  "reqwest",
@@ -1772,7 +1772,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "fluxer-media-proxy"
+name = "hearth-media-proxy"
 version = "0.1.0"
 dependencies = [
  "anyhow",
@@ -1781,7 +1781,7 @@ dependencies = [
  "bytes",
  "cc",
  "clap",
- "fluxer_common",
+ "hearth_common",
  "futures-util",
  "hex",
  "hmac",
@@ -1815,15 +1815,15 @@ dependencies = [
 ]
 
 [[package]]
-name = "fluxer-messages"
+name = "hearth-messages"
 version = "0.1.0"
 dependencies = [
  "anyhow",
  "base64 0.23.1",
  "chrono",
- "fluxer-svc",
- "fluxer_common",
- "fluxer_markdown_parser",
+ "hearth-svc",
+ "hearth_common",
+ "hearth_markdown_parser",
  "futures",
  "linkify",
  "mime_guess",
@@ -1837,15 +1837,15 @@ dependencies = [
 ]
 
 [[package]]
-name = "fluxer-push"
+name = "hearth-push"
 version = "0.1.0"
 dependencies = [
  "anyhow",
  "axum",
  "base64 0.23.1",
  "clap",
- "fluxer-svc",
- "fluxer_common",
+ "hearth-svc",
+ "hearth_common",
  "futures",
  "hmac",
  "p256",
@@ -1863,18 +1863,18 @@ dependencies = [
 ]
 
 [[package]]
-name = "fluxer-snowflakes"
+name = "hearth-snowflakes"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "fluxer-svc",
+ "hearth-svc",
  "serde",
  "tokio",
  "tracing",
 ]
 
 [[package]]
-name = "fluxer-svc"
+name = "hearth-svc"
 version = "0.1.0"
 dependencies = [
  "anyhow",
@@ -1884,7 +1884,7 @@ dependencies = [
  "bytes",
  "chrono",
  "deadpool-postgres",
- "fluxer_common",
+ "hearth_common",
  "futures",
  "rmp-serde",
  "rustls",
@@ -1899,7 +1899,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "fluxer-unfurl"
+name = "hearth-unfurl"
 version = "0.1.0"
 dependencies = [
  "ammonia",
@@ -1907,8 +1907,8 @@ dependencies = [
  "chrono",
  "encoding_rs",
  "entities",
- "fluxer-svc",
- "fluxer_common",
+ "hearth-svc",
+ "hearth_common",
  "hickory-resolver",
  "infer",
  "moka",
@@ -1925,13 +1925,13 @@ dependencies = [
 ]
 
 [[package]]
-name = "fluxer-users"
+name = "hearth-users"
 version = "0.1.0"
 dependencies = [
  "anyhow",
  "chrono",
- "fluxer-svc",
- "fluxer_common",
+ "hearth-svc",
+ "hearth_common",
  "futures",
  "hmac",
  "moka",
@@ -1944,14 +1944,14 @@ dependencies = [
 ]
 
 [[package]]
-name = "fluxer_admin"
+name = "hearth_admin"
 version = "0.1.0"
 dependencies = [
  "anyhow",
  "axum",
  "base64 0.23.1",
  "chrono",
- "fluxer_common",
+ "hearth_common",
  "hmac",
  "maud",
  "openapiv3",
@@ -1975,13 +1975,13 @@ dependencies = [
 ]
 
 [[package]]
-name = "fluxer_app_proxy"
+name = "hearth_app_proxy"
 version = "0.1.0"
 dependencies = [
  "anyhow",
  "axum",
  "base64 0.23.1",
- "fluxer_common",
+ "hearth_common",
  "futures-util",
  "hex",
  "rand 0.10.2",
@@ -1998,7 +1998,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "fluxer_common"
+name = "hearth_common"
 version = "0.1.0"
 dependencies = [
  "anyhow",
@@ -2019,7 +2019,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "fluxer_markdown_parser"
+name = "hearth_markdown_parser"
 version = "0.1.0"
 dependencies = [
  "criterion",

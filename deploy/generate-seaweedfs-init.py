@@ -5,10 +5,10 @@ import re
 import subprocess
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-CHART_INIT = REPO_ROOT / 'deploy/helm/fluxer/files/seaweedfs-init.sh'
-COMPOSE = REPO_ROOT / 'fluxer_rexctl/internal/stack/files/docker-compose.yml'
+CHART_INIT = REPO_ROOT / 'deploy/helm/hearth/files/seaweedfs-init.sh'
+COMPOSE = REPO_ROOT / 'hearth_rexctl/internal/stack/files/docker-compose.yml'
 STARTUP = "trap 'exit 0' TERM INT\n"
-KEEP_ALIVE = '''        touch /tmp/fluxer-buckets-ready
+KEEP_ALIVE = '''        touch /tmp/hearth-buckets-ready
         while :; do
           sleep 86400 &
           wait $!

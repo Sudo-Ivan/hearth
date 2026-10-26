@@ -9,10 +9,10 @@ import type {
 	VoiceEngineV2RoutingCommand,
 	VoiceEngineV2SessionCommand,
 	VoiceEngineV2UtilityCommand,
-} from '@fluxer/voice_engine_v2/src/implementations/VoiceEngineV2ImplementationBase';
-import type {VoiceEngineV2Command} from '@fluxer/voice_engine_v2/src/protocol/commands';
-import type {VoiceEngineV2Event} from '@fluxer/voice_engine_v2/src/protocol/events';
-import type {VoiceEngineV2Error} from '@fluxer/voice_engine_v2/src/protocol/types';
+} from '@hearth/voice_engine_v2/src/implementations/VoiceEngineV2ImplementationBase';
+import type {VoiceEngineV2Command} from '@hearth/voice_engine_v2/src/protocol/commands';
+import type {VoiceEngineV2Event} from '@hearth/voice_engine_v2/src/protocol/events';
+import type {VoiceEngineV2Error} from '@hearth/voice_engine_v2/src/protocol/types';
 
 type VoiceEngineV2CommandSuccess = Extract<VoiceEngineV2CommandResult, {ok: true}>;
 
